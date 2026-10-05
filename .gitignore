@@ -1,0 +1,33 @@
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python / editors
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.idea/
+.vscode/
+
+# Local document processing and model caches
+tmp/
+data/raw/
+data/processed/
+data/indexes/
+data/agent_runs/
+models/
+.cache/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.sqlite
+
+# OS files
+Thumbs.db
+.DS_Store

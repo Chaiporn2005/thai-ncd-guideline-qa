@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NCD source document record",
+  "type": "object",
+  "required": ["document_id", "work_id", "edition_id", "title", "publisher", "disease_tags", "population", "document_type", "language", "edition", "publication_date", "landing_url", "download_url", "alternate_urls", "accessed_at", "status", "content_access", "extraction_status", "redistribution_status", "sha256", "pdf_pages", "agent", "verification_notes", "human_review", "thai_context", "thai_context_notes", "scope_fit"],
+  "additionalProperties": false,
+  "properties": {
+    "document_id": {"type": "string", "minLength": 1},
+    "work_id": {"type": "string", "minLength": 1},
+    "edition_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "publisher": {"type": "string", "minLength": 1},
+    "disease_tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "population": {"type": "string", "minLength": 1},
+    "thai_context": {"enum": ["thai_guideline_or_service", "thai_participant_data", "not_verified"]},
+    "thai_context_notes": {"type": "string", "minLength": 1},
+    "scope_fit": {"enum": ["core", "supporting", "requires_scope_expansion"]},
+    "document_type": {"enum": ["clinical_guideline", "service_manual", "patient_education", "poster", "report"]},
+    "language": {"enum": ["th", "en", "th-en", "unknown"]},
+    "edition": {"type": "string", "minLength": 1},
+    "publication_date": {"type": ["string", "null"], "format": "date"},
+    "landing_url": {"type": "string", "format": "uri"},
+    "download_url": {"type": ["string", "null"], "format": "uri"},
+    "alternate_urls": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "uri"}},
+    "accessed_at": {"type": "string", "format": "date"},
+    "status": {"enum": ["discovered", "source_verified", "extracted", "qa_passed", "human_approved", "accepted", "rejected"]},
+    "content_access": {"enum": ["not_checked", "viewer_only", "full_document", "blocked", "link_verified_only"]},
+    "extraction_status": {"enum": ["not_started", "needs_ocr", "encoding_issue", "extracted_unreviewed", "qa_passed"]},
+    "redistribution_status": {"enum": ["unknown", "restricted", "permitted"]},
+    "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "pdf_pages": {"type": ["integer", "null"], "minimum": 1},
+    "agent": {"type": "string", "minLength": 1},
+    "verification_notes": {"type": "string", "minLength": 1},
+    "human_review": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["reviewer", "reviewed_at", "scope", "approved"],
+      "properties": {
+        "reviewer": {"type": "string", "minLength": 1},
+        "reviewed_at": {"type": "string", "format": "date"},
+        "scope": {"type": "string", "minLength": 1},
+        "approved": {"type": "boolean"}
+      }
+    }
+  }
+}
