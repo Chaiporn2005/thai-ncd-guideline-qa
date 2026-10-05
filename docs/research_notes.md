@@ -1,5 +1,9 @@
 # ผลค้นแหล่งข้อมูลรอบแรก
 
+ไฟล์นี้เป็น snapshot รอบแรก13seeds; manifestปัจจุบันรวม43 candidatesหลังเพิ่มDM10/HT10/LIPID10
+ดู [catalogue](source_catalog_20261005.md) และ [actualquerylog](../research/20261005-ncd-plus10.md)
+ทั้งชุดยัง accepted 0; ผู้ใช้ยืนยันเฉพาะPDF/คู่มือ
+
 วันที่ตรวจ: 2026-10-05 (Asia/Bangkok)
 ผู้ใช้ยืนยัน scope: แนวทางไทยสำหรับคนไทย
 

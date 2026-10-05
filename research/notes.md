@@ -3,6 +3,8 @@
 เอกสารผลค้นฉบับหลักอยู่ [docs/research_notes.md](../docs/research_notes.md)
 รายการ structured metadata อยู่ [documents.jsonl](../data/manifests/documents.jsonl)
 และเกณฑ์รับเอกสารอยู่ [corpus_policy.md](../docs/corpus_policy.md)
+รอบเพิ่ม30PDF/manualcandidates: [actualqueries/curation](20261005-ncd-plus10.md)
+และ [sourcecatalogue](../docs/source_catalog_20261005.md)
 
 ใช้ directory นี้เป็นจุดอ่านแบบเดียวกับ research ในต้นแบบ
 ไม่คัดลอกผลค้นเป็นอีกฉบับเพื่อหลีกเลี่ยง counts/versions ที่ไม่ตรงกัน

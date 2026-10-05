@@ -28,3 +28,10 @@ pipeline นี้ไม่บังคับว่าทั้ง 6 สาย�
 
 Deadline/freeze date: ยังไม่ทราบ; ใช้ Week 15 ตาม instruction จนทีมกำหนดวันจริง
 ก่อน freeze เก็บ commit, corpus version, configs, คำสั่ง reproduce และ saved metrics
+
+## Current collection assignment — 2026-10-05
+
+ผู้ใช้ขอเอกสารเพิ่มโรคละ 10 ชิ้น; รอบ `20261005-ncd-plus10` มุ่ง 30 new distinct works
+ใน DM/HT/LIPID ไม่ซ้ำ seeds เดิม ไม่รับรองว่าแต่ละชิ้นเป็น clinical guideline
+ตรวจชนิด/ผู้จัดทำ/ฉบับ/เนื้อหาที่เข้าถึงได้ก่อน curator รวม metadata และ source catalog
+Claim per stream ลงทะเบียนใน RESOURCES; ไม่เปลี่ยน CKD เป็น core

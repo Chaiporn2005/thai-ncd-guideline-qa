@@ -30,6 +30,9 @@ Protocol เป็น file-based workflow ไม่ใช่ autonomous runner; 
 Guideline ไทยอาจอ้างงานวิจัยต่างประเทศ จึงไม่ติดป้ายว่าเป็น Thai participant data โดยอัตโนมัติ
 ผู้ใช้ยืนยันแล้วว่าต้องการ “แนวทางไทยสำหรับคนไทย” จึงใช้ Thai guidance เป็นขอบเขตหลัก
 ไม่จำกัดว่าหลักฐานทุกงานที่ guideline อ้างต้องเป็น Thai-only empirical evidence
+ผู้ใช้ขอเอกสารเพิ่มโรคละ 10 และยืนยัน **เฉพาะ PDF/คู่มือ** ไม่รวม HTML articles เป็น corpus ในรอบนี้
+คัดเลือกเพิ่ม DM10/HT10/LIPID10 เป็นเอกสารสนับสนุน; ดู [catalogue](docs/source_catalog_20261005.md)
+manifest รวม43 candidates แต่ accepted 0; clinical CPG หลัก3ยังแยกจากเอกสารให้ความรู้/บริการ
 
 ผลลัพธ์เป้าหมาย: คำตอบ, เงื่อนไขประชากร, ข้อยกเว้น, ฉบับเอกสาร และ citation รายข้อ
 รวมลิงก์หน้า/ตาราง/ข้อความต้นทาง; ถ้าข้อมูลไม่พอให้ถามเพิ่มหรือ abstain

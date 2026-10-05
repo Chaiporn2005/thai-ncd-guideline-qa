@@ -56,3 +56,18 @@ This is a research/planning scaffold; no application benchmark results are fabri
 ตรวจเฉพาะ file-based workflow/config/link destinations ไม่ตรวจ Markdown anchors,
 remote source content, clinical accuracy, actual resource telemetry หรือ runtime enforcement
 ไม่มี retrieval/evaluation experiment, paid API runner, watcher หรือ worker ใหม่ถูกรันในรอบนี้
+# PDF/manual collection — 2026-10-05
+
+- Canonicalmanifest:43source_verifiedrecords,accepted0;old13preserved plus30newcandidateIDs
+- Cohort/CSV:10selectedIDsperDM/HT/LIPID,30uniqueIDs matchingnewmanifestrows
+- Newformats:27directPDFURLs,1DrivePDFviewer,2manuale-bookviewers
+- Newaccess:19fullPDFbodiesretrieved,8link-only,3viewer-only; noclinicalQA/humanapproval
+- `scripts/validate_manifest.py`: passed43records
+- `scripts/orchestra.py check`: passedregistry/requiredfiles/localinlinelinks
+- In-memorycohort/CSVconsistencyand13originalrecordequalitychecks:passed
+- Local`data/raw/`empty;raw/processed/indexes/agent_runsignored; no rawPDFcommit
+- Scope/core/supportingcounts:core3/supporting35/requires_scope_expansion5
+
+Actualqueries,PDFaccessfailures,form-gatereplacementandbudget-accountingcaveats:
+[researchreport](../research/20261005-ncd-plus10.md)
+This does not verifyallPDFbodies,rights,clinicalaccuracy,instructorcorpus-equivalence or RAGperformance.

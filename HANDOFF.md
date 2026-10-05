@@ -12,9 +12,12 @@ Updated: 2026-10-05 • Owner: coordinator • Stage: planning/research scaffold
 
 ## ทำแล้วและหลักฐาน
 
-มีแผน/role prompts/policy/schema, seed manifest 13 source_verified (accepted 0),
+มีแผน/role prompts/policy/schema, manifest 43 source_verified candidates (accepted 0),
 metadata validator และโครง orchestration แบบ file-based
 ดู [board](board.md), [research notes](docs/research_notes.md) และ [run log](runs/LOG.md)
+รอบล่าสุดเพิ่ม30รายการ DM10/HT10/LIPID10 ตามข้อกำหนด PDF/คู่มือ:
+27 direct PDF URLs,1 Drive PDF viewer,2 manual e-books; ดู [catalogue](docs/source_catalog_20261005.md)
+ดึงเนื้อหาPDFได้19รายการใหม่ แต่ไม่มีrawPDFsเก็บในrepoหรือhumanapproval
 ไฟล์ต้นแบบ Kaggle ใช้เป็น reference สำหรับการจัดระบบ ไม่ใช่คำสั่งให้ใช้บัญชี/งบ/ข้อมูลของต้นแบบ
 
 ## งานกำลังรัน
@@ -24,9 +27,9 @@ metadata validator และโครง orchestration แบบ file-based
 
 ## งานถัดไป
 
-1. Coordinator ตรวจ [สถานะ](NCD%20-%201Orchestra/status/OVERVIEW.md) แล้วรับ assignment
-   ตรวจแหล่ง/เนื้อหาที่ค้างใน 3 สายโดยส่ง output คนละไฟล์
-2. Curator ตรวจ dedup/rights และส่ง extraction/QA/human review queue
+1. Coordinator อ่าน [catalogue](docs/source_catalog_20261005.md) และเลือกลำดับ rights/access review
+   ของ43 candidates โดยไม่ถือว่าครบเกณฑ์วิชาหรืออ่านครบทุกไฟล์
+2. Curator ตรวจ final content/hash dedup, permissions และส่ง extraction/QA/human review queue
 3. เมื่อ corpus ผ่าน gates เริ่ม CPU dense baseline และ variant ที่สอง
 
 ทำส่วนค้น/จัด metadata ที่ได้รับมอบหมายได้; ห้ามอ้างว่าทีมเลือก provider/budget/reviewer แล้ว
@@ -37,6 +40,8 @@ metadata validator และโครง orchestration แบบ file-based
 Drive viewer, blocked issuer, PDF encoding/layout และ alternate editions ยังต้องตรวจต่อ
 Raw documents ถูก ignore; การเข้าถึงสาธารณะไม่รับรองสิทธิเผยแพร่
 ยังไม่มี reviewer assignment, วัน deadline จริง หรือ API budget ที่อนุมัติ
+PDF/manual-only เป็นความต้องการล่าสุด; ไม่รวม HTML articles แทนเพื่อให้ครบยอด
+HTHealthStationและ77provinceเมนูยังเป็นmanual viewers ไม่มีdirectPDFที่ยืนยันว่าดึงได้
 
 ## ตรวจงาน
 

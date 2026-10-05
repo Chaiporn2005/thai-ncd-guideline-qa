@@ -5,6 +5,9 @@
 Core: Thai adult type 2 diabetes, hypertension and dyslipidemia guidelines.
 Optional: adult CKD material relevant to comorbidity/follow-up.
 Clinical, service and public education sources remain separately typed.
+For the user's 2026-10-05 collection request, select PDF/manual documents only;
+issuer HTML pages are provenance evidence, not the collected corpus documents.
+Manual e-book viewers must be labelled separately from direct downloadable PDFs.
 Pediatric, pregnancy and unrelated documents are excluded unless the scope is explicitly expanded.
 
 ## Thai population requirement

@@ -1,0 +1,54 @@
+{
+  "run_id": "20261005-ncd-plus10",
+  "accessed_at": "2026-10-05",
+  "user_requirement": "10 additional PDF/manual documents per core disease; Thai guidance for Thai people",
+  "status": "source_verified_candidates_not_accepted",
+  "new_unique_work_ids": 30,
+  "groups": {
+    "DM": [
+      "dm-siriraj-know-diabetes-undated",
+      "dm-siriraj-hypoglycemia-leaflet-undated",
+      "dm-siriraj-patient-foot-manual-undated",
+      "dm-siriraj-microvascular-leaflet-undated",
+      "dm-siriraj-macrovascular-leaflet-undated",
+      "dm-siriraj-retinopathy-leaflet-undated",
+      "dm-siriraj-needle-disposal-leaflet-undated",
+      "dm-siriraj-self-monitoring-leaflet-undated",
+      "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+      "dm-remission-implementation-lessons-undated"
+    ],
+    "HT": [
+      "ht-siriraj-uncontrolled-opd-2564",
+      "ht-ddc-hospital-management-update-2566",
+      "ht-ddc-provincial-sodium-guide-undated",
+      "ht-ddc-community-low-salt-lessons-undated",
+      "ht-ddc-low-salt-hospital-guide-undated",
+      "ncd-ddc-primary-care-guide-2568",
+      "ht-ddc-covid-vaccine-screening-2564",
+      "ht-ddc-sodium-education-undated",
+      "ncd-ddc-health-station-manual-undated",
+      "ht-ddc-low-sodium-77-province-menu-undated"
+    ],
+    "LIPID": [
+      "lipid-rama-education-2562",
+      "lipid-siriraj-warning-1158",
+      "lipid-siriraj-thai-food-86",
+      "lipid-siriraj-trans-fat-1380",
+      "lipid-siriraj-diabetes-fat-7",
+      "lipid-siriraj-food-cholesterol-2564-review",
+      "lipid-siriraj-stroke-nutrition-1298",
+      "lipid-siriraj-metabolic-763",
+      "lipid-inmu-food-knowledge-all-ages",
+      "lipid-dms-stroke-public-manual"
+    ]
+  },
+  "curation_changes": [
+    "DOH form-gated leaflet replaced by independently verified Siriraj food-cholesterol PDF",
+    "77-province menu unresolved short URL supplemented by working official NHCO e-book reader"
+  ],
+  "limitations": [
+    "27 direct PDF links,1 Drive PDF viewer,2 manual e-book viewers",
+    "No human acceptance/rights clearance; no claim course equivalence",
+    "Work identity is candidate metadata; final body/hash dedup still required"
+  ]
+}

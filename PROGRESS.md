@@ -21,3 +21,13 @@
 
 เพิ่ม entry เมื่อมีผลหรือ decision ใหม่พร้อม evidence; ไม่เติมผลทดลองย้อนหลัง
 ผลเชิงตัวเลขเก็บใน run/results ที่ทำซ้ำได้ แล้วอ้างอิงจากที่นี่
+
+## 2026-10-05 — เพิ่มข้อมูลโรคละ10
+
+ผู้ใช้ยืนยันPDF/คู่มือ จึงตัดHTMLarticlesออกจากการนับเอกสาร
+3scoutsส่งผลให้curatorรวม30newcandidateIDs:20patienteducation,8servicemanuals,2reports
+manifestรวม43, accepted0;19newPDFbodiesดึงได้แต่ยังไม่ผ่านQA/rights/humanreview
+พบว่าผู้จัดทำเดียวกันหรือหัวข้อคล้ายกันไม่ได้พิสูจน์ว่าเป็นคนละwork
+จึงตัดTratfatleafletที่ยังเทียบกับSirirajไม่ชัด และแทนDOHform-gatedPDFด้วยSirirajcholesterolleafletที่ตรวจจริง
+shortURLเมนู77จังหวัดใช้ไม่ได้ แต่พบmanualreaderของหน่วยงานรัฐบาลที่เปิดได้; คงป้ายe-bookแทนการอ้างdirectPDF
+หลักฐาน: [catalogue](docs/source_catalog_20261005.md), [researchrun](research/20261005-ncd-plus10.md)

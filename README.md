@@ -4,7 +4,7 @@
 เริ่มจากเบาหวานชนิดที่ 2 ความดันโลหิตสูง และไขมันในเลือดผิดปกติ
 โดยใช้หลาย agents ช่วยรวบรวมและตรวจแหล่งข้อมูล ก่อนสร้างและประเมินระบบ RAG
 
-**สถานะ: planning / research scaffold** — มีแผน, agent prompts, seed manifest และตัวตรวจ metadata แล้ว
+**สถานะ: planning / research scaffold** — มีแผน, agent prompts, candidate manifest 43 รายการ และตัวตรวจ metadata แล้ว
 ยังไม่มีระบบ Q&A, autonomous agent runner, corpus ที่รับครบ หรือผลทดลอง
 
 ## เริ่มอ่าน
@@ -13,6 +13,8 @@
 - [Protocol กลาง](NCD%20-%200Protocol/PROTOCOL.md)
 - [Orchestra: แบ่งงานและประสาน agents](NCD%20-%201Orchestra/README.md)
 - [สถานะ 6 สายงาน](NCD%20-%201Orchestra/status/OVERVIEW.md)
+- [เอกสารเพิ่มโรคละ 10: PDF/คู่มือ](docs/source_catalog_20261005.md)
+- [CSV รายการใหม่ 30 เอกสาร](data/manifests/collection_20261005.csv)
 - [แผนงานและข้อกำหนดรายวิชา](plan.md)
 - [บอร์ดสถานะงาน](board.md)
 - [วิธีใช้ agents ช่วยค้นข้อมูล](docs/agent_workflow.md)
@@ -21,6 +23,8 @@
 - [ค่าเริ่มต้นของรอบค้น](configs/collection_agents.json)
 - [รายการแหล่งข้อมูลตั้งต้น](data/manifests/documents.jsonl)
 - [ผลค้นและข้อจำกัดของรอบแรก](docs/research_notes.md)
+- [Actual queries และการคัดเลือกรอบเพิ่มเอกสาร](research/20261005-ncd-plus10.md)
+- [ตำแหน่งเก็บ PDF/ข้อความ/metadata](data/README.md)
 
 ## โครงสร้างการทำงาน
 
