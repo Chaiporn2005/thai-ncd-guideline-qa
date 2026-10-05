@@ -2,6 +2,7 @@
   "scope": "Thai adult NCD guideline evidence for screening and follow-up",
   "core_diseases": ["type_2_diabetes", "hypertension", "dyslipidemia"],
   "optional_diseases": ["chronic_kidney_disease"],
+  "supporting_service_scope": ["ncd_clinic_plus", "thai_ncd_service_quality"],
   "language": "th",
   "max_parallel_workers": 3,
   "max_queries_per_scout": 8,

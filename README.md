@@ -4,7 +4,7 @@
 เริ่มจากเบาหวานชนิดที่ 2 ความดันโลหิตสูง และไขมันในเลือดผิดปกติ
 โดยใช้หลาย agents ช่วยรวบรวมและตรวจแหล่งข้อมูล ก่อนสร้างและประเมินระบบ RAG
 
-**สถานะ: planning / research scaffold** — มีแผน, agent prompts, candidate manifest 43 รายการ และตัวตรวจ metadata แล้ว
+**สถานะ: planning / research scaffold** — manifest 58 รายการ; เลือก 55 PDF/คู่มือเป็น candidates และมีตัวตรวจ metadata แล้ว
 ยังไม่มีระบบ Q&A, autonomous agent runner, corpus ที่รับครบ หรือผลทดลอง
 
 ## เริ่มอ่าน
@@ -12,7 +12,10 @@
 - [ส่งต่องานล่าสุด](HANDOFF.md)
 - [Protocol กลาง](NCD%20-%200Protocol/PROTOCOL.md)
 - [Orchestra: แบ่งงานและประสาน agents](NCD%20-%201Orchestra/README.md)
-- [สถานะ 6 สายงาน](NCD%20-%201Orchestra/status/OVERVIEW.md)
+- [สถานะ 8 สายงาน](NCD%20-%201Orchestra/status/OVERVIEW.md)
+- [รายการล่าสุด 55 PDF/คู่มือ: DM/HT/ไขมัน/CKD/NCD Clinic Plus](docs/source_catalog_50.md)
+- [CSV รายการที่เลือก 55 งาน](data/manifests/corpus_50_candidates.csv)
+- [ผลค้นรอบครบอย่างน้อย 50](research/20261005-ncd-50.md)
 - [เอกสารเพิ่มโรคละ 10: PDF/คู่มือ](docs/source_catalog_20261005.md)
 - [CSV รายการใหม่ 30 เอกสาร](data/manifests/collection_20261005.csv)
 - [แผนงานและข้อกำหนดรายวิชา](plan.md)
@@ -40,7 +43,7 @@ configs/            limits และ registry สายงาน
 agents/             role prompts
 ```
 
-Coordinator ประสาน DM, HT, LIPID, CORPUS, RAG และ EVAL ตาม dependency
+Coordinator ประสาน DM, HT, LIPID, optional CKD, NCD_SERVICE, CORPUS, RAG และ EVAL ตาม dependency
 Curator เป็นผู้รวม manifest เพียงรายเดียว; `board.md` เป็น checklist ผู้ใช้
 ส่วน `NCD - 1Orchestra/BOARD.md` เป็นข้อความ agents แบบ append-only
 ค่า budget เป็นข้อเสนอ ยังไม่มี paid API runner หรือ watcher ที่เริ่มโดยโครงนี้

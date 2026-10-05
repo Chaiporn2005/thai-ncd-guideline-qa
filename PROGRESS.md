@@ -31,3 +31,13 @@ manifestรวม43, accepted0;19newPDFbodiesดึงได้แต่ยั�
 จึงตัดTratfatleafletที่ยังเทียบกับSirirajไม่ชัด และแทนDOHform-gatedPDFด้วยSirirajcholesterolleafletที่ตรวจจริง
 shortURLเมนู77จังหวัดใช้ไม่ได้ แต่พบmanualreaderของหน่วยงานรัฐบาลที่เปิดได้; คงป้ายe-bookแทนการอ้างdirectPDF
 หลักฐาน: [catalogue](docs/source_catalog_20261005.md), [researchrun](research/20261005-ncd-plus10.md)
+
+## 2026-10-05 — ครบอย่างน้อย50 PDF/คู่มือ
+
+ผู้ใช้ขอโรคหลัก + optional CKD + NCD Clinic Plus; 3scoutsค้นเพิ่ม15งาน
+manifest58 source_verified records; เลือก55 provisional worksหลังกันJPG/possibleexcerpt/historicalCOVID-specificออก3
+DM17/HT10/LIPID13/CKD9/NCD_SERVICE6; เอกสารข้ามโรคนับงานเดียว
+accepted0,ไม่มีrawPDFsบันทึก; ยังต้อง rights/content/hash/OCR/clinical/humanreview
+รอบนี้18queries/26PDFattemptsรวมfailures/repeats;ไม่มีnewpaidAPI
+Registryเพิ่มCKD/NCD_SERVICEรวม8workstreams; CKDยังoptional
+หลักฐาน: [catalogue ล่าสุด](docs/source_catalog_50.md), [research run](research/20261005-ncd-50.md)

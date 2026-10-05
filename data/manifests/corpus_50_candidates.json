@@ -1,0 +1,114 @@
+{
+  "run_id": "20261005-ncd-50",
+  "accessed_at": "2026-10-05",
+  "manifest_records": 58,
+  "selected_candidate_works": 55,
+  "accepted_records": 0,
+  "count_unit": "provisional distinct authored work; one primary bucket per work",
+  "groups": {
+    "DM": [
+      "dm-cpg-2566-revised-2567",
+      "dm-remission-principles-2568-september",
+      "dm-remission-service-2567",
+      "dm-clinic-standards-2567",
+      "dm-educator-standards-2567",
+      "dm-siriraj-know-diabetes-undated",
+      "dm-siriraj-hypoglycemia-leaflet-undated",
+      "dm-siriraj-patient-foot-manual-undated",
+      "dm-siriraj-microvascular-leaflet-undated",
+      "dm-siriraj-macrovascular-leaflet-undated",
+      "dm-siriraj-retinopathy-leaflet-undated",
+      "dm-siriraj-needle-disposal-leaflet-undated",
+      "dm-siriraj-self-monitoring-leaflet-undated",
+      "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+      "dm-remission-implementation-lessons-undated",
+      "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+      "dm-chulabhorn-diabetes-diet-brochure-verified-20261005"
+    ],
+    "HT": [
+      "ht-guideline-2567",
+      "ht-siriraj-uncontrolled-opd-2564",
+      "ht-ddc-hospital-management-update-2566",
+      "ht-ddc-provincial-sodium-guide-undated",
+      "ht-ddc-community-low-salt-lessons-undated",
+      "ht-ddc-low-salt-hospital-guide-undated",
+      "ht-ddc-sodium-education-undated",
+      "ht-ddc-low-sodium-77-province-menu-undated",
+      "ht-siriraj-hypertension-public-1587-verified-20261005",
+      "ht-chulabhorn-sodium-nutrition-verified-20261005"
+    ],
+    "LIPID": [
+      "lipid-guideline-2567",
+      "lipid-rama-education-2562",
+      "lipid-siriraj-warning-1158",
+      "lipid-siriraj-thai-food-86",
+      "lipid-siriraj-trans-fat-1380",
+      "lipid-siriraj-diabetes-fat-7",
+      "lipid-siriraj-food-cholesterol-2564-review",
+      "lipid-siriraj-stroke-nutrition-1298",
+      "lipid-siriraj-metabolic-763",
+      "lipid-inmu-food-knowledge-all-ages",
+      "lipid-dms-stroke-public-manual",
+      "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+      "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005"
+    ],
+    "CKD": [
+      "ckd-guideline-2565-revised",
+      "ckd-palliative-2566",
+      "ckd-treatment-leaflet-undated",
+      "ckd-anemia-guideline-2564",
+      "ckd-adult-renal-nutrition-guideline-2561",
+      "ckd-hemodialysis-plasma-manual-2561",
+      "ckd-public-kidney-prevention-tips",
+      "ckd-adult-glomerular-guideline-2561",
+      "ckd-out-of-unit-hemodialysis-standards"
+    ],
+    "NCD_SERVICE": [
+      "ncd-clinic-plus-2568-update",
+      "ncd-ddc-primary-care-guide-2568",
+      "ncd-ddc-health-station-manual-undated",
+      "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+      "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+      "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566"
+    ]
+  },
+  "new_document_ids": [
+    "ckd-anemia-guideline-2564",
+    "ckd-adult-renal-nutrition-guideline-2561",
+    "ckd-hemodialysis-plasma-manual-2561",
+    "ckd-public-kidney-prevention-tips",
+    "ckd-adult-glomerular-guideline-2561",
+    "ckd-out-of-unit-hemodialysis-standards",
+    "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+    "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+    "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
+    "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+    "ht-siriraj-hypertension-public-1587-verified-20261005",
+    "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+    "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+    "ht-chulabhorn-sodium-nutrition-verified-20261005",
+    "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005"
+  ],
+  "excluded_from_target": [
+    {
+      "document_id": "ckd-one-page-undated",
+      "reason": "JPG และอาจเป็น summary ของ guideline; ไม่ใช่ PDF/คู่มือในยอดเป้าหมาย"
+    },
+    {
+      "document_id": "ckd-primary-care-screening-undated",
+      "reason": "ยังไม่ยืนยันว่าเป็นงานอิสระหรือส่วนที่ตัดจาก CKD guideline"
+    },
+    {
+      "document_id": "ht-ddc-covid-vaccine-screening-2564",
+      "reason": "แนวทางเฉพาะการฉีดวัคซีน COVID-19 ในปี 2564; กันออกจากชุด Q&A NCD ทั่วไป"
+    }
+  ],
+  "notes": [
+    "PDF/manual sources only; standalone PDF patient education is included, not every item is a clinical guideline.",
+    "Source identity verification is not full-body or clinical review. Final content/hash dedup, rights, adult scope, currency and human review remain pending.",
+    "CKD is optional; advanced/renal service works do not become core disease requirements.",
+    "Whole multi-topic books counted once, not chapters. Mirrors and printings not multiplied.",
+    "Manual e-book viewers remain candidates with download verification pending.",
+    "No raw PDF files persisted; course minimum not certified by this candidate count."
+  ]
+}

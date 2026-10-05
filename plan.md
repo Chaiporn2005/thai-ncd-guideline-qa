@@ -10,7 +10,7 @@
 
 ใช้ [Protocol](NCD%20-%200Protocol/PROTOCOL.md) เป็นวงจรงาน และ
 [Orchestra](NCD%20-%201Orchestra/README.md) เป็นพื้นที่ coordinator ดูแล shared plan,
-ownership, resource claims, proposals/decisions และสถานะ 6 สาย DM/HT/LIPID/CORPUS/RAG/EVAL
+ownership, resource claims, proposals/decisions และสถานะ 8 สาย DM/HT/LIPID/CKD/NCD_SERVICE/CORPUS/RAG/EVAL
 อ่าน [HANDOFF](HANDOFF.md) ก่อนเริ่ม session; บันทึกงานจริงใน [runs/LOG](runs/LOG.md)
 root `board.md` เป็น task checklist ส่วน Orchestra BOARD เป็น append-only message log
 ข้อกำหนดเทคนิค/รายวิชาฉบับหลักยังอยู่ในแผนนี้
@@ -22,6 +22,9 @@ Protocol เป็น file-based workflow ไม่ใช่ autonomous runner; 
 สำหรับนักศึกษาและบุคลากรที่ต้องการค้นหลักฐานและเงื่อนไขอย่างตรวจย้อนกลับได้
 เริ่มเบาหวานชนิดที่ 2 ความดันโลหิตสูง และไขมันในเลือดผิดปกติ
 โรคไตเรื้อรังเป็น scope เสริมเมื่อคำถามเรื่องโรคร่วมหรือภาวะแทรกซ้อนจำเป็น
+ผู้ใช้ขอค้น CKD optional และ NCD Clinic Plus เพิ่มเพื่อให้มีอย่างน้อย 50 PDF/คู่มือ
+ตาม [decision 0003](NCD%20-%201Orchestra/decisions/0003-collection-at-least-50.md)
+การอนุญาตค้นยังไม่ใช่การรับทุกเอกสารเข้า clinical Q&A; ต้องกำหนด adult sections/rights/ฉบับก่อน
 
 ข้อกำหนดผู้ใช้เพิ่มเติม: ข้อมูลต้องเกี่ยวกับคนไทย
 ใช้เอกสารหน่วยงานไทยและแนวทางสำหรับบริบทคนไทยเป็นขอบเขตตั้งต้น
@@ -32,7 +35,8 @@ Guideline ไทยอาจอ้างงานวิจัยต่างป�
 ไม่จำกัดว่าหลักฐานทุกงานที่ guideline อ้างต้องเป็น Thai-only empirical evidence
 ผู้ใช้ขอเอกสารเพิ่มโรคละ 10 และยืนยัน **เฉพาะ PDF/คู่มือ** ไม่รวม HTML articles เป็น corpus ในรอบนี้
 คัดเลือกเพิ่ม DM10/HT10/LIPID10 เป็นเอกสารสนับสนุน; ดู [catalogue](docs/source_catalog_20261005.md)
-manifest รวม43 candidates แต่ accepted 0; clinical CPG หลัก3ยังแยกจากเอกสารให้ความรู้/บริการ
+รอบแรกหลังเพิ่ม30รวม43 candidates; รอบล่าสุดรวม58 และเลือก55 PDF/คู่มือตาม [catalogue ล่าสุด](docs/source_catalog_50.md)
+accepted ยังเป็น0; clinical CPG หลัก3แยกจากเอกสารให้ความรู้/บริการ และ CKD เป็น optional
 
 ผลลัพธ์เป้าหมาย: คำตอบ, เงื่อนไขประชากร, ข้อยกเว้น, ฉบับเอกสาร และ citation รายข้อ
 รวมลิงก์หน้า/ตาราง/ข้อความต้นทาง; ถ้าข้อมูลไม่พอให้ถามเพิ่มหรือ abstain
@@ -233,7 +237,7 @@ LLM judge ไม่ใช่ clinical ground truth; ตรวจตัวอย�
 - [x] ผู้ใช้ยืนยันขอบเขต “แนวทางไทยสำหรับคนไทย”
 - [ ] ขอบเขตสุดท้าย และการยืนยัน “equivalent” ถ้าข้อมูลน้อยกว่า 50 source docs
 - [ ] เครื่องมือค้น/provider/model, งบต่อรอบ และเครื่องรัน
-- [ ] รวม CKD หรือทำเฉพาะ DM/HT/lipids
+- [x] ค้น CKD optional และ NCD Clinic Plus ตามคำขอผู้ใช้; การรับเข้า Q&A ยังรอ review
 - [ ] Download/redistribution policy ต่อเอกสาร
 - [ ] Chunk size/overlap, top-k และ generator หลังทดลอง pilot
 - [ ] วันที่ M0–M6 ให้เสร็จก่อน presentation Week 15

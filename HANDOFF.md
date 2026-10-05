@@ -12,13 +12,18 @@ Updated: 2026-10-05 • Owner: coordinator • Stage: planning/research scaffold
 
 ## ทำแล้วและหลักฐาน
 
-มีแผน/role prompts/policy/schema, manifest 43 source_verified candidates (accepted 0),
+มีแผน/role prompts/policy/schema, manifest 58 source_verified records (accepted 0),
 metadata validator และโครง orchestration แบบ file-based
 ผลค้นขึ้น GitHub แล้วใน commit 19652cf; สถานะเครื่องมือและ environment อยู่ใน [RAG tools](docs/rag_tools.md)
 ดู [board](board.md), [research notes](docs/research_notes.md) และ [run log](runs/LOG.md)
-รอบล่าสุดเพิ่ม30รายการ DM10/HT10/LIPID10 ตามข้อกำหนด PDF/คู่มือ:
+รอบก่อนเพิ่ม30รายการ DM10/HT10/LIPID10 ตามข้อกำหนด PDF/คู่มือ:
 27 direct PDF URLs,1 Drive PDF viewer,2 manual e-books; ดู [catalogue](docs/source_catalog_20261005.md)
 ดึงเนื้อหาPDFได้19รายการใหม่ แต่ไม่มีrawPDFsเก็บในrepoหรือhumanapproval
+รอบล่าสุด `20261005-ncd-50` เพิ่ม15งาน: CKD6, NCD_SERVICE3 และ CORE6
+เลือก55 PDF/คู่มือหลังกันJPG/possible excerpt/historicalCOVID-specific guidanceออก3รายการ
+หมวดนับหนึ่งงานต่อหมวด: DM17/HT10/LIPID13/CKD9/NCD_SERVICE6
+ดู [catalogue ล่าสุด](docs/source_catalog_50.md), [CSV](data/manifests/corpus_50_candidates.csv)
+และ [actual queries/attempts](research/20261005-ncd-50.md)
 ไฟล์ต้นแบบ Kaggle ใช้เป็น reference สำหรับการจัดระบบ ไม่ใช่คำสั่งให้ใช้บัญชี/งบ/ข้อมูลของต้นแบบ
 
 ## งานกำลังรัน
@@ -28,8 +33,8 @@ metadata validator และโครง orchestration แบบ file-based
 
 ## งานถัดไป
 
-1. Coordinator อ่าน [catalogue](docs/source_catalog_20261005.md) และเลือกลำดับ rights/access review
-   ของ43 candidates โดยไม่ถือว่าครบเกณฑ์วิชาหรืออ่านครบทุกไฟล์
+1. Coordinator อ่าน [catalogue ล่าสุด](docs/source_catalog_50.md) และเลือกลำดับ rights/access review
+   ของ55 selected candidates (manifest58) โดยไม่ถือว่าครบเกณฑ์วิชาหรืออ่านครบทุกไฟล์
 2. Curator ตรวจ final content/hash dedup, permissions และส่ง extraction/QA/human review queue
 3. เมื่อ corpus ผ่าน gates เริ่ม CPU dense baseline และ variant ที่สอง
 
@@ -37,7 +42,7 @@ metadata validator และโครง orchestration แบบ file-based
 
 ## ข้อจำกัดที่ต้องส่งต่อ
 
-50 documents หรือ equivalent ยังต้องยืนยันหากเลือก guideline ไม่ถึงจำนวน
+55 candidate works ไม่ใช่ accepted corpus; หาก finalreview เหลือไม่ถึง50 documents ต้องยืนยัน equivalent
 Drive viewer, blocked issuer, PDF encoding/layout และ alternate editions ยังต้องตรวจต่อ
 Raw documents ถูก ignore; การเข้าถึงสาธารณะไม่รับรองสิทธิเผยแพร่
 ยังไม่มี reviewer assignment, วัน deadline จริง หรือ API budget ที่อนุมัติ

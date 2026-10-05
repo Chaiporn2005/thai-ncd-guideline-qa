@@ -4,6 +4,9 @@
 
 Core: Thai adult type 2 diabetes, hypertension and dyslipidemia guidelines.
 Optional: adult CKD material relevant to comorbidity/follow-up.
+The user explicitly authorized collection including optional CKD and NCD Clinic Plus on
+2026-10-05 (decision 0003). CKD collection candidates can be marked supporting in this
+optional collection scope; this does not constitute human inclusion/clinical approval.
 Clinical, service and public education sources remain separately typed.
 For the user's 2026-10-05 collection request, select PDF/manual documents only;
 issuer HTML pages are provenance evidence, not the collected corpus documents.

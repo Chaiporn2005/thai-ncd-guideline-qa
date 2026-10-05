@@ -1,7 +1,7 @@
 # Orchestra — ประสานงานหลาย agents
 
 ใช้รูปแบบ coordinator + สายงานจากต้นแบบ Kaggle โดยมีโครงการ NCD เดียว
-DM, HT และ LIPID เป็นสายค้นข้อมูล; CORPUS รวมและตรวจ; RAG และ EVAL เป็นสายพัฒนา
+DM, HT, LIPID, optional CKD และ NCD_SERVICE เป็นสายค้นข้อมูล; CORPUS รวมและตรวจ; RAG และ EVAL เป็นสายพัฒนา
 หลาย logical roles ใช้ worker session เดียวต่อกันได้
 
 อ่านตามลำดับ:

@@ -43,3 +43,18 @@
 - Checks:metadata43valid,cohort/CSV30IDs10pergroupconsistent,old13recordspreserved,workflowlinksvalid
 - Resources:allclaimsreleased;tokens/costunknown;budgetaccountingdefinitionchangedmidrun,notuniformruntimeenforcement
 - Next:rights/accessreview,legitimatePDFdownload/hash,extraction/OCR/visualQA,humaninclusionreview
+
+## 2026-10-05 — 20261005-ncd-50
+
+- Owner: coordinator with CKD/NCD_SERVICE/CORE scouts, then root curator
+- Purpose: user requested at least50 PDF/manual sources, core diseases plus optional CKD and NCD Clinic Plus
+- Inputs: 43 original records; official Thai issuers; decision0003; schema and isolated scout outputs
+- Output: 15 new records (CKD6/NCD_SERVICE3/CORE6); manifest58, selected55, accepted0
+- Exclusions: JPG, unresolved CKD excerpt and historical COVID vaccination-specific guide; originals preserved
+- Tools: web search/open/click, ordinary public HTTP fallback for timeout, pypdf/hash in memory, Git
+- Usage: 18 actual queries,26 PDF attempts (17 successes/9 failures);4 reserve attempts unused
+- Interruption: account usage limit; user explicitly resumed; existing allocations continued
+- New retained bodies retrieved:13;2 new official PDF links await body retrieval; no local raw PDF persistence
+- Evidence: [research run](../research/20261005-ncd-50.md), [selected catalogue](../docs/source_catalog_50.md)
+- Resources: collection claims released after handoff; tokens/cost unmetered; no new paid API or autonomous runner
+- Next: permissions/currency/content/hash dedup, adult-section extraction/OCR, clinical and human inclusion review

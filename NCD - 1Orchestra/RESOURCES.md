@@ -88,3 +88,32 @@ Active claims คือ claim events ที่ยังไม่มี release �
 Budgetaccountingnote: DMreported8successfulbodies plusotherfailedtoolcalls, not8totalrequests; successfulfull-bodycapandlaterconservativeattemptcapwerenotuniformlymetered. Do notclaimruntimebudgetenforcement. Modeltokens/APIcostunknown, no newpaidAPIinvoked.
 
 Allcollectionclaimsreleased; no activeworkers. Evidence: [researchrun](../research/20261005-ncd-plus10.md).
+
+## 20261005-ncd-50 claims
+
+| Timestamp | Kind | Claim / owner | Limits | State |
+| --- | --- | --- | --- | --- |
+| 2026-10-05T21:36:59+07:00 | claim | ncd50-CKD / CKDscout |8queries,8PDFattempts,10candidates | active |
+| 2026-10-05T21:36:59+07:00 | claim | ncd50-NCD / NCDservice scout |8queries,8PDFattempts,10candidates | active |
+| 2026-10-05T21:36:59+07:00 | claim | ncd50-CORE / core scout |8queries,8PDFattempts,10candidates | active |
+| 2026-10-05T21:36:59+07:00 | reserve | ncd50-VERIFY / coordinator |6PDFattempts,8queries if needed | reserved |
+
+### Allocation amendment — 2026-10-05T21:46:05+07:00
+
+Move 2 PDF attempts from coordinator reserve to CKD after its 8-attempt report (including failures/refetches).
+CKD cap now 10 attempts; coordinator reserve now 4; total run cap remains 30.
+Search limits unchanged. Sent to CKD scout before further retrievals. No paid API invoked.
+
+### Release and actual usage — 2026-10-05T22:55:33+07:00
+
+| Kind | Claim | Actual usage | State |
+| --- | --- | --- | --- |
+| usage + release | ncd50-CKD |8 queries;10 PDF attempts,7 success/3 failed;6 distinct retained PDFs | released |
+| usage + release | ncd50-NCD |5 queries;8 PDF attempts,3 success/5 failed;3 retained works,1 body retrieved | released |
+| usage + release | ncd50-CORE |5 queries;8 PDF attempts,7 success/1 failed;6 distinct retained PDFs | released |
+| reserve release | ncd50-VERIFY |0 queries/0 PDF attempts;4 amended reserve attempts unused | released |
+
+Total18 queries/26 attempts (including repeated/failed requests), within amended run cap30.
+Claims were interrupted by account usage limits and continued after explicit user resume.
+No active workers/claims; model tokens/platform cost unknown; no new paid API invoked.
+Evidence: [actual research logs](../research/20261005-ncd-50.md).

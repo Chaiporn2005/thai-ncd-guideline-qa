@@ -71,3 +71,20 @@ remote source content, clinical accuracy, actual resource telemetry หรือ
 Actualqueries,PDFaccessfailures,form-gatereplacementandbudget-accountingcaveats:
 [researchreport](../research/20261005-ncd-plus10.md)
 This does not verifyallPDFbodies,rights,clinicalaccuracy,instructorcorpus-equivalence or RAGperformance.
+
+# At-least-50 collection — 2026-10-05
+
+- Manifest:58 source_verified records/58 provisional work IDs;accepted0.
+- Selected cohort/CSV:55 unique IDs;DM17/HT10/LIPID13/CKD9/NCD_SERVICE6.
+- Three excluded records plus selected55 account for all58; no multiplied cross-disease counts.
+- Added15 newworks:CKD6/NCD_SERVICE3/CORE6, no duplicate IDs/titles/recorded URLs.
+- Original43 records preserved semantically except5 explicit CKD optional-supporting scope/note amendments per decision0003.
+- CSV values and cohort IDs match canonicalmanifest; CSV sorted in catalogue group order.
+- `scripts/validate_manifest.py`:passed58 records; `scripts/orchestra.py check`:passed8-stream registry/files/local links.
+- `git diff --check`:passed; no rawPDFs in local data/raw/ or staged publication.
+- Access state selected55:38 full-document,11 link-only,6 viewer-only; no complete clinical/OCR/rights review.
+- PDF attempts26 within amended cap30; tokens/cost unmetered; no new paid API invoked.
+
+Evidence:[research](../research/20261005-ncd-50.md),[catalogue](source_catalog_50.md).
+Metadata checks do not certify final byte/content dedup, adult applicability, clinical currency,
+human acceptance, source redistribution rights or the course's accepted corpus minimum.

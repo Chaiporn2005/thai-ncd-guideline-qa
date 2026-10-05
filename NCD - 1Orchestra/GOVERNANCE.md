@@ -9,7 +9,7 @@ Coordinator จัด dependency, dispatch, สรุปผลและดูแ
 | --- | --- |
 | root plan.md, board.md, HANDOFF.md, PROGRESS.md | Coordinator |
 | Orchestra PLAN, GOVERNANCE, RESOURCES, status/OVERVIEW, registry | Coordinator |
-| status/DM, HT, LIPID | Scout ที่ได้รับมอบหมายในรอบนั้น |
+| status/DM, HT, LIPID, CKD, NCD_SERVICE | Scout ที่ได้รับมอบหมายในรอบนั้น |
 | status/CORPUS และ canonical manifest | Curator |
 | status/RAG, status/EVAL | ผู้รับผิดชอบสายพัฒนา/ประเมิน |
 | data/agent_runs/<run>/<agent>.jsonl | Agent เจ้าของ output เท่านั้น |

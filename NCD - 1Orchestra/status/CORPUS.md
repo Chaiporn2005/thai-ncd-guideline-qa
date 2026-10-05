@@ -1,16 +1,17 @@
 # CORPUS status
 
 - Owner role: curator
-- Active session / last run: none / 20261005-ncd-plus10 (curation completed)
+- Active session / last run: none / 20261005-ncd-50 (curation completed)
 - Updated: 2026-10-05
 - State: metadata_collection_complete
 
 ## Evidence
 
-[Manifest](../../data/manifests/documents.jsonl): 43 records ทั้งหมด source_verified;
-core 3, supporting 35, requires_scope_expansion5; accepted 0
-เพิ่ม30 candidate IDs DM10/HT10/LIPID10 ตาม [catalogue](../../docs/source_catalog_20261005.md)
-27 direct PDF URLs,1 Drive PDF viewer,2 manual viewers; 19newPDFbodiesretrievedไม่ใช่QAapproval
+[Manifest](../../data/manifests/documents.jsonl): 58 records ทั้งหมด source_verified;
+core3/supporting55/accepted0; CKD optional collectionผู้ใช้อนุญาตแล้ว ไม่ใช่ clinical inclusion
+เลือก55 PDF/คู่มือ ตาม [catalogue ล่าสุด](../../docs/source_catalog_50.md)
+38 full-document accesses,11 link-only,6 viewer-only; ไม่ใช่QAapprovalหรือlocalrawcorpus
+รอบล่าสุดเพิ่ม15งาน; กันJPG/possibleexcerpt/historicalCOVID-specific guidanceออก3จากยอด
 [Validator checks](../../docs/verification.md) ตรวจ metadata ไม่ใช่ clinical content
 
 ## Next / dependencies

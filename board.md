@@ -34,11 +34,16 @@
 - [x] อัปโหลดผลค้นและ metadata รอบเพิ่มเอกสารขึ้น GitHub `main` แล้ว: commit `19652cf`
 - [x] ตรวจเครื่องมือจริง: Python 3.12.14 และ pypdf มีแล้ว; SentenceTransformers/PyTorch ยังไม่มีใน runtime ที่ตรวจ
 - [x] บันทึกตำแหน่งเก็บข้อมูลและแผนเครื่องมือใน [data layout](data/README.md) และ [RAG tools](docs/rag_tools.md)
+- [x] ผู้ใช้ขออย่างน้อย50 PDF/คู่มือ รวม CKD optional และ NCD Clinic Plus
+- [x] ใช้3scoutsค้นเพิ่ม15งาน: CKD6, NCD_SERVICE3, CORE6; รวมmanifest58 source_verified records
+- [x] เลือก55 candidate worksหลังกันJPG/possible excerpt/historicalCOVID-specific guidanceออก3รายการ
+- [x] เพิ่ม catalogue ล่าสุด, CSV/cohort และ actual research logs; แบ่งregistryเป็น8workstreams
 
 ## งานรอบนี้
 
-รอบค้นล่าสุดเพิ่มเอกสาร30รายการตาม [catalogue](docs/source_catalog_20261005.md)
-เป็น27 direct PDF URLs,1 Drive PDF viewer,2 manual e-book viewers; bodyPDFดึงได้19รายการใหม่ ยังไม่ผ่านQA/acceptance
+รอบค้นล่าสุดมี **55 selected PDF/คู่มือ** ตาม [catalogue ล่าสุด](docs/source_catalog_50.md)
+หมวดนับ: DM17/HT10/LIPID13/CKD9/NCD_SERVICE6; เอกสารข้ามโรคนับงานเดียว
+38 full-document accesses,11 link-only,6 viewer-only; accepted0 และยังไม่ผ่าน clinical QA
 ใช้ [HANDOFF](HANDOFF.md) รับงานต่อ และ [Orchestra overview](NCD%20-%201Orchestra/status/OVERVIEW.md) ติดตามแต่ละสาย
 Implementation ยังอยู่ใน backlog; scoutsจบรอบแล้ว ไม่มีworkeractive
 
@@ -72,8 +77,9 @@ raw PDFs ยังไม่ได้บันทึกใน `data/raw/` แล�
 
 ## หลักฐานและการติดตาม
 
-Seedเดิม13 +รายการใหม่30 =43 candidates: core 3, supporting 35 และ CKDที่ต้องขยายscope 5
-รอบใหม่จัดกลุ่มโรคละ10; เอกสารข้ามโรคนับworkเดียวในmanifest ไม่คูณยอดซ้ำ
+Seed13 +รอบเพิ่ม30 +รอบล่าสุด15 =58 records: core3/supporting55; accepted0
+ชุดเป้าหมาย55กัน3รายการออก แต่ยังเก็บmetadataเดิมเพื่อรักษาประวัติ
+CKDเป็นoptional collectionตามคำขอผู้ใช้; ไม่ใช่การรับทุกงานเข้า clinicalQ&A
 เป็น candidate identities; ยังต้อง final content/hash dedup และrights/humanreview
 Source verification ไม่เท่ากับการตรวจเนื้อหาครบหรือ human approval; ยังไม่ผ่านเกณฑ์ corpus วิชา
 
@@ -87,6 +93,8 @@ Source verification ไม่เท่ากับการตรวจเนื
 - Agent messages: [Orchestra BOARD](NCD%20-%201Orchestra/BOARD.md)
 - Run log: [runs/LOG.md](runs/LOG.md)
 - เอกสารใหม่โรคละ10: [source catalogue](docs/source_catalog_20261005.md)
+- รายการล่าสุด55งาน: [catalogue](docs/source_catalog_50.md), [CSV](data/manifests/corpus_50_candidates.csv)
+- หลักฐานการนับ/คัดออก: [cohort JSON](data/manifests/corpus_50_candidates.json), [research log](research/20261005-ncd-50.md)
 
 อัปเดตบอร์ดทุกครั้งที่มีงานเสร็จหรือ requirement เปลี่ยน
 แยก “ค้นพบ”, “ตรวจแหล่ง”, “ดึงข้อมูล”, “คนตรวจแล้ว” และ “accepted” ให้ชัดเสมอ

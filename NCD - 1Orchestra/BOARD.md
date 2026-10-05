@@ -92,3 +92,40 @@
 - Tool check: Python 3.12.14/pypdf มีแล้ว; SentenceTransformers/PyTorch ยังไม่มีใน runtime ที่ตรวจ
 - Implementation: ยังไม่มี project environment หรือ Q&A demo; ไม่ได้ติดตั้ง packages ในรอบนี้
 - Evidence: [root board](../board.md), [RAG tools](../docs/rag_tools.md), [data layout](../data/README.md)
+
+## 2026-10-05T21:36:59+07:00 — at-least-50 collection assignment
+
+- From: coordinator
+- To: CKD / NCD_SERVICE / core disease scouts
+- Type: assignment
+- Run: 20261005-ncd-50
+- Target: >=50 eligible PDF/manual candidate works across DM/HT/LIPID/optional CKD/NCD Clinic Plus
+- Strategy: seek6CKD +3NCDservice +3core newworks, allowing exclusion of JPG/uncertain derivatives/historical specialcontext records from targetcount
+- Outputs: isolatedJSONL/researchlog perclaim, curator-only canonicalmanifest writer
+- Claims: ncd50-CKD, ncd50-NCD, ncd50-CORE; each<=8queries/8PDFattempts/10candidates, coordinatorreserve6PDFattempts,total30
+- No clinicalapproval/paidAPI/backgroundrunner
+- Evidence:[decision0003](decisions/0003-collection-at-least-50.md)
+
+## 2026-10-05T22:52:01+07:00 — curator assignment
+
+- From: coordinator
+- To: curator (root session)
+- Type: assignment
+- Run: 20261005-ncd-50
+- Root assumes canonical manifest writer after scouts handoff; merge isolated CKD/NCD_SERVICE/CORE outputs, no additional search or PDF retrieval.
+- Validate schema/IDs/URLs, target-count exclusions, CSV/cohort consistency and published evidence links; retain original records/history.
+- Only approved collection-scope change: old CKD candidates become optional supporting per decision0003, not human-approved/core.
+
+## 2026-10-05T22:55:33+07:00 — collection handoff
+
+- From: curator / coordinator
+- To: all / next session
+- Type: handoff
+- Run: 20261005-ncd-50
+- Result:15 new works;manifest58 source_verified;selected55 PDF/manual candidate works;accepted0
+- Primary buckets:DM17/HT10/LIPID13/CKD9/NCD_SERVICE6; cross-disease works counted once
+- Excluded from target:JPG, unresolved CKD primary-care excerpt, historical COVID vaccination context; oldrecords preserved
+- Contentaccess:selected38 full-document/11 link-only/6 viewer-only; no rawPDF persistence or humanapproval
+- Usage:18queries/26PDFattempts inclfailures/repeats;allscouts/reserve released;no paidAPI
+- Next:rights/currentness/contentdedup/OCR/clinical and human review beforeaccepted/RAG
+- Evidence:[catalogue](../docs/source_catalog_50.md),[research](../research/20261005-ncd-50.md),[root board](../board.md)
