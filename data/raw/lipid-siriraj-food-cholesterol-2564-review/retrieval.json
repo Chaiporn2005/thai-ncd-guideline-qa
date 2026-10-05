@@ -1,0 +1,13 @@
+{
+  "document_id": "lipid-siriraj-food-cholesterol-2564-review",
+  "requested_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/1_1JX2jI.pdf",
+  "retrieved_at": "2026-10-05T16:21:02.170017+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/1_1JX2jI.pdf",
+  "sha256": "e8cbcac0bdbbed2a3e721657de660ea1e55c45b3988fad787f3e3368a4af7204",
+  "pdf_pages": 2,
+  "bytes": 637582
+}

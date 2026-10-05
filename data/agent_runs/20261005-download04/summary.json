@@ -1,0 +1,10 @@
+{
+  "run_id": "20261005-download04",
+  "network_attempts": 1,
+  "outcomes": {
+    "downloaded": 1
+  },
+  "paid_api_calls": 0,
+  "clinical_approval": false,
+  "redistribution_approval": false
+}

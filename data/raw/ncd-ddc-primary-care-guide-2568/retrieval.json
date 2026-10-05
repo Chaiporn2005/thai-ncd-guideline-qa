@@ -1,0 +1,11 @@
+{
+  "document_id": "ncd-ddc-primary-care-guide-2568",
+  "requested_url": "https://www.ddc.moph.go.th/uploads/publish/1683020250221063806.pdf",
+  "retrieved_at": "2026-10-05T16:22:15.881462+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

@@ -16,10 +16,8 @@ venv/
 
 # Local document processing and model caches
 tmp/
-data/raw/
-data/processed/
-data/indexes/
-data/agent_runs/
+# Each data subfolder has its own reviewed metadata allowlist.
+# Source bodies, OCR and indexes remain excluded there.
 models/
 .cache/
 *.pdf

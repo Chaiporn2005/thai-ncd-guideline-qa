@@ -1,0 +1,13 @@
+{
+  "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+  "requested_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/81_1Nhzr9.pdf",
+  "retrieved_at": "2026-10-05T16:21:22.461361+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/81_1Nhzr9.pdf",
+  "sha256": "7346afad728db04dca4196b13f4e0b9264050befcb170b1203945c339a45b664",
+  "pdf_pages": 2,
+  "bytes": 1272915
+}

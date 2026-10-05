@@ -1,0 +1,11 @@
+{
+  "document_id": "ht-chulabhorn-sodium-nutrition-verified-20261005",
+  "requested_url": "https://chulabhornchannel.cra.ac.th/wp-content/uploads/2026/05/%E0%B9%82%E0%B8%8B%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A1.pdf",
+  "retrieved_at": "2026-10-05T16:20:01.728590+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

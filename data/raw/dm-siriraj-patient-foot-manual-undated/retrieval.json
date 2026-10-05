@@ -1,0 +1,13 @@
+{
+  "document_id": "dm-siriraj-patient-foot-manual-undated",
+  "requested_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/22_44_1.pdf",
+  "retrieved_at": "2026-10-05T16:18:53.992762+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/22_44_1.pdf",
+  "sha256": "fcc860a32bea289b83d3e886898044d32918a29fe857c2b2c4d6640f5c24df14",
+  "pdf_pages": 20,
+  "bytes": 1642154
+}

@@ -1,0 +1,11 @@
+{
+  "document_id": "ht-ddc-low-salt-hospital-guide-undated",
+  "requested_url": "https://www.ddc.moph.go.th/uploads/publish/980120200206080718.pdf",
+  "retrieved_at": "2026-10-05T16:19:49.457256+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

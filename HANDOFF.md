@@ -1,6 +1,6 @@
 # Handoff — Thai NCD Guideline Q&A
 
-Updated: 2026-10-05 • Owner: coordinator • Stage: local corpus preparation; no accepted corpus/RAG yet
+Updated: 2026-10-06 • Owner: coordinator • Stage: data metadata publication; source redistribution pending
 
 ## เป้าหมายและข้อกำหนดที่ยืนยัน
 
@@ -36,6 +36,13 @@ OCRไทย+อังกฤษ6หน้าจาก3เอกสารในda
 
 ## งานกำลังรัน
 
+รอบ `20261006-data-github`:ผู้ใช้ขออัปโฟลเดอร์dataและถามเรื่องใช้เพื่อการศึกษา
+เพิ่มโครงสร้างraw/processed/indexes/agent_runsพร้อมREADMEและallowlists
+publication scope:55retrieval records/33extraction summaries/39reviewed agent outputs
+รวมmanifest/schemaเดิม;ดู[data README](data/README.md)และ[inventory](data/manifests/github_data_inventory_20261006.json)
+PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยังlocal-only;ไม่มีหลักฐานอนุญาตเผยแพร่ซ้ำเพิ่มเติม
+สถานะrights/humanapproval/acceptedไม่เปลี่ยน;การศึกษาไม่ถูกบันทึกเป็นpublisher permission
+
 ไม่มี worker หรือ resource claim ที่ลงทะเบียน active; ไม่มี watcher/scheduler
 ไม่มี autonomous runner, accepted corpus, Q&A implementation หรือ saved evaluation metrics
 
@@ -54,7 +61,7 @@ OCRไทย+อังกฤษ6หน้าจาก3เอกสารในda
 
 55 candidate works ไม่ใช่ accepted corpus; หาก finalreview เหลือไม่ถึง50 documents ต้องยืนยัน equivalent
 Drive viewer, blocked issuer, PDF encoding/layout และ alternate editions ยังต้องตรวจต่อ
-Raw documents ถูก ignore; การเข้าถึงสาธารณะไม่รับรองสิทธิเผยแพร่
+Raw source PDFs ถูก ignore;retrieval.json และextraction.json summariesขึ้นGitได้;การเข้าถึงสาธารณะไม่รับรองสิทธิเผยแพร่
 Git cloneไม่มี39PDF/ข้อความ/OCRที่อยู่เฉพาะในเครื่องนี้;ต้องดาวน์โหลดตามสิทธิ/ช่องทางจริง
 Source `content_access` บางรายการเป็นหลักฐานwebเดิม ไม่ได้แปลว่ามีlocalfile;ใช้local preparation reportตรวจไฟล์จริง
 ยังไม่มี reviewer assignment, วัน deadline จริง หรือ API budget ที่อนุมัติ

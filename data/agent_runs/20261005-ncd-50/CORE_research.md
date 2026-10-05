@@ -1,0 +1,81 @@
+# CORE scout — 20261005-ncd-50
+
+วันที่เข้าถึง: 2026-10-05 • Claim: ncd50-CORE • Agent: ncd50_core
+อ่าน manifest ปัจจุบัน 43 รายการ, corpus policy, decision 0003, schema และ Orchestra ก่อนค้น
+ผล [CORE.jsonl](CORE.jsonl): 6 candidate works ใหม่ (3 หลัก +3 สำรอง)
+ทั้งหมด patient_education, scope_fit supporting, source_verified; accepted 0
+Scout ไม่แก้ canonical manifest หรือไฟล์ส่วนกลาง
+
+## เอกสารหลัก
+
+| โรค | เอกสาร | หลักฐาน |
+| --- | --- | --- |
+| DM | [อาหารสำหรับผู้ป่วยเบาหวาน](https://www.si.mahidol.ac.th/th/siacg/admin/knowledges_files/202_142_12eTTDn.pdf) | หนังสือแยกเล่ม 20 หน้า พิมพ์ครั้งแรก 2567 โดยคลินิกตรวจสุขภาพ/ภาควิชาเวชศาสตร์ป้องกันและสังคม/ศูนย์ผู้สูงอายุศิริราช มีคณะผู้จัดทำ ระบุทั้ง T1 และ T2 และมีเนื้อหาผู้ใหญ่ T2 จึงไม่ใช่หนังสือเฉพาะเด็ก/T1 ต้องเลือกส่วนผู้ใหญ่ |
+| HT | [โรคความดันโลหิตสูง (Hypertension)](https://www.si.mahidol.ac.th/sirirajdoctor/article_detail.aspx?ID=1587) | ตรวจชื่อ/ผู้จัดทำ/วันที่และลิงก์ PDF จากหน้าศิริราช ดึง PDF แยก 4 หน้าได้ เป็นเอกสารให้ความรู้ผู้ป่วย ไม่ใช่ clinical guideline |
+| LIPID | [ภาวะไขมันในเลือดสูง (Dyslipidemia)](https://chulabhornchannel.cra.ac.th/media-library/brochure/69699/) | ตาม Download ต้นทางถึง PDF 2 หน้า ตรวจชื่อ/โภชนบริการจุฬาภรณ์จาก body แล้ว รหัส PR67017 ไม่ใช้เดาปีพิมพ์ วัน post พฤษภาคม 2026 ไม่ใช้เป็นวันฉบับ |
+
+## สำรองที่ตรวจแล้ว
+
+- [กินอย่างไรเมื่อเป็นเบาหวาน — จุฬาภรณ์](https://chulabhornchannel.cra.ac.th/media-library/brochure/nutrition-brochure/69689/): PDF 2 หน้า ไม่มี extracted text ต้องตรวจภาพ/กลุ่มผู้ใหญ่
+- [โซเดียม — จุฬาภรณ์](https://chulabhornchannel.cra.ac.th/media-library/brochure/69663/): PDF 2 หน้า ไม่มี extracted text เป็นสื่อสนับสนุนความดัน ต้องตรวจภาพและเงื่อนไขเนื้อหา
+- [คำแนะนำเรื่องอาหารสำหรับผู้ป่วยโรคหัวใจและหลอดเลือด — ศิริราช](https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/81_1Nhzr9.pdf): PDF แผ่นพับแยก 2 หน้า มีชื่อเจ้าหน้าที่/ฝ่ายพยาบาล ตรวจเนื้อหาล่าสุด 2566 และรหัส SIPI NS1114166 มีเนื้อหาไขมันและโซเดียม พร้อมข้อความสงวนลิขสิทธิ์ ปีตรวจเนื้อหาไม่ใช่วันพิมพ์
+
+Download URL จริงอยู่ใน JSONL; ชื่อไฟล์ไทย URI-encoded เพื่อเป็น URL ที่ถูกต้อง
+hash บันทึกเฉพาะ HT ที่คำนวณจาก bytes จริง อีก 5 รายการเป็น null
+
+## Actual search queries — 5/8
+
+1. `site.si.mahidol.ac.th โรคความดันโลหิตสูง filetype:pdf`
+2. `site.si.mahidol.ac.th เบาหวาน อาหาร filetype:pdf`
+3. `site.rama.mahidol.ac.th ไขมันในเลือดสูง คู่มือ filetype:pdf`
+4. `"อาหารสำหรับผู้ป่วยไขมันในเลือดสูง" filetype:pdf`
+5. `site.rama.mahidol.ac.th "ไขมัน" "คู่มือ" pdf`
+
+ใช้ web search/open/click/find และ urllib HTTP GET ปกติสำหรับ public PDF ที่ web tool timeout
+ใช้ pypdf ตรวจจำนวนหน้า/ข้อความหน้าแรก และ hashlib คำนวณ SHA256 ใน memory
+ไม่มี raw files ที่บันทึกลง disk, paid API, background jobs หรือ clinical approval
+
+## Full-PDF retrieval attempts — 8/8 รวมเปิดซ้ำและล้มเหลว
+
+| # | เป้าหมาย / เครื่องมือ | ผล |
+| --- | --- | --- |
+| 1 | หนังสืออาหาร DM ศิริราช — web open | สำเร็จ 20 หน้า |
+| 2 | PDF เดิม — web open ที่ line 0 เพื่อตรวจ imprint | สำเร็จ เป็นการเปิดซ้ำ/cached source นับอีก 1 attempt แบบ conservative ไม่ใช่เอกสารใหม่ |
+| 3 | PDF HT1587 — web click | Timeout400 นับ attempt ที่ล้มเหลว |
+| 4 | PDF ไขมันจุฬาภรณ์ — web click Download | สำเร็จ 2 หน้า ตรวจชื่อ/หน่วยงานได้ |
+| 5 | PDF แผ่นพับอาหารหัวใจ81 ศิริราช — web open | สำเร็จ 2 หน้า |
+| 6 | PDF กินอย่างไรเมื่อเบาหวาน จุฬาภรณ์ — web click | สำเร็จ 2 หน้า ข้อความว่าง |
+| 7 | PDF โซเดียม จุฬาภรณ์ — web click | สำเร็จ 2 หน้า ข้อความว่าง |
+| 8 | URL เดิมของ HT1587 — urllib GET | HTTP200 จำนวนจริง 4 หน้า SHA256 e827c472c2bed0e12e424d44585ed714fb27f134aa8e3b6ba35f38aca40c1ca2 |
+
+รวม 8 attempts: สำเร็จ 7 ครั้ง ครอบคลุม PDF ไม่ซ้ำ 6 ไฟล์; timeout 1 ครั้ง
+ไม่พบ/ไม่ bypass publisher403, login หรือ CAPTCHA ใช้ bytes ใน memory เท่านั้น
+ยังไม่มี full visual/clinical QA: ข้อความว่างใช้ needs_ocr; อักขระไทย/ช่องว่างเพี้ยนใช้ encoding_issue
+การตรวจชื่อ/จำนวนหน้าไม่ใช่ extraction approval
+
+## HTML provenance และรายการที่ไม่เลือก
+
+หน้าต้นทางที่เปิด:
+
+- [ศิริราช HT1587](https://www.si.mahidol.ac.th/sirirajdoctor/article_detail.aspx?ID=1587): ชื่อ/ฝ่าย/วันที่ post/Download ตรงกัน HTML ใช้เป็น provenance เท่านั้น
+- [อาหารแลกเปลี่ยน ศิริราช kl11](https://www.si.mahidol.ac.th/th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=11): ตรวจชื่อ/คำอธิบาย แต่ไม่ได้ดึง PDF จึงไม่เลือก
+- [หมวดโภชนาการจุฬาภรณ์](https://chulabhornchannel.cra.ac.th/media-library/brochure/nutrition-brochure/): เปิดแล้วตามลิงก์ LIPID/DM/โซเดียมไปหน้ารายเอกสารและ Download ที่ระบุด้านบน
+- หน้ารายเอกสารจุฬาภรณ์ทั้ง 3 เปิดจริงและดึง PDF ที่เชื่อมจากหน้าเหล่านั้น
+
+ตัดรายการที่ตรงกับ43 manifest เดิม: คู่มือพยาบาล HT ศิริราช, HT CPG คนละปี,
+หนังสือโภชนาการทุกช่วงวัย INMU, Rama CME ไขมัน, ไขมันศิริราช kl7, DM CPG/หนังสือ remission
+ไม่เพิ่ม mirror, guideline คนละปี หรือ chapter ของหนังสือเดิม
+ผลค้นอื่น เช่น library catalogue หนังสือขาย, วารสาร/proceedings, วิดีโอ และ Scribd/AnyFlip
+เป็น leads เท่านั้น ไม่ได้ใช้เป็นหลักฐานรับเอกสารหรือดึงมาเป็น final documents
+หลีกเลี่ยง Trat TG.pdf, คู่มือ DOH ที่ต้องกรอกข้อมูล และหนังสือเฉพาะเด็ก/T1 ตาม assignment
+
+ตรวจ IDs/work IDs/download URLs ทั้ง 6 ไม่ตรงกับ43รายการปัจจุบัน แต่ยังต้อง content/hash dedup
+ข้ามผู้จัดทำ และตรวจสื่อภาพก่อน human inclusion หนังสืออาหาร DM20หน้าเป็นเล่มแยกมี imprint
+และคณะผู้จัดทำ ไม่รวมกับหนังสือชื่อคล้ายโดยอัตโนมัติ
+จำนวน candidates ที่เพิ่มไม่เท่ากับ50 accepted corpus และไม่ยืนยันผ่านเกณฑ์รายวิชา
+
+## งานต่อ
+
+ตรวจสิทธิ (จุฬาภรณ์ footer สงวนลิขสิทธิ์แต่ไม่พบ reuse licence; ศิริราช81มีข้อความสงวน),
+กลุ่มผู้ใหญ่/บริบทไทยรายส่วน, OCR/ภาพ/ตัวเลข, content dedup, ความร่วมสมัยของคำแนะนำ
+และ human inclusion review วันที่ไม่ทราบใช้ null แทนวัน upload

@@ -1,0 +1,11 @@
+[
+  {
+    "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+    "landing_url": "https://ncdclinicplus.ddc.moph.go.th/pages/public/files/view.php?id=1673855164",
+    "download_url": "https://ncdclinicplus.ddc.moph.go.th/pages/public/files/download.php?id=1673855164",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค / NCD Clinic Plus Online",
+    "identity_evidence": "Official public portal landing names คู่มือการใช้งาน แบบประเมินคุณภาพ NCD Clinic Plus Online, states PDF file type and update 7 April 2566. Ordinary native HTML response was200 on 2026-10-05. Its actual Download anchor is download.php?id=1673855164; the absolute URL resolves that observed relative href against the landing, not an inferred endpoint. Footer identifies DDC NCD issuer. This is an actual supplied alternative download facility, distinct from the denied DDC uploads URL.",
+    "edition_match": "needs_comparison: same issuer and exact manual title, portal update year2566 aligns with recorded publication-period metadata; byte/front-matter equivalence with DDC publisher copy has not been checked",
+    "notes": "No PDF body requested in this run. Endpoint availability, PDF format, content hash and edition match remain for root's bounded download/identity review. Earlier run's portal-download Internal Error is recorded history, not a403 and not success evidence. DDC rights restrictions/review queue remain; no human approval or redistribution license. Original denied DDC PDF was not retried."
+  }
+]

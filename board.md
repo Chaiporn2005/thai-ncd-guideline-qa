@@ -1,6 +1,6 @@
 # บอร์ดงาน Thai NCD Guideline Q&A
 
-อัปเดต: 5 ตุลาคม 2569 • เจ้าของ GitHub: Chaiporn2005
+อัปเดต: 6 ตุลาคม 2569 • เจ้าของ GitHub: Chaiporn2005
 
 สถานะนี้บันทึกสิ่งที่ทำจริง ไม่มีการติ๊กงาน implementation หรือ clinical review ที่ยังไม่ได้ทำ
 
@@ -47,6 +47,12 @@
 - [x] ทดสอบ25กรณี/metadata58/workflowผ่าน และpushcode/metadata/reportsรอบเตรียมแล้ว:commit `9751d50`
 
 ## งานรอบนี้
+
+รอบ `20261006-data-github`:เตรียมอัปโครงสร้างdataตามคำขอผู้ใช้
+เพิ่ม55retrieval records/33extraction summaries/39reviewed agent outputs พร้อมREADME/allowlists/inventory
+PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยังไม่ได้อัป เนื่องจากยังไม่มีหลักฐานอนุญาตเผยแพร่ซ้ำ
+ผู้ใช้ถามการใช้เพื่อการศึกษา;ยังไม่เปลี่ยนrightsเป็นpermittedหรือaccepted
+ดู[data README](data/README.md)และ[inventory](data/manifests/github_data_inventory_20261006.json)
 
 ผลเตรียมล่าสุดขึ้นGitHubแล้วใน [commit9751d50](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/9751d509d22dbf529a56033112d1c1c3ab233b82)
 ตรวจremote mainตรงกับlocalHEADหลังpush;PDF/text/images/OCRไม่อยู่ในcommit

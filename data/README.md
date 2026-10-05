@@ -6,15 +6,15 @@
 
 | ข้อมูล | ตำแหน่งและรูปแบบที่กำหนด | ขึ้น GitHub |
 | --- | --- | --- |
-| PDF ต้นฉบับ | `raw/<document_id>/source.pdf` หลังตรวจสิทธิและดาวน์โหลดจริง | ไม่ขึ้น; ignored |
-| ข้อความ/OCR และ chunks | `processed/<document_id>/` เมื่อสร้าง extraction pipeline | ไม่ขึ้น; ignored |
+| PDF ต้นฉบับ/บันทึกดาวน์โหลด | `raw/<document_id>/source.pdf` และ `retrieval.json` | ขึ้นเฉพาะ55retrieval records;PDF39ไฟล์รอสิทธิ |
+| ข้อความ/OCR และผลสกัด | `processed/<document_id>/` | ขึ้น33extraction summaries;ข้อความ/OCR/ภาพยังignored |
 | Vector/BM25 index | `indexes/<corpus_version>/` เมื่อสร้าง retrieval | ไม่ขึ้น; ignored |
 | ชื่อโรค/เอกสาร/ฉบับ/ต้นทาง/hash/สถานะ | `manifests/documents.jsonl` | ขึ้น; canonical metadata |
 | รายการใหม่โรคละ10 | `manifests/collection_20261005.csv` และ cohort JSON | ขึ้น; metadata/URLs |
 | ชุดล่าสุดอย่างน้อย50 | `manifests/corpus_50_candidates.csv` และ cohort JSON | ขึ้น; 55 selected candidate works |
 | Local download/extraction queue | `manifests/local_preparation_20261005.csv` และ JSON | ขึ้น; counts/hash/paths/outcomes ไม่มีsource text |
 | Rights review | `manifests/rights_review_20261005.json` | ขึ้น;55pending,9explicit automatic-extraction holds |
-| Outputs ของ agents แต่ละรอบ | `agent_runs/<run_id>/` | ไม่ขึ้น; curator publish สรุปที่ตรวจแล้ว |
+| Outputs ของ agents แต่ละรอบ | `agent_runs/<run_id>/` | ขึ้น39reviewed metadata/log/code files ตามallowlist |
 
 ใช้ `document_id` ตาม manifest เป็นชื่อโฟลเดอร์ แยกฉบับเอกสารและตรวจ hash ก่อนใช้
 เมื่อไฟล์ที่ URL เดิมเปลี่ยน ห้ามทับเวอร์ชันโดยไม่ตรวจความสัมพันธ์ฉบับ
@@ -26,8 +26,25 @@ raw path คำนวณจาก ID; schema ปัจจุบันยัง�
 Extract/OCRยังไม่ผ่านQA/humanacceptance;indexesยังไม่ได้สร้างและไม่ใช่accepted corpusพร้อมRAG
 คู่มือe-book2เล่มยังไม่มีdirectPDFที่ยืนยัน; rights/OCR/humanreviewยังต้องทำก่อนaccepted
 
-Tracked: source metadata (`manifests/`) and record schema (`schemas/`).
-Ignored local folders: `raw/`, `processed/`, `indexes/`, `agent_runs/`.
+## รอบเผยแพร่ data — 2026-10-06
+
+ผู้ใช้ขออัปโฟลเดอร์ data และระบุวัตถุประสงค์เพื่อการศึกษา
+การศึกษายังไม่ใช่หลักฐานอนุญาตเผยแพร่ซ้ำรายเอกสาร จึงเผยแพร่โครงสร้างทุกหมวด
+พร้อม metadata/bันทึกงานที่ตรวจแล้ว และเก็บ PDF/ข้อความเต็ม/OCR/ภาพไว้เฉพาะในเครื่อง
+ไม่มีการเปลี่ยน rights status หรือ human inclusion approval
+
+- [raw records](raw/README.md):55retrieval.json
+- [processed summaries](processed/README.md):33extraction.json
+- [agent outputs](agent_runs/README.md):39ไฟล์ที่ตรวจแล้ว;โค้ดรอบเก่าเป็นประวัติข้อเสนอ
+- [indexes](indexes/README.md):มีREADME;ยังไม่มีindexจริง
+- [inventory](manifests/github_data_inventory_20261006.json):รายการไฟล์/hash/ขนาดและเหตุผลที่ขึ้นหรือพักไว้
+
+`.gitignore` ของแต่ละหมวดอนุญาตเฉพาะ metadata ที่กำหนด
+รอบใหม่ต้องตรวจเนื้อหา/credentials/rights ก่อนเพิ่มallowlist
+Git clone ยังไม่ได้ PDF หรือ extracted page text
+
+Tracked: manifests, schema, retrieval/extraction summaries and reviewed run records.
+Ignored: source PDFs, page text, OCR text/images, indexes and unreviewed agent outputs.
 
 Source PDFs are not included. Link access does not grant redistribution permission.
 Source-verified seeds are not downloaded/QA-passed/accepted by implication.

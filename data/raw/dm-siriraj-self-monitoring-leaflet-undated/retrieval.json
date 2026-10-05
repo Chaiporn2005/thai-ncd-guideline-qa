@@ -1,0 +1,13 @@
+{
+  "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
+  "requested_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/1_44_1.pdf",
+  "retrieved_at": "2026-10-05T16:19:24.431229+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/1_44_1.pdf",
+  "sha256": "959da5ed36b08a81bf10ab8494ec8bc7265dc65e1b1e3a593ca885f85dc9db0e",
+  "pdf_pages": 2,
+  "bytes": 488918
+}

@@ -1,0 +1,161 @@
+[
+  {
+    "document_id": "dm-cpg-2566-revised-2567",
+    "evidence_url": "https://drive.google.com/file/d/1aA7IJ_HFdAsRdgB0MwKK-e5sPisxRzlj/view?usp=sharing",
+    "observed_terms": [
+      "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+      "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+    ],
+    "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+    "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+    "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1aA7IJ_HFdAsRdgB0MwKK-e5sPisxRzlj&export=download",
+    "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: 2nd ed (Feb 2024) E-book \u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19 2566 (one  page).pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/activities-and-news/news-pr/naewthang-wech-ptibati-sahrab-rokh-bea-hwan-2566-chbab-prabprung-kph-67"
+  },
+  {
+    "document_id": "dm-clinic-standards-2567",
+    "evidence_url": "https://drive.google.com/file/d/1rpp0AdbP5Gn3s9KGvJIFQxcqTQWEPC2V/view",
+    "observed_terms": [
+      "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+      "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+    ],
+    "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+    "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+    "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1rpp0AdbP5Gn3s9KGvJIFQxcqTQWEPC2V&export=download",
+    "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: \u0e41\u0e19\u0e27\u0e17\u0e32\u0e07\u0e01\u0e32\u0e23\u0e1e\u0e31\u0e12\u0e19\u0e32\u0e21\u0e32\u0e15\u0e23\u0e10\u0e32\u0e19\u0e04\u0e25\u0e34\u0e19\u0e34\u0e01\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19 2567 proof 6.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/naewthang-kar-phathna-pheux-matrthan-khlinik-bea-hwan-chbab-prabprung-ph-s-2567 Filename says proof6: final-edition identity still needs PDF review."
+  },
+  {
+    "document_id": "dm-educator-standards-2567",
+    "evidence_url": "https://drive.google.com/file/d/1ag0wl9scISVg3P6N97gtD6VxEPS-6NSa/view?usp=sharing",
+    "observed_terms": [
+      "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+      "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+    ],
+    "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+    "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+    "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1ag0wl9scISVg3P6N97gtD6VxEPS-6NSa&export=download",
+    "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: \u0e21\u0e32\u0e15\u0e23\u0e10\u0e32\u0e19\u0e1c\u0e39\u0e49\u0e43\u0e2b\u0e49\u0e04\u0e27\u0e32\u0e21\u0e23\u0e39\u0e49\u0e42\u0e23\u0e04\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/matrthan-phu-hi-khwam-ru-rokh-bea-hwan-2567"
+  },
+  {
+    "document_id": "dm-remission-implementation-lessons-undated",
+    "evidence_url": "https://drive.google.com/file/d/1ZjtVdO9AANnL5NbJcG5hDAtgxu7CY-er/view",
+    "observed_terms": [
+      "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+      "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+    ],
+    "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+    "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+    "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1ZjtVdO9AANnL5NbJcG5hDAtgxu7CY-er&export=download",
+    "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: \u0e16\u0e2d\u0e14\u0e1a\u0e17\u0e40\u0e23\u0e35\u0e22\u0e19 \u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a\u0e01\u0e32\u0e23\u0e14\u0e33\u0e40\u0e19\u0e34\u0e19\u0e07\u0e32\u0e19\u0e1e\u0e31\u0e12\u0e19\u0e32\u0e01\u0e32\u0e23\u0e08\u0e31\u0e14\u0e01\u0e32\u0e23\u0e42\u0e23\u0e04\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/thxd-bth-reiyn-rup-baeb-kar-danein-ngan-phathnakar-cadkar-rokh-bea-hwan-dm-remission"
+  },
+  {
+    "document_id": "lipid-guideline-2567",
+    "evidence_url": "https://drive.google.com/file/d/1iYALtgTYtrN_e9YposCEMNYnEsfIKg-T/view?usp=sharing",
+    "observed_terms": [
+      "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+      "Observed RCPT footer: COPYRIGHT 2009- RCPT ALL RIGHTS RESERVED. Publisher page explicitly offers a download."
+    ],
+    "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+    "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+    "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1iYALtgTYtrN_e9YposCEMNYnEsfIKg-T&export=download",
+    "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: CPG-\u0e01\u0e32\u0e23\u0e1a\u0e33\u0e1a\u0e31\u0e14\u0e20\u0e32\u0e27\u0e30\u0e44\u0e02\u0e21\u0e31\u0e19\u0e43\u0e19\u0e40\u0e25\u0e37\u0e2d\u0e14\u0e40\u0e1e\u0e37\u0e48\u0e2d\u0e1b\u0e49\u0e2d\u0e07\u0e01\u0e31\u0e19\u0e42\u0e23\u0e04\u0e2b\u0e31\u0e27\u0e43\u0e08\u0e41\u0e25\u0e30\u0e2b\u0e25\u0e2d\u0e14\u0e40\u0e25\u0e37\u0e2d\u0e14 \u0e1e.\u0e28. 2567.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://www2.rcpt.org/web/content/1022 Revised issuer-hosted RCPT PDF is not substituted or assumed edition-identical to Drive; compare actual content/hash separately."
+  },
+  {
+    "document_id": "dm-siriraj-know-diabetes-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/21_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=21. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/23_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=23. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "dm-siriraj-patient-foot-manual-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/22_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=22. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "dm-siriraj-microvascular-leaflet-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/4_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=4. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "dm-siriraj-macrovascular-leaflet-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/16_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=16. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "dm-siriraj-retinopathy-leaflet-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/24_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=24. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/25_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=25. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/1_44_1.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=1. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  },
+  {
+    "document_id": "lipid-siriraj-diabetes-fat-7",
+    "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+    "observed_terms": [
+      "\u0e2a\u0e37\u0e48\u0e2d\u0e01\u0e32\u0e23\u0e2a\u0e2d\u0e19\u0e40\u0e1b\u0e47\u0e19\u0e25\u0e34\u0e02\u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e02\u0e2d\u0e07\u0e28\u0e39\u0e19\u0e22\u0e4c\u0e40\u0e1a\u0e32\u0e2b\u0e27\u0e32\u0e19\u0e28\u0e34\u0e23\u0e34\u0e23\u0e32\u0e0a \u0e2b\u0e49\u0e32\u0e21\u0e19\u0e33\u0e44\u0e1b\u0e43\u0e0a\u0e49\u0e2b\u0e23\u0e37\u0e2d\u0e14\u0e31\u0e14\u0e41\u0e1b\u0e25\u0e07\u0e01\u0e48\u0e2d\u0e19\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e2d\u0e19\u0e38\u0e0d\u0e32\u0e15"
+    ],
+    "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+    "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+    "download_candidate_url": "https://www.si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/7_44_1oAgf1K.pdf",
+    "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://www.si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?kl_id=7. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent."
+  }
+]

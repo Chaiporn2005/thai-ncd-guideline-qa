@@ -1,0 +1,1428 @@
+{
+  "snapshot_at": "2026-10-06T00:13:28+07:00",
+  "run_id": "20261006-data-github",
+  "repository": "Chaiporn2005/thai-ncd-guideline-qa",
+  "source_redistribution_permission_established": false,
+  "notes": [
+    "Inventory describes local files, not a claim that a push succeeded. Publication must be verified against remote main.",
+    "Local-byte hashes may differ from Git blobs when Git normalizes line endings.",
+    "The inventory itself is excluded from the entries to avoid a recursive hash.",
+    "PDF/page text/OCR/image content remains local; educational purpose was not recorded as a publisher permission."
+  ],
+  "counts_excluding_this_inventory": {
+    "git_include_metadata": 148,
+    "local_only_cache": 2,
+    "local_only_rights_pending": 84
+  },
+  "reviewed_new_records": {
+    "retrieval_json": 55,
+    "extraction_json": 33,
+    "agent_output_files": 39
+  },
+  "files": [
+    {
+      "path": "data/agent_runs/.gitignore",
+      "bytes": 1667,
+      "sha256_local_bytes": "6660f2ea0033e6adb50549d5ef31e99a45fef257bbd56cf778dad6a540b5ebba",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download01/download.jsonl",
+      "bytes": 13947,
+      "sha256_local_bytes": "0cdee8bbf22bab3aa787d35ab227a5efa1cf0516efdad0ab8bac60003e9b587e",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download01/summary.json",
+      "bytes": 282,
+      "sha256_local_bytes": "91fe11a14529180874c860125b9ecdcd88f671f26823a8d3bed3ea6fc8c31af2",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download02/download.jsonl",
+      "bytes": 15908,
+      "sha256_local_bytes": "4fc5d8e5d98160f926c5750da8ec5b232c38b70ebd03c62fe965c139dd15be90",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download02/summary.json",
+      "bytes": 282,
+      "sha256_local_bytes": "cb36be1e9449efb9953fcdf1bd46c858d998edc8335454bea329d91887964b59",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download03/download.jsonl",
+      "bytes": 2781,
+      "sha256_local_bytes": "32c4f1fcdfee648d9dff5882d82274ae4e84227a70c069e32186ce2c92215d23",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download03/summary.json",
+      "bytes": 203,
+      "sha256_local_bytes": "4a6a27abddf3df994c8a2c13fdd224d6208ee130249ad0845a6777b0c7bbc5e9",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download04/download.jsonl",
+      "bytes": 546,
+      "sha256_local_bytes": "ba8cf85b211c93d7fd35fcec3610c6bb57ea7101d2b4c0625c26ef66709e8fe1",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-download04/summary.json",
+      "bytes": 203,
+      "sha256_local_bytes": "2a08c3b7d2f2e12a7c0ad9ecbf47370e406df33d06240e98a721859aa0a54227",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/curate_local.py",
+      "bytes": 11219,
+      "sha256_local_bytes": "3e1dd2f5cc86fc8d398c0730356b47a45ad9bdef51f8902b8771ca6f4c179964",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/EXTRACT_TOOL/__pycache__/extract_pages.cpython-312.pyc",
+      "bytes": 29418,
+      "sha256_local_bytes": "d005d33bc757475b6adb00375b0363ad070804bbb81ad8b36e2026bfdd1a1f28",
+      "publication_scope": "local_only_cache"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/EXTRACT_TOOL/__pycache__/test_extract_pages.cpython-312.pyc",
+      "bytes": 26634,
+      "sha256_local_bytes": "bd5e700bdbadc7f904f86e1ca033a2d0d8398e12ea52fa75914a067d60114be7",
+      "publication_scope": "local_only_cache"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/EXTRACT_TOOL/extract_pages.py",
+      "bytes": 20944,
+      "sha256_local_bytes": "ef51f573e81d673ad9952e3852465b10b6d4a55c1802771a65deb246c9498ba4",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/EXTRACT_TOOL/README.md",
+      "bytes": 8822,
+      "sha256_local_bytes": "65288d5748625f487ec096ad01a80818a62db2b81f0960d783a64756c396fad4",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/EXTRACT_TOOL/test_extract_pages.py",
+      "bytes": 14932,
+      "sha256_local_bytes": "173ca9201b9218cbf275b0f748e82b70778ec363b7d9e89bd91cd0717fec7892",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/extraction_run.json",
+      "bytes": 70260,
+      "sha256_local_bytes": "67d6f428d6ac5e2bdd02e3389e77269a6e9203cd5c1aa52ef9f1702ea55f304b",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/extraction_selection.csv",
+      "bytes": 1068,
+      "sha256_local_bytes": "1a6012ea3da409ed06842897efd2dfda0b49334b5db9a2c4c7095e1b2a4259e7",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/extraction_stderr.txt",
+      "bytes": 534,
+      "sha256_local_bytes": "f3a9b32b762c697d5930c38a185c366dc5680f4bbb5c308a160bb4de44cb422a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/MANUAL_RIGHTS.json",
+      "bytes": 21210,
+      "sha256_local_bytes": "b8879e11d2a8bfdb01e15f6b559cd5917e5db0aea7b83c7a914c96c1d38ce420",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/MANUAL_RIGHTS_research.md",
+      "bytes": 8388,
+      "sha256_local_bytes": "9ba7a32d11dd9bf83b83369510862b12978f910b7ac7db3da207e5d818a1878e",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/MIRROR_CRA_PORTAL.json",
+      "bytes": 1614,
+      "sha256_local_bytes": "e066807ca190b6dfb773593d26f23f868d31399bf0d41dffbe8713110163199e",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/MIRROR_CRA_PORTAL_research.md",
+      "bytes": 5554,
+      "sha256_local_bytes": "202641ce6355bad196caafacc05933d6c6845ab8c50e3d3113df7e5f151f6cec",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/MIRROR_DDC_DM.json",
+      "bytes": 4,
+      "sha256_local_bytes": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/MIRROR_DDC_DM_research.md",
+      "bytes": 7238,
+      "sha256_local_bytes": "32d634dea4469e208ca221c351967d7ad8abf06407280d638869ec0d51d1878a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/ocr_run.json",
+      "bytes": 7098,
+      "sha256_local_bytes": "2ff67889b6ee596fa3ed4eb5db23ddbf10a327e9f3a33ec1da9816beb86f2e68",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/ocr_stderr.txt",
+      "bytes": 0,
+      "sha256_local_bytes": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/verified_links.json",
+      "bytes": 901,
+      "sha256_local_bytes": "e7ddafb463e8601bcd66e7972ec9815ab8dde130527d1592c445d7ddcc277c07",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/VIEWER_RIGHTS.json",
+      "bytes": 24423,
+      "sha256_local_bytes": "07eae7299944cc35ae92ef6b1df7ce185d07eb9095e9a3f6d52c3a4149d9ce5d",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-local-prep/VIEWER_RIGHTS_research.md",
+      "bytes": 6683,
+      "sha256_local_bytes": "38b1ca5ed66718763a202dac076596e4b9623619c8b9574583d98c699e3f5bc5",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-50/CKD.jsonl",
+      "bytes": 17046,
+      "sha256_local_bytes": "a006740317e931e6be6fef00c886b49677010d0cfbc894b8ef7fb7d42333afe8",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-50/CKD_research.md",
+      "bytes": 9992,
+      "sha256_local_bytes": "5061d94919859b035c03a41ec6bf88f40f139da8c7ab975bc85fa0f9fb5c7430",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-50/CORE.jsonl",
+      "bytes": 12264,
+      "sha256_local_bytes": "13cf909a909380945407d6e86155572fd3d11f8eb95da4f1e55a275552440dec",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-50/CORE_research.md",
+      "bytes": 10734,
+      "sha256_local_bytes": "9421ba5daa5b5023be28df428121be59f0a9a13fbe76d84e5f7fbaa16b27a785",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-50/curate.py",
+      "bytes": 10824,
+      "sha256_local_bytes": "99c7e97db30706efe8a05b62ea6c8de1519cedeac70782960a668372edb80374",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-50/NCD_SERVICE.jsonl",
+      "bytes": 7570,
+      "sha256_local_bytes": "dff90208a0cd2f6070c0e671e687926b92070f6b9ba094d939be46f96a9b9d87",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-50/NCD_SERVICE_research.md",
+      "bytes": 8428,
+      "sha256_local_bytes": "d2e1d822feec37820e6d03ef403a32b335039674e5c90cc05df086c0f0192e34",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-plus10/DM.jsonl",
+      "bytes": 22299,
+      "sha256_local_bytes": "e48600eed032670136e29308085ff1fe974580441b12cceb28a637699d8c2df8",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-plus10/DM_research.md",
+      "bytes": 11723,
+      "sha256_local_bytes": "103efe49ce8c27aaace78520c01df6073ef096ad6c1d65bd310473443456654f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-plus10/HT.jsonl",
+      "bytes": 18604,
+      "sha256_local_bytes": "cde1db9d0744681b45e9fc3b5245bcedfa57a5b1aca9cbfd9ca8015e9479aa60",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-plus10/HT_research.md",
+      "bytes": 16226,
+      "sha256_local_bytes": "a3521e7c377ac5bbfe6cb244ca29be8a2a3241643122a09dfe0e656c0e91210a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-plus10/LIPID.jsonl",
+      "bytes": 22334,
+      "sha256_local_bytes": "1b214b385ba563d77fbb0462b5ce5d527d3d75943919c20337558755fa8f8556",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/20261005-ncd-plus10/LIPID_research.md",
+      "bytes": 17880,
+      "sha256_local_bytes": "fb8493448b52f67f34b8fe95199d6202694583f8eca47da77d411aa87d767370",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/agent_runs/README.md",
+      "bytes": 1303,
+      "sha256_local_bytes": "252c7d49e9ffb5ab63982b3114baac78f29d897ac390565eeba457994fb8ec94",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/indexes/.gitignore",
+      "bytes": 25,
+      "sha256_local_bytes": "aae815b9313ef60fb99d51bec324f3de1cea5256d6bbf58a660578b3e2d5815c",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/indexes/README.md",
+      "bytes": 458,
+      "sha256_local_bytes": "caa289e02d3cea9d3a4b94d860ed1529a852dfc606ad2a6dbcfbfb8aeb0cee6a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/collection_20261005.csv",
+      "bytes": 37042,
+      "sha256_local_bytes": "4171849ed003eb6926816612e7fa579501bb7de97ffb9061fb5112501ed0c167",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/collection_20261005.json",
+      "bytes": 2165,
+      "sha256_local_bytes": "ca2998b5cf81e4f11855ba4a4df15bcc1cf272f174c7722ad9de874ef61e6c4c",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/corpus_50_candidates.csv",
+      "bytes": 83421,
+      "sha256_local_bytes": "f6a4e2ff0383ce748996b76743fb021471a2e047097b273b5a12125b1903f81e",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/corpus_50_candidates.json",
+      "bytes": 5243,
+      "sha256_local_bytes": "0ce4b9985c88265bd40ba4ebd2ac984c1382923fa55d7b99d313acef57d9e2e6",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/documents.jsonl",
+      "bytes": 138295,
+      "sha256_local_bytes": "24036c9e103297ddb85ab3b1b50b8910156453aca189be733baad87c214f28ef",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/ingestion_runtime_20261005.json",
+      "bytes": 475,
+      "sha256_local_bytes": "f035f4d111f69f299fab7c14708da5219d9113ec5fd0c852c0c3b0b17a2ad76a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/local_download_events_20261005.jsonl",
+      "bytes": 33182,
+      "sha256_local_bytes": "2571192e42d3593cdcd8aedbb13a3e2af2d848b2fd4c56d7bd40864439169c56",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/local_preparation_20261005.csv",
+      "bytes": 33272,
+      "sha256_local_bytes": "70e21e564626bb85848f5b0c61a4da0b3cf4d286cd30bdb1c87fbb0049b5f712",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/local_preparation_20261005.json",
+      "bytes": 63371,
+      "sha256_local_bytes": "e41a90a3eefb2a553a3ee9e698c3988a12447e4d27066b7ec710d1396f04d196",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/private_review_selection.csv",
+      "bytes": 1068,
+      "sha256_local_bytes": "1a6012ea3da409ed06842897efd2dfda0b49334b5db9a2c4c7095e1b2a4259e7",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/manifests/rights_review_20261005.json",
+      "bytes": 70334,
+      "sha256_local_bytes": "682d01c9e07fc6788be1fc8f9c6b07d6df7b39ec754b0199a355a4cf86539aef",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/.gitignore",
+      "bytes": 46,
+      "sha256_local_bytes": "fc7a8b17465ae13a08e14b0a877881d342cf6da375d9aaf5eebea5a05b22104b",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-adult-glomerular-guideline-2561/extraction.json",
+      "bytes": 2076,
+      "sha256_local_bytes": "51bdd3d20d95c81ed1cf3ebbba52a4b3656b5712512b3bc81d8eb9abeba52644",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-adult-glomerular-guideline-2561/pages.jsonl",
+      "bytes": 244221,
+      "sha256_local_bytes": "1ae76aff9cbd467d51399268a7a3a05fa214732d6c8f5c27bbbcd5badb9e6347",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-adult-renal-nutrition-guideline-2561/extraction.json",
+      "bytes": 2047,
+      "sha256_local_bytes": "d79cdc2758cca6a164b88ef77e84491edbe2bfaeca0b6ca9f3232381aafb7cb1",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-adult-renal-nutrition-guideline-2561/pages.jsonl",
+      "bytes": 328141,
+      "sha256_local_bytes": "1bbfecc4930594b7291250cb0633d6ddc9c9c9ad9c7d18a3c460ab6becddb062",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-anemia-guideline-2564/extraction.json",
+      "bytes": 1968,
+      "sha256_local_bytes": "65c28c3dbc37411d9bc58fdc74b0b84bc37a546e0b870d55592df3c8341515d8",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-anemia-guideline-2564/pages.jsonl",
+      "bytes": 352840,
+      "sha256_local_bytes": "89503983e8467001ee0c90542d4fbac808356b26ce63ee30514ab94f659c3963",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-guideline-2565-revised/extraction.json",
+      "bytes": 1965,
+      "sha256_local_bytes": "b2ab361663d8a257df793253d32c470c171237ca36d87530913ce13744f8359e",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-guideline-2565-revised/pages.jsonl",
+      "bytes": 420685,
+      "sha256_local_bytes": "beb1bbe3bc52ee2f448c2049ac3ced8c780a0fb84218758f1c2d376ea8cfba41",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-hemodialysis-plasma-manual-2561/extraction.json",
+      "bytes": 2057,
+      "sha256_local_bytes": "33cafc7aaf58990d5e741c74e92172c5c2feefe42db360446ad7e2b2eb793739",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-hemodialysis-plasma-manual-2561/pages.jsonl",
+      "bytes": 170386,
+      "sha256_local_bytes": "e8275cf280178f1c7d1e964d3153c3d93281804b811a825e2af6e6c240b82c16",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-out-of-unit-hemodialysis-standards/extraction.json",
+      "bytes": 1927,
+      "sha256_local_bytes": "70e5675a5f87781439b0298c1508cf9bdd6d04557a6bbaab2178ec7ce926f1d7",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-out-of-unit-hemodialysis-standards/pages.jsonl",
+      "bytes": 32963,
+      "sha256_local_bytes": "5fcbb8c202e8a5f9e6e17138d4942682265a2bffbc375d4f11678fc9f271ad0c",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-palliative-2566/extraction.json",
+      "bytes": 1871,
+      "sha256_local_bytes": "e8087bd086bf7fcbb2ea160d14cdcf9cf68539d5c5dfb0899265d3a48440c53b",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-palliative-2566/pages.jsonl",
+      "bytes": 212064,
+      "sha256_local_bytes": "09be96e5ee2a46c3577c08157e86252c1dbcc93d6c7ab35d9214a96c1c233f86",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-public-kidney-prevention-tips/extraction.json",
+      "bytes": 1825,
+      "sha256_local_bytes": "ef3a2b6bf1cd7e08b65c9f6235a94d1d0359e6e623bdcd2fce008a69d190dee2",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-public-kidney-prevention-tips/pages.jsonl",
+      "bytes": 320303,
+      "sha256_local_bytes": "659a479cc4f11f59a50229c887fc17ec7f9e9d6dc6c9ea26dea7a3a946c80838",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ckd-treatment-leaflet-undated/extraction.json",
+      "bytes": 1831,
+      "sha256_local_bytes": "b6f011fa6113d52c4fbdf19dc66baf6077817d6828b9ac93dadaa2e19aba8867",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ckd-treatment-leaflet-undated/pages.jsonl",
+      "bytes": 1170,
+      "sha256_local_bytes": "6b8941ae2e9f4d741411f1188f71a7f78f5abca3f35a84eddac43ca72bb3bb9b",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/extraction.json",
+      "bytes": 1803,
+      "sha256_local_bytes": "06bfbb30462b703d926afea7686009baa3e4cc621f109d3c3360fed42dd78519",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/pages.jsonl",
+      "bytes": 182865,
+      "sha256_local_bytes": "2593a702ccb2177541228bf1c20f9aebc0ed32dd7744bd5758ee05dce1c04795",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/dm-clinic-standards-2567/extraction.json",
+      "bytes": 1813,
+      "sha256_local_bytes": "a1e701db194db683923fb97a5cc0166fca9145294882abe61d692aecc3356f6f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/dm-clinic-standards-2567/pages.jsonl",
+      "bytes": 241491,
+      "sha256_local_bytes": "36eeb8e2563b7999560b4c38f9cb596b29be8cbb533bb75a57ce6d42c314cd07",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/dm-cpg-2566-revised-2567/extraction.json",
+      "bytes": 1822,
+      "sha256_local_bytes": "360240ae480b0a3085ee5b9d0c6c6621a62725bcf4956a68d5f79a43bbdeb3fd",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/dm-cpg-2566-revised-2567/pages.jsonl",
+      "bytes": 1306501,
+      "sha256_local_bytes": "aada972b22496abb9730aedb256e6a36e0a8acb07b95f7eb1c80eb226c93bd68",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/dm-educator-standards-2567/extraction.json",
+      "bytes": 1751,
+      "sha256_local_bytes": "ad9cd9bd79be15b04bf53de25c3675bc31522b1bd8cd68340bde09826c66a89f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/dm-educator-standards-2567/pages.jsonl",
+      "bytes": 185661,
+      "sha256_local_bytes": "dec2b5df570b1419e76088d2a4452ad1dbf8b74b56bfcaf16c7a3e7b253868fd",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/dm-remission-implementation-lessons-undated/extraction.json",
+      "bytes": 1862,
+      "sha256_local_bytes": "a91db0787448e3f87920d20b745f5a94dbd7ba0cfdd90bd00fabcef501bc4a4b",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/dm-remission-implementation-lessons-undated/pages.jsonl",
+      "bytes": 350987,
+      "sha256_local_bytes": "7932366f5a84f1d8cc560b7dc7d39b2e5cb713512a428e3fcc35e1beb1bf6a15",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/dm-siriraj-geriatric-diabetes-diet-verified-20261005/extraction.json",
+      "bytes": 1782,
+      "sha256_local_bytes": "165d7c0c77d1d4d192ecb95201caab589e28b5577700759e65e27787ef942a06",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/dm-siriraj-geriatric-diabetes-diet-verified-20261005/pages.jsonl",
+      "bytes": 48761,
+      "sha256_local_bytes": "7d505b9b1b27a7e043526bdb13d6cb17d1ea4d84584196877541491240735ba5",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/dm-siriraj-nursing-foot-ulcer-prevention-2559/extraction.json",
+      "bytes": 1917,
+      "sha256_local_bytes": "992485299ae0740071bcf046e18440d29bde2afae9cf4de9f9df04bf838f7764",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/dm-siriraj-nursing-foot-ulcer-prevention-2559/pages.jsonl",
+      "bytes": 564593,
+      "sha256_local_bytes": "b60b147d72313c303b8d58a3759e6f00c993b977daa37cd779d104c41784a41f",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ht-guideline-2567/extraction.json",
+      "bytes": 1804,
+      "sha256_local_bytes": "8cd273ce6c87610e5e2a7f14c1a390a425928c8695a63400e1a0a9f9fe7df59c",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ht-guideline-2567/pages.jsonl",
+      "bytes": 792893,
+      "sha256_local_bytes": "2e4f6e7deb8d39f081e2b703b937cbcb50fa6fdd2df11ef486efb41cc2c648fd",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ht-siriraj-hypertension-public-1587-verified-20261005/extraction.json",
+      "bytes": 1789,
+      "sha256_local_bytes": "5d48053cc6a7f1a36d3d412be7f28a79aa589cbe737ace899cee5a439aa5aa4b",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ht-siriraj-hypertension-public-1587-verified-20261005/pages.jsonl",
+      "bytes": 22734,
+      "sha256_local_bytes": "84989e973ca0a6f2b6c05c280395419b884461ab2957e95b9618eba0fbde4bc5",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ht-siriraj-uncontrolled-opd-2564/extraction.json",
+      "bytes": 1935,
+      "sha256_local_bytes": "52728c8922bbd088e12ea36120001b41a4558a8224207d7946093f85ee96bff2",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ht-siriraj-uncontrolled-opd-2564/pages.jsonl",
+      "bytes": 597111,
+      "sha256_local_bytes": "14253acbe5367eb7b1c76cc2225e47237d9bab627d19a0ea5925c5375acd7ed2",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-dms-stroke-public-manual/extraction.json",
+      "bytes": 1844,
+      "sha256_local_bytes": "19d657624af14530fea2cc395ca4e5fd11d03e7b7f1781e8d58ea9d3e305b55f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-dms-stroke-public-manual/pages.jsonl",
+      "bytes": 189650,
+      "sha256_local_bytes": "0dcadcdcf4e97c136e4ebab229d804d8a2f34721cfb8a4f2ed0fc3dd5c25e47c",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-guideline-2567/extraction.json",
+      "bytes": 1899,
+      "sha256_local_bytes": "e338383964fc7e8ec62e46c913f3a175bd1137b919bb17fd70d09ce503ffc132",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-guideline-2567/pages.jsonl",
+      "bytes": 207514,
+      "sha256_local_bytes": "348b2e25105cfb2e64bf4ee474ecc517bce942927819b726cd8f878b021e4f86",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-inmu-food-knowledge-all-ages/extraction.json",
+      "bytes": 1807,
+      "sha256_local_bytes": "8f8cdffbd0c3a9f39c47ce4ee6b423586579d2cea690a907a2e4901b8fe28c6f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-inmu-food-knowledge-all-ages/pages.jsonl",
+      "bytes": 913653,
+      "sha256_local_bytes": "2dd6e69d3b145d8d1887505571e56f89cb33798dbfabe7f0115f29fb2ae47588",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-rama-education-2562/extraction.json",
+      "bytes": 1712,
+      "sha256_local_bytes": "0554e9692f986c796e53a1e75abe27d307eb4389dce7e2eca4d3dba87a618e45",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-rama-education-2562/pages.jsonl",
+      "bytes": 27192,
+      "sha256_local_bytes": "5c5b27785dbd04eb3bfa27911379b3bbf4adafce3cc08cfa045cb6b34e2d51fd",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/extraction.json",
+      "bytes": 1869,
+      "sha256_local_bytes": "3ac04788db8a26024f08cbc52e5b918c09e7e1add42e0d2d7b9da29d4fa31120",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/pages.jsonl",
+      "bytes": 15176,
+      "sha256_local_bytes": "1690d40aaab362eba66624b15e0d511b1c516117d2998789dc70f1c0fc0e22f0",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-food-cholesterol-2564-review/extraction.json",
+      "bytes": 1755,
+      "sha256_local_bytes": "c82bc17be0b8c04a56ec43ae34d1f7434f77347e6c52a4c673f431ace5d5284f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-food-cholesterol-2564-review/pages.jsonl",
+      "bytes": 11943,
+      "sha256_local_bytes": "3c8615dccd8f74aee3ff7d562b767d022f7aaef97a6da1e17047b6f2c36fd1e9",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-metabolic-763/extraction.json",
+      "bytes": 1758,
+      "sha256_local_bytes": "b5da142680a7c93f9a65228cce60f0f9f4a267907014c686a37f11a62cc47f73",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-metabolic-763/pages.jsonl",
+      "bytes": 15007,
+      "sha256_local_bytes": "dbf9f0893f4e205b11eb6e173a31b13831072fb129d9792e3c242682b197ff57",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-stroke-nutrition-1298/extraction.json",
+      "bytes": 1785,
+      "sha256_local_bytes": "f74832d4de62df78964e72b5c6b0656d8e7c964fd19040e4a27c6cb55b258eea",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-stroke-nutrition-1298/pages.jsonl",
+      "bytes": 14946,
+      "sha256_local_bytes": "846aeaa38502a8dbbcaefdaa8cb38bb8c86cd9ce79f6220d725ae233f9589817",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-thai-food-86/extraction.json",
+      "bytes": 1742,
+      "sha256_local_bytes": "4c042b9a6e2c9dbfd00dfccab2d8bbc1f2058d03463fd9e0c11e040248b93a89",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-thai-food-86/pages.jsonl",
+      "bytes": 12705,
+      "sha256_local_bytes": "33849e9d5b02dc26d697ad2ca31cd8af5159c333cf7a145696de3f7e611b55cd",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-trans-fat-1380/extraction.json",
+      "bytes": 1692,
+      "sha256_local_bytes": "628696d3dde8b08e4de2d28f4921a8da6d2b8876743e7eaa134dcc2374cdc4f8",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-trans-fat-1380/pages.jsonl",
+      "bytes": 6478,
+      "sha256_local_bytes": "e35090239b1dfd555e4c3ef46e22c04798948dfe5ffe40871d0ad622f080fac5",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-warning-1158/extraction.json",
+      "bytes": 1732,
+      "sha256_local_bytes": "558676b555d6c2ba641518df73064131f9d1213f241f3fa860ff4b09f938e314",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/lipid-siriraj-warning-1158/pages.jsonl",
+      "bytes": 6804,
+      "sha256_local_bytes": "48b6fd6ac2cb9a009720f7239c79d473ea534661349e67da8f635518131eea88",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/ckd-treatment-leaflet-undated/extraction.json",
+      "bytes": 1841,
+      "sha256_local_bytes": "30240d69727093a9c22f4f38f855799428bfe62b8cae268d810cdbb9497e5695",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/ckd-treatment-leaflet-undated/images/page-0001.png",
+      "bytes": 1967170,
+      "sha256_local_bytes": "aa9e8b1aec441f5b4376733ba7957750837859a8be9d3d5d13508a6f762d1a20",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/ckd-treatment-leaflet-undated/images/page-0002.png",
+      "bytes": 1846283,
+      "sha256_local_bytes": "9e084f195d93ff85c1ecf8ef30a28bf220f75fbdd081369f710238569678b478",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/ckd-treatment-leaflet-undated/ocr/page-0001.txt",
+      "bytes": 2091,
+      "sha256_local_bytes": "2ec7a76d27576d41673fcc1af18afb8888ba158fb4665b2d8489ea6e54272f39",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/ckd-treatment-leaflet-undated/ocr/page-0002.txt",
+      "bytes": 5604,
+      "sha256_local_bytes": "4ee4cc6c164ff05a14ca16c4e1b7f14f2ca82e367083b7bbaa17c2d32674dc11",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/ckd-treatment-leaflet-undated/pages.jsonl",
+      "bytes": 9119,
+      "sha256_local_bytes": "6896b44d50ab58a3d7764ea7f4c9317b3c71fbcfb9ff0d65dedee6ed1df3cbe6",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/dm-cpg-2566-revised-2567/extraction.json",
+      "bytes": 1832,
+      "sha256_local_bytes": "ec41e0172e26b8f39e0ecfbd8e66840c34eb4a630ccee15e8f8338aa015f9715",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/dm-cpg-2566-revised-2567/images/page-0003.png",
+      "bytes": 203042,
+      "sha256_local_bytes": "9cf2acfb76ea2d395528f79d1c36c11e5aab9174b5e57d83ae37c26ffb497086",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/dm-cpg-2566-revised-2567/images/page-0004.png",
+      "bytes": 131383,
+      "sha256_local_bytes": "31dda1b8b809d1f343c4018f0c433d4cde123572b52b93d7d9de985f29712a51",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/dm-cpg-2566-revised-2567/ocr/page-0003.txt",
+      "bytes": 1223,
+      "sha256_local_bytes": "fe67c596c62159a04b250c75f3ce89feb9ddd5c7757e75dfd91cc9313af3ddd3",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/dm-cpg-2566-revised-2567/ocr/page-0004.txt",
+      "bytes": 2053,
+      "sha256_local_bytes": "f3957f028f4f6159ca782ba5a0091450782ec3491c5d6b72fce21dbf947be14a",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/dm-cpg-2566-revised-2567/pages.jsonl",
+      "bytes": 1309880,
+      "sha256_local_bytes": "fa6f9338b3b6a267908bb2e6de8751bd0705c0c68a9777f55102cd369198f39f",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/lipid-rama-education-2562/extraction.json",
+      "bytes": 1722,
+      "sha256_local_bytes": "6e88b035b6ee93081329bf9067b97eef68c03c9cce9fdb7134efcf7797f8f094",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/lipid-rama-education-2562/images/page-0001.png",
+      "bytes": 423051,
+      "sha256_local_bytes": "03a6d0ef4ef8b69f128e384413905fcfa069bb0a61264a2d305ccafea664b85f",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/lipid-rama-education-2562/images/page-0002.png",
+      "bytes": 271521,
+      "sha256_local_bytes": "08ce4d2dceb7adac4bbcbfdce6b6ed7166f814656b6f736adf864c1cb91b4915",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/lipid-rama-education-2562/ocr/page-0001.txt",
+      "bytes": 4904,
+      "sha256_local_bytes": "873d7092b0c27f762c78ce921d8550d391a816adfc8e98044f674c8976f0c273",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/lipid-rama-education-2562/ocr/page-0002.txt",
+      "bytes": 2261,
+      "sha256_local_bytes": "4187956e4dc56a20fc65d8fb0256afb3134883a59414182dd719a32c818dbbf6",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/ocr-review-v1/lipid-rama-education-2562/pages.jsonl",
+      "bytes": 34505,
+      "sha256_local_bytes": "26ccd0bcde6d5ad6d38e07a5034e17d72b9452ab9ee92e9814f0830bd5063b5c",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/processed/README.md",
+      "bytes": 1209,
+      "sha256_local_bytes": "57a4578380ee1c1e449f9df1d8be97ac6326640c2a051e1c3fd40d21d8e9443b",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/.gitignore",
+      "bytes": 45,
+      "sha256_local_bytes": "fbe97a1a0363351076ae32928bdef56a511bd8e41e2d94a8b46984ab7d31a772",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-adult-glomerular-guideline-2561/retrieval.json",
+      "bytes": 1123,
+      "sha256_local_bytes": "751d3db1ca245c6e2255dd13e000c500b6e6e5ee68467152c111a3ca57cef133",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-adult-glomerular-guideline-2561/source.pdf",
+      "bytes": 1486257,
+      "sha256_local_bytes": "2b7bd92c3d339698b0fa72f13ce3c1181efc0f559844fd8854c0637ed6533675",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-adult-renal-nutrition-guideline-2561/retrieval.json",
+      "bytes": 1278,
+      "sha256_local_bytes": "a7b93ac34f0d4d3db93dfe4e7477d7c7b4ad3629439db4b18e52b2ba2f607a6c",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-adult-renal-nutrition-guideline-2561/source.pdf",
+      "bytes": 2385394,
+      "sha256_local_bytes": "b1e15befe20eb2d8d708fbdf5c344a830fbd2284ae3a86151923ac037ef3644d",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-anemia-guideline-2564/retrieval.json",
+      "bytes": 1183,
+      "sha256_local_bytes": "95a9fe2aeab0853e7afbf2216efff18551bf41cdb7aa55781c05f3cd6cd4af8c",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-anemia-guideline-2564/source.pdf",
+      "bytes": 1683496,
+      "sha256_local_bytes": "8f9901720bc8d8aafdce4d0f51d216084531b4326532e3cb190905ae52c526e7",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-guideline-2565-revised/retrieval.json",
+      "bytes": 683,
+      "sha256_local_bytes": "33bf9345017512ab44c65436c7d0813a12744441c4dd68fca9a0d5e3c26628f0",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-guideline-2565-revised/source.pdf",
+      "bytes": 1306109,
+      "sha256_local_bytes": "eb8c164d43577dca0760f2be4994055b9d3e2e7d183098731539501898ed51c4",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-hemodialysis-plasma-manual-2561/retrieval.json",
+      "bytes": 1291,
+      "sha256_local_bytes": "cf5a14fb329a1f4369e4e82d75bff72a2ffff6e9c2612642530404fd9181147e",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-hemodialysis-plasma-manual-2561/source.pdf",
+      "bytes": 4956325,
+      "sha256_local_bytes": "e7e06f11926b7f06d994891c497efcf96b3bfe1a25f6ac94e1b1aaf34c51a1af",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-out-of-unit-hemodialysis-standards/retrieval.json",
+      "bytes": 796,
+      "sha256_local_bytes": "35b6595e1a0053a81ef46d722b7d9f9ffa2f6ad9f1cd843b20645beaa3672c8a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-out-of-unit-hemodialysis-standards/source.pdf",
+      "bytes": 292162,
+      "sha256_local_bytes": "4c410cf74bfdb8812a82116fe764e8da76a818a232fdd55eed3c3ee4e7c5183b",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-palliative-2566/retrieval.json",
+      "bytes": 554,
+      "sha256_local_bytes": "223109eeb66a408afc9a516e17a31469a2272946750b09df931186b76dd07281",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-palliative-2566/source.pdf",
+      "bytes": 22922986,
+      "sha256_local_bytes": "13e60a43494672aedb2bd3f42e03bcb07fc3c4aba7bc8c3e91ab7c2570b3eb88",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-public-kidney-prevention-tips/retrieval.json",
+      "bytes": 842,
+      "sha256_local_bytes": "ddf5867a26147b14d22c9b1e182d95b3f6abeeda09cc4b73a196967d0dc8baaf",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-public-kidney-prevention-tips/source.pdf",
+      "bytes": 1300853,
+      "sha256_local_bytes": "35d835feb30624b56149a96009f8e20233402408fefd3c89af5b303a214dbdeb",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ckd-treatment-leaflet-undated/retrieval.json",
+      "bytes": 916,
+      "sha256_local_bytes": "095758603d81c3a4a5e06780f210ea42cccfd9842e8a051a01baf1a99c5c4afc",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ckd-treatment-leaflet-undated/source.pdf",
+      "bytes": 1061659,
+      "sha256_local_bytes": "789aca82ab9f034f40dee7716378d23d2960450c2dc8a7bb746168371c40fed7",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/DDC-NCD-BEST-PRACTICE-LESSONS-2563/retrieval.json",
+      "bytes": 408,
+      "sha256_local_bytes": "51aadba8bb905c9f3e9ea36e0d82132ef146782753df8fd8db962a1e783c58ac",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/retrieval.json",
+      "bytes": 582,
+      "sha256_local_bytes": "14a82dd1d570e8e4e74fd834a24d654cfeff50213e5e83366db269b44c755882",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/source.pdf",
+      "bytes": 14197331,
+      "sha256_local_bytes": "240c0b7445380a5d9f8de9f53c1eaaed9249b05b7db1f1f8c8f36418a256f08f",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566/retrieval.json",
+      "bytes": 417,
+      "sha256_local_bytes": "95c299bbd39110b7996548031654d45014d5eb0b3495c00b2afcb3f641b5beba",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-chulabhorn-diabetes-diet-brochure-verified-20261005/retrieval.json",
+      "bytes": 668,
+      "sha256_local_bytes": "ece0a2ac19ac43cbd143e3f3eccb4220d6c8b9742556deea7c3bd1de619d0da5",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-clinic-standards-2567/retrieval.json",
+      "bytes": 588,
+      "sha256_local_bytes": "093f83f707e152c024d3ffc0fcd4119a536b098923579336d5a14472fde2c4ac",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-clinic-standards-2567/source.pdf",
+      "bytes": 1036741,
+      "sha256_local_bytes": "3e9423ae0f7f470a7576a6d9bb2dead9ecb58df2f929516b11d0dddd0bbe353b",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-cpg-2566-revised-2567/retrieval.json",
+      "bytes": 590,
+      "sha256_local_bytes": "51e2f5a93040b838dc8db5f81b91b16de429ff6300727569652b42263e2cccc9",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-cpg-2566-revised-2567/source.pdf",
+      "bytes": 10057317,
+      "sha256_local_bytes": "4a81780fe24ed157eae38905ce5172367231f806ef0b1573410c99ac22f855ba",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-educator-standards-2567/retrieval.json",
+      "bytes": 590,
+      "sha256_local_bytes": "c9bcdc5d313e4fb3a5f466c94181f72372e34661bea324af37294de405ee7c50",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-educator-standards-2567/source.pdf",
+      "bytes": 9925988,
+      "sha256_local_bytes": "9272e703bcd1e364a859a69db7e720d0e9b6661a35616b4db9d7d9db6050503a",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-remission-implementation-lessons-undated/retrieval.json",
+      "bytes": 608,
+      "sha256_local_bytes": "c52c69cfb637f4761be505c3cbb2d92c3f107103befe07452f2e517feca54832",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-remission-implementation-lessons-undated/source.pdf",
+      "bytes": 28806517,
+      "sha256_local_bytes": "0d68865e2a58507a2accb2f0a528339791a1635ccef024f9510e71c0fb49a154",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-remission-principles-2568-september/retrieval.json",
+      "bytes": 406,
+      "sha256_local_bytes": "90e6018de367a5244ccdc57c191008ac056eeac50d186d6b7549e40635960392",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-remission-service-2567/retrieval.json",
+      "bytes": 400,
+      "sha256_local_bytes": "b912aa3719cc39915126d4a90236514b8f0ca2c280d8e884cfd2e94ff5599195",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-geriatric-diabetes-diet-verified-20261005/retrieval.json",
+      "bytes": 586,
+      "sha256_local_bytes": "e63230d72e69e9daf70a6dbf296ef475107073113e5ab677212ffc78c8963235",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-geriatric-diabetes-diet-verified-20261005/source.pdf",
+      "bytes": 6378539,
+      "sha256_local_bytes": "82e9d6a6597b371b3370abbcaca1239518be53a96a9ad97b39603de8f57fc506",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-hypoglycemia-leaflet-undated/retrieval.json",
+      "bytes": 572,
+      "sha256_local_bytes": "e1002183485440944a1b3920a967fdeb404e0438605aa45c23d89db91bcd4aec",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-hypoglycemia-leaflet-undated/source.pdf",
+      "bytes": 1868516,
+      "sha256_local_bytes": "a4e69aafb37c0a5f6ffea1857c29b95c9c9cc9862dfe109bc66894abf33d6e42",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-know-diabetes-undated/retrieval.json",
+      "bytes": 564,
+      "sha256_local_bytes": "278e91a2a921d00b314fa164189e86c12ca6e44f3d5358f3ff02b9215c55e0fa",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-know-diabetes-undated/source.pdf",
+      "bytes": 237383,
+      "sha256_local_bytes": "85a73ed2f11ae75498b81f1ff92e4bddc2c04847a97cca60b453e802c89614f0",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-macrovascular-leaflet-undated/retrieval.json",
+      "bytes": 573,
+      "sha256_local_bytes": "9ad9494c23fb7e2344867aeb853f1b195bc3e42173443ea79abf158557a36587",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-macrovascular-leaflet-undated/source.pdf",
+      "bytes": 1099867,
+      "sha256_local_bytes": "6fd0dca43b88972ec4007a9ea8cacb00dbf64a0330d959170f01b876035a65ac",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-microvascular-leaflet-undated/retrieval.json",
+      "bytes": 570,
+      "sha256_local_bytes": "d7e8b748a00106efd33670df17c7684803675dad3e69a4c46ab0504d99286a91",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-microvascular-leaflet-undated/source.pdf",
+      "bytes": 655160,
+      "sha256_local_bytes": "fb636776f1f54de756be106ddcfa75dcd79809214280daea2d800453d5ec85e6",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-needle-disposal-leaflet-undated/retrieval.json",
+      "bytes": 574,
+      "sha256_local_bytes": "3e1aa8e8d4a7b7b703809b60d757259af7b02465e4d8d54b5b2b1c74c4ee8723",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-needle-disposal-leaflet-undated/source.pdf",
+      "bytes": 512651,
+      "sha256_local_bytes": "3c34d0fc75f48da073095b53c3a194e6d7252b5f978c63b029e45a180364e10f",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-nursing-foot-ulcer-prevention-2559/retrieval.json",
+      "bytes": 634,
+      "sha256_local_bytes": "3d42660a47954984f270d7debb71ca60b1a3a518c4d8bfae895473687af9d101",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-nursing-foot-ulcer-prevention-2559/source.pdf",
+      "bytes": 1253192,
+      "sha256_local_bytes": "e64800160d64e5a5ba10bf63d2261f3eb1093e89853caa38fdb35c80bd70851a",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-patient-foot-manual-undated/retrieval.json",
+      "bytes": 572,
+      "sha256_local_bytes": "d9dbd63ff133dead1a68aa69924648e48b6db11526006cc49e87478ce5a8a56f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-patient-foot-manual-undated/source.pdf",
+      "bytes": 1642154,
+      "sha256_local_bytes": "fcc860a32bea289b83d3e886898044d32918a29fe857c2b2c4d6640f5c24df14",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-retinopathy-leaflet-undated/retrieval.json",
+      "bytes": 570,
+      "sha256_local_bytes": "677cfb7c66ec0f7149214195110a13e804fa5233f4b5d0ae977ae2f2b6a0ad9a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-retinopathy-leaflet-undated/source.pdf",
+      "bytes": 409068,
+      "sha256_local_bytes": "7b372e0337fb5fbc6079901b67798b96ee14a2ea0553131eb757c984234c717e",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/dm-siriraj-self-monitoring-leaflet-undated/retrieval.json",
+      "bytes": 572,
+      "sha256_local_bytes": "a3b7454591170d097a9dc287659b673f892439712018449080d39c0ac0bbb33b",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/dm-siriraj-self-monitoring-leaflet-undated/source.pdf",
+      "bytes": 488918,
+      "sha256_local_bytes": "959da5ed36b08a81bf10ab8494ec8bc7265dc65e1b1e3a593ca885f85dc9db0e",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ht-chulabhorn-sodium-nutrition-verified-20261005/retrieval.json",
+      "bytes": 491,
+      "sha256_local_bytes": "26052cf18c80548854866f0515c6d5d16437ccfe4774ab4594e73dcb98d77147",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-ddc-community-low-salt-lessons-undated/retrieval.json",
+      "bytes": 420,
+      "sha256_local_bytes": "560de7882e6cf8a16c5a38e978fbd18b7699b39e9f85ff14f4e21e9419dc5d60",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-ddc-hospital-management-update-2566/retrieval.json",
+      "bytes": 417,
+      "sha256_local_bytes": "175359e3836789d2241f06656f8c73136fff0bbb29650a4a3faeada0cc839478",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-ddc-low-salt-hospital-guide-undated/retrieval.json",
+      "bytes": 416,
+      "sha256_local_bytes": "db7bf292b5ba4c5c14502ff51b7d53a3e2e7dea458a82779aaa44761142c8b75",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-ddc-low-sodium-77-province-menu-undated/retrieval.json",
+      "bytes": 388,
+      "sha256_local_bytes": "1123e0e38cabca630a6bcd5eebe7286ce310b6057268ce5f79f5374ba099babf",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-ddc-provincial-sodium-guide-undated/retrieval.json",
+      "bytes": 417,
+      "sha256_local_bytes": "68615b273dea5682730c7a65a9f5eda9a03dda3652a71d4c271f9717dc7553c6",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-ddc-sodium-education-undated/retrieval.json",
+      "bytes": 410,
+      "sha256_local_bytes": "f5c740241bd102640cf86b4a62728b06b0ee0aef90bfbeb32902583ad8cbe4c0",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-guideline-2567/retrieval.json",
+      "bytes": 556,
+      "sha256_local_bytes": "aac219b0804cf4634e7eed379e835f03519c282091d57a506061b85d4971e9ac",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-guideline-2567/source.pdf",
+      "bytes": 4014621,
+      "sha256_local_bytes": "f42e199e701858a3a9f5fe71f81587fc77af1b3626c9269c0e96b52bc760b645",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ht-siriraj-hypertension-public-1587-verified-20261005/retrieval.json",
+      "bytes": 595,
+      "sha256_local_bytes": "17e0a9f7dee9151a0e3fee3d953370a03a8551acd7b8be97c6d1d856330ac89a",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-siriraj-hypertension-public-1587-verified-20261005/source.pdf",
+      "bytes": 103958,
+      "sha256_local_bytes": "e827c472c2bed0e12e424d44585ed714fb27f134aa8e3b6ba35f38aca40c1ca2",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ht-siriraj-uncontrolled-opd-2564/retrieval.json",
+      "bytes": 599,
+      "sha256_local_bytes": "8133282201f2f4a1eb18e7bbcf46c72672a1c068f0cb7a4494736bec3089a6ea",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ht-siriraj-uncontrolled-opd-2564/source.pdf",
+      "bytes": 5093377,
+      "sha256_local_bytes": "8279f039134d970a8c31636bc5948e16102270316c6201fce70363738b38681f",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005/retrieval.json",
+      "bytes": 608,
+      "sha256_local_bytes": "4dd60f7803dad53c6ca5db4505a8037765c1a0dff8a8a52d6793c0bfe0417702",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-dms-stroke-public-manual/retrieval.json",
+      "bytes": 611,
+      "sha256_local_bytes": "033ba697f78a40f1b1cb14f0333600fcd52c335367e525f9ea4eb11df0253720",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-dms-stroke-public-manual/source.pdf",
+      "bytes": 35547182,
+      "sha256_local_bytes": "5b6edfb2d332d92ca03eda81b5ac57c14ebc9212d63585ad6fa03085ca38990b",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-guideline-2567/retrieval.json",
+      "bytes": 585,
+      "sha256_local_bytes": "584c96d0cf927f8d0b3c5897b9eecbb14603346ebf49cc6088cd5dec25d35719",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-guideline-2567/source.pdf",
+      "bytes": 14651290,
+      "sha256_local_bytes": "caee450589ae61ecfd8ab2f39b88037eeb740f8f2ee8dfa8bafcfdae92a5531a",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-inmu-food-knowledge-all-ages/retrieval.json",
+      "bytes": 538,
+      "sha256_local_bytes": "735e2f93cf39f0c93596280127ba9c35226ad967421ef35b6e90e3bc757daef7",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-inmu-food-knowledge-all-ages/source.pdf",
+      "bytes": 33716649,
+      "sha256_local_bytes": "02b29b38390d5b4b3edd1688d89bb5ee7bdf1506a9c2052dfc8344084d9025d6",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-rama-education-2562/retrieval.json",
+      "bytes": 576,
+      "sha256_local_bytes": "5699db1cba6d570317fd03601cdcec5e2bd46eb9037b8d3f0872a7207172858f",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-rama-education-2562/source.pdf",
+      "bytes": 4123250,
+      "sha256_local_bytes": "6248e72fe833ba88cfd61dc0b881326c215a8bf3b30934682e4c328e7875ae6f",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/retrieval.json",
+      "bytes": 575,
+      "sha256_local_bytes": "422980c8476a22d984f99a96e859fe2ea3e9bcd2d620cf567ab65176b099ebaa",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/source.pdf",
+      "bytes": 1272915,
+      "sha256_local_bytes": "7346afad728db04dca4196b13f4e0b9264050befcb170b1203945c339a45b664",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-diabetes-fat-7/retrieval.json",
+      "bytes": 578,
+      "sha256_local_bytes": "a25793b5c4fd25b6344d5a8d0cae5bb24dc0722a91bddfd04ced5aa758cb3738",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-diabetes-fat-7/source.pdf",
+      "bytes": 908605,
+      "sha256_local_bytes": "979bc8c7136bef8f22a384f013c2f523546250280de6e9a8752b09accba7f358",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-food-cholesterol-2564-review/retrieval.json",
+      "bytes": 554,
+      "sha256_local_bytes": "c07eff593eec1f9faec808a5060daacb63b84f24d48ab285b81554911089e523",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-food-cholesterol-2564-review/source.pdf",
+      "bytes": 637582,
+      "sha256_local_bytes": "e8cbcac0bdbbed2a3e721657de660ea1e55c45b3988fad787f3e3368a4af7204",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-metabolic-763/retrieval.json",
+      "bytes": 556,
+      "sha256_local_bytes": "4fe467b7fb69df2570ac4f6b2cd682acb80218e6b2748d9cdee6a0a06e3deb65",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-metabolic-763/source.pdf",
+      "bytes": 83036,
+      "sha256_local_bytes": "f56187b6665cb35cc85e65c6fc0a65d7af432d7e2a6725b5924e280f23f13326",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-stroke-nutrition-1298/retrieval.json",
+      "bytes": 566,
+      "sha256_local_bytes": "07a05da4f06a618a9e1fbbe6afb1a72a6f5273a09d5bc2ae12efdcbdce081487",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-stroke-nutrition-1298/source.pdf",
+      "bytes": 57463,
+      "sha256_local_bytes": "ac25d9032ecbd1763259f87260161590194e5ad06f1bc6281ef7c8410705a2d1",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-thai-food-86/retrieval.json",
+      "bytes": 554,
+      "sha256_local_bytes": "232c49cc95f692f6d337c0383894ab7fe48d2ddda594db61d202b87a590ad5e3",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-thai-food-86/source.pdf",
+      "bytes": 148759,
+      "sha256_local_bytes": "135d36025866feea4dbd3584476acb66ec6ddeb19ec7ab4858366ee2a30e3ef4",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-trans-fat-1380/retrieval.json",
+      "bytes": 559,
+      "sha256_local_bytes": "a794e4d1d4a07dccfed2edfecd8ac2b3c2c6fe30b413ace74da315ad8110277d",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-trans-fat-1380/source.pdf",
+      "bytes": 44849,
+      "sha256_local_bytes": "8aef8d0868bf8abcf4cced8f756b54c91cdf7b74958e59e989b243322d488661",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-warning-1158/retrieval.json",
+      "bytes": 557,
+      "sha256_local_bytes": "dcba4704fe9fef1dd2a9cd6b7dbb85f9444b4b1b7daf28a0465f9d1f68aad791",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/lipid-siriraj-warning-1158/source.pdf",
+      "bytes": 47670,
+      "sha256_local_bytes": "ffe5d13256d09bae7a45a42a0d886904a7cb48338c2e33643aaeaf1debfb6929",
+      "publication_scope": "local_only_rights_pending"
+    },
+    {
+      "path": "data/raw/ncd-clinic-plus-2568-update/retrieval.json",
+      "bytes": 406,
+      "sha256_local_bytes": "0bbe2d035ecbc1ba180c040624aed888ba6502af7956fc34ce78b1de2672b15c",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ncd-ddc-health-station-manual-undated/retrieval.json",
+      "bytes": 332,
+      "sha256_local_bytes": "e1076af0ef005cfda2a182fd3dc0c324d9c7ea7fb09a331d8b9da8229f3143e4",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/ncd-ddc-primary-care-guide-2568/retrieval.json",
+      "bytes": 410,
+      "sha256_local_bytes": "2314a534dabe81372559e0785b44ddaea6422f9e7ea8591e1850327639213fa9",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/raw/README.md",
+      "bytes": 1347,
+      "sha256_local_bytes": "f3f87f718e6ef0156b1fad8b57aaba9fa4976ba54f94bd14dbb92b2b1d8ecb52",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 5199,
+      "sha256_local_bytes": "6b28394526b7ac392f36fb4a1774b1058782b77422d2572db670364ac0dbf5f4",
+      "publication_scope": "git_include_metadata"
+    },
+    {
+      "path": "data/schemas/document.schema.json",
+      "bytes": 2965,
+      "sha256_local_bytes": "ab5bc7f5cd1af160abd9c58b2f315ccb2f36156f6ea295fe3027d3532bd36631",
+      "publication_scope": "git_include_metadata"
+    }
+  ]
+}

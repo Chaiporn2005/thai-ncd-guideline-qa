@@ -1,0 +1,11 @@
+{
+  "document_id": "ncd-clinic-plus-2568-update",
+  "requested_url": "https://www.ddc.moph.go.th/uploads/publish/1667020250904082725.pdf",
+  "retrieved_at": "2026-10-05T16:22:15.720532+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

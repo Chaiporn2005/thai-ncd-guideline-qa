@@ -1,0 +1,11 @@
+{
+  "document_id": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
+  "requested_url": "https://ddc.moph.go.th/uploads/publish/1377120230127075220.pdf",
+  "retrieved_at": "2026-10-05T16:22:28.067020+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

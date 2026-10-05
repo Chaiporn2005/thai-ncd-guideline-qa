@@ -1,0 +1,12 @@
+{
+  "run_id": "20261005-download02",
+  "network_attempts": 24,
+  "outcomes": {
+    "downloaded": 18,
+    "access_restricted": 6,
+    "viewer_requires_public_download_link": 1
+  },
+  "paid_api_calls": 0,
+  "clinical_approval": false,
+  "redistribution_approval": false
+}

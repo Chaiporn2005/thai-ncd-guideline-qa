@@ -1,0 +1,11 @@
+{
+  "document_id": "ht-ddc-provincial-sodium-guide-undated",
+  "requested_url": "https://www.ddc.moph.go.th/uploads/publish/1547820240326045342.pdf",
+  "retrieved_at": "2026-10-05T16:19:37.224214+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

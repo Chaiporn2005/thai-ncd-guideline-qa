@@ -1,0 +1,11 @@
+{
+  "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+  "requested_url": "https://chulabhornchannel.cra.ac.th/wp-content/uploads/2026/05/%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B9%84%E0%B8%82%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AA%E0%B8%B9%E0%B8%87.pdf",
+  "retrieved_at": "2026-10-05T16:21:22.420764+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

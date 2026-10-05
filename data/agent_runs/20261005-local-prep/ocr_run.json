@@ -1,0 +1,175 @@
+{
+  "tool": "extract_pages",
+  "version": "1.0",
+  "results": [
+    {
+      "document_id": "dm-cpg-2566-revised-2567",
+      "outcome": "extracted",
+      "summary": {
+        "document_id": "dm-cpg-2566-revised-2567",
+        "title": "แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 ฉบับปรับปรุง ก.พ. 2567",
+        "source_url": "https://drive.google.com/file/d/1aA7IJ_HFdAsRdgB0MwKK-e5sPisxRzlj/view?usp=sharing",
+        "source_path": "E:\\งาน\\งาน\\AI\\NLPJEC\\data\\raw\\dm-cpg-2566-revised-2567\\source.pdf",
+        "source_sha256": "4a81780fe24ed157eae38905ce5172367231f806ef0b1573410c99ac22f855ba",
+        "source_bytes": 10057317,
+        "pdf_pages": 282,
+        "processed_pages": 282,
+        "page_cap_applied": false,
+        "all_pdf_pages_processed": true,
+        "empty_text_pages": 0,
+        "image_pages": 23,
+        "encoding_indicator_pages": 255,
+        "error_pages": 0,
+        "text_characters": 579954,
+        "replacement_characters": 417,
+        "control_characters": 22788,
+        "private_use_characters": 0,
+        "duplicated_combining_marks": 0,
+        "rendered_pages": 2,
+        "render_attempts": 2,
+        "ocr_pages": 2,
+        "extraction_status": "encoding_issue",
+        "configuration": {
+          "tool_version": "1.0",
+          "pypdf_version": "6.10.0",
+          "max_pages": 1000,
+          "render": true,
+          "ocr": true,
+          "max_render_pages": 2,
+          "dpi": 150,
+          "ocr_languages": "tha+eng",
+          "renderer": "pdftoppm",
+          "tesseract": "tesseract"
+        },
+        "pages_jsonl_sha256": "fa6f9338b3b6a267908bb2e6de8751bd0705c0c68a9777f55102cd369198f39f",
+        "created_at": "2026-10-05T16:34:02.753028+00:00",
+        "clinical_or_layout_qa_performed": false,
+        "human_approval": null,
+        "notes": [
+          "Flags are heuristics, not proof of faithful Thai text or clinical correctness.",
+          "PDF page labels are distinct from printed page numbers; printed numbers remain unknown.",
+          "OCR remains separate from original PDF text and does not clear review flags."
+        ]
+      },
+      "work_usage": {
+        "page_attempts": 282,
+        "render_attempts": 2
+      }
+    },
+    {
+      "document_id": "ckd-treatment-leaflet-undated",
+      "outcome": "extracted",
+      "summary": {
+        "document_id": "ckd-treatment-leaflet-undated",
+        "title": "แผ่นพับทางเลือกการรักษาเมื่อไตวาย",
+        "source_url": "https://www.nephrothai.org/wp-content/uploads/2026/08/แผ่นพับ-ทางเลือกการรักษาเมื่อไตวาย.pdf",
+        "source_path": "E:\\งาน\\งาน\\AI\\NLPJEC\\data\\raw\\ckd-treatment-leaflet-undated\\source.pdf",
+        "source_sha256": "789aca82ab9f034f40dee7716378d23d2960450c2dc8a7bb746168371c40fed7",
+        "source_bytes": 1061659,
+        "pdf_pages": 2,
+        "processed_pages": 2,
+        "page_cap_applied": false,
+        "all_pdf_pages_processed": true,
+        "empty_text_pages": 2,
+        "image_pages": 2,
+        "encoding_indicator_pages": 0,
+        "error_pages": 0,
+        "text_characters": 0,
+        "replacement_characters": 0,
+        "control_characters": 0,
+        "private_use_characters": 0,
+        "duplicated_combining_marks": 0,
+        "rendered_pages": 2,
+        "render_attempts": 2,
+        "ocr_pages": 2,
+        "extraction_status": "needs_ocr",
+        "configuration": {
+          "tool_version": "1.0",
+          "pypdf_version": "6.10.0",
+          "max_pages": 1000,
+          "render": true,
+          "ocr": true,
+          "max_render_pages": 2,
+          "dpi": 150,
+          "ocr_languages": "tha+eng",
+          "renderer": "pdftoppm",
+          "tesseract": "tesseract"
+        },
+        "pages_jsonl_sha256": "6896b44d50ab58a3d7764ea7f4c9317b3c71fbcfb9ff0d65dedee6ed1df3cbe6",
+        "created_at": "2026-10-05T16:34:08.980712+00:00",
+        "clinical_or_layout_qa_performed": false,
+        "human_approval": null,
+        "notes": [
+          "Flags are heuristics, not proof of faithful Thai text or clinical correctness.",
+          "PDF page labels are distinct from printed page numbers; printed numbers remain unknown.",
+          "OCR remains separate from original PDF text and does not clear review flags."
+        ]
+      },
+      "work_usage": {
+        "page_attempts": 2,
+        "render_attempts": 2
+      }
+    },
+    {
+      "document_id": "lipid-rama-education-2562",
+      "outcome": "extracted",
+      "summary": {
+        "document_id": "lipid-rama-education-2562",
+        "title": "ไขมันสูงในเลือด",
+        "source_url": "https://www.rama.mahidol.ac.th/cme/sites/default/files/public/Journal_CME_No60_Sub_01.pdf",
+        "source_path": "E:\\งาน\\งาน\\AI\\NLPJEC\\data\\raw\\lipid-rama-education-2562\\source.pdf",
+        "source_sha256": "6248e72fe833ba88cfd61dc0b881326c215a8bf3b30934682e4c328e7875ae6f",
+        "source_bytes": 4123250,
+        "pdf_pages": 6,
+        "processed_pages": 6,
+        "page_cap_applied": false,
+        "all_pdf_pages_processed": true,
+        "empty_text_pages": 0,
+        "image_pages": 0,
+        "encoding_indicator_pages": 6,
+        "error_pages": 0,
+        "text_characters": 8759,
+        "replacement_characters": 114,
+        "control_characters": 0,
+        "private_use_characters": 29,
+        "duplicated_combining_marks": 32,
+        "rendered_pages": 2,
+        "render_attempts": 2,
+        "ocr_pages": 2,
+        "extraction_status": "encoding_issue",
+        "configuration": {
+          "tool_version": "1.0",
+          "pypdf_version": "6.10.0",
+          "max_pages": 1000,
+          "render": true,
+          "ocr": true,
+          "max_render_pages": 2,
+          "dpi": 150,
+          "ocr_languages": "tha+eng",
+          "renderer": "pdftoppm",
+          "tesseract": "tesseract"
+        },
+        "pages_jsonl_sha256": "26ccd0bcde6d5ad6d38e07a5034e17d72b9452ab9ee92e9814f0830bd5063b5c",
+        "created_at": "2026-10-05T16:34:16.325726+00:00",
+        "clinical_or_layout_qa_performed": false,
+        "human_approval": null,
+        "notes": [
+          "Flags are heuristics, not proof of faithful Thai text or clinical correctness.",
+          "PDF page labels are distinct from printed page numbers; printed numbers remain unknown.",
+          "OCR remains separate from original PDF text and does not clear review flags."
+        ]
+      },
+      "work_usage": {
+        "page_attempts": 6,
+        "render_attempts": 2
+      }
+    }
+  ],
+  "attempted_present_documents": 3,
+  "document_failures": 0,
+  "page_attempts": 290,
+  "render_attempts": 6,
+  "network_requests": 0,
+  "paid_api_calls": 0,
+  "manifest_modified": false
+}

@@ -1,0 +1,13 @@
+{
+  "document_id": "lipid-inmu-food-knowledge-all-ages",
+  "requested_url": "https://inmu.mahidol.ac.th/uploads_file/freebook/freebook_01.pdf",
+  "retrieved_at": "2026-10-05T16:21:20.456761+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://inmu.mahidol.ac.th/uploads_file/freebook/freebook_01.pdf",
+  "sha256": "02b29b38390d5b4b3edd1688d89bb5ee7bdf1506a9c2052dfc8344084d9025d6",
+  "pdf_pages": 170,
+  "bytes": 33716649
+}

@@ -1,0 +1,13 @@
+{
+  "document_id": "dm-siriraj-macrovascular-leaflet-undated",
+  "requested_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/16_44_1.pdf",
+  "retrieved_at": "2026-10-05T16:19:06.188434+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/16_44_1.pdf",
+  "sha256": "6fd0dca43b88972ec4007a9ea8cacb00dbf64a0330d959170f01b876035a65ac",
+  "pdf_pages": 2,
+  "bytes": 1099867
+}

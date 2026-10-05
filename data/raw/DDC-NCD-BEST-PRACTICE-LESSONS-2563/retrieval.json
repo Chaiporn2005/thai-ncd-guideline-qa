@@ -1,0 +1,11 @@
+{
+  "document_id": "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+  "requested_url": "https://ddc.moph.go.th/uploads/publish/987920200228035119.pdf",
+  "retrieved_at": "2026-10-05T16:22:21.973383+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

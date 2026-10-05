@@ -1,0 +1,11 @@
+{
+  "document_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+  "requested_url": "https://chulabhornchannel.cra.ac.th/wp-content/uploads/2026/05/%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%9A%E0%B8%B2%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99.pdf",
+  "retrieved_at": "2026-10-05T16:19:33.175656+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

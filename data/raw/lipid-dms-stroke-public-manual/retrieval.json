@@ -1,0 +1,13 @@
+{
+  "document_id": "lipid-dms-stroke-public-manual",
+  "requested_url": "https://www.dms.go.th/backend/Content/Content_File/Old_Content/dmsweb/publish/publish28062019100655.pdf",
+  "retrieved_at": "2026-10-05T16:21:21.774529+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://www.dms.go.th/backend/Content/Content_File/Old_Content/dmsweb/publish/publish28062019100655.pdf",
+  "sha256": "5b6edfb2d332d92ca03eda81b5ac57c14ebc9212d63585ad6fa03085ca38990b",
+  "pdf_pages": 84,
+  "bytes": 35547182
+}

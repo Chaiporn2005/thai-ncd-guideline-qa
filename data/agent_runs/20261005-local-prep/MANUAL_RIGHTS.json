@@ -1,0 +1,227 @@
+[
+  {
+    "docid": "dm-remission-service-2567",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ckd-guideline-2565-revised",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-primary-care-screening-undated",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-palliative-2566",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-one-page-undated",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-treatment-leaflet-undated",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ncd-clinic-plus-2568-update",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ht-ddc-hospital-management-update-2566",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ht-ddc-provincial-sodium-guide-undated",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ht-ddc-community-low-salt-lessons-undated",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ht-ddc-low-salt-hospital-guide-undated",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ncd-ddc-primary-care-guide-2568",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ht-ddc-covid-vaccine-screening-2564",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ht-ddc-sodium-education-undated",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "ncd-ddc-health-station-manual-undated",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "public_manual_viewer_only; no published PDF download resolved",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "DDC landing links https://online.fliphtml5.com/bcbgj/swdq/ . Public javascript/config.js?1787896267 reports downloadconfig.pdf=null and downloadConfig=null. Generic translated Download text does not establish an enabled download. Official NCDstrategy catalog public item 27 is type=link pointing to the same DDC landing, not a PDF. No inferred PDF URL or body download."
+  },
+  {
+    "docid": "ht-ddc-low-sodium-77-province-menu-undated",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "public_NHCO_manual_viewer_only; no working PDF resolved",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "NHCO https://www.nationalhealth.or.th/public/ebook/2 names the menu book and public reader. Reader javascript/config.js advertises https://main.healthstation.in.th/assets/healthpdf/77-Province_Low_Sodium.pdf , previously 404 in curator run; not requested again. Prior CDN403 target was not retried. download_candidate_url null because no new usable PDF resolved. DDC source page advertises government short link https://shorturl-ddc.moph.go.th/ixreZ ; unresolved earlier, not followed this run. No PDF body. NHCO hosting does not override DDC/content-owner rights."
+  },
+  {
+    "docid": "ckd-anemia-guideline-2564",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-adult-renal-nutrition-guideline-2561",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-hemodialysis-plasma-manual-2561",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-public-kidney-prevention-tips",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-adult-glomerular-guideline-2561",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "ckd-out-of-unit-hemodialysis-standards",
+    "evidence_url": "https://www.nephrothai.org/",
+    "observed_terms": null,
+    "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+    "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+    "download_candidate_url": null,
+    "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting."
+  },
+  {
+    "docid": "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  },
+  {
+    "docid": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "public_portal_PDF_Download_advertised; current PDF bytes not checked",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": "https://www.ddc.moph.go.th/uploads/publish/1377020230127075118.pdf",
+    "notes": "Official NCD portal https://ncdclinicplus.ddc.moph.go.th/pages/public/files/view.php?id=1673855164 confirms manual title, PDF file type and public Download link; all-rights-reserved footer. Existing DDC direct PDF URL verified by publisher catalog in earlier run remains a candidate. Native recheck of DDC alternate landing returned403 and stopped; no PDF request or bypass. Rights remain subject to policy review, not unrestricted."
+  },
+  {
+    "docid": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
+    "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+    "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+    "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+    "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+    "download_candidate_url": null,
+    "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here."
+  }
+]
