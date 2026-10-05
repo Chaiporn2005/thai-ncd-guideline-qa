@@ -44,8 +44,12 @@
 - [x] ทดลองlocalOCRtha+eng6หน้าจาก3เอกสาร;outputแยก ไม่ผ่านQAและไม่ทับPDFtext
 - [x] ตรวจrights/viewers/legitimatealternatives;9explicitmediaholds,14remaining403,2manualviewer gaps
 - [x] เพิ่มdownload/extractCLI,rights gate,reviewCSV/JSONและอัปเดตHANDOFFตามคำขอ
+- [x] ทดสอบ25กรณี/metadata58/workflowผ่าน และpushcode/metadata/reportsรอบเตรียมแล้ว:commit `9751d50`
 
 ## งานรอบนี้
+
+ผลเตรียมล่าสุดขึ้นGitHubแล้วใน [commit9751d50](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/9751d509d22dbf529a56033112d1c1c3ab233b82)
+ตรวจremote mainตรงกับlocalHEADหลังpush;PDF/text/images/OCRไม่อยู่ในcommit
 
 ผลค้นล่าสุดเผยแพร่แล้วใน [commit 7c4f1cb](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/7c4f1cbc3e4a511dc4bee6c82685e48396e44ac7)
 ตรวจ remote mainตรงกับcommitนี้หลังpushจริง; ขึ้นเฉพาะmetadata/ลิงก์/แผน/บอร์ด ไม่รวมPDFต้นฉบับ

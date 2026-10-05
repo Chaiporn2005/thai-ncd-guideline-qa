@@ -14,7 +14,8 @@ Updated: 2026-10-05 • Owner: coordinator • Stage: local corpus preparation; 
 
 มีแผน/role prompts/policy/schema, manifest58 records:30extracted/28source_verified (accepted0),
 metadata validator และโครง orchestration แบบ file-based
-ผลค้นล่าสุดขึ้น GitHub แล้วใน commit 7c4f1cb; รอบเพิ่มโรคละ10เดิมอยู่19652cf
+รอบเตรียมล่าสุดขึ้นGitHubแล้วในcommit9751d50;ตรวจremote mainตรงกับlocalHEADหลังpushจริง
+รอบค้น55แหล่งอยู่7c4f1cb;รอบเพิ่มโรคละ10เดิมอยู่19652cf
 สถานะเครื่องมือและ environment อยู่ใน [RAG tools](docs/rag_tools.md)
 ดู [board](board.md), [research notes](docs/research_notes.md) และ [run log](runs/LOG.md)
 รอบก่อนเพิ่ม30รายการ DM10/HT10/LIPID10 ตามข้อกำหนด PDF/คู่มือ:

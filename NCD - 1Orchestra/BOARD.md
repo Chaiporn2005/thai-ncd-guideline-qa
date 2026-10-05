@@ -182,3 +182,13 @@
 - Publication scope:code/metadata/reports only;raw/text/images/OCRstaylocalignored.
 - Allworkers/claimsreleased;next:rights/edition/adultcurrentness/contentQA/humanacceptancebeforeSTCPUbaseline.
 - Evidence:[HANDOFF](../HANDOFF.md),[board](../board.md),[localprep](../docs/local_preparation_20261005.md).
+
+## 2026-10-05T23:53:49+07:00 — preparation publication verified
+
+- From:coordinator
+- To:user/nextsession
+- Type:update
+- Run:20261005-local-prep
+- Published40code/metadata/reportfiles:9751d509d22dbf529a56033112d1c1c3ab233b82;remote mainverifiedmatcheslocalHEAD.
+- No rawPDF/text/image/OCR artifacts staged;39localPDF/30privateextractionsremainignored,accepted0.
+- HANDOFF/rootboard updatedwithpublicationevidence;allclaims/workersreleased.
