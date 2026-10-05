@@ -39,6 +39,11 @@
 - [x] เลือก55 candidate worksหลังกันJPG/possible excerpt/historicalCOVID-specific guidanceออก3รายการ
 - [x] เพิ่ม catalogue ล่าสุด, CSV/cohort และ actual research logs; แบ่งregistryเป็น8workstreams
 - [x] ตรวจ metadata58/CSV55/workflowผ่าน และpushรอบล่าสุดขึ้นGitHubแล้ว: commit `7c4f1cb`
+- [x] ทำต่อรอบlocal preparation:ดาวน์โหลด39PDF/39hashไม่ซ้ำ/1799หน้าในเครื่อง
+- [x] สกัดprivate review30เอกสาร/1766หน้า;เก็บPDFpage number/labels/hashและtriage flags
+- [x] ทดลองlocalOCRtha+eng6หน้าจาก3เอกสาร;outputแยก ไม่ผ่านQAและไม่ทับPDFtext
+- [x] ตรวจrights/viewers/legitimatealternatives;9explicitmediaholds,14remaining403,2manualviewer gaps
+- [x] เพิ่มdownload/extractCLI,rights gate,reviewCSV/JSONและอัปเดตHANDOFFตามคำขอ
 
 ## งานรอบนี้
 
@@ -47,13 +52,16 @@
 
 รอบค้นล่าสุดมี **55 selected PDF/คู่มือ** ตาม [catalogue ล่าสุด](docs/source_catalog_50.md)
 หมวดนับ: DM17/HT10/LIPID13/CKD9/NCD_SERVICE6; เอกสารข้ามโรคนับงานเดียว
-38 full-document accesses,11 link-only,6 viewer-only; accepted0 และยังไม่ผ่าน clinical QA
+**ผลเตรียมล่าสุด:**39PDFอยู่ในเครื่อง;30เอกสารสกัดเพื่อreviewแล้ว/1766หน้า;accepted0
+พักautomaticextraction9สื่อ;14แหล่งยัง403/2manualviewersไม่มีworkingPDF
+OCR6หน้าพบคำ/หน่วย/spacingเพี้ยน จึงเก็บคิวQA ไม่ใช้เป็นgoldหรือclinicalanswer
+ดู [ผลรอบนี้](docs/local_preparation_20261005.md),[reviewCSV](data/manifests/local_preparation_20261005.csv),[rights queue](data/manifests/rights_review_20261005.json)
 ใช้ [HANDOFF](HANDOFF.md) รับงานต่อ และ [Orchestra overview](NCD%20-%201Orchestra/status/OVERVIEW.md) ติดตามแต่ละสาย
 Implementation ยังอยู่ใน backlog; scoutsจบรอบแล้ว ไม่มีworkeractive
 
 ผลค้น, CSV และ manifest เผยแพร่ใน repository Private แล้ว ดู
 [commit ผลค้น](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/19652cf0a06063a012382bf0cc1fcebaae6bdc19)
-raw PDFs ยังไม่ได้บันทึกใน `data/raw/` และไม่ได้อัปโหลดขึ้น GitHub
+ตอนรอบค้นยังไม่มีrawPDFs;ตอนนี้39ไฟล์บันทึกใน `data/raw/` แล้ว แต่ยังไม่ได้อัปโหลดPDF/ข้อความ/ภาพขึ้นGitHub
 
 เครื่องมือ RAG ใช้ Python และไลบรารี; ยังไม่มี `.venv` ของโปรเจกต์หรือระบบ Q&A ที่รันได้
 งานถัดไปคือ rights/access review, ดาวน์โหลดตามสิทธิ, OCR/QA และเตรียม environment
@@ -66,11 +74,11 @@ raw PDFs ยังไม่ได้บันทึกใน `data/raw/` แล�
 - [ ] provider/model/search tool, เครื่องรัน และงบที่ทีมเลือกจริง
 - [ ] ตรวจ rights และฉบับของเอกสารก่อนดาวน์โหลด/รับเข้า corpus
 
-## ยังไม่ได้เริ่ม
+## ยังต้องทำ
 
 - [ ] Autonomous collection agent runner
-- [ ] ดาวน์โหลด raw PDFs เข้า local corpus และสร้าง SHA-256
-- [ ] Extract/OCR, ตรวจ layout/table/flowchart และ human approval
+- [ ] เติมlocalPDFสำหรับ16รายการที่ยังขาด ผ่านช่องทางที่ถูกต้อง
+- [ ] ตรวจ/แก้OCR/layout/table/flowchart,rightsและhumanapproval;automatic extractionเสร็จเฉพาะ30reviewdocs
 - [ ] Accepted corpus ตามเกณฑ์วิชา
 - [ ] Token-aware chunking และ dense retrieval บน CPU
 - [ ] BM25 + RRF และ reranker variants
@@ -82,6 +90,7 @@ raw PDFs ยังไม่ได้บันทึกใน `data/raw/` แล�
 ## หลักฐานและการติดตาม
 
 Seed13 +รอบเพิ่ม30 +รอบล่าสุด15 =58 records: core3/supporting55; accepted0
+สถานะmanifestล่าสุด30extracted/28source_verified;ไม่มีqa_passed/human_approved/accepted
 ชุดเป้าหมาย55กัน3รายการออก แต่ยังเก็บmetadataเดิมเพื่อรักษาประวัติ
 CKDเป็นoptional collectionตามคำขอผู้ใช้; ไม่ใช่การรับทุกงานเข้า clinicalQ&A
 เป็น candidate identities; ยังต้อง final content/hash dedup และrights/humanreview

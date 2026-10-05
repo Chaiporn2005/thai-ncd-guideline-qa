@@ -1,22 +1,25 @@
 # CORPUS status
 
 - Owner role: curator
-- Active session / last run: none / 20261005-ncd-50 (curation completed)
+- Active session / last run: none / 20261005-local-prep (preparation complete; review pending)
 - Updated: 2026-10-05
-- State: metadata_collection_complete
+- State: local_preparation_complete_review_pending
 
 ## Evidence
 
-[Manifest](../../data/manifests/documents.jsonl): 58 records ทั้งหมด source_verified;
+[Manifest](../../data/manifests/documents.jsonl):58 records:30extracted/28source_verified;
 core3/supporting55/accepted0; CKD optional collectionผู้ใช้อนุญาตแล้ว ไม่ใช่ clinical inclusion
 เลือก55 PDF/คู่มือ ตาม [catalogue ล่าสุด](../../docs/source_catalog_50.md)
-38 full-document accesses,11 link-only,6 viewer-only; ไม่ใช่QAapprovalหรือlocalrawcorpus
+39localPDF/1799หน้า,30private-review extractions/1766หน้า;ไม่ใช่QAapproval/accepted corpus
 รอบล่าสุดเพิ่ม15งาน; กันJPG/possibleexcerpt/historicalCOVID-specific guidanceออก3จากยอด
 [Validator checks](../../docs/verification.md) ตรวจ metadata ไม่ใช่ clinical content
 
 ## Next / dependencies
 
 รับผลและรวมmetadataแล้ว → finaldedup/rights → extraction → layoutQA → humanreview → acceptance
+เหลือ9prior-permission automaticextractionholds,14blocked/2manualviewers
+OCRsample6หน้าจาก3เอกสารยังมีword/unit/spacing errors;ไม่ใช้แทนsourcePDFหรือgold
+หลักฐาน:[local prep](../../docs/local_preparation_20261005.md),[reviewCSV](../../data/manifests/local_preparation_20261005.csv)
 หาผู้ตรวจและยืนยัน corpus equivalent หาก source documents ไม่ถึง 50
 CKD ยังเป็น optional; การเปลี่ยน core scope ต้องมี decision จริง
 

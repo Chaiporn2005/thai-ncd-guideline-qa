@@ -41,3 +41,13 @@ accepted0,ไม่มีrawPDFsบันทึก; ยังต้อง rights
 รอบนี้18queries/26PDFattemptsรวมfailures/repeats;ไม่มีnewpaidAPI
 Registryเพิ่มCKD/NCD_SERVICEรวม8workstreams; CKDยังoptional
 หลักฐาน: [catalogue ล่าสุด](docs/source_catalog_50.md), [research run](research/20261005-ncd-50.md)
+
+## 2026-10-05 — local corpus preparation
+
+ผู้ใช้ขอทำต่อและให้อัปเดตHANDOFF/board จึงทำpublicreviewdownload+hash/page provenance+privateextractionqueue
+ดาวน์โหลด39PDF/39uniquehashes/1799หน้า;30private-review docs/1766หน้า ไม่มีtruncation/documenterror
+สื่อศูนย์เบาหวานศิริราช9รายการมีexplicitpriorpermissionnotice จึงholdautomaticextractionและRAG
+OCRtha+eng6หน้าตัวอย่างรันได้แต่พบคำ/หน่วย/spacing/columnorderผิด ไม่แก้ตัวเลขโดยเดาหรือclearQAflags
+14แหล่งยัง403/2manualviewersไม่มีworkingPDF;ทางpublicNCDportalช่วยให้OnlinePDF1งานดึงได้
+เพิ่มforegroundCLI/rights gate/metadataCSV/JSON;raw/text/imagesignore;accepted0 ไม่มีST/RAGbaseline
+หลักฐาน:[ผลเตรียม](docs/local_preparation_20261005.md),[actualresearch](research/20261005-local-prep.md)

@@ -1,0 +1,990 @@
+{
+  "reviewed_at": "2026-10-05",
+  "records": [
+    {
+      "document_id": "dm-cpg-2566-revised-2567",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-cpg-2566-revised-2567",
+          "evidence_url": "https://drive.google.com/file/d/1aA7IJ_HFdAsRdgB0MwKK-e5sPisxRzlj/view?usp=sharing",
+          "observed_terms": [
+            "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+            "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+          ],
+          "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+          "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+          "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1aA7IJ_HFdAsRdgB0MwKK-e5sPisxRzlj&export=download",
+          "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: 2nd ed (Feb 2024) E-book เบาหวาน 2566 (one  page).pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/activities-and-news/news-pr/naewthang-wech-ptibati-sahrab-rokh-bea-hwan-2566-chbab-prabprung-kph-67",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-remission-principles-2568-september",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-remission-service-2567",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "dm-remission-service-2567",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-clinic-standards-2567",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-clinic-standards-2567",
+          "evidence_url": "https://drive.google.com/file/d/1rpp0AdbP5Gn3s9KGvJIFQxcqTQWEPC2V/view",
+          "observed_terms": [
+            "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+            "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+          ],
+          "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+          "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+          "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1rpp0AdbP5Gn3s9KGvJIFQxcqTQWEPC2V&export=download",
+          "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: แนวทางการพัฒนามาตรฐานคลินิกเบาหวาน 2567 proof 6.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/naewthang-kar-phathna-pheux-matrthan-khlinik-bea-hwan-chbab-prabprung-ph-s-2567 Filename says proof6: final-edition identity still needs PDF review.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-educator-standards-2567",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-educator-standards-2567",
+          "evidence_url": "https://drive.google.com/file/d/1ag0wl9scISVg3P6N97gtD6VxEPS-6NSa/view?usp=sharing",
+          "observed_terms": [
+            "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+            "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+          ],
+          "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+          "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+          "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1ag0wl9scISVg3P6N97gtD6VxEPS-6NSa&export=download",
+          "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: มาตรฐานผู้ให้ความรู้โรคเบาหวาน.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/matrthan-phu-hi-khwam-ru-rokh-bea-hwan-2567",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-siriraj-know-diabetes-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-know-diabetes-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/21_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=21. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/23_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=23. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-patient-foot-manual-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-patient-foot-manual-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/22_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=22. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-microvascular-leaflet-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-microvascular-leaflet-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/4_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=4. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-macrovascular-leaflet-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-macrovascular-leaflet-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/16_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=16. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-retinopathy-leaflet-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-retinopathy-leaflet-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/24_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=24. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/25_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=25. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/1_44_1.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=1. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-remission-implementation-lessons-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "dm-remission-implementation-lessons-undated",
+          "evidence_url": "https://drive.google.com/file/d/1ZjtVdO9AANnL5NbJcG5hDAtgxu7CY-er/view",
+          "observed_terms": [
+            "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+            "Observed generic site footer: Copyright 2026 - Custom text here. This is not a reuse grant."
+          ],
+          "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+          "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+          "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1ZjtVdO9AANnL5NbJcG5hDAtgxu7CY-er&export=download",
+          "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: ถอดบทเรียน รูปแบบการดำเนินงานพัฒนาการจัดการโรคเบาหวาน.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/thxd-bth-reiyn-rup-baeb-kar-danein-ngan-phathnakar-cadkar-rokh-bea-hwan-dm-remission",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-guideline-2567",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-siriraj-uncontrolled-opd-2564",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-ddc-hospital-management-update-2566",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "ht-ddc-hospital-management-update-2566",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-ddc-provincial-sodium-guide-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "ht-ddc-provincial-sodium-guide-undated",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-ddc-community-low-salt-lessons-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "ht-ddc-community-low-salt-lessons-undated",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-ddc-low-salt-hospital-guide-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "ht-ddc-low-salt-hospital-guide-undated",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-ddc-sodium-education-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "ht-ddc-sodium-education-undated",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-ddc-low-sodium-77-province-menu-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "public_NHCO_manual_viewer_only; no working PDF resolved",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "NHCO https://www.nationalhealth.or.th/public/ebook/2 names the menu book and public reader. Reader javascript/config.js advertises https://main.healthstation.in.th/assets/healthpdf/77-Province_Low_Sodium.pdf , previously 404 in curator run; not requested again. Prior CDN403 target was not retried. download_candidate_url null because no new usable PDF resolved. DDC source page advertises government short link https://shorturl-ddc.moph.go.th/ixreZ ; unresolved earlier, not followed this run. No PDF body. NHCO hosting does not override DDC/content-owner rights.",
+          "document_id": "ht-ddc-low-sodium-77-province-menu-undated",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ht-chulabhorn-sodium-nutrition-verified-20261005",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-guideline-2567",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "lipid-guideline-2567",
+          "evidence_url": "https://drive.google.com/file/d/1iYALtgTYtrN_e9YposCEMNYnEsfIKg-T/view?usp=sharing",
+          "observed_terms": [
+            "Publisher publicly links this viewer for reading/download. No document-specific reuse licence found on checked issuer page.",
+            "Observed RCPT footer: COPYRIGHT 2009- RCPT ALL RIGHTS RESERVED. Publisher page explicitly offers a download."
+          ],
+          "local_review_access": "public_viewer_html_http200; issuer_read_download_link_verified; raw_pdf_download_untested",
+          "reuse_decision": "unknown; no redistribution/open-reuse grant established; review before RAG/publication",
+          "download_candidate_url": "https://drive.usercontent.google.com/uc?id=1iYALtgTYtrN_e9YposCEMNYnEsfIKg-T&export=download",
+          "notes": "Viewer HTML accessed without login by ordinary urllib: HTTP200 text/html, title: CPG-การบำบัดภาวะไขมันในเลือดเพื่อป้องกันโรคหัวใจและหลอดเลือด พ.ศ. 2567.pdf. Exact download candidate was present in the viewer-supplied HTML configuration and only Unicode escape decoding was applied. PDF body/download response and visible button state were not tested. Official Drive Help https://support.google.com/drive/answer/2494822?hl=en says viewer downloads are owner-controlled; public viewing is not a copyright licence. Stop if denial/login/owner restrictions occur; no URL rewriting, credential use, impersonation or confirmation bypass. Publisher evidence: https://www2.rcpt.org/web/content/1022 Revised issuer-hosted RCPT PDF is not substituted or assumed edition-identical to Drive; compare actual content/hash separately.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-rama-education-2562",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-siriraj-warning-1158",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-siriraj-thai-food-86",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-siriraj-trans-fat-1380",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-siriraj-diabetes-fat-7",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": true,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "document_id": "lipid-siriraj-diabetes-fat-7",
+          "evidence_url": "https://si.mahidol.ac.th/Th/division/diabetes/ct_knowledges.asp",
+          "observed_terms": [
+            "สื่อการสอนเป็นลิขสิทธิ์ของศูนย์เบาหวานศิริราช ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"
+          ],
+          "local_review_access": "public issuer catalogue/read links; PDF body not requested by this verifier; processing permission not established",
+          "reuse_decision": "restricted; hold use/adaptation and RAG ingestion pending permission review",
+          "download_candidate_url": "https://www.si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/7_44_1oAgf1K.pdf",
+          "notes": "Catalogue explicit centre teaching-media restriction verified this run. Scope includes these existing centre leaflet records. Detail evidence https://www.si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?kl_id=7. Detail kl21 and kl7 checked by ordinary nativeHTML HTTP200; they name Faculty of Medicine Siriraj Hospital, Mahidol University as copyright holder and provide exact PDF links. Other detail/PDF URLs are existing manifest evidence, not individually re-requested this run. Public access is distinct from reuse approval; no copyright-law exception assumed, human/clinical approval or permission request sent.",
+          "review_agent": "VIEWER_RIGHTS"
+        }
+      ],
+      "next_action": "obtain and record issuer permission before use/adaptation"
+    },
+    {
+      "document_id": "lipid-siriraj-food-cholesterol-2564-review",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-siriraj-stroke-nutrition-1298",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-siriraj-metabolic-763",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-inmu-food-knowledge-all-ages",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-dms-stroke-public-manual",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-guideline-2565-revised",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-guideline-2565-revised",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-palliative-2566",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-palliative-2566",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-treatment-leaflet-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-treatment-leaflet-undated",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-anemia-guideline-2564",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-anemia-guideline-2564",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-adult-renal-nutrition-guideline-2561",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-adult-renal-nutrition-guideline-2561",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-hemodialysis-plasma-manual-2561",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-hemodialysis-plasma-manual-2561",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-public-kidney-prevention-tips",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-public-kidney-prevention-tips",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-adult-glomerular-guideline-2561",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-adult-glomerular-guideline-2561",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ckd-out-of-unit-hemodialysis-standards",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.nephrothai.org/",
+          "observed_terms": null,
+          "local_review_access": "existing_issuer_link_in_manifest; current access not established by this verifier",
+          "reuse_decision": "unknown; no redistribution or RAG authorization inferred",
+          "download_candidate_url": null,
+          "notes": "Nephro home web-tool request timed out; one ordinary HTML retry returned403, then stopped. Three targeted terms/copyright queries found no usable primary-source terms. Existing individual PDFs/landing links were not requested to bypass this restriction. No license or legal conclusion established; document-front-matter rights review pending. Includes preserved records outside selected55; coordinator should filter cohort before acting.",
+          "document_id": "ckd-out-of-unit-hemodialysis-standards",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ncd-clinic-plus-2568-update",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "ncd-clinic-plus-2568-update",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ncd-ddc-primary-care-guide-2568",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "ncd-ddc-primary-care-guide-2568",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "ncd-ddc-health-station-manual-undated",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "public_manual_viewer_only; no published PDF download resolved",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "DDC landing links https://online.fliphtml5.com/bcbgj/swdq/ . Public javascript/config.js?1787896267 reports downloadconfig.pdf=null and downloadConfig=null. Generic translated Download text does not establish an enabled download. Official NCDstrategy catalog public item 27 is type=link pointing to the same DDC landing, not a PDF. No inferred PDF URL or body download.",
+          "document_id": "ncd-ddc-health-station-manual-undated",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "public_portal_PDF_Download_advertised; current PDF bytes not checked",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": "https://www.ddc.moph.go.th/uploads/publish/1377020230127075118.pdf",
+          "notes": "Official NCD portal https://ncdclinicplus.ddc.moph.go.th/pages/public/files/view.php?id=1673855164 confirms manual title, PDF file type and public Download link; all-rights-reserved footer. Existing DDC direct PDF URL verified by publisher catalog in earlier run remains a candidate. Native recheck of DDC alternate landing returned403 and stopped; no PDF request or bypass. Rights remain subject to policy review, not unrestricted.",
+          "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    },
+    {
+      "document_id": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
+      "rights_review_status": "pending",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": true,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [
+        {
+          "evidence_url": "https://www.ddc.moph.go.th/policy_website.php",
+          "observed_terms": "DDC website policy §§2.2, 3.3, 3.5, 4.2: owner permission conditions; detailed observations in MANUAL_RIGHTS_research.md. No document-specific reuse license inspected.",
+          "local_review_access": "existing_public_issuer_download_link; actual file response not checked in this zero-PDF-body verifier run",
+          "reuse_decision": "restricted_pending_review_for_derivative_use_and_redistribution; no legal or human approval",
+          "download_candidate_url": null,
+          "notes": "Publisher-wide policy triage only; supplied-channel access and document-specific restrictions need coordinator review. Existing canonical URLs are not revalidated here.",
+          "document_id": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
+          "review_agent": "MANUAL_RIGHTS"
+        }
+      ],
+      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+    }
+  ],
+  "human_approvals": 0,
+  "notes": [
+    "Public download and local private review do not approve RAG, redistribution or derived publications.",
+    "Website-wide terms are triage evidence, not a document-specific legal conclusion.",
+    "Explicit Siriraj teaching-media notice:9 automatic-extraction holds; public copies kept for permission/content review."
+  ]
+}

@@ -1,0 +1,4 @@
+# Versions used by the offline synthetic PDF tests in this run.
+-r requirements-ingest.txt
+reportlab==4.4.9
+Pillow==12.3.0

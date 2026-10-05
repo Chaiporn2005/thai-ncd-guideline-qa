@@ -1,0 +1,22 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "pypdf": "6.10.0",
+    "pdfplumber": "0.11.9",
+    "reportlab": "4.4.9",
+    "Pillow": "12.3.0"
+  },
+  "ocr_languages_checked": [
+    "tha",
+    "eng",
+    "osd"
+  ],
+  "local_tools": [
+    "pdftoppm",
+    "pdfinfo",
+    "tesseract"
+  ],
+  "project_venv_created": false,
+  "SentenceTransformers_installed_by_this_run": false,
+  "paid_api_calls": 0
+}

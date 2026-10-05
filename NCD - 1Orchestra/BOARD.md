@@ -140,3 +140,45 @@
 - Verified git ls-remote main matches local HEAD after successful push.
 - Metadata58/selected55/accepted0; no source PDFs uploaded; no active collection workers.
 - Root board and handoff updated with publication evidence in follow-up documentation commit.
+
+## 2026-10-05T23:11:45+07:00 — local preparation assignment
+
+- From: coordinator
+- To: root curator/downloader, VIEWER_RIGHTS, MANUAL_RIGHTS, EXTRACT_TOOL workers
+- Type: assignment
+- Run:20261005-local-prep
+- User requested continuation; prepare legitimate local review copies, hashes/pages, page extraction and review queue.
+- Root alone edits canonicalmanifest and downloader; verifier workers isolated JSON/logs, extractor worker isolated code proposal/tests.
+- VIEWER_RIGHTS: DM/RCPT Drive identities and publisher reuse terms;8queries/0PDFbody attempts.
+- MANUAL_RIGHTS:2manualviewers and DDC/Nephro publisher terms;8queries/0PDFbody attempts.
+- EXTRACT_TOOL: local extraction/triage CLI proposal plus meaningful tests;0network.
+- Download batch01/02:up to30 HTTPPDF attempts each;batch03 reserve30 only for resolved legitimate PDFlinks.
+- No source publication, humanacceptance, paidAPI, autonomousrunner or newRAGexperiment.
+- Evidence:[decision0004](decisions/0004-local-corpus-preparation.md)
+
+## 2026-10-05T23:24:09+07:00 — legitimate alternate-source verification
+
+- From: coordinator
+- To: MIRROR_DDC_DM and MIRROR_CRA_PORTAL verifiers
+- Type: assignment
+- Run:20261005-local-prep-mirrors
+- Rights/viewer verifiers handed off:7queries each/0PDFdownloads; their claims release now.
+- Fifteen direct sources returned403 during downloads; do not retry restricted URLs, spoof headers or bypass controls.
+- Seek independently published public issuer/partner mirrors or actual advertised alternative download channels; unknown editions remain held.
+- Each verifier:up to8queries/0PDFbodies/max5strongalternatecandidates;isolatedoutput JSON/research logs.
+- Root download04 reserve:up to20 attempts only after provenance/edition review.
+
+## 2026-10-05T23:48:35+07:00 — local preparation handoff
+
+- From:rootcurator/coordinator
+- To:user/nextsession
+- Type:handoff
+- Run:20261005-local-prep
+- Usersteering:requestedHANDOFF.md andboard.md update whenfinished;updatedwithactualresults/remainingqueues.
+- Result:39localPDF/39uniquehashes/1799pages;30privateextractions/1766pages;6OCRsamplepages.
+- Issues:9explicitpermissionholds,14remaining403works,2manualPDFgaps;OCRword/unit/spacing/columnerrorsremain.
+- Manifest:58records:30extracted/28source_verified;accepted0/nohumanapproval.
+- Tools:foregroundfetch/extractCLI,rights gate,25offlinecheckspassed;existingpypdf/Poppler/Tesseract,noinstall/paidAPI.
+- Publication scope:code/metadata/reports only;raw/text/images/OCRstaylocalignored.
+- Allworkers/claimsreleased;next:rights/edition/adultcurrentness/contentQA/humanacceptancebeforeSTCPUbaseline.
+- Evidence:[HANDOFF](../HANDOFF.md),[board](../board.md),[localprep](../docs/local_preparation_20261005.md).

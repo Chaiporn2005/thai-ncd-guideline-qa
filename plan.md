@@ -2,7 +2,7 @@
 
 วันที่เริ่มแผน: 5 ตุลาคม 2569 (2026-10-05, Asia/Bangkok)
 
-สถานะ: แผนและโครงเริ่มต้นสำหรับค้นข้อมูล ยังไม่ได้สร้างระบบ Q&A หรือวัดผล
+สถานะ: local corpus preparation มีdownload/extract CLIแล้ว;ยังไม่ได้สร้างระบบ Q&A หรือวัดผลretrieval
 
 ติดตามสถานะจริงได้ที่ [board.md](board.md)
 
@@ -37,6 +37,8 @@ Guideline ไทยอาจอ้างงานวิจัยต่างป�
 คัดเลือกเพิ่ม DM10/HT10/LIPID10 เป็นเอกสารสนับสนุน; ดู [catalogue](docs/source_catalog_20261005.md)
 รอบแรกหลังเพิ่ม30รวม43 candidates; รอบล่าสุดรวม58 และเลือก55 PDF/คู่มือตาม [catalogue ล่าสุด](docs/source_catalog_50.md)
 accepted ยังเป็น0; clinical CPG หลัก3แยกจากเอกสารให้ความรู้/บริการ และ CKD เป็น optional
+รอบเตรียมล่าสุดมี39localPDFและ30private-review extractions/1766หน้า พร้อมrights/OCRqueue
+ดู [ผลเตรียมเอกสาร](docs/local_preparation_20261005.md);9explicitpermissionholdsและ16localaccess gapsยังค้าง
 
 ผลลัพธ์เป้าหมาย: คำตอบ, เงื่อนไขประชากร, ข้อยกเว้น, ฉบับเอกสาร และ citation รายข้อ
 รวมลิงก์หน้า/ตาราง/ข้อความต้นทาง; ถ้าข้อมูลไม่พอให้ถามเพิ่มหรือ abstain

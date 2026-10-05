@@ -1,6 +1,6 @@
 # Handoff — Thai NCD Guideline Q&A
 
-Updated: 2026-10-05 • Owner: coordinator • Stage: planning/research scaffold
+Updated: 2026-10-05 • Owner: coordinator • Stage: local corpus preparation; no accepted corpus/RAG yet
 
 ## เป้าหมายและข้อกำหนดที่ยืนยัน
 
@@ -12,7 +12,7 @@ Updated: 2026-10-05 • Owner: coordinator • Stage: planning/research scaffold
 
 ## ทำแล้วและหลักฐาน
 
-มีแผน/role prompts/policy/schema, manifest 58 source_verified records (accepted 0),
+มีแผน/role prompts/policy/schema, manifest58 records:30extracted/28source_verified (accepted0),
 metadata validator และโครง orchestration แบบ file-based
 ผลค้นล่าสุดขึ้น GitHub แล้วใน commit 7c4f1cb; รอบเพิ่มโรคละ10เดิมอยู่19652cf
 สถานะเครื่องมือและ environment อยู่ใน [RAG tools](docs/rag_tools.md)
@@ -20,11 +20,17 @@ metadata validator และโครง orchestration แบบ file-based
 รอบก่อนเพิ่ม30รายการ DM10/HT10/LIPID10 ตามข้อกำหนด PDF/คู่มือ:
 27 direct PDF URLs,1 Drive PDF viewer,2 manual e-books; ดู [catalogue](docs/source_catalog_20261005.md)
 ดึงเนื้อหาPDFได้19รายการใหม่ แต่ไม่มีrawPDFsเก็บในrepoหรือhumanapproval
-รอบล่าสุด `20261005-ncd-50` เพิ่ม15งาน: CKD6, NCD_SERVICE3 และ CORE6
+รอบค้น `20261005-ncd-50` เพิ่ม15งาน: CKD6, NCD_SERVICE3 และ CORE6
 เลือก55 PDF/คู่มือหลังกันJPG/possible excerpt/historicalCOVID-specific guidanceออก3รายการ
 หมวดนับหนึ่งงานต่อหมวด: DM17/HT10/LIPID13/CKD9/NCD_SERVICE6
 ดู [catalogue ล่าสุด](docs/source_catalog_50.md), [CSV](data/manifests/corpus_50_candidates.csv)
 และ [actual queries/attempts](research/20261005-ncd-50.md)
+รอบล่าสุด `20261005-local-prep`:โหลด39PDF/39hashไม่ซ้ำ/1799หน้าเก็บในdata/raw/
+สกัดเพื่อprivate fidelity review30เอกสาร/1766หน้า;15needs_ocr/12encoding_issue/3extracted_unreviewed
+OCRไทย+อังกฤษ6หน้าจาก3เอกสารในdata/processed/ocr-review-v1/;พบword/unit/spacing/reading-order errors จึงไม่ผ่านQA
+9สื่อศูนย์เบาหวานศิริราชพักautomaticextractionก่อนpermission;14แหล่งยัง403และ2คู่มือไม่มีworkingPDF
+เพิ่มforeground download/extract CLI และrights gate;ไม่มีraw/text/imagesขึ้นGit
+หลักฐาน:[ผลเตรียมล่าสุด](docs/local_preparation_20261005.md),[review CSV](data/manifests/local_preparation_20261005.csv),[rights queue](data/manifests/rights_review_20261005.json)
 ไฟล์ต้นแบบ Kaggle ใช้เป็น reference สำหรับการจัดระบบ ไม่ใช่คำสั่งให้ใช้บัญชี/งบ/ข้อมูลของต้นแบบ
 
 ## งานกำลังรัน
@@ -34,10 +40,12 @@ metadata validator และโครง orchestration แบบ file-based
 
 ## งานถัดไป
 
-1. Coordinator อ่าน [catalogue ล่าสุด](docs/source_catalog_50.md) และเลือกลำดับ rights/access review
-   ของ55 selected candidates (manifest58) โดยไม่ถือว่าครบเกณฑ์วิชาหรืออ่านครบทุกไฟล์
-2. Curator ตรวจ final content/hash dedup, permissions และส่ง extraction/QA/human review queue
-3. เมื่อ corpus ผ่าน gates เริ่ม CPU dense baseline และ variant ที่สอง
+1. อ่าน [local preparation](docs/local_preparation_20261005.md) และ [review queue](data/manifests/local_preparation_20261005.csv)
+   ให้ผู้ตรวจบันทึกrights/edition/adult scope/clinicalcurrencyและตรวจThai glyphs/tables/units/conditionsกับภาพ
+2. จัดหาช่องทางถูกต้องหรือสำเนาที่ทีมมีสิทธิใช้สำหรับ14blocked/2manualviewers;ไม่retry/bypass403
+   9prior-permission holdsต้องบันทึกหลักฐานอนุญาตก่อนautomaticextraction/RAG
+3. แก้OCR/readingorderจากภาพจริง,finalcontentdedup,ให้คนapprove inclusionตามgates
+4. Curatorตั้งacceptedเมื่อครบหลักฐาน แล้วเริ่มtoken-awarechunking/STCPUbaselineและvariantที่สอง
 
 ทำส่วนค้น/จัด metadata ที่ได้รับมอบหมายได้; ห้ามอ้างว่าทีมเลือก provider/budget/reviewer แล้ว
 
@@ -46,6 +54,8 @@ metadata validator และโครง orchestration แบบ file-based
 55 candidate works ไม่ใช่ accepted corpus; หาก finalreview เหลือไม่ถึง50 documents ต้องยืนยัน equivalent
 Drive viewer, blocked issuer, PDF encoding/layout และ alternate editions ยังต้องตรวจต่อ
 Raw documents ถูก ignore; การเข้าถึงสาธารณะไม่รับรองสิทธิเผยแพร่
+Git cloneไม่มี39PDF/ข้อความ/OCRที่อยู่เฉพาะในเครื่องนี้;ต้องดาวน์โหลดตามสิทธิ/ช่องทางจริง
+Source `content_access` บางรายการเป็นหลักฐานwebเดิม ไม่ได้แปลว่ามีlocalfile;ใช้local preparation reportตรวจไฟล์จริง
 ยังไม่มี reviewer assignment, วัน deadline จริง หรือ API budget ที่อนุมัติ
 PDF/manual-only เป็นความต้องการล่าสุด; ไม่รวม HTML articles แทนเพื่อให้ครบยอด
 HTHealthStationและ77provinceเมนูยังเป็นmanual viewers ไม่มีdirectPDFที่ยืนยันว่าดึงได้

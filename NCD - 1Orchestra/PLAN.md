@@ -38,9 +38,16 @@ Deadline/freeze date: ยังไม่ทราบ; ใช้ Week 15 ตา�
 ตรวจชนิด/ผู้จัดทำ/ฉบับ/เนื้อหาที่เข้าถึงได้ก่อน curator รวม metadata และ source catalog
 Claim per stream ลงทะเบียนใน RESOURCES; ไม่เปลี่ยน CKD เป็น core
 
-## Current collection assignment — 20261005-ncd-50
+## Completed collection assignment — 20261005-ncd-50
 
 ผู้ใช้ขอครบ 50 เอกสาร ครอบคลุมโรคหลัก + optional CKD + NCD Clinic Plus
 ใช้ CKD/NCD_SERVICE/CORE scouts รวมไม่เกิน 3 workers และ curator เป็นผู้รวม manifest
 แยก JPG, possible excerpt และ historical COVID-specific guidance ออกจากยอดเป้าหมาย
 PDF/คู่มือที่ตรวจตัวตนแล้วเป็น candidates; accepted corpus ยังต้องผ่าน rights/content/human review
+
+## Current handoff — 20261005-local-prep
+
+โหลด39PDFและสกัดprivate review30เอกสารแล้ว;9explicitpermissionholds/16accessgapsยังค้าง
+งานถัดไปคือrights/edition/adult-scope/clinicalcurrency และตรวจThai glyphs/OCR/tables/unitsกับภาพ
+Foregrounddownload/extractCLIพร้อมใช้;ไม่ใช่autonomouscollectionrunner และยังไม่มีRAGexperiment
+เมื่อhumaninclusion/extractionQAครบจึงตั้งacceptedและเริ่มCPUbaselineตามrootplan

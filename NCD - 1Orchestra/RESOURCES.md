@@ -117,3 +117,41 @@ Total18 queries/26 attempts (including repeated/failed requests), within amended
 Claims were interrupted by account usage limits and continued after explicit user resume.
 No active workers/claims; model tokens/platform cost unknown; no new paid API invoked.
 Evidence: [actual research logs](../research/20261005-ncd-50.md).
+
+## 20261005-local-prep claims — 2026-10-05T23:11:45+07:00
+
+| Claim | Owner | Limits | State |
+| --- | --- | --- | --- |
+| prep-VIEWER_RIGHTS | verifier |8queries/0PDFbody downloads | active |
+| prep-MANUAL_RIGHTS | verifier |8queries/0PDFbody downloads | active |
+| prep-EXTRACT_TOOL | extractor |local code/tests,0network/0paidAPI | active |
+| prep-DOWNLOAD01 | root |30PDF attempts,30stimeout,10requests/host/min | reserved |
+| prep-DOWNLOAD02 | root |30PDF attempts,30stimeout,10requests/host/min | reserved |
+| prep-DOWNLOAD03 | root |30PDF attempts only resolvedpubliclinks | reserve |
+
+Maximum3workers plusroot. Unknown modeltokens/platformcost; no newpaidAPI budget.
+
+### 2026-10-05T23:24:09+07:00 — verifier release / alternate claims
+
+- prep-VIEWER_RIGHTS:released,7queries/0PDFbodydownloads;14rights/viewerentries.
+- prep-MANUAL_RIGHTS:released,7queries/20HTML-JSrequests/0PDFbodydownloads;25entries.
+- prep-MIRROR_DDC_DM and prep-MIRROR_CRA_PORTAL:each8queries/0PDFbody attempts,active.
+- prep-DOWNLOAD04:reserve20 attempts for genuinely public verified alternative channels, no retry/bypass of knowndenials.
+- EXTRACT_TOOL remainsactive;3workerlimit maintained;no paidAPI.
+
+### Release and actual usage — 2026-10-05T23:48:35+07:00
+
+| Claim | Actual usage | State |
+| --- | --- | --- |
+| prep-EXTRACT_TOOL |0network;19synthetictests passed byworker;rootadopted andaddedrights test | released |
+| prep-MIRROR_DDC_DM |8queries/0PDFbodies;0strongmirrors;exclusionslogged | released |
+| prep-MIRROR_CRA_PORTAL |8queries/11HTMLrequests/0PDFbodies;1suppliedportaldownloadlink | released |
+| prep-DOWNLOAD01 |24attempts;15saved/9denied;6viewerskips | released |
+| prep-DOWNLOAD02 |24attempts;18saved/6denied;1viewerskip | released |
+| prep-DOWNLOAD03 |5attempts/5saved observedDriveexports | released |
+| prep-DOWNLOAD04 |1attempt/1saved;19reserveattemptsunused | released |
+
+Rootnetworktotal54PDFattempts withinindividualbatchcaps.39distinctlocalPDFs;14finalworksblocked/2manualgaps.
+Rootextraction30docs/1766pages;OCRtriage3docs/290pages with6render/OCRattempts;noall-pageQA.
+Allclaims/workersreleased;noautonomousrunner/watcher;tokens/platformcostunknown;nonewpaidAPIinvoked.
+Evidence:[research](../research/20261005-local-prep.md),[localprep](../docs/local_preparation_20261005.md).

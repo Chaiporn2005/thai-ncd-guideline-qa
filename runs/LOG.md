@@ -58,3 +58,18 @@
 - Evidence: [research run](../research/20261005-ncd-50.md), [selected catalogue](../docs/source_catalog_50.md)
 - Resources: collection claims released after handoff; tokens/cost unmetered; no new paid API or autonomous runner
 - Next: permissions/currency/content/hash dedup, adult-section extraction/OCR, clinical and human inclusion review
+
+## 2026-10-05 — 20261005-local-prep
+
+- Owner:rootcoordinator/downloader/curator;VIEWER_RIGHTS/MANUAL_RIGHTS verifiers then2mirrorverifiers;EXTRACT_TOOLworker
+- User:continuework;updateHANDOFF/boardwhenfinished
+- Downloads:4registeredbatches54attempts;39localPDFs/39hashes/1799pages;15deniedattempts,14finalworksblocked/2viewers
+- Sources:5observedDrivepublicdownloadlinks;1suppliedNCDportalchannel;existingverifiedBangkokHTmirror;no403/TLS/loginbypass
+- Extraction:30private-review documents/1766pages,0docerrors/0truncation;15needs_ocr/12encoding_issue/3unreviewed
+- Rights:9explicitteachingmediaholds;all55RAGusependingrights/clinical/humanreview;accepted0
+- OCR:3docs,290pagetriage,6flaggedpagesrendered/OCRedat150DPItha+eng;0toolerrors;fidelityissuesremain
+- Visualreview:HT/lipid/NCDcovers,DMpage3,CKDleafletpage1,Ramaeducationpage2;notall-pageclinicalQA
+- Tools:existingPython3.12.14/pypdf6.10.0/Poppler/Tesseract;newforegroundCLI;nonewpackage/venv/paidAPI/embedding/generator
+- Search:30verifierqueries;fullPDFbodiesdownloadedbyrootonly;tokens/platformcostunknown
+- Evidence:[research](../research/20261005-local-prep.md),[report](../docs/local_preparation_20261005.md),[reviewCSV](../data/manifests/local_preparation_20261005.csv)
+- Next:rights/edition/adultcurrentnessreview,OCR/readingorder/unitQA,legitimateaccessgaps,actualhumanacceptancebeforeSTCPUbaseline

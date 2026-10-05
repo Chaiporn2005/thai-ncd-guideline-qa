@@ -88,3 +88,21 @@ This does not verifyallPDFbodies,rights,clinicalaccuracy,instructorcorpus-equiva
 Evidence:[research](../research/20261005-ncd-50.md),[catalogue](source_catalog_50.md).
 Metadata checks do not certify final byte/content dedup, adult applicability, clinical currency,
 human acceptance, source redistribution rights or the course's accepted corpus minimum.
+
+# Local preparation — 2026-10-05
+
+- Manifest58:30extracted/28source_verified;accepted0,allhuman_reviewnull.
+- Selected55=currentCSV/cohort;local39PDF/39different bytehashes/1799pages.
+- Private extraction30docs/1766pages;allPDFpagesprocessed;0errors/0truncations.
+- Status15needs_ocr/12encoding_issue/3extracted_unreviewed;noQApass.
+- Explicitrightsqueue55;9automaticextractionholds enforced by CLI;all55RAG-usependingreview.
+- OCR3docs/6pages150DPItha+eng;0toolerrors;visualinspectionfoundword/unit/spacing/columnissues.
+- Remaining14blockedworks/2manualviewers withoutlocalPDF;15deniedPDFattempts in54totalattempts.
+- Offline tests25passed/no skips:integrity/path/rights/caps/bytepreservation/real syntheticlocalOCR.
+- `scripts/validate_manifest.py`:passed58 records; `scripts/orchestra.py check`:passed8-streamworkflow/local links.
+- Localreceipt/sourcehash/PDFpages,pageJSONLhash/page numbering,selection/rights/csv/summary consistency checked.
+- Sourcepublicationlimitedtometadata/code/reports;raw/text/images/OCRignored;noembedding/generation/paidAPI.
+
+Representativevisualchecks andactualfidelityissues:[research](../research/20261005-local-prep.md).
+These checks do not validatefullclinicalcontent,currentness,alltables/flowcharts,rightslicences,
+printed-pagecitations,instructoracceptance orclinicalgold. Byte-hashuniquenessdoesnotprovethatworksareindependent.

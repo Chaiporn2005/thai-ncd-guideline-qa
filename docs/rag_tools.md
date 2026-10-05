@@ -39,7 +39,10 @@ PDF ที่ดาวน์โหลดเก็บจริงจะอยู�
 ส่วน metadata/URLs ที่ขึ้น GitHub อยู่ `data/manifests/`
 รายละเอียด: [data layout](../data/README.md)
 
-ปัจจุบันมี manifest 43 candidates, accepted 0 และยังไม่มี raw PDFs ที่บันทึกใน `data/raw/`
+ปัจจุบันmanifest58/selected55,accepted0;39PDFอยู่ใน `data/raw/` แล้ว
+30เอกสารสกัดเพื่อprivate review1766หน้า และOCRsample6หน้า;ยังไม่มีaccepted corpus/index/RAGbaseline
+มีforeground [download](download_pipeline.md) และ [extract/OCR CLI](extraction_pipeline.md)
+ใช้pypdf6.10.0/Poppler/Tesseracttha+engที่มีอยู่เดิม ไม่ได้ติดตั้งenvironmentหรือST/PyTorchในรอบนี้
 รายการใหม่โรคละ 10: [source catalogue](source_catalog_20261005.md)
 
 ## เอกสารทางการที่ใช้อ้างอิง

@@ -4,12 +4,15 @@
 เริ่มจากเบาหวานชนิดที่ 2 ความดันโลหิตสูง และไขมันในเลือดผิดปกติ
 โดยใช้หลาย agents ช่วยรวบรวมและตรวจแหล่งข้อมูล ก่อนสร้างและประเมินระบบ RAG
 
-**สถานะ: planning / research scaffold** — manifest 58 รายการ; เลือก 55 PDF/คู่มือเป็น candidates และมีตัวตรวจ metadata แล้ว
+**สถานะ: corpus preparation** — manifest58/selected55;มี39localPDFและ30เอกสารสกัดเพื่อreviewแล้ว;accepted0
 ยังไม่มีระบบ Q&A, autonomous agent runner, corpus ที่รับครบ หรือผลทดลอง
 
 ## เริ่มอ่าน
 
 - [ส่งต่องานล่าสุด](HANDOFF.md)
+- [ผลเตรียมเอกสารในเครื่อง](docs/local_preparation_20261005.md)
+- [คิวตรวจรายเอกสาร](data/manifests/local_preparation_20261005.csv)
+- [วิธีดาวน์โหลดและสกัด/OCR](docs/download_pipeline.md)
 - [Protocol กลาง](NCD%20-%200Protocol/PROTOCOL.md)
 - [Orchestra: แบ่งงานและประสาน agents](NCD%20-%201Orchestra/README.md)
 - [สถานะ 8 สายงาน](NCD%20-%201Orchestra/status/OVERVIEW.md)
@@ -73,6 +76,8 @@ python scripts/validate_manifest.py
 ให้ scouts ทำงานในคนละ scope และส่งผลคนละไฟล์ แล้วให้ curator รวมผลเพียงตัวเดียว
 prompts ใน `agents/` ใช้กับเครื่องมือที่รองรับ subagents ได้
 การวาง prompt files ใน repository ไม่ได้เริ่ม agents อัตโนมัติ
+มีforegroundCLIสำหรับpublicreviewdownloadและlocalextractionแล้ว;ยังไม่มีautonomousagentdispatcher
+Basic dependency:[requirements-ingest.txt](requirements-ingest.txt);rights gateและคิวhumanreviewยังคงแยกจากmetadata checks
 
 ## ข้อมูลและขอบเขต
 
