@@ -8,6 +8,7 @@ Date: 2026-10-05
 - 13 candidate records; core 3, supporting 5, requires scope expansion 5.
 - Human-approved / accepted records: **0**.
 - All local Markdown link targets exist.
+- Git staged whitespace check passed; initial research scaffold committed and pushed to `main`.
 - Validator rejects the following synthetic negative cases, without modifying real source records:
   1. Accepted status without actual human approval and content QA.
   2. Invalid calendar date.

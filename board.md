@@ -21,10 +21,12 @@
 - [x] รวมผลค้นเป็น seed manifest 13 รายการ พร้อมสถานะและข้อจำกัด; accepted ยังเป็น 0
 - [x] ตรวจ manifest ผ่าน และปฏิเสธข้อมูลผิด 8 กรณี; ตรวจลิงก์ local Markdown ผ่าน
 - [x] สร้าง [GitHub repository](https://github.com/Chaiporn2005/thai-ncd-guideline-qa) แบบ Private ในบัญชี Chaiporn2005
+- [x] Commit และ push ไฟล์เริ่มต้นขึ้น branch `main` สำเร็จ
 
-## กำลังทำ
+## งานรอบนี้
 
-- [ ] Commit และ push ไฟล์เริ่มต้นขึ้น GitHub
+แผน, บอร์ด, role prompts, source manifest และตัวตรวจ metadata ขึ้น GitHub แล้ว
+Implementation ตาม milestones ยังอยู่ใน backlog ด้านล่าง
 
 ## รอข้อกำหนด/การตรวจจากทีม
 
