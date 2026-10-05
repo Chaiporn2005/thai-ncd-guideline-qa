@@ -25,6 +25,7 @@
 - [ผลค้นและข้อจำกัดของรอบแรก](docs/research_notes.md)
 - [Actual queries และการคัดเลือกรอบเพิ่มเอกสาร](research/20261005-ncd-plus10.md)
 - [ตำแหน่งเก็บ PDF/ข้อความ/metadata](data/README.md)
+- [เครื่องมือ RAG และสถานะการติดตั้ง](docs/rag_tools.md)
 
 ## โครงสร้างการทำงาน
 

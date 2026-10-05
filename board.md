@@ -31,6 +31,9 @@
 - [x] ผู้ใช้ยืนยันเอกสารเพิ่มเฉพาะ PDF/คู่มือ
 - [x] ให้3scoutsค้นเพิ่ม DM10/HT10/LIPID10; curatorรวม30 new candidate IDs ไม่ซ้ำseedIDsเดิม
 - [x] เพิ่ม source catalogue, CSV/cohort IDs และ actual research/query log; manifest รวม 43 accepted 0
+- [x] อัปโหลดผลค้นและ metadata รอบเพิ่มเอกสารขึ้น GitHub `main` แล้ว: commit `19652cf`
+- [x] ตรวจเครื่องมือจริง: Python 3.12.14 และ pypdf มีแล้ว; SentenceTransformers/PyTorch ยังไม่มีใน runtime ที่ตรวจ
+- [x] บันทึกตำแหน่งเก็บข้อมูลและแผนเครื่องมือใน [data layout](data/README.md) และ [RAG tools](docs/rag_tools.md)
 
 ## งานรอบนี้
 
@@ -38,6 +41,14 @@
 เป็น27 direct PDF URLs,1 Drive PDF viewer,2 manual e-book viewers; bodyPDFดึงได้19รายการใหม่ ยังไม่ผ่านQA/acceptance
 ใช้ [HANDOFF](HANDOFF.md) รับงานต่อ และ [Orchestra overview](NCD%20-%201Orchestra/status/OVERVIEW.md) ติดตามแต่ละสาย
 Implementation ยังอยู่ใน backlog; scoutsจบรอบแล้ว ไม่มีworkeractive
+
+ผลค้น, CSV และ manifest เผยแพร่ใน repository Private แล้ว ดู
+[commit ผลค้น](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/19652cf0a06063a012382bf0cc1fcebaae6bdc19)
+raw PDFs ยังไม่ได้บันทึกใน `data/raw/` และไม่ได้อัปโหลดขึ้น GitHub
+
+เครื่องมือ RAG ใช้ Python และไลบรารี; ยังไม่มี `.venv` ของโปรเจกต์หรือระบบ Q&A ที่รันได้
+งานถัดไปคือ rights/access review, ดาวน์โหลดตามสิทธิ, OCR/QA และเตรียม environment
+รายละเอียด: [RAG tools](docs/rag_tools.md)
 
 ## รอข้อกำหนด/การตรวจจากทีม
 

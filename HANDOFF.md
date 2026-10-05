@@ -14,6 +14,7 @@ Updated: 2026-10-05 • Owner: coordinator • Stage: planning/research scaffold
 
 มีแผน/role prompts/policy/schema, manifest 43 source_verified candidates (accepted 0),
 metadata validator และโครง orchestration แบบ file-based
+ผลค้นขึ้น GitHub แล้วใน commit 19652cf; สถานะเครื่องมือและ environment อยู่ใน [RAG tools](docs/rag_tools.md)
 ดู [board](board.md), [research notes](docs/research_notes.md) และ [run log](runs/LOG.md)
 รอบล่าสุดเพิ่ม30รายการ DM10/HT10/LIPID10 ตามข้อกำหนด PDF/คู่มือ:
 27 direct PDF URLs,1 Drive PDF viewer,2 manual e-books; ดู [catalogue](docs/source_catalog_20261005.md)

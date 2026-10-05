@@ -79,3 +79,16 @@
 - Claims:allreleased;noactiveworkers,allrawPDFsunsaved
 - Userfollowups:PDFstorage convention data/raw/<document_id>/source.pdf;RAGsoftware usesPythonlibraries,notinstalledasprojectenvironmentyet
 - Evidence:[catalogue](../docs/source_catalog_20261005.md),[researchrun](../research/20261005-ncd-plus10.md)
+
+## 2026-10-05T21:19:57+07:00 — Git publication and RAG tool status
+
+- From: coordinator
+- To: all / next session
+- Type: update
+- Request: ผู้ใช้ขออัปขึ้น Git และแจ้งใน board
+- Verified publication: ผลค้นและ metadata ขึ้น origin/main แล้วใน commit 19652cf
+- Result: เพิ่ม DM10/HT10/LIPID10; manifest รวม 43 candidates, accepted 0
+- Storage: metadata/URLs อยู่ใน Git; raw PDFs ยังไม่บันทึกใน data/raw/ และไม่ถูกอัปโหลด
+- Tool check: Python 3.12.14/pypdf มีแล้ว; SentenceTransformers/PyTorch ยังไม่มีใน runtime ที่ตรวจ
+- Implementation: ยังไม่มี project environment หรือ Q&A demo; ไม่ได้ติดตั้ง packages ในรอบนี้
+- Evidence: [root board](../board.md), [RAG tools](../docs/rag_tools.md), [data layout](../data/README.md)
