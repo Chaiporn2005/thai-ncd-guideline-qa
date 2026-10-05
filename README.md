@@ -22,7 +22,7 @@
 - [รายการแหล่งข้อมูลตั้งต้น](data/manifests/documents.jsonl)
 - [ผลค้นและข้อจำกัดของรอบแรก](docs/research_notes.md)
 
-## โครงสร้างการทำงานตาม kaggle-team
+## โครงสร้างการทำงาน
 
 ```text
 NCD - 0Protocol/     คู่มือวงจรงานและ templates
