@@ -40,6 +40,8 @@ OCRไทย+อังกฤษ6หน้าจาก3เอกสารในda
 เพิ่มโครงสร้างraw/processed/indexes/agent_runsพร้อมREADMEและallowlists
 publication scope:55retrieval records/33extraction summaries/39reviewed agent outputs
 รวมmanifest/schemaเดิม;ดู[data README](data/README.md)และ[inventory](data/manifests/github_data_inventory_20261006.json)
+Pushแล้วในcommit0182f05369c65ca769a691b8cf0be663b287b2c1;remote mainตรงกับlocalHEADหลังpushจริง
+dataมี149tracked filesรวมmetadataเดิม/README/allowlist/inventory;ตรวจJSON/JSONLและsource-body exclusionผ่าน
 PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยังlocal-only;ไม่มีหลักฐานอนุญาตเผยแพร่ซ้ำเพิ่มเติม
 สถานะrights/humanapproval/acceptedไม่เปลี่ยน;การศึกษาไม่ถูกบันทึกเป็นpublisher permission
 

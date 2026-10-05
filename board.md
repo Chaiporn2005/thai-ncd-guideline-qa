@@ -48,8 +48,10 @@
 
 ## งานรอบนี้
 
-รอบ `20261006-data-github`:เตรียมอัปโครงสร้างdataตามคำขอผู้ใช้
+รอบ `20261006-data-github`:อัปโครงสร้างdataและmetadataแล้วตามคำขอผู้ใช้
 เพิ่ม55retrieval records/33extraction summaries/39reviewed agent outputs พร้อมREADME/allowlists/inventory
+เผยแพร่แล้วใน[commit0182f05](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/0182f05369c65ca769a691b8cf0be663b287b2c1)
+ตรวจremote mainตรงกับlocalHEAD;dataมี149tracked filesและsource-body exclusionผ่าน
 PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยังไม่ได้อัป เนื่องจากยังไม่มีหลักฐานอนุญาตเผยแพร่ซ้ำ
 ผู้ใช้ถามการใช้เพื่อการศึกษา;ยังไม่เปลี่ยนrightsเป็นpermittedหรือaccepted
 ดู[data README](data/README.md)และ[inventory](data/manifests/github_data_inventory_20261006.json)

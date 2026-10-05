@@ -73,3 +73,16 @@
 - Search:30verifierqueries;fullPDFbodiesdownloadedbyrootonly;tokens/platformcostunknown
 - Evidence:[research](../research/20261005-local-prep.md),[report](../docs/local_preparation_20261005.md),[reviewCSV](../data/manifests/local_preparation_20261005.csv)
 - Next:rights/edition/adultcurrentnessreview,OCR/readingorder/unitQA,legitimateaccessgaps,actualhumanacceptancebeforeSTCPUbaseline
+
+
+## 2026-10-06T00:15:50+07:00 — 20261006-data-github
+
+- Owner:rootcoordinator;no delegated agents or background processes.
+- User requested upload of data;educational-purpose follow-up did not supply redistribution licence.
+- Uploaded reviewed metadata:55retrieval records/33extraction summaries/39agent output files;folder READMEs/allowlists/inventory;149tracked data files total.
+- Verified publication commit0182f05369c65ca769a691b8cf0be663b287b2c1;git push succeeded;remote main equals local HEAD.
+- Excluded source bodies:39PDF/33pages JSONL/6OCR text/6images;2Python caches excluded.
+- Checks:JSON/JSONL parse,index matches inventory,no staged source bodies;manifest and orchestra validators pass.
+- Preserved one historical extra blank EOF;ordinary diff check warned;whitespace check with blank-at-EOF excluded passed.
+- Source permission/human approval/accepted0 unchanged;no paid API,extra download,extraction,clinical evaluation or index creation.
+- Next:document-specific rights evidence before any source-body publication.

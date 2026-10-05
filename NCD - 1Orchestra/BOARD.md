@@ -192,3 +192,19 @@
 - Published40code/metadata/reportfiles:9751d509d22dbf529a56033112d1c1c3ab233b82;remote mainverifiedmatcheslocalHEAD.
 - No rawPDF/text/image/OCR artifacts staged;39localPDF/30privateextractionsremainignored,accepted0.
 - HANDOFF/rootboard updatedwithpublicationevidence;allclaims/workersreleased.
+
+
+## 2026-10-06T00:15:50+07:00 — reviewed data publication verified
+
+- From:coordinator
+- To:user/nextsession
+- Type:handoff
+- Run:20261006-data-github
+- User authorized data upload;follow-up asked whether educational purpose is sufficient;no publisher permission evidence supplied.
+- Published:55retrieval.json/33extraction.json/39reviewed historical agent files;READMEs/allowlists/inventory;149tracked data files total.
+- Commit:0182f05369c65ca769a691b8cf0be663b287b2c1;push succeeded and remote main verified equal to local HEAD.
+- Checks:JSON/JSONL parse,inventory/index match,source-body exclusion,manifest58/accepted0,orchestra check passed.
+- Standard diff check flagged one historical blank line at EOF in LIPID_research.md;preserved historical bytes;check excluding blank-at-EOF passed.
+- Held:39PDFs/33page JSONL/6OCR text/6images pending redistribution rights;2cache files excluded.
+- No workers/claims started;no paid API/no new corpus acceptance.
+- Evidence:[data README](../data/README.md),[inventory](../data/manifests/github_data_inventory_20261006.json),[decision0005](decisions/0005-data-github-metadata.md).
