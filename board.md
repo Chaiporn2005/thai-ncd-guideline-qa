@@ -22,11 +22,18 @@
 - [x] ตรวจ manifest ผ่าน และปฏิเสธข้อมูลผิด 8 กรณี; ตรวจลิงก์ local Markdown ผ่าน
 - [x] สร้าง [GitHub repository](https://github.com/Chaiporn2005/thai-ncd-guideline-qa) แบบ Private ในบัญชี Chaiporn2005
 - [x] Commit และ push ไฟล์เริ่มต้นขึ้น branch `main` สำเร็จ
+- [x] อ่านโครง kaggle-team แล้วปรับเป็น Protocol + Orchestra สำหรับ NCD
+- [x] แบ่ง 6 workstreams พร้อม ownership, dependencies และ status files
+- [x] เพิ่ม HANDOFF, PROGRESS, run log และ templates สำหรับส่งต่องาน
+- [x] แยก task checklist จาก append-only agent message board; เพิ่ม proposal/decision/resource ledger
+- [x] เพิ่ม registry และ CLI สำหรับดูสถานะ/ตรวจ workflow โดยไม่เริ่ม agents อัตโนมัติ
+- [x] ตรวจ workflow/local links ผ่าน; registry ปฏิเสธข้อมูลผิด 8 กรณี และ manifest เดิมยังผ่าน
 
 ## งานรอบนี้
 
-แผน, บอร์ด, role prompts, source manifest และตัวตรวจ metadata ขึ้น GitHub แล้ว
-Implementation ตาม milestones ยังอยู่ใน backlog ด้านล่าง
+จัดระบบตาม kaggle-team แล้ว ใช้ [HANDOFF](HANDOFF.md) เป็นจุดรับงานต่อ
+และ [Orchestra overview](NCD%20-%201Orchestra/status/OVERVIEW.md) ติดตามแต่ละสาย
+Implementation ตาม milestones ยังอยู่ใน backlog ด้านล่าง; ยังไม่มี worker active จากการตั้งโครง
 
 ## รอข้อกำหนด/การตรวจจากทีม
 
@@ -60,6 +67,9 @@ Source verification ไม่เท่ากับการตรวจเนื
 - Seed manifest: [data/manifests/documents.jsonl](data/manifests/documents.jsonl)
 - Validator: [scripts/validate_manifest.py](scripts/validate_manifest.py)
 - ผลตรวจ: [docs/verification.md](docs/verification.md)
+- Workflow protocol: [PROTOCOL](NCD%20-%200Protocol/PROTOCOL.md)
+- Agent messages: [Orchestra BOARD](NCD%20-%201Orchestra/BOARD.md)
+- Run log: [runs/LOG.md](runs/LOG.md)
 
 อัปเดตบอร์ดทุกครั้งที่มีงานเสร็จหรือ requirement เปลี่ยน
 แยก “ค้นพบ”, “ตรวจแหล่ง”, “ดึงข้อมูล”, “คนตรวจแล้ว” และ “accepted” ให้ชัดเสมอ

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "coordinator_role": "coordinator",
+  "runtime_status": "file_based_protocol_only",
+  "workstreams": [
+    {"id": "DM", "owner_role": "scout", "role_prompt": "agents/scout.md", "scope": "type_2_diabetes", "status_file": "NCD - 1Orchestra/status/DM.md", "depends_on": []},
+    {"id": "HT", "owner_role": "scout", "role_prompt": "agents/scout.md", "scope": "hypertension", "status_file": "NCD - 1Orchestra/status/HT.md", "depends_on": []},
+    {"id": "LIPID", "owner_role": "scout", "role_prompt": "agents/scout.md", "scope": "dyslipidemia", "status_file": "NCD - 1Orchestra/status/LIPID.md", "depends_on": []},
+    {"id": "CORPUS", "owner_role": "curator", "role_prompt": "agents/curator.md", "scope": "verified_thai_guidance", "status_file": "NCD - 1Orchestra/status/CORPUS.md", "depends_on": ["DM", "HT", "LIPID"]},
+    {"id": "RAG", "owner_role": "rag_engineer", "role_prompt": "agents/rag_engineer.md", "scope": "course_retrieval_pipeline", "status_file": "NCD - 1Orchestra/status/RAG.md", "depends_on": ["CORPUS"]},
+    {"id": "EVAL", "owner_role": "evaluator", "role_prompt": "agents/evaluator.md", "scope": "course_evaluation", "status_file": "NCD - 1Orchestra/status/EVAL.md", "depends_on": ["CORPUS", "RAG"]}
+  ]
+}

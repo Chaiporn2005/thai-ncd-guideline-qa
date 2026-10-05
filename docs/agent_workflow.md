@@ -3,9 +3,14 @@
 Workflow นี้เป็น file-based protocol สำหรับเครื่องมือที่รองรับ subagents
 ไม่ใช่ autonomous runner ที่ติดตั้งแล้ว และไม่มี scheduled searches หรือค่าใช้จ่าย API อัตโนมัติ
 
+เริ่มรอบจาก [HANDOFF](../HANDOFF.md) และ [Protocol](../NCD%20-%200Protocol/PROTOCOL.md)
+ใช้ [Orchestra](../NCD%20-%201Orchestra/README.md) สำหรับ ownership, assignments,
+resource claims, proposals และ per-stream status; root `board.md` ใช้ดูงานเสร็จ
+
 ## รอบค้นหนึ่งรอบ
 
-1. Coordinator อ่าน `plan.md`, policy และ `configs/collection_agents.json` แล้วสร้าง run ID
+1. Coordinator อ่าน handoff, Orchestra, `plan.md`, policy และ configs แล้วสร้าง run ID
+   ระบุ workstream/owner/output/done criteria, ตรวจ limits ที่ได้รับจริง และบันทึก resource claim
 2. Dispatch scouts ตาม scope โดยส่ง role prompt + คำค้น + budget + output path
 3. Scouts ค้นอย่างอิสระ ส่งหนึ่ง JSON record ต่อหนึ่ง candidate และ actual query log
 4. Source verifier ตรวจ publisher/title/edition/access โดยไม่อ้างว่า Drive viewer คือ PDF ที่อ่านแล้ว
@@ -14,6 +19,8 @@ Workflow นี้เป็น file-based protocol สำหรับเคร�
 7. Extractor รับเอกสารที่ตรวจแหล่งแล้ว ดึง local content ตามสิทธิและเก็บ extraction issues
 8. QA reviewer เทียบข้อความกับภาพจริง แล้วส่ง human review queue
 9. Curator เปลี่ยนเป็น accepted เฉพาะรายการที่ผ่าน gates; รายงาน corpus ที่ยังขาด
+10. Workers อัปเดต status ของตนและ append run/handoff; coordinator รวม overview,
+    root board, HANDOFF และ resource release โดยไม่ทับประวัติข้อความ
 
 Scouts เขียนคนละไฟล์ `data/agent_runs/<run_id>/<agent_id>.jsonl`
 ไฟล์รอบค้นถูก ignore; curator publish เฉพาะ metadata และบันทึกสรุปที่ตรวจแล้ว

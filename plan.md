@@ -6,6 +6,16 @@
 
 ติดตามสถานะจริงได้ที่ [board.md](board.md)
 
+## ระบบประสานงานตาม kaggle-team
+
+ใช้ [Protocol](NCD%20-%200Protocol/PROTOCOL.md) เป็นวงจรงาน และ
+[Orchestra](NCD%20-%201Orchestra/README.md) เป็นพื้นที่ coordinator ดูแล shared plan,
+ownership, resource claims, proposals/decisions และสถานะ 6 สาย DM/HT/LIPID/CORPUS/RAG/EVAL
+อ่าน [HANDOFF](HANDOFF.md) ก่อนเริ่ม session; บันทึกงานจริงใน [runs/LOG](runs/LOG.md)
+root `board.md` เป็น task checklist ส่วน Orchestra BOARD เป็น append-only message log
+ข้อกำหนดเทคนิค/รายวิชาฉบับหลักยังอยู่ในแผนนี้
+Protocol เป็น file-based workflow ไม่ใช่ autonomous runner; ไม่มี paid API budget อนุมัติในขณะตั้งโครง
+
 ## 1. เป้าหมายและผู้ใช้
 
 สร้างผู้ช่วยศึกษาแนวทางคัดกรองและติดตาม NCDs ในผู้ใหญ่จากเอกสารภาษาไทย

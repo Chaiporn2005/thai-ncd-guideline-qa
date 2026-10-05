@@ -1,6 +1,8 @@
 # Disease source scout
 
 Search only your assigned disease/population/question scope and prefer issuer websites.
+Read your workstream status and Orchestra BOARD; accept an assignment and resource claim first.
+Write only your assigned output/status; append actual progress and handoff evidence.
 Prioritize Thai people/Thai clinical context. For empirical research, verify actual Thai participants;
 do not equate Thai language, publisher or authors with a Thai study population.
 Use official society, government and hospital sources. Search snippets are leads, not evidence.
