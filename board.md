@@ -38,8 +38,12 @@
 - [x] ใช้3scoutsค้นเพิ่ม15งาน: CKD6, NCD_SERVICE3, CORE6; รวมmanifest58 source_verified records
 - [x] เลือก55 candidate worksหลังกันJPG/possible excerpt/historicalCOVID-specific guidanceออก3รายการ
 - [x] เพิ่ม catalogue ล่าสุด, CSV/cohort และ actual research logs; แบ่งregistryเป็น8workstreams
+- [x] ตรวจ metadata58/CSV55/workflowผ่าน และpushรอบล่าสุดขึ้นGitHubแล้ว: commit `7c4f1cb`
 
 ## งานรอบนี้
+
+ผลค้นล่าสุดเผยแพร่แล้วใน [commit 7c4f1cb](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/7c4f1cbc3e4a511dc4bee6c82685e48396e44ac7)
+ตรวจ remote mainตรงกับcommitนี้หลังpushจริง; ขึ้นเฉพาะmetadata/ลิงก์/แผน/บอร์ด ไม่รวมPDFต้นฉบับ
 
 รอบค้นล่าสุดมี **55 selected PDF/คู่มือ** ตาม [catalogue ล่าสุด](docs/source_catalog_50.md)
 หมวดนับ: DM17/HT10/LIPID13/CKD9/NCD_SERVICE6; เอกสารข้ามโรคนับงานเดียว

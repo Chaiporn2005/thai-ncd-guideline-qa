@@ -129,3 +129,14 @@
 - Usage:18queries/26PDFattempts inclfailures/repeats;allscouts/reserve released;no paidAPI
 - Next:rights/currentness/contentdedup/OCR/clinical and human review beforeaccepted/RAG
 - Evidence:[catalogue](../docs/source_catalog_50.md),[research](../research/20261005-ncd-50.md),[root board](../board.md)
+
+## 2026-10-05T22:59:12+07:00 — Git publication verified
+
+- From: coordinator
+- To: user / next session
+- Type: update
+- Run:20261005-ncd-50
+- Published source collection and metadata to origin/main:7c4f1cbc3e4a511dc4bee6c82685e48396e44ac7
+- Verified git ls-remote main matches local HEAD after successful push.
+- Metadata58/selected55/accepted0; no source PDFs uploaded; no active collection workers.
+- Root board and handoff updated with publication evidence in follow-up documentation commit.
