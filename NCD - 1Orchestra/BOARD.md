@@ -78,7 +78,7 @@
 - Corrections:replacedDOHformgatewithverifiedSirirajcholesterolleaflet;77provincemenusnowworkinggovernmentmanualviewer,noPDFdownloadclaim
 - Claims:allreleased;noactiveworkers,allrawPDFsunsaved
 - Userfollowups:PDFstorage convention data/raw/<document_id>/source.pdf;RAGsoftware usesPythonlibraries,notinstalledasprojectenvironmentyet
-- Evidence:[catalogue](../docs/source_catalog_20261005.md),[researchrun](../research/20261005-ncd-plus10.md)
+- Evidence:[catalogue](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/blob/f28eb5b/docs/source_catalog_20261005.md),[researchrun](../research/20261005-ncd-plus10.md)
 
 ## 2026-10-05T21:19:57+07:00 — Git publication and RAG tool status
 
@@ -247,3 +247,13 @@
 - Added normalize_thai.py with deterministic font-map/text repairs,quality gate and OCR-for-empty-pages;details in [normalization pipeline](../docs/normalization_pipeline.md).
 - Local output data/processed/normalized-v1:1766pages,ok+minor1658,degraded18,garbled7,OCR11,empty72;dictionary hit92.5%->99.2%.
 - No manifest/rights/acceptance change,no source publication,no workers/claims/paid API.
+
+
+## 2026-10-06T13:22:38+07:00 — superseded files removed
+
+- From:coordinator(root session)
+- To:user/nextsession
+- Type:update
+- Run:20261006-repo-cleanup
+- User requested removal of unused git files including superseded round files;10files removed,listed in [run log](../runs/LOG.md).
+- Old files remain in git history at commit f28eb5b;historical links point there;no manifest/rights/acceptance change.

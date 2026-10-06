@@ -41,7 +41,7 @@ Run `20261005-ncd-plus10`: หา 10 new distinct works เพิ่ม ไม�
 ## 2026-10-05 — curator merge complete
 
 - Final collection: 10 supporting PDF/manual works merged, comprising 9 scout candidates
-  and 1 curator replacement; accepted: 0. See [source catalogue](../../docs/source_catalog_20261005.md).
+  and 1 curator replacement; accepted: 0. See [source catalogue](../../docs/source_catalog_50.md).
 - Curator replaced the DOH form-gated leaflet with the distinct 2-page Siriraj brochure
   ปริมาณคอเลสเตอรอลในอาหาร (SIPI PD1005164; last review 2564), PDF path
   `Brochure_files/1_1JX2jI.pdf`. Final retained full-document count: 8, including this replacement.

@@ -30,7 +30,7 @@ manifestรวม43, accepted0;19newPDFbodiesดึงได้แต่ยั�
 พบว่าผู้จัดทำเดียวกันหรือหัวข้อคล้ายกันไม่ได้พิสูจน์ว่าเป็นคนละwork
 จึงตัดTratfatleafletที่ยังเทียบกับSirirajไม่ชัด และแทนDOHform-gatedPDFด้วยSirirajcholesterolleafletที่ตรวจจริง
 shortURLเมนู77จังหวัดใช้ไม่ได้ แต่พบmanualreaderของหน่วยงานรัฐบาลที่เปิดได้; คงป้ายe-bookแทนการอ้างdirectPDF
-หลักฐาน: [catalogue](docs/source_catalog_20261005.md), [researchrun](research/20261005-ncd-plus10.md)
+หลักฐาน: [catalogue](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/blob/f28eb5b/docs/source_catalog_20261005.md), [researchrun](research/20261005-ncd-plus10.md)
 
 ## 2026-10-05 — ครบอย่างน้อย50 PDF/คู่มือ
 

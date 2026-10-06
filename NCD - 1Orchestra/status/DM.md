@@ -12,7 +12,7 @@
 8 patient education +1 nursing manual +1 implementation report; source_verified10, accepted0
 7 final PDFs retrieved,2 link-only,1 Drive viewer; hashes6จริง,ไม่มี raw files saved
 Curator รวม 10 new DM candidates เข้า canonical manifest แล้ว; DM accepted 0
-ดู [final source catalogue](../../docs/source_catalog_20261005.md)
+ดู [final source catalogue](../../docs/source_catalog_50.md)
 
 ## Next / dependencies
 

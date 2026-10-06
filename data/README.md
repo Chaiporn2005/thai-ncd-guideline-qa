@@ -30,7 +30,6 @@ inventoryรอบupload20261006เป็นsnapshotก่อนเพิ่มb
 | ข้อความ/OCR และผลสกัด | `processed/<document_id>/` | ขึ้น33extraction summaries;ข้อความ/OCR/ภาพยังignored |
 | Vector/BM25 index | `indexes/<corpus_version>/` เมื่อสร้าง retrieval | ไม่ขึ้น; ignored |
 | ชื่อโรค/เอกสาร/ฉบับ/ต้นทาง/hash/สถานะ | `manifests/documents.jsonl` | ขึ้น; canonical metadata |
-| รายการใหม่โรคละ10 | `manifests/collection_20261005.csv` และ cohort JSON | ขึ้น; metadata/URLs |
 | ชุดล่าสุดอย่างน้อย50 | `manifests/corpus_50_candidates.csv` และ cohort JSON | ขึ้น; 55 selected candidate works |
 | Local download/extraction queue | `manifests/local_preparation_20261005.csv` และ JSON | ขึ้น; counts/hash/paths/outcomes ไม่มีsource text |
 | Rights review | `manifests/rights_review_20261005.json` | ขึ้น;55pending,9explicit automatic-extraction holds |

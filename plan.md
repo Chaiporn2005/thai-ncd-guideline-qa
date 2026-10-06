@@ -34,7 +34,7 @@ Guideline ไทยอาจอ้างงานวิจัยต่างป�
 ผู้ใช้ยืนยันแล้วว่าต้องการ “แนวทางไทยสำหรับคนไทย” จึงใช้ Thai guidance เป็นขอบเขตหลัก
 ไม่จำกัดว่าหลักฐานทุกงานที่ guideline อ้างต้องเป็น Thai-only empirical evidence
 ผู้ใช้ขอเอกสารเพิ่มโรคละ 10 และยืนยัน **เฉพาะ PDF/คู่มือ** ไม่รวม HTML articles เป็น corpus ในรอบนี้
-คัดเลือกเพิ่ม DM10/HT10/LIPID10 เป็นเอกสารสนับสนุน; ดู [catalogue](docs/source_catalog_20261005.md)
+คัดเลือกเพิ่ม DM10/HT10/LIPID10 เป็นเอกสารสนับสนุน; ดู [catalogue](docs/source_catalog_50.md)
 รอบแรกหลังเพิ่ม30รวม43 candidates; รอบล่าสุดรวม58 และเลือก55 PDF/คู่มือตาม [catalogue ล่าสุด](docs/source_catalog_50.md)
 accepted ยังเป็น0; clinical CPG หลัก3แยกจากเอกสารให้ความรู้/บริการ และ CKD เป็น optional
 รอบเตรียมล่าสุดมี39localPDFและ30private-review extractions/1766หน้า พร้อมrights/OCRqueue

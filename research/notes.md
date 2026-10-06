@@ -4,7 +4,7 @@
 รายการ structured metadata อยู่ [documents.jsonl](../data/manifests/documents.jsonl)
 และเกณฑ์รับเอกสารอยู่ [corpus_policy.md](../docs/corpus_policy.md)
 รอบเพิ่ม30PDF/manualcandidates: [actualqueries/curation](20261005-ncd-plus10.md)
-และ [sourcecatalogue](../docs/source_catalog_20261005.md)
+และ [sourcecatalogue](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/blob/f28eb5b/docs/source_catalog_20261005.md)
 
 รอบล่าสุดครบอย่างน้อย50: [research/queries](20261005-ncd-50.md)
 และ [55 selected PDF/manual works](../docs/source_catalog_50.md)

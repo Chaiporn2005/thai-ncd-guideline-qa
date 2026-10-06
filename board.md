@@ -133,7 +133,7 @@ Source verification ไม่เท่ากับการตรวจเนื
 - Workflow protocol: [PROTOCOL](NCD%20-%200Protocol/PROTOCOL.md)
 - Agent messages: [Orchestra BOARD](NCD%20-%201Orchestra/BOARD.md)
 - Run log: [runs/LOG.md](runs/LOG.md)
-- เอกสารใหม่โรคละ10: [source catalogue](docs/source_catalog_20261005.md)
+- เอกสารใหม่โรคละ10: [source catalogue](docs/source_catalog_50.md)
 - รายการล่าสุด55งาน: [catalogue](docs/source_catalog_50.md), [CSV](data/manifests/corpus_50_candidates.csv)
 - หลักฐานการนับ/คัดออก: [cohort JSON](data/manifests/corpus_50_candidates.json), [research log](research/20261005-ncd-50.md)
 

@@ -11,13 +11,8 @@
 !/20261005-download03/summary.json
 !/20261005-download04/download.jsonl
 !/20261005-download04/summary.json
-!/20261005-local-prep/curate_local.py
-!/20261005-local-prep/EXTRACT_TOOL/extract_pages.py
-!/20261005-local-prep/EXTRACT_TOOL/README.md
-!/20261005-local-prep/EXTRACT_TOOL/test_extract_pages.py
 !/20261005-local-prep/extraction_run.json
 !/20261005-local-prep/extraction_selection.csv
-!/20261005-local-prep/extraction_stderr.txt
 !/20261005-local-prep/MANUAL_RIGHTS.json
 !/20261005-local-prep/MANUAL_RIGHTS_research.md
 !/20261005-local-prep/MIRROR_CRA_PORTAL.json
@@ -25,7 +20,6 @@
 !/20261005-local-prep/MIRROR_DDC_DM.json
 !/20261005-local-prep/MIRROR_DDC_DM_research.md
 !/20261005-local-prep/ocr_run.json
-!/20261005-local-prep/ocr_stderr.txt
 !/20261005-local-prep/verified_links.json
 !/20261005-local-prep/VIEWER_RIGHTS.json
 !/20261005-local-prep/VIEWER_RIGHTS_research.md
@@ -33,7 +27,6 @@
 !/20261005-ncd-50/CKD_research.md
 !/20261005-ncd-50/CORE.jsonl
 !/20261005-ncd-50/CORE_research.md
-!/20261005-ncd-50/curate.py
 !/20261005-ncd-50/NCD_SERVICE.jsonl
 !/20261005-ncd-50/NCD_SERVICE_research.md
 !/20261005-ncd-plus10/DM.jsonl

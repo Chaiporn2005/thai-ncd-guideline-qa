@@ -36,7 +36,7 @@ Historical vaccination-specific protocol is context-bound, not current general H
 ## Curator handoff — 2026-10-05
 
 Curator merged 10 new HT candidates: 8 direct PDF links and 2 manual viewers; accepted 0.
-Final catalogue: [source_catalog_20261005.md](../../docs/source_catalog_20261005.md).
+Final catalogue: [source_catalog_50.md](../../docs/source_catalog_50.md).
 Coordinator repaired the 77-province menu link to an official NHCO e-book reader;
 advertised PDF returned 404 and external CDN returned 403, so no PDF body claim.
 Health Station remains a publisher-designated manual viewer.

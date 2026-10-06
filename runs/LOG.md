@@ -122,3 +122,12 @@
 - Decision:Tesseract Thai OCR worse than garbled PDF text on NUL-tone pages,so OCR fills only empty pages with>=50 Thai letters.
 - Not changed:manifest,rights,accepted0,human/clinical approval,original pages.jsonl;no network source collection;no index/chunking.
 - Next:human fidelity review of degraded/garbled/OCR pages;adult section tagging(DM CPG90/282 pages mention children/pregnancy);table/citation handling;token-aware chunking on normalized-v1.
+
+
+## 2026-10-06T13:22:38+07:00 — 20261006-repo-cleanup
+
+- Owner:root session;user asked to upload normalization work(commit f28eb5b) and remove unused git files,choosing to include superseded round files.
+- Removed10tracked files:20261005-local-prep EXTRACT_TOOL proposal copy(3;adopted version is scripts/extract_pages.py+tests with rights hold),ocr_stderr.txt(empty),extraction_stderr.txt(pypdf warnings),curate_local.py,ncd-50 curate.py,collection_20261005.csv/json,docs/source_catalog_20261005.md.
+- Superseded by corpus_50_candidates.csv/source_catalog_50.md(29/30 IDs;excluded covid record kept in data/by_disease/99_excluded).
+- Current docs relinked to source_catalog_50;historical log entries link to commit f28eb5b where removed files remain;dated github_data_inventory_20261006.json unchanged.
+- Checks:0 broken internal markdown links;manifest,orchestra,disease catalogue --check pass;tests normalize18/extract20(1skip)/fetch pass.
