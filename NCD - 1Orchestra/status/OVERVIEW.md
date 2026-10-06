@@ -1,6 +1,6 @@
 # Workstream overview
 
-Updated: 2026-10-06 • Owner: coordinator • Active sessions: none; `20261006-disease-folders` catalogue completed
+Updated: 2026-10-06 • Owner: coordinator • Active sessions: none; latest handoff `20261006-rag-design` design published
 
 | Stream | Owner role | State | Evidence / next |
 | --- | --- | --- | --- |

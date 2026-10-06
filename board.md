@@ -55,6 +55,7 @@
 แสดง pipeline หลาย agents → rights/QA/human gates → chunk → dense/BM25 index → query → citations/abstention → evaluation
 ข้อเสนอและการตรวจสถานะอยู่ใน [decision 0007](NCD%20-%201Orchestra/decisions/0007-ncd-rag-architecture.md);
 design เท่านั้น ไม่มี index/runner/demo/model/provider และ accepted ยังคง0
+เผยแพร่ใน[GitHub commit f63010a](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/f63010ac13fb41ee8ec32032d9306ea3ba074a89);ตรวจ remote main หลัง pushแล้ว
 
 รอบ `20261006-disease-folders`:จัดสารบัญเอกสารเป็นโฟลเดอร์ใน[data/by_disease](data/by_disease/README.md)
 DM17/HT10/LIPID13/CKD9/NCD_SERVICE6;99_excluded3รายการพร้อมเหตุผล

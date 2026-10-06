@@ -41,6 +41,7 @@ OCRไทย+อังกฤษ6หน้าจาก3เอกสารในda
 มี Mermaid diagrams แยก multi-agent ingestion/index, query/answer safeguards และ A/B evaluation
 RAG status: design พร้อมทบทวน; implementation ยังไม่เริ่ม;ไม่มี accepted corpus/index/LLM/model/gold QA/metrics
 ขั้นถัดไปยังเป็น rights/content/human gates สำหรับ55 selected candidates ก่อนเริ่ม embedding
+Design อยู่ใน [GitHub commit f63010a](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/f63010ac13fb41ee8ec32032d9306ea3ba074a89);remote main ตรงกับ commit หลัง push
 
 รอบ `20261006-disease-folders`:จัด `data/by_disease/` ตามคำขอผู้ใช้
 มี5หมวด DM17/HT10/LIPID13/CKD9/NCD_SERVICE6 และ99_excluded3รายการพร้อมเหตุผล

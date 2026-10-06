@@ -1,7 +1,7 @@
 # RAG status
 
 - Owner role: rag_engineer
-- Active session / last run: none registered
+- Active session / last run: none / 20261006-rag-design (design complete; implementation not started)
 - Updated: 2026-10-06
 - State: design_ready_implementation_not_started
 
