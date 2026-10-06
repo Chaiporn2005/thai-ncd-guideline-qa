@@ -25,9 +25,8 @@
 
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
-- ต้องขออนุญาตเจ้าของสื่อก่อนใช้:ไม่เผยแพร่บันทึกดาวน์โหลดบนGitHub และลบสำเนาPDFในเครื่องแล้ว(2026-10-06)
-
-**พักการสกัดอัตโนมัติ:**มีข้อกำหนดให้ขออนุญาตเจ้าของสื่อก่อน
+- [บันทึกดาวน์โหลด](../../../raw/lipid-siriraj-diabetes-fat-7/retrieval.json): `downloaded`
+- บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/lipid-siriraj-diabetes-fat-7/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus
 ไฟล์นี้สร้างจาก metadata;แก้ข้อมูลต้นทางแล้วรัน `python scripts/build_disease_catalogue.py` ใหม่

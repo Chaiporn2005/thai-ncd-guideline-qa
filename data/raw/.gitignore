@@ -3,14 +3,3 @@
 !.gitignore
 !README.md
 !retrieval.json
-
-# Explicit prior-permission holds (Siriraj Diabetes Center): receipts stay local only.
-/dm-siriraj-know-diabetes-undated/retrieval.json
-/dm-siriraj-hypoglycemia-leaflet-undated/retrieval.json
-/dm-siriraj-patient-foot-manual-undated/retrieval.json
-/dm-siriraj-microvascular-leaflet-undated/retrieval.json
-/dm-siriraj-macrovascular-leaflet-undated/retrieval.json
-/dm-siriraj-retinopathy-leaflet-undated/retrieval.json
-/dm-siriraj-needle-disposal-leaflet-undated/retrieval.json
-/dm-siriraj-self-monitoring-leaflet-undated/retrieval.json
-/lipid-siriraj-diabetes-fat-7/retrieval.json

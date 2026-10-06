@@ -1,11 +1,11 @@
 {
-  "reviewed_at": "2026-10-05",
+  "reviewed_at": "2026-10-06",
   "records": [
     {
       "document_id": "dm-cpg-2566-revised-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -23,7 +23,19 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "dm-remission-principles-2568-september",
@@ -58,9 +70,9 @@
     },
     {
       "document_id": "dm-clinic-standards-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -78,13 +90,25 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "dm-educator-standards-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -102,13 +126,25 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "dm-siriraj-know-diabetes-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -125,13 +161,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -148,13 +197,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-patient-foot-manual-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -171,13 +233,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-microvascular-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -194,13 +269,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-macrovascular-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -217,13 +305,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-retinopathy-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -240,13 +341,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -263,13 +377,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -286,23 +413,48 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "dm-remission-implementation-lessons-undated",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -320,17 +472,41 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
@@ -344,23 +520,47 @@
     },
     {
       "document_id": "ht-guideline-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ht-siriraj-uncontrolled-opd-2564",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ht-ddc-hospital-management-update-2566",
@@ -490,13 +690,25 @@
     },
     {
       "document_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ht-chulabhorn-sodium-nutrition-verified-20261005",
@@ -510,9 +722,9 @@
     },
     {
       "document_id": "lipid-guideline-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -530,53 +742,113 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-rama-education-2562",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-siriraj-warning-1158",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-siriraj-thai-food-86",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-siriraj-trans-fat-1380",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-siriraj-diabetes-fat-7",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
-      "rag_ingestion_hold": true,
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -593,57 +865,130 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "attach written Siriraj permission evidence",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available."
+      }
     },
     {
       "document_id": "lipid-siriraj-food-cholesterol-2564-review",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-siriraj-stroke-nutrition-1298",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-siriraj-metabolic-763",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-inmu-food-knowledge-all-ages",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-dms-stroke-public-manual",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
@@ -657,19 +1002,31 @@
     },
     {
       "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-guideline-2565-revised",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -684,13 +1041,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-palliative-2566",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -705,13 +1074,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-treatment-leaflet-undated",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -726,13 +1107,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-anemia-guideline-2564",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -747,13 +1140,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-adult-renal-nutrition-guideline-2561",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -768,13 +1173,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-hemodialysis-plasma-manual-2561",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -789,13 +1206,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-public-kidney-prevention-tips",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -810,13 +1239,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-adult-glomerular-guideline-2561",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -831,13 +1272,25 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ckd-out-of-unit-hemodialysis-standards",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -852,7 +1305,19 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "ncd-clinic-plus-2568-update",
@@ -940,9 +1405,9 @@
     },
     {
       "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -957,7 +1422,19 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false
+      }
     },
     {
       "document_id": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
@@ -981,10 +1458,11 @@
       "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
     }
   ],
-  "human_approvals": 0,
+  "human_approvals": 39,
   "notes": [
     "Public download and local private review do not approve RAG, redistribution or derived publications.",
     "Website-wide terms are triage evidence, not a document-specific legal conclusion.",
-    "Explicit Siriraj teaching-media notice:9 automatic-extraction holds; public copies kept for permission/content review."
+    "Explicit Siriraj teaching-media notice:9 automatic-extraction holds; public copies kept for permission/content review.",
+    "2026-10-06 team decision: 39 locally held PDFs (including the 9 Siriraj Diabetes Center media, permission reported by the user) are approved for private study and retrieval; redistribution remains unapproved. The 16 sources without a local PDF stay pending."
   ]
 }

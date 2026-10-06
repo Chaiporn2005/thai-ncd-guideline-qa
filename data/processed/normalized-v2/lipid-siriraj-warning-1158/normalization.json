@@ -1,0 +1,41 @@
+{
+  "document_id": "lipid-siriraj-warning-1158",
+  "title": "ระวัง! ปัญหาไขมันในเลือดสูง",
+  "source_sha256": "ffe5d13256d09bae7a45a42a0d886904a7cb48338c2e33643aaeaf1debfb6929",
+  "pdf_pages": 1,
+  "options": {},
+  "font_repair": {
+    "font_actions": {},
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {
+    "sara_am_composed": 11,
+    "spaced_marks_joined": 9
+  },
+  "status_counts": {
+    "garbled": 1
+  },
+  "status_pages": {
+    "garbled": [
+      1
+    ]
+  },
+  "removed_edge_lines": 1,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "2f81a271e06f79b32856df2f87ff9e5982bd75feb468200dcee1dbb72fa64e74",
+  "created_at": "2026-10-06T16:05:15.277036+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ]
+}
