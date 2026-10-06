@@ -9,11 +9,11 @@
     "publication_date": null,
     "alternate_urls": [],
     "accessed_at": "2026-10-05",
-    "status": "source_verified",
+    "status": "extracted",
     "content_access": "full_document",
     "extraction_status": "extracted_unreviewed",
     "redistribution_status": "unknown",
-    "sha256": null,
+    "sha256": "5c2a52d16b5cdf805f40905eae900f04deada0d57c0057c22b08f7d7b82a383f",
     "pdf_pages": 43,
     "human_review": null,
     "language": "th",
@@ -35,6 +35,6 @@
     "landing_url": "https://www.ddc.moph.go.th/dncd/journal_detail.php?deptcode=dncd&publish=16670",
     "download_url": "https://www.ddc.moph.go.th/uploads/publish/1667020250904082725.pdf",
     "agent": "parent",
-    "verification_notes": "Publisher title/update and linked 43-page PDF fetched. Service quality manual, not a disease treatment guideline. Clinical/layout QA and actual raw download pending. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+    "verification_notes": "Publisher title/update and linked 43-page PDF fetched. Service quality manual, not a disease treatment guideline. Clinical/layout QA and actual raw download pending. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy. 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet."
   }
 }

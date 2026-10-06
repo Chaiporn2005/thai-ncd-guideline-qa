@@ -10,8 +10,8 @@
 | ประเภทเอกสาร | เอกสารให้ความรู้ผู้ป่วย/ประชาชน |
 | หัวข้อที่เกี่ยวข้อง | dyslipidemia |
 | ประชากร/ขอบเขต | Public and diabetes nutrition education; select adult lipid prevention portions |
-| สถานะ metadata | source\_verified |
-| สถานะการสกัดใน manifest | needs\_ocr |
+| สถานะ metadata | extracted |
+| สถานะการสกัดใน manifest | extracted\_unreviewed |
 | จำนวนหน้า PDF ที่บันทึก | 2 |
 | สิทธิเผยแพร่ซ้ำ | restricted |
 | อยู่ในชุด55 | ใช่ — candidate;ยังไม่ใช่ accepted |

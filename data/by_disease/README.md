@@ -6,11 +6,11 @@
 
 | หมวด | รายการ | ดาวน์โหลดสำเร็จในบันทึก | มีผลสกัด |
 | --- | --- | --- | --- |
-| [เบาหวาน](01_diabetes/README.md) | 25 | 19 | 6 |
-| [ความดันโลหิตสูง](02_hypertension/README.md) | 14 | 5 | 3 |
-| [ไขมันในเลือดผิดปกติ](03_dyslipidemia/README.md) | 16 | 15 | 11 |
-| [โรคไตเรื้อรัง (optional)](04_ckd_optional/README.md) | 11 | 9 | 9 |
-| [NCD Clinic Plus / ระบบบริการ](05_ncd_clinic_plus/README.md) | 10 | 1 | 1 |
+| [เบาหวาน](01_diabetes/README.md) | 25 | 23 | 6 |
+| [ความดันโลหิตสูง](02_hypertension/README.md) | 14 | 11 | 3 |
+| [ไขมันในเลือดผิดปกติ](03_dyslipidemia/README.md) | 16 | 16 | 11 |
+| [โรคไตเรื้อรัง (optional)](04_ckd_optional/README.md) | 11 | 11 | 9 |
+| [NCD Clinic Plus / ระบบบริการ](05_ncd_clinic_plus/README.md) | 10 | 7 | 1 |
 | [ไม่นับในชุดเป้าหมาย](99_excluded/README.md) | 3 | 0 | 0 |
 
 แต่ละโฟลเดอร์มี README.md และ document.json;เป็นสารบัญ/metadata ไม่ใช่ไฟล์PDFหรือข้อความเต็ม

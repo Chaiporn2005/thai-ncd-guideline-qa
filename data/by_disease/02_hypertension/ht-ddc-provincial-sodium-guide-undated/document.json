@@ -9,12 +9,12 @@
     "publication_date": null,
     "alternate_urls": [],
     "accessed_at": "2026-10-05",
-    "status": "source_verified",
-    "content_access": "link_verified_only",
-    "extraction_status": "not_started",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
     "redistribution_status": "unknown",
-    "sha256": null,
-    "pdf_pages": null,
+    "sha256": "708b4ebb7c7d6154589934053f59a7098da119f782564db4577c47daf835b7cb",
+    "pdf_pages": 104,
     "human_review": null,
     "language": "th",
     "thai_context": "thai_guideline_or_service",
@@ -34,6 +34,6 @@
     "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=15478",
     "download_url": "https://www.ddc.moph.go.th/uploads/publish/1547820240326045342.pdf",
     "population": "Thai provincial health personnel implementing salt/sodium reduction to support hypertension prevention",
-    "verification_notes": "Official catalogue specific title plus landing PDF link verified. Fetch exceeds 25.2MB tool limit; body not reviewed. Supporting population-risk/service manual, not HT treatment guideline. Final guide chosen; draft2566/earlier title variants not additional works. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+    "verification_notes": "Official catalogue specific title plus landing PDF link verified. Fetch exceeds 25.2MB tool limit; body not reviewed. Supporting population-risk/service manual, not HT treatment guideline. Final guide chosen; draft2566/earlier title variants not additional works. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy. 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet."
   }
 }

@@ -44,7 +44,7 @@ def clean_ocr(text: str) -> tuple[str, list[str], str | None]:
 def load_ocr(ocr_dir: Path) -> dict[tuple[str, int], dict]:
     results = {}
     for shard in sorted(ocr_dir.glob("shard-*.jsonl")):
-        for line in shard.read_text(encoding="utf-8").splitlines():
+        for line in shard.read_text(encoding="utf-8").split("\n"):
             if line.strip():
                 row = json.loads(line)
                 if row.get("outcome") == "ocr_done":
@@ -53,7 +53,7 @@ def load_ocr(ocr_dir: Path) -> dict[tuple[str, int], dict]:
 
 
 def merge_document(source_dir: Path, out_dir: Path, ocr: dict) -> dict:
-    rows = [json.loads(x) for x in (source_dir / "pages.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
+    rows = [json.loads(x) for x in (source_dir / "pages.jsonl").read_text(encoding="utf-8").split("\n") if x.strip()]
     doc_id = source_dir.name
     merged, used = [], 0
     for row in rows:

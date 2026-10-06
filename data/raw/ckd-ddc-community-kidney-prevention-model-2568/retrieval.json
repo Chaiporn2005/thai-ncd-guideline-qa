@@ -1,11 +1,15 @@
 {
   "document_id": "ckd-ddc-community-kidney-prevention-model-2568",
   "requested_url": "https://ddc.moph.go.th/uploads/publish/1694620250325082739.pdf",
-  "retrieved_at": "2026-10-06T17:54:27.156767+00:00",
+  "retrieved_at": "2026-10-06T19:07:20.939749+00:00",
+  "imported_at": "2026-10-06T19:12:27.025156+00:00",
+  "channel": "team_member_browser_download",
+  "downloaded_by": "Up2mEz",
   "purpose": "local_review",
   "reuse_permission_inferred": false,
-  "outcome": "access_restricted",
-  "http_status": 403,
-  "network_attempts": 1,
-  "error": "HTTP 403; stopped without retry/bypass"
+  "outcome": "downloaded",
+  "network_attempts": 0,
+  "sha256": "e43df2e0cf8aea5882e59b45affcd96ce0e24d64a9910783ccbf5a2e8b73f9a9",
+  "pdf_pages": 56,
+  "bytes": 7202088
 }

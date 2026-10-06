@@ -1,7 +1,8 @@
 """Apply a page-level OCR review file to a corpus version and write a new version.
 
 Every ocr_unreviewed page in the source must have exactly one review entry. Outcomes:
-  pass / pass_text_only / fix  -> text corrected as listed, status stays ocr_unreviewed and
+  pass / pass_text_only / pass_auto / fix
+                               -> text corrected as listed, status stays ocr_unreviewed and
                                   human_review records the review (indexable under the intake rule)
   reject                        -> status garbled (never indexed), review recorded
 Corrections: "replacements" (every occurrence; each old string must exist), "replace_text",
@@ -28,7 +29,12 @@ from pathlib import Path
 IMAGE_PLACEHOLDER = re.compile(r"^[ \t]*!\[[^\]]*\]\([^)]*\)[ \t]*(?:\n|$)", re.M)
 ESCAPE = re.compile(r"\\([.*_#\[\]()-])")
 BLANK_LINES = re.compile(r"\n{3,}")
-INDEXABLE = {"pass", "pass_text_only", "fix"}
+# The OCR model sometimes writes comparison signs as inline LaTeX ($\geq 126$); keep the sign, drop the markup.
+LATEX = {"\\geq": "≥", "\\leq": "≤", "\\ge ": "≥ ", "\\le ": "≤ ", "\\times": "×", "\\pm": "±", "\\%": "%"}
+INLINE_MATH = re.compile(r"\$\s*([^$\n]{1,40}?)\s*\$")
+# pass_auto: passed every automatic check (dictionary rate, number agreement, invented-content
+# patterns, repetition) and was not drawn in the visual sample; recorded as such, not as a visual pass.
+INDEXABLE = {"pass", "pass_text_only", "pass_auto", "fix"}
 
 
 class ReviewError(ValueError):
@@ -58,6 +64,9 @@ def apply_corrections(text: str, entry: dict) -> str:
         text = text[:position + len(marker)]
     text += entry.get("append", "")
     text = ESCAPE.sub(r"\1", IMAGE_PLACEHOLDER.sub("", text))
+    for latex, plain in LATEX.items():
+        text = text.replace(latex, plain)
+    text = INLINE_MATH.sub(r"\1", text)
     return BLANK_LINES.sub("\n\n", text).strip()
 
 
@@ -83,7 +92,7 @@ def main(argv: list[str] | None = None) -> int:
     documents = sorted(p for p in args.source.iterdir() if (p / "pages.jsonl").exists())
     plans, used = [], set()
     for folder in documents:
-        rows = [json.loads(x) for x in (folder / "pages.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
+        rows = [json.loads(x) for x in (folder / "pages.jsonl").read_text(encoding="utf-8").split("\n") if x.strip()]
         new_rows = []
         for row in rows:
             key = f"{row['document_id']}:p{row['pdf_page']}"

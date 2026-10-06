@@ -9,11 +9,11 @@
     "publication_date": null,
     "alternate_urls": [],
     "accessed_at": "2026-10-05",
-    "status": "source_verified",
+    "status": "extracted",
     "content_access": "full_document",
-    "extraction_status": "encoding_issue",
+    "extraction_status": "extracted_unreviewed",
     "redistribution_status": "restricted",
-    "sha256": null,
+    "sha256": "a6a364e8e9a184794ee39e54dac6940684290fc6324a390897a760b3528f4f20",
     "pdf_pages": 198,
     "human_review": null,
     "language": "th",
@@ -34,6 +34,6 @@
     "landing_url": "https://dmthai.org/new/attactment/dmr-book-20250918.pdf",
     "download_url": "https://dmthai.org/new/attactment/dmr-book-20250918.pdf",
     "agent": "diabetes_sources",
-    "verification_notes": "Full PDF fetched in web research (not downloaded to repo); 198 pages. Thai extraction has severe font-map/mojibake issues. Copyright reserved; open redistribution permission not found. March2025 edition is same work family, not another independent work. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+    "verification_notes": "Full PDF fetched in web research (not downloaded to repo); 198 pages. Thai extraction has severe font-map/mojibake issues. Copyright reserved; open redistribution permission not found. March2025 edition is same work family, not another independent work. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy. 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet."
   }
 }

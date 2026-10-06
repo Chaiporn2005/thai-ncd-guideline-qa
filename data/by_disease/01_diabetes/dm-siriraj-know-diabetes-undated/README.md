@@ -10,8 +10,8 @@
 | ประเภทเอกสาร | เอกสารให้ความรู้ผู้ป่วย/ประชาชน |
 | หัวข้อที่เกี่ยวข้อง | type\_2\_diabetes |
 | ประชากร/ขอบเขต | People with diabetes and caregivers in Thai practice; general diabetes education, adult T2DM applicability and exceptions need section-level review |
-| สถานะ metadata | source\_verified |
-| สถานะการสกัดใน manifest | needs\_ocr |
+| สถานะ metadata | extracted |
+| สถานะการสกัดใน manifest | extracted\_unreviewed |
 | จำนวนหน้า PDF ที่บันทึก | 1 |
 | สิทธิเผยแพร่ซ้ำ | restricted |
 | อยู่ในชุด55 | ใช่ — candidate;ยังไม่ใช่ accepted |

@@ -1,11 +1,15 @@
 {
   "document_id": "ncd-ddc-health-literacy-fight-ncds-2566",
   "requested_url": "https://ddc.moph.go.th/uploads/publish/1504320231129075642.pdf",
-  "retrieved_at": "2026-10-06T17:54:57.613582+00:00",
+  "retrieved_at": "2026-10-06T19:10:11.166877+00:00",
+  "imported_at": "2026-10-06T19:12:26.704737+00:00",
+  "channel": "team_member_browser_download",
+  "downloaded_by": "Up2mEz",
   "purpose": "local_review",
   "reuse_permission_inferred": false,
-  "outcome": "access_restricted",
-  "http_status": 403,
-  "network_attempts": 1,
-  "error": "HTTP 403; stopped without retry/bypass"
+  "outcome": "downloaded",
+  "network_attempts": 0,
+  "sha256": "1826083cb374fdaeb709ca8f1c0c98dc57cead1ea22691b553039ff7c4a89c0e",
+  "pdf_pages": 96,
+  "bytes": 81549042
 }

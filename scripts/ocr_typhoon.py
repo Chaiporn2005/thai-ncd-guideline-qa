@@ -42,7 +42,7 @@ def select_pages(pages_root: Path, raw_root: Path, statuses: tuple[str, ...]) ->
     selected, skipped = [], []
     for pages_file in sorted(pages_root.glob("*/pages.jsonl")):
         doc_id = pages_file.parent.name
-        rows = [json.loads(line) for line in pages_file.read_text(encoding="utf-8").splitlines() if line.strip()]
+        rows = [json.loads(line) for line in pages_file.read_text(encoding="utf-8").split("\n") if line.strip()]
         flagged = [r for r in rows if r["status"] in statuses]
         if not flagged:
             continue
@@ -75,7 +75,7 @@ def done_keys(out_file: Path) -> set[tuple[str, int]]:
     if not out_file.exists():
         return set()
     keys = set()
-    for line in out_file.read_text(encoding="utf-8").splitlines():
+    for line in out_file.read_text(encoding="utf-8").split("\n"):
         if line.strip():
             row = json.loads(line)
             if row.get("outcome") == "ocr_done":

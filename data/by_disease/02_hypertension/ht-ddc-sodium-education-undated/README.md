@@ -10,8 +10,8 @@
 | ประเภทเอกสาร | เอกสารให้ความรู้ผู้ป่วย/ประชาชน |
 | หัวข้อที่เกี่ยวข้อง | hypertension |
 | ประชากร/ขอบเขต | Thai general adult public/patients reducing dietary sodium; hypertension prevention education |
-| สถานะ metadata | source\_verified |
-| สถานะการสกัดใน manifest | encoding\_issue |
+| สถานะ metadata | extracted |
+| สถานะการสกัดใน manifest | extracted\_unreviewed |
 | จำนวนหน้า PDF ที่บันทึก | 4 |
 | สิทธิเผยแพร่ซ้ำ | unknown |
 | อยู่ในชุด55 | ใช่ — candidate;ยังไม่ใช่ accepted |
@@ -25,8 +25,8 @@
 
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
-- [บันทึกดาวน์โหลด](../../../raw/ht-ddc-sodium-education-undated/retrieval.json): `access_restricted`
-- ยังไม่มี PDF ในรอบเตรียมล่าสุด;ลิงก์ต้นทางไม่ยืนยันว่าดาวน์โหลดได้
+- [บันทึกดาวน์โหลด](../../../raw/ht-ddc-sodium-education-undated/retrieval.json): `downloaded`
+- บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ht-ddc-sodium-education-undated/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus
 ไฟล์นี้สร้างจาก metadata;แก้ข้อมูลต้นทางแล้วรัน `python scripts/build_disease_catalogue.py` ใหม่

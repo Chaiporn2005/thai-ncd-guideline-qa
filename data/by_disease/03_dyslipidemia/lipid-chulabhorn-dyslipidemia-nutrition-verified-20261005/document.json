@@ -10,11 +10,11 @@
     "publication_date": null,
     "alternate_urls": [],
     "accessed_at": "2026-10-05",
-    "status": "source_verified",
+    "status": "extracted",
     "content_access": "full_document",
-    "extraction_status": "encoding_issue",
+    "extraction_status": "extracted_unreviewed",
     "redistribution_status": "unknown",
-    "sha256": null,
+    "sha256": "74a943d7abe3224c386182a0ebbe8b180e2f49fbabc73b484971d2c8e3603fb2",
     "agent": "ncd50_core",
     "human_review": null,
     "thai_context": "thai_guideline_or_service",
@@ -34,6 +34,6 @@
     "landing_url": "https://chulabhornchannel.cra.ac.th/media-library/brochure/69699/",
     "download_url": "https://chulabhornchannel.cra.ac.th/wp-content/uploads/2026/05/%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B9%84%E0%B8%82%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AA%E0%B8%B9%E0%B8%87.pdf",
     "pdf_pages": 2,
-    "verification_notes": "Primary LIPID selection. Official Chulabhorn Channel brochure landing and linked2page PDF checked. PDF title and Chulabhorn nutrition-service identity present on page0; includes Thai food/fat/lipid education. PR67017 treated as production code,not inferred publicationyear. Landing/upload2026 not treated as edition. Thai extracted text has doubled combining marks. Different hospital/title/production identity from existing Sirirajfat/foodcholesterol and RamaCME sources. Publisher footer reserves rights, no redistribution licence verified. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+    "verification_notes": "Primary LIPID selection. Official Chulabhorn Channel brochure landing and linked2page PDF checked. PDF title and Chulabhorn nutrition-service identity present on page0; includes Thai food/fat/lipid education. PR67017 treated as production code,not inferred publicationyear. Landing/upload2026 not treated as edition. Thai extracted text has doubled combining marks. Different hospital/title/production identity from existing Sirirajfat/foodcholesterol and RamaCME sources. Publisher footer reserves rights, no redistribution licence verified. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy. 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet."
   }
 }

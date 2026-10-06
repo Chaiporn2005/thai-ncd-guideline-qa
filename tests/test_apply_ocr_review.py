@@ -22,6 +22,10 @@ class Corrections(unittest.TestCase):
         self.assertEqual(tool.apply_corrections(text, entry),
                          "1. วัดด้วยเครื่องตรวจวัดระดับน้ำตาลปลายนิ้ว 70 มก./ดล.\nภาพกิจกรรม ดังนี้\nเพิ่ม")
 
+    def test_inline_latex_signs_become_plain(self):
+        text = "FPG $\\geq$ 70 ถึง $< 100$ มก./ดล. และ $\\geq 126$"
+        self.assertEqual(tool.apply_corrections(text, {"key": "k"}), "FPG ≥ 70 ถึง < 100 มก./ดล. และ ≥ 126")
+
     def test_missing_replacement_text_fails(self):
         with self.assertRaises(tool.ReviewError):
             tool.apply_corrections("abc", {"key": "k", "replacements": [["xyz", "q"]]})

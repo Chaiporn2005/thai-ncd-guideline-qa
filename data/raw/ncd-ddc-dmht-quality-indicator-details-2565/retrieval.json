@@ -1,11 +1,15 @@
 {
   "document_id": "ncd-ddc-dmht-quality-indicator-details-2565",
   "requested_url": "https://ddc.moph.go.th/uploads/publish/1186620211012030022.pdf",
-  "retrieved_at": "2026-10-06T17:54:51.520924+00:00",
+  "retrieved_at": "2026-10-06T19:10:02.720885+00:00",
+  "imported_at": "2026-10-06T19:12:25.664504+00:00",
+  "channel": "team_member_browser_download",
+  "downloaded_by": "Up2mEz",
   "purpose": "local_review",
   "reuse_permission_inferred": false,
-  "outcome": "access_restricted",
-  "http_status": 403,
-  "network_attempts": 1,
-  "error": "HTTP 403; stopped without retry/bypass"
+  "outcome": "downloaded",
+  "network_attempts": 0,
+  "sha256": "60ebb319b776e8c8d2ab196816210f498c4951e89220f1062fc08e355f556096",
+  "pdf_pages": 106,
+  "bytes": 2249282
 }
