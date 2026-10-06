@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/dm-clinic-standards-2567/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/dm-clinic-standards-2567/extraction.json): `needs_ocr`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/dm-clinic-standards-2567/normalization.json): `ใช้ได้58/64หน้า;รอตรวจ0;ว่าง6`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/dm-clinic-standards-2567/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

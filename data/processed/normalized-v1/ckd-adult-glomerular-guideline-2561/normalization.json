@@ -1,0 +1,48 @@
+{
+  "document_id": "ckd-adult-glomerular-guideline-2561",
+  "title": "ข้อแนะนำเวชปฏิบัติทั่วไปโรคไตโกลเมอรูลัสในผู้ใหญ่, โรค Primary Focal Segmental Glomerulosclerosis, Primary Minimal Change Disease และ IgM nephropathy 2561",
+  "source_sha256": "2b7bd92c3d339698b0fa72f13ce3c1181efc0f559844fd8854c0637ed6533675",
+  "pdf_pages": 66,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "remapped_sara_aa": 2,
+      "repaired_tounicode": 5,
+      "unchanged": 2
+    },
+    "tounicode_entries_written_or_changed": 9
+  },
+  "normalization_totals": {
+    "glyph_name_tokens": 7,
+    "sara_am_composed": 598,
+    "space_before_following_vowel": 1,
+    "tone_vowel_order": 1
+  },
+  "status_counts": {
+    "ok": 65,
+    "ok_minor_issues": 1
+  },
+  "status_pages": {
+    "ok_minor_issues": [
+      3
+    ]
+  },
+  "removed_edge_lines": 63,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
+  },
+  "pages_jsonl_sha256": "0226e6842c8cae4377b01807c249c5f82a1f0777b7785a9989aed598369a879c",
+  "created_at": "2026-10-06T13:15:01.658705+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ]
+}

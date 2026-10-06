@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/extraction.json): `encoding_issue`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/normalization.json): `ใช้ได้2/2หน้า;รอตรวจ0;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

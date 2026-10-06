@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/dm-remission-implementation-lessons-undated/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/dm-remission-implementation-lessons-undated/extraction.json): `needs_ocr`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/dm-remission-implementation-lessons-undated/normalization.json): `ใช้ได้40/64หน้า;รอตรวจ21;ว่าง3`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/dm-remission-implementation-lessons-undated/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

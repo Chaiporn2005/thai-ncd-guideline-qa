@@ -257,3 +257,13 @@
 - Run:20261006-repo-cleanup
 - User requested removal of unused git files including superseded round files;10files removed,listed in [run log](../runs/LOG.md).
 - Old files remain in git history at commit f28eb5b;historical links point there;no manifest/rights/acceptance change.
+
+
+## 2026-10-06T13:43:00+07:00 — normalized summaries replace first-round extraction
+
+- From:coordinator(root session)
+- To:user/nextsession
+- Type:update
+- Run:20261006-processed-replacement
+- Git now tracks 30 normalization.json summaries(no page text);first-round extraction.json/pages.jsonl/OCR samples removed at user request.
+- Catalogue shows usable pages from normalized-v1;page text remains local pending rights;no manifest/rights/acceptance change.

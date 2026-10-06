@@ -65,7 +65,8 @@ PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยั
 พบDM CPGเป็นอักษรไทยเพียง4%(ตัวเลขเป็นglyph IDs),HT CPG font mapเสีย,CKD booklet เป็นMacRoman TIS-620
 เพิ่ม `scripts/normalize_thai.py` +config/tests;ผลlocal `data/processed/normalized-v1/` 1766หน้า:
 ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regression0หน้าแย่ลง
-ดู [normalization pipeline](docs/normalization_pipeline.md);manifest/rights/acceptedไม่เปลี่ยน;ยังไม่commit
+ดู [normalization pipeline](docs/normalization_pipeline.md);manifest/rights/acceptedไม่เปลี่ยน;ขึ้นGitแล้วf28eb5b
+ผู้ใช้ขอลบผลสกัดรอบแรก:ลบpages.jsonl/extraction.json/ocr-review-v1;ขึ้นGitเฉพาะnormalization.json30ไฟล์(ไม่มีข้อความ)
 
 ไม่มี worker หรือ resource claim ที่ลงทะเบียน active; ไม่มี watcher/scheduler
 ไม่มี autonomous runner, accepted corpus, Q&A implementation หรือ saved evaluation metrics

@@ -2,7 +2,8 @@
 
 `scripts/normalize_thai.py` re-extracts local PDFs with pypdf after deterministic in-memory font-map
 repairs, normalizes Thai text and writes a separate processed root. It reads `data/raw/<id>/source.pdf`
-and never modifies source PDFs, the original `data/processed/<id>/pages.jsonl`, or the manifest.
+and never modifies source PDFs or the manifest. The first-round extraction outputs it replaced were removed on
+2026-10-06 (see git history at commit `7c98d8e`); `scripts/extract_pages.py` can regenerate them.
 It makes no network requests or paid API calls and does not approve inclusion, rights or clinical content.
 
 ## Why
@@ -62,7 +63,7 @@ one row per PDF page with `text` (retrieval text), `text_source` (`pdf_text_repa
 `status`, `quality`, `normalization_counts`, `removed_edge_lines`, `pre_normalization_text`,
 `ocr_text`, `ocr_quality`, `printed_page_number: null` and `human_review: null`.
 `normalization.json` summarizes font actions, rule totals, status counts and page lists; it contains no
-page text.
+page text and is the only file from this folder tracked in git.
 
 Statuses: `ok`, `ok_minor_issues` (a few defects), `degraded` (1–5% defects; PDF text kept, review
 needed), `garbled` (>5% defects or NUL tone marks), `empty`, and `ocr_unreviewed` (OCR replaced

@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/lipid-dms-stroke-public-manual/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/lipid-dms-stroke-public-manual/extraction.json): `needs_ocr`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/lipid-dms-stroke-public-manual/normalization.json): `ใช้ได้71/84หน้า;รอตรวจ3;ว่าง10`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/lipid-dms-stroke-public-manual/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

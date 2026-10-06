@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/lipid-siriraj-food-cholesterol-2564-review/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/lipid-siriraj-food-cholesterol-2564-review/extraction.json): `extracted_unreviewed`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/lipid-siriraj-food-cholesterol-2564-review/normalization.json): `ใช้ได้2/2หน้า;รอตรวจ0;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/lipid-siriraj-food-cholesterol-2564-review/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

@@ -27,7 +27,7 @@ inventoryรอบupload20261006เป็นsnapshotก่อนเพิ่มb
 | ข้อมูล | ตำแหน่งและรูปแบบที่กำหนด | ขึ้น GitHub |
 | --- | --- | --- |
 | PDF ต้นฉบับ/บันทึกดาวน์โหลด | `raw/<document_id>/source.pdf` และ `retrieval.json` | ขึ้นเฉพาะ55retrieval records;PDF39ไฟล์รอสิทธิ |
-| ข้อความ/OCR และผลสกัด | `processed/<document_id>/` | ขึ้น33extraction summaries;ข้อความ/OCR/ภาพยังignored |
+| ข้อความที่ normalize แล้ว | `processed/normalized-v1/<document_id>/` | ขึ้น30normalization summaries;ข้อความรายหน้ายังignored |
 | Vector/BM25 index | `indexes/<corpus_version>/` เมื่อสร้าง retrieval | ไม่ขึ้น; ignored |
 | ชื่อโรค/เอกสาร/ฉบับ/ต้นทาง/hash/สถานะ | `manifests/documents.jsonl` | ขึ้น; canonical metadata |
 | ชุดล่าสุดอย่างน้อย50 | `manifests/corpus_50_candidates.csv` และ cohort JSON | ขึ้น; 55 selected candidate works |
@@ -40,7 +40,7 @@ inventoryรอบupload20261006เป็นsnapshotก่อนเพิ่มb
 raw path คำนวณจาก ID; schema ปัจจุบันยังไม่มี field สำหรับ path ที่ผู้ใช้กำหนดเอง
 
 **สถานะปัจจุบัน:** metadata58/selected55;39localPDF/39hashไม่ซ้ำ/1799หน้าอยู่ใน `raw/`
-30เอกสารสกัดเพื่อprivate review1766หน้าใน `processed/`;OCRsample6หน้าแยกใน `processed/ocr-review-v1/`
+30เอกสาร1766หน้าnormalizeแล้วใน `processed/normalized-v1/`;ผลสกัดรอบแรกและOCR sampleถูกลบ2026-10-06
 9สื่อพักautomaticextractionตามexplicitpermissionnotice;14แหล่ง403/2manualviewersยังไม่มีlocalPDF
 Extract/OCRยังไม่ผ่านQA/humanacceptance;indexesยังไม่ได้สร้างและไม่ใช่accepted corpusพร้อมRAG
 คู่มือe-book2เล่มยังไม่มีdirectPDFที่ยืนยัน; rights/OCR/humanreviewยังต้องทำก่อนaccepted
@@ -53,7 +53,7 @@ Extract/OCRยังไม่ผ่านQA/humanacceptance;indexesยังไ�
 ไม่มีการเปลี่ยน rights status หรือ human inclusion approval
 
 - [raw records](raw/README.md):55retrieval.json
-- [processed summaries](processed/README.md):33extraction.json
+- [processed summaries](processed/README.md):30normalization.json(แทนextraction.jsonรอบแรก)
 - [agent outputs](agent_runs/README.md):39ไฟล์ที่ตรวจแล้ว;โค้ดรอบเก่าเป็นประวัติข้อเสนอ
 - [indexes](indexes/README.md):มีREADME;ยังไม่มีindexจริง
 - [inventory](manifests/github_data_inventory_20261006.json):รายการไฟล์/hash/ขนาดและเหตุผลที่ขึ้นหรือพักไว้

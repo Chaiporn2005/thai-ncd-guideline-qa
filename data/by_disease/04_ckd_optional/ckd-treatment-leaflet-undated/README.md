@@ -26,8 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/ckd-treatment-leaflet-undated/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/ckd-treatment-leaflet-undated/extraction.json): `needs_ocr`
-- [สรุปทดลอง OCR](../../../processed/ocr-review-v1/ckd-treatment-leaflet-undated/extraction.json):ยังไม่ผ่านQA
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/ckd-treatment-leaflet-undated/normalization.json): `ใช้ได้0/2หน้า;รอตรวจ2;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ckd-treatment-leaflet-undated/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

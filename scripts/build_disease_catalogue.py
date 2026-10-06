@@ -31,6 +31,14 @@ def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def usable_pages(summary: dict) -> str:
+    """Pages a retrieval run can use from a normalize_thai.py summary (heuristic gate, not QA)."""
+    counts = summary.get("status_counts", {})
+    usable = counts.get("ok", 0) + counts.get("ok_minor_issues", 0)
+    review = sum(counts.get(k, 0) for k in ("degraded", "garbled", "ocr_unreviewed"))
+    return f"ใช้ได้{usable}/{summary.get('pdf_pages')}หน้า;รอตรวจ{review};ว่าง{counts.get('empty', 0)}"
+
+
 def escape(value) -> str:
     if value is None:
         return "ไม่ทราบ"
@@ -67,10 +75,9 @@ def generate() -> tuple[dict[Path, str], dict]:
             record = lookup[doc_id]
             doc_readme = DEST / folder / doc_id / "README.md"
             receipt = ROOT / "data/raw" / doc_id / "retrieval.json"
-            extraction = ROOT / "data/processed" / doc_id / "extraction.json"
-            ocr = ROOT / "data/processed/ocr-review-v1" / doc_id / "extraction.json"
+            extraction = ROOT / "data/processed/normalized-v1" / doc_id / "normalization.json"
             outcome = load(receipt).get("outcome") if receipt.is_file() else None
-            extraction_status = load(extraction).get("extraction_status") if extraction.is_file() else None
+            extraction_status = usable_pages(load(extraction)) if extraction.is_file() else None
             downloaded += outcome == "downloaded"
             extracted += extraction.is_file()
             lines = [f"# {escape(record['title'])}", "", f"หมวด: {title} • {link('สารบัญหมวด', doc_readme, group_readme)}", "", "| รายการ | รายละเอียด |", "| --- | --- |"]
@@ -88,9 +95,7 @@ def generate() -> tuple[dict[Path, str], dict]:
             if receipt.is_file():
                 lines.append(f"- {link('บันทึกดาวน์โหลด', doc_readme, receipt)}: `{outcome}`")
             if extraction.is_file():
-                lines.append(f"- {link('สรุปผลสกัด', doc_readme, extraction)}: `{extraction_status}`")
-            if ocr.is_file():
-                lines.append(f"- {link('สรุปทดลอง OCR', doc_readme, ocr)}:ยังไม่ผ่านQA")
+                lines.append(f"- {link('สรุปผลสกัด normalized-v1', doc_readme, extraction)}: `{extraction_status}`")
             if outcome == "downloaded":
                 lines.append(f"- บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/{doc_id}/source.pdf`;PDFไม่ได้อยู่บนGitHub")
             elif group != "EXCLUDED":

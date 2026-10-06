@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/ckd-palliative-2566/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/ckd-palliative-2566/extraction.json): `extracted_unreviewed`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/ckd-palliative-2566/normalization.json): `ใช้ได้46/47หน้า;รอตรวจ0;ว่าง1`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ckd-palliative-2566/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

@@ -26,8 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/dm-cpg-2566-revised-2567/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/dm-cpg-2566-revised-2567/extraction.json): `encoding_issue`
-- [สรุปทดลอง OCR](../../../processed/ocr-review-v1/dm-cpg-2566-revised-2567/extraction.json):ยังไม่ผ่านQA
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/dm-cpg-2566-revised-2567/normalization.json): `ใช้ได้260/282หน้า;รอตรวจ0;ว่าง22`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/dm-cpg-2566-revised-2567/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

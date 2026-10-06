@@ -26,8 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/lipid-rama-education-2562/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/lipid-rama-education-2562/extraction.json): `encoding_issue`
-- [สรุปทดลอง OCR](../../../processed/ocr-review-v1/lipid-rama-education-2562/extraction.json):ยังไม่ผ่านQA
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/lipid-rama-education-2562/normalization.json): `ใช้ได้6/6หน้า;รอตรวจ0;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/lipid-rama-education-2562/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

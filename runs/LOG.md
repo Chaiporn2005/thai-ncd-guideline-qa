@@ -131,3 +131,13 @@
 - Superseded by corpus_50_candidates.csv/source_catalog_50.md(29/30 IDs;excluded covid record kept in data/by_disease/99_excluded).
 - Current docs relinked to source_catalog_50;historical log entries link to commit f28eb5b where removed files remain;dated github_data_inventory_20261006.json unchanged.
 - Checks:0 broken internal markdown links;manifest,orchestra,disease catalogue --check pass;tests normalize18/extract20(1skip)/fetch pass.
+
+
+## 2026-10-06T13:43:00+07:00 — 20261006-processed-replacement
+
+- Owner:root session;user asked to upload the new normalized output and remove badly processed old files.
+- User chose:upload summaries only(no page text) and delete old outputs locally and in git.
+- Published:data/processed/normalized-v1/<id>/normalization.json(30;no source text checked) via allowlist !normalization.json;pages.jsonl stays local/ignored.
+- Removed:33tracked extraction.json(30docs+3OCR samples);local first-round pages.jsonl(30),ocr-review-v1(images/OCR text);old summaries remain in git history at commit 7c98d8e and extract_pages.py can regenerate.
+- Disease catalogue builder now reads normalization.json(usable/review/empty pages);124catalogue files regenerated.
+- Checks:catalogue --check,manifest,orchestra pass;tests normalize18/extract20(1skip)/fetch pass;0 broken internal links.

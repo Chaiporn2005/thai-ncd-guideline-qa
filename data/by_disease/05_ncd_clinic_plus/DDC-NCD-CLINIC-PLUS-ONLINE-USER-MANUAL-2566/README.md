@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/extraction.json): `encoding_issue`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/normalization.json): `ใช้ได้34/34หน้า;รอตรวจ0;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

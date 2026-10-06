@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/ht-guideline-2567/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/ht-guideline-2567/extraction.json): `needs_ocr`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/ht-guideline-2567/normalization.json): `ใช้ได้151/153หน้า;รอตรวจ0;ว่าง2`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ht-guideline-2567/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/ckd-anemia-guideline-2564/retrieval.json): `downloaded`
-- [สรุปผลสกัด](../../../processed/ckd-anemia-guideline-2564/extraction.json): `needs_ocr`
+- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/ckd-anemia-guideline-2564/normalization.json): `ใช้ได้96/98หน้า;รอตรวจ0;ว่าง2`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ckd-anemia-guideline-2564/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

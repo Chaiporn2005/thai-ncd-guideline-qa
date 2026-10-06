@@ -1,0 +1,55 @@
+{
+  "document_id": "ckd-guideline-2565-revised",
+  "title": "ข้อแนะนำเวชปฏิบัติการดูแลผู้ป่วยโรคไตเรื้อรังก่อนการบำบัดทดแทนไต พ.ศ. 2565 (ฉบับปรับปรุงเพิ่มเติม)",
+  "source_sha256": "eb8c164d43577dca0760f2be4994055b9d3e2e7d183098731539501898ed51c4",
+  "pdf_pages": 106,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "unchanged": 5
+    },
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {
+    "glyph_name_tokens": 36,
+    "sara_am_composed": 1,
+    "space_before_following_vowel": 14,
+    "space_before_mark": 7,
+    "spaced_marks_joined": 1
+  },
+  "status_counts": {
+    "empty": 1,
+    "ocr_unreviewed": 1,
+    "ok": 103,
+    "ok_minor_issues": 1
+  },
+  "status_pages": {
+    "empty": [
+      106
+    ],
+    "ocr_unreviewed": [
+      1
+    ],
+    "ok_minor_issues": [
+      90
+    ]
+  },
+  "removed_edge_lines": 89,
+  "ocr_pages": 2,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
+  },
+  "pages_jsonl_sha256": "a32f37e6a5051e9d9ec88de0b9ed7fb338fc83c9ba015fff189f437e09962217",
+  "created_at": "2026-10-06T13:11:23.032347+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ]
+}
