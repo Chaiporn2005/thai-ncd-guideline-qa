@@ -1,0 +1,597 @@
+{
+  "corpus_version": "normalized-v5",
+  "created_by": "Track B (Up2mEz): normalized-v4 (39 docs) + 10 expansion docs (normalize_thai.py, Typhoon OCR 10 pages, AI-assisted review ocr_review_20261007b.json)",
+  "documents": 49,
+  "pdf_pages": 2049,
+  "status_totals": {
+    "empty": 55,
+    "garbled": 24,
+    "ocr_unreviewed": 63,
+    "ok": 1774,
+    "ok_minor_issues": 133
+  },
+  "documents_with_indexable_pages": 48,
+  "records": [
+    {
+      "document_id": "ckd-adult-glomerular-guideline-2561",
+      "source_sha256": "2b7bd92c3d339698b0fa72f13ce3c1181efc0f559844fd8854c0637ed6533675",
+      "pdf_pages": 66,
+      "pages_jsonl_sha256": "0226e6842c8cae4377b01807c249c5f82a1f0777b7785a9989aed598369a879c",
+      "status_counts": {
+        "ok": 65,
+        "ok_minor_issues": 1
+      },
+      "indexable_pages": 66,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-adult-renal-nutrition-guideline-2561",
+      "source_sha256": "b1e15befe20eb2d8d708fbdf5c344a830fbd2284ae3a86151923ac037ef3644d",
+      "pdf_pages": 69,
+      "pages_jsonl_sha256": "369fa4d30885e84600a2b9c0d56aaed27b40f1fa118f3f977bbfd44a23971e8e",
+      "status_counts": {
+        "ok": 68,
+        "ok_minor_issues": 1
+      },
+      "indexable_pages": 69,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-anemia-guideline-2564",
+      "source_sha256": "8f9901720bc8d8aafdce4d0f51d216084531b4326532e3cb190905ae52c526e7",
+      "pdf_pages": 98,
+      "pages_jsonl_sha256": "cb4a386772cd6ae30f4894e08b91240852b8a02e8d2c8fbc69b9b8941b6bba78",
+      "status_counts": {
+        "empty": 2,
+        "ok": 96
+      },
+      "indexable_pages": 96,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-guideline-2565-revised",
+      "source_sha256": "eb8c164d43577dca0760f2be4994055b9d3e2e7d183098731539501898ed51c4",
+      "pdf_pages": 106,
+      "pages_jsonl_sha256": "1246af730e4cfb2cdd2a4a376b5e1bbc37caf3da7b7a61e86dc22774151847e0",
+      "status_counts": {
+        "empty": 1,
+        "ocr_unreviewed": 1,
+        "ok": 103,
+        "ok_minor_issues": 1
+      },
+      "indexable_pages": 105,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-hemodialysis-plasma-manual-2561",
+      "source_sha256": "e7e06f11926b7f06d994891c497efcf96b3bfe1a25f6ac94e1b1aaf34c51a1af",
+      "pdf_pages": 49,
+      "pages_jsonl_sha256": "8a420d34e028bac63276d23b14ac2f183e1e2b6022e484434fdea48ff3f54ad8",
+      "status_counts": {
+        "empty": 1,
+        "ok": 48
+      },
+      "indexable_pages": 48,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-out-of-unit-hemodialysis-standards",
+      "source_sha256": "4c410cf74bfdb8812a82116fe764e8da76a818a232fdd55eed3c3ee4e7c5183b",
+      "pdf_pages": 8,
+      "pages_jsonl_sha256": "c86a9cc3370d72ec4862f711c4ebb061b57348ca7bcaab18f7469a0e2e7bedf4",
+      "status_counts": {
+        "ok": 8
+      },
+      "indexable_pages": 8,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-palliative-2566",
+      "source_sha256": "13e60a43494672aedb2bd3f42e03bcb07fc3c4aba7bc8c3e91ab7c2570b3eb88",
+      "pdf_pages": 47,
+      "pages_jsonl_sha256": "51166f8ef6d0f8d6f5c99eb99c25a2c80666e214a5af1c9a355edef1de76a9c6",
+      "status_counts": {
+        "empty": 1,
+        "ok": 46
+      },
+      "indexable_pages": 46,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-public-kidney-prevention-tips",
+      "source_sha256": "35d835feb30624b56149a96009f8e20233402408fefd3c89af5b303a214dbdeb",
+      "pdf_pages": 119,
+      "pages_jsonl_sha256": "e6c0c97e250b5fe3d8b23f746a16b0341db1fe3b193a76be4b9ebb83a828a097",
+      "status_counts": {
+        "ocr_unreviewed": 1,
+        "ok": 113,
+        "ok_minor_issues": 5
+      },
+      "indexable_pages": 119,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ckd-treatment-leaflet-undated",
+      "source_sha256": "789aca82ab9f034f40dee7716378d23d2960450c2dc8a7bb746168371c40fed7",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "cac953a68f98ed290483ece9d53675a38e89ccb8983c2d4a212e292802d7b947",
+      "status_counts": {
+        "garbled": 2
+      },
+      "indexable_pages": 0,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+      "source_sha256": "240c0b7445380a5d9f8de9f53c1eaaed9249b05b7db1f1f8c8f36418a256f08f",
+      "pdf_pages": 34,
+      "pages_jsonl_sha256": "5841bf3ade192c9dbc2069d8f9825b4ce0ad1841b32dc42e5a634dec095b52e9",
+      "status_counts": {
+        "ok": 34
+      },
+      "indexable_pages": 34,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-clinic-standards-2567",
+      "source_sha256": "3e9423ae0f7f470a7576a6d9bb2dead9ecb58df2f929516b11d0dddd0bbe353b",
+      "pdf_pages": 64,
+      "pages_jsonl_sha256": "bb773e0439893f292001fff068c137cc3024b8cebbde0c5a6f2298f6fb355598",
+      "status_counts": {
+        "empty": 6,
+        "ok": 58
+      },
+      "indexable_pages": 58,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-cpg-2566-revised-2567",
+      "source_sha256": "4a81780fe24ed157eae38905ce5172367231f806ef0b1573410c99ac22f855ba",
+      "pdf_pages": 282,
+      "pages_jsonl_sha256": "5caa9bc3a9be026cae81601a32de8b3172072fd3987b88e5bcfa692ef3ce682d",
+      "status_counts": {
+        "empty": 22,
+        "ok": 248,
+        "ok_minor_issues": 12
+      },
+      "indexable_pages": 260,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-educator-standards-2567",
+      "source_sha256": "9272e703bcd1e364a859a69db7e720d0e9b6661a35616b4db9d7d9db6050503a",
+      "pdf_pages": 38,
+      "pages_jsonl_sha256": "7b96b341f72a34145afacff34322e2fff1a62ba8314ba8f5794e55b067ce6c5e",
+      "status_counts": {
+        "empty": 3,
+        "ocr_unreviewed": 1,
+        "ok": 34
+      },
+      "indexable_pages": 35,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+      "source_sha256": "255d4d9f0ffdc67de0397b3fd0c38be9ffb1537ec01dfe55f2130756fde7216d",
+      "pdf_pages": 112,
+      "pages_jsonl_sha256": "8ae004d2a1a7a1b36e90ebcc47f6198331c43f9b669dc5c8efae59f9820dd9fa",
+      "status_counts": {
+        "empty": 1,
+        "garbled": 2,
+        "ok": 109
+      },
+      "indexable_pages": 109,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-remission-implementation-lessons-undated",
+      "source_sha256": "0d68865e2a58507a2accb2f0a528339791a1635ccef024f9510e71c0fb49a154",
+      "pdf_pages": 64,
+      "pages_jsonl_sha256": "2d084254603c15f32625fdc78c3e62ba8afab305303a845e5766ceffc6964300",
+      "status_counts": {
+        "empty": 2,
+        "ocr_unreviewed": 22,
+        "ok": 1,
+        "ok_minor_issues": 39
+      },
+      "indexable_pages": 62,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-diabetes-must-know-undated",
+      "source_sha256": "c7f654e58e295440701c2e76ced66c90bf0126605aeeba4ef8f424aa5fca4d7a",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "80372568b8c578bebf9205d332f2bd17404814759a0f255f660852e5cb1ca371",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-food-exchange-list-undated",
+      "source_sha256": "336139a08ebe4436c6b5f9fdb5b960eb80ad11eae3b1a003d2ed758f41d5cc6b",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "b0ecd069edc26010792cd1409400c8303c15236a2310ae616a8c75b679cb6cc1",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+      "source_sha256": "82e9d6a6597b371b3370abbcaca1239518be53a96a9ad97b39603de8f57fc506",
+      "pdf_pages": 20,
+      "pages_jsonl_sha256": "9f572b3a75724d6894b11d7ab87a54516c47f22ef8e4f89277f88ea08c63a988",
+      "status_counts": {
+        "empty": 1,
+        "ok": 19
+      },
+      "indexable_pages": 19,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-healthy-diet-1477",
+      "source_sha256": "0606776bd7c0531c50b0d8daba1bad50344df14cae325756ed71aefc2aee6383",
+      "pdf_pages": 4,
+      "pages_jsonl_sha256": "34da8c172c7d737738292ed6e74cfcc41aeb84935ad0fef6a08fbae04bec18ef",
+      "status_counts": {
+        "ok": 4
+      },
+      "indexable_pages": 4,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
+      "source_sha256": "a4e69aafb37c0a5f6ffea1857c29b95c9c9cc9862dfe109bc66894abf33d6e42",
+      "pdf_pages": 1,
+      "pages_jsonl_sha256": "b538c8490bc061f9302e7ee38b0fe606a81afea551f00166be08bf1b9bb09b45",
+      "status_counts": {
+        "ocr_unreviewed": 1
+      },
+      "indexable_pages": 1,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-know-diabetes-undated",
+      "source_sha256": "85a73ed2f11ae75498b81f1ff92e4bddc2c04847a97cca60b453e802c89614f0",
+      "pdf_pages": 1,
+      "pages_jsonl_sha256": "9f151bc5b83d17ffbdb7a532f0fbe4766fc4a661febd84ad152c536c3fc30902",
+      "status_counts": {
+        "ocr_unreviewed": 1
+      },
+      "indexable_pages": 1,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-macrovascular-leaflet-undated",
+      "source_sha256": "6fd0dca43b88972ec4007a9ea8cacb00dbf64a0330d959170f01b876035a65ac",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "cbe2249fcef30fbac7a365aadea038d975394432a0d29f06a02507ae035d6b00",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-microvascular-leaflet-undated",
+      "source_sha256": "fb636776f1f54de756be106ddcfa75dcd79809214280daea2d800453d5ec85e6",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "c176b596ce4f1023d968393d26da7f214e1b60c6ede162840afca751de9a0e1a",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
+      "source_sha256": "3c34d0fc75f48da073095b53c3a194e6d7252b5f978c63b029e45a180364e10f",
+      "pdf_pages": 1,
+      "pages_jsonl_sha256": "d7df0fd18835fa962a39d4b32bfca10881b5c043e8a148ada9d5bcf2a4db4866",
+      "status_counts": {
+        "ocr_unreviewed": 1
+      },
+      "indexable_pages": 1,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+      "source_sha256": "e64800160d64e5a5ba10bf63d2261f3eb1093e89853caa38fdb35c80bd70851a",
+      "pdf_pages": 116,
+      "pages_jsonl_sha256": "23b8ae725cd8e43174480fcacc0bd2123e42588008c2e73715a800bee022324c",
+      "status_counts": {
+        "empty": 1,
+        "ok": 115
+      },
+      "indexable_pages": 115,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+      "source_sha256": "9528be902df2d84aa5a5161df0cc96b9a59986ee0544561c2fa7b919b74e4483",
+      "pdf_pages": 87,
+      "pages_jsonl_sha256": "8c0b0553494fadf813ace63bcb126dd22798e0f2165157fd1b1bff93fdaf9340",
+      "status_counts": {
+        "empty": 1,
+        "ok": 86
+      },
+      "indexable_pages": 86,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-patient-foot-manual-undated",
+      "source_sha256": "fcc860a32bea289b83d3e886898044d32918a29fe857c2b2c4d6640f5c24df14",
+      "pdf_pages": 20,
+      "pages_jsonl_sha256": "3741ad81aa9f5d80ade987798c3cb5c26d6f5750d8b3e644591b0f89170b64b8",
+      "status_counts": {
+        "empty": 2,
+        "ocr_unreviewed": 13,
+        "ok": 3,
+        "ok_minor_issues": 2
+      },
+      "indexable_pages": 18,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-retinopathy-leaflet-undated",
+      "source_sha256": "7b372e0337fb5fbc6079901b67798b96ee14a2ea0553131eb757c984234c717e",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "f419ba3d05fdcfe0a27da6619fc17d13488ac3e6173c1d5c7af3f3b034cfbbf7",
+      "status_counts": {
+        "ocr_unreviewed": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
+      "source_sha256": "959da5ed36b08a81bf10ab8494ec8bc7265dc65e1b1e3a593ca885f85dc9db0e",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "6fbffd9111016f60056f07ebc01ae7dfd2ba1e28bbc12fd83fd72f7ad7c18452",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ht-guideline-2567",
+      "source_sha256": "f42e199e701858a3a9f5fe71f81587fc77af1b3626c9269c0e96b52bc760b645",
+      "pdf_pages": 153,
+      "pages_jsonl_sha256": "fb6d7bf729fff750dcbdbb0b6a4c841d2d6fb6891702e305c9ac27f916ca839b",
+      "status_counts": {
+        "empty": 2,
+        "ok": 151
+      },
+      "indexable_pages": 151,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
+      "source_sha256": "e827c472c2bed0e12e424d44585ed714fb27f134aa8e3b6ba35f38aca40c1ca2",
+      "pdf_pages": 4,
+      "pages_jsonl_sha256": "4fecd7cc5959a857497afd1aade3f30b7ed94ae92ececbc34b4265d4598086f5",
+      "status_counts": {
+        "ok": 4
+      },
+      "indexable_pages": 4,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ht-siriraj-uncontrolled-opd-2564",
+      "source_sha256": "8279f039134d970a8c31636bc5948e16102270316c6201fce70363738b38681f",
+      "pdf_pages": 105,
+      "pages_jsonl_sha256": "b7ecd12286f42ec0ab66d6977ad6c8d9467b643dca7de59959f1af2b6901222d",
+      "status_counts": {
+        "empty": 1,
+        "ocr_unreviewed": 1,
+        "ok": 103
+      },
+      "indexable_pages": 104,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ht-ths-air-pollution-article-2568",
+      "source_sha256": "33e68ae0a1fdab53b590317805035271ab1e8796fe1338c6c61d550d3d9440c3",
+      "pdf_pages": 7,
+      "pages_jsonl_sha256": "1bc1c6a8463b37f1b962a80ed56ada39910bd0d8966a2de0a0b218e3e4abce47",
+      "status_counts": {
+        "ocr_unreviewed": 6,
+        "ok_minor_issues": 1
+      },
+      "indexable_pages": 7,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "ht-ths-public-leaflet-2567",
+      "source_sha256": "bbd1221946d26ba7832b6be54275ea9a592aa5c86511d6d600a1605754fd759c",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "e0abf09efcad794eeaed3f91500c2e317cc2332eff3ee22fc3315d75a73d1912",
+      "status_counts": {
+        "ocr_unreviewed": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-dms-stroke-public-manual",
+      "source_sha256": "5b6edfb2d332d92ca03eda81b5ac57c14ebc9212d63585ad6fa03085ca38990b",
+      "pdf_pages": 84,
+      "pages_jsonl_sha256": "7e0b946e4420492dc3eb73aa6f48d14c45cb01909dceb71314e73c860ad72da3",
+      "status_counts": {
+        "empty": 3,
+        "garbled": 7,
+        "ocr_unreviewed": 3,
+        "ok": 61,
+        "ok_minor_issues": 10
+      },
+      "indexable_pages": 74,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-guideline-2567",
+      "source_sha256": "caee450589ae61ecfd8ab2f39b88037eeb740f8f2ee8dfa8bafcfdae92a5531a",
+      "pdf_pages": 48,
+      "pages_jsonl_sha256": "81aa8def477ac3a08b8e7bf06714a2aabba5428cbb34f9d86a25fe5cc13085f8",
+      "status_counts": {
+        "empty": 1,
+        "ocr_unreviewed": 1,
+        "ok": 39,
+        "ok_minor_issues": 7
+      },
+      "indexable_pages": 47,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-inmu-food-knowledge-all-ages",
+      "source_sha256": "02b29b38390d5b4b3edd1688d89bb5ee7bdf1506a9c2052dfc8344084d9025d6",
+      "pdf_pages": 170,
+      "pages_jsonl_sha256": "60890c7c099fcd7b52f034a5dbcd661005150af279f386e634250746b035123a",
+      "status_counts": {
+        "empty": 4,
+        "garbled": 13,
+        "ok": 119,
+        "ok_minor_issues": 34
+      },
+      "indexable_pages": 153,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-jmhs-dyslipidemia-drugs-review-2563",
+      "source_sha256": "b1b498e9577b4e8f4fac8bbd10a087d2a4515c339f6f3d7f56eea5c8137afff7",
+      "pdf_pages": 13,
+      "pages_jsonl_sha256": "4ef68f92b65976221351672c0c35d53e1570fe7fcb3560a27a33d736fa8b9a96",
+      "status_counts": {
+        "ok": 13
+      },
+      "indexable_pages": 13,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-rama-education-2562",
+      "source_sha256": "6248e72fe833ba88cfd61dc0b881326c215a8bf3b30934682e4c328e7875ae6f",
+      "pdf_pages": 6,
+      "pages_jsonl_sha256": "0efbc397050a28dfd1a585632947921349a6de818da9d4747b65089fcacc6a25",
+      "status_counts": {
+        "ok_minor_issues": 6
+      },
+      "indexable_pages": 6,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-rtamedj-hyperlipidemia-review-2566",
+      "source_sha256": "6c048d7a343102a673ee2eb18870a01478ee2300bbe856b47757f82874ce0a00",
+      "pdf_pages": 6,
+      "pages_jsonl_sha256": "64f308926a84980cb912e566f9b9a3f00edb250004fc66c3e23a5f3f7645f959",
+      "status_counts": {
+        "ok": 4,
+        "ok_minor_issues": 2
+      },
+      "indexable_pages": 6,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+      "source_sha256": "7346afad728db04dca4196b13f4e0b9264050befcb170b1203945c339a45b664",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "1761d433c2823e2d4d82d54e7faf1a3c05297086fbef4794a9f5c79394343b91",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-diabetes-fat-7",
+      "source_sha256": "979bc8c7136bef8f22a384f013c2f523546250280de6e9a8752b09accba7f358",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "9035e0712289277ff27f5bff46dce092460ce3af388894b10b072caaddcfe3b8",
+      "status_counts": {
+        "ocr_unreviewed": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-food-cholesterol-2564-review",
+      "source_sha256": "e8cbcac0bdbbed2a3e721657de660ea1e55c45b3988fad787f3e3368a4af7204",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "52d5e18b27aeaa7cba57b56ede17dd6b4ce21b29a48a6fcd5e1190b34393fcbb",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-metabolic-763",
+      "source_sha256": "f56187b6665cb35cc85e65c6fc0a65d7af432d7e2a6725b5924e280f23f13326",
+      "pdf_pages": 3,
+      "pages_jsonl_sha256": "997fcd1315e0fa08a0f9d3a3e0c4d02e6c4775fd621c37fffbb91cdb62d154df",
+      "status_counts": {
+        "ok": 3
+      },
+      "indexable_pages": 3,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-stroke-nutrition-1298",
+      "source_sha256": "ac25d9032ecbd1763259f87260161590194e5ad06f1bc6281ef7c8410705a2d1",
+      "pdf_pages": 3,
+      "pages_jsonl_sha256": "a9656bf9d4c58cd9cf0cbdeb065e0098a70f195b95fb71132ed7eda3c10bea48",
+      "status_counts": {
+        "ocr_unreviewed": 3
+      },
+      "indexable_pages": 3,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-thai-food-86",
+      "source_sha256": "135d36025866feea4dbd3584476acb66ec6ddeb19ec7ab4858366ee2a30e3ef4",
+      "pdf_pages": 2,
+      "pages_jsonl_sha256": "a6b7edcf926a24a2ee45132057424f13c988b7ca75809e0bad33ab3ade954836",
+      "status_counts": {
+        "ok": 2
+      },
+      "indexable_pages": 2,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-trans-fat-1380",
+      "source_sha256": "8aef8d0868bf8abcf4cced8f756b54c91cdf7b74958e59e989b243322d488661",
+      "pdf_pages": 1,
+      "pages_jsonl_sha256": "329a5a548401aff0da51e1064c98fcd3758fb5bc04f55db8b203a4ca6f72cff0",
+      "status_counts": {
+        "ocr_unreviewed": 1
+      },
+      "indexable_pages": 1,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-siriraj-warning-1158",
+      "source_sha256": "ffe5d13256d09bae7a45a42a0d886904a7cb48338c2e33643aaeaf1debfb6929",
+      "pdf_pages": 1,
+      "pages_jsonl_sha256": "fbb448be8cc138274d1e25514f81140cac21b8835ede3867371c9e4e10e47346",
+      "status_counts": {
+        "ocr_unreviewed": 1
+      },
+      "indexable_pages": 1,
+      "chars_indexable": 0
+    },
+    {
+      "document_id": "lipid-thaijpen-severe-hypertriglyceridemia-2565",
+      "source_sha256": "19945390b4df7899ea8189f26dce3a0b3d4617eaf4cf109e8bcf2ea33a35c24f",
+      "pdf_pages": 15,
+      "pages_jsonl_sha256": "fd12c8c848e381ecd2d88283b6ac9a295bf1da9d3188318ece758af28bc6be00",
+      "status_counts": {
+        "ok": 3,
+        "ok_minor_issues": 12
+      },
+      "indexable_pages": 15,
+      "chars_indexable": 0
+    }
+  ]
+}

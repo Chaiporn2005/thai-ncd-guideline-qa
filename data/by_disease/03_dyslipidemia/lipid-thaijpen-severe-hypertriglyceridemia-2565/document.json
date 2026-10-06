@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-thaijpen-severe-hypertriglyceridemia-2565",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-thaijpen-severe-hypertriglyceridemia-2565",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "lipid-thaijpen-severe-hypertriglyceridemia-2565",
+    "work_id": "lipid-thaijpen-severe-hypertriglyceridemia-2565",
+    "edition_id": "lipid-thaijpen-severe-hypertriglyceridemia-2565",
+    "title": "ภาวะไตรกลีเซอไรด์ในเลือดสูงรุนแรงและตับอ่อนอักเสบเฉียบพลัน จากไตรกลีเซอไรด์ในเลือดสูง",
+    "publisher": "Thai JPEN วารสารโภชนบำบัด; author Thanyanok Kuychanuan, Department of Nutrition and Medical Biochemistry, Faculty of Medicine Ramathibodi Hospital",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "population": "adults (clinician audience)",
+    "document_type": "report",
+    "language": "th",
+    "edition": "Year 2565 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://he02.tci-thaijo.org/index.php/ThaiJPEN/article/view/249569",
+    "download_url": "https://he02.tci-thaijo.org/index.php/ThaiJPEN/article/download/249569/176172",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "19945390b4df7899ea8189f26dce3a0b3d4617eaf4cf109e8bcf2ea33a35c24f",
+    "pdf_pages": 15,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). ThaiJO page: Thai-language case-report article (รายงานผู้ป่วยที่น่าสนใจ), vol. 30 no. 1 (Jan-Jun 2565), pp. 38-52. It is a case report with a review, so it is narrower than a guideline, and document_type is approximate. The landing page I read did not show the Thai author name or the society that publishes Thai JPEN, so take both from the PDF. Journal review/case article typed as report (schema has no article type). Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

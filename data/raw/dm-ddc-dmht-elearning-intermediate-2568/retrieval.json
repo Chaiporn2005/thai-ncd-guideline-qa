@@ -1,0 +1,11 @@
+{
+  "document_id": "dm-ddc-dmht-elearning-intermediate-2568",
+  "requested_url": "https://ddc.moph.go.th/uploads/publish/1340020250206080541.pdf",
+  "retrieved_at": "2026-10-06T17:54:08.594303+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

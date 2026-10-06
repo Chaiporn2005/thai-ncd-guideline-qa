@@ -1,0 +1,40 @@
+{
+  "document_id": "ht-ddc-dmht-elearning-intermediate-ii-2566",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ddc-dmht-elearning-intermediate-ii-2566",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ht-ddc-dmht-elearning-intermediate-ii-2566",
+    "work_id": "ht-ddc-dmht-elearning-intermediate-ii-2566",
+    "edition_id": "ht-ddc-dmht-elearning-intermediate-ii-2566",
+    "title": "คู่มือ E-learning หลักสูตรการเพิ่มสมรรถนะการจัดการโรคเบาหวานและความดันโลหิตสูง (ระดับกลาง II)",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค กระทรวงสาธารณสุข",
+    "disease_tags": [
+      "hypertension",
+      "type_2_diabetes"
+    ],
+    "population": "health staff caring for adults with DM/HT",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "Year 2566 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=14298",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/1429820230525042559.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Title and PDF link extracted from the DDC/DNCD publication detail page (journal_detail.php); listed in the DNCD 'คู่มือ/หนังสือ' catalogue. HEAD 200 application/pdf. Posted 24 พ.ค. 2566. Intermediate-II volume, separate from the 'ระดับกลาง' volume (13400). Covers DM and HT jointly. Primary group was set to HT to balance the groups. Very large (~44 MB) and possibly slide-based, so check the text layer. 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py).",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "document_id": "ncd-ddc-health-literacy-fight-ncds-2566",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-health-literacy-fight-ncds-2566",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ncd-ddc-health-literacy-fight-ncds-2566",
+    "work_id": "ncd-ddc-health-literacy-fight-ncds-2566",
+    "edition_id": "ncd-ddc-health-literacy-fight-ncds-2566",
+    "title": "ประชาชนรอบรู้สู้โรคไม่ติดต่อ (Health Literacy : Together Fight NCDs)",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค กระทรวงสาธารณสุข",
+    "disease_tags": [
+      "ncd_service"
+    ],
+    "population": "adults (general public)",
+    "document_type": "patient_education",
+    "language": "th",
+    "edition": "Year 2566 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=15043",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/1504320231129075642.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Title and PDF link extracted from the DDC/DNCD publication detail page (journal_detail.php); listed in the DNCD 'คู่มือ/หนังสือ' catalogue. HEAD 200 application/pdf. Posted 29 พ.ย. 2566. Public health-literacy book on NCDs. Very large (~81.5 MB), so it is probably image-heavy and needs a text-layer check. Its scope is broad NCD, not only DM/HT/lipid. 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py).",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

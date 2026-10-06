@@ -1,8 +1,8 @@
 {
   "run_id": "20261005-ncd-50",
   "accessed_at": "2026-10-05",
-  "manifest_records": 58,
-  "selected_candidate_works": 55,
+  "manifest_records": 79,
+  "selected_candidate_works": 76,
   "accepted_records": 0,
   "count_unit": "provisional distinct authored work; one primary bucket per work",
   "groups": {
@@ -23,7 +23,15 @@
       "dm-siriraj-nursing-foot-ulcer-prevention-2559",
       "dm-remission-implementation-lessons-undated",
       "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
-      "dm-chulabhorn-diabetes-diet-brochure-verified-20261005"
+      "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+      "dm-dmthai-self-management-education-2568",
+      "dm-siriraj-diabetes-must-know-undated",
+      "dm-siriraj-food-exchange-list-undated",
+      "dm-siriraj-healthy-diet-1477",
+      "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+      "dm-rama-nursing-t2dm-risk-case-management-2567",
+      "dm-ddc-remission-report-2567-2568",
+      "dm-ddc-dmht-elearning-intermediate-2568"
     ],
     "HT": [
       "ht-guideline-2567",
@@ -35,7 +43,11 @@
       "ht-ddc-sodium-education-undated",
       "ht-ddc-low-sodium-77-province-menu-undated",
       "ht-siriraj-hypertension-public-1587-verified-20261005",
-      "ht-chulabhorn-sodium-nutrition-verified-20261005"
+      "ht-chulabhorn-sodium-nutrition-verified-20261005",
+      "ht-ths-public-leaflet-2567",
+      "ht-ths-air-pollution-article-2568",
+      "ht-ddc-dmht-elearning-basic-2565",
+      "ht-ddc-dmht-elearning-intermediate-ii-2566"
     ],
     "LIPID": [
       "lipid-guideline-2567",
@@ -50,7 +62,10 @@
       "lipid-inmu-food-knowledge-all-ages",
       "lipid-dms-stroke-public-manual",
       "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
-      "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005"
+      "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+      "lipid-rtamedj-hyperlipidemia-review-2566",
+      "lipid-jmhs-dyslipidemia-drugs-review-2563",
+      "lipid-thaijpen-severe-hypertriglyceridemia-2565"
     ],
     "CKD": [
       "ckd-guideline-2565-revised",
@@ -61,7 +76,9 @@
       "ckd-hemodialysis-plasma-manual-2561",
       "ckd-public-kidney-prevention-tips",
       "ckd-adult-glomerular-guideline-2561",
-      "ckd-out-of-unit-hemodialysis-standards"
+      "ckd-out-of-unit-hemodialysis-standards",
+      "ckd-ddc-community-kidney-prevention-model-2568",
+      "ckd-ddc-epidemiology-prevention-review-2567"
     ],
     "NCD_SERVICE": [
       "ncd-clinic-plus-2568-update",
@@ -69,7 +86,11 @@
       "ncd-ddc-health-station-manual-undated",
       "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
       "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
-      "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566"
+      "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
+      "ncd-ddc-dmht-service-model-lessons-2568",
+      "ncd-ddc-dmht-care-management-report-2568",
+      "ncd-ddc-dmht-quality-indicator-details-2565",
+      "ncd-ddc-health-literacy-fight-ncds-2566"
     ]
   },
   "new_document_ids": [
@@ -109,6 +130,7 @@
     "CKD is optional; advanced/renal service works do not become core disease requirements.",
     "Whole multi-topic books counted once, not chapters. Mirrors and printings not multiplied.",
     "Manual e-book viewers remain candidates with download verification pending.",
-    "Original collection stored no raw PDFs; current local preparation state is in local_preparation_20261005.json. Course accepted corpus still not certified."
+    "Original collection stored no raw PDFs; current local preparation state is in local_preparation_20261005.json. Course accepted corpus still not certified.",
+    "2026-10-07 Track B expansion: 21 scout-verified candidates added to the selected groups (see corpus_expansion_20261007.json); 10 downloaded and normalized into normalized-v5, 11 blocked by HTTP 403 for scripted requests."
   ]
 }

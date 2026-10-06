@@ -2,11 +2,11 @@
   "canonical_manifest": "data/manifests/documents.jsonl",
   "selected_cohort": "data/manifests/corpus_50_candidates.json",
   "counts": {
-    "DM": 17,
-    "HT": 10,
-    "LIPID": 13,
-    "CKD": 9,
-    "NCD_SERVICE": 6,
+    "DM": 25,
+    "HT": 14,
+    "LIPID": 16,
+    "CKD": 11,
+    "NCD_SERVICE": 10,
     "EXCLUDED": 3
   },
   "records": [
@@ -130,6 +130,62 @@
       "folder": "data/by_disease/01_diabetes/dm-chulabhorn-diabetes-diet-brochure-verified-20261005"
     },
     {
+      "document_id": "dm-dmthai-self-management-education-2568",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-dmthai-self-management-education-2568"
+    },
+    {
+      "document_id": "dm-siriraj-diabetes-must-know-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-diabetes-must-know-undated"
+    },
+    {
+      "document_id": "dm-siriraj-food-exchange-list-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-food-exchange-list-undated"
+    },
+    {
+      "document_id": "dm-siriraj-healthy-diet-1477",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-healthy-diet-1477"
+    },
+    {
+      "document_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-nursing-prediabetes-lifestyle-2563"
+    },
+    {
+      "document_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-rama-nursing-t2dm-risk-case-management-2567"
+    },
+    {
+      "document_id": "dm-ddc-remission-report-2567-2568",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-ddc-remission-report-2567-2568"
+    },
+    {
+      "document_id": "dm-ddc-dmht-elearning-intermediate-2568",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-ddc-dmht-elearning-intermediate-2568"
+    },
+    {
       "document_id": "ht-guideline-2567",
       "primary_group": "HT",
       "selected_candidate": true,
@@ -198,6 +254,34 @@
       "selected_candidate": true,
       "exclusion_reason": null,
       "folder": "data/by_disease/02_hypertension/ht-chulabhorn-sodium-nutrition-verified-20261005"
+    },
+    {
+      "document_id": "ht-ths-public-leaflet-2567",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ths-public-leaflet-2567"
+    },
+    {
+      "document_id": "ht-ths-air-pollution-article-2568",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ths-air-pollution-article-2568"
+    },
+    {
+      "document_id": "ht-ddc-dmht-elearning-basic-2565",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-dmht-elearning-basic-2565"
+    },
+    {
+      "document_id": "ht-ddc-dmht-elearning-intermediate-ii-2566",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-dmht-elearning-intermediate-ii-2566"
     },
     {
       "document_id": "lipid-guideline-2567",
@@ -291,6 +375,27 @@
       "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005"
     },
     {
+      "document_id": "lipid-rtamedj-hyperlipidemia-review-2566",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-rtamedj-hyperlipidemia-review-2566"
+    },
+    {
+      "document_id": "lipid-jmhs-dyslipidemia-drugs-review-2563",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-jmhs-dyslipidemia-drugs-review-2563"
+    },
+    {
+      "document_id": "lipid-thaijpen-severe-hypertriglyceridemia-2565",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-thaijpen-severe-hypertriglyceridemia-2565"
+    },
+    {
       "document_id": "ckd-guideline-2565-revised",
       "primary_group": "CKD",
       "selected_candidate": true,
@@ -354,6 +459,20 @@
       "folder": "data/by_disease/04_ckd_optional/ckd-out-of-unit-hemodialysis-standards"
     },
     {
+      "document_id": "ckd-ddc-community-kidney-prevention-model-2568",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-ddc-community-kidney-prevention-model-2568"
+    },
+    {
+      "document_id": "ckd-ddc-epidemiology-prevention-review-2567",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-ddc-epidemiology-prevention-review-2567"
+    },
+    {
       "document_id": "ncd-clinic-plus-2568-update",
       "primary_group": "NCD_SERVICE",
       "selected_candidate": true,
@@ -394,6 +513,34 @@
       "selected_candidate": true,
       "exclusion_reason": null,
       "folder": "data/by_disease/05_ncd_clinic_plus/DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566"
+    },
+    {
+      "document_id": "ncd-ddc-dmht-service-model-lessons-2568",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-dmht-service-model-lessons-2568"
+    },
+    {
+      "document_id": "ncd-ddc-dmht-care-management-report-2568",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-dmht-care-management-report-2568"
+    },
+    {
+      "document_id": "ncd-ddc-dmht-quality-indicator-details-2565",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-dmht-quality-indicator-details-2565"
+    },
+    {
+      "document_id": "ncd-ddc-health-literacy-fight-ncds-2566",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-health-literacy-fight-ncds-2566"
     },
     {
       "document_id": "ckd-one-page-undated",

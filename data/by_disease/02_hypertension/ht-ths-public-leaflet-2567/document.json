@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-ths-public-leaflet-2567",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ths-public-leaflet-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ht-ths-public-leaflet-2567",
+    "work_id": "ht-ths-public-leaflet-2567",
+    "edition_id": "ht-ths-public-leaflet-2567",
+    "title": "แผ่นพับให้ความรู้เรื่องภาวะความดันโลหิต",
+    "publisher": "สมาคมความดันโลหิตสูงแห่งประเทศไทย",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "population": "adults (general public)",
+    "document_type": "patient_education",
+    "language": "th",
+    "edition": "Year 2567 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://thaihypertension.org/%e0%b9%82%e0%b8%9b%e0%b8%aa%e0%b9%80%e0%b8%95%e0%b8%ad%e0%b8%a3%e0%b9%8c%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b9%81%e0%b8%9c%e0%b9%88%e0%b8%99%e0%b8%9e%e0%b8%b1%e0%b8%9a%e0%b9%83%e0%b8%ab%e0%b9%89%e0%b8%84/",
+    "download_url": "https://thaihypertension.org/wp-content/uploads/2025/07/%E0%B9%81%E0%B8%9C%E0%B9%88%E0%B8%99%E0%B8%9E%E0%B8%B1%E0%B8%9A%E2%80%8B%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%94%E0%B8%B1%E0%B8%99%E0%B9%82%E0%B8%A5%E0%B8%AB%E0%B8%B4%E0%B8%95.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "bbd1221946d26ba7832b6be54275ea9a592aa5c86511d6d600a1605754fd759c",
+    "pdf_pages": 2,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). THS page 'โปสเตอร์และแผ่นพับให้ความรู้เรื่องภาวะความดันโลหิตสูง' (23 May 2024) links this file. Title is the file label. The URL contains a zero-width space (U+200B, %E2%80%8B) after 'แผ่นพับ', so keep the URL exactly as given. ~15.7 MB for a leaflet suggests it is image-based and may need OCR. Check the text layer before ingesting. Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

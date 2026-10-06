@@ -1,0 +1,41 @@
+{
+  "document_id": "ncd-ddc-dmht-care-management-report-2568",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-dmht-care-management-report-2568",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ncd-ddc-dmht-care-management-report-2568",
+    "work_id": "ncd-ddc-dmht-care-management-report-2568",
+    "edition_id": "ncd-ddc-dmht-care-management-report-2568",
+    "title": "รายงานผลการดำเนินงานการพัฒนาศักยภาพด้านการจัดการโรคเบาหวานและความดันโลหิตสูง (DM & HT Care Management) ประจำปีงบประมาณ พ.ศ.2568",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค กระทรวงสาธารณสุข",
+    "disease_tags": [
+      "hypertension",
+      "ncd_service",
+      "type_2_diabetes"
+    ],
+    "population": "health staff / adults with DM and HT",
+    "document_type": "report",
+    "language": "th",
+    "edition": "Year 2568 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=17494",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/1749420251024092434.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Title and PDF link extracted from the DDC/DNCD publication detail page (journal_detail.php); listed in the DNCD 'คู่มือ/หนังสือ' catalogue. HEAD 200 application/pdf. Posted 24 ต.ค. 2568. Programme report on DM & HT care-management capacity building. 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py).",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-ddc-epidemiology-prevention-review-2567",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-ddc-epidemiology-prevention-review-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ckd-ddc-epidemiology-prevention-review-2567",
+    "work_id": "ckd-ddc-epidemiology-prevention-review-2567",
+    "edition_id": "ckd-ddc-epidemiology-prevention-review-2567",
+    "title": "ระบาดวิทยาและการทบทวนมาตรการป้องกันโรคไตเรื้อรัง",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค กระทรวงสาธารณสุข",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "population": "adults (population-level)",
+    "document_type": "report",
+    "language": "th",
+    "edition": "Year 2567 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=13088",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/1308820241031010423.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Title and PDF link extracted from the DDC/DNCD publication detail page (journal_detail.php); listed in the DNCD 'คู่มือ/หนังสือ' catalogue. HEAD 200 application/pdf. Posted 31 ต.ค. 2567. Epidemiology and a review of CKD prevention measures. It is a report rather than a clinical guideline. 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py).",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

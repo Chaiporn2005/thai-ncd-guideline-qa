@@ -3,3 +3,6 @@
 !.gitignore
 !README.md
 !normalization.json
+
+# Staging roots for building a corpus version; the version itself records derived_from.
+/normalized-add-*/

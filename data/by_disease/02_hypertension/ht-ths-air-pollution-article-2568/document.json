@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-ths-air-pollution-article-2568",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ths-air-pollution-article-2568",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ht-ths-air-pollution-article-2568",
+    "work_id": "ht-ths-air-pollution-article-2568",
+    "edition_id": "ht-ths-air-pollution-article-2568",
+    "title": "บทความมลพิษทางอากาศและความดันโลหิตสูง",
+    "publisher": "สมาคมความดันโลหิตสูงแห่งประเทศไทย",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "population": "adults",
+    "document_type": "patient_education",
+    "language": "th",
+    "edition": "Year 2568 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://thaihypertension.org/%e0%b8%9a%e0%b8%97%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%a1%e0%b8%a5%e0%b8%9e%e0%b8%b4%e0%b8%a9%e0%b8%97%e0%b8%b2%e0%b8%87%e0%b8%ad%e0%b8%b2%e0%b8%81%e0%b8%b2%e0%b8%a8%e0%b9%81%e0%b8%a5%e0%b8%b0/",
+    "download_url": "https://thaihypertension.org/wp-content/uploads/2025/07/%E0%B8%9A%E0%B8%97%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A1%E0%B8%A5%E0%B8%9E%E0%B8%B4%E0%B8%A9%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%94%E0%B8%B1%E0%B8%99%E0%B9%82%E0%B8%A5%E0%B8%AB%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%B9%E0%B8%87.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "33e68ae0a1fdab53b590317805035271ab1e8796fe1338c6c61d550d3d9440c3",
+    "pdf_pages": 7,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). THS public-knowledge page dated 31 Jan 2025 (2568). It names THS and links 'Download PDF File'. The article reviews PM2.5 and blood pressure with practical advice. It is a niche topic but squarely about adult HT. Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

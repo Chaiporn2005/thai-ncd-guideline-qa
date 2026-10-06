@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-rama-nursing-t2dm-risk-case-management-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+    "work_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+    "edition_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+    "title": "คู่มือการพยาบาล การจัดการรายกรณี กลุ่มเสี่ยงโรคเบาหวานชนิดที่ 2 ในชุมชน",
+    "publisher": "งานการพยาบาลสนับสนุนการรักษา ฝ่ายการพยาบาล โรงพยาบาลรามาธิบดี คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี มหาวิทยาลัยมหิดล (ผู้จัดทำ รุ่งทิวา เสาวนีย์)",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "adults at risk of type 2 diabetes in the community (nurse audience)",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "Year 2567 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://www.rama.mahidol.ac.th/academic/sites/default/files/public/files/staff-advancement/advancement-work/manuals/",
+    "download_url": "https://www.rama.mahidol.ac.th/academic/sites/default/files/public/files/staff-advancement/advancement-work/manuals/%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B8%B5%E0%B8%81%E0%B8%A5%E0%B8%B8%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%87%E0%B9%82%E0%B8%A3%E0%B8%84%E0%B9%80%E0%B8%9A%E0%B8%B2%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B8%8A%E0%B8%99%E0%B8%B4%E0%B8%94%E0%B8%97%E0%B8%B5%E0%B9%88%202%20%E0%B9%83%E0%B8%99%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%8A%E0%B8%99.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "255d4d9f0ffdc67de0397b3fd0c38be9ffb1537ec01dfe55f2130756fde7216d",
+    "pdf_pages": 112,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). This is a staff-advancement manual on the Ramathibodi academic site. Title, author, unit and year (2567) come from search-result text, and the title is also in the file name. The landing_url is the directory, not an HTML landing page: I found no dedicated landing page. HEAD returns 200 application/pdf. It is written by an individual nurse for promotion, so authority is institutional but not a guideline. Not in the existing corpus. Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

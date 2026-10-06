@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-siriraj-diabetes-must-know-undated",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-siriraj-diabetes-must-know-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "dm-siriraj-diabetes-must-know-undated",
+    "work_id": "dm-siriraj-diabetes-must-know-undated",
+    "edition_id": "dm-siriraj-diabetes-must-know-undated",
+    "title": "เรื่องต้องรู้กับเบาหวาน",
+    "publisher": "ศูนย์เบาหวานศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "adults",
+    "document_type": "patient_education",
+    "language": "th",
+    "edition": "Undated; edition unnumbered",
+    "publication_date": null,
+    "landing_url": "https://www.si.mahidol.ac.th/th/division/diabetes/ct_knowledgesdetail.asp?div_id=44&kl_id=30",
+    "download_url": "https://www.si.mahidol.ac.th/th/division/diabetes/admin/knowledges_files/30_44_1.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "c7f654e58e295440701c2e76ced66c90bf0126605aeeba4ef8f424aa5fca4d7a",
+    "pdf_pages": 2,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Landing page (Siriraj Diabetes Center สาระน่ารู้, kl_id=30) shows the title and links this file (page updated 4/6/2564). The PDF title from search metadata is 'เรื่องต้องรู้ กับ เบาหวาน \"แม้เป็นเบาหวาน ชีวิตก็เบิกบานได้\"'. This is a different file from the existing Siriraj leaflets (1, 4, 7, 16, 21-25_44_1). Its content (definition, types, treatment, diet, annual eye/kidney/foot screening) partly overlaps dm-siriraj-know-diabetes-undated. The file is only ~295 KB, so check the page count. Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

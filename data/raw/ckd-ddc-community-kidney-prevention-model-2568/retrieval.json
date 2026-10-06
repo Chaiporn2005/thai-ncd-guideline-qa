@@ -1,0 +1,11 @@
+{
+  "document_id": "ckd-ddc-community-kidney-prevention-model-2568",
+  "requested_url": "https://ddc.moph.go.th/uploads/publish/1694620250325082739.pdf",
+  "retrieved_at": "2026-10-06T17:54:27.156767+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

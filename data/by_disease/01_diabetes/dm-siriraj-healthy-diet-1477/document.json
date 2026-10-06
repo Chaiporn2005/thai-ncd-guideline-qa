@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-siriraj-healthy-diet-1477",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-siriraj-healthy-diet-1477",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "dm-siriraj-healthy-diet-1477",
+    "work_id": "dm-siriraj-healthy-diet-1477",
+    "edition_id": "dm-siriraj-healthy-diet-1477",
+    "title": "อาหารสุขภาพของผู้ป่วยเบาหวาน",
+    "publisher": "ฝ่ายโภชนาการ โรงพยาบาลศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "adults with diabetes",
+    "document_type": "patient_education",
+    "language": "th",
+    "edition": "Undated; edition unnumbered",
+    "publication_date": null,
+    "landing_url": "https://www.si.mahidol.ac.th/sidoctor/e-pl/articledetail.asp?id=1477",
+    "download_url": "https://www.si.mahidol.ac.th/sidoctor/sirirajonline2021/Article_files/1477_1.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "0606776bd7c0531c50b0d8daba1bad50344df14cae325756ed71aefc2aee6383",
+    "pdf_pages": 4,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). The PDF is 200 application/pdf. The Siriraj Online article landing page currently shows a 'temporarily closed for maintenance' notice, so the title and publisher come from the PDF title metadata in search results ('อาหารสุขภาพของผู้ป่วยเบาหวาน ฝ่ายโภชนาการ โรงพยาบาลศิริราช'). The file is small (~97 KB) and probably 1-2 pages. Different publisher and work from dm-siriraj-geriatric-diabetes-diet and the Chulabhorn diet brochure, but the topic overlaps. Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

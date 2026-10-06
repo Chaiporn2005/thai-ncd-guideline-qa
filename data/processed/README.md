@@ -1,6 +1,34 @@
 # Normalized text summaries
 
-## normalized-v3 (2026-10-07, current for retrieval)
+## normalized-v5 (2026-10-07, current for retrieval)
+
+**ใช้ชุดนี้สำหรับ Track B** = `normalized-v4` (39 เอกสารเดิม) + 10 เอกสารใหม่จากการค้นเพิ่ม 2026-10-07
+
+| ขั้น | ผล |
+| --- | --- |
+| v4: ตรวจหน้า OCR ของ v3 ทั้ง 77 หน้าเทียบภาพจริง | [ocr_review_20261007.json](../manifests/ocr_review_20261007.json): pass 18, fix 29, reject 22, pass_text_only 8 |
+| เอกสารใหม่ 21 รายการ (scout ตรวจ landing page + PDF) | ดาวน์โหลดได้ 10; อีก 11 ตอบ 403 ต่อสคริปต์ (ต้องดาวน์โหลดด้วย browser) |
+| เอกสารใหม่ 10 ไฟล์ | normalize → OCR 10 หน้า → ตรวจเทียบภาพ [ocr_review_20261007b.json](../manifests/ocr_review_20261007b.json) |
+| v5 | 49 เอกสาร / 2,049 หน้า; ok 1,774 / ok_minor_issues 133 / OCR ที่ตรวจแล้ว 63 / garbled 24 / empty 55 |
+| ใช้ค้นได้ | **48 เอกสาร** (แผ่นพับ CKD infographic ถูก reject); page rows ผ่าน schema 0 error |
+
+```powershell
+python -X utf8 scripts/apply_ocr_review.py --source data/processed/normalized-v3 --review data/manifests/ocr_review_20261007.json --out data/processed/normalized-v4
+python scripts/normalize_thai.py --cohort data/manifests/corpus_expansion_20261007_local.csv --out-dir data/processed/normalized-add-20261007
+python -X utf8 scripts/ocr_typhoon.py --pages-root data/processed/normalized-add-20261007 --out-dir data/processed/ocr-typhoon-add-20261007 --shard 0 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_A
+python -X utf8 scripts/merge_ocr.py --source data/processed/normalized-add-20261007 --ocr-dir data/processed/ocr-typhoon-add-20261007 --out data/processed/normalized-add-20261007-ocr
+python -X utf8 scripts/apply_ocr_review.py --source data/processed/normalized-add-20261007-ocr --review data/manifests/ocr_review_20261007b.json --out data/processed/normalized-add-20261007-reviewed
+# normalized-v5 = copy of normalized-v4 + normalized-add-20261007-reviewed document folders
+```
+
+**ขอบเขตการตรวจ OCR:** ตรวจโดย AI (Claude) เทียบภาพหน้าจริงทีละหน้าตามคำขอของ Up2mEz;
+`human_review.review_method = ai_assisted_visual_check` และ `human_confirmation = null` จนกว่าคนในทีมจะยืนยัน
+ข้อผิดพลาดที่แก้มีทั้งคำผิด และข้อความที่โมเดล OCR แต่งขึ้นเองในหน้าภาพถ่าย/infographic
+ตัวอย่างสำคัญ: แผ่นพับน้ำตาลต่ำ OCR อ่าน "เครื่องตรวจอัตราการเต้นหัวใจ" แทน "เครื่องตรวจวัดระดับน้ำตาลปลายนิ้ว"
+
+hash อยู่ใน [v5 inventory](../manifests/corpus_normalized-v5_inventory.json)
+
+## normalized-v3 (2026-10-07)
 
 `normalized-v2` + Typhoon OCR ของหน้าที่ติดธง (ทีมตัดสินใช้บริการภายนอกนี้ 2026-10-07; ดู rights queue)
 

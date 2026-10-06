@@ -1,0 +1,11 @@
+{
+  "document_id": "dm-dmthai-self-management-education-2568",
+  "requested_url": "https://www.dmthai.org/new/attactment/2025-karn-hai-kwam-roo.pdf",
+  "retrieved_at": "2026-10-06T17:53:54.453667+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "access_restricted",
+  "http_status": 403,
+  "network_attempts": 1,
+  "error": "HTTP 403; stopped without retry/bypass"
+}

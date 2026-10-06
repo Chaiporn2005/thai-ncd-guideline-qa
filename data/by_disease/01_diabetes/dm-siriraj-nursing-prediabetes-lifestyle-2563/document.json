@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-siriraj-nursing-prediabetes-lifestyle-2563",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+    "work_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+    "edition_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+    "title": "คู่มือการพยาบาล การปรับเปลี่ยนพฤติกรรมชีวิตในผู้ใหญ่ที่มีภาวะก่อนเกิดโรคเบาหวานชนิดที่ 2",
+    "publisher": "ฝ่ายการพยาบาล โรงพยาบาลศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "adults with prediabetes / type 2 diabetes (nursing staff audience)",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "Year 2563 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://www2.si.mahidol.ac.th/division/nursing/sins/index.php/th/?option=com_content&view=article&id=772",
+    "download_url": "https://www2.si.mahidol.ac.th/division/nursing/sins/attachments/article/772/Nursing%20Guide%20Behavior%20modification%20in%20adults%20with%20pre-diabetes%20type%202%20diabetes..pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "9528be902df2d84aa5a5161df0cc96b9a59986ee0544561c2fa7b919b74e4483",
+    "pdf_pages": 87,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). The SiNS landing page heading reads 'คู่มือการพยาบาล 2563 :คู่มือการพยาบาล การปรับเปลี่ยนพฤติกรรมชีวิตในผู้ใหญ่ที่มีภาวะก่อนเกิดโรคเบาหวานชนิดที่ 2'. HEAD returns 200 application/pdf with no Content-Length. Same series as the existing Siriraj nursing manuals, but a different work. Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}
