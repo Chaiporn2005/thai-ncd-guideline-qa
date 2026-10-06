@@ -1,0 +1,3 @@
+# Typhoon OCR API client for scripts/ocr_typhoon.py; also needs Poppler pdftoppm on PATH.
+-r requirements-ingest.txt
+typhoon-ocr==0.4.1
