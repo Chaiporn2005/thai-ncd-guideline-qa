@@ -52,6 +52,8 @@
 DM17/HT10/LIPID13/CKD9/NCD_SERVICE6;99_excluded3รายการพร้อมเหตุผล
 แต่ละเอกสารมีREADME/document.json พร้อมชื่อ/ผู้จัดทำ/ฉบับ/ประเภท/ต้นทางและลิงก์raw/processed
 มีbuilderและconsistency check;canonical IDs/rights/acceptedไม่เปลี่ยน
+- [x] จัดโฟลเดอร์ครบ58recordsและpushแล้วใน[commitfadf5b7](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/fadf5b7e9db2033b202eeb58119c36e5992ad094)
+- [x] ตรวจremote mainตรงกับlocalHEAD;335internal linksและ58metadata snapshotsผ่าน
 
 รอบ `20261006-data-github`:อัปโครงสร้างdataและmetadataแล้วตามคำขอผู้ใช้
 เพิ่ม55retrieval records/33extraction summaries/39reviewed agent outputs พร้อมREADME/allowlists/inventory

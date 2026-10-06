@@ -42,6 +42,8 @@ OCRไทย+อังกฤษ6หน้าจาก3เอกสารในda
 สร้างจากcanonical manifest/cohortด้วย `scripts/build_disease_catalogue.py`;รัน `--check` หลังอัปเดตmetadata
 ตำแหน่งraw/processedใช้document_idตามเดิมสำหรับpipeline;by_diseaseเป็นสารบัญmetadata
 ไม่มีการเปลี่ยนrights/clinicalapproval/acceptedหรือเผยแพร่PDF/ข้อความเต็มเพิ่ม
+เผยแพร่แล้ว:commitfadf5b7e9db2033b202eeb58119c36e5992ad094;ตรวจremote mainตรงกับlocalHEADหลังpush
+ตรวจ58document folders/55selected/3excluded,124generated files,335internal linksและmetadataตรงcanonicalผ่าน
 
 รอบ `20261006-data-github`:ผู้ใช้ขออัปโฟลเดอร์dataและถามเรื่องใช้เพื่อการศึกษา
 เพิ่มโครงสร้างraw/processed/indexes/agent_runsพร้อมREADMEและallowlists

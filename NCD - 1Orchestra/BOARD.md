@@ -223,3 +223,15 @@
 - Source bodies not staged;raw/processed paths unchanged for tool compatibility;rights/clinicalacceptance unchanged.
 - No workers/claims/paid API started;publication result will be recorded after verified push.
 - Evidence:[catalogue](../data/by_disease/README.md),[decision0006](decisions/0006-disease-folder-catalogue.md).
+
+
+## 2026-10-06T19:21:06+07:00 — disease catalogue publication verified
+
+- From:coordinator
+- To:user/nextsession
+- Type:handoff
+- Run:20261006-disease-folders
+- Published:134files including124derived catalogue files;commitfadf5b7e9db2033b202eeb58119c36e5992ad094.
+- git push succeeded;remote main verified equal to local HEAD;rootboard/HANDOFF record publication evidence.
+- Folder catalogue covers58records/55selected/3excluded;no PDFs/full-text/OCR added.
+- No activeworkers/claims;next corpus review gates unchanged.
