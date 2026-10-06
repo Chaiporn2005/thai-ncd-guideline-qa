@@ -1,0 +1,41 @@
+{
+  "document_id": "dm-remission-implementation-lessons-undated",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-remission-implementation-lessons-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "dm-remission-implementation-lessons-undated",
+    "work_id": "dm-remission-implementation-lessons",
+    "edition_id": "dm-remission-implementation-lessons-undated",
+    "title": "ถอดบทเรียน รูปแบบการดำเนินงาน พัฒนาการจัดการโรคเบาหวาน DM remission",
+    "publisher": "สมาคมโรคเบาหวานแห่งประเทศไทย (official host; issuing authors/agency need PDF-body confirmation)",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "Thai diabetes remission service implementation; adult T2DM audience and case details not yet verified in PDF",
+    "document_type": "report",
+    "language": "th",
+    "edition": "ไม่ยืนยันฉบับ/ปี",
+    "publication_date": null,
+    "landing_url": "https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/thxd-bth-reiyn-rup-baeb-kar-danein-ngan-phathnakar-cadkar-rokh-bea-hwan-dm-remission",
+    "download_url": "https://drive.usercontent.google.com/uc?id=1ZjtVdO9AANnL5NbJcG5hDAtgxu7CY-er&export=download",
+    "alternate_urls": [
+      "https://drive.google.com/file/d/1ZjtVdO9AANnL5NbJcG5hDAtgxu7CY-er/view"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "0d68865e2a58507a2accb2f0a528339791a1635ccef024f9510e71c0fb49a154",
+    "pdf_pages": 64,
+    "agent": "plus10_dm",
+    "verification_notes": "Official society landing lists separate implementation-lessons work and links Drive PDF. Clicked actual source link (with fbclid tracking); Drive title confirms ถอดบทเรียน รูปแบบการดำเนินงานพัฒนาการจัดการโรคเบาหวาน.pdf. Canonical download URL strips tracking only. PDF body/authorship/edition unread; compare with existing remission guideline/service manual before final work-identity acceptance. No hash/pages/clinical/rights approval. Local preparation20261005: public review copy saved at data/raw/dm-remission-implementation-lessons-undated/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all64 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai society hosted diabetes service-implementation learning material. Do not claim empirical Thai sample or clinical treatment authority without PDF-body review.",
+    "scope_fit": "supporting"
+  }
+}

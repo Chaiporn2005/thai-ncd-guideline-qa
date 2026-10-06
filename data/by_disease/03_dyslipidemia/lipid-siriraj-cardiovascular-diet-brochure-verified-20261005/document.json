@@ -1,0 +1,40 @@
+{
+  "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "language": "th",
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "restricted",
+    "sha256": "7346afad728db04dca4196b13f4e0b9264050befcb170b1203945c339a45b664",
+    "agent": "ncd50_core",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai public/university hospital patient guidance intended for local Thai care; not labelled as primary Thai-participant empirical research.",
+    "scope_fit": "supporting",
+    "document_type": "patient_education",
+    "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+    "work_id": "lipid-siriraj-cardiovascular-diet-brochure",
+    "edition_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+    "title": "คำแนะนำเรื่องอาหารสำหรับผู้ป่วยโรคหัวใจและหลอดเลือด",
+    "publisher": "งานการพยาบาลระบบหัวใจและหลอดเลือด ฝ่ายการพยาบาล โรงพยาบาลศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "disease_tags": [
+      "dyslipidemia",
+      "hypertension"
+    ],
+    "population": "Adult cardiovascularpatients, lipid/sodium dietaryeducation inThai hospital context",
+    "edition": "ตรวจสอบเนื้อหาครั้งล่าสุด พ.ศ. 2566; SIPI NS1114166",
+    "landing_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/81_1Nhzr9.pdf",
+    "download_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/81_1Nhzr9.pdf",
+    "pdf_pages": 2,
+    "verification_notes": "Backup LIPID selection. Direct issuer2pagePDF verified. Title,producerstaff,nursingservice,latestcontentreview2566 and SIPI NS1114166 printed. PDF includes cholesterol/LDL/triglyceride/fat advice andsodium,crossdisease supportingdocument. Independent authoredbrochure,notchapterofINMUallagesbook or Sirirajstroke1298/nutrition/fatkl7. Reviewyear isnot publicationdate. Explicitcopyrightreserved notice;layoutandclinicalQA pending. No hash/raw saved. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all2 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "document_id": "ht-ddc-low-sodium-77-province-menu-undated",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ddc-low-sodium-77-province-menu-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [
+      "https://shorturl-ddc.moph.go.th/ixreZ",
+      "https://www.nationalhealth.or.th/public/ebook/2"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "viewer_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10 + coordinator-verifier",
+    "document_id": "ht-ddc-low-sodium-77-province-menu-undated",
+    "work_id": "ht-ddc-low-sodium-77-province-menu",
+    "edition_id": "ht-ddc-low-sodium-77-province-menu-undated",
+    "title": "เล่มเมนูอาหารท้องถิ่นลดโซเดียม 77 จังหวัด",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค ร่วมกับสมาคมนักกำหนดอาหารแห่งประเทศไทยและเครือข่ายครู ก นักกำหนดอาหารประจำจังหวัด",
+    "document_type": "patient_education",
+    "edition": "ไม่ยืนยันฉบับ; issuer posting 31 ตุลาคม 2567",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=16356",
+    "download_url": "https://www.nationalhealth.or.th/public/storage/ebook/ec8c368a-7c7d-4370-87ed-41e010973421/",
+    "population": "Thai adults/public and hospital dietitian networks adapting local dishes to reduce sodium",
+    "verification_notes": "Issuer landing names joint makers and describes independently compiled77-province low-sodium menu book. Download government short URL is observed verbatim but webtool unavailable and normal DNS lookup failed; redirect/PDF format/body not verified. Manual/menu-book candidate only, no claim downloadable PDF confirmed. Dietary support for hypertension prevention; disease-specific content review pending. Coordinator found official NHCO e-book catalogue naming the same77-province menu work and clicked its public reader; ordinary HTML returnedHTTP200. Use this working government e-book reader in place of unresolved short URL. Reader download config points to healthstation PDF endpoint but that returned404; a search-found CDN candidate failed tool size limit and ordinary403, stopped without bypass. No PDF bytes/pages/hash or full book-body review; counts as manual e-book, not confirmed PDF download. Local preparation20261005: local PDF not saved; outcome viewer_requires_public_download_link; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

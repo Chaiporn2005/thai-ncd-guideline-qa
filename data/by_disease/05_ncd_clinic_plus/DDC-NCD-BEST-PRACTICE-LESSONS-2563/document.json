@@ -1,0 +1,41 @@
+{
+  "document_id": "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+    "work_id": "ddc-ncd-clinic-plus-best-practice-lessons",
+    "edition_id": "publisher-copy-posted-2563",
+    "title": "คู่มือถอดบทเรียน NCD Clinic Plus ของโรงพยาบาล Best Practice",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "disease_tags": [
+      "type_2_diabetes",
+      "hypertension",
+      "ncd_service"
+    ],
+    "population": "บุคลากรและทีมบริการโรงพยาบาลที่ดำเนินงาน NCD Clinic Plus ในประเทศไทย; รายละเอียดประชากรผู้ป่วยต้องตรวจเนื้อหาเพิ่มเติม",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "ฉบับที่ผู้จัดพิมพ์เผยแพร่ในปี 2563; ไม่ยืนยันเลขครั้งพิมพ์",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=9879",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/987920200228035119.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "agent": "NCD_SERVICE",
+    "verification_notes": "Verified official DDC issuer landing title and Download link on 2026-10-05. Landing posting date 27 February 2563 is not asserted as PDF publication date. Download attempt failed at web tool content-size limit (11,211,478 bytes reported); full body and page count not verified. Independently titled hospital lessons manual, distinct from the annual NCD Clinic Plus implementation guide; do not count alternate posting pages or editions as new works. Rights and clinical/source-body QA pending; no human approval. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "กรมควบคุมโรคเผยแพร่คู่มือถอดบทเรียนการจัดบริการ NCD Clinic Plus ของโรงพยาบาลไทย; ไม่อ้างเป็นข้อมูลวิจัยประชากรไทยโดยไม่มีการตรวจเนื้อหา",
+    "scope_fit": "supporting"
+  }
+}

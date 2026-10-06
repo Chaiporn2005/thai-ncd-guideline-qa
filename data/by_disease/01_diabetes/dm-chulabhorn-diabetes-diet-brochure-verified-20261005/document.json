@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "language": "th",
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "agent": "ncd50_core",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai public/university hospital patient guidance intended for local Thai care; not labelled as primary Thai-participant empirical research.",
+    "scope_fit": "supporting",
+    "document_type": "patient_education",
+    "document_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+    "work_id": "dm-chulabhorn-diabetes-diet-brochure",
+    "edition_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+    "title": "กินอย่างไรเมื่อเป็นเบาหวาน",
+    "publisher": "โรงพยาบาลจุฬาภรณ์ / ราชวิทยาลัยจุฬาภรณ์",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "General patients with diabetes in Thai hospital education; adult T2 applicability needs image/content review",
+    "edition": "ไม่ยืนยันฉบับ; landing posted1May2026",
+    "landing_url": "https://chulabhornchannel.cra.ac.th/media-library/brochure/nutrition-brochure/69689/",
+    "download_url": "https://chulabhornchannel.cra.ac.th/wp-content/uploads/2026/05/%E0%B8%81%E0%B8%B4%E0%B8%99%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%9A%E0%B8%B2%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99.pdf",
+    "pdf_pages": 2,
+    "verification_notes": "Backup DM selection. Issuer brochure landing title and actualDownload link verified. PDF tool retrieved2pagePDF with no extractable text; body not visually reviewed. Different issuer/titled standalonebrochure from Siriraj20pagebook. No guessed publicationday/code/hash. Publisher footer reservesrights, no reuse licence verified. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

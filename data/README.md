@@ -1,5 +1,25 @@
 # Data layout
 
+## เปิดเอกสารตามหมวด
+
+เปิด [โฟลเดอร์เอกสารแยกหมวด](by_disease/README.md) เพื่อดูว่าแต่ละรายการเกี่ยวกับอะไร
+
+| โฟลเดอร์ | หมวด | selected candidates |
+| --- | --- | --- |
+| [01_diabetes](by_disease/01_diabetes/README.md) | เบาหวาน | 17 |
+| [02_hypertension](by_disease/02_hypertension/README.md) | ความดันโลหิตสูง | 10 |
+| [03_dyslipidemia](by_disease/03_dyslipidemia/README.md) | ไขมันในเลือดผิดปกติ | 13 |
+| [04_ckd_optional](by_disease/04_ckd_optional/README.md) | โรคไตเรื้อรัง — optional | 9 |
+| [05_ncd_clinic_plus](by_disease/05_ncd_clinic_plus/README.md) | NCD Clinic Plus / ระบบบริการ | 6 |
+| [99_excluded](by_disease/99_excluded/README.md) | ไม่นับในชุดเป้าหมาย พร้อมเหตุผล | 3 excluded |
+
+แต่ละรายการมีโฟลเดอร์ชื่อ `document_id` พร้อม `README.md` และ `document.json`
+ระบุชื่อ/ผู้จัดทำ/ฉบับ/ประเภท/ประชากรและลิงก์แหล่งต้นทาง
+พร้อมลิงก์ไปบันทึกดาวน์โหลดและผลสกัดที่มีอยู่;PDFและข้อความเต็มยังอยู่เฉพาะในเครื่อง
+ข้อมูลใน `by_disease/` สร้างจาก canonical manifest/cohort ไม่ใช่ manifest หลักอีกฉบับ
+อัปเดตด้วย `python scripts/build_disease_catalogue.py`;ตรวจด้วย `--check`
+inventoryรอบupload20261006เป็นsnapshotก่อนเพิ่มby_disease;ไม่ใช่inventoryแบบlive
+
 ## เก็บข้อมูลที่ไหน
 
 โฟลเดอร์ข้อมูลของเครื่องนี้คือ `E:/งาน/งาน/AI/NLPJEC/data/`

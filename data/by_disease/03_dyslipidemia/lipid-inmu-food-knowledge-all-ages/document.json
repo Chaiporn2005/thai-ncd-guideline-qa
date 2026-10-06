@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-inmu-food-knowledge-all-ages",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-inmu-food-knowledge-all-ages",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "02b29b38390d5b4b3edd1688d89bb5ee7bdf1506a9c2052dfc8344084d9025d6",
+    "pdf_pages": 170,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-inmu-food-knowledge-all-ages",
+    "work_id": "food-nutrition-knowledge-all-ages",
+    "edition_id": "food-nutrition-knowledge-all-ages-2559-first",
+    "title": "องค์ความรู้ด้านอาหารและโภชนาการ สำหรับทุกช่วงวัย",
+    "publisher": "ฝ่ายเลขานุการคณะกรรมการอาหารแห่งชาติ สำนักอาหาร สำนักงานคณะกรรมการอาหารและยา; สถาบันโภชนาการ มหาวิทยาลัยมหิดล hosts catalogue and contributors",
+    "edition": "พิมพ์ครั้งที่ 1 มกราคม 2559; exact day unknown",
+    "population": "Mixed all-age nutrition handbook; adult dyslipidemia chapter only, wider ages/topics excluded",
+    "landing_url": "https://inmu.mahidol.ac.th/th/freebook/",
+    "download_url": "https://inmu.mahidol.ac.th/uploads_file/freebook/freebook_01.pdf",
+    "verification_notes": "Full 33,716,649-byte PDF retrieved normally in memory with bundled pypdf after web tool size ceiling; 170 pages. Front matter verifies ISBN978-974-244-374-0, first printing January2559, actual FDA publisher and INMU contribution. TOC/body confirms chapter8 อาหารสำหรับผู้ป่วยโรคไขมันในเลือดสูง (printed111-122), authored by ทิวาพร มณีรัตนศุภร, dietary fat/cholesterol/fibre guidance. Whole handbook is one work even when used by DM/HT scouts. Only adult lipid chapter and relevant adult context in scope; pregnancy/children excluded. Thai sara-am/font marks require QA; no raw bytes persisted; no hash computed. PDF creation metadata is not publication date. Local preparation20261005: public review copy saved at data/raw/lipid-inmu-food-knowledge-all-ages/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all170 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

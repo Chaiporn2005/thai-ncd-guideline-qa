@@ -1,0 +1,41 @@
+{
+  "document_id": "dm-clinic-standards-2567",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-clinic-standards-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [
+      "https://drive.google.com/file/d/1rpp0AdbP5Gn3s9KGvJIFQxcqTQWEPC2V/view"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "3e9423ae0f7f470a7576a6d9bb2dead9ecb58df2f929516b11d0dddd0bbe353b",
+    "pdf_pages": 64,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "dm-clinic-standards-2567",
+    "work_id": "dm-clinic-standards",
+    "edition_id": "dm-clinic-standards-2567",
+    "title": "แนวทางการพัฒนาเพื่อมาตรฐานคลินิกเบาหวาน (ฉบับปรับปรุง พ.ศ. 2567)",
+    "publisher": "สมาคมโรคเบาหวานแห่งประเทศไทย (official host; authorship to verify in PDF)",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "Mixed clinic populations including pediatric centres; adult-relevant sections only",
+    "document_type": "service_manual",
+    "edition": "ฉบับปรับปรุง 2567",
+    "landing_url": "https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/naewthang-kar-phathna-pheux-matrthan-khlinik-bea-hwan-chbab-prabprung-ph-s-2567",
+    "download_url": "https://drive.usercontent.google.com/uc?id=1rpp0AdbP5Gn3s9KGvJIFQxcqTQWEPC2V&export=download",
+    "agent": "diabetes_sources",
+    "verification_notes": "Landing and Drive viewer verified; PDF body unread. Viewer filename includes proof 6; final-edition status and issuing committee require review. Local preparation20261005: public review copy saved at data/raw/dm-clinic-standards-2567/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all64 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

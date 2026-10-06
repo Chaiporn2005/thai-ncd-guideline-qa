@@ -1,0 +1,43 @@
+{
+  "document_id": "ht-guideline-2567",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-guideline-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [
+      "https://thaihypertension.org/files/Guideline2024.pdf",
+      "https://fakthahospital.moph.go.th/images/PDF/PCT/Guideline%20HT%202024.pdf",
+      "https://thaihypertension.org/wp-content/uploads/2025/07/Guideline2024.pdf"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "restricted",
+    "sha256": "f42e199e701858a3a9f5fe71f81587fc77af1b3626c9269c0e96b52bc760b645",
+    "pdf_pages": 153,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "core",
+    "document_id": "ht-guideline-2567",
+    "work_id": "ht-guideline",
+    "edition_id": "ht-guideline-2567",
+    "title": "แนวทางการรักษาโรคความดันโลหิตสูงในเวชปฏิบัติทั่วไป พ.ศ. 2567",
+    "publisher": "สมาคมความดันโลหิตสูงแห่งประเทศไทย",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "population": "Thai adults aged 18 years and older",
+    "document_type": "clinical_guideline",
+    "edition": "2567; first printing August 2567 (exact day not verified)",
+    "landing_url": "https://thaihypertension.org/guideline.html",
+    "download_url": "https://webportal.bangkok.go.th/user_files/289/591007866978324e994036.62154714.pdf",
+    "agent": "cardiometabolic_sources",
+    "verification_notes": "Publisher endpoints return 403. Government mirror PDF identity/front matter verified; 153-page mirror has Thai text and may omit English/reference sections. Do not assume complete bilingual book or count mirrors twice; text has duplicated/garbled Thai marks. Local preparation20261005: public review copy saved at data/raw/ht-guideline-2567/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all153 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass. Retrieved existing verified Bangkok government mirror because issuer PDF was previously403; cover confirms Thai Hypertension Society/2567; byte equivalence to issuer remains untested."
+  }
+}

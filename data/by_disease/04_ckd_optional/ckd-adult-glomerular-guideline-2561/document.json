@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-adult-glomerular-guideline-2561",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-adult-glomerular-guideline-2561",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "2b7bd92c3d339698b0fa72f13ce3c1181efc0f559844fd8854c0637ed6533675",
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai professional society guidance/public education for Thai practice; cited studies are not automatically Thai participant data. Optional adult CKD collection authorized by decision 0003; nonadult/acute unrelated sections excluded from future Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "agent": "CKD scout / 20261005-ncd-50",
+    "document_id": "ckd-adult-glomerular-guideline-2561",
+    "work_id": "ckd-adult-glomerular-guideline-2561",
+    "edition_id": "ckd-adult-glomerular-guideline-2561-firstprint2562",
+    "title": "ข้อแนะนำเวชปฏิบัติทั่วไปโรคไตโกลเมอรูลัสในผู้ใหญ่, โรค Primary Focal Segmental Glomerulosclerosis, Primary Minimal Change Disease และ IgM nephropathy 2561",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย; เครือข่ายโรคไตโกลเมอรูลัสประเทศไทย; สถาบันวิจัยระบบสาธารณสุข",
+    "document_type": "clinical_guideline",
+    "edition": "Guideline2561/2018; first printing2562 verified in front matter; exact publicationday unknown",
+    "pdf_pages": 66,
+    "landing_url": "https://www.nephrothai.org/ข้อแนะนำเวชปฏิบัติทั่ว/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2021/10/ข้อแนะนำเวชปฏิบัติทั่วไปโรคไตโกลเมอรูลัสในผู้ใหญ่-2561.pdf",
+    "population": "Adults with glomerular disease, persistent proteinuria and CKD progression risk; chronic renal protection/follow-up relevant; not a general CKD staging CPG; acute-only care excluded",
+    "verification_notes": "Official66pagePDF title/frontmatter verifies full expanded title, three credited organizations, firstprinting2562 and ISBN978-616-8032-11-4. Adult-specific preface explicitly identifies CKD/ESKD progression risk and Thai practice, not pediatric or acute-only work. Initial recommendations include persistent asymptomatic proteinuria surveillance and renal markers in hypertension; TOC includes antiproteinuric/lipid therapy. Whole specialist work once, distinct from existing generalCKD CPG. Restrict future ingestion to adult chronic kidney protection/follow-up; disease-specific immunosuppression needs separate competent review. Thai Saraam/replacement-glyph encoding issues; no current/latest-edition claim. Local preparation20261005: public review copy saved at data/raw/ckd-adult-glomerular-guideline-2561/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all66 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

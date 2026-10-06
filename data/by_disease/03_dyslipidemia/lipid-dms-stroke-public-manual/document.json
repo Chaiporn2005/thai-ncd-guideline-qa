@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-dms-stroke-public-manual",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-dms-stroke-public-manual",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "5b6edfb2d332d92ca03eda81b5ac57c14ebc9212d63585ad6fa03085ca38990b",
+    "pdf_pages": 84,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-dms-stroke-public-manual",
+    "work_id": "stroke-public-manual",
+    "edition_id": "stroke-public-manual-undated",
+    "title": "คู่มือโรคหลอดเลือดสมอง (อัมพาต อัมพฤกษ์) สำหรับประชาชน",
+    "publisher": "สถาบันประสาทวิทยา กรมการแพทย์ กระทรวงสาธารณสุข",
+    "edition": "Publication edition/date not verified; PDF front matter partly image-only; do not use upload/creation dates as publication",
+    "population": "Thai adult stroke patients/carers; only dyslipidemia risk control and secondary ASCVD nutrition sections",
+    "landing_url": "https://www.dms.go.th/backend/Content/Content_File/Old_Content/dmsweb/publish/publish28062019100655.pdf",
+    "download_url": "https://www.dms.go.th/backend/Content/Content_File/Old_Content/dmsweb/publish/publish28062019100655.pdf",
+    "verification_notes": "Full 35,547,182-byte PDF read normally in memory with bundled pypdf after web tool size ceiling. 84 pages. Preface/title identifies public stroke manual and Prasat Neurological Institute contact. Printed13/PDF19 explicitly covers cholesterol/LDL/TG risk control; printed47-51/PDF53-57 contains substantial nutrition guidance for high cholesterol/TG. Supporting comorbidity education only; no general stroke Q&A scope expansion. Some image-only front pages and garbled font headers need visual/OCR QA. No exact publication day; no raw bytes saved or hash computed; old targets require review against current CPG. Local preparation20261005: public review copy saved at data/raw/lipid-dms-stroke-public-manual/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all84 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

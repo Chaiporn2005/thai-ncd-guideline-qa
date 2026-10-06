@@ -48,6 +48,11 @@
 
 ## งานรอบนี้
 
+รอบ `20261006-disease-folders`:จัดสารบัญเอกสารเป็นโฟลเดอร์ใน[data/by_disease](data/by_disease/README.md)
+DM17/HT10/LIPID13/CKD9/NCD_SERVICE6;99_excluded3รายการพร้อมเหตุผล
+แต่ละเอกสารมีREADME/document.json พร้อมชื่อ/ผู้จัดทำ/ฉบับ/ประเภท/ต้นทางและลิงก์raw/processed
+มีbuilderและconsistency check;canonical IDs/rights/acceptedไม่เปลี่ยน
+
 รอบ `20261006-data-github`:อัปโครงสร้างdataและmetadataแล้วตามคำขอผู้ใช้
 เพิ่ม55retrieval records/33extraction summaries/39reviewed agent outputs พร้อมREADME/allowlists/inventory
 เผยแพร่แล้วใน[commit0182f05](https://github.com/Chaiporn2005/thai-ncd-guideline-qa/commit/0182f05369c65ca769a691b8cf0be663b287b2c1)

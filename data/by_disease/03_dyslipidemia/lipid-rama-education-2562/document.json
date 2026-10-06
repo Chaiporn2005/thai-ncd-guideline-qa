@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-rama-education-2562",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-rama-education-2562",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "6248e72fe833ba88cfd61dc0b881326c215a8bf3b30934682e4c328e7875ae6f",
+    "pdf_pages": 6,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-rama-education-2562",
+    "work_id": "lipid-rama-education-2562",
+    "edition_id": "lipid-rama-education-2562-undated",
+    "title": "ไขมันสูงในเลือด",
+    "publisher": "หน่วยให้คำปรึกษาและสร้างเสริมสุขภาพ คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี มหาวิทยาลัยมหิดล",
+    "edition": "ปรับปรุง มกราคม 2562; exact day unknown",
+    "population": "Adult public/patient education; PDF labels adult lipid categories",
+    "landing_url": "https://www.rama.mahidol.ac.th/cme/sites/default/files/public/Journal_CME_No60_Sub_01.pdf",
+    "download_url": "https://www.rama.mahidol.ac.th/cme/sites/default/files/public/Journal_CME_No60_Sub_01.pdf",
+    "verification_notes": "Full 6-page independent education PDF; compiled by แขมณี จันทร์เทวี. Contains lipid types, adult lab categories, lifestyle and screening. Old recommendations require competent review; not RCPT guideline. Thai marks duplicate in extraction. Local preparation20261005: public review copy saved at data/raw/lipid-rama-education-2562/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all6 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

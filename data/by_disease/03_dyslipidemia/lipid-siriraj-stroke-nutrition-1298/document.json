@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-siriraj-stroke-nutrition-1298",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-stroke-nutrition-1298",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "ac25d9032ecbd1763259f87260161590194e5ad06f1bc6281ef7c8410705a2d1",
+    "pdf_pages": 3,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-siriraj-stroke-nutrition-1298",
+    "work_id": "lipid-siriraj-stroke-nutrition-1298",
+    "edition_id": "lipid-siriraj-stroke-nutrition-1298-undated",
+    "title": "โภชนาการสำหรับผู้ป่วยโรคหลอดเลือดสมอง",
+    "publisher": "ฝ่ายโภชนาการ โรงพยาบาลศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "edition": "Undated PDF; issuer landing dated 6 September 2560",
+    "population": "Adult stroke secondary prevention with dyslipidemia; only relevant lipid nutrition sections",
+    "landing_url": "https://si.mahidol.ac.th/th/healthdetail.asp?aid=1298",
+    "download_url": "https://www.si.mahidol.ac.th/sidoctor/sirirajonline2021/Article_files/1298_1.pdf",
+    "verification_notes": "Issuer authored body verified; section ผู้ที่มีภาวะไขมันในเลือดสูง contains substantial fat/cholesterol/fibre/TG diet guidance. Exact PDF attachment href inspected in issuer HTML; PDF not fetched. Record whole authored education work once, not individual subsections. Other stroke/DM/HT answers outside lipid purpose require respective sources. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-stroke-nutrition-1298/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all3 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

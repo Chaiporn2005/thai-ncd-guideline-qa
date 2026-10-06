@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-hemodialysis-plasma-manual-2561",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-hemodialysis-plasma-manual-2561",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "e7e06f11926b7f06d994891c497efcf96b3bfe1a25f6ac94e1b1aaf34c51a1af",
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai professional society guidance/public education for Thai practice; cited studies are not automatically Thai participant data. Optional adult CKD collection authorized by decision 0003; nonadult/acute unrelated sections excluded from future Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "agent": "CKD scout / 20261005-ncd-50",
+    "document_id": "ckd-hemodialysis-plasma-manual-2561",
+    "work_id": "ckd-hemodialysis-plasma-manual-2561",
+    "edition_id": "ckd-hemodialysis-plasma-manual-2561-2561",
+    "title": "คู่มือการรักษาด้วยการฟอกเลือดและการกรองพลาสมาสำหรับผู้ป่วยโรคไต ปี พ.ศ.2561",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "document_type": "service_manual",
+    "edition": "พ.ศ.2561 as verified issuer title; exact printing/date not yet checked",
+    "pdf_pages": 49,
+    "landing_url": "https://www.nephrothai.org/คู่มือการรักษาด้วยการฟ/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2021/10/คู่มือการรักษาด้วยการฟอกเลือดและการกรองพลาสมาสำหรับผู้ป่วยโรคไต-2561.pdf",
+    "population": "Renal disease patients needing hemodialysis/plasma filtration; optional advanced adult renal care; acute/non-CKD/pediatric uses excluded",
+    "verification_notes": "Official society landing verifies distinct procedural manual title/issuer/year for professional audience and PDF link. Initial click retrieved49-page PDF; later reference-open for text timed out. Front matter/body/population detail QA pending. Whole manual counted once; not chapters and not existing treatment-choice public leaflet. Landing1Jan2563 is webpage date. No raw PDF saved; rights and current clinical recommendations unreviewed. Local preparation20261005: public review copy saved at data/raw/ckd-hemodialysis-plasma-manual-2561/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all49 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

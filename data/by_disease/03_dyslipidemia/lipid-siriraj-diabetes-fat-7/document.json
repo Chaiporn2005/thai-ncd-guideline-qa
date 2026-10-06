@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-siriraj-diabetes-fat-7",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-diabetes-fat-7",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "restricted",
+    "sha256": "979bc8c7136bef8f22a384f013c2f523546250280de6e9a8752b09accba7f358",
+    "pdf_pages": 2,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-siriraj-diabetes-fat-7",
+    "work_id": "lipid-siriraj-diabetes-fat-7",
+    "edition_id": "lipid-siriraj-diabetes-fat-7-undated",
+    "title": "ไขมัน",
+    "publisher": "ศูนย์เบาหวานศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "edition": "Undated PDF; landing updated 20 June 2568",
+    "population": "Public and diabetes nutrition education; select adult lipid prevention portions",
+    "landing_url": "https://www.si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?kl_id=7",
+    "download_url": "https://www.si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/7_44_1oAgf1K.pdf",
+    "verification_notes": "Issuer landing explains dietary fat types, LDL/TG effects and selection; linked PDF retrieved has 2 pages and no text layer. PDF visual/body QA pending; image-only does not verify wording. Copyright reserved on issuer landing; no reuse permission found. Do not count older fat brochures as additional versions of this work without comparison. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-diabetes-fat-7/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. Automatic extraction/RAG held: explicit Siriraj Diabetes Center prior-permission notice."
+  }
+}

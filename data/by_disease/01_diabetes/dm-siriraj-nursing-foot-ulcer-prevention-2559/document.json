@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-siriraj-nursing-foot-ulcer-prevention-2559",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+    "work_id": "dm-siriraj-nursing-foot-ulcer-prevention",
+    "edition_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+    "title": "คู่มือการพยาบาล: การดูแลเท้าเพื่อป้องกันการเกิดแผลในผู้เป็นเบาหวาน",
+    "publisher": "ฝ่ายการพยาบาล โรงพยาบาลศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล; ผู้จัดทำ อัจฉรา สุวรรณนาคินทร์",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "Nurses caring for diabetic foot/ulcer prevention in Thai hospital practice; adult case applicability requires review",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "พ.ศ. 2559; preface สิงหาคม 2559",
+    "publication_date": null,
+    "landing_url": "https://www2.si.mahidol.ac.th/division/nursing/sins/attachments/article/251/sins_nursing_manual_2560_11.pdf",
+    "download_url": "https://www2.si.mahidol.ac.th/division/nursing/sins/attachments/article/251/sins_nursing_manual_2560_11.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "e64800160d64e5a5ba10bf63d2261f3eb1093e89853caa38fdb35c80bd70851a",
+    "pdf_pages": 116,
+    "agent": "plus10_dm",
+    "verification_notes": "Web tool fetched 116-page PDF; title/author/affiliation verified on cover; preface August2559. Filename2560 is not publication year. Professional nursing manual, distinct from SIPI.25 patient foot booklet. Extracted Thai marks/spaces need image QA; reference/contents page numbers exceed fetched extent, so confirm file completeness before inclusion. PDF bytes not saved/hash not computed; redistribution permission not verified. Local preparation20261005: public review copy saved at data/raw/dm-siriraj-nursing-foot-ulcer-prevention-2559/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all116 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai hospital nursing service guidance; not labelled Thai-participant research. Historic manual must be compared with current clinical guidance.",
+    "scope_fit": "supporting"
+  }
+}

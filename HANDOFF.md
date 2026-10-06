@@ -1,6 +1,6 @@
 # Handoff — Thai NCD Guideline Q&A
 
-Updated: 2026-10-06 • Owner: coordinator • Stage: data metadata publication; source redistribution pending
+Updated: 2026-10-06 • Owner: coordinator • Stage: disease folder catalogue; source redistribution pending
 
 ## เป้าหมายและข้อกำหนดที่ยืนยัน
 
@@ -35,6 +35,13 @@ OCRไทย+อังกฤษ6หน้าจาก3เอกสารในda
 ไฟล์ต้นแบบ Kaggle ใช้เป็น reference สำหรับการจัดระบบ ไม่ใช่คำสั่งให้ใช้บัญชี/งบ/ข้อมูลของต้นแบบ
 
 ## งานกำลังรัน
+
+รอบ `20261006-disease-folders`:จัด `data/by_disease/` ตามคำขอผู้ใช้
+มี5หมวด DM17/HT10/LIPID13/CKD9/NCD_SERVICE6 และ99_excluded3รายการพร้อมเหตุผล
+แต่ละdocument_idมีREADME/document.jsonบอกข้อมูลเอกสารและเชื่อมraw/processed records
+สร้างจากcanonical manifest/cohortด้วย `scripts/build_disease_catalogue.py`;รัน `--check` หลังอัปเดตmetadata
+ตำแหน่งraw/processedใช้document_idตามเดิมสำหรับpipeline;by_diseaseเป็นสารบัญmetadata
+ไม่มีการเปลี่ยนrights/clinicalapproval/acceptedหรือเผยแพร่PDF/ข้อความเต็มเพิ่ม
 
 รอบ `20261006-data-github`:ผู้ใช้ขออัปโฟลเดอร์dataและถามเรื่องใช้เพื่อการศึกษา
 เพิ่มโครงสร้างraw/processed/indexes/agent_runsพร้อมREADMEและallowlists

@@ -1,0 +1,41 @@
+{
+  "document_id": "dm-educator-standards-2567",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-educator-standards-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [
+      "https://drive.google.com/file/d/1ag0wl9scISVg3P6N97gtD6VxEPS-6NSa/view?usp=sharing"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "9272e703bcd1e364a859a69db7e720d0e9b6661a35616b4db9d7d9db6050503a",
+    "pdf_pages": 38,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "dm-educator-standards-2567",
+    "work_id": "dm-educator-standards",
+    "edition_id": "dm-educator-standards-2567",
+    "title": "มาตรฐานผู้ให้ความรู้โรคเบาหวาน 2567",
+    "publisher": "สมาคมโรคเบาหวานแห่งประเทศไทย (official host; authorship to verify in PDF)",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "Diabetes education workforce; not adult clinical treatment guidance",
+    "document_type": "service_manual",
+    "edition": "2567",
+    "landing_url": "https://dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/matrthan-phu-hi-khwam-ru-rokh-bea-hwan-2567",
+    "download_url": "https://drive.usercontent.google.com/uc?id=1ag0wl9scISVg3P6N97gtD6VxEPS-6NSa&export=download",
+    "agent": "diabetes_sources",
+    "verification_notes": "Publisher landing and Drive viewer verified, PDF body not read. Education/service standards kept separate from clinical guidelines. Local preparation20261005: public review copy saved at data/raw/dm-educator-standards-2567/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all38 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

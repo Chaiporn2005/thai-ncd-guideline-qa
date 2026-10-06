@@ -208,3 +208,18 @@
 - Held:39PDFs/33page JSONL/6OCR text/6images pending redistribution rights;2cache files excluded.
 - No workers/claims started;no paid API/no new corpus acceptance.
 - Evidence:[data README](../data/README.md),[inventory](../data/manifests/github_data_inventory_20261006.json),[decision0005](decisions/0005-data-github-metadata.md).
+
+
+## 2026-10-06T19:20:30+07:00 — disease folder catalogue ready
+
+- From:coordinator/curator
+- To:user/nextsession
+- Type:update
+- Run:20261006-disease-folders
+- User requested document folders identifying their topics,with changes published to GitHub.
+- Created:data/by_disease with DM17/HT10/LIPID13/CKD9/NCD_SERVICE6 and excluded3;58record folders,124derived catalogue files.
+- Each record:Thai title/publisher/edition/document type/source links,README/document.json and available raw/processed/OCR summary links.
+- Checks:all canonical records appear once;55selected/3excluded;58JSON snapshots match canonical records;335internal links resolve;builder --check and manifest/orchestra validation passed.
+- Source bodies not staged;raw/processed paths unchanged for tool compatibility;rights/clinicalacceptance unchanged.
+- No workers/claims/paid API started;publication result will be recorded after verified push.
+- Evidence:[catalogue](../data/by_disease/README.md),[decision0006](decisions/0006-disease-folder-catalogue.md).

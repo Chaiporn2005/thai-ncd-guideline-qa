@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-siriraj-warning-1158",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-warning-1158",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "ffe5d13256d09bae7a45a42a0d886904a7cb48338c2e33643aaeaf1debfb6929",
+    "pdf_pages": 1,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-siriraj-warning-1158",
+    "work_id": "lipid-siriraj-warning-1158",
+    "edition_id": "lipid-siriraj-warning-1158-undated",
+    "title": "ระวัง! ปัญหาไขมันในเลือดสูง",
+    "publisher": "คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "edition": "Undated PDF; issuer landing dated 17 February 2558",
+    "population": "General/adult health-check patient education; not explicit age-specific treatment",
+    "landing_url": "https://www.si.mahidol.ac.th/th/healthdetail.asp?aid=1158",
+    "download_url": "https://www.si.mahidol.ac.th/sidoctor/sirirajonline2021/Article_files/1158_1.pdf",
+    "verification_notes": "Full 1-page authored education PDF names อ.นพ.พรพจน์ เปรมโยธิน and issuer. Explains cholesterol/TG causes, HDL/LDL, complications and prevention. Missing Thai tone marks/spaces need image QA. HTML encoding error was overcome by reading ordinary issuer HTML, not access bypass. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-warning-1158/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all1 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

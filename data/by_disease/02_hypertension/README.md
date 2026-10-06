@@ -1,0 +1,21 @@
+# ความดันโลหิตสูง
+
+แนวทางความดันและคู่มือการลดโซเดียม
+
+รายการ10;บันทึกดาวน์โหลดสำเร็จ3;มีผลสกัด3
+สถานะเหล่านี้มาจากบันทึกเดิม ไม่ใช่ผลตรวจคลินิกหรือการยืนยันว่ามีPDFหลังclone
+
+| เอกสาร | ประเภท | บันทึกดาวน์โหลด | ผลสกัด |
+| --- | --- | --- | --- |
+| [แนวทางการรักษาโรคความดันโลหิตสูงในเวชปฏิบัติทั่วไป พ.ศ. 2567](ht-guideline-2567/README.md) | แนวทางเวชปฏิบัติ | downloaded | needs\_ocr |
+| [คู่มือการพยาบาลผู้ป่วยโรคความดันโลหิตสูงที่ควบคุมความดันโลหิตไม่ได้สำหรับผู้ป่วยนอก](ht-siriraj-uncontrolled-opd-2564/README.md) | คู่มือบริการ/การดำเนินงาน | downloaded | needs\_ocr |
+| [แนวทางการจัดการเมื่อพบผู้รับบริการมีความดันโลหิตสูงในโรงพยาบาล : Update 15/05/2566](ht-ddc-hospital-management-update-2566/README.md) | คู่มือบริการ/การดำเนินงาน | access\_restricted | ไม่มีผลสกัด |
+| [แนวทางการดำเนินงานลดการบริโภคเกลือและโซเดียมระดับจังหวัด](ht-ddc-provincial-sodium-guide-undated/README.md) | คู่มือบริการ/การดำเนินงาน | access\_restricted | ไม่มีผลสกัด |
+| [ถอดบทเรียนการป้องกันควบคุมโรคไม่ติดต่อเรื้อรังโดยใช้ชุมชนเป็นฐาน ชุมชนลดเค็ม ลดเสี่ยงโรคความดันโลหิตสูง](ht-ddc-community-low-salt-lessons-undated/README.md) | รายงาน/ถอดบทเรียน | access\_restricted | ไม่มีผลสกัด |
+| [แนวทางการดำเนินงานโรงพยาบาลเค็มน้อยอร่อย (3) ดี](ht-ddc-low-salt-hospital-guide-undated/README.md) | คู่มือบริการ/การดำเนินงาน | access\_restricted | ไม่มีผลสกัด |
+| [ลดโซเดียม ลดโรคไม่ติดต่อ](ht-ddc-sodium-education-undated/README.md) | เอกสารให้ความรู้ผู้ป่วย/ประชาชน | access\_restricted | ไม่มีผลสกัด |
+| [เล่มเมนูอาหารท้องถิ่นลดโซเดียม 77 จังหวัด](ht-ddc-low-sodium-77-province-menu-undated/README.md) | เอกสารให้ความรู้ผู้ป่วย/ประชาชน | viewer\_requires\_public\_download\_link | ไม่มีผลสกัด |
+| [โรคความดันโลหิตสูง (Hypertension)](ht-siriraj-hypertension-public-1587-verified-20261005/README.md) | เอกสารให้ความรู้ผู้ป่วย/ประชาชน | downloaded | extracted\_unreviewed |
+| [โซเดียม](ht-chulabhorn-sodium-nutrition-verified-20261005/README.md) | เอกสารให้ความรู้ผู้ป่วย/ประชาชน | access\_restricted | ไม่มีผลสกัด |
+
+[กลับสารบัญทั้งหมด](../README.md)

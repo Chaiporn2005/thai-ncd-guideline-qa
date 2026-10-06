@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-siriraj-metabolic-763",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-metabolic-763",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "f56187b6665cb35cc85e65c6fc0a65d7af432d7e2a6725b5924e280f23f13326",
+    "pdf_pages": 3,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-siriraj-metabolic-763",
+    "work_id": "lipid-siriraj-metabolic-763",
+    "edition_id": "lipid-siriraj-metabolic-763-undated",
+    "title": "เมตะบอลิค ซินโดรม กับอาการอ้วนลงพุง",
+    "publisher": "สาขาวิชาคาร์ดิโอเมตะบอลิค ภาควิชาเวชศาสตร์ป้องกันและสังคม คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "edition": "Undated PDF; issuer landing dated 11 November 2553",
+    "population": "Mixed public education, adult metabolic risk; only lipid/TG/HDL and prevention portions",
+    "landing_url": "https://www.si.mahidol.ac.th/Th/department/preventive/article_detail.asp?id=763",
+    "download_url": "https://www.si.mahidol.ac.th/sidoctor/sirirajonline2021/Article_files/763_1.pdf",
+    "verification_notes": "Ordinary issuer HTML read after web fetch failure; authored by ผศ.ดร.พญ.มยุรี หอมสนิท, title and exact PDF href verified. Body explicitly discusses TG/HDL abnormalities and lowering cholesterol/TG through diet/exercise. PDF not fetched; old criteria need clinical QA. Supporting comorbidity education, not new lipid CPG. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-metabolic-763/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all3 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

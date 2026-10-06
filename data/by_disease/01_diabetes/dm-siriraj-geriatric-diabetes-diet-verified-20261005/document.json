@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "language": "th",
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "82e9d6a6597b371b3370abbcaca1239518be53a96a9ad97b39603de8f57fc506",
+    "agent": "ncd50_core",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai public/university hospital patient guidance intended for local Thai care; not labelled as primary Thai-participant empirical research.",
+    "scope_fit": "supporting",
+    "document_type": "patient_education",
+    "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+    "work_id": "dm-siriraj-geriatric-diabetes-diet",
+    "edition_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+    "title": "อาหารสำหรับผู้ป่วยเบาหวาน",
+    "publisher": "คลินิกตรวจสุขภาพและส่งเสริมสุขภาวะ ภาควิชาเวชศาสตร์ป้องกันและสังคม และศูนย์วิทยาการเวชศาสตร์ผู้สูงอายุศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "People with diabetes, with T1 and T2 sections; adult/older-adult Thai education programme, apply adult T2 sections only",
+    "edition": "พิมพ์ครั้งที่ 1 พ.ศ. 2567",
+    "landing_url": "https://www.si.mahidol.ac.th/th/siacg/admin/knowledges_files/202_142_12eTTDn.pdf",
+    "download_url": "https://www.si.mahidol.ac.th/th/siacg/admin/knowledges_files/202_142_12eTTDn.pdf",
+    "pdf_pages": 20,
+    "verification_notes": "Primary DM selection. Publisher PDF cover/imprint verified,20pages and first printing2567. Explicitly includes T1 and T2; T2 adult-risk text verified,not a T1/pediatric-only book. References may include pediatric literature; do not infer whole book pediatric from references. Independent authored20pagebook with named production team,not a chapter/mirror of existing DM CPG or SIPI.25 foot booklet. Thai extraction shows duplicated marks; visual QA pending. Web PDF opened twice, no byte hash/raw file. Local preparation20261005: public review copy saved at data/raw/dm-siriraj-geriatric-diabetes-diet-verified-20261005/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all20 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

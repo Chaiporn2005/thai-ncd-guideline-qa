@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-one-page-undated",
+  "primary_group": "EXCLUDED",
+  "selected_candidate": false,
+  "exclusion_reason": "JPG และอาจเป็น summary ของ guideline; ไม่ใช่ PDF/คู่มือในยอดเป้าหมาย",
+  "folder": "data/by_disease/99_excluded/ckd-one-page-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "ckd-one-page-undated",
+    "work_id": "ckd-one-page-undated",
+    "edition_id": "ckd-one-page-undated",
+    "title": "แนวทางการดูแลผู้ป่วยโรคไตเรื้อรัง โดยเฉพาะในระดับปฐมภูมิ เรื่อง One page for CKD care",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "population": "Primary-care CKD; adult applicability to verify",
+    "document_type": "poster",
+    "edition": "ไม่ยืนยันฉบับ; landing post 2025-05-30",
+    "landing_url": "https://www.nephrothai.org/แนวทางการดูแลผู้ป่วยโร-2/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2025/05/S__6840326.jpg",
+    "agent": "cardiometabolic_sources",
+    "verification_notes": "Publisher landing and JPG link verified. Image not reviewed. Likely guideline summary, independence to verify; do not count as another work without review. Collection scope explicitly authorized by user on 2026-10-05 (decision0003): optional CKD supporting candidate only, not core or human clinical inclusion approval. Target-count exclusions are recorded separately in corpus_50_candidates.json."
+  }
+}

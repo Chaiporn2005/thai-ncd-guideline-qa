@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-siriraj-hypertension-public-1587-verified-20261005",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "language": "th",
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "e827c472c2bed0e12e424d44585ed714fb27f134aa8e3b6ba35f38aca40c1ca2",
+    "agent": "ncd50_core",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai public/university hospital patient guidance intended for local Thai care; not labelled as primary Thai-participant empirical research.",
+    "scope_fit": "supporting",
+    "document_type": "patient_education",
+    "document_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
+    "work_id": "ht-siriraj-hypertension-public-1587",
+    "edition_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
+    "title": "โรคความดันโลหิตสูง (Hypertension)",
+    "publisher": "สาขาวิชาความดันโลหิตสูง ภาควิชาอายุรศาสตร์ คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "population": "General public and adults at risk/with hypertension in Thai practice",
+    "edition": "Publisher article/PDF page dated11มิถุนายน2567; PDF edition unnumbered",
+    "landing_url": "https://www.si.mahidol.ac.th/sirirajdoctor/article_detail.aspx?ID=1587",
+    "download_url": "https://www.si.mahidol.ac.th/sidoctor/sirirajonline2021/Article_files/1587_1UPB1O.pdf",
+    "pdf_pages": 4,
+    "verification_notes": "Primary HT selection. Issuer landing title/department/date and download link checked. Standalone4page patient education PDF corresponding to article1587; not a clinical guideline or chapter of HT CPG. Web click timed out,normal urllib sameURL returned200; pypdf actual4pages and SHA256. First page/body identity matches source. Landing date retained as article date, exact PDF publication day unknown; no raw bytes saved. Local preparation20261005: public review copy saved at data/raw/ht-siriraj-hypertension-public-1587-verified-20261005/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all4 PDF pages for private fidelity review; flags extracted_unreviewed, no layout/numeric QA pass."
+  }
+}

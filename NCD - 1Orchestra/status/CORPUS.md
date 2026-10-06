@@ -1,11 +1,15 @@
 # CORPUS status
 
 - Owner role: curator
-- Active session / last run: none / 20261005-local-prep (preparation complete; review pending)
-- Updated: 2026-10-05
+- Active session / last run: none / 20261006-disease-folders (catalogue complete; review pending)
+- Updated: 2026-10-06
 - State: local_preparation_complete_review_pending
 
 ## Evidence
+
+[Disease folders](../../data/by_disease/README.md):58document folders,55selected/3excluded;
+README/document.jsonแยก5หมวดและexcludedพร้อมต้นทาง/raw/processed links
+เป็นderivedmetadata;สิทธิ/QA/clinicalacceptanceไม่เปลี่ยน;ตรวจด้วยbuild_disease_catalogue.py --check
 
 [Manifest](../../data/manifests/documents.jsonl):58 records:30extracted/28source_verified;
 core3/supporting55/accepted0; CKD optional collectionผู้ใช้อนุญาตแล้ว ไม่ใช่ clinical inclusion

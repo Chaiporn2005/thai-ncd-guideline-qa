@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-siriraj-thai-food-86",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-thai-food-86",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "135d36025866feea4dbd3584476acb66ec6ddeb19ec7ab4858366ee2a30e3ef4",
+    "pdf_pages": 2,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "LIPID scout / 20261005-ncd-plus10",
+    "document_id": "lipid-siriraj-thai-food-86",
+    "work_id": "lipid-siriraj-thai-food-86",
+    "edition_id": "lipid-siriraj-thai-food-86-undated",
+    "title": "คุณค่าอาหารไทยกับไขมันในเลือด",
+    "publisher": "ภาควิชาเวชศาสตร์ป้องกันและสังคม คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "edition": "Undated PDF; issuer landing dated 5 October 2553",
+    "population": "Mixed public education includes child calorie examples; only adult lipid/diet sections in scope",
+    "landing_url": "https://www.si.mahidol.ac.th/Th/department/preventive/article_detail.asp?id=86",
+    "download_url": "https://www.si.mahidol.ac.th/sidoctor/sirirajonline2021/Article_files/86_1.pdf",
+    "verification_notes": "Issuer landing identifies รศ.พญ.ปรียานุช แย้มวงษ์ and PDF link. Full 2-page PDF text has severe font-map mojibake; title/body must be compared visually before ingestion. Distinct authored Thai-food/lipoprotein education, not CPG edition. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-thai-food-86/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all2 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

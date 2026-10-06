@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-siriraj-food-cholesterol-2564-review",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-food-cholesterol-2564-review",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "restricted",
+    "sha256": "e8cbcac0bdbbed2a3e721657de660ea1e55c45b3988fad787f3e3368a4af7204",
+    "pdf_pages": 2,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai issuer public education for Thai practice; not primary Thai-participant research. Adult dyslipidemia/secondary ASCVD sections only; wider disease topics excluded from Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "document_type": "patient_education",
+    "agent": "coordinator-verifier / 20261005-ncd-plus10-curation",
+    "document_id": "lipid-siriraj-food-cholesterol-2564-review",
+    "work_id": "siriraj-food-cholesterol-leaflet",
+    "edition_id": "siriraj-food-cholesterol-2564-review",
+    "title": "ปริมาณคอเลสเตอรอลในอาหาร",
+    "publisher": "สาขาวิชาโภชนาการ ภาควิชากุมารเวชศาสตร์ คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "edition": "ตรวจสอบเนื้อหาครั้งล่าสุด พ.ศ. 2564; วันพิมพ์ไม่ยืนยัน",
+    "population": "Thai general public including adults with high cholesterol; issuer explicitly targets high-cholesterol readers, not pediatric-only guidance",
+    "landing_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_detail.aspx?ID=1",
+    "download_url": "https://www.si.mahidol.ac.th/sirirajdoctor/Brochure_files/1_1JX2jI.pdf",
+    "verification_notes": "Issuer brochure catalogue/detail title, audience and exact download link verified, then 2-page PDF retrieved with web tool. Body gives independently authored Thai-food cholesterol tables, credited nutrition/nursing makers, SIPI PD1005164 and content reviewed year2564. Publication day unknown; HTML posting28Feb2565 is not PDF publication date. Copyright reserved; no processing/redistribution permission inferred. Numeric units/text extraction contain Thai font spacing defects and historical thresholds; require visual/clinical review against current CPG. Replaces form-gated DOH leaflet in final collection; not the Siriraj diabetes fat-types leaflet or Trat mirror. Byte hash not computed; no raw PDF persisted. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-food-cholesterol-2564-review/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all2 PDF pages for private fidelity review; flags extracted_unreviewed, no layout/numeric QA pass."
+  }
+}

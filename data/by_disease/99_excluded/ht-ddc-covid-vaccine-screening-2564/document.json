@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-ddc-covid-vaccine-screening-2564",
+  "primary_group": "EXCLUDED",
+  "selected_candidate": false,
+  "exclusion_reason": "แนวทางเฉพาะการฉีดวัคซีน COVID-19 ในปี 2564; กันออกจากชุด Q&A NCD ทั่วไป",
+  "folder": "data/by_disease/99_excluded/ht-ddc-covid-vaccine-screening-2564",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": 4,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10",
+    "document_id": "ht-ddc-covid-vaccine-screening-2564",
+    "work_id": "ht-ddc-covid-vaccine-screening",
+    "edition_id": "ht-ddc-covid-vaccine-screening-2564",
+    "title": "แนวทางการคัดกรอง-วินิจฉัย ดูแลรักษาและติดตามความดันโลหิตสูง สำหรับผู้รับบริการฉีดวัคซีนโควิด 19",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค ร่วมกับสมาคมความดันโลหิตสูงแห่งประเทศไทย",
+    "document_type": "service_manual",
+    "edition": "ข้อมูล ณ วันที่ 20 มีนาคม 2564",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=11236",
+    "download_url": "https://www.ddc.moph.go.th/uploads/publish/1123620210322080505.pdf",
+    "population": "Thai adult COVID-19 vaccination recipients; clinic screening/service pathway",
+    "verification_notes": "Official4-page PDF title, joint issuer and data-as-of date verified. Explicitly describes adult Thai vaccination population. Historical and context-specific2564 protocol based on2562HT recommendations; must not be default current/general hypertension treatment authority. As-of date and posting22March2564 do not establish exact publication day. Tables/flowcharts require visual QA."
+  }
+}

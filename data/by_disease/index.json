@@ -1,0 +1,420 @@
+{
+  "canonical_manifest": "data/manifests/documents.jsonl",
+  "selected_cohort": "data/manifests/corpus_50_candidates.json",
+  "counts": {
+    "DM": 17,
+    "HT": 10,
+    "LIPID": 13,
+    "CKD": 9,
+    "NCD_SERVICE": 6,
+    "EXCLUDED": 3
+  },
+  "records": [
+    {
+      "document_id": "dm-cpg-2566-revised-2567",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-cpg-2566-revised-2567"
+    },
+    {
+      "document_id": "dm-remission-principles-2568-september",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-remission-principles-2568-september"
+    },
+    {
+      "document_id": "dm-remission-service-2567",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-remission-service-2567"
+    },
+    {
+      "document_id": "dm-clinic-standards-2567",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-clinic-standards-2567"
+    },
+    {
+      "document_id": "dm-educator-standards-2567",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-educator-standards-2567"
+    },
+    {
+      "document_id": "dm-siriraj-know-diabetes-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-know-diabetes-undated"
+    },
+    {
+      "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-hypoglycemia-leaflet-undated"
+    },
+    {
+      "document_id": "dm-siriraj-patient-foot-manual-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-patient-foot-manual-undated"
+    },
+    {
+      "document_id": "dm-siriraj-microvascular-leaflet-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-microvascular-leaflet-undated"
+    },
+    {
+      "document_id": "dm-siriraj-macrovascular-leaflet-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-macrovascular-leaflet-undated"
+    },
+    {
+      "document_id": "dm-siriraj-retinopathy-leaflet-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-retinopathy-leaflet-undated"
+    },
+    {
+      "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-needle-disposal-leaflet-undated"
+    },
+    {
+      "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-self-monitoring-leaflet-undated"
+    },
+    {
+      "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-nursing-foot-ulcer-prevention-2559"
+    },
+    {
+      "document_id": "dm-remission-implementation-lessons-undated",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-remission-implementation-lessons-undated"
+    },
+    {
+      "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-siriraj-geriatric-diabetes-diet-verified-20261005"
+    },
+    {
+      "document_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
+      "primary_group": "DM",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/01_diabetes/dm-chulabhorn-diabetes-diet-brochure-verified-20261005"
+    },
+    {
+      "document_id": "ht-guideline-2567",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-guideline-2567"
+    },
+    {
+      "document_id": "ht-siriraj-uncontrolled-opd-2564",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-siriraj-uncontrolled-opd-2564"
+    },
+    {
+      "document_id": "ht-ddc-hospital-management-update-2566",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-hospital-management-update-2566"
+    },
+    {
+      "document_id": "ht-ddc-provincial-sodium-guide-undated",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-provincial-sodium-guide-undated"
+    },
+    {
+      "document_id": "ht-ddc-community-low-salt-lessons-undated",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-community-low-salt-lessons-undated"
+    },
+    {
+      "document_id": "ht-ddc-low-salt-hospital-guide-undated",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-low-salt-hospital-guide-undated"
+    },
+    {
+      "document_id": "ht-ddc-sodium-education-undated",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-sodium-education-undated"
+    },
+    {
+      "document_id": "ht-ddc-low-sodium-77-province-menu-undated",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-ddc-low-sodium-77-province-menu-undated"
+    },
+    {
+      "document_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-siriraj-hypertension-public-1587-verified-20261005"
+    },
+    {
+      "document_id": "ht-chulabhorn-sodium-nutrition-verified-20261005",
+      "primary_group": "HT",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/02_hypertension/ht-chulabhorn-sodium-nutrition-verified-20261005"
+    },
+    {
+      "document_id": "lipid-guideline-2567",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-guideline-2567"
+    },
+    {
+      "document_id": "lipid-rama-education-2562",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-rama-education-2562"
+    },
+    {
+      "document_id": "lipid-siriraj-warning-1158",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-warning-1158"
+    },
+    {
+      "document_id": "lipid-siriraj-thai-food-86",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-thai-food-86"
+    },
+    {
+      "document_id": "lipid-siriraj-trans-fat-1380",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-trans-fat-1380"
+    },
+    {
+      "document_id": "lipid-siriraj-diabetes-fat-7",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-diabetes-fat-7"
+    },
+    {
+      "document_id": "lipid-siriraj-food-cholesterol-2564-review",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-food-cholesterol-2564-review"
+    },
+    {
+      "document_id": "lipid-siriraj-stroke-nutrition-1298",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-stroke-nutrition-1298"
+    },
+    {
+      "document_id": "lipid-siriraj-metabolic-763",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-metabolic-763"
+    },
+    {
+      "document_id": "lipid-inmu-food-knowledge-all-ages",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-inmu-food-knowledge-all-ages"
+    },
+    {
+      "document_id": "lipid-dms-stroke-public-manual",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-dms-stroke-public-manual"
+    },
+    {
+      "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005"
+    },
+    {
+      "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+      "primary_group": "LIPID",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/03_dyslipidemia/lipid-siriraj-cardiovascular-diet-brochure-verified-20261005"
+    },
+    {
+      "document_id": "ckd-guideline-2565-revised",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-guideline-2565-revised"
+    },
+    {
+      "document_id": "ckd-palliative-2566",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-palliative-2566"
+    },
+    {
+      "document_id": "ckd-treatment-leaflet-undated",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-treatment-leaflet-undated"
+    },
+    {
+      "document_id": "ckd-anemia-guideline-2564",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-anemia-guideline-2564"
+    },
+    {
+      "document_id": "ckd-adult-renal-nutrition-guideline-2561",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-adult-renal-nutrition-guideline-2561"
+    },
+    {
+      "document_id": "ckd-hemodialysis-plasma-manual-2561",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-hemodialysis-plasma-manual-2561"
+    },
+    {
+      "document_id": "ckd-public-kidney-prevention-tips",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-public-kidney-prevention-tips"
+    },
+    {
+      "document_id": "ckd-adult-glomerular-guideline-2561",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-adult-glomerular-guideline-2561"
+    },
+    {
+      "document_id": "ckd-out-of-unit-hemodialysis-standards",
+      "primary_group": "CKD",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/04_ckd_optional/ckd-out-of-unit-hemodialysis-standards"
+    },
+    {
+      "document_id": "ncd-clinic-plus-2568-update",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/ncd-clinic-plus-2568-update"
+    },
+    {
+      "document_id": "ncd-ddc-primary-care-guide-2568",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-primary-care-guide-2568"
+    },
+    {
+      "document_id": "ncd-ddc-health-station-manual-undated",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-health-station-manual-undated"
+    },
+    {
+      "document_id": "DDC-NCD-BEST-PRACTICE-LESSONS-2563",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/DDC-NCD-BEST-PRACTICE-LESSONS-2563"
+    },
+    {
+      "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566"
+    },
+    {
+      "document_id": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
+      "primary_group": "NCD_SERVICE",
+      "selected_candidate": true,
+      "exclusion_reason": null,
+      "folder": "data/by_disease/05_ncd_clinic_plus/DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566"
+    },
+    {
+      "document_id": "ckd-one-page-undated",
+      "primary_group": "EXCLUDED",
+      "selected_candidate": false,
+      "exclusion_reason": "JPG และอาจเป็น summary ของ guideline; ไม่ใช่ PDF/คู่มือในยอดเป้าหมาย",
+      "folder": "data/by_disease/99_excluded/ckd-one-page-undated"
+    },
+    {
+      "document_id": "ckd-primary-care-screening-undated",
+      "primary_group": "EXCLUDED",
+      "selected_candidate": false,
+      "exclusion_reason": "ยังไม่ยืนยันว่าเป็นงานอิสระหรือส่วนที่ตัดจาก CKD guideline",
+      "folder": "data/by_disease/99_excluded/ckd-primary-care-screening-undated"
+    },
+    {
+      "document_id": "ht-ddc-covid-vaccine-screening-2564",
+      "primary_group": "EXCLUDED",
+      "selected_candidate": false,
+      "exclusion_reason": "แนวทางเฉพาะการฉีดวัคซีน COVID-19 ในปี 2564; กันออกจากชุด Q&A NCD ทั่วไป",
+      "folder": "data/by_disease/99_excluded/ht-ddc-covid-vaccine-screening-2564"
+    }
+  ]
+}

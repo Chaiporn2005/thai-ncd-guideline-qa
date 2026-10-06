@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-public-kidney-prevention-tips",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-public-kidney-prevention-tips",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "35d835feb30624b56149a96009f8e20233402408fefd3c89af5b303a214dbdeb",
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai professional society guidance/public education for Thai practice; cited studies are not automatically Thai participant data. Optional adult CKD collection authorized by decision 0003; nonadult/acute unrelated sections excluded from future Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "agent": "CKD scout / 20261005-ncd-50",
+    "document_id": "ckd-public-kidney-prevention-tips",
+    "work_id": "ckd-public-kidney-prevention-tips",
+    "edition_id": "ckd-public-kidney-prevention-tips-undated",
+    "title": "กลเม็ดเคล็ดลับ ทำอย่างไรไตไม่วาย",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "document_type": "patient_education",
+    "edition": "Six printing counts shown in front matter; publication date/printing years unknown",
+    "pdf_pages": 119,
+    "landing_url": "https://www.nephrothai.org/หนังสือโรคไต-สำหรับประ-2/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2020/09/1.กลเมดเคลดลบ_ทำอยางไรไตไมวาย.pdf",
+    "population": "Thai public and patients; adult CKD prevention/renal-risk education only; nonadult topics to be excluded during extraction",
+    "verification_notes": "Society public-books landing visited; image links absent from web parsed view, normal nativeHTML returned403 and stopped. Direct official PDF discovered in search and retrieved119pages. Front matter verifies title, society ownership, renal prevention subcommittee, ISBN974-9813-04-9, editors นพ.ทวี ศิริวงศ์/นพ.ดุจม โกฤทธิ์ชัย, NHSO/GPO support. PDF is new authored public education work versus existing general CPG/choice leaflet. Six print counts are not six works; count wholebook once. No date inferred from upload path or search age. Content/extraction/clinical currency needs QA. Local preparation20261005: public review copy saved at data/raw/ckd-public-kidney-prevention-tips/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all119 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

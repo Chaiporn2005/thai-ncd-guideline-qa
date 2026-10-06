@@ -1,0 +1,40 @@
+{
+  "document_id": "ncd-ddc-health-station-manual-undated",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-health-station-manual-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "viewer_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension",
+      "type_2_diabetes"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10",
+    "document_id": "ncd-ddc-health-station-manual-undated",
+    "work_id": "ncd-ddc-health-station-manual",
+    "edition_id": "ncd-ddc-health-station-manual-undated",
+    "title": "แนวทางการดำเนินงานสถานีสุขภาพ (Health Station)",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "document_type": "service_manual",
+    "edition": "ไม่ยืนยันฉบับ; issuer catalogue posting 18 กุมภาพันธ์ 2568",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=16814",
+    "download_url": "https://online.fliphtml5.com/bcbgj/swdq/",
+    "population": "Thai community Health Station personnel; NCD screening including blood pressure; exact adult sections to verify",
+    "verification_notes": "Specific issuer catalogue/manual title and issuer-designated FlipHTML5 e-book link verified. Viewer title matches; body/actual PDF download not retrieved. Counts as a manual candidate under user PDF/คู่มือ constraint, not verified downloadable PDF. HT substantive section applicability, work relationships and rights await review. Local preparation20261005: local PDF not saved; outcome viewer_requires_public_download_link; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

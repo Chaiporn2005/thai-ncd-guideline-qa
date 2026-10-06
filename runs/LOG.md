@@ -86,3 +86,14 @@
 - Preserved one historical extra blank EOF;ordinary diff check warned;whitespace check with blank-at-EOF excluded passed.
 - Source permission/human approval/accepted0 unchanged;no paid API,extra download,extraction,clinical evaluation or index creation.
 - Next:document-specific rights evidence before any source-body publication.
+
+
+## 2026-10-06T19:20:30+07:00 — 20261006-disease-folders
+
+- Owner:rootcoordinator/curator;scope:document folder organization and GitHub publication.
+- Output:data/by_disease,5primary groups+99_excluded;58document folders withREADME/document.json;124generated files.
+- Metadata-derived catalogue includes document title/publisher/edition/type/population/source links and retrieval/extraction/OCR summary references.
+- Added deterministic builder with read-only --check;canonical manifest and source processing paths unchanged.
+- Checks:58unique records/55selected/3excluded,58metadata JSON match canonical,335internal links valid;builder/manifest/orchestra checks passed.
+- No rawPDF/page text/OCR image uploads,no acceptance/rights changes,no network source collection,no new paid API or workers.
+- Board/HANDOFF/CORPUS/overview updated;publication evidence follows verified push.

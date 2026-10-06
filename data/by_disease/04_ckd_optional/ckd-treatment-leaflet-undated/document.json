@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-treatment-leaflet-undated",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-treatment-leaflet-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "789aca82ab9f034f40dee7716378d23d2960450c2dc8a7bb746168371c40fed7",
+    "pdf_pages": 2,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "ckd-treatment-leaflet-undated",
+    "work_id": "ckd-treatment-leaflet-undated",
+    "edition_id": "ckd-treatment-leaflet-undated",
+    "title": "แผ่นพับทางเลือกการรักษาเมื่อไตวาย",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "population": "Patient/shared-decision kidney-failure context; outside core scope",
+    "document_type": "patient_education",
+    "edition": "ไม่ยืนยันฉบับ; landing post 2026-08-11",
+    "landing_url": "https://www.nephrothai.org/แผ่นพับ-ทางเลือกการรักษ/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2026/08/แผ่นพับ-ทางเลือกการรักษาเมื่อไตวาย.pdf",
+    "agent": "cardiometabolic_sources",
+    "verification_notes": "Publisher landing and two-page PDF structure verified; image-only extraction, visual content not reviewed. Keep separate from clinical guidance. Collection scope explicitly authorized by user on 2026-10-05 (decision0003): optional CKD supporting candidate only, not core or human clinical inclusion approval. Target-count exclusions are recorded separately in corpus_50_candidates.json. Local preparation20261005: public review copy saved at data/raw/ckd-treatment-leaflet-undated/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all2 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

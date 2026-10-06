@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-anemia-guideline-2564",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-anemia-guideline-2564",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "8f9901720bc8d8aafdce4d0f51d216084531b4326532e3cb190905ae52c526e7",
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai professional society guidance/public education for Thai practice; cited studies are not automatically Thai participant data. Optional adult CKD collection authorized by decision 0003; nonadult/acute unrelated sections excluded from future Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "agent": "CKD scout / 20261005-ncd-50",
+    "document_id": "ckd-anemia-guideline-2564",
+    "work_id": "ckd-anemia-guideline-2564",
+    "edition_id": "ckd-anemia-guideline-2564-2564",
+    "title": "แนวทางการรักษาภาวะโลหิตจางในผู้ป่วยโรคไตเรื้อรัง ปี พ.ศ. 2564",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "document_type": "clinical_guideline",
+    "edition": "ปี พ.ศ.2564; front matter lists first printing June2564 and second July2564; exact day unknown",
+    "pdf_pages": 98,
+    "landing_url": "https://www.nephrothai.org/แนวทางการรักษาภาวะโลหิ-2/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2022/06/แนวทางการรักษาภาวะโลหิตจางในผู้ป่วยโรคไตเรื้อรัง-64-รวมเล่ม.pdf",
+    "population": "Mixed adult/pediatric CKD, including pre-KRT and dialysis; adult diagnostic/treatment sections only; pediatric chapter5 excluded",
+    "verification_notes": "Official issuer landing/title and full PDF front matter verified. PDF98pages, ISBN978-616-8032-14-5. Standalone anemia work, not chapter of existing general CKD CPG. Publisher, committee and intended clinicians verified; adult CKD stages3-5 recommendation text present. Front matter Sara am appears replacement character; extraction encoding QA needed. Issuer page24June2565 is not publication date. No latest-edition claim or clinical approval. Local preparation20261005: public review copy saved at data/raw/ckd-anemia-guideline-2564/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all98 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

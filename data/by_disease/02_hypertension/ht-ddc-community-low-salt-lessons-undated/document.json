@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-ddc-community-low-salt-lessons-undated",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ddc-community-low-salt-lessons-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10",
+    "document_id": "ht-ddc-community-low-salt-lessons-undated",
+    "work_id": "ht-ddc-community-low-salt-lessons",
+    "edition_id": "ht-ddc-community-low-salt-lessons-undated",
+    "title": "ถอดบทเรียนการป้องกันควบคุมโรคไม่ติดต่อเรื้อรังโดยใช้ชุมชนเป็นฐาน ชุมชนลดเค็ม ลดเสี่ยงโรคความดันโลหิตสูง",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "document_type": "report",
+    "edition": "ไม่ยืนยันฉบับ; issuer catalogue posting 29 กรกฎาคม 2563",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=10341",
+    "download_url": "https://www.ddc.moph.go.th/uploads/publish/1034120200803070751.pdf",
+    "population": "Thai community hypertension-risk prevention teams; lessons/service context",
+    "verification_notes": "Issuer catalogue gives exact work title and HT prevention aim; landing PDF target verified. Fetch exceeds 15.4MB tool limit. Classified report/lessons, not treatment guidance or proven Thai-participant study. PDF body/population and edition await review. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "ncd-clinic-plus-2568-update",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/ncd-clinic-plus-2568-update",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": 43,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "ncd-clinic-plus-2568-update",
+    "work_id": "ncd-clinic-plus",
+    "edition_id": "ncd-clinic-plus-2568-update",
+    "title": "คู่มือแนวทางการดำเนินงาน NCD Clinic Plus (Update 3/9/2568)",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "disease_tags": [
+      "type_2_diabetes",
+      "hypertension"
+    ],
+    "population": "Thai NCD service organization and assessment",
+    "document_type": "service_manual",
+    "edition": "อัปเดต 3 กันยายน 2568; publisher page 4 กันยายน 2568",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/journal_detail.php?deptcode=dncd&publish=16670",
+    "download_url": "https://www.ddc.moph.go.th/uploads/publish/1667020250904082725.pdf",
+    "agent": "parent",
+    "verification_notes": "Publisher title/update and linked 43-page PDF fetched. Service quality manual, not a disease treatment guideline. Clinical/layout QA and actual raw download pending. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

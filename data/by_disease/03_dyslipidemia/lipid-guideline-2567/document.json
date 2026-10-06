@@ -1,0 +1,42 @@
+{
+  "document_id": "lipid-guideline-2567",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-guideline-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [
+      "https://www2.rcpt.org/web/media/content/file/2025/10/CF-1108-RCPT_CPG_Dyslipidemia_2024_%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B8%E0%B8%87-251002102712Hrmtrp.pdf",
+      "https://drive.google.com/file/d/1iYALtgTYtrN_e9YposCEMNYnEsfIKg-T/view?usp=sharing"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "caee450589ae61ecfd8ab2f39b88037eeb740f8f2ee8dfa8bafcfdae92a5531a",
+    "pdf_pages": 48,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "core",
+    "document_id": "lipid-guideline-2567",
+    "work_id": "lipid-guideline",
+    "edition_id": "lipid-guideline-2567",
+    "title": "แนวทางเวชปฏิบัติการบำบัดภาวะไขมันผิดปกติในเลือดเพื่อป้องกันโรคหัวใจและหลอดเลือด พ.ศ. 2567",
+    "publisher": "ราชวิทยาลัยอายุรแพทย์แห่งประเทศไทย",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "population": "Thai clinical ASCVD prevention context; verify adult subgroup conditions",
+    "document_type": "clinical_guideline",
+    "edition": "2567 / 2024 RCPT CPG; revision relationship of 2025 file requires comparison",
+    "landing_url": "https://www2.rcpt.org/web/content/1022",
+    "download_url": "https://drive.usercontent.google.com/uc?id=1iYALtgTYtrN_e9YposCEMNYnEsfIKg-T&export=download",
+    "agent": "cardiometabolic_sources + parent",
+    "verification_notes": "Publisher landing and exact Drive link verified. Parent also fetched issuer-hosted 48-page PDF whose filename says revised; compare with Drive copy before claiming edition identity. English journal representation is not automatically another work. Local preparation20261005: public review copy saved at data/raw/lipid-guideline-2567/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all48 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}

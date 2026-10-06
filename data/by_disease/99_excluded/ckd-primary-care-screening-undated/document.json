@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-primary-care-screening-undated",
+  "primary_group": "EXCLUDED",
+  "selected_candidate": false,
+  "exclusion_reason": "ยังไม่ยืนยันว่าเป็นงานอิสระหรือส่วนที่ตัดจาก CKD guideline",
+  "folder": "data/by_disease/99_excluded/ckd-primary-care-screening-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "viewer_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "ckd-primary-care-screening-undated",
+    "work_id": "ckd-primary-care-screening-undated",
+    "edition_id": "ckd-primary-care-screening-undated",
+    "title": "การคัดกรองและดูแลรักษาโรคไตเรื้อรังในหน่วยบริการปฐมภูมิ",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "population": "Primary-care CKD context; exact population requires content review",
+    "document_type": "clinical_guideline",
+    "edition": "ไม่ยืนยันฉบับ; publisher post dated 2023-06-23",
+    "landing_url": "https://www.nephrothai.org/การคัดกรองและดูแลรักษา/",
+    "download_url": "https://drive.google.com/file/d/1W9NNzglRx_XfqeQQqu44KzVoIg3czjhj/view?usp=sharing",
+    "agent": "cardiometabolic_sources",
+    "verification_notes": "Publisher landing and Drive link verified, not PDF body. Check whether independent authored work or extracted/reformatted section of main CKD guideline before counting. Collection scope explicitly authorized by user on 2026-10-05 (decision0003): optional CKD supporting candidate only, not core or human clinical inclusion approval. Target-count exclusions are recorded separately in corpus_50_candidates.json."
+  }
+}

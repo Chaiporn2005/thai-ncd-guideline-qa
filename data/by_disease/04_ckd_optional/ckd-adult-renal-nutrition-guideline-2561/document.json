@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-adult-renal-nutrition-guideline-2561",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-adult-renal-nutrition-guideline-2561",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "b1e15befe20eb2d8d708fbdf5c344a830fbd2284ae3a86151923ac037ef3644d",
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai professional society guidance/public education for Thai practice; cited studies are not automatically Thai participant data. Optional adult CKD collection authorized by decision 0003; nonadult/acute unrelated sections excluded from future Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "agent": "CKD scout / 20261005-ncd-50",
+    "document_id": "ckd-adult-renal-nutrition-guideline-2561",
+    "work_id": "ckd-adult-renal-nutrition-guideline-2561",
+    "edition_id": "ckd-adult-renal-nutrition-guideline-2561-2561",
+    "title": "คำแนะนำแนวทางเวชปฏิบัติโภชนบำบัดสำหรับผู้ป่วยโรคไตในผู้ใหญ่ พ.ศ.2561",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "document_type": "clinical_guideline",
+    "edition": "พ.ศ.2561 as verified issuer title; exact printing/date not yet checked",
+    "pdf_pages": 69,
+    "landing_url": "https://www.nephrothai.org/คำแนะนำแนวทางเวชปฏิบัต/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2021/10/คำแนะนำแนวทางเวชปฏิบัติโภชนบำบัดสำหรับผู้ป่วยโรคไตในผู้ใหญ่-พ.ศ.-2561.pdf",
+    "population": "Adults with renal disease; adult CKD nutrition before/after KRT relevant; acute unrelated sections excluded",
+    "verification_notes": "Official society landing verifies title/issuer/adult audience/year and links this PDF. Initial click retrieved69-page PDF; subsequent reference-open for text timed out. Content file retrieved but front-matter/body QA not completed, do not imply full manual read. Distinct specialist nutrition guideline, not general CKD CPG derivative/chapter or existing INMU whole handbook. Landing1Jan2563 is webpage date; no exact publication day. Latest edition/current numerical applicability not claimed. Local preparation20261005: public review copy saved at data/raw/ckd-adult-renal-nutrition-guideline-2561/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all69 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

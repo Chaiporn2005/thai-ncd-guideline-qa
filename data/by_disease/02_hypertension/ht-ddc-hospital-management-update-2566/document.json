@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-ddc-hospital-management-update-2566",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ddc-hospital-management-update-2566",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10",
+    "document_id": "ht-ddc-hospital-management-update-2566",
+    "work_id": "ht-ddc-hospital-management-update",
+    "edition_id": "ht-ddc-hospital-management-update-2566",
+    "title": "แนวทางการจัดการเมื่อพบผู้รับบริการมีความดันโลหิตสูงในโรงพยาบาล : Update 15/05/2566",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "document_type": "service_manual",
+    "edition": "Update 15/05/2566",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=13768",
+    "download_url": "https://www.ddc.moph.go.th/uploads/publish/1376820230516062913.pdf",
+    "population": "Thai hospital/NCD clinic personnel identifying high blood pressure; emergency department exclusion in preceding edition must be rechecked",
+    "verification_notes": "Official catalogue title and issuer landing download link verified. Web PDF fetch exceeds 20.3MB tool limit, body not reviewed. Preceding2565 PDF inspected for work identity/context, excluded as another edition of same work; not counted twice. Update date is not treated as publication day. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

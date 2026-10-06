@@ -1,0 +1,42 @@
+{
+  "document_id": "dm-cpg-2566-revised-2567",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-cpg-2566-revised-2567",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [
+      "https://drive.google.com/file/d/1pnqAp_cihyuiLcz0OT26BK1yrmB74O-R/view?usp=sharing",
+      "https://drive.google.com/file/d/1aA7IJ_HFdAsRdgB0MwKK-e5sPisxRzlj/view?usp=sharing"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "4a81780fe24ed157eae38905ce5172367231f806ef0b1573410c99ac22f855ba",
+    "pdf_pages": 282,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "core",
+    "document_id": "dm-cpg-2566-revised-2567",
+    "work_id": "dm-cpg",
+    "edition_id": "dm-cpg-2566-revised-2567",
+    "title": "แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน 2566 ฉบับปรับปรุง ก.พ. 2567",
+    "publisher": "สมาคมโรคเบาหวานแห่งประเทศไทยและหน่วยงานร่วม",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "Mixed diabetes guideline; select adult T2DM sections after content review",
+    "document_type": "clinical_guideline",
+    "edition": "2566, revised February 2567",
+    "landing_url": "https://dmthai.org/new/index.php/activities-and-news/news-pr/naewthang-wech-ptibati-sahrab-rokh-bea-hwan-2566-chbab-prabprung-kph-67",
+    "download_url": "https://drive.usercontent.google.com/uc?id=1aA7IJ_HFdAsRdgB0MwKK-e5sPisxRzlj&export=download",
+    "agent": "diabetes_sources",
+    "verification_notes": "Publisher landing/title/revision verified; Drive viewer reached but PDF body not read. download_url is a viewer, not a tested raw download. Two-page rendition is same work; original CPG has errata for numbers/operators. Local preparation20261005: public review copy saved at data/raw/dm-cpg-2566-revised-2567/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all282 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

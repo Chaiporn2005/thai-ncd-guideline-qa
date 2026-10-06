@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-out-of-unit-hemodialysis-standards",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-out-of-unit-hemodialysis-standards",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "4c410cf74bfdb8812a82116fe764e8da76a818a232fdd55eed3c3ee4e7c5183b",
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai professional society guidance/public education for Thai practice; cited studies are not automatically Thai participant data. Optional adult CKD collection authorized by decision 0003; nonadult/acute unrelated sections excluded from future Q&A.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "agent": "CKD scout / 20261005-ncd-50",
+    "document_id": "ckd-out-of-unit-hemodialysis-standards",
+    "work_id": "ckd-out-of-unit-hemodialysis-standards",
+    "edition_id": "ckd-out-of-unit-hemodialysis-standards-undated",
+    "title": "คำแนะนำมาตรฐานการฟอกเลือดนอกหน่วยไตเทียมโดยบุคลากรทางการแพทย์",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "document_type": "service_manual",
+    "edition": "Official announcement file; issue/publication edition not verified; issuer landing dated28October2568",
+    "pdf_pages": 8,
+    "landing_url": "https://www.nephrothai.org/คำแนะนำมาตรฐานการฟอกเล/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2025/10/ฉบับประกาศ-คำแนะนำ-mobile-HD_final_edited_27-10-25.pdf",
+    "population": "Medical personnel providing hemodialysis outside dialysis units; optional advanced adult CKD/ESKD service portions only; acute/non-CKD/pediatric uses require exclusion at body QA",
+    "verification_notes": "Official society professional catalogue and issuer landing verify worktitle, issuing society, medical-provider audience and directdownload link. Actual8pagePDF retrieved,197textlines exposed by toolmetadata; response did not display body text because precedingPDF filled output. Do not imply body fullyread, makerlist/clinical content/precisepopulation still needs curatorQA. Distinct out-of-unit service standard versus existing KRTchoice leaflet/generalCKD CPG and 2561hemodialysis/plasmafiltration manual. File revision27-10-25 and landing28Oct2568 are not treated as verifiedpublication date. Optional advancedrenalservicecollection; unrelatedacute/children sections excluded. Local preparation20261005: public review copy saved at data/raw/ckd-out-of-unit-hemodialysis-standards/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all8 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass."
+  }
+}

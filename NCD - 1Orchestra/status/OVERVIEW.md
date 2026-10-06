@@ -1,6 +1,6 @@
 # Workstream overview
 
-Updated: 2026-10-05 • Owner: coordinator • Active sessions: none; `20261005-local-prep` preparation completed
+Updated: 2026-10-06 • Owner: coordinator • Active sessions: none; `20261006-disease-folders` catalogue completed
 
 | Stream | Owner role | State | Evidence / next |
 | --- | --- | --- | --- |
@@ -14,6 +14,7 @@ Updated: 2026-10-05 • Owner: coordinator • Active sessions: none; `20261005-
 | [EVAL](EVAL.md) | evaluator | not_started | รอ gold review, baseline และ variants |
 
 นับจาก manifest ด้วย `python scripts/orchestra.py status` เพื่อเห็นจำนวนล่าสุด
+เปิด[เอกสารแยกหมวด](../../data/by_disease/README.md)เพื่อดู58records/55selected/3excludedและบันทึกที่เกี่ยวข้อง
 ตารางนี้เป็น snapshot ต้องปรับเมื่อรอบงานจบ ไม่ใช้แทน manifest
 รอบล่าสุดรวม15 new works และเลือก55 PDF/คู่มือหลังคัดออก3รายการ
 ดู [catalogue ล่าสุด](../../docs/source_catalog_50.md); ไม่ใช่clinicalapprovalหรือautonomousrunner

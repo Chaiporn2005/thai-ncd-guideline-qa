@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-siriraj-uncontrolled-opd-2564",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-siriraj-uncontrolled-opd-2564",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "8279f039134d970a8c31636bc5948e16102270316c6201fce70363738b38681f",
+    "pdf_pages": 105,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10",
+    "document_id": "ht-siriraj-uncontrolled-opd-2564",
+    "work_id": "ht-siriraj-uncontrolled-opd",
+    "edition_id": "ht-siriraj-uncontrolled-opd-2564",
+    "title": "คู่มือการพยาบาลผู้ป่วยโรคความดันโลหิตสูงที่ควบคุมความดันโลหิตไม่ได้สำหรับผู้ป่วยนอก",
+    "publisher": "ฝ่ายการพยาบาล โรงพยาบาลศิริราช คณะแพทยศาสตร์ศิริราชพยาบาล มหาวิทยาลัยมหิดล",
+    "document_type": "service_manual",
+    "edition": "พ.ศ. 2564; exact publication day unknown",
+    "landing_url": "https://www2.si.mahidol.ac.th/division/nursing/sins/index.php/th/16-researh-completed/858-manual-2021-02-03",
+    "download_url": "https://www2.si.mahidol.ac.th/division/nursing/sins/attachments/article/858/hypertension_OPD.pdf",
+    "population": "Nurses caring for adult medicine outpatients with uncontrolled hypertension",
+    "verification_notes": "Official nursing page confirms title, named author บงกช อนุฤทธิ์ประเสริฐ and PDF. Web tool retrieved 105-page PDF but Thai encoding severely corrupted; no visual/content QA. Publication year from issuer manual label/front matter; October2022 attachment timestamp is not publication date. Local preparation20261005: public review copy saved at data/raw/ht-siriraj-uncontrolled-opd-2564/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all105 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass. pypdf reported recovered cross-reference warnings during reads; inspect source before relying on extracted content."
+  }
+}

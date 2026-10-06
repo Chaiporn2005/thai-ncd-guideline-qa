@@ -1,0 +1,40 @@
+{
+  "document_id": "ncd-ddc-primary-care-guide-2568",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-primary-care-guide-2568",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": 32,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension",
+      "type_2_diabetes"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10",
+    "document_id": "ncd-ddc-primary-care-guide-2568",
+    "work_id": "ncd-ddc-primary-care-guide",
+    "edition_id": "ncd-ddc-primary-care-guide-2568",
+    "title": "แนวทางการดำเนินงาน NCD ในโรงพยาบาลส่งเสริมสุขภาพตำบล (รพ.สต.)",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "document_type": "service_manual",
+    "edition": "มกราคม พ.ศ. 2568; ISBN 978-616-11-5371-7",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=16830",
+    "download_url": "https://www.ddc.moph.go.th/uploads/publish/1683020250221063806.pdf",
+    "population": "Thai primary-care health-promoting hospitals providing diabetes and hypertension prevention/service care",
+    "verification_notes": "Issuer catalogue and direct32-page PDF verified. Front matter states printed January2568, not exact day; preface explicitly focuses on diabetes/hypertension and Thai primary-care service. Severe mixed Thai encoding/reading order issues need QA. Cross-disease single work; do not double-count for DM and HT or historical2567 catalogue record. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

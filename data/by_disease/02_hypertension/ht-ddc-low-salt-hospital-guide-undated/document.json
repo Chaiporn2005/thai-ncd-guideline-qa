@@ -1,0 +1,39 @@
+{
+  "document_id": "ht-ddc-low-salt-hospital-guide-undated",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ddc-low-salt-hospital-guide-undated",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "link_verified_only",
+    "extraction_status": "not_started",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "pdf_pages": null,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Official Thai issuer guidance/service or public education intended for Thai practice. Not classified as primary Thai-participant research. Adult section applicability requires review.",
+    "scope_fit": "supporting",
+    "disease_tags": [
+      "hypertension"
+    ],
+    "agent": "plus10_ht / 20261005-ncd-plus10",
+    "document_id": "ht-ddc-low-salt-hospital-guide-undated",
+    "work_id": "ht-ddc-low-salt-hospital-guide",
+    "edition_id": "ht-ddc-low-salt-hospital-guide-undated",
+    "title": "แนวทางการดำเนินงานโรงพยาบาลเค็มน้อยอร่อย (3) ดี",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "document_type": "service_manual",
+    "edition": "ไม่ยืนยันฉบับ; issuer catalogue posting 6 กุมภาพันธ์ 2563",
+    "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=9801",
+    "download_url": "https://www.ddc.moph.go.th/uploads/publish/980120200206080718.pdf",
+    "population": "Thai hospital food/service teams; dietary sodium reduction supporting hypertension prevention",
+    "verification_notes": "Issuer catalogue exact title and publisher landing PDF link verified; PDF fetch timed out. Supporting food-environment/service guidance; substantive adult hypertension relevance and current applicability need content review. January2020 similarly named hospital material not counted separately. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

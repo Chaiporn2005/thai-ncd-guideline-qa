@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "language": "th",
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": null,
+    "agent": "ncd50_core",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai public/university hospital patient guidance intended for local Thai care; not labelled as primary Thai-participant empirical research.",
+    "scope_fit": "supporting",
+    "document_type": "patient_education",
+    "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+    "work_id": "lipid-chulabhorn-dyslipidemia-nutrition",
+    "edition_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+    "title": "ภาวะไขมันในเลือดสูง (Dyslipidemia)",
+    "publisher": "โภชนบริการ โรงพยาบาลจุฬาภรณ์ / ราชวิทยาลัยจุฬาภรณ์",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "population": "Adults/general hospital patients with dyslipidemia; Thai dietary advice",
+    "edition": "ไม่ระบุฉบับ/วันพิมพ์; PDF production code PR67017; landing posted1May2026",
+    "landing_url": "https://chulabhornchannel.cra.ac.th/media-library/brochure/69699/",
+    "download_url": "https://chulabhornchannel.cra.ac.th/wp-content/uploads/2026/05/%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B9%84%E0%B8%82%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AA%E0%B8%B9%E0%B8%87.pdf",
+    "pdf_pages": 2,
+    "verification_notes": "Primary LIPID selection. Official Chulabhorn Channel brochure landing and linked2page PDF checked. PDF title and Chulabhorn nutrition-service identity present on page0; includes Thai food/fat/lipid education. PR67017 treated as production code,not inferred publicationyear. Landing/upload2026 not treated as edition. Thai extracted text has doubled combining marks. Different hospital/title/production identity from existing Sirirajfat/foodcholesterol and RamaCME sources. Publisher footer reserves rights, no redistribution licence verified. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

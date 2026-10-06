@@ -1,0 +1,39 @@
+{
+  "document_id": "ckd-palliative-2566",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-palliative-2566",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "13e60a43494672aedb2bd3f42e03bcb07fc3c4aba7bc8c3e91ab7c2570b3eb88",
+    "pdf_pages": 47,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "ckd-palliative-2566",
+    "work_id": "ckd-palliative",
+    "edition_id": "ckd-palliative-2566",
+    "title": "คำแนะนำสำหรับการดูแลรักษาสนับสนุนและประคับประคองผู้ป่วยโรคไตเรื้อรัง พ.ศ. 2566",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "population": "Supportive/palliative CKD; outside core screening/follow-up scope",
+    "document_type": "clinical_guideline",
+    "edition": "2566; landing post 2025-01-06 not publication date",
+    "landing_url": "https://www.nephrothai.org/คำแนะนำสำหรับการดูแลรั-2/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2023/06/e-BOOK-palliative-care.pdf",
+    "agent": "cardiometabolic_sources",
+    "verification_notes": "Landing identity and exact PDF link verified. Web fetch exceeded content size limit (22.9MB); PDF not reviewed. Include only after explicit advanced CKD scope expansion. Collection scope explicitly authorized by user on 2026-10-05 (decision0003): optional CKD supporting candidate only, not core or human clinical inclusion approval. Target-count exclusions are recorded separately in corpus_50_candidates.json. Local preparation20261005: public review copy saved at data/raw/ckd-palliative-2566/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all47 PDF pages for private fidelity review; flags extracted_unreviewed, no layout/numeric QA pass."
+  }
+}

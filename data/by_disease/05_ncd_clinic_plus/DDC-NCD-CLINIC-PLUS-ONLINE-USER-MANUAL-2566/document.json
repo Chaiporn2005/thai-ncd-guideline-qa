@@ -1,0 +1,44 @@
+{
+  "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
+    "work_id": "ddc-ncd-clinic-plus-online-assessment-user-manual",
+    "edition_id": "publisher-copy-posted-2566",
+    "title": "คู่มือการใช้งาน แบบประเมินคุณภาพ NCD Clinic Plus Online",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค",
+    "disease_tags": [
+      "type_2_diabetes",
+      "hypertension",
+      "ncd_service"
+    ],
+    "population": "ผู้รับผิดชอบการบันทึกและประเมินคุณภาพบริการ NCD Clinic Plus Online ในหน่วยบริการไทย",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "ฉบับที่ผู้จัดพิมพ์เผยแพร่ในปี 2566; ไม่ยืนยันเลขครั้งพิมพ์",
+    "publication_date": null,
+    "landing_url": "https://ncdclinicplus.ddc.moph.go.th/pages/public/files/view.php?id=1673855164",
+    "download_url": "https://ncdclinicplus.ddc.moph.go.th/pages/public/files/download.php?id=1673855164",
+    "alternate_urls": [
+      "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=13770",
+      "https://www.ddc.moph.go.th/uploads/publish/1377020230127075118.pdf"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "unknown",
+    "sha256": "240c0b7445380a5d9f8de9f53c1eaaed9249b05b7db1f1f8c8f36418a256f08f",
+    "pdf_pages": 34,
+    "agent": "NCD_SERVICE",
+    "verification_notes": "Official NCD Clinic Plus portal confirms full title, PDF file type and update date 7 April 2566. DDC publications catalog lists shortened title คู่มือการใช้งานแบบประเมินคุณภาพ NCD Clinic Online on 27 January 2566 and provides the recorded PDF link. Portal download returned Internal Error; DDC PDF attempt failed at tool content-size limit (16,014,475 bytes reported). Body, page count and exact publication day unknown. This is the assessment-system user manual, a separate work from annual programme implementation guidance; older Online manual editions and external basic-HTML layouts are not counted separately. Rights and body QA pending; no human approval. Local preparation20261005: public review copy saved at data/raw/DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all34 PDF pages for private fidelity review; flags encoding_issue, no layout/numeric QA pass. Alternative public portal Download anchor verified;34-page file cover names exact NCD Clinic Plus Online manual and DDC group. Byte/edition equivalence to denied DDC uploads copy remains pending.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "คู่มือระบบประเมินคุณภาพบริการของกองโรคไม่ติดต่อสำหรับหน่วยบริการไทย; ใช้สนับสนุนการจัดบริการ ไม่ใช่แนวทางรักษาโรคหรือข้อมูลผู้เข้าร่วมวิจัยไทย",
+    "scope_fit": "supporting"
+  }
+}

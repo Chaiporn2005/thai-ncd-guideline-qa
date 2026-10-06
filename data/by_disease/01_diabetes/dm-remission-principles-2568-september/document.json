@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-remission-principles-2568-september",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-remission-principles-2568-september",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [],
+    "accessed_at": "2026-10-05",
+    "status": "source_verified",
+    "content_access": "full_document",
+    "extraction_status": "encoding_issue",
+    "redistribution_status": "restricted",
+    "sha256": null,
+    "pdf_pages": 198,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "dm-remission-principles-2568-september",
+    "work_id": "dm-remission-principles",
+    "edition_id": "dm-remission-principles-2568-september",
+    "title": "หลักการและแนวปฏิบัติเพื่อการดูแลโรคเบาหวานให้เข้าสู่ระยะสงบ",
+    "publisher": "สมาคมโรคเบาหวานแห่งประเทศไทยและองค์กรร่วม",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "People with T2DM; confirm adult inclusion and exceptions by section",
+    "document_type": "clinical_guideline",
+    "edition": "ฉบับปรับปรุง กันยายน 2568",
+    "landing_url": "https://dmthai.org/new/attactment/dmr-book-20250918.pdf",
+    "download_url": "https://dmthai.org/new/attactment/dmr-book-20250918.pdf",
+    "agent": "diabetes_sources",
+    "verification_notes": "Full PDF fetched in web research (not downloaded to repo); 198 pages. Thai extraction has severe font-map/mojibake issues. Copyright reserved; open redistribution permission not found. March2025 edition is same work family, not another independent work. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+  }
+}

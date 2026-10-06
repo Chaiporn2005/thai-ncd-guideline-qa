@@ -1,0 +1,41 @@
+{
+  "document_id": "ckd-guideline-2565-revised",
+  "primary_group": "CKD",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/04_ckd_optional/ckd-guideline-2565-revised",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "publication_date": null,
+    "alternate_urls": [
+      "https://www.nephrothai.org/wp-content/uploads/2023/03/CKD-guideline-2565-revised-edition.pdf"
+    ],
+    "accessed_at": "2026-10-05",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "needs_ocr",
+    "redistribution_status": "unknown",
+    "sha256": "eb8c164d43577dca0760f2be4994055b9d3e2e7d183098731539501898ed51c4",
+    "pdf_pages": 106,
+    "human_review": null,
+    "language": "th",
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-publisher guidance/service material intended for Thai practice; not labelled as primary Thai-participant research. Specific population and section applicability still require content review.",
+    "scope_fit": "supporting",
+    "document_id": "ckd-guideline-2565-revised",
+    "work_id": "ckd-guideline",
+    "edition_id": "ckd-guideline-2565-revised",
+    "title": "ข้อแนะนำเวชปฏิบัติการดูแลผู้ป่วยโรคไตเรื้อรังก่อนการบำบัดทดแทนไต พ.ศ. 2565 (ฉบับปรับปรุงเพิ่มเติม)",
+    "publisher": "สมาคมโรคไตแห่งประเทศไทย",
+    "disease_tags": [
+      "chronic_kidney_disease"
+    ],
+    "population": "Adults with CKD before kidney replacement therapy in Thai context",
+    "document_type": "clinical_guideline",
+    "edition": "2565 ฉบับปรับปรุงเพิ่มเติม",
+    "landing_url": "https://www.nephrothai.org/คำแนะนำสำหรับการดูแลผู้-2/",
+    "download_url": "https://www.nephrothai.org/wp-content/uploads/2023/06/CKD-guideline_-draft_5-เพิ่มเติม-2565-.pdf",
+    "agent": "cardiometabolic_sources",
+    "verification_notes": "Publisher landing links June2023 URL; 106-page PDF front matter says revised despite draft in filename. March and June copies have same title/page count; compare hashes/content before merging bytes. Full layout QA pending. Publication day unknown. Collection scope explicitly authorized by user on 2026-10-05 (decision0003): optional CKD supporting candidate only, not core or human clinical inclusion approval. Target-count exclusions are recorded separately in corpus_50_candidates.json. Local preparation20261005: public review copy saved at data/raw/ckd-guideline-2565-revised/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. pypdf6.10.0 extracted all106 PDF pages for private fidelity review; flags needs_ocr, no layout/numeric QA pass."
+  }
+}
