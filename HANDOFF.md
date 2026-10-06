@@ -67,6 +67,7 @@ PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยั
 ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regression0หน้าแย่ลง
 ดู [normalization pipeline](docs/normalization_pipeline.md);manifest/rights/acceptedไม่เปลี่ยน;ขึ้นGitแล้วf28eb5b
 ผู้ใช้ขอลบผลสกัดรอบแรก:ลบpages.jsonl/extraction.json/ocr-review-v1;ขึ้นGitเฉพาะnormalization.json30ไฟล์(ไม่มีข้อความ)
+ผู้ใช้ขอนำ9สื่อศิริราชที่ต้องขออนุญาตออก:ลบretrieval.jsonจากGitHub(เก็บในเครื่อง)และลบPDFในเครื่อง;เหลือlocalPDF30;ดาวน์โหลดใหม่ได้หลังได้อนุญาตเท่านั้น
 
 ไม่มี worker หรือ resource claim ที่ลงทะเบียน active; ไม่มี watcher/scheduler
 ไม่มี autonomous runner, accepted corpus, Q&A implementation หรือ saved evaluation metrics

@@ -25,8 +25,7 @@
 
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
-- [บันทึกดาวน์โหลด](../../../raw/dm-siriraj-retinopathy-leaflet-undated/retrieval.json): `downloaded`
-- บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/dm-siriraj-retinopathy-leaflet-undated/source.pdf`;PDFไม่ได้อยู่บนGitHub
+- ต้องขออนุญาตเจ้าของสื่อก่อนใช้:ไม่เผยแพร่บันทึกดาวน์โหลดบนGitHub และลบสำเนาPDFในเครื่องแล้ว(2026-10-06)
 
 **พักการสกัดอัตโนมัติ:**มีข้อกำหนดให้ขออนุญาตเจ้าของสื่อก่อน
 

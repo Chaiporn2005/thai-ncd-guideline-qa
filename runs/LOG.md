@@ -141,3 +141,15 @@
 - Removed:33tracked extraction.json(30docs+3OCR samples);local first-round pages.jsonl(30),ocr-review-v1(images/OCR text);old summaries remain in git history at commit 7c98d8e and extract_pages.py can regenerate.
 - Disease catalogue builder now reads normalization.json(usable/review/empty pages);124catalogue files regenerated.
 - Checks:catalogue --check,manifest,orchestra pass;tests normalize18/extract20(1skip)/fetch pass;0 broken internal links.
+
+
+## 2026-10-06T13:53:57+07:00 — 20261006-permission-hold-removal
+
+- Owner:root session;user asked to remove raw data that requires permission from GitHub.
+- Verified first:no PDF/page text/image/OCR file was ever committed in git history;GitHub held only55metadata receipts(URL/hash/size/pages/outcome).
+- User chose:remove receipts of the9explicit prior-permission records(Siriraj Diabetes Center) from GitHub and delete their local PDFs.
+- Done:9retrieval.json untracked and ignored in data/raw/.gitignore(kept locally);9local source.pdf deleted;30local PDFs remain.
+- Catalogue builder marks permission holds without receipt links or downloaded count;124files regenerated.
+- Earlier commits still contain the9metadata receipts(no document content);history was not rewritten.
+- Checks:catalogue --check,manifest,orchestra pass;tests pass(extract 1skip);0links unresolvable on GitHub.
+- Next:re-download only after recorded permission;manifest notes still describe the earlier local copies(curator update pending).

@@ -267,3 +267,13 @@
 - Run:20261006-processed-replacement
 - Git now tracks 30 normalization.json summaries(no page text);first-round extraction.json/pages.jsonl/OCR samples removed at user request.
 - Catalogue shows usable pages from normalized-v1;page text remains local pending rights;no manifest/rights/acceptance change.
+
+
+## 2026-10-06T13:53:57+07:00 — permission-hold records removed from GitHub
+
+- From:coordinator(root session)
+- To:user/nextsession
+- Type:update
+- Run:20261006-permission-hold-removal
+- 9Siriraj prior-permission receipts are local-only now and their local PDFs were deleted;re-download only with recorded permission.
+- No document content was ever on GitHub;history not rewritten;manifest/rights statuses unchanged.

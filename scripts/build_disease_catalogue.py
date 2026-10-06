@@ -76,7 +76,10 @@ def generate() -> tuple[dict[Path, str], dict]:
             doc_readme = DEST / folder / doc_id / "README.md"
             receipt = ROOT / "data/raw" / doc_id / "retrieval.json"
             extraction = ROOT / "data/processed/normalized-v1" / doc_id / "normalization.json"
-            outcome = load(receipt).get("outcome") if receipt.is_file() else None
+            # Explicit prior-permission holds: the receipt stays local only and the local PDF was
+            # deleted, so the catalogue never links to it and does not count it as downloaded.
+            permission_hold = bool(rights.get(doc_id, {}).get("automated_extraction_hold"))
+            outcome = load(receipt).get("outcome") if receipt.is_file() and not permission_hold else None
             extraction_status = usable_pages(load(extraction)) if extraction.is_file() else None
             downloaded += outcome == "downloaded"
             extracted += extraction.is_file()
@@ -92,17 +95,19 @@ def generate() -> tuple[dict[Path, str], dict]:
                     url = url.replace(" ", "%20").replace("(", "%28").replace(")", "%29")
                     lines.append(f"- [{label}]({url})")
             lines += ["", "## ไฟล์และบันทึกที่เกี่ยวข้อง", "", f"- {link('metadata รายเอกสาร', doc_readme, doc_readme.parent / 'document.json')}", f"- {link('canonical manifest', doc_readme, ROOT / 'data/manifests/documents.jsonl')}"]
-            if receipt.is_file():
+            if receipt.is_file() and not permission_hold:
                 lines.append(f"- {link('บันทึกดาวน์โหลด', doc_readme, receipt)}: `{outcome}`")
             if extraction.is_file():
                 lines.append(f"- {link('สรุปผลสกัด normalized-v1', doc_readme, extraction)}: `{extraction_status}`")
-            if outcome == "downloaded":
+            if permission_hold:
+                lines.append("- ต้องขออนุญาตเจ้าของสื่อก่อนใช้:ไม่เผยแพร่บันทึกดาวน์โหลดบนGitHub และลบสำเนาPDFในเครื่องแล้ว(2026-10-06)")
+            elif outcome == "downloaded":
                 lines.append(f"- บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/{doc_id}/source.pdf`;PDFไม่ได้อยู่บนGitHub")
             elif group != "EXCLUDED":
                 lines.append("- ยังไม่มี PDF ในรอบเตรียมล่าสุด;ลิงก์ต้นทางไม่ยืนยันว่าดาวน์โหลดได้")
             if doc_id in exclusions:
                 lines += ["", f"**เหตุผลที่ไม่นับ:** {escape(exclusions[doc_id])}"]
-            if rights.get(doc_id, {}).get("automated_extraction_hold"):
+            if permission_hold:
                 lines += ["", "**พักการสกัดอัตโนมัติ:**มีข้อกำหนดให้ขออนุญาตเจ้าของสื่อก่อน"]
             lines += ["", "การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus", "ไฟล์นี้สร้างจาก metadata;แก้ข้อมูลต้นทางแล้วรัน `python scripts/build_disease_catalogue.py` ใหม่", ""]
             outputs[doc_readme] = "\n".join(lines)
@@ -110,7 +115,7 @@ def generate() -> tuple[dict[Path, str], dict]:
             payload = {**item, "canonical_source": "data/manifests/documents.jsonl", "canonical_document": record}
             outputs[doc_readme.parent / "document.json"] = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
             index.append(item)
-            table.append(f"| {link(record['title'], group_readme, doc_readme)} | {escape(TYPES.get(record.get('document_type'), record.get('document_type')))} | {escape(outcome) if outcome else 'ไม่มีบันทึก'} | {escape(extraction_status) if extraction_status else 'ไม่มีผลสกัด'} |")
+            table.append(f"| {link(record['title'], group_readme, doc_readme)} | {escape(TYPES.get(record.get('document_type'), record.get('document_type')))} | {'รอขออนุญาต' if permission_hold else escape(outcome) if outcome else 'ไม่มีบันทึก'} | {escape(extraction_status) if extraction_status else 'ไม่มีผลสกัด'} |")
         outputs[group_readme] = f"# {title}\n\n{description}\n\nรายการ{len(ids)};บันทึกดาวน์โหลดสำเร็จ{downloaded};มีผลสกัด{extracted}\nสถานะเหล่านี้มาจากบันทึกเดิม ไม่ใช่ผลตรวจคลินิกหรือการยืนยันว่ามีPDFหลังclone\n\n" + "\n".join(table) + f"\n\n{link('กลับสารบัญทั้งหมด', group_readme, DEST / 'README.md')}\n"
         summaries.append(f"| {link(title, DEST / 'README.md', group_readme)} | {len(ids)} | {downloaded} | {extracted} |")
     outputs[DEST / "README.md"] = "# เอกสารแยกตามโรคและระบบบริการ\n\nเปิดโฟลเดอร์หมวด แล้วเลือกโฟลเดอร์เอกสารเพื่อดูชื่อ/ผู้จัดทำ/ฉบับ/ประเภท/ลิงก์ต้นทางและบันทึกที่เกี่ยวข้อง\n55 selected candidates แบ่งหมวดหลักหนึ่งหมวดต่อเอกสาร;อีก3รายการเก็บใน99_excluded\nเอกสารข้ามโรคมี disease_tags ใน metadata และไม่นับซ้ำ\n\n| หมวด | รายการ | ดาวน์โหลดสำเร็จในบันทึก | มีผลสกัด |\n| --- | --- | --- | --- |\n" + "\n".join(summaries) + "\n\nแต่ละโฟลเดอร์มี README.md และ document.json;เป็นสารบัญ/metadata ไม่ใช่ไฟล์PDFหรือข้อความเต็ม\nraw/processed เก็บบันทึกตาม document_id เพื่อใช้กับ download/extraction pipeline\naccepted0;สิทธิ/QA/human reviewยังค้าง;CKDเป็นoptional\n\nสร้าง/อัปเดต: `python scripts/build_disease_catalogue.py`\nตรวจความตรงกับต้นทาง: `python scripts/build_disease_catalogue.py --check`\nข้อมูลหลักอยู่ที่ [canonical manifest](../manifests/documents.jsonl) และ [ชุดที่เลือก](../manifests/corpus_50_candidates.json)\n[Folder index สำหรับโปรแกรม](index.json)\n"
