@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rag/run_manifest.schema.json",
+  "title": "Retrieval run manifest",
+  "description": "Everything needed to reproduce one retrieval run and to check that two runs in an ablation differ only in the intended component.",
+  "type": "object",
+  "required": ["run_id", "split", "variant", "k", "git_commit", "git_dirty", "config_path", "config_sha256", "corpus_version", "corpus_inventory_sha256", "chunk_config_id", "chunks_sha256", "embedding_model", "index_sha256", "questions_sha256", "results_sha256", "device", "machine", "python", "packages", "started_at", "finished_at", "n_questions"],
+  "additionalProperties": false,
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "split": {"enum": ["smoke", "dev", "test"]},
+    "variant": {"enum": ["A", "B", "C"]},
+    "k": {"type": "integer", "minimum": 1},
+    "git_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "git_dirty": {"type": "boolean", "description": "true means uncommitted changes existed; such runs must not be reported."},
+    "config_path": {"type": "string", "minLength": 1},
+    "config_sha256": {"$ref": "#/$defs/sha256"},
+    "corpus_version": {"type": "string", "minLength": 1},
+    "corpus_inventory_sha256": {"$ref": "#/$defs/sha256"},
+    "chunk_config_id": {"type": "string", "minLength": 1},
+    "chunks_sha256": {"$ref": "#/$defs/sha256"},
+    "embedding_model": {
+      "type": ["object", "null"],
+      "required": ["name", "revision"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "revision": {"type": "string", "minLength": 1}
+      }
+    },
+    "bm25": {"type": ["object", "null"]},
+    "fusion": {"type": ["object", "null"]},
+    "index_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "questions_sha256": {"$ref": "#/$defs/sha256"},
+    "results_sha256": {"$ref": "#/$defs/sha256"},
+    "device": {"enum": ["cpu", "cuda", "mps"]},
+    "machine": {"type": "string", "minLength": 1},
+    "python": {"type": "string", "pattern": "^3\\.[0-9]+\\.[0-9]+"},
+    "packages": {"type": "object", "additionalProperties": {"type": "string"}},
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "n_questions": {"type": "integer", "minimum": 0},
+    "notes": {"type": "string"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

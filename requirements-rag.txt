@@ -1,0 +1,11 @@
+# Retrieval (Track B): Python 3.12, CPU. Install: uv pip install -r requirements-rag.txt
+# torch from PyPI on Windows is the CPU build; on Linux add --index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1
+sentence-transformers==6.1.0
+transformers==5.18.0
+numpy==2.5.3
+faiss-cpu==1.15.1
+pythainlp==5.3.8
+bm25s==0.3.12
+jsonschema==4.26.0
+PyYAML==6.0.3

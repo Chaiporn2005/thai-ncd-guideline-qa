@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rag/page_input.schema.json",
+  "title": "Normalized page row consumed by retrieval (Track B input)",
+  "description": "One row of data/processed/<processed_root>/<document_id>/pages.jsonl as written by scripts/normalize_thai.py. Lists only the fields retrieval depends on; the producer may add others.",
+  "type": "object",
+  "required": ["document_id", "source_sha256", "pdf_page", "text", "text_source", "status", "removed_edge_lines", "human_review"],
+  "additionalProperties": true,
+  "properties": {
+    "document_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "pdf_page": {"type": "integer", "minimum": 1, "description": "One-based PDF page index, blank pages included."},
+    "pdf_page_label": {"type": ["string", "null"]},
+    "printed_page_number": {"type": ["string", "integer", "null"]},
+    "text": {"type": "string", "description": "Retrieval text after normalization (or OCR text when text_source is ocr)."},
+    "text_source": {"enum": ["pdf_text_repaired", "ocr"]},
+    "status": {"enum": ["ok", "ok_minor_issues", "degraded", "garbled", "empty", "ocr_unreviewed"]},
+    "removed_edge_lines": {"type": "array", "items": {"type": "string"}},
+    "human_review": {
+      "description": "null until a person reviews the page; required before degraded/ocr_unreviewed pages are indexed.",
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["reviewed_by", "review_date", "outcome"],
+          "properties": {
+            "reviewed_by": {"type": "string", "minLength": 1},
+            "review_date": {"type": "string", "format": "date"},
+            "outcome": {"enum": ["pass", "fix", "reject"]},
+            "notes": {"type": "string"}
+          }
+        }
+      ]
+    }
+  }
+}
