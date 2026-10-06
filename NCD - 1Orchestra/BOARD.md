@@ -235,3 +235,15 @@
 - git push succeeded;remote main verified equal to local HEAD;rootboard/HANDOFF record publication evidence.
 - Folder catalogue covers58records/55selected/3excluded;no PDFs/full-text/OCR added.
 - No activeworkers/claims;next corpus review gates unchanged.
+
+
+## 2026-10-06T20:16:18+07:00 — Thai text normalization for retrieval review
+
+- From:coordinator(root session)
+- To:user/nextsession
+- Type:update
+- Run:20261006-thai-normalization
+- Review showed retrieval text was unusable in core CPGs(DM 4% Thai,HT broken font map) and triage flags missed a fully MacRoman-encoded CKD booklet.
+- Added normalize_thai.py with deterministic font-map/text repairs,quality gate and OCR-for-empty-pages;details in [normalization pipeline](../docs/normalization_pipeline.md).
+- Local output data/processed/normalized-v1:1766pages,ok+minor1658,degraded18,garbled7,OCR11,empty72;dictionary hit92.5%->99.2%.
+- No manifest/rights/acceptance change,no source publication,no workers/claims/paid API.

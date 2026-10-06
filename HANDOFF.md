@@ -61,6 +61,12 @@ dataมี149tracked filesรวมmetadataเดิม/README/allowlist/invento
 PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยังlocal-only;ไม่มีหลักฐานอนุญาตเผยแพร่ซ้ำเพิ่มเติม
 สถานะrights/humanapproval/acceptedไม่เปลี่ยน;การศึกษาไม่ถูกบันทึกเป็นpublisher permission
 
+รอบ `20261006-thai-normalization`:ผู้ใช้ขอreview dataสำหรับretrievalแล้วให้ทำใหม่และreviewซ้ำ
+พบDM CPGเป็นอักษรไทยเพียง4%(ตัวเลขเป็นglyph IDs),HT CPG font mapเสีย,CKD booklet เป็นMacRoman TIS-620
+เพิ่ม `scripts/normalize_thai.py` +config/tests;ผลlocal `data/processed/normalized-v1/` 1766หน้า:
+ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regression0หน้าแย่ลง
+ดู [normalization pipeline](docs/normalization_pipeline.md);manifest/rights/acceptedไม่เปลี่ยน;ยังไม่commit
+
 ไม่มี worker หรือ resource claim ที่ลงทะเบียน active; ไม่มี watcher/scheduler
 ไม่มี autonomous runner, accepted corpus, Q&A implementation หรือ saved evaluation metrics
 
@@ -70,7 +76,8 @@ PDF39ไฟล์/ข้อความรายหน้า/OCR/ภาพยั
    ให้ผู้ตรวจบันทึกrights/edition/adult scope/clinicalcurrencyและตรวจThai glyphs/tables/units/conditionsกับภาพ
 2. จัดหาช่องทางถูกต้องหรือสำเนาที่ทีมมีสิทธิใช้สำหรับ14blocked/2manualviewers;ไม่retry/bypass403
    9prior-permission holdsต้องบันทึกหลักฐานอนุญาตก่อนautomaticextraction/RAG
-3. แก้OCR/readingorderจากภาพจริง,finalcontentdedup,ให้คนapprove inclusionตามgates
+3. ใช้ `data/processed/normalized-v1` แทนpages.jsonlเดิมสำหรับretrieval;คนตรวจหน้าdegraded/garbled/ocr_unreviewed,
+   ติดป้ายsectionผู้ใหญ่/เด็ก/ตั้งครรภ์(DM CPG90/282หน้า),จัดตาราง/เลขอ้างอิงsuperscript,finalcontentdedup,ให้คนapprove inclusionตามgates
 4. Curatorตั้งacceptedเมื่อครบหลักฐาน แล้วเริ่มtoken-awarechunking/STCPUbaselineและvariantที่สอง
 
 ทำส่วนค้น/จัด metadata ที่ได้รับมอบหมายได้; ห้ามอ้างว่าทีมเลือก provider/budget/reviewer แล้ว

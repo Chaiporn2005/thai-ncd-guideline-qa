@@ -107,3 +107,18 @@
 - Explicitly labeled all architecture components as design only; corpus accepted0, no index/Q&A/provider/model/gold/metrics.
 - Added root README/plan/board/HANDOFF and RAG workstream pointers; decision 0007 captures choices and limits.
 - No corpus/source documents changed; no user draft files staged; no agents/paid API started.
+
+
+## 2026-10-06T20:16:18+07:00 — 20261006-thai-normalization
+
+- Owner:root session for user;no delegated agents,parallel workers or paid API.
+- User asked for a review of retrieval data,then to redo the data and review again.
+- Review found:DM CPG 4% Thai text(digits as glyph IDs),HT CPG broken ToUnicode,CKD booklet MacRoman TIS-620,dropped SARA AM/tone marks;original flags missed some.
+- Added scripts/normalize_thai.py,configs/thai_normalization.json,tests/test_normalize_thai.py,docs/normalization_pipeline.md.
+- Method:in-memory font ToUnicode repair(TH Sarabun glyph order,SARA AA/AM,NIKHAHIT-as-space,first-cluster labels),deterministic Thai text rules,edge-line removal,page quality gate,opt-in local OCR for empty pages only.
+- Output local-only:data/processed/normalized-v1/<id>/pages.jsonl+normalization.json;30documents/1766pages;ok1542,ok_minor116,degraded18,garbled7,ocr_unreviewed11,empty72;0failures.
+- Checks:18new tests pass;existing extractor tests20 pass(1 skipped:Poppler not on PATH);per-page regression vs original 0 worse/584 improved;rendered-page comparisons DM p40,HT p30/p77,lipid p26,CKD anemia p20,CKD booklet p20,geriatric p4,stroke leaflet p2.
+- Independent dictionary check(PyThaiNLP in scratch only,not a repo dependency):Thai word hit rate92.5%->99.2%.
+- Decision:Tesseract Thai OCR worse than garbled PDF text on NUL-tone pages,so OCR fills only empty pages with>=50 Thai letters.
+- Not changed:manifest,rights,accepted0,human/clinical approval,original pages.jsonl;no network source collection;no index/chunking.
+- Next:human fidelity review of degraded/garbled/OCR pages;adult section tagging(DM CPG90/282 pages mention children/pregnancy);table/citation handling;token-aware chunking on normalized-v1.

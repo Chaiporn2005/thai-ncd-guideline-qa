@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "description": "Per-document decoders for scripts/normalize_thai.py. Default font repair and text rules apply to every document. dropped_sara_am converts consonant/tone+space+SARA AA to SARA AM; without it the space is only deleted, because after font repair most such spaces are layout artifacts (e.g. รองเท้ า). Enable it only after checking every remaining case.",
+  "documents": {
+    "ckd-public-kidney-prevention-tips": {
+      "legacy_decoder": "mac_thai",
+      "evidence": "2026-10-06: Type1 fonts with /Differences emit MacRoman-looking text; MacRoman bytes decode as TIS-620 with Mac Thai positional marks (checked against rendered PDF page 20)."
+    },
+    "lipid-dms-stroke-public-manual": {
+      "legacy_decoder": "cp1252_cp874_tokens",
+      "evidence": "2026-10-06: PSL-Similanya simple TrueType fonts without ToUnicode emit cp1252 Latin text for TIS-620 bytes, e.g. page 20 heading decodes to the Thai manual title."
+    },
+    "ht-siriraj-hypertension-public-1587-verified-20261005": {
+      "dropped_sara_am": true,
+      "evidence": "2026-10-06: no SARA AM extracted; all 65 consonant(+tone)+space+SARA AA cases are dropped SARA AM (e.g. ส ารวจ, ค าจ ากัด, ท าให้)."
+    },
+    "lipid-siriraj-food-cholesterol-2564-review": {
+      "dropped_sara_am": true,
+      "evidence": "2026-10-06: no SARA AM extracted; after the NIKHAHIT-as-space font repair, all 14 remaining consonant(+tone)+space+SARA AA cases are dropped SARA AM (e.g. ส านัก, น ้าสลัด, ต ่า)."
+    },
+    "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005": {
+      "dropped_sara_am": true,
+      "evidence": "2026-10-06: after font repair, all 40 consonant(+tone)+space+SARA AA cases are dropped SARA AM (e.g. ท าให้, ส าหรับ, น ้าตาล)."
+    }
+  }
+}

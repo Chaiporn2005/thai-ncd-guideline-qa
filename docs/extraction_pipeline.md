@@ -77,3 +77,9 @@ Representative error codes are `unsafe_document_id`, `path_escape`, `invalid_pdf
 ## Verification performed by this worker
 
 On 2026-10-05 the synthetic test suite passed **19 tests**, with no skips, in the bundled Windows runtime. It checked blank-page numbering and unchanged clinical digits, UTF-8 Thai title preservation, image-only scans, corrupt/encrypted PDFs, unchanged cache reuse, changed-source preservation, wrong-source manifest hash detection, cache tamper detection, changed settings, path traversal/reserved IDs, symlink escape, page/byte/global budgets, empty and malformed cohorts, missing-file handling, failed render budget accounting, and cleanup on interruption. One integration test ran the installed Poppler renderer and Tesseract with English OCR on a synthetic scan, confirming OCR remains separate and unreviewed. Thai OCR accuracy and real Thai clinical PDF layout/content were not validated. No source document was retrieved or processed by this worker; network requests and paid API calls were zero.
+
+## Follow-up normalization
+
+The 2026-10-06 review found font-map and legacy-encoding failures that these flags under-reported.
+Use [Thai text normalization](normalization_pipeline.md) output in `data/processed/normalized-v1/`
+for retrieval experiments; this extraction output is preserved unchanged as the original record.
