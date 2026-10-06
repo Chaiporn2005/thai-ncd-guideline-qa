@@ -104,6 +104,19 @@ class OcrRunner(unittest.TestCase):
                     run(Path(tmp), "--shard", "0", "--num-shards", "1", ocr=ocr, env={"TYPHOON_OCR_API_KEY": ""})
             ocr.assert_not_called()
 
+    def test_env_file_supplies_named_key_without_leaking_it(self):
+        seen = []
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            env_file = folder / ".env"
+            env_file.write_text("# comment\nTYPHOON_OCR_API_KEY_B='from-file-key'\nEMPTY=\n", encoding="utf-8")
+            _, stdout = run(folder, "--shard", "0", "--num-shards", "1", "--limit", "1",
+                            "--env-file", str(env_file), "--api-key-env", "TYPHOON_OCR_API_KEY_B",
+                            ocr=lambda item, key, *a: seen.append(key) or "ok",
+                            env={"TYPHOON_OCR_API_KEY_B": ""})
+            self.assertEqual(seen, ["from-file-key"])
+            self.assertNotIn("from-file-key", stdout + (folder / "shard-0-of-1.jsonl").read_text(encoding="utf-8"))
+
     def test_dry_run_makes_no_calls(self):
         with tempfile.TemporaryDirectory() as tmp:
             ocr = unittest.mock.Mock()

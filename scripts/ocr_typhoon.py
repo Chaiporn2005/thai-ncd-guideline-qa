@@ -12,8 +12,8 @@ separate step.
 
 Usage:
     python scripts/ocr_typhoon.py --shard 0 --num-shards 2 --dry-run
-    $env:TYPHOON_OCR_API_KEY = "<your key>"   # in your own shell, never in a file
-    python scripts/ocr_typhoon.py --shard 0 --num-shards 2
+    $env:TYPHOON_OCR_API_KEY = "<your key>"   # in your own shell, or:
+    python scripts/ocr_typhoon.py --shard 0 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_A
 """
 
 from __future__ import annotations
@@ -59,6 +59,18 @@ def select_pages(pages_root: Path, raw_root: Path, statuses: tuple[str, ...]) ->
     return selected, skipped
 
 
+def load_env_file(path: Path) -> None:
+    """Read KEY=VALUE lines into os.environ without printing values; existing variables win."""
+    for line in path.read_text(encoding="utf-8-sig").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        name, value = line.split("=", 1)
+        name, value = name.strip(), value.strip().strip('"').strip("'")
+        if name and value and not os.environ.get(name):
+            os.environ[name] = value
+
+
 def done_keys(out_file: Path) -> set[tuple[str, int]]:
     if not out_file.exists():
         return set()
@@ -93,6 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--document-id", action="append", default=[], help="limit to these documents")
     parser.add_argument("--limit", type=int, default=None, help="maximum pages in this shard (e.g. a CER sample)")
     parser.add_argument("--api-key-env", default="TYPHOON_OCR_API_KEY")
+    parser.add_argument("--env-file", type=Path, default=None, help="local KEY=VALUE file, e.g. .env (git-ignored)")
     parser.add_argument("--model", default="typhoon-ocr")
     parser.add_argument("--task-type", default="v1.5")
     parser.add_argument("--dry-run", action="store_true", help="list the shard without network calls")
@@ -117,9 +130,11 @@ def main(argv: list[str] | None = None) -> int:
                           "pages": [f"{p['document_id']}:p{p['pdf_page']}" for p in todo]}, indent=2))
         return 0
 
+    if args.env_file:
+        load_env_file(args.env_file)
     api_key = os.environ.get(args.api_key_env)
     if not api_key:
-        parser.error(f"set the {args.api_key_env} environment variable in your own shell")
+        parser.error(f"set {args.api_key_env} in your shell or in the --env-file")
     args.out_dir.mkdir(parents=True, exist_ok=True)
     meta = {"model": args.model, "task_type": args.task_type, "typhoon_ocr_version": version("typhoon-ocr"),
             "shard": args.shard, "num_shards": args.num_shards,
