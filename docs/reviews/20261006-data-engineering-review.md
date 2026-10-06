@@ -1,6 +1,7 @@
 # Review งาน data engineering — 2026-10-06
 
 - Reviewer: เพื่อนร่วมทีม (ผ่าน Claude Code) — ตรวจจาก repo `main` commit `8044691`
+  และเทียบกับ `04551b2` (เพิ่ม `data/by_disease/` ซึ่งไม่เปลี่ยนข้อค้นพบ)
 - ขอบเขต: ไฟล์ที่อยู่ใน Git เท่านั้น (manifest, `retrieval.json`, `extraction.json`, docs, scripts)
   ไม่ได้เปิด PDF หรือ `pages.jsonl` เพราะอยู่เฉพาะในเครื่องผู้ดูแล
 - เอกสารนี้**ชี้ปัญหาและเกณฑ์ว่าแก้แล้ว** ส่วนวิธีแก้ให้ owner สาย data ตัดสินใจเอง
