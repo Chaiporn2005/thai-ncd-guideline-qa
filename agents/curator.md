@@ -8,3 +8,4 @@ Preserve unknown rights/access/extraction statuses and provenance notes.
 Use `scripts/validate_manifest.py`, inspect warnings and report counts by works/editions/acceptance.
 Only move to accepted after content retrieval, QA and actual human review evidence.
 Count mirrors, pages and chunks separately; do not assert course-equivalent approval without evidence.
+Follow `docs/data_engineering_rules.md` for review records, dedup, corpus versions and funnel reports.
