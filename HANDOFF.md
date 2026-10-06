@@ -69,6 +69,13 @@ ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regres
 ผู้ใช้ขอลบผลสกัดรอบแรก:ลบpages.jsonl/extraction.json/ocr-review-v1;ขึ้นGitเฉพาะnormalization.json30ไฟล์(ไม่มีข้อความ)
 ผู้ใช้ขอนำ9สื่อศิริราชที่ต้องขออนุญาตออก:ลบretrieval.jsonจากGitHub(เก็บในเครื่อง)และลบPDFในเครื่อง;เหลือlocalPDF30;ดาวน์โหลดใหม่ได้หลังได้อนุญาตเท่านั้น
 
+รอบ `20261006-recheck-download01` (Calvin, macOS, Python 3.9.6/pypdf 6.14.2):clone repo ใหม่แล้วตรวจ data/raw และดาวน์โหลดซ้ำตาม download pipeline
+- Cross-check metadata:46retrieval.json ตรงกับ `documents.jsonl` ทั้ง URL/sha256/pdf_pages;30normalization.json ตรง source_sha256/pdf_pages;validate_manifest ผ่าน
+- ดาวน์โหลดด้วย `scripts/fetch_documents.py --local-review --links data/agent_runs/20261005-local-prep/verified_links.json` เฉพาะ30รายการที่เคยdownloaded:30network attempts/30downloaded
+- 30PDF/1766หน้า/208.6MB;sha256บนดิสก์ตรงmanifestและreceiptเดิมทุกไฟล์,จำนวนหน้าและbytesตรงทุกไฟล์ (ไม่มีการเปลี่ยนฉบับที่ต้นทาง)
+- ไม่ได้ลอง14แหล่ง403(ไม่retry),2manual viewers และ9Siriraj permission holds
+- PDF/run log อยู่เฉพาะในเครื่องและถูกignore;retrieval.jsonที่สคริปต์เขียนทับถูกคืนเป็นฉบับcommitเดิม;rights/accepted ไม่เปลี่ยน
+
 ไม่มี worker หรือ resource claim ที่ลงทะเบียน active; ไม่มี watcher/scheduler
 ไม่มี autonomous runner, accepted corpus, Q&A implementation หรือ saved evaluation metrics
 
@@ -77,6 +84,8 @@ ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regres
 1. อ่าน [local preparation](docs/local_preparation_20261005.md) และ [review queue](data/manifests/local_preparation_20261005.csv)
    ให้ผู้ตรวจบันทึกrights/edition/adult scope/clinicalcurrencyและตรวจThai glyphs/tables/units/conditionsกับภาพ
 2. จัดหาช่องทางถูกต้องหรือสำเนาที่ทีมมีสิทธิใช้สำหรับ14blocked/2manualviewers;ไม่retry/bypass403
+   14แหล่ง403เป็นddc.moph.go.th/chulabhornchannel/dmthai.org อาจบล็อกคำขออัตโนมัติหรือIPต่างประเทศ:
+   ให้คนในทีมดาวน์โหลดเองด้วยbrowserปกติบนเครือข่ายไทย แล้วบันทึกเป็นแหล่ง/ช่องทางใหม่พร้อมhash ไม่ใช่retryด้วยheaders/cookies
    9prior-permission holdsต้องบันทึกหลักฐานอนุญาตก่อนautomaticextraction/RAG
 3. ใช้ `data/processed/normalized-v1` แทนpages.jsonlเดิมสำหรับretrieval;คนตรวจหน้าdegraded/garbled/ocr_unreviewed,
    ติดป้ายsectionผู้ใหญ่/เด็ก/ตั้งครรภ์(DM CPG90/282หน้า),จัดตาราง/เลขอ้างอิงsuperscript,finalcontentdedup,ให้คนapprove inclusionตามgates

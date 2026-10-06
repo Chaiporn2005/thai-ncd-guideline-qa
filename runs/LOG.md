@@ -153,3 +153,14 @@
 - Earlier commits still contain the9metadata receipts(no document content);history was not rewritten.
 - Checks:catalogue --check,manifest,orchestra pass;tests pass(extract 1skip);0links unresolvable on GitHub.
 - Next:re-download only after recorded permission;manifest notes still describe the earlier local copies(curator update pending).
+
+
+## 2026-10-06 — 20261006-recheck-download01
+
+- Owner:Calvin session (macOS);user asked to clone the repo, cross-check data/raw, and download documents following the download pipeline guidelines.
+- Cross-check:46committed retrieval.json receipts match documents.jsonl on URL/sha256/pdf_pages;30normalization.json match source_sha256/pdf_pages;validate_manifest passes.
+- Download:fetch_documents.py --local-review with verified_links.json, restricted to the30previously downloaded IDs;30network attempts,30downloaded,0hash conflicts.
+- Result:30PDFs/1766pages/208.6MB;on-disk sha256, page count and byte size identical to manifest and earlier receipts, so no upstream edition changes were detected.
+- Not attempted:14HTTP403 sources(no retry/bypass),2manual viewers,9Siriraj prior-permission holds.
+- PDFs and run log are local-only(ignored);script-rewritten retrieval.json files were restored to the committed versions;rights/accepted status unchanged.
+- Next:team member on a Thai network downloads the14blocked sources manually in a normal browser and records them as a new channel with hashes.
