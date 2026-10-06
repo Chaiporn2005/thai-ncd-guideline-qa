@@ -26,6 +26,7 @@ def run(folder: Path, *extra: str, ocr=None, env=None):
     out = io.StringIO()
     patches = [unittest.mock.patch.object(tool, "select_pages", return_value=(list(PAGES), [])),
                unittest.mock.patch.object(tool, "MIN_INTERVAL_S", 0),
+               unittest.mock.patch.object(tool, "utf8_ready", return_value=True),
                unittest.mock.patch.object(tool.time, "sleep"),
                unittest.mock.patch.object(tool, "version", return_value="test"),
                unittest.mock.patch.dict(os.environ, env if env is not None else {"TYPHOON_OCR_API_KEY": KEY})]

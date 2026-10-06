@@ -13,7 +13,7 @@ separate step.
 Usage:
     python scripts/ocr_typhoon.py --shard 0 --num-shards 2 --dry-run
     $env:TYPHOON_OCR_API_KEY = "<your key>"   # in your own shell, or:
-    python scripts/ocr_typhoon.py --shard 0 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_A
+    python -X utf8 scripts/ocr_typhoon.py --shard 0 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_A
 """
 
 from __future__ import annotations
@@ -83,6 +83,12 @@ def done_keys(out_file: Path) -> set[tuple[str, int]]:
     return keys
 
 
+def utf8_ready() -> bool:
+    """typhoon-ocr reads `pdfinfo -enc UTF-8` in text mode; on Windows the locale codepage fails
+    on Thai PDF metadata and subprocess silently returns stdout=None. UTF-8 mode avoids that."""
+    return sys.platform != "win32" or bool(sys.flags.utf8_mode)
+
+
 def is_rate_limit(exc: Exception) -> bool:
     return getattr(exc, "status_code", None) == 429 or type(exc).__name__ == "RateLimitError"
 
@@ -130,6 +136,8 @@ def main(argv: list[str] | None = None) -> int:
                           "pages": [f"{p['document_id']}:p{p['pdf_page']}" for p in todo]}, indent=2))
         return 0
 
+    if not utf8_ready():
+        parser.error("on Windows run with UTF-8 mode: python -X utf8 scripts/ocr_typhoon.py ...")
     if args.env_file:
         load_env_file(args.env_file)
     api_key = os.environ.get(args.api_key_env)

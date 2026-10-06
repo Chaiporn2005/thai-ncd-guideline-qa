@@ -1,6 +1,26 @@
 # Normalized text summaries
 
-## normalized-v2 (2026-10-06, current for retrieval)
+## normalized-v3 (2026-10-07, current for retrieval)
+
+`normalized-v2` + Typhoon OCR ของหน้าที่ติดธง (ทีมตัดสินใช้บริการภายนอกนี้ 2026-10-07; ดู rights queue)
+
+```powershell
+python -X utf8 scripts/ocr_typhoon.py --shard 0 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_A
+python -X utf8 scripts/ocr_typhoon.py --shard 1 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_B
+python -X utf8 scripts/merge_ocr.py --source data/processed/normalized-v2 --ocr-dir data/processed/ocr-typhoon-v1 --out data/processed/normalized-v3
+```
+
+- เลือกหน้า empty (เฉพาะที่มีภาพ) / garbled / degraded = 90 หน้า; ข้ามหน้าว่างจริง 40 หน้า; OCR สำเร็จ 90/90
+- รวมเข้า v3: หน้า OCR เป็น `text_source: ocr`, `status: ocr_unreviewed`; ข้อความ PDF เดิมเก็บใน `pre_normalization_text`
+- ตัดสิ่งที่โมเดลเขียนเองออกจาก `text`: คำบรรยายภาพ `<figure>` (เก็บแยกใน `ocr_figures`), `<page_number>`, HTML entities
+  ไม่แก้ตัวเลข หน่วย เครื่องหมาย หรือคำ
+- สถานะหน้า: ok 1,551 / ok_minor_issues 118 / ocr_unreviewed 77 / empty 53; page rows ผ่าน `page_input` schema 0 error
+- ใช้ค้นได้ทันที 30 เอกสาร; **ครบ 39 เอกสารเมื่อคนตรวจหน้า `ocr_unreviewed` 77 หน้า**
+- ตัวอย่างข้อผิดพลาด OCR ที่พบ: "นักโฆษณาการ" (ควรเป็น นักโภชนาการ), "สิรราช" (ขาดสระ) → ต้องตรวจก่อนใช้
+
+hash อยู่ใน [v3 inventory](../manifests/corpus_normalized-v3_inventory.json)
+
+## normalized-v2 (2026-10-06)
 
 สร้างโดย Track B ด้วย `scripts/normalize_thai.py` (tool 1.0, pypdf 6.10.0, Python 3.12) **ไม่รัน OCR**
 จาก PDF 39 ไฟล์ = 30 ไฟล์เดิม + 9 สื่อศูนย์เบาหวานศิริราช (ทีมตัดสินใช้เพื่อการศึกษา 2026-10-06; ดู rights queue)

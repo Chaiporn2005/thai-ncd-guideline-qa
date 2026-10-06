@@ -1,0 +1,42 @@
+{
+  "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
+  "title": "ภาวะน้ำตาลในเลือดต่ำ",
+  "source_sha256": "a4e69aafb37c0a5f6ffea1857c29b95c9c9cc9862dfe109bc66894abf33d6e42",
+  "pdf_pages": 1,
+  "options": {},
+  "font_repair": {
+    "font_actions": {},
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {},
+  "status_counts": {
+    "ocr_unreviewed": 1
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1
+    ]
+  },
+  "removed_edge_lines": 0,
+  "ocr_pages": 1,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "e435f27b39c5fcecb12bbc109f660309203ba7289f3904223ac450e4ca8b7e1b",
+  "created_at": "2026-10-06T17:28:55.904436+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v2",
+    "pages_jsonl_sha256": "9bf16236e03ecaa09ad7398e583fd0bc2f3b3f634ede9a2ddac053ab3fb99bc8"
+  }
+}

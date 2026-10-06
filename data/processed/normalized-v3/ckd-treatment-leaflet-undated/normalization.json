@@ -1,0 +1,43 @@
+{
+  "document_id": "ckd-treatment-leaflet-undated",
+  "title": "แผ่นพับทางเลือกการรักษาเมื่อไตวาย",
+  "source_sha256": "789aca82ab9f034f40dee7716378d23d2960450c2dc8a7bb746168371c40fed7",
+  "pdf_pages": 2,
+  "options": {},
+  "font_repair": {
+    "font_actions": {},
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {},
+  "status_counts": {
+    "ocr_unreviewed": 2
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      2
+    ]
+  },
+  "removed_edge_lines": 0,
+  "ocr_pages": 2,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "4ae7788929447e2ec41c880c990595a469390bc486181064047e122e3c815255",
+  "created_at": "2026-10-06T17:28:55.805075+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v2",
+    "pages_jsonl_sha256": "eab07d3d0ebc6014adbeddcda9c3ee4fcfa9b0b22fe64e554767354635eb9219"
+  }
+}
