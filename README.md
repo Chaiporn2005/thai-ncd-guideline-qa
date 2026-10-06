@@ -10,6 +10,7 @@
 ## เริ่มอ่าน
 
 - [โฟลเดอร์เอกสารแยกตามโรคและระบบบริการ](data/by_disease/README.md)
+- [ภาพออกแบบระบบ RAG สำหรับโครงการนี้](docs/rag_architecture.md)
 - [ส่งต่องานล่าสุด](HANDOFF.md)
 - [ผลเตรียมเอกสารในเครื่อง](docs/local_preparation_20261005.md)
 - [คิวตรวจรายเอกสาร](data/manifests/local_preparation_20261005.csv)

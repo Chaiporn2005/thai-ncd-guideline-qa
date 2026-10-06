@@ -171,6 +171,8 @@ Embedding candidate แรก: `intfloat/multilingual-e5-base` ผ่าน Sent
 
 ## 8. RAG และ ablation
 
+ภาพ end-to-end เฉพาะ NCD (ingestion, eligibility policy, retrieval, citations และ evaluation) อยู่ใน [RAG architecture](docs/rag_architecture.md); เป็น design เท่านั้น ยังไม่มี implementation หรือผลทดลอง
+
 | Variant | Retrieval | จุดทดลอง |
 |---|---|---|
 | A | SentenceTransformers dense | baseline CPU |
@@ -180,6 +182,7 @@ Embedding candidate แรก: `intfloat/multilingual-e5-base` ผ่าน Sent
 
 คง corpus, chunking, embedding, generator, answer prompt, test set และ evidence budget ให้เทียบได้
 ระบุ candidate top-k, final top-k, context token budget และ compute/device
+ด่าน ingestion ต้องใช้ accepted documents ที่ผ่านเงื่อนไขสิทธิสำหรับ RAG และ content QA แล้ว; retrieval ต้องกรองตามโรค/ประชากร/edition และต้องเก็บ PDF page + section provenance ไว้สำหรับ citation
 image reading หลัง text retrieval และ visual retrieval เป็นคนละการทดลอง
 Visual RAG ไม่ได้ระบุชื่อในรายการ optional extensions; ไม่อ้างคะแนนเพิ่มอัตโนมัติ
 GraphRAG/LoRA/agentic answering เป็น optional ภายหลังเมื่อ failure analysis แสดงเหตุผล

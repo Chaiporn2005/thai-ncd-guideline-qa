@@ -2,16 +2,17 @@
 
 - Owner role: rag_engineer
 - Active session / last run: none registered
-- Updated: 2026-10-05
-- State: not_started
+- Updated: 2026-10-06
+- State: design_ready_implementation_not_started
 
 ## Evidence
 
-มีแผนใน [plan.md](../../plan.md); ยังไม่มี retrieval implementation หรือ Q&A demo
+มี [architecture design](../../docs/rag_architecture.md) และแผนใน [plan.md](../../plan.md);
+ยังไม่มี retrieval implementation, index, LLM/provider หรือ Q&A demo; accepted corpus0
 
 ## Next / dependencies
 
-เมื่อมี accepted corpus: token-aware chunking → SentenceTransformers CPU dense baseline
+เมื่อมี accepted corpusและสิทธิใช้ RAGชัดเจน: token-aware chunking → SentenceTransformers CPU dense baseline
 → BM25/RRF variant → citation-aware demo; กำหนด provider/model/tool ที่ทีมเลือกจริง
 บันทึก corpus/config version และคำสั่ง reproduce ทุก experiment
 

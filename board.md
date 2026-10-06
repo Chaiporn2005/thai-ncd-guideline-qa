@@ -6,6 +6,9 @@
 
 ## เสร็จแล้ว
 
+- [x] ออกแบบ flow RAG เฉพาะ NCD พร้อม diagram ingest/query/evaluation และลิงก์ citation policy ใน [docs/rag_architecture.md](docs/rag_architecture.md)
+- [x] แยกสิทธิ/accepted-data gate จากคำตอบ; บันทึกว่า runtime/index/model ยังไม่มี
+
 - [x] อ่าน PROJECT_INSTRUCTION ครบ 8 หน้าและเทียบกับหัวข้อ clinical/NCDs
 - [x] ยืนยันบัญชี GitHub `Chaiporn2005`
 - [x] ผู้ใช้เลือกชื่อ `thai-ncd-guideline-qa` และ visibility Private
@@ -47,6 +50,11 @@
 - [x] ทดสอบ25กรณี/metadata58/workflowผ่าน และpushcode/metadata/reportsรอบเตรียมแล้ว:commit `9751d50`
 
 ## งานรอบนี้
+
+รอบ `20261006-rag-design`:ออกแบบระบบตามภาพและลง [architecture](docs/rag_architecture.md) ในโครงการ
+แสดง pipeline หลาย agents → rights/QA/human gates → chunk → dense/BM25 index → query → citations/abstention → evaluation
+ข้อเสนอและการตรวจสถานะอยู่ใน [decision 0007](NCD%20-%201Orchestra/decisions/0007-ncd-rag-architecture.md);
+design เท่านั้น ไม่มี index/runner/demo/model/provider และ accepted ยังคง0
 
 รอบ `20261006-disease-folders`:จัดสารบัญเอกสารเป็นโฟลเดอร์ใน[data/by_disease](data/by_disease/README.md)
 DM17/HT10/LIPID13/CKD9/NCD_SERVICE6;99_excluded3รายการพร้อมเหตุผล

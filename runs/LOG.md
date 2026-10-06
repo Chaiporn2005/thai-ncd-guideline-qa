@@ -97,3 +97,13 @@
 - Checks:58unique records/55selected/3excluded,58metadata JSON match canonical,335internal links valid;builder/manifest/orchestra checks passed.
 - No rawPDF/page text/OCR image uploads,no acceptance/rights changes,no network source collection,no new paid API or workers.
 - Board/HANDOFF/CORPUS/overview updated;publication evidence follows verified push.
+
+
+## 2026-10-06 — 20261006-rag-design
+
+- User:ลอง design ระบบ RAG จากภาพตัวอย่างให้เห็นภาพในโครงการนี้.
+- Created docs/rag_architecture.md with ingestion/indexing, query/answer safeguards and evaluation Mermaid diagrams.
+- Adapted flow for Thai NCD: multi-agent collection; permissions/content/human gates; page-grounded chunk metadata; CPU dense baseline; Thai BM25/RRF comparison; source-linked citations; clarify/abstain.
+- Explicitly labeled all architecture components as design only; corpus accepted0, no index/Q&A/provider/model/gold/metrics.
+- Added root README/plan/board/HANDOFF and RAG workstream pointers; decision 0007 captures choices and limits.
+- No corpus/source documents changed; no user draft files staged; no agents/paid API started.

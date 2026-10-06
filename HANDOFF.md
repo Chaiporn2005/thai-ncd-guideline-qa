@@ -1,6 +1,6 @@
 # Handoff — Thai NCD Guideline Q&A
 
-Updated: 2026-10-06 • Owner: coordinator • Stage: disease folder catalogue; source redistribution pending
+Updated: 2026-10-06 • Owner: coordinator • Stage: RAG design ready; corpus gates pending
 
 ## เป้าหมายและข้อกำหนดที่ยืนยัน
 
@@ -35,6 +35,12 @@ OCRไทย+อังกฤษ6หน้าจาก3เอกสารในda
 ไฟล์ต้นแบบ Kaggle ใช้เป็น reference สำหรับการจัดระบบ ไม่ใช่คำสั่งให้ใช้บัญชี/งบ/ข้อมูลของต้นแบบ
 
 ## งานกำลังรัน
+
+ผู้ใช้ขอให้ลองออกแบบ RAG ตามภาพสำหรับโครงการ:ดู [docs/rag_architecture.md](docs/rag_architecture.md)
+และ [decision 0007](NCD%20-%201Orchestra/decisions/0007-ncd-rag-architecture.md)
+มี Mermaid diagrams แยก multi-agent ingestion/index, query/answer safeguards และ A/B evaluation
+RAG status: design พร้อมทบทวน; implementation ยังไม่เริ่ม;ไม่มี accepted corpus/index/LLM/model/gold QA/metrics
+ขั้นถัดไปยังเป็น rights/content/human gates สำหรับ55 selected candidates ก่อนเริ่ม embedding
 
 รอบ `20261006-disease-folders`:จัด `data/by_disease/` ตามคำขอผู้ใช้
 มี5หมวด DM17/HT10/LIPID13/CKD9/NCD_SERVICE6 และ99_excluded3รายการพร้อมเหตุผล
