@@ -1,0 +1,4325 @@
+{
+ "review_id": "round2",
+ "exported_at": "2026-10-07T17:40:10.278Z",
+ "decisions": [
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p49",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ซึ่งในการรักษายังไม่ลดลงก็จะเข้าสู่กระบวนการควบคุมอาหารอย่างเข้มข้นต่ออีก 6 สัปดาห์",
+     "new": "ซึ่งในการรักษาเพื่อลดไขมันในเลือด จะเริ่มต้นจากการควบคุมอาหารประมาณ 6 สัปดาห์",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "A2 begins with diet control for approximately 6 weeks; text substituted a repeated later clause.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "และนำหนักตัวเพิ่มมากขึ้น",
+     "new": "และน้ำหนักตัวเพิ่มมากขึ้น",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "A3 reads น้ำหนักตัว.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Sulfonyureas",
+     "new": "Sulfonylureas",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "A3 zoom shows Sulfonylureas.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "หากค่าระดับน้ำตาล > 126",
+     "new": "หากค่าระดับน้ำตาล ≥ 126",
+     "kind": "sign",
+     "confidence": "high",
+     "evidence": "A5 has greater-than-or-equal sign before 126.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p53",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "(5 คะแนน) **20**\n    3.4",
+     "new": "(5 คะแนน)\n    3.4",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Only one total 20 is printed for row 3.3; this second total is duplicated.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "(10 คะแนน) **30**\n\n4.",
+     "new": "(10 คะแนน)\n\n4.",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Only one total 30 is printed for row 3.4; this second total is duplicated.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p157",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "หน้าชืด",
+     "new": "หน้าซีด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Symptom bullet reads หน้าซีด.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   เช่น ถอดเสื้อผ้า\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No instruction to remove clothes appears under stop activity.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เพื่อรับพาไปโรงพยาบาล",
+     "new": "เพื่อรีบพาไปโรงพยาบาล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Instruction reads เพื่อรีบพาไปโรงพยาบาล.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "อย่าได้ลิ้น",
+     "new": "อมยาใต้ลิ้น",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "Treatment begins อมยาใต้ลิ้น.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "อยมาใต้ลิ้นแล้ว",
+     "new": "อมยาใต้ลิ้นแล้ว",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "Treatment clause reads อมยาใต้ลิ้นแล้วไม่ดีขึ้น.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p238",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "วัฒนะ",
+     "new": "ร้อยละ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ขึ้นนามสกุลและเลขประชาชน",
+     "new": "ชื่อ-นามสกุลและเลขประชาชน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ประชาราในเขต",
+     "new": "ประชากรในเขต",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ข้าฯ่อน",
+     "new": "ซ้ำซ้อน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ศาหน้าข้อไม่ไชพระ",
+     "new": "คำนำหน้าชื่อไม่ใช่พระ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "านะสมรสไม่ใช่สมณะแต่ตำหน้าข้อเป็นพระ</td><td>707,",
+     "new": "านะสมรสไม่ใช่สมณะแต่คำนำหน้าชื่อเป็นพระ</td><td>707,",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "td></tr><tr><td>13. ตำหน้าข้อเป็นพระ แต่เพศไม่ใช่",
+     "new": "td></tr><tr><td>13. คำนำหน้าชื่อเป็นพระ แต่เพศไม่ใช่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "3,201,783</td><td>36",
+     "new": "3,201,783</td><td>38",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "0.6130",
+     "new": "0.6138",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "106,973",
+     "new": "108,973",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "19.8055",
+     "new": "19.9055",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "707,214</td><td>0</td><td>0.0011",
+     "new": "707,214</td><td>8</td><td>0.0011",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "29.8050",
+     "new": "29.8030",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "0.0004",
+     "new": "0.0001",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "14,071",
+     "new": "14,671",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p244",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "นอกจากสถานบริการ",
+     "new": "นอกสถานบริการ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ประวัติลูกบุหรี่",
+     "new": "ประวัติสูบบุหรี่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ประวัติเต็มเครื่องดื่ม",
+     "new": "ประวัติดื่มเครื่องดื่ม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "BISLEVEL",
+     "new": "BSLEVEL",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "366.50",
+     "new": "356.50",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "BTEST",
+     "new": "BSTEST",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ากหลอดเลือดดำ โดยไม่ออดอาหาร 3 = ตรวจน้ำตาลใน เล",
+     "new": "ากหลอดเลือดดำ โดยไม่อดอาหาร 3 = ตรวจน้ำตาลใน เล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เส้นเลือดฝอย โดยไม่ ออดอาหาร 9 = ไม่ตรวจน้ำตาลใน",
+     "new": "เส้นเลือดฝอย โดยไม่ อดอาหาร 9 = ไม่ตรวจน้ำตาลใน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ช่วงโมงนาฬิวนาที",
+     "new": "ชั่วโมงนาทีวินาที",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "คริสตศักราช",
+     "new": "คริสต์ศักราช",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DATE_SERV</td><td></td><td>Y",
+     "new": "DATE_SERV</td><td>Y",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "13</td><td>ความดันโลหิต ชิสโตลิก ครั้งที่ 1</td><td>ความดันโลหิต ชิสโตลิก การวัดครั้งที่ 1",
+     "new": "13</td><td>ความดันโลหิต ซิสโตลิก ครั้งที่ 1</td><td>ความดันโลหิต ซิสโตลิก การวัดครั้งที่ 1",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "14</td><td>ความดันโลหิต ชิสโตลิก ครั้งที่ 1</td><td>ความดันโลหิต ชิสโตลิก การวัดครั้งที่ 1",
+     "new": "14</td><td>ความดันโลหิต ไดแอสโตลิก ครั้งที่ 1</td><td>ความดันโลหิต ไดแอสโตลิก การวัดครั้งที่ 1",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "15</td><td>ความดันโลหิต ชิสโตลิก ครั้งที่ 2</td><td>ความดันโลหิต ชิสโตลิก การวัดครั้งที่ 2",
+     "new": "15</td><td>ความดันโลหิต ซิสโตลิก ครั้งที่ 2</td><td>ความดันโลหิต ซิสโตลิก การวัดครั้งที่ 2",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "16</td><td>ความดันโลหิต ชิสโตลิก ครั้งที่ 2</td><td>ความดันโลหิต ชิสโตลิก การวัดครั้งที่ 2",
+     "new": "16</td><td>ความดันโลหิต ไดแอสโตลิก ครั้งที่ 2</td><td>ความดันโลหิต ไดแอสโตลิก การวัดครั้งที่ 2",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p39",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "1990",
+     "new": "1999",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "OKRs Google callout points to 1999.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   1993",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "1993 is not printed on timeline.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เพื่อกระตุ้นให้อยากรอดูมากกว่าตั้งเพื่อวัดผลสำเร็จ",
+     "new": "เพื่อกระตุ้นให้อยากบรรลุ มากกว่าตั้งเพื่อวัดผลสำเร็จ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoom of lower slide reads อยากบรรลุ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "มีแรงขีด",
+     "new": "มีแรงฮึด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Final phrase in lower slide reads มีแรงฮึด.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "UxUD2KPzG7Q",
+     "new": "UxUD2KPzG70",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Visible first YouTube URL ends G70.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p198",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "สมาคมสภาผู้ป่วยตั้งใจ โรคเบาหวานแห่งประเทศไทย",
+     "new": "สมาคมแพทย์เวชปฏิบัติทั่วไป/เวชศาสตร์ครอบครัวแห่งประเทศไทย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": " 1980",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สมาคมกีฬาคนกล้าหาญแห่งประเทศไทย",
+     "new": "สมาคมนักกำหนดอาหารแห่งประเทศไทย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "แห่งประเทศไทย 2017",
+     "new": "แห่งประเทศไทย 2517",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": " ASSOCIATION OF THAI RED CROSS SOCIETY 2017",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p190",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไม่กิน 8 ช้อนชา",
+     "new": "ไม่เกิน 6 ช้อนชา",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "ภาพแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ไม่กิน 6 ช้อนชา",
+     "new": "ไม่เกิน 6 ช้อนชา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ไม่กิน 1 ช้อนชา",
+     "new": "ไม่เกิน 1 ช้อนชา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p108",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "S12-S1.",
+     "new": "S12-61.",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "บรรทัดอ้างอิงใต้ตารางผู้ใหญ่พิมพ์ S12-61.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p115",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": "ใช้แบบเดิมถูกแล้ว"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p125",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "glipenclamide",
+     "new": "glibenclamide",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "uride), gliclazide, gliplizide, glimepiride (Amary",
+     "new": "uride), gliclazide, glipizide, glimepiride (Amary",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ยู่ เช่น Metaglip® (gliplizide + metformin), Gluco",
+     "new": "ยู่ เช่น Metaglip® (glipizide + metformin), Gluco",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "vildaglitpint",
+     "new": "vildagliptin",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Glucobay®,",
+     "new": "Glucobay®),",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Byetta®,",
+     "new": "Byetta®),",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p130",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ลำลัก",
+     "new": "สำลัก",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "่อไป\n\nในกรณีที่มีชุดกลูกากอน (glucagon kit set) ",
+     "new": "่อไป\n\nในกรณีที่มีชุดกลูคากอน (glucagon kit set) ",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "หวานชนิดที่ 1 ให้ฉีดกลูกากอนขนาด 1 มก. เข้าใต้ผิ",
+     "new": "หวานชนิดที่ 1 ให้ฉีดกลูคากอนขนาด 1 มก. เข้าใต้ผิ",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ือดแบบฉุกเฉิน การฉีดกลูกากอนใช้วิธีการและบริเวณเ",
+     "new": "ือดแบบฉุกเฉิน การฉีดกลูคากอนใช้วิธีการและบริเวณเ",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "นซูลิน (2) แต่การใช้กลูกากอนอาจทำให้ปวดศีรษะหรือ",
+     "new": "นซูลิน (2) แต่การใช้กลูคากอนอาจทำให้ปวดศีรษะหรือ",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ดเลือดดำมากกว่า (3) กลูกากอน ซึ่งยังไม่มีการนำเข",
+     "new": "ดเลือดดำมากกว่า (3) กลูคากอน ซึ่งยังไม่มีการนำเข",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p83",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไฮอะไซด์",
+     "new": "ไธอะไซด์",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ยาไบกวไนด์",
+     "new": "ยาไบกัวไนด์",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "น้ำตาลเมืองดาอาหาร",
+     "new": "น้ำตาลเมื่องดอาหาร",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p85",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "อแวนเดียร์",
+     "new": "อแวนเดีย®",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "แอกตีอส",
+     "new": "แอกต็อส",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p88",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DDP-4",
+     "new": "DPP-4",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กลูคาถอน",
+     "new": "กลูคากอน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "incretinimetrics",
+     "new": "incretinmimetics",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Vildaglptin",
+     "new": "Vildagliptin",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ไฮอะโซลิดีนไดโอน",
+     "new": "ไธอะโซลิดีนไดโอน",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "้ยาในกลุ่มกลูโคสิเดสอินฮิเบเตอร์\n\n<table><tr><td>ข้อ",
+     "new": "้ยาในกลุ่มกลูโคสิเดสอินฮิบิเตอร์\n\n<table><tr><td>ข้อ",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ทาน สำหรับดีพีพีโฟร์อินฮิเบเตอร์ จะเพิ่มระดับอินคริต",
+     "new": "ทาน สำหรับดีพีพีโฟร์อินฮิบิเตอร์ จะเพิ่มระดับอินคริต",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การออกกำลังกาย)<br/>",
+     "new": "การออกกำลังกาย<br/>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p89",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "рецепเพากลิไนด์",
+     "new": "เรพพากลิไนด์",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กลิฟิไซด์",
+     "new": "กลิพิไซด์",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "อ่านจากภาพหน้าเต็มและภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": "แก้เป็น อัลฟ่ากลูโคซิเดซอินฮิบิเตอร์"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p93",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "มก./ตล.",
+     "new": "มก./ดล.",
+     "kind": "unit",
+     "confidence": "high",
+     "evidence": "ข้อ 7 พิมพ์ 300 มก./ดล.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p94",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "Insulard",
+     "new": "Insulatard",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ตารางที่ 8 ภาพขยายพิมพ์ Insulatard",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p26",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "REMISION SERVICE",
+     "new": "REMISSION SERVICE",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยายแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "๒๐๕ /๒๕๖๖",
+     "new": "๒๐๐๕ /๒๕๖๖",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "ภาพขยายแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ศรีวณิชขากร",
+     "new": "ศรีวณิชชากร",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยายแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p182",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "GL 0 - 55",
+     "new": "GI 0 - 55",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Vertical index scale is GI; horizontal load scale is GL.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "* ต่ำ GI , GL : น้ำหนัก เสร็จ",
+     "new": "* ค่าGI ,GL ,น้ำหนัก1เสิร์ฟ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoom of footnote reads ค่าGI ,GL ,น้ำหนัก1เสิร์ฟ.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p237",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "<table><tr><td>No</td><td>Caption (2)</td><td>Description (3)</td><td>ควบบันทึก (4)</td><td>Name (5)</td><td>PK (6)</td><td>Type (7)</td><td>Width (8)</td><td>NOT NULL (9)</td></tr><tr><td>25</td><td",
+     "new": "<table><tr><td>No</td><td>Caption (2)</td><td>Description (3)</td><td>ควรบันทึก (4)</td><td>Name (5)</td><td>PK (6)</td><td>Type (7)</td><td>Width (8)</td><td>NOT NULL (9)</td></tr><tr><td>25</td><td",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "r></table><table><tr><td>No</td><td>Caption (2)</td><td>Description (3)</td><td>ควบบันทึก (4)</td><td>Name (5)</td><td>PK (6)</td><td>Type (7)</td><td>Width (8)</td><td>",
+     "new": "r></table><table><tr><td>No</td><td>Caption (2)</td><td>Description (3)</td><td>ควรบันทึก (4)</td><td>Name (5)</td><td>PK (6)</td><td>Type (7)</td><td>Width (8)</td><td>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ปีด.ศ.",
+     "new": "ปีค.ศ.",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DDDISCHARGE",
+     "new": "DDISCHARGE",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "RH-GROUP",
+     "new": "RHGROUP",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "LAVOR",
+     "new": "LABOR",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "คริสต์กราช",
+     "new": "คริสต์ศักราช",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p42",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ความชุกซุกรายเก่า",
+     "new": "ความชุกรายเก่า",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Thai annotation has no duplicated ซุก.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ความชุกซุกรายใหม่",
+     "new": "ความชุกรายใหม่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Thai annotation has no duplicated ซุก.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "?? Household level",
+     "new": "? Household level",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Household line has one question mark; Individual line has two.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p43",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "Thai NHEs",
+     "new": "Thai NHES",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Slide heading uses uppercase NHES.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p49",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "พื้นฟูสภาพ",
+     "new": "ฟื้นฟูสภาพ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Vertical red cube label reads ฟื้นฟูสภาพ.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p1",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "THAI DIABETES ASSOCIATION OF THAILAND",
+     "new": "DIABETES ASSOCIATION OF THAILAND",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สมาคมโรคเบาหวานไทย",
+     "new": "สมาคมผู้ให้ความรู้โรคเบาหวาน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กระทรวงสาธารณสุข MINISTRY OF PUBLIC HEALTH",
+     "new": "กรมการแพทย์ กระทรวงสาธารณสุข",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": " NATIONAL HEALTH COMMISSION",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No English NATIONAL HEALTH COMMISSION appears in NHSO logo.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p151",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ผิวหนังใต้อย่าง",
+     "new": "ผิวหนังได้อย่าง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "วัตถุประสงค์ข้อ 3 พิมพ์ ได้อย่างถูกต้อง",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p40",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ใช้รายการอาหารได้ แลกเปลี่ยน",
+     "new": "ใช้รายการอาหาร แลกเปลี่ยน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Objective 3 has no ได้ before แลกเปลี่ยน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ในงานสำหรับ Work-",
+     "new": "ใบงานสำหรับ Work-",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Evaluation column says ใบงานสำหรับ Work-shop.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p99",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "อกิปราย",
+     "new": "อภิปราย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "คอลัมน์กิจกรรมในภาพขยายพิมพ์ อภิปราย",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p109",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "คผนวก 8 (ต่อ)\n\n<table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><",
+     "new": "คผนวก 8 (ต่อ)\n\n<table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ข้อมูล</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "d></tr></table><table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><",
+     "new": "d></tr></table><table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ข้อมูล</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>2. ส่วนสูง (Cm.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>3. ดัชนีมวลกาย (kg/m²)</td><td>18.22.9</td><td></td><td></td><td></td></tr><tr><td>4. รอบเอ่า (Cm.)</td><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปกติหรือ ชนิดเฉพาะ (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table><table><tr><th colsp",
+     "new": "ในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>2. ส่วนสูง (Cm.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>3. ดัชนีมวลกาย (kg/m²)</td><td>18.22.9</td><td></td><td></td><td></td></tr><tr><td>4. รอบเอว (Cm.)</td><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปกติหรือ ชนิดเฉพาะ (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table><table><tr><th colsp",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "><table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>2. ส่วนสูง (Cm.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>3. ดัชนีมวลกาย (kg/m²)</td><td>18.22.9</td><td></td><td></td><td></td></tr><tr><td>4. รอบเอ่า (Cm.)</td><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปกติหรือ ชนิดเฉพาะ (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table>",
+     "new": "><table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>2. ส่วนสูง (Cm.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>3. ดัชนีมวลกาย (kg/m²)</td><td>18.22.9</td><td></td><td></td><td></td></tr><tr><td>4. รอบเอว (Cm.)</td><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปกติหรือ ชนิดเฉพาะ (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "d><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปกติหรือ ชนิดเฉพาะ (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table><table><tr><th colsp",
+     "new": "d><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปลายนิ้ว ขณะอดอาหาร (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table><table><tr><th colsp",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "able><table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>2. ส่วนสูง (Cm.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>3. ดัชนีมวลกาย (kg/m²)</td><td>18.22.9</td><td></td><td></td><td></td></tr><tr><td>4. รอบเอ่า (Cm.)</td><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปกติหรือ ชนิดเฉพาะ (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table>",
+     "new": "able><table><tr><th colspan=\"5\">การประเมินผลการควบคุมระดับน้ำตาลในเลือดและสุขภาพประจำอัปดาห์</th></tr><tr><td>ชื่อนุส</td><td>เป้าหมาย</td><td>วันที่</td><td>วันที่</td><td>วันที่</td></tr><tr><td>1.น้ำหนัก (kg.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>2. ส่วนสูง (Cm.)</td><td>-</td><td></td><td></td><td></td></tr><tr><td>3. ดัชนีมวลกาย (kg/m²)</td><td>18.22.9</td><td></td><td></td><td></td></tr><tr><td>4. รอบเอ่า (Cm.)</td><td>ชาย < 90<br/>หญิง < 80</td><td></td><td></td><td></td></tr><tr><td>5. ความดันโลหิต (mmHg)</td><td>< 130/80</td><td></td><td></td><td></td></tr><tr><td>6. น้ำตาลในเลือดปลายนิ้ว ขณะอดอาหาร (mg/dl)</td><td>< 100</td><td></td><td></td><td></td></tr><tr><td>7. ปริมาณที่ตั้งใจ</td><td>-</td><td></td><td></td><td></td></tr></table>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจจากภาพขยาย 200 dpi",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p1",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DCC",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p30",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "REMISION SERVICE",
+     "new": "REMISSION SERVICE",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยายแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p7",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ตัวอย่างการดำเนินงานโรงเร�ยนเบาหวาน PUWADOL Mode",
+     "new": "ตัวอย่างการดำเนินงานโรงเรียนเบาหวาน PUWADOL Mode",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โลก\nตัวอย่างหลักสูตรโรงเร�ยนเบาหวานว�ทยาอำเภอพ�ม",
+     "new": "โลก\nตัวอย่างหลักสูตรโรงเรียนเบาหวานว�ทยาอำเภอพ�ม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "พ�ษณุโลก",
+     "new": "พิษณุโลก",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ว�ทยา",
+     "new": "วิทยา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "พ�มาย",
+     "new": "พิมาย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สารบัญ\nคำ",
+     "new": "สารบัญ\nค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p120",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "Bed gard stage",
+     "new": "Beer gard stage",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p121",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "นักวิ่งคุ้มต้น!",
+     "new": "นักวิ่งวูบดับ!",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p130",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "#### Care Management\n*   **Total individuals:**",
+     "new": "#### Case Management\n*   **Total individuals:**",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ยอดพีระมิดพิมพ์ Case Management ไม่ใช่ Care Management",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p165",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "*   24.3 for women\n\nPischen T., et al. N Engl J Me",
+     "new": "*   24.3 for women\n\nPischon T., et al. N Engl J Me",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพและภาพขยายแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ผู้หญิง: ร้อยละ 13\n\nPischen T., et al. N Engl J Me",
+     "new": "ผู้หญิง: ร้อยละ 13\n\nPischon T., et al. N Engl J Me",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพและภาพขยายแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": "ทำvisual rag มั้ย"
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p167",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "โปรดแก้ท่อนสายเกิน",
+     "new": "โปรดแก้ก่อนสายเกิน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพและภาพขยายแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคอีตกคนอ้วนลงพุง",
+     "new": "โรคฮิตคนอ้วนลงพุง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพและภาพขยายแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "www.infographic.thailand.com",
+     "new": "www.infographicthailand.com",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพและภาพขยายแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "www.facebook.com/infographic.thailand",
+     "new": "www.facebook.com/infographicthailand",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพและภาพขยายแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p172",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "Coronary Heart Disease",
+     "new": "Coranary Heart Disease",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพและภาพขยายแสดงตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p187",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "คอมไก่ธนาคาร",
+     "new": "กองโภชนาการ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p198",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "sa=G8biw",
+     "new": "sa=G&biw",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "&bni=444",
+     "new": "&bih=444",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "&tbn=isch",
+     "new": "&tbm=isch",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "&imgurl=",
+     "new": "&imgrefurl=",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "&doid=",
+     "new": "&docid=",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "&dru=1722",
+     "new": "&dur=172",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ved=1t429,r3,s08tx=91",
+     "new": "ved=1t:429,r:3,s:0&tx=91",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p48",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "fig1/AS.808833165320193",
+     "new": "fig1/AS:808833165320193",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "URL ที่ขยายอ่านได้ว่า /AS:808833165320193",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p1",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DCC",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new; ข้อความที่ลบไม่ปรากฏในภาพ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-service-model-lessons-2568:p50",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "Infectious Diseases Clinic (NCD)",
+     "new": "Non-communicable diseases Clinic (NCD)",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจข้อความจากภาพและภาพขยาย; ส่วนที่ลบไม่ปรากฏและชื่อสถานที่ถูกคนบัง",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "รพ.สภากิตติเวช",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ตรวจข้อความจากภาพและภาพขยาย; ส่วนที่ลบไม่ปรากฏและชื่อสถานที่ถูกคนบัง",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "https://ddc.moph.go.th/ddcd",
+     "new": "https://ddc.moph.go.th/dncd",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตรวจข้อความจากภาพและภาพขยาย; ส่วนที่ลบไม่ปรากฏและชื่อสถานที่ถูกคนบัง",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p96",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "Noncommunicable Disease",
+     "new": "Non-Communicable Diseases",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi crop of coat label reads Non-Communicable Diseases.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p1",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DCC",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Logo reads DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ชีวิตรระดับ",
+     "new": "ชีวิตระดับ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Subtitle reads คุณภาพชีวิตระดับอำเภอ.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p52",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ควบคอบคลุม",
+     "new": "ความครอบคลุม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Section 2 header reads ความครอบคลุม.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p56",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DCC",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top logo reads DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p236",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "<table><tr><td>No (1)</td><td>CAUTION (2)</td><td>DESCRIPTION (3)</td><td>ควรบันทึก (4)</td><td>NAME (5)</td><td>PK (6)</td><td>TYPE (7)</td><td>WIDTH (8)</td><td>NOT NULL (9)</td></tr><tr><td>2</t",
+     "new": "<table><tr><td>No (1)</td><td>CAPTION (2)</td><td>DESCRIPTION (3)</td><td>ควรบันทึก (4)</td><td>NAME (5)</td><td>PK (6)</td><td>TYPE (7)</td><td>WIDTH (8)</td><td>NOT NULL (9)</td></tr><tr><td>2</t",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "r></table><table><tr><td>No (1)</td><td>CAUTION (2)</td><td>DESCRIPTION (3)</td><td>ควร",
+     "new": "r></table><table><tr><td>No (1)</td><td>CAPTION (2)</td><td>DESCRIPTION (3)</td><td>ควร",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "/>แฟ้มอื่น ๆ (สามารถกำาหนดได้ตั้งแต่ 1-15 หลัก",
+     "new": "/>แฟ้มอื่น ๆ (สามารถกำหนดได้ตั้งแต่ 1-15 หลัก",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ารมารับบริการ(สามารถกำาหนดได้ตั้งแต่ 1-15 หลัก",
+     "new": "ารมารับบริการ(สามารถกำหนดได้ตั้งแต่ 1-15 หลัก",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "2, DD=วันที่ 2 หลัก 01-31 และ<br/>สามารถคำานวณเป็นวันที่ตามมาตรฐานได้</td><td>☑</td><t",
+     "new": "2, DD=วันที่ 2 หลัก 01-31 และ<br/>สามารถคำนวณเป็นวันที่ตามมาตรฐานได้</td><td>☑</td><t",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "2, DD=วันที่ 2 หลัก 01-31 และ<br/>สามารถคำานวณเป็นวันที่ตามมาตรฐานได้</td><td></td><td",
+     "new": "2, DD=วันที่ 2 หลัก 01-31 และ<br/>สามารถคำนวณเป็นวันที่ตามมาตรฐานได้</td><td></td><td",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กำานัน",
+     "new": "กำนัน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "COPPLE",
+     "new": "COUPLE",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ถ้าไม่ทราบที่ระบุ",
+     "new": "ถ้าไม่ทราบให้ระบุ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สามสูญ",
+     "new": "สาบสูญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Zoomed source table shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "PID</td><td></td><td>Y</td><td>C</td><td>15 Y",
+     "new": "PID</td><td>Y</td><td>C</td><td>15</td><td>Y",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "PID columns are PK Y, Type C, Width 15, NOT NULL Y.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "HID</td><td></td><td></td><td>C</td><td>14",
+     "new": "HID</td><td></td><td>C</td><td>14</td><td>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "HID columns are blank PK, Type C, Width 14, blank NOT NULL.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p37",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เอ็นซีดีย่างยั่งยืน",
+     "new": "เอ็นซีดีอย่างยั่งยืน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top slide reads ป้องกันเอ็นซีดีอย่างยั่งยืน.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p38",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เนื้อยนิ่ง",
+     "new": "เนือยนิ่ง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Lower slide fourth bullet reads พฤติกรรม เนือยนิ่ง.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p51",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไม่ไม่ถึง",
+     "new": "ไปไม่ถึง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Black arrow label reads ไปไม่ถึง.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p53",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "ฟันผุดด้วย",
+     "new": "ฟันผุด้วย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Title reads แก้ปัญหาฟันผุด้วยการพึ่งตน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ที่โรงพรงฟัน",
+     "new": "ที่โรงแปรงฟัน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Quoted line visibly reads ที่โรงแปรงฟัน.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p101",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไอมีการสกัดกั้น",
+     "new": "ไตมีการสกัดกั้น",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "คำในภาพต้นฉบับชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โดยทั่วไปประดับ",
+     "new": "โดยทั่วไประดับ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "คำในภาพต้นฉบับชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p102",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "กรดคีโตนดั่งที่",
+     "new": "กรดคีโตนคั่งที่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "คำในภาพต้นฉบับชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p105",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ตรวจอ่างน้อย",
+     "new": "ตรวจอย่างน้อย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์ ควรตรวจอย่างน้อย",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p106",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไม่อร้อนจัด",
+     "new": "ไม่ร้อนจัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ย่อหน้าการเก็บเครื่องพิมพ์ ไม่ร้อนจัด",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p11",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "วิธียึดเหยียด",
+     "new": "วิธียืดเหยียด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Visible page text shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p112",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "Weynant",
+     "new": "Waynant",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "เทียบคำกับภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Trecoci",
+     "new": "Trecroci",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "เทียบคำกับภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p113",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "และตัดกรอง",
+     "new": "และคัดกรอง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "เทียบคำกับภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p116",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "คุณแจ",
+     "new": "กุญแจ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบคำที่พิมพ์ในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "มักพร้อมละ",
+     "new": "มักพบร้อยละ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบคำที่พิมพ์ในภาพ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p117",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "จุดภาพัด",
+     "new": "จุดภาพชัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบคำที่พิมพ์ในภาพ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p118",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ต่อมแห่ง",
+     "new": "ต่อมเหงื่อ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบคำที่พิมพ์ในภาพ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p119",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ภาพช้อน",
+     "new": "ภาพซ้อน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบคำที่พิมพ์ในภาพ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p123",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "แผนกการสอน",
+     "new": "แผนการสอน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "หัวตารางพิมพ์ แผนการสอน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p124",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "กาวะน้ำตาลต่ำ",
+     "new": "ภาวะน้ำตาลต่ำ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p127",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ฝืนร้าย",
+     "new": "ฝันร้าย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์คำและชื่อยาตามข้อความใหม่",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p129",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ะโปรตีน 7 กรัม เช่น แคร็กเกอร์จี๊ดชนิดสี่เหลี่ยม 2 แผ่",
+     "new": "ะโปรตีน 7 กรัม เช่น แคร็กเกอร์จืดชนิดสี่เหลี่ยม 2 แผ่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "่เหลี่ยม 2 แผ่น หรือแคร็กเกอร์จี๊ดชนิดกลม 4 แผ่น หรือข",
+     "new": "่เหลี่ยม 2 แผ่น หรือแคร็กเกอร์จืดชนิดกลม 4 แผ่น หรือข",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพต้นฉบับและภาพขยายตรงกับคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p136",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "topicKey=-gVqTkbDnbrE/v",
+     "new": "topicKey=~gVqTkbDnbrE/v",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพต้นฉบับพิมพ์ตามคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Marcel Dodder",
+     "new": "Marcel Dedder",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพต้นฉบับพิมพ์ตามคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p138",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "การชักประวัติ",
+     "new": "การซักประวัติ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพต้นฉบับพิมพ์ตามคำใหม่",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p14",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เบาหวานซึ่งให้เห็นว่า",
+     "new": "เบาหวานชี้ให้เห็นว่า",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Body text visibly reads the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p144",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สันเท้า",
+     "new": "ส้นเท้า",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ต้นฉบับพิมพ์ตามข้อความใหม่อย่างชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "podorthist",
+     "new": "pedorthist",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ต้นฉบับพิมพ์ตามข้อความใหม่อย่างชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p145",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ฮอร์โมนเกรดน",
+     "new": "ยารับประทาน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ต้นฉบับพิมพ์ตามข้อความใหม่อย่างชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p153",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไต่เสื่อม",
+     "new": "ไตเสื่อม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อ 7 พิมพ์ ภาวะไตเสื่อม",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p157",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สอนถาม",
+     "new": "สอบถาม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "คอลัมน์การประเมินผลพิมพ์ สอบถาม",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p16",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ในการรักษาระยะ",
+     "new": "ในการรักษาดี",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Body text visibly reads the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p160",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ดูซ้ำ",
+     "new": "ดูช้า",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi crop of the second bullet under item 4 reads ไม่มีแรง ดูช้า หรือซึมผิดสังเกต.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p161",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "มื้อลัดไป",
+     "new": "มื้อถัดไป",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์ ก่อนอาหารมื้อถัดไป",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p162",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "มื้อดิ้งหนึ่ง",
+     "new": "มื้อใดมื้อหนึ่ง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อ 2 พิมพ์ ไม่ควรงดอาหารมื้อใดมื้อหนึ่ง",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p163",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เพื่อต้องเพิ่มจำนวนวันเดินทาง",
+     "new": "เผื่อต้องเพิ่มจำนวนวันเดินทาง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อ 4 ในภาพพิมพ์ เผื่อต้องเพิ่มจำนวนวันเดินทาง",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p164",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ควรพบบัตร",
+     "new": "ควรพกบัตร",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อ 3 ในภาพพิมพ์ ควรพกบัตรประจำตัว",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p168",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไขมันในเล้นเลือด",
+     "new": "ไขมันในเส้นเลือด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพอ่านได้ตรงตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p170",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "การตรวจปริมาณอาหาร",
+     "new": "การตวงปริมาณอาหาร",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพอ่านได้ตรงตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p18",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โดยเฉพาะบาล",
+     "new": "โดยพยาบาล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Section 4 reads โดยพยาบาลมีบทบาท.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p180",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เฮซดีแอล",
+     "new": "เฮชดีแอล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "บรรทัดระดับไขมันในภาพพิมพ์ เฮชดีแอล",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p19",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สุญเสีย",
+     "new": "สูญเสีย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "First paragraph reads สูญเสียเศรษฐกิจ.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p199",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "รอยปุดนูน",
+     "new": "รอยปูดนูน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p202",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ทวาวาสลิน",
+     "new": "ทาวาสลิน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p24",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ร่วมอบิปราย",
+     "new": "ร่วมอภิปราย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Item 6 reads ร่วมอภิปราย.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p29",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ร่วมอบิปราย",
+     "new": "ร่วมอภิปราย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Evaluation column reads การร่วมอภิปราย.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p31",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "หลอดเลือดทัวร่างกาย",
+     "new": "หลอดเลือดทั่วร่างกาย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Visible body text shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p32",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "กล้ามเนื้ออาย่างพอเพียง",
+     "new": "กล้ามเนื้ออย่างพอเพียง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Visible body text shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p33",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "คาร์โบไฮเดรก่อน",
+     "new": "คาร์โบไฮเดรตก่อน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Visible body text shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ผู้รักษากะพิจารณา",
+     "new": "ผู้รักษาจะพิจารณา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Visible body text shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p34",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไตรกลีเซอรีไรด์",
+     "new": "ไตรกลีเซอไรด์",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Lipid bullet prints ไตรกลีเซอไรด์.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p36",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "HbA<sub>c</sub>",
+     "new": "HbA<sub>1c</sub>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Table test name includes subscript 1c.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p43",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรดไต",
+     "new": "โรคไต",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Objective says โรคไต.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สำหรับภาชนะ",
+     "new": "สำหรับภาวะ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Media column says สำหรับภาวะแทรกซ้อนต่างๆ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การให้ความรู้เพื่อจัดการโรคเบาหวานด้วยตนเอง\n\n# ตอนที่",
+     "new": "# ตอนที่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer title printed once, not also above section header.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p47",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โภชนาบำบัด",
+     "new": "โภชนบำบัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Source body/header shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p48",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "แต่วงจนี้",
+     "new": "แต่วงจรนี้",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Source body/header shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p49",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ดูดซึมน้ำไป",
+     "new": "ดูดซึมนำไป",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Source body/header shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ภาวะตื้อต่อ",
+     "new": "ภาวะดื้อต่อ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Source body/header shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กลูโคสหร่ายลด",
+     "new": "กลูโคสช่วยลด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Source body/header shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p51",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โภชนาบำบัด",
+     "new": "โภชนบำบัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "หัวกระดาษพิมพ์ โภชนบำบัด",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p56",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "คงไม่ใช้เป็น",
+     "new": "คงไม่ใช่เป็น",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ย่อหน้าบนภาพพิมพ์ คงไม่ใช่เป็นการห้าม",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p59",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โภชนาบำบัด",
+     "new": "โภชนบำบัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งคำนี้จากภาพหน้าเต็ม",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p6",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "บาหวานเป็นโรคไม่ติดต่อ",
+     "new": "เบาหวานเป็นโรคไม่ติดต่อ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Large drop-cap เ precedes บาหวาน.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p61",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โภชนาบำบัด",
+     "new": "โภชนบำบัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งคำนี้จากภาพหน้าเต็ม",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ควรวังการ",
+     "new": "ควรระวังการ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งคำนี้จากภาพหน้าเต็ม",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p62",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "อยู่ถึงยัง",
+     "new": "อยู่จึงยัง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งคำนี้จากภาพหน้าเต็ม",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "มียาอาหารสูง",
+     "new": "มีใยอาหารสูง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งคำนี้จากภาพหน้าเต็ม",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ผัดน้ำมัน้อย",
+     "new": "ผัดน้ำมันน้อย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งคำนี้จากภาพหน้าเต็ม",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p64",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โปแตสเซี่ยม",
+     "new": "โปแตสเซียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "เทียบคำกับภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p65",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โทชนบำบัด",
+     "new": "โภชนบำบัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "เทียบคำกับภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p66",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เนื่องจากการจะดึงน้ำตาลคูลโคส",
+     "new": "เนื่องจากทารกจะดึงน้ำตาลกลูโคส",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "เทียบคำกับภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p68",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เฮซ ดี แอล",
+     "new": "เฮช ดี แอล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "บรรทัด HDL ในภาพพิมพ์ เฮช ดี แอล",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p70",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": " เดิน วิ่งเบาๆ วิ่ง ชี่จักรยาน ว่ายน้ำ พายเรือ เล่",
+     "new": " เดิน วิ่งเบาๆ วิ่ง ขี่จักรยาน ว่ายน้ำ พายเรือ เล่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์ ขี่จักรยาน ทั้งรายการและกลุ่มที่ 2",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": " เช่น เล่นแบดมินตัน ชี่จักรยานเสือภูเขา ว่ายน้ำ เป",
+     "new": " เช่น เล่นแบดมินตัน ขี่จักรยานเสือภูเขา ว่ายน้ำ เป",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพพิมพ์ ขี่จักรยาน ทั้งรายการและกลุ่มที่ 2",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p73",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ซึ่งจักรยานช้าๆ",
+     "new": "ขี่จักรยานช้าๆ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ตัวอย่าง cool down ในภาพพิมพ์ ขี่จักรยานช้าๆ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p77",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "กาวะน้ำตาลต่ำ",
+     "new": "ภาวะน้ำตาลต่ำ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพต้นฉบับอ่านคำนี้ได้ชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p8",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "นังสือ คู่มือ",
+     "new": "หนังสือ คู่มือ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Visible page text shows the replacement.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p81",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ระยะเวลากรอออกฤทธิ์",
+     "new": "ระยะเวลาการออกฤทธิ์",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพต้นฉบับอ่านคำนี้ได้ชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เมื่อดูกระบุต้นด้วยยา",
+     "new": "เมื่อถูกกระตุ้นด้วยยา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพต้นฉบับอ่านคำนี้ได้ชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p82",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "มีไต่เสื่อม",
+     "new": "มีไตเสื่อม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพต้นฉบับอ่านคำนี้ได้ชัดเจน",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p84",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไตเลื่อม",
+     "new": "ไตเสื่อม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคล้ามเนื้อ",
+     "new": "โรคกล้ามเนื้อ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ขนมในปาก",
+     "new": "ขมในปาก",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เปื่ออาหาร",
+     "new": "เบื่ออาหาร",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p86",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ไตเลื่อม",
+     "new": "ไตเสื่อม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ตันเหตุ",
+     "new": "ต้นเหตุ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "อ่านเทียบตำแหน่งข้อความจากภาพต้นฉบับ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p32",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "DCC",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยายแสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p4",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "(DC)",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "REMISION SERVICE",
+     "new": "REMISSION SERVICE",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ชิชาวาล",
+     "new": "ชัชวาล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p8",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "REMISION SERVICE",
+     "new": "REMISSION SERVICE",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความปรากฏตาม new ในภาพ (รายชื่อหน้า 4 ตรวจภาพขยายแล้ว)",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p80",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "รองอัยการไม่ติดต่อ",
+     "new": "กองโรคไม่ติดต่อ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ป้ายชื่อในภาพขยายบรรทัดล่างพิมพ์ กองโรคไม่ติดต่อ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p36",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "พยาบาลวิชาชีพบปฏิบัติการ",
+     "new": "พยาบาลวิชาชีพปฏิบัติการ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ฌาพร ไภยชน",
+     "new": "ฌมาพร ไกยชน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ศิริปักมานนท์",
+     "new": "ศิริปัทมานนท์",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ภาพขยาย 200 dpi แสดงข้อความตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p37",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "โรงพยาบาลรัตนาวปี",
+     "new": "โรงพยาบาลรัตนวาปี",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ชื่อ/คำในภาพขยายพิมพ์ตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรงพยาบาลขานุมาน",
+     "new": "โรงพยาบาลชานุมาน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ชื่อ/คำในภาพขยายพิมพ์ตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p38",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "นางยุพาภรณ์",
+     "new": "นายยุพาภรณ์",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ชื่อ/คำในภาพขยายพิมพ์ตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p39",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "เกตุจินา",
+     "new": "เกตุจุนา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ชื่อ/คำในภาพขยายพิมพ์ตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p86",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ในประชาคมกลุ่มอายุ",
+     "new": "ในประชาชนกลุ่มอายุ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new; ข้อความที่ลบไม่ปรากฏในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ตรวจสอบสภาพครั้งที่ 1",
+     "new": "ตรวจสุขภาพครั้งที่ 1",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new; ข้อความที่ลบไม่ปรากฏในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "reformation",
+     "new": "reformulation",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new; ข้อความที่ลบไม่ปรากฏในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ค้นข้อมูลแก่ชุมชน",
+     "new": "คืนข้อมูลแก่ชุมชน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new; ข้อความที่ลบไม่ปรากฏในภาพ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p96",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ปลาร้า บูด กะปิ",
+     "new": "ปลาร้า บูดู กะปิ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new; ข้อความที่ลบไม่ปรากฏในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สนับสนุนโดยสถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ข้อความในภาพแสดงตาม new; ข้อความที่ลบไม่ปรากฏในภาพ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p43",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ชนิตา",
+     "new": "ชนิดา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายชื่อในภาพขยายอ่านได้ตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p44",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "พันธ์มุ่ง",
+     "new": "พันธ์มุง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายชื่อในภาพขยายอ่านได้ตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "วีรเอียร",
+     "new": "วีรเธียร",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายชื่อในภาพขยายอ่านได้ตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สิริกานต์",
+     "new": "สิรภานต์",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายชื่อในภาพขยายอ่านได้ตาม new",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "วินิจจะถูล",
+     "new": "วินิจจะกูล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายชื่อในภาพขยายอ่านได้ตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p64",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DCC",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายชื่อในภาพขยายอ่านได้ตาม new",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p1",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p11",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p12",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p125",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p3",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p9",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p51",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p162",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p197",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p264",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p38",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p39",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p98",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p1",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p1",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p2",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p94",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p119",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p127",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p163",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p164",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p166",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p191",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p192",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p84",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p1",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-service-model-lessons-2568:p1",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p1",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p95",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p104",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p111",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p123",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p132",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p54",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p88",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p54",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p55",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-epidemiology-prevention-review-2567:p1",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-epidemiology-prevention-review-2567:p2",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ckd-ddc-epidemiology-prevention-review-2567:p36",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p141",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p161",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p10",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p100",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p103",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p104",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p107",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p109",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p110",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p111",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p114",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p12",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p120",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p121",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p122",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p126",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p128",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p13",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p131",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p132",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p133",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p134",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p135",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p137",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p139",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p140",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p141",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p142",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p143",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p147",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p148",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p149",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p15",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p152",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p154",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p155",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p158",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p159",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p166",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p167",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p169",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p17",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p171",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p172",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p173",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p174",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p175",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p176",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p177",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p178",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p179",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p181",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p182",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p183",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p184",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p185",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p186",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p187",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p195",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p196",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p197",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p198",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p20",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p200",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p204",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p205",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p21",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p22",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p23",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p25",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p26",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p27",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p30",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p35",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p37",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p41",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p42",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p44",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p46",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p50",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p52",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p53",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p54",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p55",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p57",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p58",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p60",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p67",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p69",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p71",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p72",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p74",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p75",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p79",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p90",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p91",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p92",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p95",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p96",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p97",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "dm-remission-service-2567:p27",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p82",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p161",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p41",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p20",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p35",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p11",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p25",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p33",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p5",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p63",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p97",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p106",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-dmht-service-model-lessons-2568:p2",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  }
+ ]
+}

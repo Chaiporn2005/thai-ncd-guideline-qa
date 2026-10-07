@@ -1,0 +1,109 @@
+{
+  "document_id": "lipid-inmu-food-knowledge-all-ages",
+  "title": "องค์ความรู้ด้านอาหารและโภชนาการ สำหรับทุกช่วงวัย",
+  "source_sha256": "02b29b38390d5b4b3edd1688d89bb5ee7bdf1506a9c2052dfc8344084d9025d6",
+  "pdf_pages": 170,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "remapped_sara_aa": 1
+    },
+    "tounicode_entries_written_or_changed": 1
+  },
+  "normalization_totals": {
+    "glyph_name_tokens": 6,
+    "letter_spacing_joined": 4,
+    "sara_am_composed": 2657,
+    "space_before_following_vowel": 33,
+    "space_before_mark": 6,
+    "spaced_marks_joined": 12
+  },
+  "status_counts": {
+    "empty": 4,
+    "garbled": 13,
+    "ok": 119,
+    "ok_minor_issues": 34
+  },
+  "status_pages": {
+    "ok_minor_issues": [
+      8,
+      13,
+      17,
+      20,
+      24,
+      26,
+      30,
+      46,
+      48,
+      49,
+      52,
+      60,
+      62,
+      71,
+      72,
+      74,
+      78,
+      81,
+      87,
+      88,
+      96,
+      98,
+      102,
+      112,
+      114,
+      128,
+      134,
+      137,
+      139,
+      142,
+      148,
+      149,
+      150,
+      164
+    ],
+    "garbled": [
+      19,
+      33,
+      47,
+      61,
+      79,
+      93,
+      107,
+      119,
+      123,
+      129,
+      133,
+      147,
+      154
+    ],
+    "empty": [
+      83,
+      111,
+      155,
+      163
+    ]
+  },
+  "removed_edge_lines": 259,
+  "ocr_pages": 17,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "60890c7c099fcd7b52f034a5dbcd661005150af279f386e634250746b035123a",
+  "created_at": "2026-10-07T17:45:56.966385+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v6",
+    "pages_jsonl_sha256": "60890c7c099fcd7b52f034a5dbcd661005150af279f386e634250746b035123a",
+    "review_decisions": "ocr_review_decisions_round2_amended.json"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "document_id": "ht-ddc-community-low-salt-lessons-undated",
+  "title": "ถอดบทเรียนการป้องกันควบคุมโรคไม่ติดต่อเรื้อรังโดยใช้ชุมชนเป็นฐาน ชุมชนลดเค็ม ลดเสี่ยงโรคความดันโลหิตสูง",
+  "source_sha256": "f72fd2692a916f435450bf84e80ee05aaefd71c1ddb9541e4e5cf90b01c98e11",
+  "pdf_pages": 82,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 12
+    },
+    "tounicode_entries_written_or_changed": 38
+  },
+  "normalization_totals": {
+    "c1_positional": 17,
+    "glyph_name_tokens": 1,
+    "letter_spacing_joined": 2,
+    "pua_positional": 1,
+    "sara_am_composed": 537,
+    "space_before_following_vowel": 57,
+    "space_before_mark": 2,
+    "spaced_marks_joined": 3,
+    "symbol_pua_removed": 60,
+    "thai_digits": 10
+  },
+  "status_counts": {
+    "garbled": 1,
+    "ocr_unreviewed": 3,
+    "ok": 77,
+    "ok_minor_issues": 1
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      2,
+      82
+    ],
+    "ok_minor_issues": [
+      75
+    ],
+    "garbled": [
+      80
+    ]
+  },
+  "removed_edge_lines": 207,
+  "ocr_pages": 4,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "24a3c0c5eb4dc339bc415bea17847c5c251a4b8b798500c7e2c8c0e3313cc8c2",
+  "created_at": "2026-10-07T17:45:56.750068+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v6",
+    "pages_jsonl_sha256": "9f1dbef96e3a0b66935ae03298eba83d17bf2c0d65be5d9d59222c80482fbb30",
+    "review_decisions": "ocr_review_decisions_round2_amended.json"
+  }
+}

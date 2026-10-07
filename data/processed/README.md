@@ -1,8 +1,29 @@
 # Normalized text summaries
 
-## normalized-v6 (2026-10-07, current for retrieval)
+## normalized-v7 (2026-10-08, current for retrieval)
 
-**ใช้ชุดนี้สำหรับ Track B** = `normalized-v5` (49 เอกสาร) + 19 เอกสารที่สมาชิกทีมดาวน์โหลดผ่าน browser
+**ใช้ชุดนี้สำหรับ Track B** = `normalized-v6` + ผลตรวจหน้า OCR โดยคน (Up2mEz) จากข้อเสนอแก้ของ Codex CLI
+
+| ขั้น | ผล |
+| --- | --- |
+| Audit รอบ 1 (Codex, เทียบภาพ 161 หน้า) | สุ่ม `pass_auto` 46 หน้า: ถูกต้องครบ 50%, ตัวเลข/เครื่องหมายผิด 11% → ตัดสินว่า `pass_auto` เชื่อถือไม่พอ |
+| Audit รอบ 2 (Codex, 283 หน้า) | หน้า `pass_auto` ทั้งหมด + หน้าที่กู้ได้ 7 หน้า; ข้อเสนอแก้ 280 จุด, `old` พบตรง 1 ครั้งทุกจุด |
+| คนตรวจ (`review.html`) | ใช้ 255 / ไม่ใช้ 28 หน้า; ยอมรับข้อแก้ 237 จาก 240 จุดบนหน้าที่ใช้ + 1 จุดตามหมายเหตุผู้ตรวจ ([decisions](../manifests/ocr_review_decisions_round2_amended.json)) |
+| v7 | 68 เอกสาร / 4,009 หน้า; ใช้ค้นได้ **67 เอกสาร / 3,873 หน้า**; schema 0 error; ไม่มีหน้า `pass_auto` ค้าง |
+
+ตัวอย่างที่แก้: เกณฑ์ "> 126" → "≥ 126" มก./ดล., Insulard → Insulatard, Glipenclamide → Glibenclamide, DDP-4 → DPP-4
+หน้า OCR ที่ใช้ค้นได้แยกตามวิธีตรวจ (`human_review.review_method`): คนตรวจข้อเสนอ AI 255, AI เทียบภาพ 63, AI ตามความเสี่ยง 36
+
+```powershell
+python -X utf8 scripts/build_ocr_review_page.py --audit-dir data/agent_runs/20261007-codex-audit --pages round2_pages.json --findings round2_findings.jsonl --corpus data/processed/normalized-v6
+python -X utf8 scripts/apply_review_decisions.py --source data/processed/normalized-v6 --decisions data/manifests/ocr_review_decisions_round2_amended.json --reviewer Up2mEz --proposer "Codex CLI gpt-6-astra (medium), supervised by Claude" --out data/processed/normalized-v7
+```
+
+hash อยู่ใน [v7 inventory](../manifests/corpus_normalized-v7_inventory.json)
+
+## normalized-v6 (2026-10-07)
+
+`normalized-v5` (49 เอกสาร) + 19 เอกสารที่สมาชิกทีมดาวน์โหลดผ่าน browser
 (เว็บต้นทางตอบ 403 ต่อสคริปต์; นำเข้าด้วย `scripts/import_manual_downloads.py`)
 
 | ขั้น | ผล |
