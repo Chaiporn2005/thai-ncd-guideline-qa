@@ -164,3 +164,13 @@
 - Not attempted:14HTTP403 sources(no retry/bypass),2manual viewers,9Siriraj prior-permission holds.
 - PDFs and run log are local-only(ignored);script-rewritten retrieval.json files were restored to the committed versions;rights/accepted status unchanged.
 - Next:team member on a Thai network downloads the14blocked sources manually in a normal browser and records them as a new channel with hashes.
+
+
+## 2026-10-07 — 20261007-fidelity-review
+
+- Owner:Calvin session;user asked to check the documents the team assigned (review queue item:Thai glyphs/tables/units vs page images).
+- Re-ran scripts/normalize_thai.py without OCR into local data/processed/normalized-recheck-20261006/;matches committed normalized-v1 except the11earlier OCR pages and4pages of lipid-inmu.
+- Compared91sampled pages across30documents with rendered page images:11usable,14usable with fixes,5need OCR/rework.
+- Critical findings:underlined ≥/≤ extracted as >/< (CKD 2565, hemodialysis manual);citation superscripts merged into values (lipid 2567, Siriraj OPD HT);NUL digits in3Siriraj lipid brochures;image-only flowcharts marked ok (DM CPG, lipid 2567).
+- Report:docs/fidelity_review_20261007.md;per-page JSON stays local in data/agent_runs/20261007-fidelity-review/.
+- Not human approval;rights/accepted unchanged;critical numbers need team confirmation.
