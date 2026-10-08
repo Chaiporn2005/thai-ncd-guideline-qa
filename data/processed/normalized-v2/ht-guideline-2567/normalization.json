@@ -20,27 +20,40 @@
     "space_before_mark": 1156,
     "spaced_marks_joined": 8
   },
+  "layout_totals": {
+    "superscript_runs": 17,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 142,
+      "no_underlined_signs": 11
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {},
   "status_counts": {
-    "empty": 2,
-    "ok": 151
+    "empty": 5,
+    "ok": 148
   },
   "status_pages": {
     "empty": [
       2,
-      14
+      14,
+      17,
+      133,
+      140
     ]
   },
-  "removed_edge_lines": 761,
-  "ocr_pages": 0,
+  "removed_edge_lines": 921,
+  "ocr_pages": 5,
   "configuration": {
     "tool_version": "1.0",
     "pypdf_version": "6.10.0",
-    "ocr": false,
-    "dpi": null,
-    "ocr_languages": null
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
   },
-  "pages_jsonl_sha256": "fb6d7bf729fff750dcbdbb0b6a4c841d2d6fb6891702e305c9ac27f916ca839b",
-  "created_at": "2026-10-06T16:04:42.309607+00:00",
+  "pages_jsonl_sha256": "c352d302139dada82c776de4399c288186c816e32b4317d6280130979c368331",
+  "created_at": "2026-10-08T10:19:16.090593+00:00",
   "clinical_or_layout_qa_performed": false,
   "human_approval": null,
   "notes": [

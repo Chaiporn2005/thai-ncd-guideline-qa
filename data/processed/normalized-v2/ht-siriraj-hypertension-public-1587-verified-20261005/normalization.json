@@ -15,6 +15,15 @@
     "space_before_mark": 1,
     "spaced_marks_joined": 11
   },
+  "layout_totals": {
+    "superscript_runs": 0,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 4
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {},
   "status_counts": {
     "ok": 4
   },
@@ -24,12 +33,12 @@
   "configuration": {
     "tool_version": "1.0",
     "pypdf_version": "6.10.0",
-    "ocr": false,
-    "dpi": null,
-    "ocr_languages": null
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
   },
-  "pages_jsonl_sha256": "4fecd7cc5959a857497afd1aade3f30b7ed94ae92ececbc34b4265d4598086f5",
-  "created_at": "2026-10-06T16:06:00.741462+00:00",
+  "pages_jsonl_sha256": "ac61d5bceba58e9436ed36a347554cbe0f3559657567f3523c1a0f8b2953d033",
+  "created_at": "2026-10-08T10:30:12.260301+00:00",
   "clinical_or_layout_qa_performed": false,
   "human_approval": null,
   "notes": [

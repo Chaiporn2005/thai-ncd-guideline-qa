@@ -1,45 +1,55 @@
 # Thai text normalization for retrieval review
 
 `scripts/normalize_thai.py` re-extracts local PDFs with pypdf after deterministic in-memory font-map
-repairs, normalizes Thai text and writes a separate processed root. It reads `data/raw/<id>/source.pdf`
-and never modifies source PDFs or the manifest. The first-round extraction outputs it replaced were removed on
-2026-10-06 (see git history at commit `7c98d8e`); `scripts/extract_pages.py` can regenerate them.
-It makes no network requests or paid API calls and does not approve inclusion, rights or clinical content.
+repairs, normalizes Thai text, checks page layout signals and writes a separate processed root. It reads
+`data/raw/<id>/source.pdf` and never modifies source PDFs or the manifest. It makes no network requests or
+paid API calls and does not approve inclusion, rights or clinical content.
+
+Current output: `data/processed/normalized-v2/` (2026-10-08). It replaces `normalized-v1` (2026-10-06),
+whose summaries remain in git history at commit `624edb7`.
 
 ## Why
 
 The 2026-10-06 data review found that the original extraction was unusable for retrieval in key documents:
 the diabetes CPG had 207/282 pages of Latin-looking glyph IDs (digits such as `≥126` lost), the
 hypertension CPG had a corrupted ToUnicode map (`หิมายถ้ง` for `หมายถึง`), one CKD booklet was
-MacRoman-encoded TIS-620, and many documents lost SARA AM or tone marks. The original triage flags
-missed some of these (for example the CKD booklet was reported with one encoding page).
+MacRoman-encoded TIS-620, and many documents lost SARA AM or tone marks. v1 fixed those. The sampled
+[fidelity review](fidelity_review_20261007.md) of v1 then found clinical-number errors that v2 addresses.
 
 ## Commands
 
-```powershell
-$taskPython = 'C:/Users/User/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'
-$pdftoppm = 'C:/Users/User/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdftoppm.exe'
-& $taskPython 'scripts/normalize_thai.py' --out-dir 'data/processed/normalized-v1' --ocr --renderer $pdftoppm --tesseract tesseract
-& $taskPython 'tests/test_normalize_thai.py'
+Run from the repository root with the packages in `requirements-ingest.txt`. OCR also needs Poppler
+`pdftoppm` and Tesseract with Thai data; pass their paths if they are not on `PATH`.
+
+```bash
+python scripts/normalize_thai.py --out-dir data/processed/normalized-v2 --ocr
+python scripts/normalize_thai.py --out-dir data/processed/normalized-v2 --ocr --renderer /path/to/pdftoppm --tesseract /path/to/tesseract
+python tests/test_normalize_thai.py
+python scripts/build_disease_catalogue.py
 ```
 
-Defaults: cohort `data/manifests/private_review_selection.csv`, rights queue
+Defaults: cohort `data/manifests/corpus_50_candidates.csv` (documents without a local PDF are skipped), rights queue
 `data/manifests/rights_review_20261005.json` (explicit holds are skipped), config
-`configs/thai_normalization.json`. OCR is opt-in, limited to `empty`/`garbled` pages, 300 dpi,
-`tha+eng`, at most 60 pages per document and 400 per run. Existing output folders are never overwritten;
-use a new `--out-dir` for another revision.
+`configs/thai_normalization.json`. OCR is opt-in, limited to `empty`, `garbled` and `figure_review` pages,
+300 dpi, `tha+eng`, at most 60 pages per document and 400 per run. Existing output folders are never
+overwritten; use a new `--out-dir` for another revision.
 
 ## Repairs, in order
 
 Font maps (per font object, before text extraction):
 
+0. **Sibling fonts.** A U+FFFD entry is filled from fonts of the same export (same subset prefix and
+   family, e.g. PSL-Bundit for PSL-Bundit-Bold) that map that code to one character, but only when the
+   two fonts agree on ≥90% of at least 15 shared codes; compact subsets that renumber glyphs give no evidence.
 1. **TH Sarabun New/PSK glyph order.** Type0 fonts whose embedded TrueType keeps the original glyph IDs
    (`maxp` ≥ 301 glyphs, `CIDToGIDMap /Identity`) get a ToUnicode map rebuilt from the glyph order:
    ASCII = GID + 0x1F, ก..ฺ = GID + 0xD2B, ฿..๛ = GID + 0xD2F, positional variants 0x156..0x170 follow
    U+F700..F71A. Existing maps must agree ≥85% on the Thai range, else the font is skipped. Compact
    subsets are skipped because their glyph IDs are renumbered.
-2. **SARA AA labelled SARA AM** (`ตำรำง`): a font with exactly one glyph mapped to ำ, none to า and an
-   unmapped glyph gets that glyph remapped to า.
+2. **SARA AA labelled SARA AM** (`ตำรำง`, `กำแฟดำ`): a font with exactly one glyph mapped to ำ, none to า,
+   and an unmapped glyph (U+FFFD or a second SPACE). Thai glyphs follow Unicode order (า before ํ): if the
+   single U+FFFD glyph comes *before* the ำ label, the U+FFFD glyph is า (`เท้�` → เท้า) and is filled;
+   otherwise the ำ-labelled glyph is า and is remapped. The text rule then folds `ำา` into ำ.
 3. **NIKHAHIT labelled SPACE** (`น ้าตาล`): a second SPACE glyph immediately after the THANTHAKHAT glyph
    becomes ํ.
 4. **First-cluster labels** (`คื` for ค): consonant + combining-mark labels are reduced to the consonant
@@ -48,41 +58,99 @@ Font maps (per font object, before text extraction):
 CMaps with syntax the parser cannot round-trip are left untouched. Replacement CMaps keep the font's
 code width (two bytes for Type0, one byte for simple fonts).
 
-Text (every page): document legacy decoder (`mac_thai`, `cp1252_cp874_tokens`, from the config),
-leaked Thai glyph names (`/ToTao` → ต), observed C1 positional codes, Microsoft Thai PUA, symbol-font
-PUA removal, Thai digits → Arabic digits, spaces/line breaks before combining marks, duplicate marks,
-NIKHAHIT/U+FFFD + SARA AA → SARA AM, spaces before ะ/า/ำ, letter-spaced headings, tone/vowel order,
-NFC and whitespace. Arabic digits, units and operators are never changed. `dropped_sara_am` (config only)
-turns consonant(+tone)+space+SARA AA into SARA AM for documents where every case was checked.
-Running headers/footers and bare page numbers at page edges are removed and kept in `removed_edge_lines`.
+Layout signals (same pypdf pass, plus pdfplumber geometry for pages containing `<` or `>`):
+
+- **Underlined comparison signs.** Word-processor PDFs print ≥/≤ as `>`/`<` with a thin rule as wide as
+  the glyph underneath. Such signs become ≥/≤, matched by occurrence order; if the PDF text and the
+  geometry disagree on the number of signs, nothing is changed and the page becomes `degraded`.
+- **Citation superscripts.** Digit runs set ≥20% smaller, raised 0.15–0.8× the body size and attached to
+  the preceding word or number (or continuing a citation group after a comma/dash) become Unicode
+  superscripts: `ร้อยละ 25⁷⁰`, not `2570`. Whether a run is a citation or an exponent (`kg/m²`) is not
+  inferred. Body numbers after a space or slash (`อายุ 35`, `1/3`) and `3.3` are left alone.
+- **Image-only figures.** Pages where images cover 25–98% of the page and the text layer has fewer than
+  700 characters (or ≥98% and fewer than 150) become `figure_review`: the text layer only holds a caption.
+
+Text (every page): NFC, then the document legacy decoder (`mac_thai`, `cp1252_cp874_tokens`, applied to
+runs of legacy characters even when glued to Thai text), leaked Thai glyph names (`/ToTao` → ต), observed
+C1 positional codes, Microsoft Thai PUA, symbol-font PUA removal, Thai digits → Arabic digits, spaces/line
+breaks before combining marks, duplicate marks, NIKHAHIT/U+FFFD (+ optional space) + SARA AA → SARA AM,
+spaces before ะ/า/ำ, letter-spaced headings, tone/vowel order and whitespace. Arabic digits and units are
+never changed by text rules.
+
+The 9 Siriraj Diabetes Center records are processed for educational use only under
+[decision 0008](../NCD%20-%201Orchestra/decisions/0008-siriraj-educational-use.md); their summaries are
+ignored by git like their page text.
+
+Per-document options in the config (each records its evidence): `dropped_sara_am` (consonant(+tone) +
+space + SARA AA → SARA AM, only where every case was checked), `dedupe_layered_text` (drop lines whose
+content already appeared on the page; DDC manual pages 7–33 carry stacked copies) and
+`review_hold_pages` (page → note; known problems that need a person, e.g. an inverted ABI formula).
+
+Running headers/footers and bare page numbers at page edges, and short lines repeated anywhere on at least
+half of the pages (the HT guideline's `สงวนลิขสิทธิ์` watermark), are removed from `text` and kept in
+`removed_edge_lines`.
 
 ## Output contract
 
-`data/processed/normalized-v1/<id>/pages.jsonl` (local only, ignored like other page text):
+`data/processed/normalized-v2/<id>/pages.jsonl` (local only, ignored like other page text):
 one row per PDF page with `text` (retrieval text), `text_source` (`pdf_text_repaired` or `ocr`),
-`status`, `quality`, `normalization_counts`, `removed_edge_lines`, `pre_normalization_text`,
-`ocr_text`, `ocr_quality`, `printed_page_number: null` and `human_review: null`.
-`normalization.json` summarizes font actions, rule totals, status counts and page lists; it contains no
-page text and is the only file from this folder tracked in git.
+`status`, `pdf_text_status`, `review_note`, `quality`, `layout_checks`, `normalization_counts`,
+`removed_edge_lines`, `pre_normalization_text`, `ocr_text`, `ocr_quality`, `printed_page_number: null`
+and `human_review: null`. `normalization.json` summarizes font actions, rule totals, layout totals, review
+holds, status counts and page lists; it contains no page text and is the only file from this folder
+tracked in git.
 
-Statuses: `ok`, `ok_minor_issues` (a few defects), `degraded` (1–5% defects; PDF text kept, review
-needed), `garbled` (>5% defects or NUL tone marks), `empty`, and `ocr_unreviewed` (OCR replaced
-unusable PDF text). Statuses are retrieval heuristics, not fidelity or clinical approval.
+Statuses: `ok`, `ok_minor_issues` (a few defects), `degraded` (1–5% defects or unverified comparison
+signs; PDF text kept, review needed), `garbled` (>5% defects or NUL characters), `figure_review`
+(image-only figure; OCR text, if run, is stored beside it), `review_hold` (config note from a human or
+fidelity review), `empty`, and `ocr_unreviewed` (OCR filled a page without PDF text). Only `ok` and
+`ok_minor_issues` should be indexed without a person checking the page. Statuses are retrieval heuristics,
+not fidelity or clinical approval.
 
-## Verification on 2026-10-06 (30 documents, 1766 pages)
+## Fixes for the 2026-10-07 fidelity review
 
-- Rendered pages compared by eye: DM CPG p.40 (criteria ≥126/≥200/≥6.5%, Table 2), HT guideline p.30,
-  CKD anemia p.20 (iron tables), CKD booklet p.20, geriatric diet p.4.
-- Per-page regression check (original vs repaired text through the same text rules): 0 pages worse,
-  584 pages with fewer defects.
-- 17 unit tests: font repairs, decoders, text rules, quality gate, CLI rights hold and no-overwrite.
-- Result: ok 1542, ok_minor_issues 116, degraded 18, ocr_unreviewed 46, empty 44; 0 document failures.
+| Finding | v2 handling |
+| --- | --- |
+| Underlined ≥/≤ read as >/< (CKD 2565, hemodialysis) | Converted from geometry: 26 signs on 11 pages; checked against images (CKD 2565 p29 table, anemia p57) |
+| Citation superscripts merged into values (`2570`, `109`) | 720 superscript runs; `ร้อยละ 25⁷⁰`, `ร้อยละ 10⁹`, `2557⁴` |
+| Image-only flowcharts marked `ok` | 45 `figure_review` pages, including all 9 DM CPG flowcharts the review listed |
+| Vector flowcharts, interleaved tables, inverted ABI formula, colour-only heat map | 13 `review_hold` pages from the review's page list |
+| Hidden duplicate text (DDC manual) | `dedupe_layered_text`; repeated lines removed on pages 7–33 |
+| HT watermark leaking into text | Removed (watermark rule) |
+| SARA AM `น�้าหนัก` (INMU), italic า→ำ (Siriraj cardiovascular), DMS p5 mojibake, CKD booklet MacRoman residue | Text rule, font rule and run-level legacy decoding; one booklet page (p23) still has residue and is no longer `ok` |
+| Status missed mojibake / flagged accented names | Mojibake counted only in letter-free tokens with ≥2 accented characters |
+| NUL digits and tone marks in three Siriraj leaflets | Not repairable from text (NUL replaces digits as well as tone marks); pages stay `garbled` |
+
+## Verification
+
+2026-10-08 (v2, 39 documents, 1799 pages): ok 1566, ok_minor_issues 60, degraded 8, garbled 5,
+figure_review 54, review_hold 13, ocr_unreviewed 16, empty 77; 0 document failures. The 9 Siriraj records
+(decision 0008, 33 pages): ok 19, figure_review 5, ocr_unreviewed 7 (image-only leaflets), empty 2.
+
+- Sibling-font and SARA AA order rules (added for the Siriraj foot-care manual, where an earlier rule turned
+  its real ำ into า): the 30 earlier documents changed on 91 pages and none gained defects; examples
+  `วารินชำราบ`, `จัดทำแนวทาง`, `ประชาพิจารณ์`. A first version without the layout-agreement check broke
+  INMU (`ทำ` → `ท์า`) and was corrected before this run.
+
+First v2 run, 30 documents:
+
+- Every page where numbers changed between v1 and v2 was attributed: superscripts 173 pages, underlined
+  signs 8, layered dedupe 27, OCR source change 2, removed running header 2 (CKD anemia).
+- Pages with more defects than v1: one (CKD booklet p23, a real MacRoman residue now detected).
+- Dictionary hit rate (PyThaiNLP, scratch install only): 99.2% (v1) → 99.3% (v2).
+- Rendered pages compared: CKD 2565 p29 (all ten underlined `>` are ≥, including ≥120/≥70), anemia p57
+  (`TSAT ≤ 20` underlined, `ferritin < 30` plain); superscript contexts sampled in five documents.
+- 27 unit/integration tests, including a synthetic PDF with an underlined `>`, a raised citation group, a
+  far-raised body number, an image-only page and a review hold.
+
+v1 (2026-10-06): 0 pages worse than the first extraction, 584 improved; dictionary hit rate 92.5% → 99.2%.
 
 ## Known limits
 
-- `dm-remission-implementation-lessons-undated`: U+FFFD stands for several different vowels (ิ, ี, ู);
-  18 pages remain `degraded`.
-- `lipid-rama-education-2562`: U+FFFD stands for ำ in one Type1 font; kept as minor issues.
-- pypdf still inserts occasional spaces inside words (`นั้ น`), and tables are flattened text.
+- Superscripts made with text rise (`Ts`) are not detected; word-processor exports in this corpus raise
+  them by position instead.
+- `dm-remission-implementation-lessons-undated`: U+FFFD stands for several different vowels (ิ, ี, ู).
+- Vector flowcharts are not detected automatically; known ones are held through the config.
+- Tables are flattened text; header order can still be wrong outside the held pages.
 - Tesseract Thai OCR has word/unit errors; every OCR page is `ocr_unreviewed`.
 - Scope (adult/paediatric/pregnancy sections), rights and clinical review are unchanged.

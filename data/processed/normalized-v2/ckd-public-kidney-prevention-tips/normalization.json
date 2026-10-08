@@ -13,40 +13,46 @@
   "normalization_totals": {
     "c1_positional": 1,
     "glyph_name_tokens": 42,
-    "line_break_before_mark": 107,
-    "mac_thai_tokens": 5816,
-    "space_before_mark": 166,
-    "spaced_marks_joined": 1,
+    "line_break_before_mark": 110,
+    "mac_thai_runs": 5978,
+    "space_before_mark": 171,
+    "spaced_marks_joined": 2,
     "thai_digits": 2
   },
+  "layout_totals": {
+    "superscript_runs": 0,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 119
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {},
   "status_counts": {
-    "empty": 1,
-    "ok": 113,
-    "ok_minor_issues": 5
+    "ocr_unreviewed": 1,
+    "ok": 116,
+    "ok_minor_issues": 2
   },
   "status_pages": {
-    "empty": [
+    "ocr_unreviewed": [
       1
     ],
     "ok_minor_issues": [
-      8,
-      14,
-      79,
-      81,
+      23,
       112
     ]
   },
   "removed_edge_lines": 1,
-  "ocr_pages": 0,
+  "ocr_pages": 1,
   "configuration": {
     "tool_version": "1.0",
     "pypdf_version": "6.10.0",
-    "ocr": false,
-    "dpi": null,
-    "ocr_languages": null
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
   },
-  "pages_jsonl_sha256": "8782e3cc5a723bcfce7998d42b86c57fd959461ffe3f44484fbc99cce344a360",
-  "created_at": "2026-10-06T16:05:34.588666+00:00",
+  "pages_jsonl_sha256": "9dfe21e896fe3439263701d06bc728ed55f09d265fec638a2b3e791a382d6274",
+  "created_at": "2026-10-08T10:28:38.711390+00:00",
   "clinical_or_layout_qa_performed": false,
   "human_approval": null,
   "notes": [

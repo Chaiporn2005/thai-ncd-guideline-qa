@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/ckd-out-of-unit-hemodialysis-standards/retrieval.json): `downloaded`
-- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/ckd-out-of-unit-hemodialysis-standards/normalization.json): `ใช้ได้8/8หน้า;รอตรวจ0;ว่าง0`
+- [สรุปผลสกัด normalized-v2](../../../processed/normalized-v2/ckd-out-of-unit-hemodialysis-standards/normalization.json): `ใช้ได้8/8หน้า;รอตรวจ0;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ckd-out-of-unit-hemodialysis-standards/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

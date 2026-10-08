@@ -81,6 +81,6 @@ On 2026-10-05 the synthetic test suite passed **19 tests**, with no skips, in th
 ## Follow-up normalization
 
 The 2026-10-06 review found font-map and legacy-encoding failures that these flags under-reported.
-Use [Thai text normalization](normalization_pipeline.md) output in `data/processed/normalized-v1/`
+Use [Thai text normalization](normalization_pipeline.md) output in `data/processed/normalized-v2/`
 for retrieval experiments. The first-round outputs (`data/processed/<id>/`, `ocr-review-v1/`) were removed
 on 2026-10-06 at the user's request; their summaries remain in git history at commit `7c98d8e`.

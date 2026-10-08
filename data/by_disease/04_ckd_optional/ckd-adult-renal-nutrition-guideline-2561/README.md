@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/ckd-adult-renal-nutrition-guideline-2561/retrieval.json): `downloaded`
-- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/ckd-adult-renal-nutrition-guideline-2561/normalization.json): `ใช้ได้69/69หน้า;รอตรวจ0;ว่าง0`
+- [สรุปผลสกัด normalized-v2](../../../processed/normalized-v2/ckd-adult-renal-nutrition-guideline-2561/normalization.json): `ใช้ได้65/69หน้า;รอตรวจ4;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ckd-adult-renal-nutrition-guideline-2561/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

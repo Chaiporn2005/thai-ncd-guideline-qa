@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/ht-siriraj-hypertension-public-1587-verified-20261005/retrieval.json): `downloaded`
-- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/ht-siriraj-hypertension-public-1587-verified-20261005/normalization.json): `ใช้ได้4/4หน้า;รอตรวจ0;ว่าง0`
+- [สรุปผลสกัด normalized-v2](../../../processed/normalized-v2/ht-siriraj-hypertension-public-1587-verified-20261005/normalization.json): `ใช้ได้4/4หน้า;รอตรวจ0;ว่าง0`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/ht-siriraj-hypertension-public-1587-verified-20261005/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

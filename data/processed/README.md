@@ -186,3 +186,31 @@ hash ของทุกไฟล์อยู่ใน [corpus inventory](../mani
 เพราะฟอนต์ไทยเพี้ยนจนใช้ค้นไม่ได้; สรุปเดิมยังดูได้ใน git history ที่ commit `7c98d8e`
 และสร้างใหม่ได้ด้วย [extract_pages.py](../../scripts/extract_pages.py)
 ดู [rights queue](../manifests/rights_review_20261005.json)
+
+## normalized-v2 ใน `main` (Track A) และความสัมพันธ์กับรุ่นของ Track B
+
+ส่วนนี้เป็นของ Track A (เพื่อน) คงไว้ตามเดิม: `normalized-v2/` ใน Git คือผลสร้างใหม่ของ `normalize_thai.py` v2 (แก้ ≥/≤ ขีดเส้นใต้, เลขอ้างอิงยกกำลัง, flowchart ที่เป็นภาพ)
+
+**Track B (v3–v11 ด้านบน) สร้างต่อจาก v2 รุ่นก่อนแก้** (สร้างด้วย `normalize_thai.py` ที่ commit `624edb7`; hash อยู่ใน [v2 inventory](../manifests/corpus_normalized-v2_inventory.json)) จึงยังไม่มีการแก้ของ Track A ในหน้า PDF ปกติ ผลวัดว่ากระทบกี่หน้าและแผนรวมอยู่ใน [corpus_process_record.md](../../docs/corpus_process_record.md) ข้อ 4.16
+
+---
+ข้อความสำหรับ retrieval อยู่ที่ `normalized-v2/<document_id>/` สร้างด้วย
+[normalize_thai.py](../../scripts/normalize_thai.py) จาก PDF ใน `raw/` (39 เอกสาร / 1799 หน้า)
+
+ขึ้น GitHub เฉพาะ `normalization.json` 30 รายการ (อีก9สื่อศิริราชตาม decision 0008 เก็บในเครื่อง): hash ต้นทาง, จำนวนหน้า, การซ่อมฟอนต์,
+จำนวนกฎที่ใช้ และสถานะรายหน้า (`ok`, `ok_minor_issues`, `degraded`, `garbled`, `figure_review`, `review_hold`,
+`ocr_unreviewed`, `empty`); ควร index เฉพาะ `ok`/`ok_minor_issues` ก่อนให้คนตรวจหน้าที่เหลือ
+ไม่มีข้อความเอกสารในไฟล์สรุปเหล่านี้
+
+`pages.jsonl` (ข้อความเต็มรายหน้า) ยังอยู่เฉพาะในเครื่อง รอหลักฐานสิทธิเผยแพร่ซ้ำ
+ถ้า clone ใหม่ ให้ดาวน์โหลด PDF ตามช่องทางที่มีสิทธิแล้วรันคำสั่งใน
+[normalization pipeline](../../docs/normalization_pipeline.md)
+สถานะเป็นเกณฑ์คัดกรองสำหรับ retrieval ไม่ใช่ clinical approval หรือ accepted corpus
+
+`normalized-v1` (2026-10-06) ถูกแทนด้วย v2 เมื่อ 2026-10-08 หลังแก้ปัญหาจาก fidelity review
+(≥/≤ ขีดเส้นใต้, เลขอ้างอิงยกกำลัง, flowchart ที่เป็นภาพ); สรุป v1 ดูได้ใน git history ที่ commit `624edb7`
+
+ผลสกัดรอบแรก (`<document_id>/extraction.json`, `pages.jsonl` และ `ocr-review-v1/`) ถูกลบเมื่อ 2026-10-06
+เพราะฟอนต์ไทยเพี้ยนจนใช้ค้นไม่ได้; สรุปเดิมยังดูได้ใน git history ที่ commit `7c98d8e`
+และสร้างใหม่ได้ด้วย [extract_pages.py](../../scripts/extract_pages.py)
+ดู [rights queue](../manifests/rights_review_20261005.json)

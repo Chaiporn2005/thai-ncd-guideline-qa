@@ -21,6 +21,63 @@
     "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005": {
       "dropped_sara_am": true,
       "evidence": "2026-10-06: after font repair, all 40 consonant(+tone)+space+SARA AA cases are dropped SARA AM (e.g. ท าให้, ส าหรับ, น ้าตาล)."
+    },
+    "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566": {
+      "dedupe_layered_text": true,
+      "evidence": "2026-10-07 fidelity review (calvin-check) and 2026-10-08 check: pages 7-33 carry stacked copies of the same text with different line wrapping (21/34 pages had repeated 40-character spans)."
+    },
+    "dm-siriraj-nursing-foot-ulcer-prevention-2559": {
+      "review_hold_pages": {
+        "47": "ABI formula extracted inverted (brachial over ankle)"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
+    },
+    "lipid-guideline-2567": {
+      "review_hold_pages": {
+        "32": "Table 1.2 columns interleaved; a value can attach to the wrong drug row",
+        "37": "Vector flowchart: box text lost or out of order",
+        "38": "Vector flowchart: box text lost or out of order",
+        "39": "Vector flowchart: box text lost or out of order",
+        "40": "Vector flowchart: box text lost or out of order"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
+    },
+    "dm-remission-implementation-lessons-undated": {
+      "review_hold_pages": {
+        "36": "Outcome tables interleaved"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
+    },
+    "ckd-anemia-guideline-2564": {
+      "review_hold_pages": {
+        "36": "Iron/ESA flowchart loses branch structure"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
+    },
+    "ckd-guideline-2565-revised": {
+      "review_hold_pages": {
+        "13": "Risk heat-map meaning is carried by colour only"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
+    },
+    "lipid-rama-education-2562": {
+      "review_hold_pages": {
+        "2": "Infographic labels (HDL/LDL/TG/TC) detached from their thresholds"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
+    },
+    "dm-clinic-standards-2567": {
+      "review_hold_pages": {
+        "44": "Food-portion table header order wrong; values may attach to the wrong header"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
+    },
+    "ckd-treatment-leaflet-undated": {
+      "review_hold_pages": {
+        "1": "Image-only page; comparison table uses icons and needs manual transcription",
+        "2": "Image-only page; comparison table uses icons and needs manual transcription"
+      },
+      "evidence": "Source: docs/fidelity_review_20261007.md (calvin-check, AI-assisted sample; confirm against the page image before release)."
     }
   }
 }

@@ -3,7 +3,11 @@
   "title": "ไขมันสูงในเลือด",
   "source_sha256": "6248e72fe833ba88cfd61dc0b881326c215a8bf3b30934682e4c328e7875ae6f",
   "pdf_pages": 6,
-  "options": {},
+  "options": {
+    "review_hold_pages": {
+      "2": "Infographic labels (HDL/LDL/TG/TC) detached from their thresholds"
+    }
+  },
   "font_repair": {
     "font_actions": {
       "reduced_cluster_labels": 2,
@@ -17,17 +21,31 @@
     "space_before_mark": 32,
     "symbol_pua_removed": 29
   },
+  "layout_totals": {
+    "superscript_runs": 0,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 6
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {
+    "2": "Infographic labels (HDL/LDL/TG/TC) detached from their thresholds"
+  },
   "status_counts": {
-    "ok_minor_issues": 6
+    "ok_minor_issues": 5,
+    "review_hold": 1
   },
   "status_pages": {
     "ok_minor_issues": [
       1,
-      2,
       3,
       4,
       5,
       6
+    ],
+    "review_hold": [
+      2
     ]
   },
   "removed_edge_lines": 2,
@@ -35,12 +53,12 @@
   "configuration": {
     "tool_version": "1.0",
     "pypdf_version": "6.10.0",
-    "ocr": false,
-    "dpi": null,
-    "ocr_languages": null
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
   },
-  "pages_jsonl_sha256": "0efbc397050a28dfd1a585632947921349a6de818da9d4747b65089fcacc6a25",
-  "created_at": "2026-10-06T16:05:15.216597+00:00",
+  "pages_jsonl_sha256": "1fa2f0de751ee899cdfb233e6ff05b120859b9dd4ce9953be0ddb3c9e23022cd",
+  "created_at": "2026-10-08T10:22:43.005305+00:00",
   "clinical_or_layout_qa_performed": false,
   "human_approval": null,
   "notes": [

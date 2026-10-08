@@ -26,7 +26,7 @@
 - [metadata รายเอกสาร](document.json)
 - [canonical manifest](../../../manifests/documents.jsonl)
 - [บันทึกดาวน์โหลด](../../../raw/lipid-inmu-food-knowledge-all-ages/retrieval.json): `downloaded`
-- [สรุปผลสกัด normalized-v1](../../../processed/normalized-v1/lipid-inmu-food-knowledge-all-ages/normalization.json): `ใช้ได้153/170หน้า;รอตรวจ0;ว่าง17`
+- [สรุปผลสกัด normalized-v2](../../../processed/normalized-v2/lipid-inmu-food-knowledge-all-ages/normalization.json): `ใช้ได้150/170หน้า;รอตรวจ3;ว่าง17`
 - บันทึกดาวน์โหลดระบุว่ามีสำเนาในเครื่องที่ `data/raw/lipid-inmu-food-knowledge-all-ages/source.pdf`;PDFไม่ได้อยู่บนGitHub
 
 การจัดหมวดไม่ใช่การอนุมัติสิทธิ/ความถูกต้องทางคลินิกหรือการรับเข้า corpus

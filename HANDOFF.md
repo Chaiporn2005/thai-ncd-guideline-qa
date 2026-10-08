@@ -68,6 +68,19 @@ ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regres
 ดู [normalization pipeline](docs/normalization_pipeline.md);manifest/rights/acceptedไม่เปลี่ยน;ขึ้นGitแล้วf28eb5b
 ผู้ใช้ขอลบผลสกัดรอบแรก:ลบpages.jsonl/extraction.json/ocr-review-v1;ขึ้นGitเฉพาะnormalization.json30ไฟล์(ไม่มีข้อความ)
 ผู้ใช้ขอนำ9สื่อศิริราชที่ต้องขออนุญาตออก:ลบretrieval.jsonจากGitHub(เก็บในเครื่อง)และลบPDFในเครื่อง;เหลือlocalPDF30;ดาวน์โหลดใหม่ได้หลังได้อนุญาตเท่านั้น
+2026-10-08:mergeแล้วcalvin-check(fidelity review91หน้า) และแก้ปัญหาที่พบในnormalize_thai.py v2
+ผลlocal `data/processed/normalized-v2/`:ok+minor1601/degraded16/garbled7/figure_review45/review_hold13/OCR9/empty72+3;v1ลบแล้ว
+indexเฉพาะok/ok_minorก่อน;หน้าfigure_review/review_hold/degraded/garbledต้องให้คนตรวจกับภาพ;ดู[normalization pipeline](docs/normalization_pipeline.md)
+2026-10-08:ผู้ใช้ตัดสินใช้9สื่อศิริราชเพื่อการศึกษาเท่านั้น([decision 0008](NCD%20-%201Orchestra/decisions/0008-siriraj-educational-use.md));ดาวน์โหลดใหม่(hashตรง)และnormalizeในเครื่อง;ไม่ขึ้นGitHub
+normalized-v2ตอนนี้39เอกสาร/1799หน้า;ยังไม่ได้รับอนุญาตจากเจ้าของสื่อ แนะนำส่งคำขออนุญาต
+branch review/data-engineering ยังไม่merge:ส่วนการใช้เพื่อการศึกษาของproposal0006ถูกรับเป็นdecision0008แล้ว;ส่วนdata engineering rulesยังรอทีม
+
+รอบ `20261006-recheck-download01` (Calvin, macOS, Python 3.9.6/pypdf 6.14.2):clone repo ใหม่แล้วตรวจ data/raw และดาวน์โหลดซ้ำตาม download pipeline
+- Cross-check metadata:46retrieval.json ตรงกับ `documents.jsonl` ทั้ง URL/sha256/pdf_pages;30normalization.json ตรง source_sha256/pdf_pages;validate_manifest ผ่าน
+- ดาวน์โหลดด้วย `scripts/fetch_documents.py --local-review --links data/agent_runs/20261005-local-prep/verified_links.json` เฉพาะ30รายการที่เคยdownloaded:30network attempts/30downloaded
+- 30PDF/1766หน้า/208.6MB;sha256บนดิสก์ตรงmanifestและreceiptเดิมทุกไฟล์,จำนวนหน้าและbytesตรงทุกไฟล์ (ไม่มีการเปลี่ยนฉบับที่ต้นทาง)
+- ไม่ได้ลอง14แหล่ง403(ไม่retry),2manual viewers และ9Siriraj permission holds
+- PDF/run log อยู่เฉพาะในเครื่องและถูกignore;retrieval.jsonที่สคริปต์เขียนทับถูกคืนเป็นฉบับcommitเดิม;rights/accepted ไม่เปลี่ยน
 
 ไม่มี worker หรือ resource claim ที่ลงทะเบียน active; ไม่มี watcher/scheduler
 ไม่มี autonomous runner, accepted corpus, Q&A implementation หรือ saved evaluation metrics
@@ -77,8 +90,10 @@ ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regres
 1. อ่าน [local preparation](docs/local_preparation_20261005.md) และ [review queue](data/manifests/local_preparation_20261005.csv)
    ให้ผู้ตรวจบันทึกrights/edition/adult scope/clinicalcurrencyและตรวจThai glyphs/tables/units/conditionsกับภาพ
 2. จัดหาช่องทางถูกต้องหรือสำเนาที่ทีมมีสิทธิใช้สำหรับ14blocked/2manualviewers;ไม่retry/bypass403
+   14แหล่ง403เป็นddc.moph.go.th/chulabhornchannel/dmthai.org อาจบล็อกคำขออัตโนมัติหรือIPต่างประเทศ:
+   ให้คนในทีมดาวน์โหลดเองด้วยbrowserปกติบนเครือข่ายไทย แล้วบันทึกเป็นแหล่ง/ช่องทางใหม่พร้อมhash ไม่ใช่retryด้วยheaders/cookies
    9prior-permission holdsต้องบันทึกหลักฐานอนุญาตก่อนautomaticextraction/RAG
-3. ใช้ `data/processed/normalized-v1` แทนpages.jsonlเดิมสำหรับretrieval;คนตรวจหน้าdegraded/garbled/ocr_unreviewed,
+3. ใช้ `data/processed/normalized-v2` สำหรับretrieval;คนตรวจหน้าdegraded/garbled/ocr_unreviewed,
    ติดป้ายsectionผู้ใหญ่/เด็ก/ตั้งครรภ์(DM CPG90/282หน้า),จัดตาราง/เลขอ้างอิงsuperscript,finalcontentdedup,ให้คนapprove inclusionตามgates
 4. Curatorตั้งacceptedเมื่อครบหลักฐาน แล้วเริ่มtoken-awarechunking/STCPUbaselineและvariantที่สอง
 

@@ -3,52 +3,78 @@
   "title": "แนวทางเวชปฏิบัติการบำบัดภาวะไขมันผิดปกติในเลือดเพื่อป้องกันโรคหัวใจและหลอดเลือด พ.ศ. 2567",
   "source_sha256": "caee450589ae61ecfd8ab2f39b88037eeb740f8f2ee8dfa8bafcfdae92a5531a",
   "pdf_pages": 48,
-  "options": {},
+  "options": {
+    "review_hold_pages": {
+      "32": "Table 1.2 columns interleaved; a value can attach to the wrong drug row",
+      "37": "Vector flowchart: box text lost or out of order",
+      "38": "Vector flowchart: box text lost or out of order",
+      "39": "Vector flowchart: box text lost or out of order",
+      "40": "Vector flowchart: box text lost or out of order"
+    }
+  },
   "font_repair": {
     "font_actions": {
-      "remapped_sara_aa": 1,
+      "filled_from_sibling_fonts": 1,
+      "filled_sara_aa": 1,
       "repaired_tounicode": 2
     },
-    "tounicode_entries_written_or_changed": 3
+    "tounicode_entries_written_or_changed": 4
   },
   "normalization_totals": {
     "duplicate_marks": 2,
     "glyph_name_tokens": 22,
-    "sara_am_composed": 464,
+    "sara_am_composed": 469,
     "space_before_mark": 31,
     "thai_digits": 2
   },
+  "layout_totals": {
+    "superscript_runs": 62,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 35,
+      "no_underlined_signs": 13
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {
+    "32": "Table 1.2 columns interleaved; a value can attach to the wrong drug row",
+    "37": "Vector flowchart: box text lost or out of order",
+    "38": "Vector flowchart: box text lost or out of order",
+    "39": "Vector flowchart: box text lost or out of order",
+    "40": "Vector flowchart: box text lost or out of order"
+  },
   "status_counts": {
-    "empty": 2,
-    "ok": 39,
-    "ok_minor_issues": 7
+    "empty": 1,
+    "ocr_unreviewed": 1,
+    "ok": 41,
+    "review_hold": 5
   },
   "status_pages": {
     "empty": [
-      1,
       48
     ],
-    "ok_minor_issues": [
-      4,
-      5,
-      6,
-      8,
-      9,
-      10,
-      43
+    "ocr_unreviewed": [
+      1
+    ],
+    "review_hold": [
+      32,
+      37,
+      38,
+      39,
+      40
     ]
   },
   "removed_edge_lines": 88,
-  "ocr_pages": 0,
+  "ocr_pages": 2,
   "configuration": {
     "tool_version": "1.0",
     "pypdf_version": "6.10.0",
-    "ocr": false,
-    "dpi": null,
-    "ocr_languages": null
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
   },
-  "pages_jsonl_sha256": "6969f8abf47dcfb015ef52803b62a5012009393df2b23728f7bd617aa91bcfe1",
-  "created_at": "2026-10-06T16:04:44.942003+00:00",
+  "pages_jsonl_sha256": "4d9e32281e1da033b093bfe6a94f7a645e90233a3c8545f9803cd391b8485f2f",
+  "created_at": "2026-10-08T10:19:29.494448+00:00",
   "clinical_or_layout_qa_performed": false,
   "human_approval": null,
   "notes": [

@@ -153,3 +153,47 @@
 - Earlier commits still contain the9metadata receipts(no document content);history was not rewritten.
 - Checks:catalogue --check,manifest,orchestra pass;tests pass(extract 1skip);0links unresolvable on GitHub.
 - Next:re-download only after recorded permission;manifest notes still describe the earlier local copies(curator update pending).
+
+
+## 2026-10-06 — 20261006-recheck-download01
+
+- Owner:Calvin session (macOS);user asked to clone the repo, cross-check data/raw, and download documents following the download pipeline guidelines.
+- Cross-check:46committed retrieval.json receipts match documents.jsonl on URL/sha256/pdf_pages;30normalization.json match source_sha256/pdf_pages;validate_manifest passes.
+- Download:fetch_documents.py --local-review with verified_links.json, restricted to the30previously downloaded IDs;30network attempts,30downloaded,0hash conflicts.
+- Result:30PDFs/1766pages/208.6MB;on-disk sha256, page count and byte size identical to manifest and earlier receipts, so no upstream edition changes were detected.
+- Not attempted:14HTTP403 sources(no retry/bypass),2manual viewers,9Siriraj prior-permission holds.
+- PDFs and run log are local-only(ignored);script-rewritten retrieval.json files were restored to the committed versions;rights/accepted status unchanged.
+- Next:team member on a Thai network downloads the14blocked sources manually in a normal browser and records them as a new channel with hashes.
+
+
+## 2026-10-07 — 20261007-fidelity-review
+
+- Owner:Calvin session;user asked to check the documents the team assigned (review queue item:Thai glyphs/tables/units vs page images).
+- Re-ran scripts/normalize_thai.py without OCR into local data/processed/normalized-recheck-20261006/;matches committed normalized-v1 except the11earlier OCR pages and4pages of lipid-inmu.
+- Compared91sampled pages across30documents with rendered page images:11usable,14usable with fixes,5need OCR/rework.
+- Critical findings:underlined ≥/≤ extracted as >/< (CKD 2565, hemodialysis manual);citation superscripts merged into values (lipid 2567, Siriraj OPD HT);NUL digits in3Siriraj lipid brochures;image-only flowcharts marked ok (DM CPG, lipid 2567).
+- Report:docs/fidelity_review_20261007.md;per-page JSON stays local in data/agent_runs/20261007-fidelity-review/.
+- Not human approval;rights/accepted unchanged;critical numbers need team confirmation.
+
+
+## 2026-10-08T09:30:00+07:00 — 20261008-calvin-merge-normalization-v2
+
+- Owner:root session;user asked to merge calvin-check and fix the problems its fidelity review found.
+- Merged origin/calvin-check(re-download cross-check,docs/fidelity_review_20261007.md) into main;no conflicts.
+- Uncommitted plus5 work from another session was stashed before the merge and restored afterwards;it stays uncommitted per that session's instruction.
+- normalize_thai.py v2:underlined ≥/≤ from pdfplumber geometry(26 signs/11 pages),citation superscripts(720 runs,attached-or-group rule,raise 0.15-0.8x),image-only figure pages(45 figure_review),review_hold_pages config(13 pages from the review),dedupe_layered_text(DDC),watermark lines,run-level legacy decoding+NFC,FFFD+space SARA AM,italic SARA AA font rule,mojibake metric.
+- Errors caught during this run:superscript rule first turned body numbers into superscripts(geriatric อายุ 35,80 มก./ดล.);fixed with attachment and raise bounds;mojibake metric first flagged × ÷ Ø;fixed.
+- Output data/processed/normalized-v2:ok1528,ok_minor73,degraded16,garbled7,figure_review45,review_hold13,ocr_unreviewed9,empty75;0failures;v1 removed(git history 624edb7).
+- Checks:every v1→v2 number change attributed;1 page more defects(real CKD booklet residue);dictionary hit99.2%→99.3%;images CKD2565 p29,anemia p57;27 tests;catalogue/manifest/orchestra pass;0 broken links.
+- Not changed:manifest,rights,accepted0;NUL digits in3Siriraj leaflets remain garbled;review/data-engineering branch not merged(proposal0006 pending team decision).
+
+
+## 2026-10-08T10:31:36+07:00 — 20261008-siriraj-educational-use
+
+- Owner:root session;user decided "ตัวของ 9 เล่มศิริราชใช้เพื่อการศึกษาเท่านั้น" (9 Siriraj documents for educational use only).
+- Recorded decision 0008 (conditions from proposal 0006:team-private,no redistribution,cite issuer,keep notices;not issuer permission);rights queue:9 extraction holds lifted with team_use_decision,rag_ingestion_hold unchanged.
+- Re-downloaded 9 PDFs(run 20261008-siriraj-edu,9 network attempts);sha256 identical to manifest.PDFs,receipts and normalization summaries stay local(gitignore).
+- Error caught:the SARA AM font rule misread the foot-care manual(PSL-Bundit-Bold leaves า unmapped;rule turned real ำ into า).Added sibling-font fill with a layout-agreement guard and a glyph-order rule;first sibling version broke INMU(ทำ→ท์า) and was guarded before the final run.
+- Rebuilt normalized-v2 for 39 documents/1799 pages:ok1566,ok_minor60,degraded8,garbled5,figure_review54,review_hold13,ocr_unreviewed16,empty77;0 failures;30 earlier documents changed on 91 pages,none with more defects.
+- Catalogue shows the 9 as local-only educational use without links;checks and tests pass;0 broken links.
+- Next:team decides whether to send the permission request to the Siriraj Diabetes Center;human review of the 7 OCR leaflet pages.

@@ -5,11 +5,13 @@ import io
 import json
 import struct
 import tempfile
+import types
 import unittest
 import unittest.mock
 from pathlib import Path
 
 from pypdf.generic import ArrayObject, DecodedStreamObject, DictionaryObject, NameObject
+from PIL import Image
 from reportlab.pdfgen import canvas
 
 spec = importlib.util.spec_from_file_location("normalize_thai", Path(__file__).resolve().parents[1] / "scripts/normalize_thai.py")
@@ -160,6 +162,86 @@ class TextRuleTests(unittest.TestCase):
         # A numbered caption on every page edge is content when its number does not track the page.
         self.assertEqual(cleaned[3], "ยา\nตารางที่ 6")
 
+    def test_watermark_lines_removed_anywhere(self):
+        pages = [f"หัวข้อ {i}\nเนื้อหาส่วนแรก {i}\nสงวนลิขสิทธิ์\nเนื้อหาส่วนกลาง {i}\nสรุป {i}\nอ้างอิง {i}\nท้าย {i}"
+                 for i in range(10)]
+        cleaned, removed = tool.strip_running_lines(pages)
+        self.assertNotIn("สงวนลิขสิทธิ์", cleaned[4])
+        self.assertIn("สงวนลิขสิทธิ์", removed[4])
+        self.assertIn("เนื้อหาส่วนกลาง 4", cleaned[4])
+
+    def test_glued_legacy_runs_and_compatibility_forms(self):
+        self.assertEqual(self.norm("âÃ¤ËÅÍ´àÅ×Í´ÊÁÍ§เป็นหนึ่ง", legacy_decoder="cp1252_cp874_tokens"),
+                         "โรคหลอดเลือดสมองเป็นหนึ่ง")
+        # OHM SIGN (U+2126) stands for MacRoman Ω (0xBD, Thai FO FA).
+        self.assertEqual(self.norm("‰¥âΩñ", legacy_decoder="mac_thai"), "ได้ฝึ")
+        # Genuine quotes around real Thai text stay quotes.
+        self.assertEqual(self.norm("“เรื่องควรรู้”", legacy_decoder="mac_thai"), "“เรื่องควรรู้”")
+
+    def test_superscripts_only_when_attached_to_preceding_text(self):
+        attached = tool.attached_to_preceding_text
+        self.assertTrue(attached("ร้อยละ 25"))      # 25⁷⁰ citation
+        self.assertTrue(attached("ผู้ป่วย AKI"))     # AKI⁴⁶
+        self.assertTrue(attached("โดยใช้ยา"))       # ยา⁸
+        self.assertFalse(attached("อายุ "))          # อายุ 35 ปี is a body number in a smaller font
+        self.assertFalse(attached("ขนม 1/"))         # 1/3 ถ้วย
+        self.assertFalse(attached("ข้อ 3."))         # 3.3 list number
+
+    def test_replacement_nikhahit_with_space(self):
+        self.assertEqual(self.norm("ส� าหรับผู้บริโภค"), "สำหรับผู้บริโภค")
+
+    def test_mojibake_counted_but_accented_names_are_not(self):
+        self.assertEqual(tool.page_status(tool.quality("References: Kovács A, Łukasz B, Müller C. " * 3)), "ok")
+        self.assertGreater(tool.quality("âÃ¤ËÅÍ´àÅ×Í´ÊÁÍ§ เป็นหนึ่ง")["garbled_characters"], 5)
+        self.assertEqual(tool.quality("eGFR = 141 × min(Scr/κ, 1) ÷ 2 ขนาด (Ø=2.5 ซม.)")["garbled_characters"], 0)
+
+    def test_layered_text_dedupe(self):
+        page = ("คลิกที่มุมขวาบนในหน้า Dashboard เพื่อพิมพ์หน้ารายงาน ระบบจะทำ\nการดาวน์โหลดเป็นเอกสาร\n"
+                "➊ คลิกที่มุมขวาบนในหน้า Dashboard เพื่อพิมพ์หน้ารายงาน ระบบ\nจะทำการดาวน์โหลดเป็นเอกสาร\nบรรทัดใหม่ที่ไม่ซ้ำกับข้างบนเลย")
+        text, removed = tool.dedupe_layered_lines(page)
+        self.assertEqual(removed, 2)
+        self.assertIn("บรรทัดใหม่ที่ไม่ซ้ำกับข้างบนเลย", text)
+
+    def test_underlined_sign_mapping(self):
+        char = lambda t, x: {"text": t, "x0": x, "x1": x + 6.6, "top": 305.2, "bottom": 321.2}
+        rule = lambda x: {"x0": x, "x1": x + 6.6, "top": 317.8, "height": 0.48}
+        page = types.SimpleNamespace(chars=[char(">", 317.3), char(">", 400.0)], rects=[rule(317.3)], lines=[])
+        flags = tool.underlined_signs(page)
+        self.assertEqual(flags, [True, False])
+        self.assertEqual(tool.apply_underlined_signs("> 140 และ > 120", flags), ("≥ 140 และ > 120", "converted", 1))
+        self.assertEqual(tool.apply_underlined_signs("> 140", flags)[1], "unverified")
+        # A table border wider than the glyph is not an underline.
+        page.rects = [{"x0": 292.3, "x1": 369.8, "top": 317.8, "height": 0.48}]
+        self.assertEqual(tool.underlined_signs(page), [False, False])
+
+    def test_sibling_font_fills_unmapped_sara_aa_before_sara_am_rule(self):
+        shared = {0x70 + i: chr(0x0E01 + i) for i in range(20)}  # identical layout on 20 shared codes
+        regular = type0_font("/JHDBXD+PSL-Bundit", 120, {**shared, 0x9F: "า", 0xB7: "ำ"})
+        bold = type0_font("/JHDBXD+PSL-Bundit-Bold", 120, {**shared, 0x9F: "�", 0xB7: "ำ"})
+        # A compact sibling that numbers glyphs differently gives no evidence (DBSodaX vs DBSodaX-Bold).
+        shifted = type0_font("/JHDBXD+PSL-Bundit-Italic", 120, {0x70 + i: chr(0x0E02 + i) for i in range(20)} | {0x9F: "์"})
+        self.assertEqual(tool.repair_from_siblings([regular, bold, shifted]), 1)
+        self.assertEqual(current_map(bold)[0x9F], "า")
+        regular = type0_font("/JHDBXD+PSL-Bundit", 120, {**shared, 0x9F: "า", 0xB7: "ำ"})
+        bold = type0_font("/JHDBXD+PSL-Bundit-Bold", 120, {**shared, 0x9F: "�", 0xB7: "ำ"})
+        self.assertEqual(tool.repair_from_siblings([regular, bold]), 1)
+        self.assertEqual(current_map(bold)[0x9F], "า")
+        # With SARA AA now mapped, the SARA AM rule must leave the genuine ำ glyph alone.
+        self.assertEqual(tool.repair_sara_aa_font(bold)[0], "not_applicable")
+        self.assertEqual(current_map(bold)[0xB7], "ำ")
+        # No sibling (PSL-Passanun): the unmapped glyph sits before the ำ label in glyph order, so it is า.
+        lone = type0_font("/JHDBXD+PSL-Passanun", 120, {0xD2: "�", 0xED: "ำ", 0x69: "ก"})
+        self.assertEqual(tool.repair_sara_aa_font(lone)[0], "filled_sara_aa")
+        self.assertEqual((current_map(lone)[0xD2], current_map(lone)[0xED]), ("า", "ำ"))
+        self.assertEqual(tool.normalize_text("ทำาไม เท้า น้ำา"), "ทำไม เท้า น้ำ")
+        other = type0_font("/ZZZZZZ+PSL-Bundit-Bold", 120, {0x9F: "�"})
+        self.assertEqual(tool.repair_from_siblings([regular, other]), 0)  # different export, no evidence
+
+    def test_two_space_glyphs_trigger_sara_aa_repair(self):
+        font = type0_font("/X+CordiaUPC,Italic", 100, {0x03: " ", 0xCE: " ", 0xB5: "ำ", 0x10: "ก"})
+        self.assertEqual(tool.repair_sara_aa_font(font)[0], "remapped_sara_aa")
+        self.assertEqual(current_map(font)[0xB5], "า")
+
 
 class CommandLineTests(unittest.TestCase):
     def setUp(self):
@@ -191,6 +273,54 @@ class CommandLineTests(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()) as output:
             code = tool.main(args)
         return code, json.loads(output.getvalue())
+
+    def test_layout_signals_in_a_real_pdf(self):
+        folder = self.root / "raw" / "layout"
+        folder.mkdir(parents=True)
+        image_path = self.root / "figure.png"
+        Image.new("RGB", (400, 300), "white").save(image_path)
+        pdf = canvas.Canvas(str(folder / "source.pdf"), pagesize=(400, 300), invariant=True)
+        # Page 1: citation superscript after a percentage, positioned like word-processor exports (a raised,
+        # smaller run; text rise via Ts is not detected), and an underlined ">" (printed as >=).
+        lead = "reduces LDL-C by another 25"
+        pdf.setFont("Helvetica", 12)
+        pdf.drawString(20, 200, lead)
+        x = 20 + pdf.stringWidth(lead, "Helvetica", 12)
+        pdf.setFont("Helvetica", 7)
+        pdf.drawString(x, 205, "70")
+        x += pdf.stringWidth("70", "Helvetica", 7)
+        pdf.drawString(x, 205, ", 71")  # citation group continues after a separator and space
+        x += pdf.stringWidth(", 71", "Helvetica", 7)
+        pdf.setFont("Helvetica", 12)
+        pdf.drawString(x, 200, " percent in follow-up trials of adults")
+        # A smaller number far above the line (brochure layout) is not a superscript.
+        pdf.setFont("Helvetica", 7)
+        pdf.drawString(300, 225, "35")
+        pdf.setFont("Helvetica", 12)
+        pdf.drawString(20, 150, "> 140 mmHg systolic and > 120 at night for adults")
+        sign_width = pdf.stringWidth(">", "Helvetica", 12)
+        pdf.rect(20, 148.5, sign_width, 0.48, stroke=0, fill=1)
+        pdf.showPage()
+        # Page 2: image-only figure with a caption.  Page 3: ordinary text held for review by config.
+        pdf.drawImage(str(image_path), 0, 50, width=400, height=200)
+        pdf.drawString(20, 20, "Figure 3 treatment algorithm")
+        pdf.showPage()
+        pdf.drawString(20, 150, "This page has plain text that a reviewer must check before use.")
+        pdf.showPage()
+        pdf.save()
+        options = {"review_hold_pages": {"3": "Table columns interleaved"}}
+        result = tool.normalize_document({"document_id": "layout"}, self.root / "raw", self.root / "out", options)
+        rows = [json.loads(x) for x in (self.root / "out/layout/pages.jsonl").read_text(encoding="utf-8").splitlines()]
+        self.assertIn("25⁷⁰, ⁷¹ percent", rows[0]["text"])
+        # Checked before edge-line removal: alone on the top line it is also a page-number candidate.
+        self.assertIn("35", rows[0]["pre_normalization_text"])
+        self.assertNotIn("³⁵", rows[0]["pre_normalization_text"])
+        self.assertIn("≥ 140 mmHg", rows[0]["text"])
+        self.assertIn("> 120 at night", rows[0]["text"])
+        self.assertEqual(rows[0]["layout_checks"]["comparison_signs"], "converted")
+        self.assertEqual(rows[1]["status"], "figure_review")
+        self.assertEqual((rows[2]["status"], rows[2]["review_note"]), ("review_hold", "Table columns interleaved"))
+        self.assertEqual(result["summary"]["layout_totals"]["underlined_signs_converted"], 1)
 
     def test_ocr_fills_only_empty_pages_with_thai_content(self):
         folder = self.root / "raw" / "scan"
