@@ -29,3 +29,6 @@ models/
 # OS files
 Thumbs.db
 .DS_Store
+
+# Review exports hold the personal values a reviewer chose to remove
+data/page_tag_decisions_*.json
