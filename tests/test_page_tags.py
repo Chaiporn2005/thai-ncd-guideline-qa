@@ -28,6 +28,7 @@ NAME_LIST = "รายนามคณะทำงาน\n" + "\n".join(
 
 ROWS = [
     {"document_id": "d", "pdf_page": 1, "status": "ok", "text": "คณะทำงาน นพ.สมชาย ใจดี โทร 081-234-5678",
+     "pre_normalization_text": "คณะทำงาน นพ.สมชาย  ใจดี  โทร 081 234 5678", "ocr_text": "",
      "removed_edge_lines": ["ติดต่อ 081-234-5678"], "human_review": None},
     {"document_id": "d", "pdf_page": 2, "status": "ok", "text": "บทที่ 16 เบาหวานในเด็กและวัยรุ่น", "human_review": None},
     {"document_id": "d", "pdf_page": 3, "status": "ok", "text": "อินซูลินในเด็ก", "human_review": None},
@@ -172,6 +173,9 @@ class Apply(unittest.TestCase):
             self.assertEqual([x["population"] for x in r], ["general", "pediatric", "pediatric", "general"])
             self.assertNotIn("081-234-5678", json.dumps(r[0], ensure_ascii=False))
             self.assertEqual(r[0]["personal_data"]["redacted"], {"phone": 2})
+            self.assertEqual(r[0]["pre_normalization_text"], "")  # raw copy cannot be redacted reliably, so it is emptied
+            self.assertEqual(len(r[0]["pre_normalization_text_sha256"]), 64)
+            self.assertEqual(r[0]["personal_data"]["raw_copies_dropped"], ["pre_normalization_text"])
             self.assertEqual((r[3]["text"], r[3]["index_exclusion"]["reason"]), ("", "personal_data_minimisation"))
             manifest = (tmp / "m.json").read_text(encoding="utf-8")
             self.assertNotIn("081", manifest)

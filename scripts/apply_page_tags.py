@@ -6,6 +6,8 @@ Input is the JSON exported from the page built by scripts/build_page_tag_review.
     (text, text_before_review_edits, removed_edge_lines, ocr_figures) is replaced by a typed placeholder.
   * `exclude_page`: the page keeps its status but gets `index_exclusion` and its stored text is emptied,
     so the personal data is not carried into chunks or indexes (data minimisation).
+  * On redacted and excluded pages the raw copies of the text (`pre_normalization_text`, `ocr_text`, `reviewed_from_text`)
+    are emptied and their SHA-256 is kept, because a value cannot be replaced reliably in text spelled differently.
   * `tag_name_list`: a page that lists people is tagged `pdpa_tag: personal_name_list` and kept in storage, but gets
     `index_exclusion`, so it is not searched by default.
   * low-content pages: `exclude` marks `index_exclusion`; `reocr` marks a garbled text layer for a new OCR pass
@@ -35,6 +37,10 @@ PLACEHOLDER = {"name": "[ชื่อบุคคล]", "email": "[อีเม�
                "citizen_id": "[เลขประจำตัวประชาชน]", "hospital_number": "[เลข HN/AN]"}
 TEXT_FIELDS = ("text", "text_before_review_edits")
 LIST_FIELDS = ("removed_edge_lines", "ocr_figures")
+# Raw copies of the page text kept for provenance (before normalization, OCR output, the text a reviewer saw). They are
+# spelled differently from `text` (spacing, vowel marks), so a value cannot be replaced in them reliably: on pages
+# where personal data is redacted or excluded they are emptied and their SHA-256 is kept so the original stays verifiable.
+RAW_FIELDS = ("pre_normalization_text", "ocr_text", "reviewed_from_text")
 
 
 class DecisionError(ValueError):
@@ -70,6 +76,16 @@ def replace_everywhere(row: dict, old: str, new: str) -> int:
     return count
 
 
+def drop_raw_copies(row: dict) -> list[str]:
+    dropped = []
+    for field in RAW_FIELDS:
+        if isinstance(row.get(field), str) and row[field]:
+            row[f"{field}_sha256"] = hashlib.sha256(row[field].encode("utf-8")).hexdigest()
+            row[field] = ""
+            dropped.append(field)
+    return dropped
+
+
 def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
     key = f"{row['document_id']}:p{row['pdf_page']}"
     action = decision["action"]
@@ -89,6 +105,7 @@ def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
         for item in sorted(decision["redact"], key=lambda x: -len(x["value"])):
             counts[item["type"]] += replace_everywhere(row, item["value"], PLACEHOLDER[item["type"]])
         record["redacted"] = dict(sorted(counts.items()))
+        record["raw_copies_dropped"] = drop_raw_copies(row)
     elif action == "tag_name_list":
         row["pdpa_tag"] = "personal_name_list"
         row["index_exclusion"] = {"reason": "pdpa_tagged_name_list", "decided_by": reviewer, "decided_at": date}
@@ -96,6 +113,7 @@ def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
         row["index_exclusion"] = {"reason": "personal_data_minimisation", "decided_by": reviewer, "decided_at": date}
         row["text"] = ""
         row.pop("text_before_review_edits", None)
+        record["raw_copies_dropped"] = drop_raw_copies(row)
         for field in LIST_FIELDS:
             if field in row:
                 row[field] = []
