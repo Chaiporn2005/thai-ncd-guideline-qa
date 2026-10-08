@@ -1,6 +1,21 @@
 # Normalized text summaries
 
-## normalized-v9 (2026-10-08, รอตรวจ OCR)
+## normalized-v11 (2026-10-08, **current for retrieval**)
+
+`normalized-v10` (v9 + คนอนุมัติ OCR ใหม่ 90 หน้า พร้อมข้อแก้ 411 จุดจาก Codex) + ทำความสะอาดหนังสือ health literacy:
+ตัด footer 525 บรรทัด, โลโก้ 38, ชื่อแถบหมวด 431, เนื้อหา OCR ซ้ำรอบสอง 14 (ทุกบรรทัดเก็บใน `boilerplate_removed` ของหน้านั้น) และบันทึก `category` ของทุกหน้าจากแถบสีเข้มในภาพ (ตรงกับสารบัญ 62/62)
+ค้นได้ **67 เอกสาร / 3,749 หน้า**; หน้าที่เหลือว่างหลังตัด (p29) ไม่เข้า index; p71 ยังรอ OCR
+รายละเอียด/ข้อจำกัด: [corpus_process_record.md](../../docs/corpus_process_record.md) ข้อ 4.15 · [inventory](../manifests/corpus_normalized-v11_inventory.json) · [บันทึกการตัด](../manifests/booklet_cleanup_normalized-v11.json) · [ผลตรวจแถบ](../manifests/booklet_side_tabs_normalized-v11.json)
+
+```powershell
+python -X utf8 scripts/apply_review_decisions.py --source data/processed/normalized-v9 --decisions data/manifests/ocr_review_decisions_reocr-v9_approved.json --reviewer Up2mEz --proposer "Codex CLI gpt-6-astra (medium), supervised by Claude" --out data/processed/normalized-v10
+python -X utf8 scripts/side_tab_category.py --images data/agent_runs/20261008-sidebar/img --out data/agent_runs/20261008-sidebar/tabs.json
+python -X utf8 scripts/clean_booklet_pages.py --source data/processed/normalized-v10 --tabs data/agent_runs/20261008-sidebar/tabs.json --out data/processed/normalized-v11 --manifest data/manifests/booklet_cleanup_normalized-v11.json
+```
+
+(ภาพหน้าสำหรับ `side_tab_category.py` เรนเดอร์ด้วย `pdftoppm -r 110` ทุกหน้า 1–96 ของเอกสาร ลงใน `img/`)
+
+## normalized-v9 (2026-10-08, ตรวจแล้วเป็น v10)
 
 `normalized-v8` + OCR ใหม่ 90 หน้าของ `ncd-ddc-health-literacy-fight-ncds-2566` (ข้อความเดิมเป็นรหัสฟอนต์)
 หน้าเหล่านี้เป็น `ocr_unreviewed` ไม่เข้าการค้นจนกว่า Codex เสนอแก้และคนตัดสิน; 1 หน้า (p71) หมดเวลาสองครั้ง ยังรอ OCR
@@ -12,7 +27,7 @@ python -X utf8 scripts/ocr_typhoon.py --pages-root data/processed/normalized-v8 
 python -X utf8 scripts/merge_ocr.py --source data/processed/normalized-v8 --ocr-dir data/processed/ocr-typhoon-reocr-v8 --out data/processed/normalized-v9
 ```
 
-## normalized-v8 (2026-10-08, **current for retrieval**)
+## normalized-v8 (2026-10-08, ถูกแทนที่ด้วย v11)
 
 **ใช้ชุดนี้สำหรับ Track B** = `normalized-v7` + ผลตัดสินของคนเรื่องป้ายประชากร ข้อมูลส่วนบุคคล และหน้าเนื้อหาน้อย
 

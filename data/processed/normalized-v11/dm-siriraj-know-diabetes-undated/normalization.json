@@ -1,0 +1,46 @@
+{
+  "document_id": "dm-siriraj-know-diabetes-undated",
+  "title": "รู้จักเบาหวาน ... กันดีรึยัง",
+  "source_sha256": "85a73ed2f11ae75498b81f1ff92e4bddc2c04847a97cca60b453e802c89614f0",
+  "pdf_pages": 1,
+  "options": {},
+  "font_repair": {
+    "font_actions": {},
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {},
+  "status_counts": {
+    "ocr_unreviewed": 1
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1
+    ]
+  },
+  "removed_edge_lines": 0,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "9b28824cf41eeb0611dd2b6129b1720af9cca9c08b0adffa37efa669db191ab0",
+  "created_at": "2026-10-08T14:57:02.742111+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v10",
+    "pages_jsonl_sha256": "9b28824cf41eeb0611dd2b6129b1720af9cca9c08b0adffa37efa669db191ab0"
+  },
+  "population_counts": {
+    "general": 1
+  },
+  "index_excluded_pages": []
+}

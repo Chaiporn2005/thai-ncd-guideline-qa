@@ -1,0 +1,4329 @@
+{
+ "review_id": "reocr-v9",
+ "exported_at": "2026-10-08T14:38:04.345Z",
+ "decisions": [
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p13",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เนื้อหมูตัดมัน",
+     "new": "เนื้อหมูติดมัน",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "200 dpi crop of second dietary bullet reads เนื้อหมูติดมัน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer logo is DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle reads @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ภัยพิบัติทาง สาธารณสุข\nโรคไม่ติดต่อ ภัยพิบัติทาง สาธารณสุข",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ\nโรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Bottom two right-side tabs read โรคไม่ติดต่อ กับวันสำคัญ and โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p16",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยบายกับควบคุมโรคติดต่อเรื้อรัง",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institutional line reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "บรอกโคลี่ อะโวคาโด",
+     "new": "บรอกโคลี อะโวคาโด",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "First food bubble prints บรอกโคลี without mai ek.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ส้ม บรอกโคลี่",
+     "new": "ส้ม บรอกโคลี",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "Third bubble also prints บรอกโคลี without mai ek.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "น้ำมันมะกอก ซีส",
+     "new": "น้ำมันมะกอก ชีส",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "Final food in second bubble is ชีส.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p20",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เฮซดีแอล",
+     "new": "เอชดีแอล",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi lipid table spells เอชดีแอล (HDL).",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>ด่วน</td>",
+     "new": "<td>ตัวบน</td>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blood-pressure first column heading reads ตัวบน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "30.0 ขึ้นไป",
+     "new": "30 ขึ้นไป",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "BMI last row prints 30 ขึ้นไป.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ทับโควิด 19\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No such extra tab; correct COVID-19 tab is already transcribed later.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไต้ต่อ ทับวันสำคัญ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue tab reads โรคไม่ติดต่อ กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym is DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p37",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "<tr><td>ไม่มี FPG น้อย หรือเท่ากับ 6</td><td>มี FPG น้อย หรือเท่ากับ 7</td></tr><tr><td>น้อย (0-5)</td><td>7-9</td><td>8-10</td></tr><tr><td>น้อย-ปานกลาง (6-10%)</td><td>10-12</td><td>11-14</td></tr><tr><td>ปานกลาง-สูง (11-20%)</td><td>13-14</td><td>15-16</td></tr><tr><td>สูง (21-30%)</td><td>ตั้งแต่ 15 ขึ้นไป</td><td>ตั้งแต่ 17 ขึ้นไป</td></tr><tr><td>สูงมาก (มากกว่า หรือเท่ากับ 30%)</td><td></td><td></td></tr>",
+     "new": "<tr><td></td><td>ไม่มี FPG</td><td>มี FPG</td></tr><tr><td>น้อย (0-5)</td><td>น้อย หรือเท่ากับ 6</td><td>น้อย หรือเท่ากับ 7</td></tr><tr><td>น้อย-ปานกลาง (6-10%)</td><td>7-9</td><td>8-10</td></tr><tr><td>ปานกลาง-สูง (11-20%)</td><td>10-12</td><td>11-14</td></tr><tr><td>สูง (21-30%)</td><td>13-14</td><td>15-16</td></tr><tr><td>สูงมาก (มากกว่า หรือเท่ากับ 30%)</td><td>ตั้งแต่ 15 ขึ้นไป</td><td>ตั้งแต่ 17 ขึ้นไป</td></tr>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "200 dpi image shows low risk paired with <=6 / <=7, then 7-9 / 8-10, 10-12 / 11-14, 13-14 / 15-16, and >=15 / >=17. OCR shifted all score pairs up a row.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ด้านโรคไม่ติดต่อ NCD_DDC",
+     "new": "ด้านโรคไม่ติดต่อ @NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle includes @.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p4",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "**โรคเบาหวาน**",
+     "new": "**โรคเบาหวาน** 30",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "The bold diabetes section heading is paired with 30; the following first row is 31.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<table><tr><td>โรคเบาหวาน</td><td>30</td></tr><tr><td>การตรวจระดับน้ำตาลในเลือด</td><td>31</td></tr><tr><td>อาการเบื้องต้นของโรคเบาหวาน</td><td>32</td></tr><tr><td>เกณฑ์ประเมินความเสี่ยงโรคเบาหวานในผู้ใหญ่</td><td>33</td></tr><tr><td>แบบประเมินความเสี่ยงต่อโรคเบาหวานชนิดที่ 2</td><td>34</td></tr><tr><td>ภาวะก่อนเบาหวาน หรือ Pre-diabetes</td><td>35</td></tr><tr><td>การป้องกันโรคเบาหวาน</td><td>36</td></tr><tr><td>ควบคุมน้ำตาลให้อยู่หมัด จำกัดแป้ง เพิ่มผัก ออกกำลังกาย</td><td>37</td></tr><tr><td>โรคเบาหวานกับภาวะแทรกซ้อน</td><td>38</td></tr><tr><td></td><td>39</td></tr></table>",
+     "new": "<table><tr><td>โรคเบาหวาน</td><td>31</td></tr><tr><td>การตรวจระดับน้ำตาลในเลือด</td><td>32</td></tr><tr><td>อาการเบื้องต้นของโรคเบาหวาน</td><td>33</td></tr><tr><td>เกณฑ์ประเมินความเสี่ยงโรคเบาหวานในผู้ใหญ่</td><td>34</td></tr><tr><td>แบบประเมินความเสี่ยงต่อโรคเบาหวานชนิดที่ 2</td><td>35</td></tr><tr><td>ภาวะก่อนเบาหวาน หรือ Pre-diabetes</td><td>36</td></tr><tr><td>การป้องกันโรคเบาหวาน</td><td>37</td></tr><tr><td>ควบคุมน้ำตาลให้อยู่หมัด จำกัดแป้ง เพิ่มผัก ออกกำลังกาย</td><td>38</td></tr><tr><td>โรคเบาหวานกับภาวะแทรกซ้อน</td><td>39</td></tr></table>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "The nine diabetes entries run 31 through 39, with complications paired to 39; there is no empty 39 entry.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p5",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "# โรคไต\n\n*   โรคไตเรื้อรัง 40\n*   สัญญาณเตือน โรคไตเรื้อรัง 41\n*   ห่างความเสี่ยงโรคไตเรื้อรัง 42\n*   43",
+     "new": "# โรคไต 40\n\n*   โรคไตเรื้อรัง 41\n*   สัญญาณเตือน โรคไตเรื้อรัง 42\n*   ห่างความเสี่ยงโรคไตเรื้อรัง 43",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "The contents image pairs the section heading with the first page number and each following title with the next number; OCR shifted all pairings by one row.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "# โรคหัวใจ\n\n*   โรคหัวใจและหลอดเลือด 44\n*   อาการเตือนของโรคหัวใจและหลอดเลือด 45\n*   8 ข้อควรปฏิบัติป้องกันโรคหัวใจและหลอดเลือด 46\n*   สถานการณ์ฉุกเฉินของหัวใจวายและหัวใจหยุดเต้น 47\n*   48",
+     "new": "# โรคหัวใจ 44\n\n*   โรคหัวใจและหลอดเลือด 45\n*   อาการเตือนของโรคหัวใจและหลอดเลือด 46\n*   8 ข้อควรปฏิบัติป้องกันโรคหัวใจและหลอดเลือด 47\n*   สถานการณ์ฉุกเฉินของหัวใจวายและหัวใจหยุดเต้น 48",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "The contents image pairs the section heading with the first page number and each following title with the next number; OCR shifted all pairings by one row.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "# โรคหลอดเลือดสมอง\n\n*   โรคหลอดเลือดสมอง 49\n*   เรียนรู้สัญญาณเตือนโรคหลอดเลือดสมอง 50\n*   ปัจจัยเสี่ยงโรคหลอดเลือดสมอง 51\n*   การป้องกันโรคหลอดเลือดสมอง 52\n*   53",
+     "new": "# โรคหลอดเลือดสมอง 49\n\n*   โรคหลอดเลือดสมอง 50\n*   เรียนรู้สัญญาณเตือนโรคหลอดเลือดสมอง 51\n*   ปัจจัยเสี่ยงโรคหลอดเลือดสมอง 52\n*   การป้องกันโรคหลอดเลือดสมอง 53",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "The contents image pairs the section heading with the first page number and each following title with the next number; OCR shifted all pairings by one row.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "# โรคอ้วน\n\n*   โรคอ้วนคืออะไร 54\n*   โรคอ้วนสามารถป้องกันได้ 55\n*   ดัชนีมวลกาย (BMI) 56\n*   ภาวะแทรกซ้อนโรคอ้วนในเด็ก 57\n*   เด็กอ้วนมักมีปัญหาสุขภาพ 58\n*   59",
+     "new": "# โรคอ้วน 54\n\n*   โรคอ้วนคืออะไร 55\n*   โรคอ้วนสามารถป้องกันได้ 56\n*   ดัชนีมวลกาย (BMI) 57\n*   ภาวะแทรกซ้อนโรคอ้วนในเด็ก 58\n*   เด็กอ้วนมักมีปัญหาสุขภาพ 59",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "The contents image pairs the section heading with the first page number and each following title with the next number; OCR shifted all pairings by one row.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "# การลดบริโภคเกลือและโซเดียม\n\n*   โซเดียมคืออะไร 60\n*   แหล่งอาหารที่มีโซเดียม 61\n*   ปริมาณโซเดียมในเครื่องปรุงรสอาหาร 62\n*   โซเดียมแฝง 63\n*   เรื่องน่ารู้จาก \"ผงชูรส\" 64\n*   ลดเกลือ ลดโซเดียม ลดโรคไม่ติดต่อ 65\n*   ข้อแนะนำการลดบริโภคโซเดียม 66\n*   วิธีลดการบริโภคโซเดียมเพื่อสุขภาพที่ดี 67\n*   68",
+     "new": "# การลดบริโภคเกลือและโซเดียม 60\n\n*   โซเดียมคืออะไร 61\n*   แหล่งอาหารที่มีโซเดียม 62\n*   ปริมาณโซเดียมในเครื่องปรุงรสอาหาร 63\n*   โซเดียมแฝง 64\n*   เรื่องน่ารู้จาก \"ผงชูรส\" 65\n*   ลดเกลือ ลดโซเดียม ลดโรคไม่ติดต่อ 66\n*   ข้อแนะนำการลดบริโภคโซเดียม 67\n*   วิธีลดการบริโภคโซเดียมเพื่อสุขภาพที่ดี 68",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "The contents image pairs the section heading with the first page number and each following title with the next number; OCR shifted all pairings by one row.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p54",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคหลอดเลือด",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ใต้ตรากรมควบคุมโรค",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "## โรคหัวใจ\n1.  ความดันโลหิตสูง\n2.  โรคเบาหวาน\n3.  ไขมันในเลือดสูง\n4.  การสูบบุหรี่\n5.  ภาวะหลอดเลือด คาโรติดที่คอตีบ\n6.  ดื่มสุรา\n7.  มลพิษ ทางอากาศ\n8.  โรคไม่ติดต่อ กับโควิด 19",
+     "new": "1.  ความดันโลหิตสูง\n2.  โรคหัวใจ\n3.  โรคเบาหวาน\n4.  การสูบบุหรี่\n5.  ไขมันในเลือดสูง\n6.  ดื่มสุรา\n7.  ภาวะหลอดเลือด คาโรติดที่คอตีบ\n8.  มลพิษ ทางอากาศ\n\nโรคไม่ติดต่อ กับโควิด 19",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "เลขกำกับในภาพ: 1 ความดัน 2 หัวใจ 3 เบาหวาน 4 สูบบุหรี่ 5 ไขมัน 6 สุรา 7 คาโรติด 8 มลพิษ; โควิด 19 เป็นแถบนำทาง",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p59",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูร จังหวัดชลบุรี",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สูตรคำนวน",
+     "new": "สูตรคำนวณ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Formula heading spells คำนวณ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "น้ำหนัก หาร ส่วนสูง (ม.)",
+     "new": "น้ำหนัก หาร ส่วนสูง (ม.)²",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "Formula shows superscript 2 on height in metres, omitted in OCR.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ใช้สายวัดรอบเอวรัดสะดือ",
+     "new": "ใช้สายวัดรอบเอวระดับสะดือ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Waist measurement instruction reads ระดับสะดือ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ คันอันสาเหตุ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ปัญหาภาวะ คันคอรุด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p6",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "<td>โรคไม่ติดต่อ กับวันสำคัญ</td><td></td>",
+     "new": "<td>โรคไม่ติดต่อ กับวันสำคัญ</td><td>69</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ โรคไม่ติดต่อ กับวันสำคัญ: 69",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>เทศกาลตรุษจีน ห่างไกลโรคไม่ติดต่อ</td><td>69</td>",
+     "new": "<td>เทศกาลตรุษจีน ห่างไกลโรคไม่ติดต่อ</td><td>70</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ เทศกาลตรุษจีน ห่างไกลโรคไม่ติดต่อ: 70",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>เทศกาล Valentine ตั้งแต่มีเธอข้างๆ ของหวานก็ไม่จำเป็น</td><td>70</td>",
+     "new": "<td>เทศกาล Valentine ตั้งแต่มีเธอข้างๆ ของหวานก็ไม่จำเป็น</td><td>71</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ เทศกาล Valentine ตั้งแต่มีเธอข้างๆ ของหวานก็ไม่จำเป็น: 71",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>ช่วงถือศีลอดเดือนรอมฎอน กับผู้ป่วยโรคไตเรื้อรัง</td><td>71</td>",
+     "new": "<td>ช่วงถือศีลอดเดือนรอมฎอน กับผู้ป่วยโรคไตเรื้อรัง</td><td>72</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ ช่วงถือศีลอดเดือนรอมฎอน กับผู้ป่วยโรคไตเรื้อรัง: 72",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>ฮีทสโตรกในผู้ป่วยโรคเรื้อรัง</td><td>73</td>",
+     "new": "<td>ฮีทสโตรกในผู้ป่วยโรคเรื้อรัง</td><td>75</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ ฮีทสโตรกในผู้ป่วยโรคเรื้อรัง: 75",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>10 ข้อแนะนำก่อนการลงแข่งขันวิ่ง</td><td>74</td>",
+     "new": "<td>10 ข้อแนะนำก่อนการลงแข่งขันวิ่ง</td><td>76</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ 10 ข้อแนะนำก่อนการลงแข่งขันวิ่ง: 76",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>การเตรียมตัวกรณีน้ำท่วมวิกฤต</td><td>75</td>",
+     "new": "<td>การเตรียมตัวกรณีน้ำท่วมวิกฤต</td><td>77</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ การเตรียมตัวกรณีน้ำท่วมวิกฤต: 77",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>สำหรับผู้ป่วยโรคไม่ติดต่อเรื้อรัง</td><td>76</td>",
+     "new": "<td>สำหรับผู้ป่วยโรคไม่ติดต่อเรื้อรัง</td><td></td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ สำหรับผู้ป่วยโรคไม่ติดต่อเรื้อรัง: เป็นบรรทัดต่อของรายการก่อนหน้า ไม่มีเลขแยก",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>คนอ้วนมีโอกาสเสี่ยงเป็นไข้เลือดออก</td><td>77</td>",
+     "new": "<td>คนอ้วนมีโอกาสเสี่ยงเป็นไข้เลือดออก</td><td>78</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ คนอ้วนมีโอกาสเสี่ยงเป็นไข้เลือดออก: 78",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>รุนแรงกว่าคนน้ำหนักปกติ</td><td>78</td>",
+     "new": "<td>รุนแรงกว่าคนน้ำหนักปกติ</td><td></td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สารบัญพิมพ์ รุนแรงกว่าคนน้ำหนักปกติ: เป็นบรรทัดต่อของรายการก่อนหน้า ไม่มีเลขแยก",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>ช่วงถือศีลอดเดือนรอมฎอน กับผู้ป่วยโรคเบาหวาน อากาศร้อน และมลพิษฝุ่นควัน</td><td>72</td>",
+     "new": "<td>ช่วงถือศีลอดเดือนรอมฎอน กับผู้ป่วยโรคเบาหวาน</td><td>73</td></tr><tr><td>อากาศร้อน และมลพิษฝุ่นควัน</td><td>74</td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "สองหัวข้อแยก: เบาหวาน 73; อากาศร้อน และมลพิษฝุ่นควัน 74",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<table><tr><td></td><td></td></tr><tr><td>Q&A ข้อแนะนำสำหรับผู้ป่วยเบาหวาน</td><td>85</td></tr><tr><td>กับโรคโควิด-19</td><td>86</td>",
+     "new": "<table><tr><td></td><td>85</td></tr><tr><td>Q&A ข้อแนะนำสำหรับผู้ป่วยเบาหวาน</td><td>86</td></tr><tr><td>กับโรคโควิด-19</td><td></td>",
+     "kind": "number",
+     "confidence": "high",
+     "evidence": "หัวหมวดโควิด 19 = 85; Q&A เบาหวานกับโรคโควิด-19 = 86",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>สำหรับผู้ป่วยโรคเบาหวาน เข้าพรรษา ใส่บาตร สร้างบุญ ลดเสี่ยง</td><td>81</td>",
+     "new": "<td>สำหรับผู้ป่วยโรคเบาหวาน</td><td></td></tr><tr><td>เข้าพรรษา ใส่บาตร สร้างบุญ ลดเสี่ยง</td><td>81</td>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "สำหรับผู้ป่วยโรคเบาหวานต่อจากวิธีป้องกันการติดเชื้อเมลิออยโดสิส หน้า 80; เข้าพรรษาเริ่มรายการ 81",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p64",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ซอสหรอยนางรม",
+     "new": "ซอสหอยนางรม",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "Oyster-sauce callout reads ซอสหอยนางรม.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "แพนเค็ก",
+     "new": "แพนเค้ก",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "200 dpi fourth section prints แพนเค้ก.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Sixth tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อกับไตวัด 19",
+     "new": "โรคไม่ติดต่อกับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Bottom tab reads กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อกับวัยสำคัญ",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p65",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูร จังหวัดสมุทรสาคร",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<tr><td></td><td>ชื่อวัตถุดิบ</td><td>ปริมาณที่แนะนำ</td></tr>",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "The diagram has no table headers ชื่อวัตถุดิบ or ปริมาณที่แนะนำ; these labels were invented and misdescribe the sodium amounts.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>น้ำปลา</td><td>1 ช้อนโต๊ะ</td><td>1,190 มิลลิกรัม</td>",
+     "new": "<td>ซีอิ๊วขาว</td><td>1 ช้อนโต๊ะ</td><td>1,190 มิลลิกรัม</td>",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "200 dpi label pairs ซีอิ๊วขาว with 1,190 mg per tablespoon.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<td>ซีอิ๊วขาว</td><td>1 ช้อนโต๊ะ</td><td>1,187 มิลลิกรัม</td>",
+     "new": "<td>ซอสถั่วเหลือง</td><td>1 ช้อนโต๊ะ</td><td>1,187 มิลลิกรัม</td>",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "200 dpi green label pairs ซอสถั่วเหลือง with 1,187 mg.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ภัยพิบัติทางน้ำท่วม ภัยพิบัติทางอากาศ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ภัยพิบัติทางสังคม",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p66",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยะกันควบคุมโรคและเอดส์",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ใต้ตรากรมควบคุมโรค",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โซเดียมใบคาร์บอเนต",
+     "new": "โซเดียมไบคาร์บอเนต",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "ป้ายขนมปัง โซเดียมไบคาร์บอเนต (ผงฟู)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กับไตวัด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DOC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p67",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ซีพจรเต้นเร็วขึ้น เธียกว่า CRS",
+     "new": "ชีพจรเต้นเร็วขึ้น เรียกว่า CRS",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi crop reads ชีพจรเต้นเร็วขึ้น เรียกว่า CRS.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โซเดียมเตาฟอสเฟต",
+     "new": "โซเดียมเมตาฟอสเฟต",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "200 dpi boxed recommendation reads โซเดียมเมตาฟอสเฟต.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Sixth tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ภัยบ้านสหกรณ์",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โครงการฝึกอบรม ป้องกันภาวะ คันเครียด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Ninth tab reads โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p8",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่ติดต่อทับวินสาคัญ",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Left blue tab reads โรคไม่ติดต่อกับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สถานบันโยะกันควบคุมโรคและเฝ้าระวัง",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi top-left logo caption reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ส่วนสูง **=2**",
+     "new": "ส่วนสูง **÷2**",
+     "kind": "sign",
+     "confidence": "high",
+     "evidence": "Green waist-size wedge shows division sign ÷ 2, not equals.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "CDC",
+     "new": "DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym is DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DCC\nกรมควบคุมโรค\nDepartment of Disease Control",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one DDC footer block appears; OCR repeats it.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   รู้เลขเสี่ยง เลี่ยงโรคไม่ติดต่อ\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Central Thai slogan appears only once, already retained after the English title.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi footer handle reads @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p86",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "<td>ปริมาณที่แนะนำ</td>",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No ปริมาณที่แนะนำ table heading is printed.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "![ภาพครอบครัว (ผู้ใหญ่หนึ่งคนและเด็กสามคน)](https://example.com/family.png)",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Invented image description and example.com URL are not printed source text.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "![ภาพชายสูงอายุ](https://example.com/elderly.png)",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Invented image description and example.com URL are not printed source text.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "![ภาพเครื่องวัดระดับน้ำตาลในเลือดพร้อมข้อความเตือน](https://example.com/sugar-alert.png)",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Invented image description and example.com URL are not printed source text.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กับบังคุด 4 ผล",
+     "new": "กับมังคุด 4 ผล",
+     "kind": "drug",
+     "confidence": "high",
+     "evidence": "200 dpi note reads มังคุด 4 ผล.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "รู้จักการันธ์",
+     "new": "รู้จักคาร์บ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi reference title begins รู้จักคาร์บ รู้จักนับ ปรับสมดุล ควบคุมเบาหวาน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ธงไทยธนาคารทุกกลุ่มวัย",
+     "new": "ธงโภชนาการทุกกลุ่มวัย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi second source title reads ธงโภชนาการทุกกลุ่มวัย.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "https://nutrition2.anamaimoph.go.th",
+     "new": "https://nutrition2.anamai.moph.go.th",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Printed URL has a dot between anamai and moph.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การลดการบริโภค เกลือและไขมัน",
+     "new": "การลดการบริโภค เกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Navigation tab reads เกลือและโซเดียม.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กับวันสาคัญ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Tab reads วันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กับปีงวด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Bottom tab reads กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ประชาชารอบรู้",
+     "new": "ประชาชนรอบรู้",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Printed footer reads ประชาชนรอบรู้.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p10",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคร้อน",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "The sixth left-side tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สถานีป้องกันควบคุมโรคติดต่อเมือง",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo crop reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "The footer abbreviation is DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle is @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p11",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green side tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ คันบันสากล",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab reads โรคไม่ติดต่อ กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ คันบวมต่างๆ",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab reads โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Bottom-left footer acronym is DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p12",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความใต้ตรากรมควบคุมโรค",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคร้อน",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบเขียวด้านซ้าย",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กับวัยสำคัญ",
+     "new": "กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้าด้านซ้าย",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p14",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยะกันควบคุมโรคติดต่อเรื้อรัง",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อกับวัณโรค",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer shows DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p15",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "*   โรคไม่ติดต่อระบบอวัยวะภายใน\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีแถบระบบอวัยวะภายในในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อระบบประสาท",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้าด้านขวา",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อมหั่นเชิงรุก 19",
+     "new": "โรคไม่ติดต่อกับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพูด้านขวา",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ด้านโรคไม่ติดต่อ NCD_DDC",
+     "new": "ด้านโรคไม่ติดต่อ @NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้าแสดง @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p17",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**โรคไม่ติดต่อ ภัยบัตรสาหกับ**",
+     "new": "**โรคไม่ติดต่อ กับวันสำคัญ**",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**โรคไม่ติดต่อ ภัยบัตรสาหกับ ไอหวัด 19**",
+     "new": "**โรคไม่ติดต่อ กับโควิด 19**",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink tab reads กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym reads DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p18",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เผาพลายูพลังงาน",
+     "new": "เผาผลาญพลังงาน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ย่อหน้าแรก การเผาผลาญพลังงาน",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "พฤติกรรมเบื่อยิ่ง",
+     "new": "พฤติกรรมเนือยนิ่ง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "กรอบระดับเบา",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กำงานบ้าน",
+     "new": "ทำงานบ้าน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ป้ายภาพงานบ้าน",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p19",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูร",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi top logo reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Sixth tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   **โรคไม่ติดต่อ ภัยอันตราย**\n*   **โรคไม่ติดต่อ ภัยอันตราย**",
+     "new": "*   **โรคไม่ติดต่อ กับวันสำคัญ**\n*   **โรคไม่ติดต่อ กับโควิด 19**",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Last two tabs read กับวันสำคัญ and กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กรมควบคุมโรค รอมรู้",
+     "new": "รอบรู้",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Right footer reads รอบรู้ สุขภาพ; there is no additional กรมควบคุมโรค preceding รอบรู้ in that badge.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p21",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "    *   โรคอ้วน\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ป้ายใต้ภาพมีชื่อโรคนี้เพียงครั้งเดียว ไม่ได้มีรายการย่อยซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   โรคความดันโลหิตสูง\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ป้ายใต้ภาพมีชื่อโรคนี้เพียงครั้งเดียว ไม่ได้มีรายการย่อยซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   โรคเบาหวาน\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ป้ายใต้ภาพมีชื่อโรคนี้เพียงครั้งเดียว ไม่ได้มีรายการย่อยซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   โรคหัวใจ\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ป้ายใต้ภาพมีชื่อโรคนี้เพียงครั้งเดียว ไม่ได้มีรายการย่อยซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   โรคหลอดเลือดสมอง อัมพฤกษ์ อัมพาต\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ป้ายใต้ภาพมีชื่อโรคนี้เพียงครั้งเดียว ไม่ได้มีรายการย่อยซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   โรคถุงลมโป่งพอง\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ป้ายใต้ภาพมีชื่อโรคนี้เพียงครั้งเดียว ไม่ได้มีรายการย่อยซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   โรคมะเร็ง\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ป้ายใต้ภาพมีชื่อโรคนี้เพียงครั้งเดียว ไม่ได้มีรายการย่อยซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### โรคไม่ติดต่อ\n\n*   โรคอ้วน\n*   โรคความดันโลหิตสูง\n*   โรคเบาหวาน\n*   โรคหัวใจ\n*   โรคหลอดเลือดสมอง อัมพฤกษ์ อัมพาต\n*   โรคถุงลมโป่งพอง\n*   โรคมะเร็ง\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีรายการชื่อโรคชุดที่สามในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ค้นคว้าหาข้อมูล พบได้รวด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพูด้านขวา",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p22",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยบายกับควบคุมโรคติดต่อเรื้อรัง",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Logo identifies สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer reads DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p23",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "Dx dx\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Top-left illustration is a DNA helix; no printed Dx dx appears.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Non-Communicable Disease",
+     "new": "Non-Communicable Diseases",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi coat caption has plural Diseases.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p24",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไขมันในเลือด",
+     "new": "โรคไต",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบเขียว",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อกับไวรัส**",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ**",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อกับไวรัส 19",
+     "new": "โรคไม่ติดต่อกับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p25",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่ใช่ต่อต้านวิธีการ คับแคบ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth right navigation tab reads โรคไม่ติดต่อ กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคหัวใจขาด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Ninth right tab reads โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p26",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "กับวินสาคัญ",
+     "new": "กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ความเครียดเรื่องร่างกาย",
+     "new": "ความเครียดเรื้อรัง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Risk wedge reads ความเครียดเรื้อรัง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กับไตวัด 19",
+     "new": "กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab reads กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym is DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p27",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบเขียว",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ คับอันสาเหตุ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ คับเครียด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p28",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "*   โรคมะเร็งหลอดเลือดสมอง (Stroke)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No such complication is printed; actual stroke navigation tab is separately present.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สถานบันโยบายกับควบคุมโรคและเอดส์",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institutional logo identifies สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "\n## โรคเบาหวาน\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one diabetes navigation tab exists; OCR repeats it here and again as the last subheading.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กับวิบัลสายภัย",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth tab reads โรคไม่ติดต่อ กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p29",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่ติดต่อ คืบวันสาหกิน",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ป้องกันป้องกัน คืนชีวิต 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab reads โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p30",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "**เวลา:** ",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อกำกับนี้พิมพ์อยู่ในภาพ; มีเฉพาะประโยคคำแนะนำถัดไป",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**เจ็บสบาย:** ",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อกำกับนี้พิมพ์อยู่ในภาพ; มีเฉพาะประโยคคำแนะนำถัดไป",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**การลดความดันโลหิต:** ",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อกำกับนี้พิมพ์อยู่ในภาพ; มีเฉพาะประโยคคำแนะนำถัดไป",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**การให้ปลอดแขน (arm cuff) อยู่ระดับหัวใจ:** ",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อกำกับนี้พิมพ์อยู่ในภาพ; มีเฉพาะประโยคคำแนะนำถัดไป",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การทดสอบเลือดสมอง (Stroke)",
+     "new": "โรคหลอดเลือดสมอง (Stroke)",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบข้างพิมพ์ โรคหลอดเลือดสมอง (Stroke)",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "วางเท้าราบทับฟื้น",
+     "new": "วางเท้าราบกับพื้น",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "กรอบล่างซ้าย วางเท้าราบกับพื้น",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p31",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Sixth tab says โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การลดการบริโภคเกเรอและโซเดียม",
+     "new": "การลดการบริโภคเกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Tab reads เกลือ, not เกเรอ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   โรคไม่ติดต่อตับอับเสียหาย\n*   โรคไม่ติดต่อตับอับเสียหาย 19",
+     "new": "*   โรคไม่ติดต่อ กับวันสำคัญ\n*   โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Bottom two tabs read กับวันสำคัญ and กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p32",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "Non-communicable Disease",
+     "new": "Non-communicable Diseases",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi coat caption ends Diseases.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p33",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยงกับเศรษฐกิจและสังคม",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความใต้ตรากรมควบคุมโรค",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคเบาหวาน ได้รับการยอมรับว่าเป็นโรคที่สำคัญของประชากรไทย และยังคงมีแนวโน้มเพิ่มขึ้นอย่างต่อเนื่อง\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีประโยคนี้บนภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### โรคที่เกี่ยวข้อง\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อโรคที่เกี่ยวข้อง; ชื่อโรคเป็นแถบนำทาง",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่เผาต่อ คันอันสาเหตุ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   โรคปอดอุดกั้นเรื้อรัง (IPF)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีป้าย IPF ในภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคเบาหวาน ตามโครงสร้าง 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### แหล่งข้อมูล\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อแหล่งข้อมูลพิมพ์อยู่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สำนักงานกองทุนสนับสนุนการสร้างเสริมสุขภาพ NCD_DPC",
+     "new": "ด้านโรคไม่ติดต่อ @NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า รอบรู้ สุขภาพ ด้านโรคไม่ติดต่อ @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p34",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคลมติดต่อกับวัณโรคภัยไข้เจ็บ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth tab reads โรคไม่ติดต่อ กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p35",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "หิวน้ำข่อย",
+     "new": "หิวน้ำบ่อย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Symptom caption reads กระหายน้ำ หิวน้ำบ่อย.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ใช่ติดต่อ คันอ้วนสาเหตุ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue sidebar tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ปัญหาปัจจัยต่างๆ คนควรระวัง 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink sidebar tab.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p36",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "    *   ภาพประกอบ: สัญลักษณ์เพศชายและหญิง\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "เป็นคำบรรยายภาพของโมเดล ไม่มีข้อความนี้พิมพ์อยู่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   ภาพประกอบ: ชายสวมเสื้อแขนยาวสีเขียวกำลังถือเอกสาร\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "เป็นคำบรรยายภาพของโมเดล ไม่มีข้อความนี้พิมพ์อยู่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   ภาพประกอบ: แคปซูลยาหลายเม็ด\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "เป็นคำบรรยายภาพของโมเดล ไม่มีข้อความนี้พิมพ์อยู่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   ภาพประกอบ: โปรไฟล์บุคคลสามคน\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "เป็นคำบรรยายภาพของโมเดล ไม่มีข้อความนี้พิมพ์อยู่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "1.  **ผู้ที่มีอายุ 35 ปีขึ้นไป**\n    *   ภาพประกอบ: ชายและหญิงกำลังถือเอกสาร",
+     "new": "1.  **ผู้ที่มีอายุ 35 ปีขึ้นไป**",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายการ 1 มีเพียงข้อความอายุ ไม่ได้มีคำบรรยายภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   ผู้หญิง มีเส้นรอบเอว ตั้งแต่ 80 ซม.ขึ้นไป\n    *   ภาพประกอบ: ชายและหญิงกำลังถือเอกสาร",
+     "new": "    *   ผู้หญิง มีเส้นรอบเอว ตั้งแต่ 80 ซม.ขึ้นไป",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายการ 4 มีเพียงเงื่อนไขรอบเอว ไม่ได้มีคำบรรยายภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**โรคความดันโลหิตสูง หรือ",
+     "new": "**มีโรคความดันโลหิตสูง หรือ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "รายการ 5 เริ่ม มีโรคความดันโลหิตสูง",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p38",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เจาะเลือดหลังอาหาร 8 ชั่วโมง",
+     "new": "เจาะเลือดหลังงดอาหาร 8 ชั่วโมง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi Fasting Blood Sugar row explicitly says เจาะเลือดหลังงดอาหาร.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "น้ำตาลกลุโภคมาตรฐาน",
+     "new": "น้ำตาลกลูโคสมาตรฐาน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi footnote reads น้ำตาลกลูโคสมาตรฐาน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "อิริป้องกัน",
+     "new": "วิธีป้องกัน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Orange heading reads วิธีป้องกัน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym is DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p39",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่ติดต่อที่มีอันตราย",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<tr><td>โรคเบาหวาน</td><td>โรคปอดอุดกั้นเรื้อรัง (COPD)</td></tr>",
+     "new": "<tr><td>โรคไม่ติดต่อกับโควิด 19</td><td></td></tr>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบสุดท้ายเป็นโรคไม่ติดต่อกับโควิด 19; ไม่มี COPD หรือป้ายเบาหวานซ้ำ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p40",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "มียาหารสูง",
+     "new": "มีใยอาหารสูง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Vegetable bullet reads มีใยอาหารสูง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRCM กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**โรคติดต่อกับไตวัด 19**\n\"ไม่ควร\" รับประทาน\n*   ผลไม้กวน ผลไม้แช่อิ่ม ผลไม้รสหวานจัด\n*   อาหารที่มีไขมันอิ่มตัว เช่น ไขมันจากสัตว์ มาการีน เนย\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "The ไม่ควร section is printed only once. This second copy is invented; its prefixed tab is also mistranscribed. The actual COVID tab is recorded under missing.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p41",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "**โรคเบาหวาน**\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only the title and one sidebar โรคเบาหวาน occur; standalone extra heading is duplicated.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ไต่เสื่อม/ไตวาย",
+     "new": "ไตเสื่อม/ไตวาย",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Kidney complication caption reads ไตเสื่อม/ไตวาย.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green side tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ เรื้อรัง (NCDs) ที่พบในส่วนหนึ่งของอินโฟกราฟิก",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "This descriptive sentence is not printed on the page.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ด้านโรคไม่ติดต่อ NCDs",
+     "new": "ด้านโรคไม่ติดต่อ @NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer uses handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p43",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "\n---\n\n**โรคไต**\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Kidney navigation label is duplicated; retain its other occurrence below โรคเบาหวาน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไตวัณโรค",
+     "new": "โรคหัวใจ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Fourth navigation tab is โรคหัวใจ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ใช่ติดต่อ กับอันสากล",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth tab reads โรคไม่ติดต่อ กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคปอดกำจัด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Ninth tab reads โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p44",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ชุ่ม มีเลือด แสบขัด",
+     "new": "ขุ่น มีเลือด แสบขัด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Urinary symptom caption reads ขุ่น มีเลือด แสบขัด.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อทับวันสำคัญ",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   การลดการบริโภค เกลือและโซเดียม\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one salt/sodium sidebar tab exists; nested repeat is invented.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สถาบันบำราศนราดูรโรคและเสียง",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi top-left caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym is DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p45",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "เสี่ยงการใช้ยาแก้ปวด",
+     "new": "เลี่ยงการใช้ยาแก้ปวด",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อ 2 เลี่ยงการใช้ยาแก้ปวด",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เสี่ยงรับประทานอาหารรสเค็ม",
+     "new": "เลี่ยงรับประทานอาหารรสเค็ม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อ 5 เลี่ยงรับประทานอาหารรสเค็ม",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไตวัณ",
+     "new": "โรคหัวใจ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบสีฟ้าเทา",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เกลือและไฮเคมี",
+     "new": "เกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบม่วง",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ใช่ติดต่อ คับบินส์หาสน",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ป้องกันกำจัด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p46",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "*   รูปภาพประกอบ: รูปต่างๆ ที่เกี่ยวข้องกับสุขภาพและสุขภาวะ เช่น หัวใจ, ยา, เครื่องวัดความดันโลหิต, AED, ผู้ป่วยกำลังทำกายกรรมเพื่อสุขภาพจิต, แพทย์กำลังถือหัวใจ, แผนภูมิวงกลมแสดงผลการตรวจสุขภาพ, รูปหัวใจและดาว, รูปคนกำลังนอนหลับพร้อมเครื่องนอนที่มีหัวใจ, รูปคนกำลังกอดตัวเองและมีรูปหัวใจลอยอยู่รอบๆ เป็นต้น\n\n*   ข้อความหลัก: \"โรคหัวใจ\" เป็นภาษาไทยที่ใช้ในโฆษณาหรือโปสเตอร์เพื่อส่งเสริมสุขภาพ\n\n*   ภาพรวม: ภาพนี้เป็นโปสเตอร์หรือโฆษณาที่เน้นเรื่องสุขภาพหัวใจ โดยมีภาพประกอบที่หลากหลายและข้อความหลักที่ชัดเจน ซึ่งอาจเป็นส่วนหนึ่งของโครงการรณรงค์ให้ประชาชนเข้ารับการตรวจสุขภาพหัวใจหรือให้คำปรึกษาเกี่ยวกับสุขภาพหัวใจ",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "All three prose bullets are model-generated descriptions, not printed page text. The page prints the title โรคหัวใจ and small AED lettering on the device illustration.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p47",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "การลดการรับโรค",
+     "new": "การลดการบริโภค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Purple side tab reads การลดการบริโภค.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ คันอันสาเหตุ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคหัวใจวัณโรค กับโควิด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### โรคหัวใจ\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one sidebar โรคหัวใจ appears, retained as a list item; extra heading is duplicate.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### ปัจจัยเสี่ยง\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Risk heading occurs only in the central banner, already transcribed; not a second heading over tabs.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p48",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ใต้ตรากรมควบคุมโรค",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อกับวัณโรค",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p49",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "## โรคความดันโลหิตสูง\n*   โรคเบาหวาน\n*   โรคไต\n*   โรคหัวใจ\n*   โรคหลอดเลือดสมอง (Stroke)\n*   โรคอ้วน\n*   การลดการบริโภคเกลือและโซเดียม\n*   โรคไม่ติดต่อทับอันสาเหตุ\n*   โรคหัวใจวาย\n\n## โรคความดันโลหิตสูง\n*   โรคเบาหวาน\n*   โรคไต\n*   โรคหัวใจ\n*   โรคหลอดเลือดสมอง (Stroke)\n*   โรคอ้วน\n*   การลดการบริโภคเกลือและโซเดียม\n*   โรคไม่ติดต่อทับอันสาเหตุ\n*   โรคหัวใจวาย",
+     "new": "## โรคความดันโลหิตสูง\n*   โรคเบาหวาน\n*   โรคไต\n*   โรคหัวใจ\n*   โรคหลอดเลือดสมอง (Stroke)\n*   โรคอ้วน\n*   การลดการบริโภคเกลือและโซเดียม\n*   โรคไม่ติดต่อ กับวันสำคัญ\n*   โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "There is one nine-tab strip only; its last two entries are กับวันสำคัญ and กับโควิด 19. Both duplicate blocks are included in old so the replacement is unambiguous.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p50",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "กับวิบัลลาดัย",
+     "new": "กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เหลือและโซเดียม",
+     "new": "เกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Purple side tab reads เกลือและโซเดียม.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym is DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p52",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคกล้ามเนื้อ",
+     "new": "โรคไต",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Third left navigation tab is โรคไต; no muscle disease is printed.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ทับโควิด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Bottom tab reads กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การลดการบริโภค เคลื่อนและไขมัน",
+     "new": "การลดการบริโภค เกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Seventh tab reads เกลือและโซเดียม.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สถาบันบำราศนราดูร",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institution line reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p53",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูร ศึกษาและพัฒนา",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เกสและเฮตเวย์",
+     "new": "เกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Purple side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ คับแค้นสาหัส",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ป้องกันตัวเอง กับโควิด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p55",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่ติดต่อ คืบวันล่าสุด",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth right tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ปีงบประมาณ คืนโควิด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Ninth tab reads โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p56",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": " กรมอนามัย",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Coat shows NCDs and a small English caption, not กรมอนามัย.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   ห้ามดื่มแอลกอฮอล์ขณะกินอาหาร\n*   ห้ามทานยาลดน้ำหนักขณะกินอาหาร\n*   ห้ามกินอาหารทอด\n*   ห้ามทานยาลดน้ำหนักขณะออกกำลังกาย\n*   ห้ามทานยาลดน้ำหนักขณะกินอาหารเสริมอาหาร",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "None of these five sentences is printed. The cover contains pictorial crosses/checkmarks without those written warnings.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p58",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institution line identifies สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "# โรควัณ สามารถป้องกันได้ง่ายๆ",
+     "new": "# โรคอ้วน สามารถป้องกันได้ง่ายๆ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Main heading is โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "## โรควัณ เป็นปัจจัยก่อให้เกิดโรคไม่ติดต่อ",
+     "new": "## โรคอ้วน เป็นปัจจัยก่อให้เกิดโรคไม่ติดต่อ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Middle heading is โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "## โรควัณสามารถป้องกันได้ง่ายๆ",
+     "new": "## โรคอ้วนสามารถป้องกันได้ง่ายๆ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Lower heading is โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p60",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "ภาวะทรุดไหลย้อน",
+     "new": "ภาวะกรดไหลย้อน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ระบบทางเดินอาหารและตับ: ภาวะกรดไหลย้อน",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สีน้ำตาลตำหนา",
+     "new": "สีน้ำตาลดำหนา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ผิวหนังมีผื่นสีน้ำตาลดำหนาบริเวณคอ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สำนักโรคไม่ติดต่อ @NCD_DPC",
+     "new": "ด้านโรคไม่ติดต่อ @NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า ด้านโรคไม่ติดต่อ @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p61",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "หยุดหายใจชุบะหลับ",
+     "new": "หยุดหายใจขณะหลับ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top fifth condition reads หยุดหายใจขณะหลับ จากการอุดกั้น (OSA).",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ใช้เลือดออก",
+     "new": "ไข้เลือดออก",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "First infection label is ไข้เลือดออก.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ใช้หวัดใหญ่",
+     "new": "ไข้หวัดใหญ่",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Second infection label is ไข้หวัดใหญ่.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เสียมูลลิกภาพ",
+     "new": "เสียบุคลิกภาพ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Psychological paragraph prints เสียบุคลิกภาพ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กระโดดเชือก และลูกบอล ปั่นป่ายเครื่องเล่น",
+     "new": "กระโดดเชือก เตะลูกบอล ปีนป่ายเครื่องเล่น",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi ages 2-6 text reads เตะลูกบอล ปีนป่ายเครื่องเล่น.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ดูโทรทัศน์และเล่มเกม",
+     "new": "ดูโทรทัศน์และเล่นเกม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Bottom text reads เล่นเกม.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ให้คำชมชมเยื่อทำได้เหมาะสม",
+     "new": "ให้คำชมเชยเมื่อทำได้เหมาะสม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi bottom paragraph reads ให้คำชมเชยเมื่อทำได้เหมาะสม.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคเบาหวาน\nโรคความดันโลหิตสูง\nโรคเบาหวาน\nโรคความดันโลหิตสูง",
+     "new": "โรคความดันโลหิตสูง\nโรคเบาหวาน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "One hypertension and one diabetes tab are printed; the OCR repeats both.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ใช่ตัวต่อ คันบัณฑิตย์\nโรคไม่ใช่ตัวต่อ คันบัณฑิตย์",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ\nโรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Last two navigation tabs read กับวันสำคัญ and กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p62",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "Non-Communicable Disease",
+     "new": "Non-Communicable Diseases",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi coat caption ends Diseases.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p63",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่ใช่ติดต่อ กับอันตราย",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคหัวใจ สูญภาพ",
+     "new": "โรคหัวใจ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบหัวใจไม่มีคำว่าสูญภาพ",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบเขียว",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคหลอดเลือด สูญ (Stroke)",
+     "new": "โรคหลอดเลือดสมอง (Stroke)",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบสีส้ม",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p68",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "### โรคเบาหวาน\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one โรคเบาหวาน sidebar label exists; this second copy is invented.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### โรคหลอดเลือดสมอง (Stroke)\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one stroke sidebar label exists.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### โรคอ้วน\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one obesity sidebar label exists.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### โรคกระดูกพรุน\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one central osteoporosis caption exists.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สำนักงานประกันสังคม\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No social security office text appears in footer or elsewhere.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p69",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "อาหารที่สําเร็จรูป",
+     "new": "อาหารกึ่งสำเร็จรูป",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "บรรทัดหลีกเลี่ยงอาหารแปรรูป พิมพ์ อาหารกึ่งสำเร็จรูป",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อภัยไข้เจ็บ",
+     "new": "โรคไม่ติดต่อกับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคภัยไข้เจ็บ คันคอขาด 19",
+     "new": "โรคไม่ติดต่อกับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**กรมควบคุมโรค**\nMINISTRY OF PUBLIC HEALTH",
+     "new": "**กระทรวงสาธารณสุข**\nMINISTRY OF PUBLIC HEALTH",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อความรอบตรากระทรวง",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สถาบันบำเพ็ญกับราษฎรโควิดและเอดส์",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ใต้ตรากรมควบคุมโรค",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p70",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institution line reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ซึมก่อนปรุง",
+     "new": "ชิมก่อนปรุง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "First action says ชิมก่อนปรุง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p72",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สำนักงานกองทุนสนับสนุน การสร้างเสริมสุขภาพ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**โรคไม่ติดต่อ กับโควิด 19**\nลดโอกาสติดเชื้อ\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one COVID sidebar tab appears; no ลดโอกาสติดเชื้อ text is printed.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p73",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบเขียว",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กับอันสักครู่",
+     "new": "กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคอ้วน\n\nDPC",
+     "new": "โรคไม่ติดต่อ\nกับโควิด 19\n\nDDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบสุดท้ายเป็นโรคไม่ติดต่อกับโควิด 19 และท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p74",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DRC\nกรมควบคุมโรค",
+     "new": "DDC\nกรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p75",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่สุดต่อ กับน้ำตาล",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue sidebar tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ป้องกันปัญหา คุมความดัน 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink sidebar tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "แต่พอฉีด",
+     "new": "แต่พอดี",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Fourth instruction reads แต่พอดี.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p76",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "อาการร้อน",
+     "new": "อากาศร้อน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "หัวเรื่อง อากาศร้อน",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กับวินสาคัญ",
+     "new": "กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**โรค เบาหวาน**\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "ไม่มีชื่อเบาหวานซ้ำอีกตำแหน่งนอกจากเนื้อหาและแถบที่ถอดไว้แล้ว",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรค ไข้หวัดใหญ่",
+     "new": "โรคหัวใจ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบหัวใจ ไม่มีไข้หวัดใหญ่",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**เจ็บแน่นหน้าอก**\n\n**ไข้สั่น**\n\n**หน้ามืดเป็นลม หมดสติ**\n\n**แขนขาชา**\n\n**แขนขาอ่อนแรง**\n\n**ปากเบี้ยวพูดไม่ชัด**\n\n**โทร. 1669 รีบไปโรงพยาบาลทันที**\n\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "อาการหกข้อและโทร.1669 มีชุดเดียวในภาพ; ส่วนท้ายเป็น OCR ถอดซ้ำและอ่านใจสั่นเป็นไข้สั่น",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p77",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "*   ซัก",
+     "new": "*   ชัก",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Last symptom label reads ชัก.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "**DPC**",
+     "new": "**DDC**",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โครงการฝึกอบรม ครบวงจร 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Ninth tab reads โรคไม่ติดต่อ กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "สถาบันบำราศนราดูรเวชศาสตร์เมือง",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institution is สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "Ministry of Public Health\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "The English ministry label is printed once, in uppercase; OCR already contains that uppercase occurrence.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p78",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยชน์ในความดูแลของรัฐ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "เป็นจริงเมื่อประโยชน์",
+     "new": "เป็นจริงเพื่อประโยชน์",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Item 4 says เป็นจริงเพื่อประโยชน์.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "ระยะทางใกล้ในช่วงเวลา",
+     "new": "ระยะทางไกลในช่วงเวลา",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Item 5 says ระยะทางไกล, confirmed at 200 dpi.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p79",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบเขียว",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กับวัณสาย",
+     "new": "กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กรมควบคุมโรค 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "จัดเตรียมหาไว้",
+     "new": "จัดเตรียมยาไว้",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ข้อ 2 จัดเตรียมยาไว้ในภาชนะที่เหมาะสม",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p80",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institution line reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "หากมีใช้สูงติดต่อกัน",
+     "new": "หากมีไข้สูงติดต่อกัน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Speech bubble reads หากมีไข้สูงติดต่อกัน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การลดการบริโภค เกลือและโซเดียม\nโรคไม่ติดต่อ กับปวดสาคร\nโรคอ้วน\nโรคหลอดเลือด สมอง (Stroke)\nโรคไต\nโรคเบาหวาน\nโรคไม่ติดต่อ กับโควิด 19\nการลดการบริโภค เกลือและโซเดียม\nโรคไม่ติดต่อ กับปวดสาคร\nโรคอ้วน\nโรคหลอดเลือด สมอง (Stroke)",
+     "new": "การลดการบริโภค เกลือและโซเดียม\nโรคไม่ติดต่อ กับวันสำคัญ\nโรคอ้วน\nโรคหลอดเลือด สมอง (Stroke)\nโรคไต\nโรคเบาหวาน\nโรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Only one instance of each side tab is printed; eighth tab is กับวันสำคัญ. Full span disambiguates duplicated OCR blocks.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "https://www.sciencedirect.com/science/article/pii/S0168411822001372",
+     "new": "https://www.sciencedirect.com/science/article/pii/S1684118222001372",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi source-line crop shows S1684118222001372 (no extra 0 after S).",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "https://acbac.tci-thaijo.org/index.php/JMD/article/view/775432015-2021-0019-81677634354d",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No tci-thaijo/JMD URL is printed. The third printed source is an acrobat.adobe.com link.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p81",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Green side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "กับวัณสายใย",
+     "new": "กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ\nชนิดทางจุล\nคมโครยว์ 19",
+     "new": "โรคไม่ติดต่อ\nกับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p82",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "☑ ไม่ติดต่อ กับไตวัด 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพูเป็นข้อความนี้ ไม่มีช่องทำเครื่องหมาย",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ ชนวนสาเหตุ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p83",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคไม่ติดต่อ คับบันสาเหตุ",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรควัณ",
+     "new": "โรคอ้วน",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Sixth tab reads โรคอ้วน.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไต้",
+     "new": "โรคไต",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Third tab reads โรคไต.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p84",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "    *   (ภาพประกอบ: ผู้ป่วยกำลังรับการบำบัดรักษา)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No printed descriptive sentence accompanies the cancer icon.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   (ภาพประกอบ: กล่องแสดงระดับน้ำตาลในเลือด 120 mg/dL)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "The illustration shows 120 but no such sentence or mg/dL unit is printed.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   (ภาพประกอบ: ภาพผู้ป่วยมีอาการหายใจลำบาก)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Image description is not printed text.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   (ภาพประกอบ: ขวดยาและเม็ดยากระจายอยู่รอบๆ ผู้ป่วยที่กำลังไอ)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Image description is not printed text.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "    *   (ภาพประกอบ: แพทย์กำลังพูดคุยกับผู้ป่วยที่มีอาการเจ็บหน้าอก)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Image description is not printed text.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "### โรคไม่ติดต่อ ควบคุมสำคัญ",
+     "new": "### โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "การลดการบริโภค เหลือและไขมัน",
+     "new": "การลดการบริโภค เกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Purple side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   โรคไม่ติดต่อ ควบคุมสำคัญ กับโควิด 19\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "Only one COVID-19 tab appears, retained in the following list item.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p88",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถาบันบำราศนราดูรโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ใต้ตรากรมควบคุมโรค",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า @NCD_DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   **โรคไม่ติดต่อกับส่วนใหญ่** (กล่าวถึงโรคติดต่อที่ไม่ใช่โรคเบาหวาน)\n    *   ดูแลสุขภาพให้แข็งแรง",
+     "new": "*   ดูแลสุขภาพให้แข็งแรง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อโรคไม่ติดต่อกับส่วนใหญ่หรือคำอธิบายในวงเล็บ; มีเพียงคำแนะนำถัดไป",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   **โรคไม่ติดต่อกับส่วนใหญ่** (กล่าวถึงโรคติดต่อที่ไม่ใช่โรคเบาหวาน)\n    *   การติดเชื้อทุกชนิดสามารถเพิ่มระดับ",
+     "new": "*   การติดเชื้อทุกชนิดสามารถเพิ่มระดับ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ไม่มีหัวข้อโรคไม่ติดต่อกับส่วนใหญ่หรือคำอธิบายในวงเล็บ; มีเพียงคำแนะนำถัดไป",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p89",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "*   โรคขาดเลือด\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "No โรคขาดเลือด list/tab entry is printed.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   โรคไม่สดต่อ คันอินสตาไทน์\n*   โรคไม่สดต่อ ทับผิวหน้า",
+     "new": "*   โรคไม่ติดต่อ กับวันสำคัญ\n*   โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Last two actual navigation tabs read กับวันสำคัญ and กับโควิด 19.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   โรคไม่สดต่อ กล้ามเนื้อ\n*   โรคไม่สดต่อ ระบบประสาท\n*   โรคไม่สดต่อ สมอง (Stroke)\n",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "These three extra disease lines are absent; actual stroke tab is already transcribed separately.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไต้",
+     "new": "โรคไต",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Third tab reads โรคไต.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p9",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โรคมะเร็งปากกา",
+     "new": "การลดการบริโภคเกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบม่วงด้านขวาพิมพ์ การลดการบริโภค เกลือและโซเดียม",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "โลโก้ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p90",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยะกันควบคุมโรคติดเชื้อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "200 dpi logo caption.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคลดการบริโภค เกลือและไขมัน",
+     "new": "การลดการบริโภค เกลือและโซเดียม",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Purple side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กบบวมน้ำตาล",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กบไควติดต่อ 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink side tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle ends DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p91",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "ท้ายหน้า DDC",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ใช่ติดต่อ กับอันตราย",
+     "new": "โรคไม่ติดต่อ กับวันสำคัญ",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบฟ้า",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "โรคไม่ติดต่อ กับความดัน 19",
+     "new": "โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "แถบชมพู",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p92",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "สถานบันโยบายกับควบคุมโรคติดต่อ",
+     "new": "สถาบันป้องกันควบคุมโรคเขตเมือง",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Top institution line reads สถาบันป้องกันควบคุมโรคเขตเมือง.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "\nโรคไม่ติดต่อ ทบทวนสำคัญ\n",
+     "new": "\nโรคไม่ติดต่อ กับวันสำคัญ\n",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Eighth tab reads กับวันสำคัญ.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "*   โรคไม่ติดต่อ ทบทวนสำคัญ",
+     "new": "*   โรคไม่ติดต่อ กับโควิด 19",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Ninth tab reads กับโควิด 19; OCR repeats the mistranscribed eighth label.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DRC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer abbreviation DDC.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "@NCD_DPC",
+     "new": "@NCD_DDC",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer handle @NCD_DDC.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p93",
+   "page": "accept",
+   "accepted_edits": [
+    {
+     "old": "โคโรน่า 2019",
+     "new": "โคโรนา 2019",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Main heading prints โคโรนา without tone mark.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<tr><td>โรค เบาหวาน</td><td>โรคอ้วน</td></tr>",
+     "new": "",
+     "kind": "remove",
+     "confidence": "high",
+     "evidence": "This row adds third copies of diabetes and obesity; source has each twice, once central and once sidebar.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<tr><td>โรคความดันโลหิตสูง</td><td>โรคไม่ติดต่อ ทับอันสาเหตุ</td></tr>",
+     "new": "<tr><td>โรคไม่ติดต่อ กับวันสำคัญ</td></tr>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Blue tab is กับวันสำคัญ; this row also duplicates hypertension beyond its two printed occurrences.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "<tr><td>โรคเบาหวาน</td><td>โรคไม่ติดต่อ ทับอันสาเหตุ</td></tr>",
+     "new": "<tr><td>โรคเบาหวาน</td><td>โรคไม่ติดต่อ กับโควิด 19</td></tr>",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Pink tab reads กับโควิด 19, not a second copy of the blue tab.",
+     "occurrences": 1,
+     "valid": true
+    },
+    {
+     "old": "DPC กรมควบคุมโรค",
+     "new": "DDC กรมควบคุมโรค",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "Footer acronym.",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p42",
+   "page": "reject",
+   "accepted_edits": [
+    {
+     "old": "NCDs\nNCDs ไม่ใช่โรคติดต่อเรื้อรัง\n\n*   ยาเม็ด\n*   ขวดเครื่องดื่มแอลกอฮอล์และโซดา\n*   ไต\n*   กระดาษโน้ต\n\n**NCDs**\n**Non-Communicable Disease**\n\n*   ยาเม็ด\n*   ขวดเครื่องดื่มแอลกอฮอล์และโซดา\n*   ไต\n*   กระดาษโน้ต",
+     "new": "NCDs\nNon-Communicable Diseases",
+     "kind": "word",
+     "confidence": "high",
+     "evidence": "บนเสื้อมี NCDs และ Non-Communicable Diseases เพียงชุดเดียว; ไม่มีประโยค NCDs ไม่ใช่โรคติดต่อเรื้อรัง หรือรายการบรรยายภาพยา/ขวด/ไต/กระดาษ",
+     "occurrences": 1,
+     "valid": true
+    }
+   ],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p3",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p51",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p57",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p85",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p7",
+   "page": "accept",
+   "accepted_edits": [],
+   "note": ""
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p87",
+   "page": "reject",
+   "accepted_edits": [],
+   "note": ""
+  }
+ ]
+}

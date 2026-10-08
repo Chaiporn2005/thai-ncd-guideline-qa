@@ -1,0 +1,62 @@
+{
+  "document_id": "ckd-ddc-epidemiology-prevention-review-2567",
+  "title": "ระบาดวิทยาและการทบทวนมาตรการป้องกันโรคไตเรื้อรัง",
+  "source_sha256": "e698604694ded338f2920494a0644746e625f6a780384616734d80346d7a82dc",
+  "pdf_pages": 36,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 1,
+      "skip_low_agreement": 1,
+      "unchanged": 1
+    },
+    "tounicode_entries_written_or_changed": 1
+  },
+  "normalization_totals": {
+    "glyph_name_tokens": 3,
+    "sara_am_composed": 3,
+    "space_before_following_vowel": 10,
+    "space_before_mark": 11
+  },
+  "status_counts": {
+    "ocr_unreviewed": 3,
+    "ok": 33
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      2,
+      36
+    ]
+  },
+  "removed_edge_lines": 33,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "7ecef4a38c1ae53ce9add6446b2263b88ca772e4864af43aa754dd8435b7f77c",
+  "created_at": "2026-10-08T14:52:36.664662+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v9",
+    "pages_jsonl_sha256": "7ecef4a38c1ae53ce9add6446b2263b88ca772e4864af43aa754dd8435b7f77c",
+    "review_decisions": "ocr_review_decisions_reocr-v9_approved.json"
+  },
+  "population_counts": {
+    "elderly": 6,
+    "general": 30
+  },
+  "index_excluded_pages": [
+    36
+  ]
+}

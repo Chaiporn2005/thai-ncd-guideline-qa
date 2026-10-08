@@ -32,3 +32,6 @@ Thumbs.db
 
 # Review exports hold the personal values a reviewer chose to remove
 data/page_tag_decisions_*.json
+
+# Review exports in the data root are copied to data/manifests when applied
+data/ocr_review_decisions_*.json
