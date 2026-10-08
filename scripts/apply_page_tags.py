@@ -6,6 +6,10 @@ Input is the JSON exported from the page built by scripts/build_page_tag_review.
     (text, text_before_review_edits, removed_edge_lines, ocr_figures) is replaced by a typed placeholder.
   * `exclude_page`: the page keeps its status but gets `index_exclusion` and its stored text is emptied,
     so the personal data is not carried into chunks or indexes (data minimisation).
+  * `tag_name_list`: a page that lists people is tagged `pdpa_tag: personal_name_list` and kept in storage, but gets
+    `index_exclusion`, so it is not searched by default.
+  * low-content pages: `exclude` marks `index_exclusion`; `reocr` marks a garbled text layer for a new OCR pass
+    (`needs_ocr`, status garbled); `keep` is refused for a garbled text layer because it would be indexed as noise.
 The decisions file holds the personal data it removes, so keep it in an ignored folder; the manifest written
 with --manifest lists only page keys, actions and counts and can be tracked.
 
@@ -25,7 +29,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 LABELS = {"general", "pediatric", "pregnancy", "elderly", "mixed"}
-ACTIONS = {"keep", "redact", "exclude_page"}
+ACTIONS = {"keep", "redact", "exclude_page", "tag_name_list"}
+LOW_CONTENT_ACTIONS = {"keep", "exclude", "reocr"}
 PLACEHOLDER = {"name": "[ชื่อบุคคล]", "email": "[อีเมลบุคคล]", "phone": "[เบอร์โทรบุคคล]",
                "citizen_id": "[เลขประจำตัวประชาชน]", "hospital_number": "[เลข HN/AN]"}
 TEXT_FIELDS = ("text", "text_before_review_edits")
@@ -84,6 +89,9 @@ def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
         for item in sorted(decision["redact"], key=lambda x: -len(x["value"])):
             counts[item["type"]] += replace_everywhere(row, item["value"], PLACEHOLDER[item["type"]])
         record["redacted"] = dict(sorted(counts.items()))
+    elif action == "tag_name_list":
+        row["pdpa_tag"] = "personal_name_list"
+        row["index_exclusion"] = {"reason": "pdpa_tagged_name_list", "decided_by": reviewer, "decided_at": date}
     elif action == "exclude_page":
         row["index_exclusion"] = {"reason": "personal_data_minimisation", "decided_by": reviewer, "decided_at": date}
         row["text"] = ""
@@ -98,14 +106,19 @@ def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
 def apply_low_content(row: dict, decision: dict, reviewer: str, date: str) -> dict:
     """Mark a page as kept or excluded after review of its low content; text stays so the choice can be audited."""
     action = decision["action"]
-    if action not in {"keep", "exclude"}:
-        raise DecisionError(f"{row['document_id']}:p{row['pdf_page']}: unknown low-content action {action!r}")
+    key = f"{row['document_id']}:p{row['pdf_page']}"
+    if action not in LOW_CONTENT_ACTIONS:
+        raise DecisionError(f"{key}: unknown low-content action {action!r}")
+    if action == "keep" and decision.get("kind") == "garbage_text_layer":
+        raise DecisionError(f"{key}: a garbled text layer cannot be kept as it is; choose exclude or reocr")
     row["low_content_review"] = {"kind": decision.get("kind"), "action": action, "decided_by": reviewer, "decided_at": date}
-    if action == "exclude" and not row.get("index_exclusion"):
-        row["index_exclusion"] = {"reason": f"low_content_{decision.get('kind', 'page')}", "decided_by": reviewer,
-                                  "decided_at": date}
-        if decision.get("kind") == "garbage_text_layer":
-            row["status"] = "garbled"  # the text layer itself is broken, so consumers that ignore index_exclusion skip it too
+    if action in ("exclude", "reocr") and not row.get("index_exclusion"):
+        reason = "awaiting_reocr" if action == "reocr" else f"low_content_{decision.get('kind', 'page')}"
+        row["index_exclusion"] = {"reason": reason, "decided_by": reviewer, "decided_at": date}
+    if action == "reocr":
+        row["needs_ocr"] = True
+    if decision.get("kind") == "garbage_text_layer" and action in ("exclude", "reocr"):
+        row["status"] = "garbled"  # the text layer itself is broken, so consumers that ignore index_exclusion skip it too
     return row
 
 
