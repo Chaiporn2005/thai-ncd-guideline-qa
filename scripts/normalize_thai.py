@@ -205,9 +205,17 @@ def repair_sara_aa_font(font) -> tuple[str, int]:
         return "not_applicable", 0
     values = list(old.values())
     am = [g for g, u in old.items() if u == "\u0e33"]
-    unmapped_nikhahit = "\ufffd" in values or values.count(" ") >= 2
+    unmapped = [g for g, u in old.items() if u == "\ufffd"]
+    unmapped_nikhahit = bool(unmapped) or values.count(" ") >= 2
     if len(am) != 1 or "\u0e32" in values or not unmapped_nikhahit:
         return "not_applicable", 0
+    if len(unmapped) == 1 and am[0] > unmapped[0]:
+        # Thai glyphs follow Unicode order (SARA AA U+0E32 before NIKHAHIT U+0E4D), so an unmapped glyph
+        # *before* the SARA AM label is SARA AA itself (Siriraj foot manual: \u0e40\u0e17\u0e49\ufffd for \u0e40\u0e17\u0e49\u0e32); the label is
+        # a real \u0e33 or a NIKHAHIT, and the text rule folds the resulting \u0e33\u0e32 back into \u0e33.
+        old[unmapped[0]] = "\u0e32"
+        font[NameObject("/ToUnicode")] = tounicode_stream(old, font)
+        return "filled_sara_aa", 1
     old[am[0]] = "\u0e32"
     font[NameObject("/ToUnicode")] = tounicode_stream(old, font)
     return "remapped_sara_aa", 1
@@ -257,10 +265,64 @@ def repair_cluster_font(font) -> tuple[str, int]:
     return "reduced_cluster_labels", changed
 
 
+def _family_key(font) -> tuple[str, str]:
+    """(subset prefix, family) for sibling fonts such as PSL-Bundit and PSL-Bundit-Bold in one export."""
+    name = str(font.get("/BaseFont", "")).lstrip("/")
+    prefix, _, family = name.rpartition("+")
+    family = re.sub(r"[-,]?(Bold|Italic|BoldItalic|Oblique)+$", "", family, flags=re.IGNORECASE)
+    return prefix, family
+
+
+def repair_from_siblings(fonts) -> int:
+    """Fill U+FFFD entries from sibling fonts of the same export that map that code to one character.
+
+    In the Siriraj foot-care manual, PSL-Bundit-Bold leaves SARA AA (0x9F) as U+FFFD while PSL-Bundit maps
+    0x9F to า; without this the SARA AM rule would misread the bold font's real ำ glyph.
+    """
+    maps = {}
+    for font in fonts:
+        if "/ToUnicode" in font and font.get("/Subtype") == "/Type0":
+            mapping = parse_tounicode(font["/ToUnicode"].get_object().get_data())
+            if mapping is not None and len(mapping) <= 5000:
+                maps[id(font)] = (font, mapping)
+    groups = collections.defaultdict(list)
+    for font, mapping in maps.values():
+        prefix, family = _family_key(font)
+        if prefix:
+            groups[(prefix, family)].append((font, mapping))
+    def same_layout(a, b):
+        # Compact subsets renumber codes per font (DBSodaX vs DBSodaX-Bold), so a sibling only counts
+        # when the codes both fonts map agree almost everywhere.
+        shared = [c for c in a if c in b and len(a[c]) == 1 and len(b[c]) == 1 and "�" not in (a[c], b[c])]
+        return len(shared) >= 15 and sum(a[c] == b[c] for c in shared) >= 0.9 * len(shared)
+
+    changed = 0
+    for members in groups.values():
+        for font, mapping in members:
+            fixed = 0
+            siblings = [m for f, m in members if f is not font and same_layout(mapping, m)]
+            for code, value in mapping.items():
+                if value != "�":
+                    continue
+                votes = {m[code] for m in siblings if m.get(code) not in (None, "�")}
+                if len(votes) == 1 and len(next(iter(votes))) == 1:
+                    mapping[code] = votes.pop()
+                    fixed += 1
+            if fixed:
+                font[NameObject("/ToUnicode")] = tounicode_stream(mapping, font)
+                changed += fixed
+    return changed
+
+
 def repair_fonts(reader) -> dict:
     actions = collections.Counter()
     changed = 0
-    for font in _font_objects(reader):
+    fonts = list(_font_objects(reader))
+    sibling_fixes = repair_from_siblings(fonts)
+    if sibling_fixes:
+        actions["filled_from_sibling_fonts"] += sibling_fixes
+        changed += sibling_fixes
+    for font in fonts:
         action, count = repair_sarabun_font(font)
         if action != "not_applicable":
             actions[action] += 1
@@ -385,6 +447,8 @@ def normalize_text(text: str, options: dict | None = None, counts: collections.C
     text = _sub(rf"(?<=[{CONSONANT}{TONE}])\ufffd([{TONE}]?) ?\u0e32", "\\1\u0e33", text, counts, "sara_am_composed")
     text = _sub(rf"(?<=[{CONSONANT}{TONE}])\u0e4d([{TONE}]?) ?\u0e32", "\\1\u0e33", text, counts, "sara_am_composed")
     text = _sub(rf"([{TONE}])\u0e4d ?\u0e32", "\\1\u0e33", text, counts, "sara_am_composed")
+    # SARA AM is never followed by SARA AA; "ำา" comes from a NIKHAHIT glyph labelled ำ plus its า glyph.
+    text = _sub(r"\u0e33 ?\u0e32", "\u0e33", text, counts, "sara_am_composed")
     # SARA A/AA/AM never begin a syllable, so a preceding space is an extraction artifact.
     text = _sub(rf"(?<=[{CONSONANT}{TONE}]) +(?=[\u0e30\u0e32\u0e33])", "", text, counts, "space_before_following_vowel")
     # Letter-spaced headings (เ บ า ห ว า น): four or more single Thai clusters separated by spaces.
@@ -806,7 +870,7 @@ def main(argv=None) -> int:
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=Path("data/manifests/documents.jsonl"))
-    parser.add_argument("--cohort", type=Path, default=Path("data/manifests/private_review_selection.csv"))
+    parser.add_argument("--cohort", type=Path, default=Path("data/manifests/corpus_50_candidates.csv"))
     parser.add_argument("--rights-review", type=Path, default=root / "data/manifests/rights_review_20261005.json")
     parser.add_argument("--config", type=Path, default=root / "configs/thai_normalization.json")
     parser.add_argument("--document-id", action="append", default=[])

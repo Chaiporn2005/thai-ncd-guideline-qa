@@ -1,9 +1,9 @@
 # Normalized text summaries
 
 ข้อความสำหรับ retrieval อยู่ที่ `normalized-v2/<document_id>/` สร้างด้วย
-[normalize_thai.py](../../scripts/normalize_thai.py) จาก PDF ใน `raw/` (30 เอกสาร / 1766 หน้า)
+[normalize_thai.py](../../scripts/normalize_thai.py) จาก PDF ใน `raw/` (39 เอกสาร / 1799 หน้า)
 
-ขึ้น GitHub เฉพาะ `normalization.json` 30 รายการ: hash ต้นทาง, จำนวนหน้า, การซ่อมฟอนต์,
+ขึ้น GitHub เฉพาะ `normalization.json` 30 รายการ (อีก9สื่อศิริราชตาม decision 0008 เก็บในเครื่อง): hash ต้นทาง, จำนวนหน้า, การซ่อมฟอนต์,
 จำนวนกฎที่ใช้ และสถานะรายหน้า (`ok`, `ok_minor_issues`, `degraded`, `garbled`, `figure_review`, `review_hold`,
 `ocr_unreviewed`, `empty`); ควร index เฉพาะ `ok`/`ok_minor_issues` ก่อนให้คนตรวจหน้าที่เหลือ
 ไม่มีข้อความเอกสารในไฟล์สรุปเหล่านี้

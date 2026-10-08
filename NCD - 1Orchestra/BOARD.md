@@ -288,3 +288,13 @@
 - calvin-check merged;its critical findings fixed in normalize_thai.py v2(≥/≤ underline,citation superscripts,figure pages,review holds,DDC duplicates,HT watermark).
 - normalized-v2 replaces v1;only ok/ok_minor pages should be indexed before review;details in [normalization pipeline](../docs/normalization_pipeline.md).
 - review/data-engineering branch still open(proposal0006 conflicts with the Siriraj deletion);plus5 local work untouched.
+
+
+## 2026-10-08T10:31:36+07:00 — Siriraj media:educational use only
+
+- From:coordinator(root session)
+- To:user/nextsession
+- Type:decision
+- Run:20261008-siriraj-educational-use
+- User decision recorded as [decision 0008](decisions/0008-siriraj-educational-use.md);9 PDFs re-downloaded(hash match) and normalized locally;nothing of the 9 is on GitHub.
+- Not issuer permission;permission request recommended;normalized-v2 now covers 39 documents.

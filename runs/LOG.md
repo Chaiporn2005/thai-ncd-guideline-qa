@@ -186,3 +186,14 @@
 - Output data/processed/normalized-v2:ok1528,ok_minor73,degraded16,garbled7,figure_review45,review_hold13,ocr_unreviewed9,empty75;0failures;v1 removed(git history 624edb7).
 - Checks:every v1→v2 number change attributed;1 page more defects(real CKD booklet residue);dictionary hit99.2%→99.3%;images CKD2565 p29,anemia p57;27 tests;catalogue/manifest/orchestra pass;0 broken links.
 - Not changed:manifest,rights,accepted0;NUL digits in3Siriraj leaflets remain garbled;review/data-engineering branch not merged(proposal0006 pending team decision).
+
+
+## 2026-10-08T10:31:36+07:00 — 20261008-siriraj-educational-use
+
+- Owner:root session;user decided "ตัวของ 9 เล่มศิริราชใช้เพื่อการศึกษาเท่านั้น" (9 Siriraj documents for educational use only).
+- Recorded decision 0008 (conditions from proposal 0006:team-private,no redistribution,cite issuer,keep notices;not issuer permission);rights queue:9 extraction holds lifted with team_use_decision,rag_ingestion_hold unchanged.
+- Re-downloaded 9 PDFs(run 20261008-siriraj-edu,9 network attempts);sha256 identical to manifest.PDFs,receipts and normalization summaries stay local(gitignore).
+- Error caught:the SARA AM font rule misread the foot-care manual(PSL-Bundit-Bold leaves า unmapped;rule turned real ำ into า).Added sibling-font fill with a layout-agreement guard and a glyph-order rule;first sibling version broke INMU(ทำ→ท์า) and was guarded before the final run.
+- Rebuilt normalized-v2 for 39 documents/1799 pages:ok1566,ok_minor60,degraded8,garbled5,figure_review54,review_hold13,ocr_unreviewed16,empty77;0 failures;30 earlier documents changed on 91 pages,none with more defects.
+- Catalogue shows the 9 as local-only educational use without links;checks and tests pass;0 broken links.
+- Next:team decides whether to send the permission request to the Siriraj Diabetes Center;human review of the 7 OCR leaflet pages.

@@ -28,7 +28,7 @@ python tests/test_normalize_thai.py
 python scripts/build_disease_catalogue.py
 ```
 
-Defaults: cohort `data/manifests/private_review_selection.csv`, rights queue
+Defaults: cohort `data/manifests/corpus_50_candidates.csv` (documents without a local PDF are skipped), rights queue
 `data/manifests/rights_review_20261005.json` (explicit holds are skipped), config
 `configs/thai_normalization.json`. OCR is opt-in, limited to `empty`, `garbled` and `figure_review` pages,
 300 dpi, `tha+eng`, at most 60 pages per document and 400 per run. Existing output folders are never
@@ -38,13 +38,18 @@ overwritten; use a new `--out-dir` for another revision.
 
 Font maps (per font object, before text extraction):
 
+0. **Sibling fonts.** A U+FFFD entry is filled from fonts of the same export (same subset prefix and
+   family, e.g. PSL-Bundit for PSL-Bundit-Bold) that map that code to one character, but only when the
+   two fonts agree on ≥90% of at least 15 shared codes; compact subsets that renumber glyphs give no evidence.
 1. **TH Sarabun New/PSK glyph order.** Type0 fonts whose embedded TrueType keeps the original glyph IDs
    (`maxp` ≥ 301 glyphs, `CIDToGIDMap /Identity`) get a ToUnicode map rebuilt from the glyph order:
    ASCII = GID + 0x1F, ก..ฺ = GID + 0xD2B, ฿..๛ = GID + 0xD2F, positional variants 0x156..0x170 follow
    U+F700..F71A. Existing maps must agree ≥85% on the Thai range, else the font is skipped. Compact
    subsets are skipped because their glyph IDs are renumbered.
 2. **SARA AA labelled SARA AM** (`ตำรำง`, `กำแฟดำ`): a font with exactly one glyph mapped to ำ, none to า,
-   and an unmapped NIKHAHIT (a U+FFFD glyph or a second SPACE glyph) gets that glyph remapped to า.
+   and an unmapped glyph (U+FFFD or a second SPACE). Thai glyphs follow Unicode order (า before ํ): if the
+   single U+FFFD glyph comes *before* the ำ label, the U+FFFD glyph is า (`เท้�` → เท้า) and is filled;
+   otherwise the ำ-labelled glyph is า and is remapped. The text rule then folds `ำา` into ำ.
 3. **NIKHAHIT labelled SPACE** (`น ้าตาล`): a second SPACE glyph immediately after the THANTHAKHAT glyph
    becomes ํ.
 4. **First-cluster labels** (`คื` for ค): consonant + combining-mark labels are reduced to the consonant
@@ -71,6 +76,10 @@ C1 positional codes, Microsoft Thai PUA, symbol-font PUA removal, Thai digits �
 breaks before combining marks, duplicate marks, NIKHAHIT/U+FFFD (+ optional space) + SARA AA → SARA AM,
 spaces before ะ/า/ำ, letter-spaced headings, tone/vowel order and whitespace. Arabic digits and units are
 never changed by text rules.
+
+The 9 Siriraj Diabetes Center records are processed for educational use only under
+[decision 0008](../NCD%20-%201Orchestra/decisions/0008-siriraj-educational-use.md); their summaries are
+ignored by git like their page text.
 
 Per-document options in the config (each records its evidence): `dropped_sara_am` (consonant(+tone) +
 space + SARA AA → SARA AM, only where every case was checked), `dedupe_layered_text` (drop lines whose
@@ -114,8 +123,16 @@ not fidelity or clinical approval.
 
 ## Verification
 
-2026-10-08 (v2, 30 documents, 1766 pages): ok 1528, ok_minor_issues 73, degraded 16, garbled 7,
-figure_review 45, review_hold 13, ocr_unreviewed 9, empty 75; 0 document failures.
+2026-10-08 (v2, 39 documents, 1799 pages): ok 1566, ok_minor_issues 60, degraded 8, garbled 5,
+figure_review 54, review_hold 13, ocr_unreviewed 16, empty 77; 0 document failures. The 9 Siriraj records
+(decision 0008, 33 pages): ok 19, figure_review 5, ocr_unreviewed 7 (image-only leaflets), empty 2.
+
+- Sibling-font and SARA AA order rules (added for the Siriraj foot-care manual, where an earlier rule turned
+  its real ำ into า): the 30 earlier documents changed on 91 pages and none gained defects; examples
+  `วารินชำราบ`, `จัดทำแนวทาง`, `ประชาพิจารณ์`. A first version without the layout-agreement check broke
+  INMU (`ทำ` → `ท์า`) and was corrected before this run.
+
+First v2 run, 30 documents:
 
 - Every page where numbers changed between v1 and v2 was attributed: superscripts 173 pages, underlined
   signs 8, layered dedupe 27, OCR source change 2, removed running header 2 (CKD anemia).

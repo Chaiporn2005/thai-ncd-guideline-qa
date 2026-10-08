@@ -214,6 +214,29 @@ class TextRuleTests(unittest.TestCase):
         page.rects = [{"x0": 292.3, "x1": 369.8, "top": 317.8, "height": 0.48}]
         self.assertEqual(tool.underlined_signs(page), [False, False])
 
+    def test_sibling_font_fills_unmapped_sara_aa_before_sara_am_rule(self):
+        shared = {0x70 + i: chr(0x0E01 + i) for i in range(20)}  # identical layout on 20 shared codes
+        regular = type0_font("/JHDBXD+PSL-Bundit", 120, {**shared, 0x9F: "า", 0xB7: "ำ"})
+        bold = type0_font("/JHDBXD+PSL-Bundit-Bold", 120, {**shared, 0x9F: "�", 0xB7: "ำ"})
+        # A compact sibling that numbers glyphs differently gives no evidence (DBSodaX vs DBSodaX-Bold).
+        shifted = type0_font("/JHDBXD+PSL-Bundit-Italic", 120, {0x70 + i: chr(0x0E02 + i) for i in range(20)} | {0x9F: "์"})
+        self.assertEqual(tool.repair_from_siblings([regular, bold, shifted]), 1)
+        self.assertEqual(current_map(bold)[0x9F], "า")
+        regular = type0_font("/JHDBXD+PSL-Bundit", 120, {**shared, 0x9F: "า", 0xB7: "ำ"})
+        bold = type0_font("/JHDBXD+PSL-Bundit-Bold", 120, {**shared, 0x9F: "�", 0xB7: "ำ"})
+        self.assertEqual(tool.repair_from_siblings([regular, bold]), 1)
+        self.assertEqual(current_map(bold)[0x9F], "า")
+        # With SARA AA now mapped, the SARA AM rule must leave the genuine ำ glyph alone.
+        self.assertEqual(tool.repair_sara_aa_font(bold)[0], "not_applicable")
+        self.assertEqual(current_map(bold)[0xB7], "ำ")
+        # No sibling (PSL-Passanun): the unmapped glyph sits before the ำ label in glyph order, so it is า.
+        lone = type0_font("/JHDBXD+PSL-Passanun", 120, {0xD2: "�", 0xED: "ำ", 0x69: "ก"})
+        self.assertEqual(tool.repair_sara_aa_font(lone)[0], "filled_sara_aa")
+        self.assertEqual((current_map(lone)[0xD2], current_map(lone)[0xED]), ("า", "ำ"))
+        self.assertEqual(tool.normalize_text("ทำาไม เท้า น้ำา"), "ทำไม เท้า น้ำ")
+        other = type0_font("/ZZZZZZ+PSL-Bundit-Bold", 120, {0x9F: "�"})
+        self.assertEqual(tool.repair_from_siblings([regular, other]), 0)  # different export, no evidence
+
     def test_two_space_glyphs_trigger_sara_aa_repair(self):
         font = type0_font("/X+CordiaUPC,Italic", 100, {0x03: " ", 0xCE: " ", 0xB5: "ำ", 0x10: "ก"})
         self.assertEqual(tool.repair_sara_aa_font(font)[0], "remapped_sara_aa")

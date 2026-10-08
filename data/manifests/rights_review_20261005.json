@@ -106,8 +106,8 @@
     },
     {
       "document_id": "dm-siriraj-know-diabetes-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -125,12 +125,18 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -148,12 +154,18 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-patient-foot-manual-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -171,12 +183,18 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-microvascular-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -194,12 +212,18 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-macrovascular-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -217,12 +241,18 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-retinopathy-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -240,12 +270,18 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -263,12 +299,18 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -286,7 +328,13 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
@@ -574,8 +622,8 @@
     },
     {
       "document_id": "lipid-siriraj-diabetes-fat-7",
-      "rights_review_status": "pending",
-      "automated_extraction_hold": true,
+      "rights_review_status": "team_educational_use_decision",
+      "automated_extraction_hold": false,
       "rag_ingestion_hold": true,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
@@ -593,7 +641,13 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "obtain and record issuer permission before use/adaptation"
+      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "team_use_decision": {
+        "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
+        "date": "2026-10-08",
+        "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
+        "issuer_permission": "not obtained"
+      }
     },
     {
       "document_id": "lipid-siriraj-food-cholesterol-2564-review",
