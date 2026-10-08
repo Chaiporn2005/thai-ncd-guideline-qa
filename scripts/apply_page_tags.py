@@ -1,0 +1,168 @@
+"""Apply a person's page-tag decisions (population labels, personal-data handling) to build a new corpus version.
+
+Input is the JSON exported from the page built by scripts/build_page_tag_review.py.
+  * Every page gets `population`: general (default), pediatric, pregnancy or mixed.
+  * `redact`: each ticked value must occur in that page; every occurrence in every stored text field
+    (text, text_before_review_edits, removed_edge_lines, ocr_figures) is replaced by a typed placeholder.
+  * `exclude_page`: the page keeps its status but gets `index_exclusion` and its stored text is emptied,
+    so the personal data is not carried into chunks or indexes (data minimisation).
+The decisions file holds the personal data it removes, so keep it in an ignored folder; the manifest written
+with --manifest lists only page keys, actions and counts and can be tracked.
+
+Usage:
+    python -X utf8 scripts/apply_page_tags.py --source data/processed/normalized-v7 \
+        --decisions data/agent_runs/20261008-page-tags/page_tag_decisions_normalized-v7.json \
+        --out data/processed/normalized-v8 --manifest data/manifests/page_tags_normalized-v8.json
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from collections import Counter
+from datetime import datetime, timezone
+from pathlib import Path
+
+LABELS = {"general", "pediatric", "pregnancy", "mixed"}
+ACTIONS = {"keep", "redact", "exclude_page"}
+PLACEHOLDER = {"name": "[ชื่อบุคคล]", "email": "[อีเมลบุคคล]", "phone": "[เบอร์โทรบุคคล]",
+               "citizen_id": "[เลขประจำตัวประชาชน]", "hospital_number": "[เลข HN/AN]"}
+TEXT_FIELDS = ("text", "text_before_review_edits")
+LIST_FIELDS = ("removed_edge_lines", "ocr_figures")
+
+
+class DecisionError(ValueError):
+    pass
+
+
+def population_map(decisions: dict) -> dict[str, str]:
+    labels = {}
+    for doc in decisions.get("population", []):
+        for start, end, label in doc["ranges"]:
+            if label not in LABELS:
+                raise DecisionError(f"{doc['document_id']}: unknown population label {label!r}")
+            for page in range(int(start), int(end) + 1):
+                labels[f"{doc['document_id']}:p{page}"] = label
+    return labels
+
+
+def replace_everywhere(row: dict, old: str, new: str) -> int:
+    count = 0
+    for field in TEXT_FIELDS:
+        if isinstance(row.get(field), str):
+            count += row[field].count(old)
+            row[field] = row[field].replace(old, new)
+    for field in LIST_FIELDS:
+        if isinstance(row.get(field), list):
+            items = []
+            for item in row[field]:
+                if isinstance(item, str):
+                    count += item.count(old)
+                    item = item.replace(old, new)
+                items.append(item)
+            row[field] = items
+    return count
+
+
+def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
+    key = f"{row['document_id']}:p{row['pdf_page']}"
+    action = decision["action"]
+    if action not in ACTIONS:
+        raise DecisionError(f"{key}: unknown action {action!r}")
+    record = {"action": action, "decided_by": reviewer, "decided_at": date}
+    if action == "redact":
+        stored = [row.get(f) or "" for f in TEXT_FIELDS] + [x for f in LIST_FIELDS for x in row.get(f) or []
+                                                            if isinstance(x, str)]
+        for item in decision["redact"]:
+            if not any(item["value"] in s for s in stored):
+                raise DecisionError(f"{key}: value to redact not found ({item['type']})")
+        counts = Counter()
+        # Longest first, so a value that contains a shorter one is replaced whole.
+        for item in sorted(decision["redact"], key=lambda x: -len(x["value"])):
+            counts[item["type"]] += replace_everywhere(row, item["value"], PLACEHOLDER[item["type"]])
+        record["redacted"] = dict(sorted(counts.items()))
+    elif action == "exclude_page":
+        row["index_exclusion"] = {"reason": "personal_data_minimisation", "decided_by": reviewer, "decided_at": date}
+        row["text"] = ""
+        row.pop("text_before_review_edits", None)
+        for field in LIST_FIELDS:
+            if field in row:
+                row[field] = []
+    row["personal_data"] = record
+    return row
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--source", type=Path, required=True)
+    parser.add_argument("--decisions", type=Path, required=True)
+    parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--allow-incomplete", action="store_true",
+                        help="build even if some flagged pages or documents were not reviewed (they stay as they are)")
+    args = parser.parse_args(argv)
+    if args.out.exists():
+        parser.error(f"{args.out} exists; corpus versions are never overwritten")
+    data = json.loads(args.decisions.read_text(encoding="utf-8"))
+    reviewer = (data.get("reviewer") or "").strip()
+    if not reviewer:
+        raise DecisionError("decisions have no reviewer")
+    pending = {"personal_undecided": data.get("personal_undecided", 0),
+               "population_docs_not_reviewed": data.get("population_docs_not_reviewed", [])}
+    if (pending["personal_undecided"] or pending["population_docs_not_reviewed"]) and not args.allow_incomplete:
+        raise DecisionError(f"review incomplete: {pending['personal_undecided']} personal-data pages and "
+                            f"{len(pending['population_docs_not_reviewed'])} documents undecided "
+                            "(finish the review or pass --allow-incomplete)")
+    labels = population_map(data)
+    personal = {d["key"]: d for d in data.get("personal", [])}
+    date = datetime.now(timezone.utc).date().isoformat()
+
+    seen, plans, page_log = set(), [], []
+    totals, actions, population = Counter(), Counter(), Counter()
+    for folder in sorted(p for p in args.source.iterdir() if (p / "pages.jsonl").exists()):
+        rows = [json.loads(x) for x in (folder / "pages.jsonl").read_text(encoding="utf-8").split("\n") if x.strip()]
+        for row in rows:
+            key = f"{row['document_id']}:p{row['pdf_page']}"
+            row["population"] = labels.get(key, "general")
+            population[row["population"]] += 1
+            if key in personal:
+                apply_personal(row, personal[key], reviewer, date)
+                seen.add(key)
+                actions[row["personal_data"]["action"]] += 1
+                page_log.append({"key": key, **{k: v for k, v in row["personal_data"].items() if k != "decided_by"}})
+        plans.append((folder, rows))
+    unknown = (set(personal) | set(labels)) - {f"{r['document_id']}:p{r['pdf_page']}" for _, rows in plans for r in rows}
+    if unknown:
+        raise DecisionError(f"decisions for pages not in the source: {sorted(unknown)[:5]}")
+
+    for folder, rows in plans:
+        out_dir = args.out / folder.name
+        out_dir.mkdir(parents=True)
+        blob = "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows).encode("utf-8")
+        (out_dir / "pages.jsonl").write_bytes(blob)
+        summary = json.loads((folder / "normalization.json").read_text(encoding="utf-8"))
+        totals.update(r["status"] for r in rows)
+        summary.update(pages_jsonl_sha256=hashlib.sha256(blob).hexdigest(),
+                       population_counts=dict(sorted(Counter(r["population"] for r in rows).items())),
+                       index_excluded_pages=[r["pdf_page"] for r in rows if r.get("index_exclusion")],
+                       derived_from={"corpus_version": folder.parent.name,
+                                     "pages_jsonl_sha256": summary["pages_jsonl_sha256"],
+                                     "page_tag_decisions": args.decisions.name},
+                       created_at=datetime.now(timezone.utc).isoformat())
+        (out_dir / "normalization.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
+                                                    encoding="utf-8", newline="\n")
+
+    manifest = {"corpus_version": args.out.name, "derived_from": args.source.name, "review_id": data.get("review_id"),
+                "reviewer": reviewer, "exported_at": data.get("exported_at"), "built_at": date,
+                "population_pages": dict(sorted(population.items())),
+                "population_ranges": [d for d in data.get("population", []) if d["ranges"]],
+                "personal_data_actions": dict(sorted(actions.items())), "personal_data_pages": page_log, **pending}
+    args.manifest.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    print(json.dumps({"documents": len(plans), "population_pages": dict(population), "personal_data": dict(actions),
+                      "status_totals": dict(totals), **pending}, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
