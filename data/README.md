@@ -27,7 +27,7 @@ inventoryรอบupload20261006เป็นsnapshotก่อนเพิ่มb
 | ข้อมูล | ตำแหน่งและรูปแบบที่กำหนด | ขึ้น GitHub |
 | --- | --- | --- |
 | PDF ต้นฉบับ/บันทึกดาวน์โหลด | `raw/<document_id>/source.pdf` และ `retrieval.json` | ขึ้นเฉพาะ46retrieval records(9ที่ต้องขออนุญาตเก็บในเครื่อง);PDF30ไฟล์รอสิทธิ |
-| ข้อความที่ normalize แล้ว | `processed/normalized-v1/<document_id>/` | ขึ้น30normalization summaries;ข้อความรายหน้ายังignored |
+| ข้อความที่ normalize แล้ว | `processed/normalized-v2/<document_id>/` | ขึ้น30normalization summaries;ข้อความรายหน้ายังignored |
 | Vector/BM25 index | `indexes/<corpus_version>/` เมื่อสร้าง retrieval | ไม่ขึ้น; ignored |
 | ชื่อโรค/เอกสาร/ฉบับ/ต้นทาง/hash/สถานะ | `manifests/documents.jsonl` | ขึ้น; canonical metadata |
 | ชุดล่าสุดอย่างน้อย50 | `manifests/corpus_50_candidates.csv` และ cohort JSON | ขึ้น; 55 selected candidate works |
@@ -40,7 +40,7 @@ inventoryรอบupload20261006เป็นsnapshotก่อนเพิ่มb
 raw path คำนวณจาก ID; schema ปัจจุบันยังไม่มี field สำหรับ path ที่ผู้ใช้กำหนดเอง
 
 **สถานะปัจจุบัน:** metadata58/selected55;30localPDFอยู่ใน `raw/`(ลบ9สื่อศิริราชที่ต้องขออนุญาตแล้ว2026-10-06)
-30เอกสาร1766หน้าnormalizeแล้วใน `processed/normalized-v1/`;ผลสกัดรอบแรกและOCR sampleถูกลบ2026-10-06
+30เอกสาร1766หน้าnormalizeแล้วใน `processed/normalized-v2/`;ผลสกัดรอบแรกและOCR sampleถูกลบ2026-10-06
 9สื่อพักautomaticextractionตามexplicitpermissionnotice;14แหล่ง403/2manualviewersยังไม่มีlocalPDF
 Extract/OCRยังไม่ผ่านQA/humanacceptance;indexesยังไม่ได้สร้างและไม่ใช่accepted corpusพร้อมRAG
 คู่มือe-book2เล่มยังไม่มีdirectPDFที่ยืนยัน; rights/OCR/humanreviewยังต้องทำก่อนaccepted

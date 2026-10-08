@@ -1,0 +1,47 @@
+{
+  "document_id": "lipid-siriraj-thai-food-86",
+  "title": "คุณค่าอาหารไทยกับไขมันในเลือด",
+  "source_sha256": "135d36025866feea4dbd3584476acb66ec6ddeb19ec7ab4858366ee2a30e3ef4",
+  "pdf_pages": 2,
+  "options": {},
+  "font_repair": {
+    "font_actions": {},
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {
+    "pua_positional": 193,
+    "sara_am_composed": 40
+  },
+  "layout_totals": {
+    "superscript_runs": 0,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 1,
+      "no_underlined_signs": 1
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {},
+  "status_counts": {
+    "ok": 2
+  },
+  "status_pages": {},
+  "removed_edge_lines": 0,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
+  },
+  "pages_jsonl_sha256": "397e8bdf76ed3e8e14ef02245df87e74c2ffba78ee19821ff059dbba592f6e46",
+  "created_at": "2026-10-08T09:23:00.837962+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ]
+}

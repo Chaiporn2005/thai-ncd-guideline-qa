@@ -11,8 +11,10 @@ import collections
 import hashlib
 import io
 import json
+import math
 import re
 import shutil
+import statistics
 import struct
 import sys
 import tempfile
@@ -22,6 +24,11 @@ from pathlib import Path
 
 from pypdf import PdfReader, __version__ as PYPDF_VERSION
 from pypdf.generic import DecodedStreamObject, NameObject
+
+try:  # Optional: page geometry for underlined comparison signs. Without it the check is reported as unavailable.
+    import pdfplumber
+except ImportError:  # pragma: no cover - depends on the local environment
+    pdfplumber = None
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extract_pages as base  # noqa: E402  (shared ID/path/rights helpers)
@@ -189,7 +196,8 @@ def repair_sarabun_font(font) -> tuple[str, int]:
 
 
 def repair_sara_aa_font(font) -> tuple[str, int]:
-    """Exporter bug: the SARA AA glyph is labelled SARA AM and NIKHAHIT is U+FFFD."""
+    """Exporter bug: the SARA AA glyph is labelled SARA AM while NIKHAHIT is left unmapped,
+    either as U+FFFD or as a second SPACE glyph (seen in CordiaUPC italic: \u0e01\u0e33\u0e41\u0e1f\u0e14\u0e33 for \u0e01\u0e32\u0e41\u0e1f\u0e14\u0e33)."""
     if "/ToUnicode" not in font:
         return "not_applicable", 0
     old = parse_tounicode(font["/ToUnicode"].get_object().get_data())
@@ -197,7 +205,8 @@ def repair_sara_aa_font(font) -> tuple[str, int]:
         return "not_applicable", 0
     values = list(old.values())
     am = [g for g, u in old.items() if u == "\u0e33"]
-    if len(am) != 1 or "\u0e32" in values or "\ufffd" not in values:
+    unmapped_nikhahit = "\ufffd" in values or values.count(" ") >= 2
+    if len(am) != 1 or "\u0e32" in values or not unmapped_nikhahit:
         return "not_applicable", 0
     old[am[0]] = "\u0e32"
     font[NameObject("/ToUnicode")] = tounicode_stream(old, font)
@@ -265,15 +274,25 @@ def repair_fonts(reader) -> dict:
     return {"font_actions": dict(sorted(actions.items())), "tounicode_entries_written_or_changed": changed}
 
 
-def _decode_tokens(text: str, encoding: str, table: dict[int, str], counts: collections.Counter,
-                   rule: str, eligible) -> str:
+QUOTE_LIKE = set("“”‘’«»—–…•")
+
+
+def _decode_runs(text: str, encoding: str, table: dict[int, str], counts: collections.Counter,
+                 rule: str, safe_symbols: set[str]) -> str:
+    """Decode runs of legacy (non-ASCII, non-Thai) characters, also when glued to Thai text."""
     def decode(match):
-        token = match.group(0)
-        if not eligible(token):
-            return token
-        raw = _legacy_bytes(token, encoding)
+        run = match.group(0)
+        start, end = match.span()
+        before = text[start - 1] if start else ""
+        after = text[end] if end < len(text) else ""
+        if all(c in safe_symbols for c in run):
+            return run
+        # A lone quote or dash touching real Thai letters is genuine punctuation, not a legacy byte.
+        if len(run) == 1 and run in QUOTE_LIKE and any("ก" <= c <= "๛" for c in (before, after) if c):
+            return run
+        raw = _legacy_bytes(run, encoding)
         if raw is None:
-            return token
+            return run
         out = []
         for byte in raw:
             if byte in table:
@@ -284,8 +303,9 @@ def _decode_tokens(text: str, encoding: str, table: dict[int, str], counts: coll
                 out.append(chr(byte))
         counts[rule] += 1
         return "".join(out)
-    # Split on ASCII whitespace only: in MacRoman, NO-BREAK SPACE is byte 0xCA (Thai SO SUA).
-    return re.sub(r"[^ \t\n\r\f\v]+", decode, text)
+    # Runs exclude ASCII and Thai; NO-BREAK SPACE stays inside a run because in MacRoman it is
+    # byte 0xCA (Thai SO SUA). Runs touching ASCII letters belong to accented Latin words (café).
+    return re.sub(r"(?<![A-Za-z])[^\x00-\x7f฀-๿]+(?![A-Za-z])", decode, text)
 
 
 def _legacy_bytes(token: str, encoding: str) -> bytes | None:
@@ -303,28 +323,19 @@ def _legacy_bytes(token: str, encoding: str) -> bytes | None:
     return bytes(out)
 
 
-# Genuine symbols that also occur in correctly encoded text; a token made only of these is kept.
+# Genuine symbols that also occur in correctly encoded cp1252 documents; a run made only of these
+# is kept. Mac Thai documents get no such list because these code points carry Thai letters there.
 LEGACY_SAFE_SYMBOLS = set("\u00bc\u00bd\u00be\u00b0\u00b1\u00d7\u00f7\u00b2\u00b3\u00b5\u00b7\u2022\u2013\u2014\u201c\u201d\u2018\u2019\u2026\u00ae\u00a9\u2122\u00a7\u00b6")
 
 
-def _legacy_token(token: str, encoding: str) -> bool:
-    if re.search(r"[\u0e00-\u0e7f]", token):
-        return False
-    high = [c for c in token if ord(c) > 0x7F]
-    if not high or all(c in LEGACY_SAFE_SYMBOLS for c in high):
-        return False
-    raw = _legacy_bytes(token, encoding)
-    # Accented Latin words (e.g. café) keep their ASCII letters; legacy Thai tokens have none.
-    return raw is not None and not re.search(rb"[A-Za-z]", raw)
-
-
 def legacy_decode(text: str, decoder: str | None, counts: collections.Counter) -> str:
+    if decoder:
+        # pypdf can emit compatibility forms (OHM SIGN U+2126 for MacRoman Ω 0xBD); NFC maps them back.
+        text = unicodedata.normalize("NFC", text)
     if decoder == "mac_thai":
-        return _decode_tokens(text, "mac_roman", MAC_THAI, counts, "mac_thai_tokens",
-                              lambda t: _legacy_token(t, "mac_roman"))
+        return _decode_runs(text, "mac_roman", MAC_THAI, counts, "mac_thai_runs", set())
     if decoder == "cp1252_cp874_tokens":
-        return _decode_tokens(text, "cp1252", WINDOWS_POSITIONAL, counts, "cp1252_cp874_tokens",
-                              lambda t: _legacy_token(t, "cp1252"))
+        return _decode_runs(text, "cp1252", WINDOWS_POSITIONAL, counts, "cp1252_cp874_runs", LEGACY_SAFE_SYMBOLS)
     if decoder:
         raise ExtractionError("invalid_config", f"Unknown legacy decoder: {decoder}")
     return text
@@ -371,7 +382,7 @@ def normalize_text(text: str, options: dict | None = None, counts: collections.C
     text = _sub(rf"(?<=[{CONSONANT}{MARK}]) +(?=[{MARK}])", "", text, counts, "space_before_mark")
     text = _sub(rf"([{MARK}])\1+", r"\1", text, counts, "duplicate_marks")
     # NIKHAHIT (or its unmapped U+FFFD glyph) + optional tone + SARA AA is SARA AM.
-    text = _sub(rf"(?<=[{CONSONANT}{TONE}])\ufffd([{TONE}]?)\u0e32", "\\1\u0e33", text, counts, "sara_am_composed")
+    text = _sub(rf"(?<=[{CONSONANT}{TONE}])\ufffd([{TONE}]?) ?\u0e32", "\\1\u0e33", text, counts, "sara_am_composed")
     text = _sub(rf"(?<=[{CONSONANT}{TONE}])\u0e4d([{TONE}]?) ?\u0e32", "\\1\u0e33", text, counts, "sara_am_composed")
     text = _sub(rf"([{TONE}])\u0e4d ?\u0e32", "\\1\u0e33", text, counts, "sara_am_composed")
     # SARA A/AA/AM never begin a syllable, so a preceding space is an extraction artifact.
@@ -396,8 +407,16 @@ def quality(text: str) -> dict:
     tones = len(re.findall(rf"[{TONE}]", text))
     # Latin-1 letters touching Thai letters are almost always undecoded font bytes (e.g. \u0e19\u00cf\u0e49\u0e32).
     latin1_in_thai = len(re.findall(r"(?<=[\u0e01-\u0e4e])[\u00c0-\u00ff]|[\u00c0-\u00ff](?=[\u0e01-\u0e4e])", text))
+    # Accented Latin letters inside tokens with no ASCII letters are undecoded font bytes (\u00d6\u0107\u00f8\u00fc\u0109\u00ee\u0109\u00dd,
+    # \u00e2\u00c3\u00a4\u00cb\u00c5\u00cd\u00b4); accented names in reference lists (Kov\u00e1cs, \u0141ukasz) keep ASCII letters and do not count.
+    # \u00d7 \u00f7 and lone symbols such as \u00d8 (diameter) are genuine; mojibake comes in runs of two or more.
+    mojibake = 0
+    for token in text.split():
+        accented = re.findall(r"[\u00c0-\u00d6\u00d8-\u00f6\u00f8-\u024f]", token)
+        if len(accented) >= 2 and not re.search(r"[A-Za-z]", token):
+            mojibake += len(accented)
     garble = (text.count("\ufffd") + sum(unicodedata.category(c) in ("Cc", "Co") and c not in "\n" for c in text)
-              + len(re.findall(r"[\u0100-\u024f]", text)) + latin1_in_thai)
+              + mojibake + latin1_in_thai)
     return {"characters": len(text), "non_whitespace": sum(not c.isspace() for c in text),
             "thai_letters": thai_letters, "latin_letters": latin_letters, "thai_marks": marks,
             "orphan_marks": orphan, "tone_marks_per_100_thai": round(100 * tones / thai_letters, 2) if thai_letters else None,
@@ -422,17 +441,20 @@ def page_status(q: dict) -> str:
 
 
 def strip_running_lines(pages: list[str]) -> tuple[list[str], list[list[str]]]:
-    """Remove lines repeated near the top/bottom of many pages (running headers, footers, page numbers)."""
+    """Remove running headers/footers and page numbers at page edges, and short watermark lines
+    (e.g. "สงวนลิขสิทธิ์" on 150 HT guideline pages) repeated anywhere on at least half of the pages.
+    Removed lines are returned per page so the source wording stays on record."""
     def exact(line):
         return re.sub(r"\s+", "", line)
 
     def numbered(line):
         return re.sub(r"\d+", "#", exact(line))
-    exact_edges, numbered_edges = collections.Counter(), collections.Counter()
+    exact_edges, numbered_edges, anywhere = collections.Counter(), collections.Counter(), collections.Counter()
     page_offsets = collections.defaultdict(collections.Counter)
     for index, text in enumerate(pages):
         lines = [x for x in text.split("\n") if x.strip()]
         exact_edges.update({exact(x) for x in lines[:3] + lines[-3:]})
+        anywhere.update({exact(x) for x in lines if len(exact(x)) <= 40})
         for line in {numbered(x): x for x in lines[:3] + lines[-3:]}.values():
             numbered_edges[numbered(line)] += 1
             page_offsets[numbered(line)].update({int(n) - index for n in set(re.findall(r"\d{1,4}", line))})
@@ -442,8 +464,9 @@ def strip_running_lines(pages: list[str]) -> tuple[list[str], list[list[str]]]:
     repeated_exact = {k for k, n in exact_edges.items() if n >= max(4, 0.25 * len(pages))}
     repeated_numbered = {k for k, n in numbered_edges.items() if n >= max(4, 0.40 * len(pages))
                          and page_offsets[k] and page_offsets[k].most_common(1)[0][1] >= 0.8 * n}
+    watermarks = {k for k, n in anywhere.items() if n >= 0.5 * len(pages) and re.search(r"[^\d\W]", k)}
     if len(pages) < 8:
-        repeated_exact, repeated_numbered = set(), set()
+        repeated_exact, repeated_numbered, watermarks = set(), set(), set()
     cleaned, removed = [], []
     for text in pages:
         lines = text.split("\n")
@@ -451,9 +474,142 @@ def strip_running_lines(pages: list[str]) -> tuple[list[str], list[list[str]]]:
         edges = set(content[:3] + content[-3:])
         drop = {i for i in edges if exact(lines[i]) in repeated_exact or numbered(lines[i]) in repeated_numbered
                 or re.fullmatch(r"[-–\s]*\d{1,4}[-–\s]*", lines[i])}
+        drop |= {i for i in content if exact(lines[i]) in watermarks}
         removed.append([lines[i] for i in sorted(drop)])
         cleaned.append("\n".join(x for i, x in enumerate(lines) if i not in drop).strip())
     return cleaned, removed
+
+
+SUPERSCRIPT_DIGITS = str.maketrans("0123456789-–", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁻")
+SUPERSCRIPT_RUN = re.compile(r"[\d,\-– ]*\d[\d,\-– ]*")
+FIGURE_MIN_IMAGE_SHARE = 0.25
+FIGURE_MAX_TEXT = 700
+FIGURE_FULL_PAGE_SHARE = 0.98
+FIGURE_FULL_PAGE_MAX_TEXT = 150
+
+
+def attached_to_preceding_text(before: str) -> bool:
+    """Citation superscripts sit directly after a word, number or closing mark (AKI⁴⁶, 25⁷⁰, ยา⁸).
+
+    Body numbers set in a smaller Latin font inside Thai text follow a space ("อายุ 35 ปี") or a slash
+    ("1/3 ถ้วย"), and "3.3" after a digit and period is a decimal or list number, not a citation.
+    """
+    if not before:
+        return False
+    last = before[-1]
+    if last in ".," and len(before) > 1 and before[-2].isdigit():
+        return False
+    return last.isalnum() or "ก" <= last <= "๛" or last in ")]%.,”\""
+
+
+def extract_page(page) -> tuple[str, dict]:
+    """pypdf text plus layout signals from the same pass.
+
+    Raised digit runs set in a smaller font become Unicode superscripts, so citation numbers no longer
+    merge into values ("ร้อยละ 25⁷⁰", not "2570"). Superscripts keep what is printed; whether a run is a
+    citation or an exponent (กก./ม.²) is not inferred. Image area is measured to find figure pages whose
+    only extractable text is a caption.
+    """
+    runs, image_area = [], [0.0]
+    resources = page.get("/Resources")
+    xobjects = resources.get_object().get("/XObject") if resources else None
+    xobjects = xobjects.get_object() if xobjects else {}
+
+    def before(operator, operands, cm, tm):
+        if operator == b"Do" and operands and operands[0] in xobjects:
+            if xobjects[operands[0]].get_object().get("/Subtype") == "/Image":
+                image_area[0] += abs(cm[0] * cm[3] - cm[1] * cm[2])
+
+    def visit(text, cm, tm, font, size):
+        scale = math.hypot(tm[0], tm[1]) * math.hypot(cm[0], cm[1])
+        runs.append((text, size * scale, tm[5] * cm[3] + cm[5]))
+
+    text = page.extract_text(visitor_text=visit, visitor_operand_before=before) or ""
+    sizes = [size for run, size, _ in runs for char in run if not char.isspace()]
+    median = statistics.median(sizes) if sizes else 0
+    edits, cursor, baseline, group_end = [], 0, None, None
+    for run, size, y in runs:
+        position = text.find(run, cursor) if run else -1
+        if position < 0:
+            continue  # the visitor can report text that extract_text dropped (e.g. a repeated header)
+        cursor = position + len(run)
+        if not run.strip() or not median:
+            continue
+        if size >= 0.8 * median:
+            baseline = y
+        elif (SUPERSCRIPT_RUN.fullmatch(run.strip()) and baseline is not None
+              and 0.15 * median < y - baseline < 0.8 * median):
+            # Citations in this corpus are raised 0.29-0.39 x the body size; a run 1.6x higher is on
+            # another line (brochure layouts), not a superscript.
+            # The raised run can sit in its own text block, so pypdf wraps it in line breaks; join it back.
+            start = position - 1 if position and text[position - 1] == "\n" else position
+            gap = text[group_end:position] if group_end is not None else None
+            continues_group = gap is not None and re.fullmatch(r"[\s,\-–]*", gap) and (
+                re.search(r"[,\-–]", gap) or run.strip()[:1] in ",-–")
+            if continues_group:
+                # Next citation in a group (⁷⁰, ⁷¹): keep its separators, drop pypdf's line breaks.
+                edits.append((group_end, cursor, gap.replace("\n", "") + run.strip().translate(SUPERSCRIPT_DIGITS)))
+                group_end = cursor
+                continue
+            if attached_to_preceding_text(text[:start]) and not run[:1].isspace():
+                start = max(start, edits[-1][1]) if edits else start
+                edits.append((start, cursor, run.strip().translate(SUPERSCRIPT_DIGITS)))
+                group_end = cursor
+                continue
+        if not re.fullmatch(r"[,\-–]+", run.strip()):
+            group_end = None  # separators inside a citation group keep it open
+    for start, end, replacement in reversed(edits):
+        text = text[:start] + replacement + text[end:]
+    box = page.mediabox
+    page_area = abs(float(box.width) * float(box.height)) or 1.0
+    return text, {"superscript_runs": len(edits), "image_share": round(min(image_area[0] / page_area, 1.0), 3)}
+
+
+def underlined_signs(plumber_page) -> list[bool]:
+    """For each "<" or ">" in content order, whether a thin rule as wide as the glyph sits under it.
+
+    Word-processor PDFs draw ≥/≤ as an underlined >/<; the text layer only has ">" (CKD 2565 p29).
+    """
+    signs = [c for c in plumber_page.chars if c["text"] in "<>"]
+    rules = [o for o in plumber_page.rects + plumber_page.lines if o["height"] <= 1.5]
+    flags = []
+    for char in signs:
+        width, height = char["x1"] - char["x0"], char["bottom"] - char["top"]
+        flags.append(any(min(o["x1"], char["x1"]) - max(o["x0"], char["x0"]) >= 0.7 * width
+                         and o["x1"] - o["x0"] <= 2.5 * width
+                         and char["top"] + 0.5 * height <= o["top"] <= char["bottom"] + 3 for o in rules))
+    return flags
+
+
+def apply_underlined_signs(text: str, flags: list[bool]) -> tuple[str, str, int]:
+    """Convert underlined signs by occurrence order; refuse when the two layers disagree on the count."""
+    if not any(flags):
+        return text, "no_underlined_signs", 0
+    positions = [m.start() for m in re.finditer(r"[<>]", text)]
+    if len(positions) != len(flags):
+        return text, "unverified", 0
+    chars = list(text)
+    for position, flag in zip(positions, flags):
+        if flag:
+            chars[position] = "≥" if chars[position] == ">" else "≤"
+    return "".join(chars), "converted", sum(flags)
+
+
+def dedupe_layered_lines(text: str) -> tuple[str, int]:
+    """Drop lines whose content already appeared on the page (documents with stacked text layers).
+
+    Compared without whitespace and list bullets, because each layer wraps lines differently. Enabled
+    per document only: ordinary tables can legitimately repeat rows.
+    """
+    seen, kept, removed = "", [], 0
+    for line in text.split("\n"):
+        key = re.sub(r"[\s❶-➓•]", "", line)
+        if len(key) >= 20 and key in seen:
+            removed += 1
+            continue
+        seen += key
+        kept.append(line)
+    return "\n".join(kept), removed
 
 
 def load_config(path: Path) -> dict:
@@ -461,11 +617,14 @@ def load_config(path: Path) -> dict:
     documents = config.get("documents")
     if not isinstance(documents, dict):
         raise ExtractionError("invalid_config", "Config requires a documents object")
-    allowed = {"legacy_decoder", "dropped_sara_am", "evidence"}
+    allowed = {"legacy_decoder", "dropped_sara_am", "dedupe_layered_text", "review_hold_pages", "evidence"}
     for doc_id, options in documents.items():
         base.validate_id(doc_id)
         if not isinstance(options, dict) or set(options) - allowed:
             raise ExtractionError("invalid_config", f"Unsupported options for {doc_id}")
+        holds = options.get("review_hold_pages", {})
+        if not isinstance(holds, dict) or not all(str(p).isdigit() and isinstance(n, str) and n for p, n in holds.items()):
+            raise ExtractionError("invalid_config", f"review_hold_pages for {doc_id} must map page numbers to notes")
     return documents
 
 
@@ -515,21 +674,45 @@ def normalize_document(record: dict, raw_root: Path, out_root: Path, options: di
     except Exception as exc:
         raise ExtractionError("invalid_pdf", f"Cannot read PDF: {type(exc).__name__}: {exc}") from exc
 
-    counts_per_page, extracted, normalized, errors = [], [], [], []
-    for index, page in enumerate(reader.pages):
-        usage["page_attempts"] += 1
-        page_errors = []
-        try:
-            text = page.extract_text() or ""
-        except Exception as exc:
-            text = ""
-            page_errors.append(f"text: {type(exc).__name__}: {exc}")
-        counts = collections.Counter()
-        extracted.append(text)
-        normalized.append(normalize_text(text, options, counts))
-        counts_per_page.append(counts)
-        errors.append(page_errors)
+    counts_per_page, extracted, normalized, errors, layout = [], [], [], [], []
+    plumber = None
+    try:
+        for index, page in enumerate(reader.pages):
+            usage["page_attempts"] += 1
+            page_errors = []
+            try:
+                text, signals = extract_page(page)
+            except Exception as exc:
+                text, signals = "", {"superscript_runs": 0, "image_share": None}
+                page_errors.append(f"text: {type(exc).__name__}: {exc}")
+            signals["comparison_signs"], signals["underlined_signs_converted"] = "no_signs", 0
+            if re.search(r"[<>]", text):
+                if pdfplumber is None:
+                    signals["comparison_signs"] = "unavailable"
+                else:
+                    try:
+                        plumber = plumber or pdfplumber.open(io.BytesIO(data))
+                        text, state, converted = apply_underlined_signs(text, underlined_signs(plumber.pages[index]))
+                        signals["comparison_signs"], signals["underlined_signs_converted"] = state, converted
+                    except Exception as exc:
+                        signals["comparison_signs"] = "unverified"
+                        page_errors.append(f"signs: {type(exc).__name__}: {exc}")
+            counts = collections.Counter()
+            extracted.append(text)
+            page_text = normalize_text(text, options, counts)
+            if options.get("dedupe_layered_text"):
+                page_text, dropped = dedupe_layered_lines(page_text)
+                if dropped:
+                    counts["layered_lines_removed"] += dropped
+            normalized.append(page_text)
+            counts_per_page.append(counts)
+            errors.append(page_errors)
+            layout.append(signals)
+    finally:
+        if plumber is not None:
+            plumber.close()
     cleaned, removed = strip_running_lines(normalized)
+    holds = {int(page): note for page, note in options.get("review_hold_pages", {}).items()}
 
     out_root.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=f".{doc_id}-", dir=out_root) as temporary:
@@ -538,15 +721,28 @@ def normalize_document(record: dict, raw_root: Path, out_root: Path, options: di
         for index, text in enumerate(cleaned):
             q = quality(text)
             status = page_status(q)
+            signals = layout[index]
+            review_note = None
+            if status in ("ok", "ok_minor_issues") and signals["comparison_signs"] in ("unverified", "unavailable"):
+                status = "degraded"  # underlined ≥/≤ may still read as >/<
+            share = signals["image_share"] or 0
+            # Image-only figure/flowchart: only its caption is in the text layer. A full-page background
+            # image under real text (illustrated manuals) counts only when almost no text exists (covers).
+            if status in ("ok", "ok_minor_issues") and (
+                    (FIGURE_MIN_IMAGE_SHARE <= share < FIGURE_FULL_PAGE_SHARE and q["non_whitespace"] < FIGURE_MAX_TEXT)
+                    or (share >= FIGURE_FULL_PAGE_SHARE and q["non_whitespace"] < FIGURE_FULL_PAGE_MAX_TEXT)):
+                status = "figure_review"
+            if index + 1 in holds:
+                status, review_note = "review_hold", holds[index + 1]
             row = {"document_id": doc_id, "source_sha256": digest, "pdf_page": index + 1,
                    "pdf_page_label": labels[index] if index < len(labels) else None, "printed_page_number": None,
                    "text": text, "text_source": "pdf_text_repaired", "status": status, "pdf_text_status": status,
-                   "quality": q,
+                   "review_note": review_note, "quality": q, "layout_checks": signals,
                    "normalization_counts": dict(sorted(counts_per_page[index].items())),
                    "removed_edge_lines": removed[index], "pre_normalization_text": extracted[index],
                    "ocr_text": None, "ocr_quality": None, "ocr_method": None, "errors": errors[index],
                    "human_review": None}
-            if ocr and status in ("empty", "garbled") and ocr_done < max_ocr_pages:
+            if ocr and status in ("empty", "garbled", "figure_review") and ocr_done < max_ocr_pages:
                 ocr_done += 1
                 usage["ocr_attempts"] += 1
                 try:
@@ -576,6 +772,12 @@ def normalize_document(record: dict, raw_root: Path, out_root: Path, options: di
             "document_id": doc_id, "title": record.get("title"), "source_sha256": digest,
             "pdf_pages": len(rows), "options": {k: v for k, v in options.items() if k != "evidence"},
             "font_repair": font_report, "normalization_totals": dict(sorted(totals.items())),
+            "layout_totals": {
+                "superscript_runs": sum(s["superscript_runs"] for s in layout),
+                "underlined_signs_converted": sum(s["underlined_signs_converted"] for s in layout),
+                "comparison_sign_pages": dict(sorted(collections.Counter(s["comparison_signs"] for s in layout).items())),
+                "figure_pages": [r["pdf_page"] for r in rows if r["pdf_text_status"] == "figure_review"]},
+            "review_hold_pages": {str(p): n for p, n in sorted(holds.items())},
             "status_counts": {k: len(v) for k, v in sorted(status_pages.items())},
             "status_pages": {k: v for k, v in sorted(status_pages.items()) if k != "ok"},
             "removed_edge_lines": sum(len(x) for x in removed), "ocr_pages": ocr_done,
@@ -609,7 +811,7 @@ def main(argv=None) -> int:
     parser.add_argument("--config", type=Path, default=root / "configs/thai_normalization.json")
     parser.add_argument("--document-id", action="append", default=[])
     parser.add_argument("--raw-dir", type=Path, default=Path("data/raw"))
-    parser.add_argument("--out-dir", type=Path, default=Path("data/processed/normalized-v1"))
+    parser.add_argument("--out-dir", type=Path, default=Path("data/processed/normalized-v2"))
     parser.add_argument("--ocr", action="store_true", help="Opt-in local OCR for empty/garbled pages")
     parser.add_argument("--max-ocr-pages-per-document", type=int, default=60)
     parser.add_argument("--max-total-ocr-pages", type=int, default=400)

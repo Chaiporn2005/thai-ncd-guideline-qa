@@ -1,0 +1,55 @@
+{
+  "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
+  "title": "คำแนะนำเรื่องอาหารสำหรับผู้ป่วยโรคหัวใจและหลอดเลือด",
+  "source_sha256": "7346afad728db04dca4196b13f4e0b9264050befcb170b1203945c339a45b664",
+  "pdf_pages": 2,
+  "options": {
+    "dropped_sara_am": true
+  },
+  "font_repair": {
+    "font_actions": {
+      "remapped_sara_aa": 1,
+      "repaired_tounicode": 2,
+      "skip_low_agreement": 2
+    },
+    "tounicode_entries_written_or_changed": 4
+  },
+  "normalization_totals": {
+    "dropped_sara_am": 42,
+    "sara_am_composed": 4,
+    "space_before_mark": 23,
+    "spaced_marks_joined": 24,
+    "symbol_pua_removed": 12
+  },
+  "layout_totals": {
+    "superscript_runs": 0,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 2
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {},
+  "status_counts": {
+    "ok": 2
+  },
+  "status_pages": {},
+  "removed_edge_lines": 0,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
+  },
+  "pages_jsonl_sha256": "eea49ffa55e89e01b222a93d34cda1866b68d220d51d63979cea7e467c0049bd",
+  "created_at": "2026-10-08T09:27:56.161659+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ]
+}

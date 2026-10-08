@@ -68,6 +68,10 @@ ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regres
 ดู [normalization pipeline](docs/normalization_pipeline.md);manifest/rights/acceptedไม่เปลี่ยน;ขึ้นGitแล้วf28eb5b
 ผู้ใช้ขอลบผลสกัดรอบแรก:ลบpages.jsonl/extraction.json/ocr-review-v1;ขึ้นGitเฉพาะnormalization.json30ไฟล์(ไม่มีข้อความ)
 ผู้ใช้ขอนำ9สื่อศิริราชที่ต้องขออนุญาตออก:ลบretrieval.jsonจากGitHub(เก็บในเครื่อง)และลบPDFในเครื่อง;เหลือlocalPDF30;ดาวน์โหลดใหม่ได้หลังได้อนุญาตเท่านั้น
+2026-10-08:mergeแล้วcalvin-check(fidelity review91หน้า) และแก้ปัญหาที่พบในnormalize_thai.py v2
+ผลlocal `data/processed/normalized-v2/`:ok+minor1601/degraded16/garbled7/figure_review45/review_hold13/OCR9/empty72+3;v1ลบแล้ว
+indexเฉพาะok/ok_minorก่อน;หน้าfigure_review/review_hold/degraded/garbledต้องให้คนตรวจกับภาพ;ดู[normalization pipeline](docs/normalization_pipeline.md)
+branch review/data-engineering ยังไม่merge:proposal0006รอทีมตัดสิน(ขัดกับการลบ9สื่อศิริราช)
 
 รอบ `20261006-recheck-download01` (Calvin, macOS, Python 3.9.6/pypdf 6.14.2):clone repo ใหม่แล้วตรวจ data/raw และดาวน์โหลดซ้ำตาม download pipeline
 - Cross-check metadata:46retrieval.json ตรงกับ `documents.jsonl` ทั้ง URL/sha256/pdf_pages;30normalization.json ตรง source_sha256/pdf_pages;validate_manifest ผ่าน
@@ -87,7 +91,7 @@ ok+minor1658/degraded18/garbled7/OCR11/empty72;dictionary hit92.5%->99.2%;regres
    14แหล่ง403เป็นddc.moph.go.th/chulabhornchannel/dmthai.org อาจบล็อกคำขออัตโนมัติหรือIPต่างประเทศ:
    ให้คนในทีมดาวน์โหลดเองด้วยbrowserปกติบนเครือข่ายไทย แล้วบันทึกเป็นแหล่ง/ช่องทางใหม่พร้อมhash ไม่ใช่retryด้วยheaders/cookies
    9prior-permission holdsต้องบันทึกหลักฐานอนุญาตก่อนautomaticextraction/RAG
-3. ใช้ `data/processed/normalized-v1` แทนpages.jsonlเดิมสำหรับretrieval;คนตรวจหน้าdegraded/garbled/ocr_unreviewed,
+3. ใช้ `data/processed/normalized-v2` สำหรับretrieval;คนตรวจหน้าdegraded/garbled/ocr_unreviewed,
    ติดป้ายsectionผู้ใหญ่/เด็ก/ตั้งครรภ์(DM CPG90/282หน้า),จัดตาราง/เลขอ้างอิงsuperscript,finalcontentdedup,ให้คนapprove inclusionตามgates
 4. Curatorตั้งacceptedเมื่อครบหลักฐาน แล้วเริ่มtoken-awarechunking/STCPUbaselineและvariantที่สอง
 

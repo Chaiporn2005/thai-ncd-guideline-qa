@@ -174,3 +174,15 @@
 - Critical findings:underlined ≥/≤ extracted as >/< (CKD 2565, hemodialysis manual);citation superscripts merged into values (lipid 2567, Siriraj OPD HT);NUL digits in3Siriraj lipid brochures;image-only flowcharts marked ok (DM CPG, lipid 2567).
 - Report:docs/fidelity_review_20261007.md;per-page JSON stays local in data/agent_runs/20261007-fidelity-review/.
 - Not human approval;rights/accepted unchanged;critical numbers need team confirmation.
+
+
+## 2026-10-08T09:30:00+07:00 — 20261008-calvin-merge-normalization-v2
+
+- Owner:root session;user asked to merge calvin-check and fix the problems its fidelity review found.
+- Merged origin/calvin-check(re-download cross-check,docs/fidelity_review_20261007.md) into main;no conflicts.
+- Uncommitted plus5 work from another session was stashed before the merge and restored afterwards;it stays uncommitted per that session's instruction.
+- normalize_thai.py v2:underlined ≥/≤ from pdfplumber geometry(26 signs/11 pages),citation superscripts(720 runs,attached-or-group rule,raise 0.15-0.8x),image-only figure pages(45 figure_review),review_hold_pages config(13 pages from the review),dedupe_layered_text(DDC),watermark lines,run-level legacy decoding+NFC,FFFD+space SARA AM,italic SARA AA font rule,mojibake metric.
+- Errors caught during this run:superscript rule first turned body numbers into superscripts(geriatric อายุ 35,80 มก./ดล.);fixed with attachment and raise bounds;mojibake metric first flagged × ÷ Ø;fixed.
+- Output data/processed/normalized-v2:ok1528,ok_minor73,degraded16,garbled7,figure_review45,review_hold13,ocr_unreviewed9,empty75;0failures;v1 removed(git history 624edb7).
+- Checks:every v1→v2 number change attributed;1 page more defects(real CKD booklet residue);dictionary hit99.2%→99.3%;images CKD2565 p29,anemia p57;27 tests;catalogue/manifest/orchestra pass;0 broken links.
+- Not changed:manifest,rights,accepted0;NUL digits in3Siriraj leaflets remain garbled;review/data-engineering branch not merged(proposal0006 pending team decision).

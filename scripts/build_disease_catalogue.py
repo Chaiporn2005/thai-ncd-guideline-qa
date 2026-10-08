@@ -27,6 +27,9 @@ TYPES = {
 }
 
 
+NORMALIZED = Path("data/processed/normalized-v2")  # current normalize_thai.py output
+
+
 def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -35,7 +38,7 @@ def usable_pages(summary: dict) -> str:
     """Pages a retrieval run can use from a normalize_thai.py summary (heuristic gate, not QA)."""
     counts = summary.get("status_counts", {})
     usable = counts.get("ok", 0) + counts.get("ok_minor_issues", 0)
-    review = sum(counts.get(k, 0) for k in ("degraded", "garbled", "ocr_unreviewed"))
+    review = sum(counts.get(k, 0) for k in ("degraded", "garbled", "ocr_unreviewed", "figure_review", "review_hold"))
     return f"ใช้ได้{usable}/{summary.get('pdf_pages')}หน้า;รอตรวจ{review};ว่าง{counts.get('empty', 0)}"
 
 
@@ -75,7 +78,7 @@ def generate() -> tuple[dict[Path, str], dict]:
             record = lookup[doc_id]
             doc_readme = DEST / folder / doc_id / "README.md"
             receipt = ROOT / "data/raw" / doc_id / "retrieval.json"
-            extraction = ROOT / "data/processed/normalized-v1" / doc_id / "normalization.json"
+            extraction = ROOT / NORMALIZED / doc_id / "normalization.json"
             # Explicit prior-permission holds: the receipt stays local only and the local PDF was
             # deleted, so the catalogue never links to it and does not count it as downloaded.
             permission_hold = bool(rights.get(doc_id, {}).get("automated_extraction_hold"))
@@ -98,7 +101,7 @@ def generate() -> tuple[dict[Path, str], dict]:
             if receipt.is_file() and not permission_hold:
                 lines.append(f"- {link('บันทึกดาวน์โหลด', doc_readme, receipt)}: `{outcome}`")
             if extraction.is_file():
-                lines.append(f"- {link('สรุปผลสกัด normalized-v1', doc_readme, extraction)}: `{extraction_status}`")
+                lines.append(f"- {link(f'สรุปผลสกัด {NORMALIZED.name}', doc_readme, extraction)}: `{extraction_status}`")
             if permission_hold:
                 lines.append("- ต้องขออนุญาตเจ้าของสื่อก่อนใช้:ไม่เผยแพร่บันทึกดาวน์โหลดบนGitHub และลบสำเนาPDFในเครื่องแล้ว(2026-10-06)")
             elif outcome == "downloaded":

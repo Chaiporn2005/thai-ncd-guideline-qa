@@ -1,0 +1,56 @@
+{
+  "document_id": "ckd-treatment-leaflet-undated",
+  "title": "แผ่นพับทางเลือกการรักษาเมื่อไตวาย",
+  "source_sha256": "789aca82ab9f034f40dee7716378d23d2960450c2dc8a7bb746168371c40fed7",
+  "pdf_pages": 2,
+  "options": {
+    "review_hold_pages": {
+      "1": "Image-only page; comparison table uses icons and needs manual transcription",
+      "2": "Image-only page; comparison table uses icons and needs manual transcription"
+    }
+  },
+  "font_repair": {
+    "font_actions": {},
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {},
+  "layout_totals": {
+    "superscript_runs": 0,
+    "underlined_signs_converted": 0,
+    "comparison_sign_pages": {
+      "no_signs": 2
+    },
+    "figure_pages": []
+  },
+  "review_hold_pages": {
+    "1": "Image-only page; comparison table uses icons and needs manual transcription",
+    "2": "Image-only page; comparison table uses icons and needs manual transcription"
+  },
+  "status_counts": {
+    "review_hold": 2
+  },
+  "status_pages": {
+    "review_hold": [
+      1,
+      2
+    ]
+  },
+  "removed_edge_lines": 0,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": true,
+    "dpi": 300,
+    "ocr_languages": "tha+eng"
+  },
+  "pages_jsonl_sha256": "b90ad7116105953f7ad149ddab19fc59fc2c7dd0a4319ae8cd90acacd12783f6",
+  "created_at": "2026-10-08T09:22:11.563572+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ]
+}
