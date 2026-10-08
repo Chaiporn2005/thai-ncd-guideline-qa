@@ -47,6 +47,26 @@ class Detection(unittest.TestCase):
         self.assertEqual({f["key"]: f["suggest"] for f in found}, {"d:p1": "redact", "d:p4": "exclude_page"})
 
 
+class Cases(unittest.TestCase):
+    def row(self, text):
+        return {"document_id": "d", "pdf_page": 1, "status": "ok", "human_review": None, "text": text}
+
+    def test_case_narrative_suggests_exclusion_but_toc_does_not(self):
+        narrative = self.row("กรณีศึกษาอายุ 67 ปี กรณีศึกษามีสามี กรณีศึกษาไม่เครียด")
+        _, found = build.scan_document([narrative])
+        self.assertEqual((found[0]["suggest"], found[0]["findings"][0]["type"]), ("exclude_page", "case"))
+        toc = self.row("สารบัญตาราง ผลตรวจของกรณีศึกษา แผนของกรณีศึกษา สรุปของกรณีศึกษา")
+        self.assertEqual(build.scan_document([toc])[1], [])
+
+    def test_worked_example_is_kept_for_review(self):
+        _, found = build.scan_document([self.row("ตัวอย่างการคำนวณ ผู้ป่วยชายอายุ 50 ปี น้ำหนัก 60 กก.")])
+        self.assertEqual((found[0]["suggest"], found[0]["findings"][0]["type"]), ("keep", "case_example"))
+
+    def test_elderly_cue_is_reported(self):
+        pages, _ = build.scan_document([self.row("การดูแลผู้สูงอายุที่เป็นเบาหวาน")])
+        self.assertIn("elderly", pages[0]["hits"])
+
+
 def run(tmp: Path, decisions: dict, *extra: str) -> int:
     src = tmp / "src" / "d"
     src.mkdir(parents=True)
@@ -85,6 +105,12 @@ class Apply(unittest.TestCase):
     def test_value_not_on_page_fails(self):
         bad = json.loads(json.dumps(DECISIONS))
         bad["personal"][0]["redact"][0]["value"] = "02-000-0000"
+        with tempfile.TemporaryDirectory() as t, self.assertRaises(tool.DecisionError):
+            run(Path(t), bad)
+
+    def test_case_cannot_be_redacted_by_value(self):
+        bad = json.loads(json.dumps(DECISIONS))
+        bad["personal"][0]["redact"] = [{"type": "case", "value": "กรณีศึกษา ×3"}]
         with tempfile.TemporaryDirectory() as t, self.assertRaises(tool.DecisionError):
             run(Path(t), bad)
 

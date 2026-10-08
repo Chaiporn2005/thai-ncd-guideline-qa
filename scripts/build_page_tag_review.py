@@ -24,7 +24,12 @@ from pathlib import Path
 POPULATION_TERMS = {
     "pediatric": re.compile(r"เด็ก|วัยรุ่น|ทารก|ปฐมวัย|pediatric|paediatric|children|adolescen", re.I),
     "pregnancy": re.compile(r"ตั้งครรภ์|มีครรภ์|ขณะครรภ์|ให้นมบุตร|หลังคลอด|GDM|gestational|pregnan", re.I),
+    "elderly": re.compile(r"ผู้สูงอายุ|สูงวัย|geriatric|elderly|older adult", re.I),
 }
+# Case narratives: a real (even unnamed) person's age, place, family and results together can identify them.
+CASE_NARRATIVE = re.compile(r"กรณีศึกษา")
+CASE_EXAMPLE = re.compile(r"ผู้ป่วย(?:ชาย|หญิง)\s*อายุ\s*\d+\s*ปี")
+CASE_MIN_MENTIONS = 3
 CHAPTER = re.compile(r"(?:บทที่|Chapter)\s*\d+")
 CHAPTER_START = re.compile(r"^\s*(?:บทที่|Chapter)\s*\d+")
 PART_DIVIDER = re.compile(r"หมวด|ภาคผนวก|\bPart\b", re.I)
@@ -83,11 +88,25 @@ def personal_findings(row: dict) -> list[dict]:
                 if kind == "citizen_id" and not thai_id_valid(re.sub(r"\D", "", value)):
                     continue
                 found.append({"type": kind, "field": field, "value": value, "context": context(text, *m.span())})
+    found.extend(case_findings(row.get("text") or ""))
+    return found
+
+
+def case_findings(text: str) -> list[dict]:
+    found = []
+    mentions = list(CASE_NARRATIVE.finditer(text))
+    if len(mentions) >= CASE_MIN_MENTIONS and "สารบัญ" not in text[:200]:
+        found.append({"type": "case", "field": "text", "value": f"กรณีศึกษา ×{len(mentions)}",
+                      "context": context(text, *mentions[0].span())})
+    elif m := CASE_EXAMPLE.search(text):
+        found.append({"type": "case_example", "field": "text", "value": m.group(0), "context": context(text, *m.span())})
     return found
 
 
 def suggest_personal(findings: list[dict], text: str) -> tuple[str, list[bool], str]:
     """Return (page action, per-finding redact default, reason)."""
+    if any(f["type"] == "case" for f in findings):
+        return "exclude_page", [False] * len(findings), "บรรยายเคสผู้ป่วย (ข้อมูลสุขภาพรายบุคคล: อายุ/ที่อยู่/ครอบครัว/ผลตรวจ) — ถ้าเป็นเคสจริงควรตัดออก"
     names = {f["value"] for f in findings if f["type"] == "name" and f["field"] == "text"}
     if len(names) >= NAME_LIST_MIN or (len(names) >= 2 and FRONT_MATTER.search(text)):
         return "exclude_page", [False] * len(findings), f"รายชื่อบุคคล {len(names)} ชื่อ (หน้าคณะผู้จัดทำ/รายนาม)"
@@ -103,6 +122,8 @@ def suggest_personal(findings: list[dict], text: str) -> tuple[str, list[bool], 
             redact.append(False)
     if any(redact):
         return "redact", redact, "มีข้อมูลติดต่อส่วนตัว (มือถือ/อีเมลส่วนตัว/เลขประจำตัว)"
+    if any(f["type"] == "case_example" for f in findings):
+        return "keep", redact, "ตัวอย่างผู้ป่วยในเนื้อหา (น่าจะสมมติ/ตัวอย่างการคำนวณ) — ตรวจว่าไม่ใช่เคสจริง"
     return "keep", redact, "ชื่อในเนื้อหา/ข้อมูลติดต่อหน่วยงาน"
 
 

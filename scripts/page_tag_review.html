@@ -2,8 +2,8 @@
 <html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Page Tag Review</title>
 <style>
-:root{--bg:#f6f7f9;--card:#fff;--ink:#1d2330;--muted:#5d6675;--line:#d9dee6;--mark:#ffe58a;--accent:#2457c5;--ped:#d8ecff;--preg:#ffe0ef;--mix:#efe3ff;--warn:#fff3cd;--bad:#ffd9d9}
-@media (prefers-color-scheme:dark){:root{--bg:#14171c;--card:#1d2128;--ink:#e6e9ee;--muted:#9aa3b2;--line:#323844;--mark:#6b5a12;--accent:#7aa2ff;--ped:#1d3550;--preg:#4a2238;--mix:#35284d;--warn:#4a4020;--bad:#5a2a2a}}
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1d2330;--muted:#5d6675;--line:#d9dee6;--mark:#ffe58a;--accent:#2457c5;--ped:#d8ecff;--preg:#ffe0ef;--mix:#efe3ff;--eld:#e2f3d6;--warn:#fff3cd;--bad:#ffd9d9}
+@media (prefers-color-scheme:dark){:root{--bg:#14171c;--card:#1d2128;--ink:#e6e9ee;--muted:#9aa3b2;--line:#323844;--mark:#6b5a12;--accent:#7aa2ff;--ped:#1d3550;--preg:#4a2238;--mix:#35284d;--eld:#27401f;--warn:#4a4020;--bad:#5a2a2a}}
 *{box-sizing:border-box}body{margin:0;font-family:"Sarabun","Tahoma",sans-serif;background:var(--bg);color:var(--ink);font-size:14px}
 header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:8px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 button,select,input{font:inherit;padding:4px 9px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
@@ -16,10 +16,10 @@ main{padding:12px 16px;max-width:1500px;margin:auto}.hide{display:none!important
 .panel,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:14px}
 .tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
 table{width:100%;border-collapse:collapse}td,th{border-top:1px solid var(--line);padding:5px;text-align:left;vertical-align:top}
-tr.pediatric{background:var(--ped)}tr.pregnancy{background:var(--preg)}tr.mixed{background:var(--mix)}tr.noidx{opacity:.45}
+tr.pediatric{background:var(--ped)}tr.pregnancy{background:var(--preg)}tr.mixed{background:var(--mix)}tr.elderly{background:var(--eld)}tr.noidx{opacity:.45}
 mark{background:var(--mark);color:inherit}.snip{color:var(--muted);font-size:13px}.ch{font-size:12px;color:var(--muted);max-width:260px}
 .hint{font-size:12px;color:var(--accent)}a{color:var(--accent)}
-.card.decided{opacity:.75}.reason{color:var(--muted)}.t-email,.t-phone,.t-citizen_id,.t-hospital_number{font-weight:700}
+.card.decided{opacity:.75}.reason{color:var(--muted)}.t-email,.t-phone,.t-citizen_id,.t-hospital_number,.t-case{font-weight:700}
 .help{color:var(--muted);font-size:13px;line-height:1.5}
 </style></head><body>
 <header><b>Page Tag Review</b>
@@ -29,7 +29,7 @@ mark{background:var(--mark);color:inherit}.snip{color:var(--muted);font-size:13p
 <button class="primary" id="export">Export JSON</button><span class="pill">บันทึกอัตโนมัติในเบราว์เซอร์นี้ ไม่มีการอัปโหลด</span></header>
 <main>
 <section id="pop">
-<p class="help">ทุกหน้าที่ไม่ติดป้ายถือเป็น <b>ทั่วไป/ผู้ใหญ่</b> ติดป้ายเฉพาะหน้าที่เป็นเนื้อหาสำหรับเด็ก/วัยรุ่น หรือหญิงตั้งครรภ์
+<p class="help">ทุกหน้าที่ไม่ติดป้ายถือเป็น <b>ทั่วไป/ผู้ใหญ่</b> ติดป้ายเฉพาะหน้าที่เป็นเนื้อหาสำหรับเด็ก/วัยรุ่น หญิงตั้งครรภ์ หรือผู้สูงอายุ
 หรือ "ปนกัน" ถ้าหน้าเดียวมีทั้งผู้ใหญ่และกลุ่มพิเศษ · "แนะนำ" มาจากชื่อบทที่หน้าอยู่ (เช่น บทที่ 16 เบาหวานในเด็ก) ไม่ได้ตัดสินแทนคุณ ·
 หน้าที่แค่เอ่ยคำว่า "เด็ก" ผ่าน ๆ ไม่ต้องติดป้าย · กดเลขหน้าเพื่อเปิด PDF หน้านั้น</p>
 <div class="layout"><div class="docs" id="docs"></div><div class="panel" id="doc"></div></div>
@@ -46,7 +46,7 @@ mark{background:var(--mark);color:inherit}.snip{color:var(--muted);font-size:13p
 <script>
 const DATA = __DATA__;
 const STORE = "page-tags-" + DATA.review_id;
-const LABELS = {"": "ทั่วไป/ผู้ใหญ่", pediatric: "เด็ก/วัยรุ่น", pregnancy: "ตั้งครรภ์", mixed: "ปนกัน"};
+const LABELS = {"": "ทั่วไป/ผู้ใหญ่", pediatric: "เด็ก/วัยรุ่น", pregnancy: "ตั้งครรภ์", elderly: "ผู้สูงอายุ", mixed: "ปนกัน"};
 const ACTIONS = {keep: "เก็บไว้", redact: "ลบเฉพาะที่ติ๊ก", exclude_page: "ไม่เข้า index"};
 let S = {pop: {}, done: {}, pd: {}, reviewer: "", showAll: false, current: null};
 try { Object.assign(S, JSON.parse(localStorage.getItem(STORE) || "{}")); } catch (e) {}
@@ -81,7 +81,7 @@ function renderDoc(){
   const d = DATA.docs.find(x => x.document_id === S.current);
   if (!d) { $("doc").innerHTML = "<p>เลือกเอกสารทางซ้าย (เรียงตามจำนวนหน้าที่มีคำเกี่ยวกับเด็ก/ตั้งครรภ์)</p>"; return; }
   const opts = Object.entries(LABELS).map(([v, t]) => `<option value="${v}">${t}</option>`).join("");
-  const rows = d.pages.filter(p => S.showAll || p.hits.pediatric || p.hits.pregnancy || p.suggest || S.pop[key(d.document_id, p.p)]);
+  const rows = d.pages.filter(p => S.showAll || p.hits.pediatric || p.hits.pregnancy || p.hits.elderly || p.suggest || S.pop[key(d.document_id, p.p)]);
   $("doc").innerHTML = `<h3 style="margin:0 0 4px">${esc(d.document_id)}</h3>
    <div class="tools"><button id="use-suggest">ใช้คำแนะนำจากชื่อบท (เฉพาะหน้าที่ยังไม่ติดป้าย)</button>
    <span>ช่วงหน้า <input id="r-from" size="4" type="number"> ถึง <input id="r-to" size="4" type="number">

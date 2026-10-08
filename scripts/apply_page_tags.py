@@ -24,7 +24,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-LABELS = {"general", "pediatric", "pregnancy", "mixed"}
+LABELS = {"general", "pediatric", "pregnancy", "elderly", "mixed"}
 ACTIONS = {"keep", "redact", "exclude_page"}
 PLACEHOLDER = {"name": "[ชื่อบุคคล]", "email": "[อีเมลบุคคล]", "phone": "[เบอร์โทรบุคคล]",
                "citizen_id": "[เลขประจำตัวประชาชน]", "hospital_number": "[เลข HN/AN]"}
@@ -75,6 +75,8 @@ def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
         stored = [row.get(f) or "" for f in TEXT_FIELDS] + [x for f in LIST_FIELDS for x in row.get(f) or []
                                                             if isinstance(x, str)]
         for item in decision["redact"]:
+            if item["type"] not in PLACEHOLDER:
+                raise DecisionError(f"{key}: {item['type']} cannot be redacted by value; exclude the page instead")
             if not any(item["value"] in s for s in stored):
                 raise DecisionError(f"{key}: value to redact not found ({item['type']})")
         counts = Counter()
