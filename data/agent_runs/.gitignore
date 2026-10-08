@@ -45,3 +45,8 @@
 !/20261008-population-experiment/SILVER_SUMMARY.md
 !/20261008-population-experiment/results.md
 !/20261008-population-experiment/results.json
+
+# 2026-10-08 Codex check of the re-OCR: task prompt, summaries and validation only (findings quote page text)
+!/20261008-codex-reocr/TASK.md
+!/20261008-codex-reocr/SUMMARY_part*.md
+!/20261008-codex-reocr/validation.json

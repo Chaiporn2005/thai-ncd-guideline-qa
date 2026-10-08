@@ -1,6 +1,43 @@
 # Normalized text summaries
 
-## normalized-v7 (2026-10-08, current for retrieval)
+## normalized-v9 (2026-10-08, รอตรวจ OCR)
+
+`normalized-v8` + OCR ใหม่ 90 หน้าของ `ncd-ddc-health-literacy-fight-ncds-2566` (ข้อความเดิมเป็นรหัสฟอนต์)
+หน้าเหล่านี้เป็น `ocr_unreviewed` ไม่เข้าการค้นจนกว่า Codex เสนอแก้และคนตัดสิน; 1 หน้า (p71) หมดเวลาสองครั้ง ยังรอ OCR
+ที่มา/วิธี/ปัญหา: [corpus_process_record.md](../../docs/corpus_process_record.md) ข้อ 4.12–4.13
+
+```powershell
+python -X utf8 scripts/ocr_typhoon.py --pages-root data/processed/normalized-v8 --out-dir data/processed/ocr-typhoon-reocr-v8 --needs-ocr-only --shard 0 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_A
+python -X utf8 scripts/ocr_typhoon.py --pages-root data/processed/normalized-v8 --out-dir data/processed/ocr-typhoon-reocr-v8 --needs-ocr-only --shard 1 --num-shards 2 --env-file .env --api-key-env TYPHOON_OCR_API_KEY_B
+python -X utf8 scripts/merge_ocr.py --source data/processed/normalized-v8 --ocr-dir data/processed/ocr-typhoon-reocr-v8 --out data/processed/normalized-v9
+```
+
+## normalized-v8 (2026-10-08, **current for retrieval**)
+
+**ใช้ชุดนี้สำหรับ Track B** = `normalized-v7` + ผลตัดสินของคนเรื่องป้ายประชากร ข้อมูลส่วนบุคคล และหน้าเนื้อหาน้อย
+
+| รายการ | ผล |
+| --- | --- |
+| หน้า | 68 เอกสาร / 4,009 หน้า; ค้นได้ **67 เอกสาร / 3,660 หน้า** (v7: 3,873) |
+| ป้ายประชากรของหน้าที่ค้นได้ | ทั่วไป 3,533 · เด็ก 73 · ผู้สูงอายุ 19 · ตั้งครรภ์ 10 · ปนกัน 25 (ฟิลด์ `population` ทุกหน้า) |
+| หน้าที่ไม่เข้า index (`index_exclusion`) | รอ OCR ใหม่ 91 · ข้อมูลส่วนบุคคล (ตัดหน้า) 46 · แท็กรายชื่อบุคคล (เก็บแต่ไม่ค้น) 20 · ปกหลัง 16 · ปก 16 · ปุ่มนำทาง 10 · หน้าคั่น 7 · เกือบว่าง 7 |
+| แทนค่าในที่เดิม | ชื่อ 142, อีเมล 94, เบอร์ 5 และข้อมูลระบุตัวของเคส 4 ค่า (แท็กเช่น `[ชื่อบุคคล]`); หน้าที่แทนค่าหรือตัดจะล้างสำเนาข้อความดิบและเก็บ SHA-256 |
+| เบอร์/อีเมลหน่วยงาน | เก็บไว้ค้นได้ครบ 41 ค่าที่ไม่ซ้ำ |
+| ตรวจ | ค่าที่เลือกแทนค่าเหลือ 0 ในทุกฟิลด์ · schema 0 error |
+
+**ผู้สร้างโค้ดที่ consume ต้องข้ามหน้าที่มี `index_exclusion` หรือ `status` ไม่ใช่ ok/ผ่านตรวจ** (หน้าที่ข้อความเสียตั้ง `status: garbled` ด้วย)
+
+```powershell
+python -X utf8 scripts/amend_page_tag_decisions.py --corpus data/processed/normalized-v7 --decisions data/page_tag_decisions_normalized-v7.json --out data/page_tag_decisions_normalized-v7_final.json
+python -X utf8 scripts/apply_page_tags.py --source data/processed/normalized-v7 --decisions data/page_tag_decisions_normalized-v7_final.json --out data/processed/normalized-v8 --manifest data/manifests/page_tags_normalized-v8.json --allow-incomplete
+python -X utf8 scripts/write_corpus_inventory.py --corpus data/processed/normalized-v8 --created-by "<ผู้สร้าง/ที่มา>" --out data/manifests/corpus_normalized-v8_inventory.json
+```
+
+`--allow-incomplete`: ผู้ตรวจยังไม่ติ๊ก "ตรวจเอกสารนี้เสร็จ" ครบ 13 เอกสาร (ป้ายประชากรมีครบแล้ว)
+ไฟล์ export ของผู้ตรวจ (`data/page_tag_decisions_*.json`) มีค่าส่วนบุคคลที่เลือกลบ จึงไม่ขึ้น Git
+hash/สถิติอยู่ใน [v8 inventory](../manifests/corpus_normalized-v8_inventory.json)
+
+## normalized-v7 (2026-10-08, ถูกแทนที่ด้วย v8)
 
 **ใช้ชุดนี้สำหรับ Track B** = `normalized-v6` + ผลตรวจหน้า OCR โดยคน (Up2mEz) จากข้อเสนอแก้ของ Codex CLI
 

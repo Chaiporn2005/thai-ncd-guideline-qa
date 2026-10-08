@@ -177,10 +177,11 @@ def bootstrap_delta(a: list[float], b: list[float], rng: random.Random, n: int =
     return mean, boots[int(0.025 * n)], boots[int(0.975 * n)]
 
 
-def evaluate(corpus: Path, questions: Path, out: Path) -> int:
+def evaluate(corpus: Path, questions: Path, out: Path, exclude: tuple[str, ...] = (), stem: str = "results") -> int:
     rows = load_pages(corpus)
     bm25 = BM25(rows)
     qs = [json.loads(x) for x in questions.read_text(encoding="utf-8").split("\n") if x.strip()]
+    qs = [q for q in qs if q["id"] not in exclude]
     by_key = {r["key"]: r for r in rows}
     neighbours = {}
     for r in rows:
@@ -213,6 +214,7 @@ def evaluate(corpus: Path, questions: Path, out: Path) -> int:
     groups = {"all": list(range(len(qs))), "adult questions": [i for i, q in enumerate(qs) if q["asker"] == "adult"],
               "population questions": [i for i, q in enumerate(qs) if q["asker"] != "adult"]}
     lines = [f"# Population tags: with vs without (BM25 page-level, {len(qs)} silver questions)", "",
+             f"excluded question ids: {', '.join(exclude) if exclude else 'none'}",
              f"asker detected from the question text correctly: {detect_hits}/{len(qs)}",
              f"questions by asker: {dict(Counter(q['asker'] for q in qs))}", ""]
     report = {"questions": len(qs), "detect_correct": detect_hits, "groups": {}}
@@ -234,8 +236,8 @@ def evaluate(corpus: Path, questions: Path, out: Path) -> int:
                          f"{mean:+.2f} [{lo:+.2f}, {hi:+.2f}] | {w}/{wn if wn else '-'} |")
         lines.append("")
     out.mkdir(parents=True, exist_ok=True)
-    (out / "results.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    (out / "results.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    (out / f"{stem}.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (out / f"{stem}.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n".join(lines))
     return 0
 
@@ -250,8 +252,12 @@ def main(argv: list[str] | None = None) -> int:
     e.add_argument("--corpus", type=Path, required=True)
     e.add_argument("--questions", type=Path, required=True)
     e.add_argument("--out", type=Path, required=True)
+    e.add_argument("--exclude", nargs="*", default=[], help="question ids to leave out (e.g. ones the writer flagged as weak)")
+    e.add_argument("--name", default="results", help="output file stem")
     args = parser.parse_args(argv)
-    return sample(args.corpus, args.out) if args.cmd == "sample" else evaluate(args.corpus, args.questions, args.out)
+    if args.cmd == "sample":
+        return sample(args.corpus, args.out)
+    return evaluate(args.corpus, args.questions, args.out, tuple(args.exclude), args.name)
 
 
 if __name__ == "__main__":
