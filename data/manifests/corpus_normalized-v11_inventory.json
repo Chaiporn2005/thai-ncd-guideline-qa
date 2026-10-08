@@ -1,6 +1,6 @@
 {
  "corpus_version": "normalized-v11",
- "created_by": "Track B (Up2mEz): normalized-v10 (v9 + the reviewer's approval of all 90 re-OCR pages with Codex's 411 proposed edits) + booklet cleanup (footer, header logo, side-tab labels, second copy of the body removed with every line logged; category per page from the solid tab; pages left empty are excluded) via scripts/clean_booklet_pages.py",
+ "created_by": "Track B (Up2mEz): normalized-v10 (v9 + the reviewer's approval of all 90 re-OCR pages with Codex's 411 proposed edits) + booklet cleanup (footer, header logo, side-tab labels, second copy of the body removed with every line logged; category per page from the solid tab; pages left empty and the section-opener page p71 are excluded) via scripts/clean_booklet_pages.py",
  "documents": 68,
  "pdf_pages": 4009,
  "status_totals": {
@@ -21,7 +21,6 @@
   "pregnancy": 10
  },
  "index_exclusion_totals": {
-  "awaiting_reocr": 1,
   "empty_after_booklet_cleanup": 1,
   "low_content_almost_empty": 7,
   "low_content_back": 16,
@@ -29,7 +28,8 @@
   "low_content_divider": 7,
   "low_content_nav_only": 10,
   "pdpa_tagged_name_list": 20,
-  "personal_data_minimisation": 46
+  "personal_data_minimisation": 46,
+  "section_opener_title_only": 1
  },
  "records": [
   {
@@ -1188,7 +1188,7 @@
    "document_id": "ncd-ddc-health-literacy-fight-ncds-2566",
    "source_sha256": "1826083cb374fdaeb709ca8f1c0c98dc57cead1ea22691b553039ff7c4a89c0e",
    "pdf_pages": 96,
-   "pages_jsonl_sha256": "c7e7f238867ab0f1ef3a1a9d694147926af7202bb636e5463f856171b0898244",
+   "pages_jsonl_sha256": "530c9165c6d8d2c0de3dada1af3c3316f991101261473bbfddcad758efa94121",
    "status_counts": {
     "garbled": 1,
     "ocr_unreviewed": 93,
@@ -1199,11 +1199,11 @@
     "general": 96
    },
    "index_exclusions": {
-    "awaiting_reocr": 1,
     "empty_after_booklet_cleanup": 1,
     "low_content_almost_empty": 1,
     "low_content_back": 1,
-    "personal_data_minimisation": 1
+    "personal_data_minimisation": 1,
+    "section_opener_title_only": 1
    }
   }
  ]

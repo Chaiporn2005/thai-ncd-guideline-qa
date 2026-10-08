@@ -174,7 +174,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(f"{args.out} exists; corpus versions are never overwritten")
     tab_info = {int(k): v for k, v in json.loads(args.tabs.read_text(encoding="utf-8")).items()}
 
-    totals, lost_numbers, pages_log, emptied = Counter(), [], [], []
+    totals, lost_numbers, pages_log, emptied, openers = Counter(), [], [], [], []
     for folder in sorted(p for p in args.source.iterdir() if (p / "pages.jsonl").exists()):
         rows = [json.loads(x) for x in (folder / "pages.jsonl").read_text(encoding="utf-8").split("\n") if x.strip()]
         if folder.name == DOCUMENT:
@@ -182,6 +182,15 @@ def main(argv: list[str] | None = None) -> int:
                 category = category_for(row["pdf_page"], tab_info.get(row["pdf_page"]))
                 if category:
                     row["category"] = category
+                if row.get("needs_ocr") and category and category["source"] == "toc_section_opener":
+                    # A full-page section opener prints only the section title over pictures: the OCR model loops on it
+                    # and there is no body to read. The title is the page's category, so nothing is OCR'd or invented.
+                    row.pop("needs_ocr")
+                    row["section_opener_title"] = category["label"]
+                    row["index_exclusion"] = {"reason": "section_opener_title_only", "decided_by": "reviewer (chat 2026-10-09)",
+                                              "decided_at": "2026-10-09"}
+                    openers.append(row["pdf_page"])
+                    continue
                 if row.get("text_source") != "ocr" or not row.get("text"):
                     continue
                 poster = (row.get("category") or {}).get("source") in ("image_active_tab", "image_all_tabs_pale",
@@ -214,7 +223,7 @@ def main(argv: list[str] | None = None) -> int:
                                                     encoding="utf-8", newline="\n")
     manifest = {"corpus_version": args.out.name, "derived_from": args.source.name, "document": DOCUMENT,
                 "removed_lines": dict(totals), "pages_changed": len(pages_log), "pages": pages_log,
-                "numbers_lost_with_content": lost_numbers, "pages_empty_after_cleanup": emptied,
+                "numbers_lost_with_content": lost_numbers, "pages_empty_after_cleanup": emptied, "section_openers_without_ocr": openers,
                 "rules": {"footer_zone_lines": FOOTER_ZONE, "tab_run_min_lines": TAB_RUN_MIN_LINES,
                           "tab_run_min_distinct": TAB_RUN_MIN_DISTINCT, "duplicate_min_chars": DUPLICATE_MIN_CHARS, "empty_after_cleanup_chars": EMPTY_AFTER_CLEANUP}}
     args.manifest.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")

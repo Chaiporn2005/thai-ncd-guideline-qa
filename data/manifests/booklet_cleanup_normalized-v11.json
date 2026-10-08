@@ -424,6 +424,9 @@
  "pages_empty_after_cleanup": [
   29
  ],
+ "section_openers_without_ocr": [
+  71
+ ],
  "rules": {
   "footer_zone_lines": 18,
   "tab_run_min_lines": 5,

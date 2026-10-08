@@ -63,5 +63,29 @@ class Category(unittest.TestCase):
         self.assertIsNone(tool.category_for(95, {"tabs": 0, "active_from_image": None}))  # back matter
 
 
+class Opener(unittest.TestCase):
+    def test_section_opener_waiting_for_ocr_becomes_a_title_only_page(self):
+        import json
+        import tempfile
+        tabs = {"71": {"tabs": 0, "active_from_image": None}}
+        row = {"document_id": tool.DOCUMENT, "source_sha256": "a" * 64, "pdf_page": 71, "text": "", "status": "garbled",
+               "text_source": "pdf_text_repaired", "needs_ocr": True,
+               "index_exclusion": {"reason": "awaiting_reocr"}}
+        with tempfile.TemporaryDirectory() as t:
+            root = Path(t)
+            src = root / "src" / tool.DOCUMENT
+            src.mkdir(parents=True)
+            (src / "pages.jsonl").write_text(json.dumps(row, ensure_ascii=False) + "\n", encoding="utf-8")
+            (src / "normalization.json").write_text(json.dumps({"pages_jsonl_sha256": "x"}), encoding="utf-8")
+            (root / "tabs.json").write_text(json.dumps(tabs), encoding="utf-8")
+            code = tool.main(["--source", str(root / "src"), "--tabs", str(root / "tabs.json"), "--out", str(root / "out"),
+                              "--manifest", str(root / "m.json")])
+            out = json.loads((root / "out" / tool.DOCUMENT / "pages.jsonl").read_text(encoding="utf-8").split("\n")[0])
+        self.assertEqual(code, 0)
+        self.assertNotIn("needs_ocr", out)
+        self.assertEqual((out["section_opener_title"], out["index_exclusion"]["reason"]), ("โรคไม่ติดต่อ กับวันสำคัญ", "section_opener_title_only"))
+        self.assertEqual(out["text"], "")  # no text is invented for a page that has none
+
+
 if __name__ == "__main__":
     unittest.main()
