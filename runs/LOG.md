@@ -197,3 +197,13 @@
 - Rebuilt normalized-v2 for 39 documents/1799 pages:ok1566,ok_minor60,degraded8,garbled5,figure_review54,review_hold13,ocr_unreviewed16,empty77;0 failures;30 earlier documents changed on 91 pages,none with more defects.
 - Catalogue shows the 9 as local-only educational use without links;checks and tests pass;0 broken links.
 - Next:team decides whether to send the permission request to the Siriraj Diabetes Center;human review of the 7 OCR leaflet pages.
+
+
+## 2026-10-09 — 20261009-trackb-corpus-v2-to-v11
+
+- Owner:Track B (Up2mEz) with Claude and Codex CLI as workers;branch data/corpus-normalized-v2, PR to main.
+- Built corpus versions normalized-v2..v11 (68 documents/4009 pages;3749 searchable in v11): 29 documents added, 19 downloaded by hand where the issuer returned 403, Typhoon OCR of 524 flagged pages (two keys in parallel), human review of every AI-proposed OCR correction (283 + 90 pages), page tags (population, personal data, low content), booklet furniture/category cleanup. Details: docs/corpus_process_record.md, data/processed/README.md.
+- Errors caught:pass_auto OCR pages had 11% wrong numbers/signs (e.g. ">126" for "≥126");raw text copies kept personal data after redaction;a looping OCR call stalled a shard (now 180 s timeout);Track A's normalization v2 changes 511/1799 pages incl. 11 pages of >=/<= signs that Track B versions do not contain (docs/corpus_process_record.md 4.16).
+- Decisions needing the team:(1) Siriraj Diabetes Center rights:Track B's team_decision says permission was reported obtained (no written evidence), Track A's decision 0008 says not obtained,rag hold true — both kept in rights_review, see rights_conflict_to_resolve;(2) rag_ingestion_hold false for the 68 team-approved documents (Track B team decision);(3) integrate Track A normalize v2 into Track B versions (overlay plan in 4.16);(4) guardrail/harness choices (docs/decisions_guardrail_harness.md, all unfilled);(5) population tags as weight or filter (docs/population_tag_experiment.md).
+- Not in Git:PDFs, page text, OCR output, page images, .env, reviewer exports with personal values. Secret scan of files and history:clean. accepted stays 0 (no clinical approval).
+- Tests:python -m unittest discover -s tests (117+ tests, ingest env). Next:integrate Track A v2, then Track B L1 (chunker, embeddings, dense search).
