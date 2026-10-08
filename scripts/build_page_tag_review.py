@@ -39,6 +39,13 @@ CASE_NARRATIVE = re.compile(r"กรณีศึกษา")
 CASE_EXAMPLE = re.compile(r"ผู้ป่วย(?:ชาย|หญิง)\s*อายุ\s*\d+\s*ปี")
 CASE_MIN_MENTIONS = 3
 
+# Quasi-identifiers in a patient-case narrative: age, residence, occupation and home/shop. Health findings stay.
+CASE_IDENTIFIERS = {
+    "age": re.compile(r"อายุ\s*\d{1,3}\s*ปี"),
+    "place": re.compile(r"(?:ชุมชน)?เขตพื้นที่รับผิดชอบ\s*โรงพยาบาล[ก-๙]+(?:\s*จังหวัด[ก-๙]+)?|จังหวัด[ก-๙]+"),
+    "occupation": re.compile(r"อาชีพ(?!นอก)[ก-๙]{3,}"),
+    "dwelling": re.compile(r"ร้านขายของชำ"),
+}
 CITIZEN_ID = re.compile(r"(?<![\d-])\d[- ]?\d{4}[- ]?\d{5}[- ]?\d{2}[- ]?\d(?![\d-])")
 HOSPITAL_NUMBER = re.compile(r"\b(?:HN|AN)\s*[:.]?\s*\d{4,}")
 CONTEXT_BEFORE, CONTEXT_AFTER = 200, 120  # window used to classify a contact
@@ -103,6 +110,26 @@ def personal_findings(row: dict, name_class: str = "none") -> list[dict]:
         for m in HOSPITAL_NUMBER.finditer(text):
             found.append({"type": "hospital_number", "field": field, "value": m.group(0), "context": context(text, *m.span())})
     found.extend(case_findings(row.get("text") or ""))
+    if any(f["type"] == "case" for f in found):
+        found.extend(case_identifier_findings(row.get("text") or ""))
+    return found
+
+
+def case_identifier_findings(text: str) -> list[dict]:
+    found, seen = [], set()
+    for kind, pattern in CASE_IDENTIFIERS.items():
+        for m in pattern.finditer(text):
+            if (kind, m.group(0)) not in seen:
+                seen.add((kind, m.group(0)))
+                found.append({"type": kind, "field": "text", "value": m.group(0), "context": context(text, *m.span())})
+    return found
+
+
+def name_findings(row: dict) -> list[dict]:
+    found = []
+    for field, text in page_strings(row):
+        for m in pc.NAME.finditer(text):
+            found.append({"type": "name", "field": field, "value": m.group(0), "context": context(text, *m.span())})
     return found
 
 
@@ -117,10 +144,21 @@ def case_findings(text: str) -> list[dict]:
     return found
 
 
-def redact_default(finding: dict) -> bool:
-    if finding["type"] in ("citizen_id", "hospital_number"):
+def personal_like(finding: dict) -> bool:
+    """A contact that belongs to a person: classified personal, or a free-mail address / mobile number with no
+    organisation clue (kept conservative: such a value is tagged unless the reviewer says it is an office's)."""
+    if finding["type"] not in ("email", "phone"):
+        return False
+    if finding.get("contact") == "personal":
         return True
-    return finding["type"] in ("email", "phone") and finding.get("contact") == "personal"
+    digits = re.sub(r"\D", "", finding["value"])
+    return finding.get("contact") == "ambiguous" and (bool(pc.FREE_MAIL.search(finding["value"])) or bool(pc.MOBILE.match(digits)))
+
+
+def redact_default(finding: dict) -> bool:
+    if finding["type"] in ("citizen_id", "hospital_number", "age", "place", "occupation", "dwelling"):
+        return True
+    return personal_like(finding)
 
 
 def decide_page(row: dict, doc_type: str) -> tuple[dict | None, str]:
@@ -134,13 +172,17 @@ def decide_page(row: dict, doc_type: str) -> tuple[dict | None, str]:
     if not findings:
         return None, name_class
     kinds = {f["type"] for f in findings}
-    personal = [f for f in findings if redact_default(f)]
-    ambiguous = [f for f in findings if f["type"] in ("email", "phone") and f.get("contact") == "ambiguous"]
+    personal = [f for f in findings if redact_default(f) and f["type"] not in ("age", "place", "occupation", "dwelling")]
+    ambiguous = [f for f in findings if f["type"] in ("email", "phone") and f.get("contact") == "ambiguous"
+                 and not personal_like(f)]
     focus = None
     if "case" in kinds:
-        group, suggest = "case", "exclude_page"
-        reason = "บรรยายเคสผู้ป่วย (ข้อมูลสุขภาพรายบุคคล: อายุ/ที่อยู่/ครอบครัว/ผลตรวจ) — ถ้าเป็นเคสจริงควรตัดออก"
-        focus = next(f for f in findings if f["type"] == "case")
+        group = "case"
+        tagged = [f for f in findings if f["type"] in ("age", "place", "occupation", "dwelling")]
+        suggest = "redact" if tagged else "exclude_page"
+        reason = ("บรรยายเคสผู้ป่วย: แทนข้อมูลระบุตัว (อายุ/ที่อยู่/อาชีพ/ที่พัก) ด้วยแท็ก เก็บข้อมูลทางคลินิกไว้"
+                  if tagged else "บรรยายเคสผู้ป่วยแต่ไม่พบข้อมูลระบุตัวที่ตรวจได้ — ถ้าเป็นเคสจริงควรตัดออก")
+        focus = (tagged or [next(f for f in findings if f["type"] == "case")])[0]
     elif name_class == "name_list":
         group, suggest = "name_list", "exclude_page"
         reason = "ทั้งหน้าเป็นรายชื่อบุคคล: " + "; ".join(name_reasons)
@@ -148,6 +190,7 @@ def decide_page(row: dict, doc_type: str) -> tuple[dict | None, str]:
         group, suggest = "contact_personal", "redact"
         reason = "ข้อมูลติดต่อ/เลขประจำตัวที่เป็นของบุคคล: " + "; ".join(sorted({f.get("why") or f["type"] for f in personal}))
         focus = personal[0]
+        findings = findings + name_findings(row)  # names beside the personal contacts are tagged as well
     elif name_class == "name_partial" or ambiguous or "case_example" in kinds:
         group, suggest = "review", "keep"
         parts = []
@@ -286,8 +329,10 @@ def build_groups(lowcontent: list[dict], personal: list[dict], raw: Path, out_di
                  "why": "ระบบเห็นว่าเป็นของบุคคล (มือถือ, อีเมลฟรีใกล้ชื่อบุคคล) ลบเฉพาะค่านั้น เนื้อหาหน้ายังอยู่ · ตัวที่คำนวณว่าเป็นของหน่วยงานเก็บไว้แล้ว",
                  "items": by_group["contact_personal"], "actions": [("redact", "ลบค่าที่ธงไว้ทั้งกลุ่ม"), ("keep", "เก็บทั้งกลุ่ม")]})
     spec.append({"id": "pd:case", "source": "pd", "kind": "case", "label": "เคสผู้ป่วย (กรณีศึกษา)",
-                 "why": "บรรยายเคสพร้อมอายุ/ที่อยู่/ครอบครัว/ผลตรวจ ถ้าเป็นคนจริงควรตัด", "items": by_group["case"],
-                 "actions": [("exclude", "ตัดทั้งกลุ่ม"), ("keep", "เก็บทั้งกลุ่ม")]})
+                 "why": "บรรยายเคสพร้อมอายุ/ที่อยู่/อาชีพ/ครอบครัว/ผลตรวจ แทนข้อมูลระบุตัวด้วยแท็ก ผลตรวจและกระบวนการพยาบาลยังอยู่",
+                 "items": by_group["case"],
+                 "actions": [("redact", "แทนข้อมูลระบุตัวด้วยแท็ก (อายุ/ที่อยู่/อาชีพ/ที่พัก)"), ("exclude", "ตัดทั้งกลุ่ม"),
+                             ("keep", "เก็บทั้งกลุ่ม")]})
     img_dir = out_dir / "img"
     groups = []
     for g in spec:

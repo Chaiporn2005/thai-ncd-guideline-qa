@@ -34,7 +34,8 @@ LABELS = {"general", "pediatric", "pregnancy", "elderly", "mixed"}
 ACTIONS = {"keep", "redact", "exclude_page", "tag_name_list"}
 LOW_CONTENT_ACTIONS = {"keep", "exclude", "reocr"}
 PLACEHOLDER = {"name": "[ชื่อบุคคล]", "email": "[อีเมลบุคคล]", "phone": "[เบอร์โทรบุคคล]",
-               "citizen_id": "[เลขประจำตัวประชาชน]", "hospital_number": "[เลข HN/AN]"}
+               "citizen_id": "[เลขประจำตัวประชาชน]", "hospital_number": "[เลข HN/AN]",
+               "age": "[อายุผู้ป่วย]", "place": "[ที่อยู่ผู้ป่วย]", "occupation": "[อาชีพผู้ป่วย]", "dwelling": "[ที่พักผู้ป่วย]"}
 TEXT_FIELDS = ("text", "text_before_review_edits")
 LIST_FIELDS = ("removed_edge_lines", "ocr_figures")
 # Raw copies of the page text kept for provenance (before normalization, OCR output, the text a reviewer saw). They are

@@ -1,0 +1,1389 @@
+{
+ "corpus_version": "normalized-v8",
+ "derived_from": "normalized-v7",
+ "review_id": "page-tags-v7",
+ "reviewer": "thanakrit",
+ "exported_at": "2026-10-08T10:27:26.654Z",
+ "built_at": "2026-10-08",
+ "population_pages": {
+  "elderly": 19,
+  "general": 3882,
+  "mixed": 25,
+  "pediatric": 73,
+  "pregnancy": 10
+ },
+ "population_ranges": [
+  {
+   "document_id": "lipid-inmu-food-knowledge-all-ages",
+   "reviewed": false,
+   "ranges": [
+    [
+     12,
+     13,
+     "mixed"
+    ],
+    [
+     24,
+     32,
+     "pediatric"
+    ],
+    [
+     34,
+     46,
+     "pediatric"
+    ],
+    [
+     48,
+     60,
+     "pediatric"
+    ],
+    [
+     62,
+     67,
+     "pediatric"
+    ],
+    [
+     84,
+     92,
+     "elderly"
+    ],
+    [
+     94,
+     97,
+     "elderly"
+    ]
+   ]
+  },
+  {
+   "document_id": "dm-cpg-2566-revised-2567",
+   "reviewed": false,
+   "ranges": [
+    [
+     203,
+     225,
+     "pediatric"
+    ],
+    [
+     227,
+     234,
+     "pediatric"
+    ],
+    [
+     235,
+     241,
+     "pregnancy"
+    ],
+    [
+     243,
+     243,
+     "pregnancy"
+    ],
+    [
+     263,
+     264,
+     "pregnancy"
+    ]
+   ]
+  },
+  {
+   "document_id": "ckd-anemia-guideline-2564",
+   "reviewed": false,
+   "ranges": [
+    [
+     51,
+     52,
+     "mixed"
+    ],
+    [
+     61,
+     63,
+     "mixed"
+    ],
+    [
+     66,
+     66,
+     "mixed"
+    ],
+    [
+     71,
+     71,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "ckd-ddc-epidemiology-prevention-review-2567",
+   "reviewed": false,
+   "ranges": [
+    [
+     5,
+     10,
+     "elderly"
+    ]
+   ]
+  },
+  {
+   "document_id": "ht-ddc-dmht-elearning-intermediate-ii-2566",
+   "reviewed": false,
+   "ranges": [
+    [
+     45,
+     46,
+     "mixed"
+    ],
+    [
+     146,
+     146,
+     "mixed"
+    ],
+    [
+     156,
+     157,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "dm-ddc-dmht-elearning-intermediate-2568",
+   "reviewed": false,
+   "ranges": [
+    [
+     62,
+     62,
+     "mixed"
+    ],
+    [
+     69,
+     70,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "ht-guideline-2567",
+   "reviewed": false,
+   "ranges": [
+    [
+     110,
+     110,
+     "mixed"
+    ],
+    [
+     112,
+     112,
+     "mixed"
+    ],
+    [
+     114,
+     114,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "dm-dmthai-self-management-education-2568",
+   "reviewed": false,
+   "ranges": [
+    [
+     134,
+     134,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+   "reviewed": false,
+   "ranges": [
+    [
+     31,
+     31,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "dm-remission-principles-2568-september",
+   "reviewed": false,
+   "ranges": [
+    [
+     174,
+     174,
+     "pediatric"
+    ]
+   ]
+  },
+  {
+   "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+   "reviewed": false,
+   "ranges": [
+    [
+     18,
+     18,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "ht-ddc-provincial-sodium-guide-undated",
+   "reviewed": false,
+   "ranges": [
+    [
+     89,
+     89,
+     "mixed"
+    ]
+   ]
+  },
+  {
+   "document_id": "lipid-dms-stroke-public-manual",
+   "reviewed": false,
+   "ranges": [
+    [
+     7,
+     7,
+     "mixed"
+    ]
+   ]
+  }
+ ],
+ "personal_data_actions": {
+  "exclude_page": 46,
+  "keep": 38,
+  "redact": 37,
+  "tag_name_list": 20
+ },
+ "personal_data_pages": [
+  {
+   "key": "ckd-adult-glomerular-guideline-2561:p6",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-adult-glomerular-guideline-2561:p7",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-adult-glomerular-guideline-2561:p8",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-adult-renal-nutrition-guideline-2561:p4",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-anemia-guideline-2564:p6",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-anemia-guideline-2564:p7",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p16",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ckd-guideline-2565-revised:p3",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1,
+    "name": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-guideline-2565-revised:p4",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-guideline-2565-revised:p5",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-guideline-2565-revised:p6",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-guideline-2565-revised:p8",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-guideline-2565-revised:p69",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ckd-hemodialysis-plasma-manual-2561:p7",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-hemodialysis-plasma-manual-2561:p8",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-out-of-unit-hemodialysis-standards:p2",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-palliative-2566:p3",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ckd-public-kidney-prevention-tips:p5",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566:p3",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p4",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text",
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "dm-clinic-standards-2567:p2",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1,
+    "phone": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-clinic-standards-2567:p60",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-clinic-standards-2567:p61",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-clinic-standards-2567:p62",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-clinic-standards-2567:p63",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-clinic-standards-2567:p64",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-cpg-2566-revised-2567:p4",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-cpg-2566-revised-2567:p11",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-cpg-2566-revised-2567:p12",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p2",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p4",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-educator-standards-2567:p7",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p62",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "age": 1,
+    "occupation": 1,
+    "place": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p63",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p64",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "dwelling": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p65",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p66",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p68",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p69",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p70",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p71",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p72",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p73",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p74",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p75",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p76",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p77",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p78",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p79",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p80",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p81",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p82",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p83",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p84",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p85",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p86",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p87",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p111",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-rama-nursing-t2dm-risk-case-management-2567:p112",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1,
+    "name": 1,
+    "phone": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-remission-implementation-lessons-undated:p4",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text",
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p2",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p3",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1,
+    "name": 3,
+    "phone": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p7",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p8",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p172",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "dm-remission-service-2567:p4",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-remission-service-2567:p27",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "name": 11
+   },
+   "raw_copies_dropped": [
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "dm-remission-service-2567:p28",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "name": 13
+   },
+   "raw_copies_dropped": [
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "dm-remission-service-2567:p29",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-siriraj-nursing-foot-ulcer-prevention-2559:p5",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-siriraj-nursing-prediabetes-lifestyle-2563:p3",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "dm-siriraj-nursing-prediabetes-lifestyle-2563:p83",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p3",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p2",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p4",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p94",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p96",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p97",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p2",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p4",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p229",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p2",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "name": 17
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p34",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p2",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p98",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p99",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p101",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p102",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-guideline-2567:p3",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ht-guideline-2567:p8",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-siriraj-uncontrolled-opd-2564:p4",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ht-siriraj-uncontrolled-opd-2564:p105",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-guideline-2567:p3",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-guideline-2567:p6",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "lipid-guideline-2567:p7",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "lipid-guideline-2567:p8",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-guideline-2567:p9",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-guideline-2567:p42",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-inmu-food-knowledge-all-ages:p3",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-inmu-food-knowledge-all-ages:p161",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-inmu-food-knowledge-all-ages:p162",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-inmu-food-knowledge-all-ages:p164",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1,
+    "name": 3
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-inmu-food-knowledge-all-ages:p165",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 2,
+    "name": 2
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-inmu-food-knowledge-all-ages:p167",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-inmu-food-knowledge-all-ages:p169",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-jmhs-dyslipidemia-drugs-review-2563:p1",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-jmhs-dyslipidemia-drugs-review-2563:p2",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-rtamedj-hyperlipidemia-review-2566:p1",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005:p1",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "lipid-thaijpen-severe-hypertriglyceridemia-2565:p1",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-clinic-plus-2568-update:p2",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p2",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p14",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p43",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p44",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "name": 20
+   },
+   "raw_copies_dropped": [
+    "ocr_text",
+    "reviewed_from_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p45",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p51",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p56",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p57",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p58",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p59",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p2",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p4",
+   "action": "keep",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p31",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 1,
+    "name": 2
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p32",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 6,
+    "name": 5
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p59",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 8,
+    "name": 8
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p61",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 8,
+    "name": 8
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p63",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 4,
+    "name": 5
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p64",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 4,
+    "name": 3
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p67",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 5,
+    "name": 5
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p68",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 3,
+    "name": 3
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p70",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 3,
+    "name": 3
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p71",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 5,
+    "name": 5
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p73",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 8,
+    "name": 8
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p75",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 8,
+    "name": 8
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p78",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 8,
+    "name": 8
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p80",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 2,
+    "name": 3
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p81",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "email": 5,
+    "name": 5
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p87",
+   "action": "redact",
+   "decided_at": "2026-10-08",
+   "redacted": {
+    "name": 2,
+    "phone": 2
+   },
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  },
+  {
+   "key": "ncd-ddc-dmht-service-model-lessons-2568:p2",
+   "action": "tag_name_list",
+   "decided_at": "2026-10-08"
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p2",
+   "action": "exclude_page",
+   "decided_at": "2026-10-08",
+   "raw_copies_dropped": [
+    "pre_normalization_text"
+   ]
+  }
+ ],
+ "low_content_actions": {
+  "almost_empty:exclude": 7,
+  "almost_empty:keep": 5,
+  "back:exclude": 16,
+  "back:keep": 3,
+  "cover:exclude": 16,
+  "divider:exclude": 7,
+  "figure_caption:keep": 14,
+  "garbage_text_layer:reocr": 91,
+  "nav_only:exclude": 10,
+  "short:keep": 105
+ },
+ "personal_undecided": 0,
+ "lowcontent_undecided": 0,
+ "population_docs_not_reviewed": [
+  "lipid-inmu-food-knowledge-all-ages",
+  "dm-cpg-2566-revised-2567",
+  "ckd-anemia-guideline-2564",
+  "ckd-ddc-epidemiology-prevention-review-2567",
+  "ht-ddc-dmht-elearning-intermediate-ii-2566",
+  "dm-ddc-dmht-elearning-intermediate-2568",
+  "ht-guideline-2567",
+  "dm-dmthai-self-management-education-2568",
+  "dm-rama-nursing-t2dm-risk-case-management-2567",
+  "dm-remission-principles-2568-september",
+  "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
+  "ht-ddc-provincial-sodium-guide-undated",
+  "lipid-dms-stroke-public-manual"
+ ]
+}

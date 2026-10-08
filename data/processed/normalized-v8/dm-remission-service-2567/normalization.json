@@ -1,0 +1,97 @@
+{
+  "document_id": "dm-remission-service-2567",
+  "title": "แนวทางการดำเนินงานการดูแลผู้เป็นเบาหวานให้เข้าสู่ระยะสงบ (REMISSION SERVICE)",
+  "source_sha256": "2892126649fcaafba926cd4b33feec1a33e4244866d3fcd0334b230f4c92381c",
+  "pdf_pages": 32,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "reduced_cluster_labels": 1,
+      "remapped_sara_aa": 1,
+      "repaired_tounicode": 6,
+      "unchanged": 1
+    },
+    "tounicode_entries_written_or_changed": 60
+  },
+  "normalization_totals": {
+    "c1_positional": 201,
+    "duplicate_marks": 2,
+    "space_before_following_vowel": 1,
+    "space_before_mark": 124
+  },
+  "status_counts": {
+    "degraded": 1,
+    "empty": 2,
+    "garbled": 2,
+    "ocr_unreviewed": 9,
+    "ok": 9,
+    "ok_minor_issues": 9
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      4,
+      5,
+      8,
+      19,
+      27,
+      28,
+      29,
+      30
+    ],
+    "empty": [
+      2,
+      31
+    ],
+    "ok_minor_issues": [
+      6,
+      9,
+      10,
+      11,
+      15,
+      16,
+      23,
+      24,
+      25
+    ],
+    "degraded": [
+      7
+    ],
+    "garbled": [
+      26,
+      32
+    ]
+  },
+  "removed_edge_lines": 77,
+  "ocr_pages": 11,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "07e84b4e2f0c912c84beaf1b239a5cd14538ff393afae714aced76ea3cbb1a9f",
+  "created_at": "2026-10-08T10:50:07.953357+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v7",
+    "pages_jsonl_sha256": "875fd8130e26c584e560a05f483a60f586584c6e47284d3c486272edf044da15",
+    "page_tag_decisions": "page_tag_decisions_normalized-v7_final.json"
+  },
+  "population_counts": {
+    "general": 32
+  },
+  "index_excluded_pages": [
+    3,
+    4,
+    29,
+    30
+  ]
+}

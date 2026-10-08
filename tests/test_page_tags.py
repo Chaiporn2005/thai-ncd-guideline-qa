@@ -61,9 +61,17 @@ class NeedsDecision(unittest.TestCase):
         flagged = [f["value"] for f, r in zip(found["findings"], found["redact"]) if r]
         self.assertEqual(flagged, ["081-234-5678"])
 
-    def test_ambiguous_contact_goes_to_review_unticked(self):
-        found = self.decide(ADULT + "\nข้อมูลเพิ่มเติม abc@gmail.com")
+    def test_ambiguous_office_phone_beside_a_person_goes_to_review_unticked(self):
+        found = self.decide(ADULT + "\nติดต่อ นพ.สมชาย ใจดี โทร 02-123-4567")
         self.assertEqual((found["group"], found["suggest"], any(found["redact"])), ("review", "keep", False))
+
+    def test_free_mail_without_an_organisation_clue_is_tagged_by_default(self):
+        found = self.decide(ADULT + "\nข้อมูลเพิ่มเติม abc@gmail.com")
+        self.assertEqual((found["group"], found["suggest"], any(found["redact"])), ("contact_personal", "redact", True))
+
+    def test_titles_that_are_professions_or_offices_are_not_names(self):
+        text = ADULT + "\nเภสัชกรค้นหาและประเมินปัญหาจากการใช้ยา นายกสมาคมโรคเบาหวาน ประชุมร่วมกัน"
+        self.assertIsNone(self.decide(text))
 
     def test_finds_citizen_id_and_skips_isbn(self):
         text = ADULT + "\nISBN 9789241549028 เลข 1101700230708"
@@ -72,8 +80,22 @@ class NeedsDecision(unittest.TestCase):
 
     def test_case_narrative_suggests_exclusion_but_contents_page_does_not(self):
         found = self.decide("กรณีศึกษาอายุ 67 ปี กรณีศึกษามีสามี กรณีศึกษาไม่เครียด")
-        self.assertEqual((found["group"], found["suggest"]), ("case", "exclude_page"))
+        self.assertEqual((found["group"], found["suggest"]), ("case", "redact"))
+        tagged = {f["type"]: f["value"] for f, r in zip(found["findings"], found["redact"]) if r}
+        self.assertEqual(tagged, {"age": "อายุ 67 ปี"})
+        found = self.decide("กรณีศึกษามีสามี กรณีศึกษาไม่เครียด กรณีศึกษาออกกำลังกาย")
+        self.assertEqual((found["group"], found["suggest"]), ("case", "exclude_page"))  # nothing identifying to tag
         self.assertIsNone(self.decide("สารบัญตาราง ผลตรวจของกรณีศึกษา แผนของกรณีศึกษา สรุปของกรณีศึกษา"))
+
+    def test_case_identifiers_are_tagged_and_clinical_values_stay(self):
+        text = ("หญิงไทย อายุ 67 ปี ภูมิลำเนา ชุมชนเขตพื้นที่รับผิดชอบ\nโรงพยาบาลรามาธิบดี จังหวัดกรุงเทพมหานคร "
+                "อาชีพค้าขายของชำและนักบัญชี กรณีศึกษา FPG 112 mg/dL กรณีศึกษา BMI 27.8 "
+                "กรณีศึกษาอาศัยในบ้านที่ชั้นล่างเปิดเป็นร้านขายของชำ")
+        found = self.decide(text)
+        values = {f["type"]: f["value"] for f, r in zip(found["findings"], found["redact"]) if r}
+        self.assertEqual(set(values), {"age", "place", "occupation", "dwelling"})
+        self.assertIn("โรงพยาบาลรามาธิบดี", values["place"])
+        self.assertTrue(all("112" not in v and "27.8" not in v for v in values.values()))
 
     def test_worked_example_patient_is_kept_for_a_look(self):
         found = self.decide("ตัวอย่างการคำนวณ ผู้ป่วยชายอายุ 50 ปี น้ำหนัก 60 กก. " + ADULT)
@@ -180,6 +202,10 @@ class Apply(unittest.TestCase):
             manifest = (tmp / "m.json").read_text(encoding="utf-8")
             self.assertNotIn("081", manifest)
             self.assertNotIn("สมชาย", manifest)
+
+    def test_case_identifier_tags_exist(self):
+        self.assertEqual(tool.PLACEHOLDER["age"], "[อายุผู้ป่วย]")
+        self.assertTrue(set(tool.PLACEHOLDER) >= {"age", "place", "occupation", "dwelling"})
 
     def test_name_list_can_be_tagged_and_kept_in_storage_but_not_indexed(self):
         decisions = json.loads(json.dumps(DECISIONS))

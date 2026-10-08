@@ -128,3 +128,36 @@ class OcrRunner(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Selection(unittest.TestCase):
+    def test_needs_ocr_only_skips_pages_that_were_already_ocrd_and_rejected(self):
+        rows = [{"document_id": "doc-a", "pdf_page": n, "status": "garbled", "source_sha256": "a" * 64, **extra}
+                for n, extra in ((1, {"needs_ocr": True}), (2, {}), (3, {"needs_ocr": True}))]
+        page = unittest.mock.Mock(images=[object()])
+        with tempfile.TemporaryDirectory() as t:
+            root = Path(t)
+            (root / "doc-a").mkdir()
+            (root / "doc-a/pages.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows), encoding="utf-8")
+            with unittest.mock.patch.object(tool, "PdfReader", return_value=unittest.mock.Mock(pages=[page] * 3)):
+                everything, _ = tool.select_pages(root, root, ("garbled",))
+                chosen, _ = tool.select_pages(root, root, ("garbled",), needs_ocr_only=True)
+        self.assertEqual([p["pdf_page"] for p in everything], [1, 2, 3])
+        self.assertEqual([p["pdf_page"] for p in chosen], [1, 3])
+
+
+class CallTimeout(unittest.TestCase):
+    def test_client_is_replaced_once_with_a_bounded_one(self):
+        import sys
+        import types
+        utils = types.ModuleType("typhoon_ocr.ocr_utils")
+        utils.OpenAI = object
+        package = types.ModuleType("typhoon_ocr")
+        package.ocr_utils = utils
+        package.ocr_document = lambda **kwargs: "text"
+        with unittest.mock.patch.dict(sys.modules, {"typhoon_ocr": package, "typhoon_ocr.ocr_utils": utils}):
+            tool.ocr_page({"pdf_path": "x.pdf", "pdf_page": 1}, KEY, "typhoon-ocr", "v1.5")
+            first = utils.OpenAI
+            tool.ocr_page({"pdf_path": "x.pdf", "pdf_page": 2}, KEY, "typhoon-ocr", "v1.5")
+        self.assertIs(utils.OpenAI, first)
+        self.assertEqual((first.keywords["timeout"], first.keywords["max_retries"]), (tool.CALL_TIMEOUT_S, 0))

@@ -1,0 +1,48 @@
+{
+  "document_id": "dm-siriraj-retinopathy-leaflet-undated",
+  "title": "ภาวะเบาหวานขึ้นจอตา (Diabetic Retinopathy)",
+  "source_sha256": "7b372e0337fb5fbc6079901b67798b96ee14a2ea0553131eb757c984234c717e",
+  "pdf_pages": 2,
+  "options": {},
+  "font_repair": {
+    "font_actions": {},
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {},
+  "status_counts": {
+    "ocr_unreviewed": 2
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      2
+    ]
+  },
+  "removed_edge_lines": 0,
+  "ocr_pages": 2,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "05e290112dbad7f4a78c822f011f9693896d70c61b19790a62948986041f6ef3",
+  "created_at": "2026-10-08T10:50:08.119552+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v7",
+    "pages_jsonl_sha256": "f419ba3d05fdcfe0a27da6619fc17d13488ac3e6173c1d5c7af3f3b034cfbbf7",
+    "page_tag_decisions": "page_tag_decisions_normalized-v7_final.json"
+  },
+  "population_counts": {
+    "general": 2
+  },
+  "index_excluded_pages": []
+}

@@ -69,6 +69,10 @@ def merge_document(source_dir: Path, out_dir: Path, ocr: dict) -> dict:
                 ocr_text=hit["ocr_markdown"], ocr_figures=figures,
                 ocr_method=f"{hit['model']} task {hit['task_type']} (typhoon-ocr {hit['typhoon_ocr_version']})",
                 ocr_printed_page_hint=printed, human_review=None)
+            if row.pop("needs_ocr", False):  # a reviewer sent this page for a new OCR pass; it is not excluded any more,
+                row["reocr"] = {"previous_status": hit.get("normalized_status"), "previous_pdf_text_status": row["pdf_text_status"]}
+                if (row.get("index_exclusion") or {}).get("reason") == "awaiting_reocr":
+                    del row["index_exclusion"]  # but stays out of search until a person reviews the OCR text
             used += 1
         merged.append(row)
     out_dir.mkdir(parents=True)

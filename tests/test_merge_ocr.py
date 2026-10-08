@@ -56,6 +56,23 @@ class Merge(unittest.TestCase):
             summary = json.loads((root / "out/doc-a/normalization.json").read_text(encoding="utf-8"))
             self.assertEqual(summary["status_counts"], {"ocr_unreviewed": 1, "ok": 1})
 
+    def test_reocr_page_loses_its_exclusion_but_stays_unreviewed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.make_source(root)
+            path = root / "src/doc-a/pages.jsonl"
+            rows = [json.loads(x) for x in path.read_text(encoding="utf-8").split("\n") if x.strip()]
+            rows[1].update(status="garbled", needs_ocr=True, text="/g1/g2/g3",
+                           index_exclusion={"reason": "awaiting_reocr", "decided_by": "t", "decided_at": "2026-10-08"})
+            path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+            self.assertEqual(self.run_tool(root), 0)
+            out = [json.loads(x) for x in (root / "out/doc-a/pages.jsonl").read_text(encoding="utf-8").split("\n") if x.strip()]
+            self.assertEqual((out[1]["status"], out[1]["human_review"]), ("ocr_unreviewed", None))
+            self.assertNotIn("needs_ocr", out[1])
+            self.assertNotIn("index_exclusion", out[1])
+            self.assertEqual(out[1]["reocr"]["previous_pdf_text_status"], "garbled")
+            self.assertEqual(out[1]["pre_normalization_text"], "/g1/g2/g3")
+
     def test_existing_output_is_never_overwritten(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

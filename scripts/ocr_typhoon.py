@@ -35,15 +35,20 @@ OCR_STATUSES = ("empty", "garbled", "degraded")
 MAX_PER_MINUTE = 18          # service limit is 20/min and 2/s per the Typhoon docs; keep a margin
 MIN_INTERVAL_S = 60 / MAX_PER_MINUTE
 MAX_RETRIES = 5
+CALL_TIMEOUT_S = 180         # a normal page takes about 15 s; a page the model loops on would otherwise wait 10 minutes x 3
 
 
-def select_pages(pages_root: Path, raw_root: Path, statuses: tuple[str, ...]) -> tuple[list[dict], list[dict]]:
-    """Return (pages to OCR, skipped blank pages), sorted by document and page."""
+def select_pages(pages_root: Path, raw_root: Path, statuses: tuple[str, ...],
+                 needs_ocr_only: bool = False) -> tuple[list[dict], list[dict]]:
+    """Return (pages to OCR, skipped blank pages), sorted by document and page.
+
+    needs_ocr_only keeps only pages a reviewer sent for a new OCR pass (`needs_ocr`), so pages that were already
+    OCR'd and rejected are not sent again."""
     selected, skipped = [], []
     for pages_file in sorted(pages_root.glob("*/pages.jsonl")):
         doc_id = pages_file.parent.name
         rows = [json.loads(line) for line in pages_file.read_text(encoding="utf-8").split("\n") if line.strip()]
-        flagged = [r for r in rows if r["status"] in statuses]
+        flagged = [r for r in rows if r["status"] in statuses and (r.get("needs_ocr") or not needs_ocr_only)]
         if not flagged:
             continue
         pdf_path = raw_root / doc_id / "source.pdf"
@@ -93,8 +98,22 @@ def is_rate_limit(exc: Exception) -> bool:
     return getattr(exc, "status_code", None) == 429 or type(exc).__name__ == "RateLimitError"
 
 
+def bound_client_timeout() -> None:
+    """typhoon-ocr builds its OpenAI client inside ocr_document with the library default (10 minutes, 2 retries).
+    Replace it once with a client that gives up after CALL_TIMEOUT_S and does not retry by itself; the runner decides
+    what to retry (rate limits) and records the rest as failed so a resumed run can try them again."""
+    import functools
+    import typhoon_ocr.ocr_utils as utils
+    from openai import OpenAI
+    if not getattr(utils, "_call_timeout_bound", False):
+        utils.OpenAI = functools.partial(OpenAI, timeout=CALL_TIMEOUT_S, max_retries=0)
+        utils._call_timeout_bound = True
+
+
 def ocr_page(item: dict, api_key: str, model: str, task_type: str) -> str:
     from typhoon_ocr import ocr_document  # imported lazily so --dry-run works without the package
+
+    bound_client_timeout()
 
     return ocr_document(pdf_or_image_path=item["pdf_path"], page_num=item["pdf_page"], api_key=api_key,
                         model=model, task_type=task_type)
@@ -109,6 +128,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--num-shards", type=int, required=True)
     parser.add_argument("--statuses", nargs="+", default=list(OCR_STATUSES), choices=OCR_STATUSES)
     parser.add_argument("--document-id", action="append", default=[], help="limit to these documents")
+    parser.add_argument("--needs-ocr-only", action="store_true",
+                        help="only pages marked needs_ocr by a reviewer (garbled text layers sent for a new OCR pass)")
     parser.add_argument("--limit", type=int, default=None, help="maximum pages in this shard (e.g. a CER sample)")
     parser.add_argument("--api-key-env", default="TYPHOON_OCR_API_KEY")
     parser.add_argument("--env-file", type=Path, default=None, help="local KEY=VALUE file, e.g. .env (git-ignored)")
@@ -119,7 +140,7 @@ def main(argv: list[str] | None = None) -> int:
     if not 0 <= args.shard < args.num_shards:
         parser.error("--shard must be in 0..num_shards-1")
 
-    pages, skipped = select_pages(args.pages_root, args.raw_dir, tuple(args.statuses))
+    pages, skipped = select_pages(args.pages_root, args.raw_dir, tuple(args.statuses), args.needs_ocr_only)
     if args.document_id:
         pages = [p for p in pages if p["document_id"] in set(args.document_id)]
     shard = [p for i, p in enumerate(pages) if i % args.num_shards == args.shard]
