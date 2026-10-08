@@ -95,6 +95,20 @@ def apply_personal(row: dict, decision: dict, reviewer: str, date: str) -> dict:
     return row
 
 
+def apply_low_content(row: dict, decision: dict, reviewer: str, date: str) -> dict:
+    """Mark a page as kept or excluded after review of its low content; text stays so the choice can be audited."""
+    action = decision["action"]
+    if action not in {"keep", "exclude"}:
+        raise DecisionError(f"{row['document_id']}:p{row['pdf_page']}: unknown low-content action {action!r}")
+    row["low_content_review"] = {"kind": decision.get("kind"), "action": action, "decided_by": reviewer, "decided_at": date}
+    if action == "exclude" and not row.get("index_exclusion"):
+        row["index_exclusion"] = {"reason": f"low_content_{decision.get('kind', 'page')}", "decided_by": reviewer,
+                                  "decided_at": date}
+        if decision.get("kind") == "garbage_text_layer":
+            row["status"] = "garbled"  # the text layer itself is broken, so consumers that ignore index_exclusion skip it too
+    return row
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--source", type=Path, required=True)
@@ -111,17 +125,21 @@ def main(argv: list[str] | None = None) -> int:
     if not reviewer:
         raise DecisionError("decisions have no reviewer")
     pending = {"personal_undecided": data.get("personal_undecided", 0),
+               "lowcontent_undecided": data.get("lowcontent_undecided", 0),
                "population_docs_not_reviewed": data.get("population_docs_not_reviewed", [])}
-    if (pending["personal_undecided"] or pending["population_docs_not_reviewed"]) and not args.allow_incomplete:
-        raise DecisionError(f"review incomplete: {pending['personal_undecided']} personal-data pages and "
+    if (pending["personal_undecided"] or pending["lowcontent_undecided"] or pending["population_docs_not_reviewed"]) \
+            and not args.allow_incomplete:
+        raise DecisionError(f"review incomplete: {pending['personal_undecided']} personal-data pages, "
+                            f"{pending['lowcontent_undecided']} low-content pages and "
                             f"{len(pending['population_docs_not_reviewed'])} documents undecided "
                             "(finish the review or pass --allow-incomplete)")
     labels = population_map(data)
     personal = {d["key"]: d for d in data.get("personal", [])}
+    lowcontent = {d["key"]: d for d in data.get("lowcontent", [])}
     date = datetime.now(timezone.utc).date().isoformat()
 
     seen, plans, page_log = set(), [], []
-    totals, actions, population = Counter(), Counter(), Counter()
+    totals, actions, population, low_actions = Counter(), Counter(), Counter(), Counter()
     for folder in sorted(p for p in args.source.iterdir() if (p / "pages.jsonl").exists()):
         rows = [json.loads(x) for x in (folder / "pages.jsonl").read_text(encoding="utf-8").split("\n") if x.strip()]
         for row in rows:
@@ -133,8 +151,12 @@ def main(argv: list[str] | None = None) -> int:
                 seen.add(key)
                 actions[row["personal_data"]["action"]] += 1
                 page_log.append({"key": key, **{k: v for k, v in row["personal_data"].items() if k != "decided_by"}})
+            if key in lowcontent:
+                apply_low_content(row, lowcontent[key], reviewer, date)
+                seen.add(key)
+                low_actions[f"{lowcontent[key].get('kind')}:{lowcontent[key]['action']}"] += 1
         plans.append((folder, rows))
-    unknown = (set(personal) | set(labels)) - {f"{r['document_id']}:p{r['pdf_page']}" for _, rows in plans for r in rows}
+    unknown = (set(personal) | set(labels) | set(lowcontent)) - {f"{r['document_id']}:p{r['pdf_page']}" for _, rows in plans for r in rows}
     if unknown:
         raise DecisionError(f"decisions for pages not in the source: {sorted(unknown)[:5]}")
 
@@ -159,9 +181,10 @@ def main(argv: list[str] | None = None) -> int:
                 "reviewer": reviewer, "exported_at": data.get("exported_at"), "built_at": date,
                 "population_pages": dict(sorted(population.items())),
                 "population_ranges": [d for d in data.get("population", []) if d["ranges"]],
-                "personal_data_actions": dict(sorted(actions.items())), "personal_data_pages": page_log, **pending}
+                "personal_data_actions": dict(sorted(actions.items())), "personal_data_pages": page_log,
+                "low_content_actions": dict(sorted(low_actions.items())), **pending}
     args.manifest.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
-    print(json.dumps({"documents": len(plans), "population_pages": dict(population), "personal_data": dict(actions),
+    print(json.dumps({"documents": len(plans), "population_pages": dict(population), "personal_data": dict(actions), "low_content": dict(low_actions),
                       "status_totals": dict(totals), **pending}, ensure_ascii=False))
     return 0
 

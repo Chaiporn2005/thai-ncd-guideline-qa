@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -45,6 +46,14 @@ PERSONAL_PATTERNS = {
     "citizen_id": re.compile(r"(?<![\d-])\d[- ]?\d{4}[- ]?\d{5}[- ]?\d{2}[- ]?\d(?![\d-])"),
     "hospital_number": re.compile(r"\b(?:HN|AN)\s*[:.]?\s*\d{4,}"),
 }
+# Pages that would only add noise (or nothing) as standalone retrieval units.
+NAV_TOKENS = re.compile(r"Previous Page|Next Page|Previous Chapter|Next Chapter|Contents|HOME|กลับหน้าสารบัญ|บันทึก", re.I)
+GLYPH_RUN = re.compile(r"(?:/g\s?\d+){3,}")  # font glyph ids left by a broken text layer, e.g. /g94/g67/g92
+DIVIDER = re.compile(r"^\s*(?:บทที่|หมวด|ภาคผนวก|ตอนที่|ส่วนที่|Chapter|Part)", re.I)
+CAPTION = re.compile(r"^\s*(?:รูปที่|ตารางที่|แผนภูมิที่|แผนภาพที่|ภาพที่|Figure|Fig\.|Table)", re.I)
+NAV_ONLY_SIGNAL, EMPTY_SIGNAL, DIVIDER_SIGNAL, EDGE_SIGNAL, SHORT_SIGNAL = 15, 30, 80, 150, 100
+EDGE_PAGES = 3  # cover zone: the first pages; the same count is checked from the end
+GLYPH_SHARE = 0.3
 FRONT_MATTER = re.compile(r"คณะผู้จัดทำ|คณะทำงาน|รายนาม|คณะกรรมการ|ที่ปรึกษา|บรรณาธิการ|กิตติกรรมประกาศ|ผู้ทรงคุณวุฒิ")
 FREE_MAIL = re.compile(r"@(?:gmail|hotmail|yahoo|outlook|live|icloud)\.", re.I)
 MOBILE = re.compile(r"^0[689]")
@@ -127,6 +136,38 @@ def suggest_personal(findings: list[dict], text: str) -> tuple[str, list[bool], 
     return "keep", redact, "ชื่อในเนื้อหา/ข้อมูลติดต่อหน่วยงาน"
 
 
+def signal(text: str) -> int:
+    """Count of letters and digits: the amount of content a page carries, ignoring spacing and punctuation."""
+    return len(re.findall(r"[ก-๙A-Za-z0-9]", text))
+
+
+def low_content(row: dict, last_page: int) -> dict | None:
+    """Classify a page that is garbled or carries little content; None for a normal page."""
+    text = row.get("text") or ""
+    glyph_chars = sum(len(m) for m in GLYPH_RUN.findall(text))
+    if glyph_chars >= 40 and glyph_chars >= GLYPH_SHARE * len(text):
+        return {"kind": "garbage_text_layer", "suggest": "exclude", "signal": signal(text)}
+    sig = signal(NAV_TOKENS.sub("", text))
+    page = row["pdf_page"]
+    if sig < NAV_ONLY_SIGNAL:
+        kind, suggest = "nav_only", "exclude"
+    elif sig < DIVIDER_SIGNAL and DIVIDER.match(text):
+        kind, suggest = "divider", "exclude"
+    elif sig < EDGE_SIGNAL and CAPTION.match(text):
+        kind, suggest = "figure_caption", "keep"  # the figure or table itself carries the content
+    elif sig < EMPTY_SIGNAL:
+        kind, suggest = "almost_empty", "exclude"
+    elif sig < EDGE_SIGNAL and page <= EDGE_PAGES:
+        kind, suggest = "cover", "exclude"
+    elif sig < EDGE_SIGNAL and page > last_page - EDGE_PAGES:
+        kind, suggest = "back", "exclude"
+    elif sig < SHORT_SIGNAL:
+        kind, suggest = "short", "keep"
+    else:
+        return None
+    return {"kind": kind, "suggest": suggest, "signal": sig}
+
+
 def population_hits(text: str) -> dict:
     hits = {}
     for label, pattern in POPULATION_TERMS.items():
@@ -145,8 +186,9 @@ def chapter_heading(text: str) -> str | None:
     return None
 
 
-def scan_document(rows: list[dict]) -> tuple[list[dict], list[dict]]:
-    pages, personal = [], []
+def scan_document(rows: list[dict]) -> tuple[list[dict], list[dict], list[dict]]:
+    pages, personal, lowcontent = [], [], []
+    last_page = max(r["pdf_page"] for r in rows)
     chapter, chapter_label = None, None
     for row in rows:
         text = row.get("text") or ""
@@ -159,13 +201,17 @@ def scan_document(rows: list[dict]) -> tuple[list[dict], list[dict]]:
                       "suggest": chapter_label if indexable(row) else None, "hits": hits,
                       "first": " ".join(text.split())[:110]})
         if indexable(row):
+            flagged = low_content(row, last_page)
+            if flagged:
+                lowcontent.append({"key": f"{row['document_id']}:p{row['pdf_page']}", "document_id": row["document_id"],
+                                   "p": row["pdf_page"], "text": text[:500], **flagged})
             findings = personal_findings(row)
             if findings:
                 action, redact, reason = suggest_personal(findings, text)
                 personal.append({"key": f"{row['document_id']}:p{row['pdf_page']}", "document_id": row["document_id"],
                                  "p": row["pdf_page"], "suggest": action, "redact": redact, "reason": reason,
                                  "findings": findings})
-    return pages, personal
+    return pages, personal, lowcontent
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -176,24 +222,29 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--review-id", default="page-tags-v7")
     args = parser.parse_args(argv)
 
-    docs, personal, counts = [], [], Counter()
+    docs, personal, lowcontent, counts = [], [], [], Counter()
     for folder in sorted(p for p in args.corpus.iterdir() if (p / "pages.jsonl").exists()):
         rows = [json.loads(x) for x in (folder / "pages.jsonl").read_text(encoding="utf-8").split("\n") if x.strip()]
-        pages, found = scan_document(rows)
+        pages, found, low = scan_document(rows)
         personal.extend(found)
+        lowcontent.extend(low)
         hit_pages = sum(1 for p in pages if p["hits"] or p["suggest"])
         counts.update(population_pages=hit_pages, personal_pages=len(found))
         if hit_pages:
-            pdf = (args.raw / folder.name / "source.pdf").resolve()
-            docs.append({"document_id": folder.name, "pdf": pdf.as_uri() if pdf.exists() else None,
+            pdf = args.raw / folder.name / "source.pdf"
+            docs.append({"document_id": folder.name,
+                         "pdf": Path(os.path.relpath(pdf, args.out)).as_posix() if pdf.exists() else None,
                          "hit_pages": hit_pages, "pages": pages})
     docs.sort(key=lambda d: -d["hit_pages"])
-    pdfs = {d.name: (args.raw / d.name / "source.pdf").resolve().as_uri()
+    # Relative links work both from file:// and from a local server whose root is the data folder.
+    pdfs = {d.name: Path(os.path.relpath(d / "source.pdf", args.out)).as_posix()
             for d in args.raw.iterdir() if (d / "source.pdf").exists()}
-    for item in personal:
+    for item in personal + lowcontent:
         item["pdf"] = pdfs.get(item["document_id"])
     counts.update(Counter(f"{i['suggest']}" for i in personal))
-    payload = {"review_id": args.review_id, "corpus_version": args.corpus.name, "docs": docs, "personal": personal}
+    counts.update(Counter(f"low_{i['kind']}" for i in lowcontent))
+    payload = {"review_id": args.review_id, "corpus_version": args.corpus.name, "docs": docs, "personal": personal,
+               "lowcontent": lowcontent}
     args.out.mkdir(parents=True, exist_ok=True)
     template = (Path(__file__).with_name("page_tag_review.html")).read_text(encoding="utf-8")
     out = args.out / "page_tags.html"

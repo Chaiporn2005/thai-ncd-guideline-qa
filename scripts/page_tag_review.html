@@ -23,7 +23,7 @@ mark{background:var(--mark);color:inherit}.snip{color:var(--muted);font-size:13p
 .help{color:var(--muted);font-size:13px;line-height:1.5}
 </style></head><body>
 <header><b>Page Tag Review</b>
-<button id="tab-pop" class="on">1. ประชากร (เด็ก/ตั้งครรภ์)</button><button id="tab-pdpa">2. ข้อมูลส่วนบุคคล (PDPA)</button>
+<button id="tab-pop" class="on">1. ประชากร (เด็ก/ตั้งครรภ์)</button><button id="tab-pdpa">2. ข้อมูลส่วนบุคคล (PDPA)</button><button id="tab-lc">3. หน้าเนื้อหาน้อย/ข้อความเสีย</button>
 <span class="pill" id="progress"></span>
 <label>ผู้ตรวจ <input id="reviewer" size="10" placeholder="ชื่อ"></label>
 <button class="primary" id="export">Export JSON</button><span class="pill">บันทึกอัตโนมัติในเบราว์เซอร์นี้ ไม่มีการอัปโหลด</span></header>
@@ -42,13 +42,22 @@ mark{background:var(--mark);color:inherit}.snip{color:var(--muted);font-size:13p
 <button id="accept-all">ยอมรับคำแนะนำของหน้าที่แสดงอยู่ทั้งหมด</button></div>
 <div id="plist"></div>
 </section>
+<section id="lc" class="hide">
+<p class="help">หน้าที่ถ้าเข้า index จะกลายเป็น chunk ที่ไม่มีประโยชน์หรือเป็นขยะ: <b>ข้อความเสีย</b> (รหัสฟอนต์ /g94/g67… แทนตัวอักษร) ·
+ปุ่มนำทางอย่างเดียว · แทบไม่มีข้อความ · หน้าคั่นบท/ภาคผนวก · ปก · ปกหลัง/ท้ายเล่ม · และ <b>ข้อความน้อย</b> (อยู่กลางเล่ม แนะนำให้เก็บเพราะอาจเป็นตารางหรือเกณฑ์สำคัญ ให้ดูภาพเทียบ) ·
+<b>ไม่เข้า index</b> = ตัดหน้านี้ออก (ข้อความยังอยู่ในไฟล์ให้ตรวจย้อนได้) · <b>เก็บไว้</b> = เข้า index ตามเดิม · หน้าที่เข้า index แต่สั้น ระบบตัดแบ่ง chunk จะรวมกับหน้าข้างเคียงในบทเดียวกันให้ภายหลัง</p>
+<div class="tools"><label>ชนิด <select id="lkind"></select></label>
+<label>แสดง <select id="lfilter"><option value="todo">ยังไม่ตัดสิน</option><option value="all">ทั้งหมด</option></select></label>
+<button id="lc-accept">ยอมรับคำแนะนำของหน้าที่แสดงอยู่ทั้งหมด</button></div>
+<div id="llist"></div>
+</section>
 </main>
 <script>
 const DATA = __DATA__;
 const STORE = "page-tags-" + DATA.review_id;
 const LABELS = {"": "ทั่วไป/ผู้ใหญ่", pediatric: "เด็ก/วัยรุ่น", pregnancy: "ตั้งครรภ์", elderly: "ผู้สูงอายุ", mixed: "ปนกัน"};
 const ACTIONS = {keep: "เก็บไว้", redact: "ลบเฉพาะที่ติ๊ก", exclude_page: "ไม่เข้า index"};
-let S = {pop: {}, done: {}, pd: {}, reviewer: "", showAll: false, current: null};
+let S = {pop: {}, done: {}, pd: {}, lc: {}, reviewer: "", showAll: false, current: null};
 try { Object.assign(S, JSON.parse(localStorage.getItem(STORE) || "{}")); } catch (e) {}
 function save(){ try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) {} progress(); }
 function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
@@ -58,13 +67,13 @@ const $ = id => document.getElementById(id);
 function progress(){
   const docsDone = DATA.docs.filter(d => S.done[d.document_id]).length;
   const pd = DATA.personal.filter(decided).length;
-  $("progress").textContent = `ประชากร ${docsDone}/${DATA.docs.length} เอกสาร · PDPA ${pd}/${DATA.personal.length} หน้า`;
+  const lc = DATA.lowcontent.filter(p => S.lc[p.key]).length;
+  $("progress").textContent = `ประชากร ${docsDone}/${DATA.docs.length} เอกสาร · PDPA ${pd}/${DATA.personal.length} หน้า · เนื้อหาน้อย ${lc}/${DATA.lowcontent.length} หน้า`;
 }
 function tab(which){
-  $("pop").classList.toggle("hide", which !== "pop"); $("pdpa").classList.toggle("hide", which !== "pdpa");
-  $("tab-pop").classList.toggle("on", which === "pop"); $("tab-pdpa").classList.toggle("on", which === "pdpa");
+  ["pop", "pdpa", "lc"].forEach(t => { $(t).classList.toggle("hide", which !== t); $("tab-" + t).classList.toggle("on", which === t); });
 }
-$("tab-pop").onclick = () => tab("pop"); $("tab-pdpa").onclick = () => tab("pdpa");
+$("tab-pop").onclick = () => tab("pop"); $("tab-pdpa").onclick = () => tab("pdpa"); $("tab-lc").onclick = () => tab("lc");
 $("reviewer").value = S.reviewer || ""; $("reviewer").oninput = e => { S.reviewer = e.target.value.trim(); save(); };
 
 // ---------- population ----------
@@ -138,6 +147,35 @@ $("accept-all").onclick = () => {
   save(); renderPersonal();
 };
 
+// ---------- low content ----------
+const KINDS = {garbage_text_layer: "ข้อความเสีย (รหัสฟอนต์)", nav_only: "ปุ่มนำทางอย่างเดียว", almost_empty: "แทบไม่มีข้อความ",
+  divider: "หน้าคั่นบท/ภาคผนวก", figure_caption: "คำบรรยายรูป/ตาราง (เนื้อหาอยู่ในภาพ)", cover: "ปก/หน้าชื่อเรื่อง", back: "ปกหลัง/ท้ายเล่ม", short: "ข้อความน้อยกลางเล่ม"};
+const LC_ACTIONS = {exclude: "ไม่เข้า index", keep: "เก็บไว้"};
+const kindCounts = {}; DATA.lowcontent.forEach(p => kindCounts[p.kind] = (kindCounts[p.kind] || 0) + 1);
+$("lkind").innerHTML = `<option value="all">ทุกชนิด (${DATA.lowcontent.length})</option>` +
+  Object.entries(KINDS).filter(([k]) => kindCounts[k]).map(([k, t]) => `<option value="${k}">${t} (${kindCounts[k]})</option>`).join("");
+function lcItems(){
+  const kind = $("lkind").value, f = $("lfilter").value;
+  return DATA.lowcontent.filter(p => (kind === "all" || p.kind === kind) && (f === "all" || !S.lc[p.key]));
+}
+function renderLc(){
+  const items = lcItems();
+  $("llist").innerHTML = items.slice(0, 120).map(p => `<div class="card ${S.lc[p.key] ? "decided" : ""}" data-k="${esc(p.key)}">
+    <div><b>${esc(p.key)}</b> ${p.pdf ? `<a href="${p.pdf}#page=${p.p}" target="_blank">เปิด PDF</a>` : ""}
+    <span class="pill">${KINDS[p.kind]}</span> <span class="pill">เนื้อหา ${p.signal} ตัวอักษร</span> <span class="pill">แนะนำ: ${LC_ACTIONS[p.suggest]}</span></div>
+    <div class="tools">${Object.entries(LC_ACTIONS).map(([v, t]) => `<label><input type="radio" name="l-${esc(p.key)}" value="${v}" ${S.lc[p.key] === v ? "checked" : ""}> ${t}</label>`).join("")}</div>
+    <div class="snip">${esc(p.text.slice(0, 300))}</div></div>`).join("") +
+    (items.length > 120 ? `<p class="help">แสดง 120 จาก ${items.length} หน้า ตัดสินแล้วจะหายจากมุมมอง "ยังไม่ตัดสิน"</p>` : "") || "<p>ไม่มีหน้าในมุมมองนี้</p>";
+  $("llist").querySelectorAll(".card").forEach(card => card.querySelectorAll("input[type=radio]").forEach(r =>
+    r.onchange = () => { S.lc[card.dataset.k] = r.value; save(); card.classList.add("decided"); }));
+}
+$("lkind").onchange = renderLc; $("lfilter").onchange = renderLc;
+$("lc-accept").onclick = () => {
+  const items = lcItems().slice(0, 120);
+  if (!confirm(`ยอมรับคำแนะนำ ${items.length} หน้าที่แสดงอยู่? (เปลี่ยนทีหลังได้)`)) return;
+  items.forEach(p => { if (!S.lc[p.key]) S.lc[p.key] = p.suggest; }); save(); renderLc();
+};
+
 // ---------- export ----------
 $("export").onclick = () => {
   if (!S.reviewer) { alert("ใส่ชื่อผู้ตรวจก่อน"); return; }
@@ -156,13 +194,15 @@ $("export").onclick = () => {
     const st = S.pd[p.key];
     return {key: p.key, action: st.action, redact: st.action === "redact" ? p.findings.filter((x, i) => st.redact[i]).map(x => ({type: x.type, field: x.field, value: x.value})) : []};
   });
+  const lowcontent = DATA.lowcontent.filter(p => S.lc[p.key]).map(p => ({key: p.key, kind: p.kind, action: S.lc[p.key]}));
   const out = {review_id: DATA.review_id, corpus_version: DATA.corpus_version, reviewer: S.reviewer, exported_at: new Date().toISOString(),
     population, personal, personal_undecided: DATA.personal.length - personal.length,
+    lowcontent, lowcontent_undecided: DATA.lowcontent.length - lowcontent.length,
     population_docs_not_reviewed: DATA.docs.filter(d => !S.done[d.document_id]).map(d => d.document_id)};
   const blob = new Blob([JSON.stringify(out, null, 1)], {type: "application/json"});
   const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `page_tag_decisions_${DATA.corpus_version}.json`; a.click();
 };
 
 if (!S.current && DATA.docs.length) S.current = DATA.docs[0].document_id;
-renderDocs(); renderDoc(); renderPersonal(); progress();
+renderDocs(); renderDoc(); renderPersonal(); renderLc(); progress();
 </script></body></html>

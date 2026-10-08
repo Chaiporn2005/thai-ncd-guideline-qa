@@ -39,11 +39,11 @@ class Detection(unittest.TestCase):
     def test_chapter_suggestion_ignores_cross_references(self):
         rows = [{"document_id": "d", "pdf_page": 1, "status": "ok", "human_review": None,
                  "text": "ผู้ป่วยตั้งครรภ์ (ดูบทที่ 18 เบาหวานในหญิงมีครรภ์)"}] + ROWS[1:3]
-        pages, _ = build.scan_document(rows)
+        pages, _, _ = build.scan_document(rows)
         self.assertEqual([p["suggest"] for p in pages], [None, "pediatric", "pediatric"])
 
     def test_name_list_page_suggests_exclusion(self):
-        _, found = build.scan_document(ROWS)
+        _, found, _ = build.scan_document(ROWS)
         self.assertEqual({f["key"]: f["suggest"] for f in found}, {"d:p1": "redact", "d:p4": "exclude_page"})
 
 
@@ -53,18 +53,43 @@ class Cases(unittest.TestCase):
 
     def test_case_narrative_suggests_exclusion_but_toc_does_not(self):
         narrative = self.row("กรณีศึกษาอายุ 67 ปี กรณีศึกษามีสามี กรณีศึกษาไม่เครียด")
-        _, found = build.scan_document([narrative])
+        _, found, _ = build.scan_document([narrative])
         self.assertEqual((found[0]["suggest"], found[0]["findings"][0]["type"]), ("exclude_page", "case"))
         toc = self.row("สารบัญตาราง ผลตรวจของกรณีศึกษา แผนของกรณีศึกษา สรุปของกรณีศึกษา")
         self.assertEqual(build.scan_document([toc])[1], [])
 
     def test_worked_example_is_kept_for_review(self):
-        _, found = build.scan_document([self.row("ตัวอย่างการคำนวณ ผู้ป่วยชายอายุ 50 ปี น้ำหนัก 60 กก.")])
+        _, found, _ = build.scan_document([self.row("ตัวอย่างการคำนวณ ผู้ป่วยชายอายุ 50 ปี น้ำหนัก 60 กก.")])
         self.assertEqual((found[0]["suggest"], found[0]["findings"][0]["type"]), ("keep", "case_example"))
 
     def test_elderly_cue_is_reported(self):
-        pages, _ = build.scan_document([self.row("การดูแลผู้สูงอายุที่เป็นเบาหวาน")])
+        pages, _, _ = build.scan_document([self.row("การดูแลผู้สูงอายุที่เป็นเบาหวาน")])
         self.assertIn("elderly", pages[0]["hits"])
+
+
+class LowContent(unittest.TestCase):
+    def kind(self, text, page=50, last=100):
+        row = {"document_id": "d", "pdf_page": page, "status": "ok", "human_review": None, "text": text}
+        found = build.low_content(row, last)
+        return found and (found["kind"], found["suggest"])
+
+    BODY = "แนวทางการรักษาโรคเบาหวานชนิดที่ 2 ในผู้ใหญ่ " * 8
+
+    def test_kinds(self):
+        self.assertEqual(self.kind("Contents Next Chapter HOME Next Page"), ("nav_only", "exclude"))
+        self.assertEqual(self.kind("บทที่ 6 การดูแลรักษา"), ("divider", "exclude"))
+        self.assertEqual(self.kind("แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน สมาคมโรคเบาหวานแห่งประเทศไทย", page=1), ("cover", "exclude"))
+        self.assertEqual(self.kind("ติดต่อกองโรคไม่ติดต่อ โทร 025903867 กรมควบคุมโรค", page=99), ("back", "exclude"))
+        self.assertEqual(self.kind("รูปที่ 1 แนวทางการพิจารณาการฟอกไตในผู้ป่วยไตวายเฉียบพลัน", page=99), ("figure_caption", "keep"))
+        self.assertEqual(self.kind("ตารางที่ 2 เป้าหมาย HbA1c น้อยกว่า 7 เปอร์เซ็นต์ในผู้ใหญ่ทั่วไป"), ("figure_caption", "keep"))
+        self.assertEqual(self.kind("ข้อควรระวังการฉีดอินซูลินในผู้ใหญ่ที่เป็นเบาหวาน ควรหมุนตำแหน่งที่ฉีดทุกครั้ง"), ("short", "keep"))
+
+    def test_normal_page_and_late_short_page_are_not_flagged(self):
+        self.assertIsNone(self.kind(self.BODY))
+        self.assertEqual(self.kind("ตารางสั้นกลางเล่ม HbA1c 7 ผู้ใหญ่ เป้าหมายน้ำตาลในเลือดที่เหมาะสมต่อการรักษา", page=98, last=100)[0], "back")
+
+    def test_font_glyph_ids_are_garbage(self):
+        self.assertEqual(self.kind("คำนำ " + "/g11/g46/g57/g40/g42/g52/g33/g42/g64/g263/g49/g63 " * 3), ("garbage_text_layer", "exclude"))
 
 
 def run(tmp: Path, decisions: dict, *extra: str) -> int:
@@ -101,6 +126,21 @@ class Apply(unittest.TestCase):
             manifest = (tmp / "m.json").read_text(encoding="utf-8")
             self.assertNotIn("081", manifest)
             self.assertNotIn("สมชาย", manifest)
+
+    def test_low_content_exclusion_and_garbled_status(self):
+        decisions = json.loads(json.dumps(DECISIONS))
+        decisions["lowcontent"] = [{"key": "d:p3", "kind": "cover", "action": "exclude"},
+                                   {"key": "d:p2", "kind": "garbage_text_layer", "action": "exclude"},
+                                   {"key": "d:p1", "kind": "short", "action": "keep"}]
+        with tempfile.TemporaryDirectory() as t:
+            tmp = Path(t)
+            self.assertEqual(run(tmp, decisions), 0)
+            r = rows(tmp)
+            self.assertEqual(r[2]["index_exclusion"]["reason"], "low_content_cover")
+            self.assertEqual((r[1]["status"], r[1]["index_exclusion"]["reason"]), ("garbled", "low_content_garbage_text_layer"))
+            self.assertEqual(r[0]["low_content_review"]["action"], "keep")
+            self.assertNotIn("index_exclusion", r[0])
+            self.assertEqual(r[3]["index_exclusion"]["reason"], "personal_data_minimisation")  # personal reason wins
 
     def test_value_not_on_page_fails(self):
         bad = json.loads(json.dumps(DECISIONS))
