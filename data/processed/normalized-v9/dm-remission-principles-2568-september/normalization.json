@@ -1,0 +1,128 @@
+{
+  "document_id": "dm-remission-principles-2568-september",
+  "title": "หลักการและแนวปฏิบัติเพื่อการดูแลโรคเบาหวานให้เข้าสู่ระยะสงบ",
+  "source_sha256": "a6a364e8e9a184794ee39e54dac6940684290fc6324a390897a760b3528f4f20",
+  "pdf_pages": 198,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 5,
+      "unchanged": 1
+    },
+    "tounicode_entries_written_or_changed": 5
+  },
+  "normalization_totals": {
+    "duplicate_marks": 1,
+    "glyph_name_tokens": 9,
+    "letter_spacing_joined": 13,
+    "sara_am_composed": 2784,
+    "space_before_following_vowel": 36,
+    "space_before_mark": 10,
+    "spaced_marks_joined": 14,
+    "thai_digits": 2
+  },
+  "status_counts": {
+    "empty": 4,
+    "garbled": 1,
+    "ocr_unreviewed": 1,
+    "ok": 144,
+    "ok_minor_issues": 48
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1
+    ],
+    "ok_minor_issues": [
+      4,
+      11,
+      13,
+      16,
+      18,
+      38,
+      41,
+      42,
+      46,
+      49,
+      51,
+      52,
+      53,
+      59,
+      63,
+      64,
+      81,
+      88,
+      89,
+      93,
+      95,
+      99,
+      102,
+      107,
+      109,
+      111,
+      118,
+      120,
+      122,
+      124,
+      133,
+      138,
+      139,
+      150,
+      153,
+      158,
+      159,
+      164,
+      177,
+      179,
+      180,
+      181,
+      184,
+      185,
+      187,
+      188,
+      194,
+      195
+    ],
+    "empty": [
+      19,
+      101,
+      171,
+      196
+    ],
+    "garbled": [
+      198
+    ]
+  },
+  "removed_edge_lines": 178,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "ea97807ec201bed7cb04001d6c25c7100245d4354f816057989c6194d66f97e9",
+  "created_at": "2026-10-08T11:26:57.125421+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v8",
+    "pages_jsonl_sha256": "ea97807ec201bed7cb04001d6c25c7100245d4354f816057989c6194d66f97e9"
+  },
+  "population_counts": {
+    "general": 197,
+    "pediatric": 1
+  },
+  "index_excluded_pages": [
+    2,
+    7,
+    8,
+    172,
+    197
+  ]
+}

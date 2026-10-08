@@ -1,0 +1,46 @@
+{
+  "document_id": "dm-siriraj-macrovascular-leaflet-undated",
+  "title": "ภาวะแทรกซ้อนเรื้อรังที่หลอดเลือดขนาดใหญ่",
+  "source_sha256": "6fd0dca43b88972ec4007a9ea8cacb00dbf64a0330d959170f01b876035a65ac",
+  "pdf_pages": 2,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 2
+    },
+    "tounicode_entries_written_or_changed": 3
+  },
+  "normalization_totals": {
+    "sara_am_composed": 13
+  },
+  "status_counts": {
+    "ok": 2
+  },
+  "status_pages": {},
+  "removed_edge_lines": 0,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "456a0da02394334ff59f8ad13a27eb03f9184202ffd321df9533a431c414650a",
+  "created_at": "2026-10-08T11:26:57.136490+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v8",
+    "pages_jsonl_sha256": "456a0da02394334ff59f8ad13a27eb03f9184202ffd321df9533a431c414650a"
+  },
+  "population_counts": {
+    "general": 2
+  },
+  "index_excluded_pages": []
+}

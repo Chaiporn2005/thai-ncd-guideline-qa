@@ -1,0 +1,75 @@
+{
+  "document_id": "dm-siriraj-patient-foot-manual-undated",
+  "title": "คู่มือการดูแลเท้าในผู้เป็นเบาหวาน (มาดูแลเท้ากันเถอะ)",
+  "source_sha256": "fcc860a32bea289b83d3e886898044d32918a29fe857c2b2c4d6640f5c24df14",
+  "pdf_pages": 20,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "remapped_sara_aa": 2
+    },
+    "tounicode_entries_written_or_changed": 2
+  },
+  "normalization_totals": {},
+  "status_counts": {
+    "empty": 2,
+    "ocr_unreviewed": 13,
+    "ok": 3,
+    "ok_minor_issues": 2
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      3,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "empty": [
+      4,
+      19
+    ],
+    "ok_minor_issues": [
+      5,
+      18
+    ]
+  },
+  "removed_edge_lines": 8,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "7a250a11bdcad7afdc78b2975e2c7f159ed1a018f463609dc644d00fedac3cb9",
+  "created_at": "2026-10-08T11:26:57.154514+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v8",
+    "pages_jsonl_sha256": "7a250a11bdcad7afdc78b2975e2c7f159ed1a018f463609dc644d00fedac3cb9"
+  },
+  "population_counts": {
+    "general": 20
+  },
+  "index_excluded_pages": [
+    3,
+    18,
+    20
+  ]
+}

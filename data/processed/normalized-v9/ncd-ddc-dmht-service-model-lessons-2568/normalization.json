@@ -1,0 +1,67 @@
+{
+  "document_id": "ncd-ddc-dmht-service-model-lessons-2568",
+  "title": "ถอดบทเรียนรูปแบบการให้บริการสำหรับผู้ป่วยโรคเบาหวานและ/หรือความดันโลหิตสูง (Update 13 ก.พ 68)",
+  "source_sha256": "a60f60850d12ff286f69ca8c355cc3e6bb1afdb47df77af6337759b5f99bc819",
+  "pdf_pages": 50,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 3,
+      "skip_low_agreement": 2,
+      "unchanged": 1
+    },
+    "tounicode_entries_written_or_changed": 4
+  },
+  "normalization_totals": {
+    "glyph_name_tokens": 53,
+    "sara_am_composed": 784,
+    "space_before_following_vowel": 5,
+    "space_before_mark": 1
+  },
+  "status_counts": {
+    "empty": 1,
+    "garbled": 1,
+    "ocr_unreviewed": 2,
+    "ok": 46
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      2
+    ],
+    "empty": [
+      49
+    ],
+    "garbled": [
+      50
+    ]
+  },
+  "removed_edge_lines": 45,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "5e0cf8db982ef881c13bff7fd7f72cffc1360601a6f31943169655a1a4483188",
+  "created_at": "2026-10-08T11:26:57.276239+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v8",
+    "pages_jsonl_sha256": "5e0cf8db982ef881c13bff7fd7f72cffc1360601a6f31943169655a1a4483188"
+  },
+  "population_counts": {
+    "general": 50
+  },
+  "index_excluded_pages": [
+    2
+  ]
+}

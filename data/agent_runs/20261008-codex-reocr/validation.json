@@ -1,0 +1,20 @@
+{
+  "pages_expected": 90,
+  "pages_with_results": 90,
+  "errors": [],
+  "error_count": 0,
+  "verdicts": {
+    "content_missing": 85,
+    "text_ok": 2,
+    "fixed": 1,
+    "text_invented": 2
+  },
+  "edit_kinds": {
+    "number": 23,
+    "word": 315,
+    "sign": 1,
+    "remove": 61,
+    "drug": 11
+  },
+  "scope": "Proposal schema, page coverage and exact unique old-text matches only; not clinical or human approval."
+}
