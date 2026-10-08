@@ -162,6 +162,19 @@ class Question(unittest.TestCase):
         self.assertEqual(run("question", [item])[0], 1)
 
 
+class JsonlLineBreaks(unittest.TestCase):
+    def test_unicode_line_separator_inside_text_does_not_split_a_record(self):
+        record = changed(PAGE, text="ก่อน หลัง\x0cจบ")
+        code, report = run("page_input", [record], ".jsonl")
+        self.assertEqual((code, report["problems"]), (0, []))
+
+    def test_new_page_fields_are_accepted(self):
+        record = changed(PAGE, status="figure_review", population="pediatric", index_exclusion={"reason": "low_content_cover"},
+                         category={"tab": 2, "label": "x"})
+        self.assertEqual(run("page_input", [record], ".jsonl")[0], 0)
+        self.assertEqual(run("page_input", [changed(PAGE, population="adults")], ".jsonl")[0], 1)
+
+
 class Inputs(unittest.TestCase):
     def test_unreadable_file_is_input_error(self):
         out = io.StringIO()

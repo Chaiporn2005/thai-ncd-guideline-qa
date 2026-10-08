@@ -31,7 +31,9 @@ def load_records(path: Path) -> list[tuple[int, object]]:
     if path.suffix == ".json":
         return [(1, json.loads(text))]
     records = []
-    for number, line in enumerate(text.splitlines(), start=1):
+    # Split on "\n" only: page text can hold U+2028/U+2029 or a form feed, which str.splitlines() would treat as line
+    # breaks and cut a JSON record in two. JSONL escapes newlines, so "\n" is the only record separator.
+    for number, line in enumerate(text.split("\n"), start=1):
         if line.strip():
             records.append((number, json.loads(line)))
     return records

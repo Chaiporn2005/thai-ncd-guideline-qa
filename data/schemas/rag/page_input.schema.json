@@ -4,33 +4,137 @@
   "title": "Normalized page row consumed by retrieval (Track B input)",
   "description": "One row of data/processed/<processed_root>/<document_id>/pages.jsonl as written by scripts/normalize_thai.py. Lists only the fields retrieval depends on; the producer may add others.",
   "type": "object",
-  "required": ["document_id", "source_sha256", "pdf_page", "text", "text_source", "status", "removed_edge_lines", "human_review"],
+  "required": [
+    "document_id",
+    "source_sha256",
+    "pdf_page",
+    "text",
+    "text_source",
+    "status",
+    "removed_edge_lines",
+    "human_review"
+  ],
   "additionalProperties": true,
   "properties": {
-    "document_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
-    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "pdf_page": {"type": "integer", "minimum": 1, "description": "One-based PDF page index, blank pages included."},
-    "pdf_page_label": {"type": ["string", "null"]},
-    "printed_page_number": {"type": ["string", "integer", "null"]},
-    "text": {"type": "string", "description": "Retrieval text after normalization (or OCR text when text_source is ocr)."},
-    "text_source": {"enum": ["pdf_text_repaired", "ocr"]},
-    "status": {"enum": ["ok", "ok_minor_issues", "degraded", "garbled", "empty", "ocr_unreviewed"]},
-    "removed_edge_lines": {"type": "array", "items": {"type": "string"}},
+    "document_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pdf_page": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "One-based PDF page index, blank pages included."
+    },
+    "pdf_page_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "printed_page_number": {
+      "type": [
+        "string",
+        "integer",
+        "null"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "description": "Retrieval text after normalization (or OCR text when text_source is ocr)."
+    },
+    "text_source": {
+      "enum": [
+        "pdf_text_repaired",
+        "ocr"
+      ]
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "ok_minor_issues",
+        "degraded",
+        "garbled",
+        "empty",
+        "ocr_unreviewed",
+        "figure_review",
+        "review_hold"
+      ],
+      "description": "figure_review and review_hold come from normalize_thai.py v2; like degraded/garbled they are not indexed until a person reviews the page."
+    },
+    "removed_edge_lines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "human_review": {
       "description": "null until a person reviews the page; required before degraded/ocr_unreviewed pages are indexed.",
       "oneOf": [
-        {"type": "null"},
+        {
+          "type": "null"
+        },
         {
           "type": "object",
-          "required": ["reviewed_by", "review_date", "outcome"],
+          "required": [
+            "reviewed_by",
+            "review_date",
+            "outcome"
+          ],
           "properties": {
-            "reviewed_by": {"type": "string", "minLength": 1},
-            "review_date": {"type": "string", "format": "date"},
-            "outcome": {"enum": ["pass", "fix", "reject"]},
-            "notes": {"type": "string"}
+            "reviewed_by": {
+              "type": "string",
+              "minLength": 1
+            },
+            "review_date": {
+              "type": "string",
+              "format": "date"
+            },
+            "outcome": {
+              "enum": [
+                "pass",
+                "fix",
+                "reject"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            }
           }
         }
       ]
+    },
+    "population": {
+      "enum": [
+        "general",
+        "pediatric",
+        "pregnancy",
+        "elderly",
+        "mixed"
+      ],
+      "description": "Who the page is written for (Track B page tags, normalized-v8 onwards); absent means general."
+    },
+    "index_exclusion": {
+      "type": "object",
+      "required": [
+        "reason"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string"
+        }
+      },
+      "description": "Present when a person or a rule removed the page from search (personal data, low content, awaiting OCR...); the retriever must skip the page."
+    },
+    "category": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Booklet category of the page (side tab), when the document has one."
     }
   }
 }
