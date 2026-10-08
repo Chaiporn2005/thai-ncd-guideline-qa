@@ -21,14 +21,23 @@ mark{background:var(--mark);color:inherit}.snip{color:var(--muted);font-size:13p
 .hint{font-size:12px;color:var(--accent)}a{color:var(--accent)}
 .card.decided{opacity:.75}.reason{color:var(--muted)}.t-email,.t-phone,.t-citizen_id,.t-hospital_number,.t-case{font-weight:700}
 .help{color:var(--muted);font-size:13px;line-height:1.5}
+.samples{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:8px}
+.sample{border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--bg)}.sample img{width:100%;display:block;border:1px solid var(--line);background:#fff}
+.noimg{padding:30px 8px;text-align:center;color:var(--muted)}
 </style></head><body>
 <header><b>Page Tag Review</b>
-<button id="tab-pop" class="on">1. ประชากร (เด็ก/ตั้งครรภ์)</button><button id="tab-pdpa">2. ข้อมูลส่วนบุคคล (PDPA)</button><button id="tab-lc">3. หน้าเนื้อหาน้อย/ข้อความเสีย</button>
+<button id="tab-gr" class="on">0. ตัวอย่างที่แนะนำให้ตัด</button><button id="tab-pop">1. ประชากร (เด็ก/ตั้งครรภ์)</button><button id="tab-pdpa">2. ข้อมูลส่วนบุคคล (PDPA)</button><button id="tab-lc">3. หน้าเนื้อหาน้อย/ข้อความเสีย</button>
 <span class="pill" id="progress"></span>
 <label>ผู้ตรวจ <input id="reviewer" size="10" placeholder="ชื่อ"></label>
 <button class="primary" id="export">Export JSON</button><span class="pill">บันทึกอัตโนมัติในเบราว์เซอร์นี้ ไม่มีการอัปโหลด</span></header>
 <main>
-<section id="pop">
+<section id="gr">
+<p class="help">หน้าที่ระบบ <b>แนะนำให้ตัดออกจาก index</b> แยกตามกลุ่มเหตุผล แต่ละกลุ่มมีตัวอย่างภาพหน้า (สุ่มกระจายตามเอกสาร) ให้ดูว่ากลุ่มนั้นตัดได้จริงไหม ·
+ถ้าตัวอย่างดูโอเค กด <b>ตัดทั้งกลุ่ม</b> ถ้าไม่โอเค กด <b>เก็บทั้งกลุ่ม</b> หรือกด <b>ดูทุกหน้า</b> เพื่อเลือกรายหน้า (ตัดสินรายหน้าทีหลังจะทับการตัดสินระดับกลุ่ม) ·
+คลิกภาพเพื่อเปิด PDF หน้านั้น</p>
+<div id="glist"></div>
+</section>
+<section id="pop" class="hide">
 <p class="help">ทุกหน้าที่ไม่ติดป้ายถือเป็น <b>ทั่วไป/ผู้ใหญ่</b> ติดป้ายเฉพาะหน้าที่เป็นเนื้อหาสำหรับเด็ก/วัยรุ่น หญิงตั้งครรภ์ หรือผู้สูงอายุ
 หรือ "ปนกัน" ถ้าหน้าเดียวมีทั้งผู้ใหญ่และกลุ่มพิเศษ · "แนะนำ" มาจากชื่อบทที่หน้าอยู่ (เช่น บทที่ 16 เบาหวานในเด็ก) ไม่ได้ตัดสินแทนคุณ ·
 หน้าที่แค่เอ่ยคำว่า "เด็ก" ผ่าน ๆ ไม่ต้องติดป้าย · กดเลขหน้าเพื่อเปิด PDF หน้านั้น</p>
@@ -71,9 +80,9 @@ function progress(){
   $("progress").textContent = `ประชากร ${docsDone}/${DATA.docs.length} เอกสาร · PDPA ${pd}/${DATA.personal.length} หน้า · เนื้อหาน้อย ${lc}/${DATA.lowcontent.length} หน้า`;
 }
 function tab(which){
-  ["pop", "pdpa", "lc"].forEach(t => { $(t).classList.toggle("hide", which !== t); $("tab-" + t).classList.toggle("on", which === t); });
+  ["gr", "pop", "pdpa", "lc"].forEach(t => { $(t).classList.toggle("hide", which !== t); $("tab-" + t).classList.toggle("on", which === t); });
 }
-$("tab-pop").onclick = () => tab("pop"); $("tab-pdpa").onclick = () => tab("pdpa"); $("tab-lc").onclick = () => tab("lc");
+$("tab-gr").onclick = () => { renderGroups(); tab("gr"); }; $("tab-pop").onclick = () => tab("pop"); $("tab-pdpa").onclick = () => tab("pdpa"); $("tab-lc").onclick = () => tab("lc");
 $("reviewer").value = S.reviewer || ""; $("reviewer").oninput = e => { S.reviewer = e.target.value.trim(); save(); };
 
 // ---------- population ----------
@@ -176,6 +185,47 @@ $("lc-accept").onclick = () => {
   items.forEach(p => { if (!S.lc[p.key]) S.lc[p.key] = p.suggest; }); save(); renderLc();
 };
 
+// ---------- groups suggested for exclusion ----------
+function pdByKey(k){ return DATA.personal.find(p => p.key === k); }
+function groupCut(g, k){
+  if (g.source === "lc") return S.lc[k] === "exclude";
+  const p = pdByKey(k); return decided(p) && S.pd[k].action === "exclude_page";
+}
+function groupKept(g, k){
+  if (g.source === "lc") return S.lc[k] === "keep";
+  const p = pdByKey(k); return decided(p) && S.pd[k].action === "keep";
+}
+function setGroup(g, action){
+  g.keys.forEach(k => {
+    if (g.source === "lc") S.lc[k] = action;
+    else { const p = pdByKey(k); S.pd[k] = {action: action === "exclude" ? "exclude_page" : "keep", redact: p.redact.map(() => false), decided: true}; }
+  });
+  save(); renderGroups();
+}
+function renderGroups(){
+  $("glist").innerHTML = DATA.groups.map((g, gi) => {
+    const cut = g.keys.filter(k => groupCut(g, k)).length, kept = g.keys.filter(k => groupKept(g, k)).length;
+    return `<div class="card"><h3 style="margin:0 0 4px">${esc(g.label)} <span class="pill">${g.keys.length} หน้า</span>
+      <span class="pill">${g.documents} เอกสาร</span> <span class="pill">ตัดแล้ว ${cut} · เก็บแล้ว ${kept}</span></h3>
+      <div class="reason">${esc(g.why)}</div>
+      <div class="tools"><button class="primary" data-a="cut" data-g="${gi}">ตัดทั้งกลุ่ม (${g.keys.length} หน้า)</button>
+      <button data-a="keep" data-g="${gi}">เก็บทั้งกลุ่ม</button><button data-a="view" data-g="${gi}">ดูทุกหน้าเพื่อเลือกรายหน้า</button></div>
+      <div class="samples">${g.samples.map(s => `<div class="sample"><a href="${s.pdf}#page=${s.p}" target="_blank">${s.img ? `<img src="${s.img}">` : "<div class=noimg>ไม่มีภาพ (เปิด PDF)</div>"}</a>
+        <div class="snip"><b>${esc(s.key)}</b></div><div class="snip">${esc(s.text)}</div></div>`).join("")}</div></div>`;
+  }).join("") || "<p>ไม่มีกลุ่มที่แนะนำให้ตัด</p>";
+  $("glist").querySelectorAll("button[data-g]").forEach(b => b.onclick = () => {
+    const g = DATA.groups[+b.dataset.g];
+    if (b.dataset.a === "view") {
+      if (g.source === "lc") { $("lkind").value = g.kind; $("lfilter").value = "all"; renderLc(); tab("lc"); }
+      else { $("pfilter").value = "exclude_page"; renderPersonal(); tab("pdpa"); }
+      return;
+    }
+    const act = b.dataset.a === "cut" ? "exclude" : "keep";
+    if (!confirm(`${act === "exclude" ? "ตัด" : "เก็บ"}ทั้งกลุ่ม "${g.label}" ${g.keys.length} หน้า?`)) return;
+    setGroup(g, act);
+  });
+}
+
 // ---------- export ----------
 $("export").onclick = () => {
   if (!S.reviewer) { alert("ใส่ชื่อผู้ตรวจก่อน"); return; }
@@ -204,5 +254,5 @@ $("export").onclick = () => {
 };
 
 if (!S.current && DATA.docs.length) S.current = DATA.docs[0].document_id;
-renderDocs(); renderDoc(); renderPersonal(); renderLc(); progress();
+renderDocs(); renderDoc(); renderPersonal(); renderLc(); renderGroups(); progress();
 </script></body></html>

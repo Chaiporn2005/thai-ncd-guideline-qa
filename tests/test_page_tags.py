@@ -92,6 +92,30 @@ class LowContent(unittest.TestCase):
         self.assertEqual(self.kind("คำนำ " + "/g11/g46/g57/g40/g42/g52/g33/g42/g64/g263/g49/g63 " * 3), ("garbage_text_layer", "exclude"))
 
 
+class Groups(unittest.TestCase):
+    def test_spread_covers_documents_and_is_deterministic(self):
+        items = [{"document_id": f"d{d}", "p": p} for d in range(5) for p in range(1, 21)]
+        picked = build.spread(items, 6)
+        self.assertEqual(len(picked), 6)
+        self.assertGreaterEqual(len({i["document_id"] for i in picked}), 5)
+        self.assertEqual(picked, build.spread(list(reversed(items)), 6))
+        self.assertEqual(len(build.spread(items[:3], 6)), 3)
+
+    def test_groups_split_cases_from_name_lists_and_skip_keep_suggestions(self):
+        low = [{"key": "d:p1", "document_id": "d", "p": 1, "kind": "cover", "suggest": "exclude", "text": "ปก", "pdf": None},
+               {"key": "d:p2", "document_id": "d", "p": 2, "kind": "short", "suggest": "keep", "text": "สั้น", "pdf": None}]
+        pd = [{"key": "d:p3", "document_id": "d", "p": 3, "suggest": "exclude_page", "redact": [False],
+               "findings": [{"type": "case"}], "preview": "เคส", "pdf": None},
+              {"key": "d:p4", "document_id": "d", "p": 4, "suggest": "exclude_page", "redact": [False],
+               "findings": [{"type": "name"}], "preview": "รายชื่อ", "pdf": None},
+              {"key": "d:p5", "document_id": "d", "p": 5, "suggest": "keep", "redact": [], "findings": [], "preview": ""}]
+        with tempfile.TemporaryDirectory() as t:
+            groups = {g["id"]: g for g in build.build_groups(low, pd, Path(t) / "raw", Path(t) / "out")}
+        self.assertEqual(set(groups), {"lc:cover", "pd:case", "pd:names"})
+        self.assertEqual((groups["pd:case"]["keys"], groups["pd:names"]["keys"]), (["d:p3"], ["d:p4"]))
+        self.assertIsNone(groups["lc:cover"]["samples"][0]["img"])  # no source PDF in the temp folder
+
+
 def run(tmp: Path, decisions: dict, *extra: str) -> int:
     src = tmp / "src" / "d"
     src.mkdir(parents=True)

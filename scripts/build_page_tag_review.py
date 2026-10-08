@@ -19,7 +19,9 @@ import argparse
 import json
 import os
 import re
-from collections import Counter
+import shutil
+import subprocess
+from collections import Counter, defaultdict
 from pathlib import Path
 
 POPULATION_TERMS = {
@@ -210,8 +212,71 @@ def scan_document(rows: list[dict]) -> tuple[list[dict], list[dict], list[dict]]
                 action, redact, reason = suggest_personal(findings, text)
                 personal.append({"key": f"{row['document_id']}:p{row['pdf_page']}", "document_id": row["document_id"],
                                  "p": row["pdf_page"], "suggest": action, "redact": redact, "reason": reason,
-                                 "findings": findings})
+                                 "findings": findings, "preview": " ".join(text.split())[:300]})
     return pages, personal, lowcontent
+
+
+GROUP_TEXT = {
+    "garbage_text_layer": ("ข้อความเสีย (รหัสฟอนต์แทนตัวอักษร)", "ข้อความในไฟล์เป็นรหัส /g94/g67… ถ้าเข้า index จะถูก embed เป็นขยะ"),
+    "nav_only": ("ปุ่มนำทางอย่างเดียว", "มีแต่คำอย่าง Contents / Next Page / กลับหน้าสารบัญ ไม่มีเนื้อหา"),
+    "almost_empty": ("แทบไม่มีข้อความ", "น้อยกว่า 30 ตัวอักษร"),
+    "divider": ("หน้าคั่นบท/ภาคผนวก", "มีแค่หัวข้อบทหรือภาคผนวก"),
+    "cover": ("ปก/หน้าชื่อเรื่อง", "หน้าต้นเล่มที่ข้อความน้อย ชื่อเอกสารมีใน metadata อยู่แล้ว"),
+    "back": ("ปกหลัง/ท้ายเล่ม", "หน้าท้ายเล่มที่ข้อความน้อย เช่น ข้อมูลติดต่อหน่วยงาน"),
+}
+SAMPLES_PER_GROUP = 6
+SAMPLE_DPI = 70
+
+
+def spread(items: list[dict], n: int) -> list[dict]:
+    """Pick n items evenly across the list ordered by document and page, so samples cover different documents."""
+    items = sorted(items, key=lambda i: (i["document_id"], i["p"]))
+    if len(items) <= n:
+        return items
+    return [items[round(i * (len(items) - 1) / (n - 1))] for i in range(n)]
+
+
+def render_page(pdf: Path, page: int, out: Path) -> bool:
+    """Render one PDF page to PNG with pdftoppm; False when it is unavailable or fails (the page still works without images)."""
+    if not shutil.which("pdftoppm"):
+        return False
+    stem = out.with_suffix("")
+    result = subprocess.run(["pdftoppm", "-png", "-r", str(SAMPLE_DPI), "-singlefile", "-f", str(page), "-l", str(page),
+                             str(pdf), str(stem)], capture_output=True)
+    return result.returncode == 0 and out.exists()
+
+
+def build_groups(lowcontent: list[dict], personal: list[dict], raw: Path, out_dir: Path) -> list[dict]:
+    """Groups of pages suggested for exclusion, each with a few rendered samples, so a person can judge a whole group."""
+    spec = []
+    for kind, (label, why) in GROUP_TEXT.items():
+        items = [i for i in lowcontent if i["kind"] == kind and i["suggest"] == "exclude"]
+        spec.append({"id": f"lc:{kind}", "source": "lc", "kind": kind, "label": label, "why": why, "items": items})
+    cases = [p for p in personal if p["suggest"] == "exclude_page" and any(f["type"] == "case" for f in p["findings"])]
+    case_keys = {p["key"] for p in cases}
+    names = [p for p in personal if p["suggest"] == "exclude_page" and p["key"] not in case_keys]
+    spec.append({"id": "pd:case", "source": "pd", "kind": "case", "label": "เคสผู้ป่วย (กรณีศึกษา)",
+                 "why": "บรรยายเคสพร้อมอายุ/ที่อยู่/ครอบครัว/ผลตรวจ ถ้าเป็นคนจริงควรตัด", "items": cases})
+    spec.append({"id": "pd:names", "source": "pd", "kind": "names", "label": "หน้ารายชื่อคณะทำงาน/ผู้จัดทำ",
+                 "why": "รายชื่อบุคคลหลายคน ไม่ใช่เนื้อหาทางคลินิก (เก็บชื่อผู้จัดทำไว้ใน metadata ระดับเอกสารแล้ว)", "items": names})
+    img_dir = out_dir / "img"
+    groups = []
+    for g in spec:
+        if not g["items"]:
+            continue
+        samples = []
+        for item in spread(g["items"], SAMPLES_PER_GROUP):
+            name = item["key"].replace(":", "__") + ".png"
+            img_dir.mkdir(parents=True, exist_ok=True)
+            pdf = raw / item["document_id"] / "source.pdf"
+            ok = pdf.exists() and ((img_dir / name).exists() or render_page(pdf, item["p"], img_dir / name))
+            text = item.get("text") or item.get("preview") or ""
+            samples.append({"key": item["key"], "p": item["p"], "document_id": item["document_id"], "pdf": item.get("pdf"),
+                            "img": f"img/{name}" if ok else None, "text": text[:260]})
+        groups.append({"id": g["id"], "source": g["source"], "kind": g["kind"], "label": g["label"], "why": g["why"],
+                       "keys": [i["key"] for i in g["items"]],
+                       "documents": len({i["document_id"] for i in g["items"]}), "samples": samples})
+    return groups
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -243,8 +308,9 @@ def main(argv: list[str] | None = None) -> int:
         item["pdf"] = pdfs.get(item["document_id"])
     counts.update(Counter(f"{i['suggest']}" for i in personal))
     counts.update(Counter(f"low_{i['kind']}" for i in lowcontent))
+    groups = build_groups(lowcontent, personal, args.raw, args.out)
     payload = {"review_id": args.review_id, "corpus_version": args.corpus.name, "docs": docs, "personal": personal,
-               "lowcontent": lowcontent}
+               "lowcontent": lowcontent, "groups": groups}
     args.out.mkdir(parents=True, exist_ok=True)
     template = (Path(__file__).with_name("page_tag_review.html")).read_text(encoding="utf-8")
     out = args.out / "page_tags.html"
