@@ -1,0 +1,23 @@
+{
+  "corpus_version": "normalized-add-20261007-ocr",
+  "review_method": "ai_assisted_visual_check",
+  "reviewer": "Claude (AI) comparing rendered page images with the OCR text, requested by team member Up2mEz on 2026-10-07",
+  "human_confirmation": null,
+  "notes": ["Same rules as ocr_review_20261007.json. pass_text_only pages are continuation pages of a cleanly typeset article whose other pages matched their images."],
+  "pages": [
+    {"key": "dm-rama-nursing-t2dm-risk-case-management-2567:p109", "outcome": "reject",
+     "notes": "Blank weekly evaluation form; OCR duplicated the table and garbled target values (18.22.9, รอบเอ่า)."},
+    {"key": "dm-rama-nursing-t2dm-risk-case-management-2567:p110", "outcome": "reject",
+     "notes": "Blank weekly evaluation form; garbled row labels and target values."},
+    {"key": "ht-ths-air-pollution-article-2568:p1", "outcome": "pass"},
+    {"key": "ht-ths-air-pollution-article-2568:p2", "outcome": "pass"},
+    {"key": "ht-ths-air-pollution-article-2568:p3", "outcome": "pass_text_only"},
+    {"key": "ht-ths-air-pollution-article-2568:p4", "outcome": "pass_text_only", "replacements": [["ซึ่งจุดมุมไทด้วย", "ซึ่งอุดมไปด้วย"]]},
+    {"key": "ht-ths-air-pollution-article-2568:p5", "outcome": "pass"},
+    {"key": "ht-ths-air-pollution-article-2568:p6", "outcome": "pass_text_only"},
+    {"key": "ht-ths-public-leaflet-2567:p1", "outcome": "fix",
+     "replacements": [["ควรถอกกำลังกาย", "ควรออกกำลังกาย"], ["[QR Code]\n\n", ""]],
+     "notes": "Duplicated words ในผู้ที่มีที่มี are printed that way in the source."},
+    {"key": "ht-ths-public-leaflet-2567:p2", "outcome": "pass_text_only"}
+  ]
+}

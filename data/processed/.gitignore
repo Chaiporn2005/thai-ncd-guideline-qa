@@ -4,13 +4,16 @@
 !README.md
 !normalization.json
 
-# Decision 0008 (Siriraj Diabetes Center, educational use only): derived summaries stay local.
-/normalized-v2/dm-siriraj-know-diabetes-undated/
-/normalized-v2/dm-siriraj-hypoglycemia-leaflet-undated/
-/normalized-v2/dm-siriraj-patient-foot-manual-undated/
-/normalized-v2/dm-siriraj-microvascular-leaflet-undated/
-/normalized-v2/dm-siriraj-macrovascular-leaflet-undated/
-/normalized-v2/dm-siriraj-retinopathy-leaflet-undated/
-/normalized-v2/dm-siriraj-needle-disposal-leaflet-undated/
-/normalized-v2/dm-siriraj-self-monitoring-leaflet-undated/
-/normalized-v2/lipid-siriraj-diabetes-fat-7/
+# Staging roots for building a corpus version; the version itself records derived_from.
+/normalized-add-*/
+
+# Decision 0008 (Siriraj Diabetes Center, educational use only): derived summaries stay local, in every corpus version.
+/normalized-v*/dm-siriraj-know-diabetes-undated/
+/normalized-v*/dm-siriraj-hypoglycemia-leaflet-undated/
+/normalized-v*/dm-siriraj-patient-foot-manual-undated/
+/normalized-v*/dm-siriraj-microvascular-leaflet-undated/
+/normalized-v*/dm-siriraj-macrovascular-leaflet-undated/
+/normalized-v*/dm-siriraj-retinopathy-leaflet-undated/
+/normalized-v*/dm-siriraj-needle-disposal-leaflet-undated/
+/normalized-v*/dm-siriraj-self-monitoring-leaflet-undated/
+/normalized-v*/lipid-siriraj-diabetes-fat-7/

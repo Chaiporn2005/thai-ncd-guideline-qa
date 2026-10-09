@@ -9,11 +9,11 @@
     "publication_date": null,
     "alternate_urls": [],
     "accessed_at": "2026-10-05",
-    "status": "source_verified",
+    "status": "extracted",
     "content_access": "full_document",
-    "extraction_status": "encoding_issue",
+    "extraction_status": "extracted_unreviewed",
     "redistribution_status": "unknown",
-    "sha256": null,
+    "sha256": "06864d3590d63a72c1340763501b171460818ff1b3d11fc3b1d8a76b2ee90e62",
     "pdf_pages": 4,
     "human_review": null,
     "language": "th",
@@ -34,6 +34,6 @@
     "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=12158",
     "download_url": "https://www.ddc.moph.go.th/uploads/publish/1215820220112083837.pdf",
     "population": "Thai general adult public/patients reducing dietary sodium; hypertension prevention education",
-    "verification_notes": "Official4-page brochure retrieved; cover issuer/title and body explicitly link sodium and hypertension risk, Thai foods and reduction advice. Mixed corrupted headings/repeated phrases in text; numeric and table visual QA pending. Patient education, not treatment guideline. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+    "verification_notes": "Official4-page brochure retrieved; cover issuer/title and body explicitly link sodium and hypertension risk, Thai foods and reduction advice. Mixed corrupted headings/repeated phrases in text; numeric and table visual QA pending. Patient education, not treatment guideline. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy. 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet."
   }
 }

@@ -1,0 +1,86 @@
+{
+  "document_id": "lipid-dms-stroke-public-manual",
+  "title": "คู่มือโรคหลอดเลือดสมอง (อัมพาต อัมพฤกษ์) สำหรับประชาชน",
+  "source_sha256": "5b6edfb2d332d92ca03eda81b5ac57c14ebc9212d63585ad6fa03085ca38990b",
+  "pdf_pages": 84,
+  "options": {
+    "legacy_decoder": "cp1252_cp874_tokens"
+  },
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 6
+    },
+    "tounicode_entries_written_or_changed": 65
+  },
+  "normalization_totals": {
+    "c1_positional": 10,
+    "cp1252_cp874_tokens": 513,
+    "line_break_before_mark": 2,
+    "sara_am_composed": 1,
+    "space_before_mark": 497,
+    "spaced_marks_joined": 9
+  },
+  "status_counts": {
+    "empty": 3,
+    "garbled": 7,
+    "ocr_unreviewed": 3,
+    "ok": 61,
+    "ok_minor_issues": 10
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      3,
+      84
+    ],
+    "empty": [
+      2,
+      4,
+      83
+    ],
+    "ok_minor_issues": [
+      6,
+      23,
+      33,
+      37,
+      38,
+      39,
+      40,
+      49,
+      50,
+      62
+    ],
+    "garbled": [
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82
+    ]
+  },
+  "removed_edge_lines": 161,
+  "ocr_pages": 13,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "7e0b946e4420492dc3eb73aa6f48d14c45cb01909dceb71314e73c860ad72da3",
+  "created_at": "2026-10-07T17:45:56.927120+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v6",
+    "pages_jsonl_sha256": "7e0b946e4420492dc3eb73aa6f48d14c45cb01909dceb71314e73c860ad72da3",
+    "review_decisions": "ocr_review_decisions_round2_amended.json"
+  }
+}

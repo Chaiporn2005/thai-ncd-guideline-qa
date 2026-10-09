@@ -9,12 +9,12 @@
     "publication_date": null,
     "alternate_urls": [],
     "accessed_at": "2026-10-05",
-    "status": "source_verified",
-    "content_access": "link_verified_only",
-    "extraction_status": "not_started",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
     "redistribution_status": "unknown",
-    "sha256": null,
-    "pdf_pages": null,
+    "sha256": "2543b9083ecf7e4c9d56b0a093fa2719be86f5d504fd5a9b22ab725236583f3f",
+    "pdf_pages": 42,
     "human_review": null,
     "language": "th",
     "thai_context": "thai_guideline_or_service",
@@ -34,6 +34,6 @@
     "landing_url": "https://www.ddc.moph.go.th/dncd/publish_detail.php?deptcode=dncd&publish=13768",
     "download_url": "https://www.ddc.moph.go.th/uploads/publish/1376820230516062913.pdf",
     "population": "Thai hospital/NCD clinic personnel identifying high blood pressure; emergency department exclusion in preceding edition must be rechecked",
-    "verification_notes": "Official catalogue title and issuer landing download link verified. Web PDF fetch exceeds 20.3MB tool limit, body not reviewed. Preceding2565 PDF inspected for work identity/context, excluded as another edition of same work; not counted twice. Update date is not treated as publication day. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy."
+    "verification_notes": "Official catalogue title and issuer landing download link verified. Web PDF fetch exceeds 20.3MB tool limit, body not reviewed. Preceding2565 PDF inspected for work identity/context, excluded as another edition of same work; not counted twice. Update date is not treated as publication day. Local preparation20261005: local PDF not saved; outcome access_restricted; prior web identity/content access is historical evidence, not a local usable corpus copy. 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet."
   }
 }

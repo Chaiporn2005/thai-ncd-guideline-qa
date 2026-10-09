@@ -9,9 +9,9 @@
     "publication_date": null,
     "alternate_urls": [],
     "accessed_at": "2026-10-05",
-    "status": "source_verified",
+    "status": "extracted",
     "content_access": "full_document",
-    "extraction_status": "needs_ocr",
+    "extraction_status": "extracted_unreviewed",
     "redistribution_status": "restricted",
     "sha256": "979bc8c7136bef8f22a384f013c2f523546250280de6e9a8752b09accba7f358",
     "pdf_pages": 2,
@@ -34,6 +34,6 @@
     "population": "Public and diabetes nutrition education; select adult lipid prevention portions",
     "landing_url": "https://www.si.mahidol.ac.th/Th/division/diabetes/ct_knowledgesdetail.asp?kl_id=7",
     "download_url": "https://www.si.mahidol.ac.th/Th/division/diabetes/admin/knowledges_files/7_44_1oAgf1K.pdf",
-    "verification_notes": "Issuer landing explains dietary fat types, LDL/TG effects and selection; linked PDF retrieved has 2 pages and no text layer. PDF visual/body QA pending; image-only does not verify wording. Copyright reserved on issuer landing; no reuse permission found. Do not count older fat brochures as additional versions of this work without comparison. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-diabetes-fat-7/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. Automatic extraction/RAG held: explicit Siriraj Diabetes Center prior-permission notice."
+    "verification_notes": "Issuer landing explains dietary fat types, LDL/TG effects and selection; linked PDF retrieved has 2 pages and no text layer. PDF visual/body QA pending; image-only does not verify wording. Copyright reserved on issuer landing; no reuse permission found. Do not count older fat brochures as additional versions of this work without comparison. Local preparation20261005: public review copy saved at data/raw/lipid-siriraj-diabetes-fat-7/source.pdf; actual SHA256/page count verified; no redistribution or clinical approval. Automatic extraction/RAG held: explicit Siriraj Diabetes Center prior-permission notice. 2026-10-07: included in normalized-v6 (Track B); status updated from source_verified."
   }
 }

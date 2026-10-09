@@ -1,0 +1,41 @@
+{
+  "document_id": "ncd-ddc-dmht-quality-indicator-details-2565",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-dmht-quality-indicator-details-2565",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ncd-ddc-dmht-quality-indicator-details-2565",
+    "work_id": "ncd-ddc-dmht-quality-indicator-details-2565",
+    "edition_id": "ncd-ddc-dmht-quality-indicator-details-2565",
+    "title": "รายละเอียดตัวชี้วัดเพื่อกำกับติดตามคุณภาพบริการ การดำเนินงานด้านโรคไม่ติดต่อ (โรคเบาหวานและโรคความดันโลหิตสูง) ประจำปีงบประมาณ พ.ศ.2565 (Update 12/10/2564)",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค กระทรวงสาธารณสุข",
+    "disease_tags": [
+      "hypertension",
+      "ncd_service",
+      "type_2_diabetes"
+    ],
+    "population": "health services for adults with DM/HT",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "Year 2564 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=11866",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/1186620211012030022.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "60ebb319b776e8c8d2ab196816210f498c4951e89220f1062fc08e355f556096",
+    "pdf_pages": 106,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Title and PDF link extracted from the DDC/DNCD publication detail page (journal_detail.php); listed in the DNCD 'คู่มือ/หนังสือ' catalogue. HEAD 200 application/pdf. Indicator definitions for FY2565 (Update 12/10/2564). Related to, but not the same as, the existing DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566. That record reviews indicators across 2563-2566, while this one gives the detailed definitions for a single year. There is an older file (1186620211006043036.pdf, 6 Oct 2021) of the same document. Use only this update. 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py). 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

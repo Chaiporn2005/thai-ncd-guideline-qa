@@ -1,0 +1,39 @@
+{
+  "document_id": "dm-dmthai-self-management-education-2568",
+  "primary_group": "DM",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/01_diabetes/dm-dmthai-self-management-education-2568",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "dm-dmthai-self-management-education-2568",
+    "work_id": "dm-dmthai-self-management-education-2568",
+    "edition_id": "dm-dmthai-self-management-education-2568",
+    "title": "การให้ความรู้เพื่อจัดการโรคเบาหวานด้วยตัวเอง",
+    "publisher": "สถาบันวิจัยและประเมินเทคโนโลยีทางการแพทย์ กรมการแพทย์ กระทรวงสาธารณสุข (hosted by สมาคมโรคเบาหวานแห่งประเทศไทย)",
+    "disease_tags": [
+      "type_2_diabetes"
+    ],
+    "population": "adults with diabetes and their families; also used for staff training",
+    "document_type": "patient_education",
+    "language": "th",
+    "edition": "Year 2568 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://www.dmthai.org/new/index.php/sara-khwam-ru/sahrab-bukhkhl-thawpi/diabetes-book/601-2018-03-07-10-38-15",
+    "download_url": "https://www.dmthai.org/new/attactment/2025-karn-hai-kwam-roo.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "89a355eea229e6714cfa5df4b833f7a1e8816ca3180e7c2f7de5fa6634d37960",
+    "pdf_pages": 205,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Landing page on dmthai.org (หนังสือความรู้เบาหวาน) gives the title, names the publisher as the medical-technology research and assessment institute of the Department of Medical Services, and links this PDF. Year 2568 is inferred from the '2025-' file name and the landing page. The book itself may be a reprint of an older edition. The ISBN on the page looks malformed (987-…), so confirm the edition and year in the PDF front matter. Not an edition of any existing record. 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py). 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "document_id": "dm-siriraj-food-exchange-list-undated",
+  "requested_url": "https://www.si.mahidol.ac.th/th/division/diabetes/admin/knowledges_files/11_44_1.pdf",
+  "retrieved_at": "2026-10-06T17:53:54.787196+00:00",
+  "purpose": "local_review",
+  "reuse_permission_inferred": false,
+  "outcome": "downloaded",
+  "network_attempts": 1,
+  "resolved_url": "https://www.si.mahidol.ac.th/th/division/diabetes/admin/knowledges_files/11_44_1.pdf",
+  "sha256": "336139a08ebe4436c6b5f9fdb5b960eb80ad11eae3b1a003d2ed758f41d5cc6b",
+  "pdf_pages": 2,
+  "bytes": 1167198
+}

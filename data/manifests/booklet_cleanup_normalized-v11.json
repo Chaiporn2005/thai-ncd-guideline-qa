@@ -1,0 +1,437 @@
+{
+ "corpus_version": "normalized-v11",
+ "derived_from": "normalized-v10",
+ "document": "ncd-ddc-health-literacy-fight-ncds-2566",
+ "removed_lines": {
+  "footer": 525,
+  "header": 38,
+  "side_tabs": 431,
+  "duplicates": 14
+ },
+ "pages_changed": 80,
+ "pages": [
+  {
+   "page": 1,
+   "footer": 4
+  },
+  {
+   "page": 8,
+   "header": 4,
+   "side_tabs": 7,
+   "duplicates": 1,
+   "footer": 8
+  },
+  {
+   "page": 9,
+   "footer": 10
+  },
+  {
+   "page": 10,
+   "header": 2,
+   "side_tabs": 10,
+   "footer": 6
+  },
+  {
+   "page": 11,
+   "side_tabs": 8,
+   "footer": 5
+  },
+  {
+   "page": 12,
+   "header": 1,
+   "side_tabs": 6,
+   "footer": 5
+  },
+  {
+   "page": 13,
+   "side_tabs": 10,
+   "footer": 4
+  },
+  {
+   "page": 14,
+   "header": 1,
+   "side_tabs": 7,
+   "footer": 5
+  },
+  {
+   "page": 15,
+   "side_tabs": 9,
+   "footer": 6
+  },
+  {
+   "page": 16,
+   "header": 1,
+   "footer": 5
+  },
+  {
+   "page": 17,
+   "side_tabs": 9,
+   "footer": 4
+  },
+  {
+   "page": 18,
+   "footer": 5
+  },
+  {
+   "page": 19,
+   "header": 3,
+   "side_tabs": 9,
+   "footer": 7
+  },
+  {
+   "page": 20,
+   "header": 1,
+   "side_tabs": 5,
+   "footer": 5
+  },
+  {
+   "page": 21,
+   "side_tabs": 5,
+   "footer": 7
+  },
+  {
+   "page": 22,
+   "header": 1,
+   "side_tabs": 6,
+   "footer": 3
+  },
+  {
+   "page": 24,
+   "side_tabs": 8,
+   "footer": 10
+  },
+  {
+   "page": 25,
+   "side_tabs": 9,
+   "footer": 5
+  },
+  {
+   "page": 26,
+   "duplicates": 1,
+   "footer": 10
+  },
+  {
+   "page": 27,
+   "side_tabs": 9,
+   "footer": 12
+  },
+  {
+   "page": 28,
+   "side_tabs": 7,
+   "footer": 13
+  },
+  {
+   "page": 29,
+   "header": 1,
+   "side_tabs": 10,
+   "footer": 5
+  },
+  {
+   "page": 30,
+   "footer": 11
+  },
+  {
+   "page": 31,
+   "side_tabs": 9,
+   "footer": 4
+  },
+  {
+   "page": 33,
+   "header": 2,
+   "side_tabs": 7,
+   "footer": 5
+  },
+  {
+   "page": 34,
+   "side_tabs": 6,
+   "footer": 6
+  },
+  {
+   "page": 35,
+   "side_tabs": 9,
+   "duplicates": 1,
+   "footer": 9
+  },
+  {
+   "page": 36,
+   "footer": 6
+  },
+  {
+   "page": 37,
+   "side_tabs": 7,
+   "footer": 4
+  },
+  {
+   "page": 38,
+   "footer": 6
+  },
+  {
+   "page": 39,
+   "footer": 5
+  },
+  {
+   "page": 40,
+   "footer": 8
+  },
+  {
+   "page": 41,
+   "side_tabs": 7,
+   "footer": 5
+  },
+  {
+   "page": 43,
+   "side_tabs": 7,
+   "footer": 11
+  },
+  {
+   "page": 44,
+   "footer": 17
+  },
+  {
+   "page": 45,
+   "header": 1,
+   "side_tabs": 9,
+   "footer": 4
+  },
+  {
+   "page": 47,
+   "side_tabs": 9,
+   "footer": 6
+  },
+  {
+   "page": 48,
+   "header": 1,
+   "side_tabs": 8,
+   "footer": 5
+  },
+  {
+   "page": 49,
+   "side_tabs": 9,
+   "footer": 9
+  },
+  {
+   "page": 50,
+   "side_tabs": 8,
+   "footer": 6
+  },
+  {
+   "page": 52,
+   "header": 3,
+   "side_tabs": 8,
+   "footer": 6
+  },
+  {
+   "page": 53,
+   "side_tabs": 9,
+   "footer": 7
+  },
+  {
+   "page": 54,
+   "header": 1,
+   "footer": 5
+  },
+  {
+   "page": 55,
+   "side_tabs": 9,
+   "footer": 12
+  },
+  {
+   "page": 57,
+   "footer": 3
+  },
+  {
+   "page": 58,
+   "header": 1,
+   "footer": 5
+  },
+  {
+   "page": 59,
+   "header": 3,
+   "side_tabs": 9,
+   "footer": 6
+  },
+  {
+   "page": 60,
+   "footer": 11
+  },
+  {
+   "page": 61,
+   "side_tabs": 10,
+   "footer": 8
+  },
+  {
+   "page": 63,
+   "side_tabs": 8,
+   "footer": 5
+  },
+  {
+   "page": 64,
+   "side_tabs": 7,
+   "footer": 7
+  },
+  {
+   "page": 65,
+   "header": 2,
+   "side_tabs": 10,
+   "footer": 4
+  },
+  {
+   "page": 66,
+   "header": 1,
+   "side_tabs": 7,
+   "footer": 9
+  },
+  {
+   "page": 67,
+   "side_tabs": 10,
+   "duplicates": 1,
+   "footer": 4
+  },
+  {
+   "page": 68,
+   "side_tabs": 5,
+   "duplicates": 1,
+   "footer": 8
+  },
+  {
+   "page": 69,
+   "side_tabs": 9,
+   "duplicates": 1,
+   "footer": 15
+  },
+  {
+   "page": 70,
+   "header": 1,
+   "footer": 5
+  },
+  {
+   "page": 72,
+   "header": 2,
+   "footer": 5
+  },
+  {
+   "page": 73,
+   "duplicates": 2,
+   "footer": 8
+  },
+  {
+   "page": 74,
+   "duplicates": 1,
+   "footer": 8
+  },
+  {
+   "page": 75,
+   "side_tabs": 10,
+   "footer": 5
+  },
+  {
+   "page": 76,
+   "side_tabs": 9,
+   "footer": 12
+  },
+  {
+   "page": 77,
+   "side_tabs": 9,
+   "duplicates": 2,
+   "footer": 12
+  },
+  {
+   "page": 78,
+   "header": 1,
+   "footer": 5
+  },
+  {
+   "page": 79,
+   "side_tabs": 9,
+   "footer": 6
+  },
+  {
+   "page": 80,
+   "header": 1,
+   "side_tabs": 7,
+   "footer": 5
+  },
+  {
+   "page": 81,
+   "duplicates": 2,
+   "footer": 8
+  },
+  {
+   "page": 82,
+   "footer": 7
+  },
+  {
+   "page": 83,
+   "side_tabs": 8,
+   "footer": 3
+  },
+  {
+   "page": 84,
+   "side_tabs": 7,
+   "footer": 8
+  },
+  {
+   "page": 85,
+   "footer": 4
+  },
+  {
+   "page": 86,
+   "side_tabs": 9,
+   "footer": 1
+  },
+  {
+   "page": 88,
+   "header": 1,
+   "footer": 5
+  },
+  {
+   "page": 89,
+   "side_tabs": 9,
+   "footer": 4
+  },
+  {
+   "page": 90,
+   "header": 1,
+   "side_tabs": 6,
+   "footer": 6
+  },
+  {
+   "page": 91,
+   "side_tabs": 10,
+   "footer": 4
+  },
+  {
+   "page": 92,
+   "header": 1,
+   "side_tabs": 8,
+   "footer": 5
+  },
+  {
+   "page": 93,
+   "footer": 5
+  },
+  {
+   "page": 95,
+   "footer": 4
+  },
+  {
+   "page": 96,
+   "duplicates": 1,
+   "footer": 4
+  }
+ ],
+ "numbers_lost_with_content": [],
+ "pages_empty_after_cleanup": [
+  29
+ ],
+ "section_openers_without_ocr": [
+  71
+ ],
+ "rules": {
+  "footer_zone_lines": 18,
+  "tab_run_min_lines": 5,
+  "tab_run_min_distinct": 4,
+  "duplicate_min_chars": 8,
+  "empty_after_cleanup_chars": 15
+ }
+}

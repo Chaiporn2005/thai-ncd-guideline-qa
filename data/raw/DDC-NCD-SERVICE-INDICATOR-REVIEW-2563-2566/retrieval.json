@@ -1,11 +1,15 @@
 {
   "document_id": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
   "requested_url": "https://ddc.moph.go.th/uploads/publish/1377120230127075220.pdf",
-  "retrieved_at": "2026-10-05T16:22:28.067020+00:00",
+  "retrieved_at": "2026-10-06T19:05:04.590238+00:00",
+  "imported_at": "2026-10-06T19:12:26.105604+00:00",
+  "channel": "team_member_browser_download",
+  "downloaded_by": "Up2mEz",
   "purpose": "local_review",
   "reuse_permission_inferred": false,
-  "outcome": "access_restricted",
-  "http_status": 403,
-  "network_attempts": 1,
-  "error": "HTTP 403; stopped without retry/bypass"
+  "outcome": "downloaded",
+  "network_attempts": 0,
+  "sha256": "96bab5c6dc545a7559e07a5a74ce6281de650fcca93658612ed43373024db2e0",
+  "pdf_pages": 132,
+  "bytes": 4784484
 }

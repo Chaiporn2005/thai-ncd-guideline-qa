@@ -1,0 +1,39 @@
+{
+  "run_id": "20261007-expansion",
+  "accessed_at": "2026-10-07",
+  "count_unit": "provisional distinct authored work",
+  "note": "Track B expansion candidates found by a scout agent; not accepted.",
+  "groups": {
+    "DM": [
+      "dm-dmthai-self-management-education-2568",
+      "dm-siriraj-diabetes-must-know-undated",
+      "dm-siriraj-food-exchange-list-undated",
+      "dm-siriraj-healthy-diet-1477",
+      "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+      "dm-rama-nursing-t2dm-risk-case-management-2567",
+      "dm-ddc-remission-report-2567-2568",
+      "dm-ddc-dmht-elearning-intermediate-2568"
+    ],
+    "HT": [
+      "ht-ths-public-leaflet-2567",
+      "ht-ths-air-pollution-article-2568",
+      "ht-ddc-dmht-elearning-basic-2565",
+      "ht-ddc-dmht-elearning-intermediate-ii-2566"
+    ],
+    "LIPID": [
+      "lipid-rtamedj-hyperlipidemia-review-2566",
+      "lipid-jmhs-dyslipidemia-drugs-review-2563",
+      "lipid-thaijpen-severe-hypertriglyceridemia-2565"
+    ],
+    "CKD": [
+      "ckd-ddc-community-kidney-prevention-model-2568",
+      "ckd-ddc-epidemiology-prevention-review-2567"
+    ],
+    "NCD_SERVICE": [
+      "ncd-ddc-dmht-service-model-lessons-2568",
+      "ncd-ddc-dmht-care-management-report-2568",
+      "ncd-ddc-dmht-quality-indicator-details-2565",
+      "ncd-ddc-health-literacy-fight-ncds-2566"
+    ]
+  }
+}

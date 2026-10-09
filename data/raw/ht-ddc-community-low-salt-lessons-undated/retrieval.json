@@ -1,11 +1,15 @@
 {
   "document_id": "ht-ddc-community-low-salt-lessons-undated",
   "requested_url": "https://www.ddc.moph.go.th/uploads/publish/1034120200803070751.pdf",
-  "retrieved_at": "2026-10-05T16:19:43.340113+00:00",
+  "retrieved_at": "2026-10-06T19:02:42.634041+00:00",
+  "imported_at": "2026-10-06T19:12:25.609680+00:00",
+  "channel": "team_member_browser_download",
+  "downloaded_by": "Up2mEz",
   "purpose": "local_review",
   "reuse_permission_inferred": false,
-  "outcome": "access_restricted",
-  "http_status": 403,
-  "network_attempts": 1,
-  "error": "HTTP 403; stopped without retry/bypass"
+  "outcome": "downloaded",
+  "network_attempts": 0,
+  "sha256": "f72fd2692a916f435450bf84e80ee05aaefd71c1ddb9541e4e5cf90b01c98e11",
+  "pdf_pages": 82,
+  "bytes": 15445100
 }

@@ -1,0 +1,1726 @@
+{
+ "corpus_version": "normalized-add-20261007b-ocr",
+ "review_method": "ai_assisted_risk_based",
+ "reviewer": "Claude (AI), requested by team member Up2mEz on 2026-10-07",
+ "human_confirmation": null,
+ "notes": [
+  "Risk-based review of 330 OCR pages: automatic checks on every page; high-risk pages read in full; pages with clinical numbers, drug tables or lipid/glucose thresholds compared with the rendered image.",
+  "pass = compared with the image; pass_text_only = read as text only (name lists, orders, covers, plain prose); pass_auto = passed automatic checks only.",
+  "Earlier full visual reviews (ocr_review_20261007.json, ...b.json) showed that serious OCR errors concentrate on photo, infographic and flowchart pages; plain typeset pages matched their images."
+ ],
+ "pages": [
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.94; not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p50",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p51",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p52",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p53",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p54",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p55",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-community-kidney-prevention-model-2568:p56",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-epidemiology-prevention-review-2567:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96; not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-epidemiology-prevention-review-2567:p2",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96; not compared with the image."
+  },
+  {
+   "key": "ckd-ddc-epidemiology-prevention-review-2567:p36",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p3",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p4",
+   "outcome": "pass_text_only",
+   "notes": "Advisor/editor name list."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p8",
+   "outcome": "pass_text_only",
+   "notes": "List of figures."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p9",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p11",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p12",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p41",
+   "outcome": "reject",
+   "notes": "Section divider."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p42",
+   "outcome": "fix",
+   "replacements": [
+    [
+     "ตั้งแต่กระดับน้ำตาล",
+     "ตั้งแต่ระดับน้ำตาล"
+    ]
+   ],
+   "remove_duplicate_block": {
+    "start": "(ร่าง) การคัดกรองโรคเบาหวานสำหรับประเทศไทย",
+    "end": "**Q3:**",
+    "keep": "(ร่าง) การคัดกรองโรคเบาหวานสำหรับประเทศไทย สำหรับชุดสิทธิประโยชน์ ปี 2566 [แผนภาพ: ไม่ได้ถอดข้อความเพราะภาพเล็กเกินอ่านได้]\n\n"
+   },
+   "notes": "Q&A text matches the image; the embedded screening flowchart was too small to read and OCR produced garbled branch logic, so it was removed."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p49",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p54",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p88",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p104",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p111",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p119",
+   "outcome": "fix",
+   "replacements": [
+    [
+     "ตรวจนิยั่นวินิจฉัย",
+     "ตรวจยืนยันวินิจฉัย"
+    ]
+   ],
+   "notes": "All screening thresholds match the image (>=70-<100, 100-125, >=126, <110, 180 days)."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p123",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p125",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566:p132",
+   "outcome": "reject",
+   "notes": "Back cover."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p37",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p38",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p39",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p40",
+   "outcome": "reject",
+   "notes": "COVID-19 dashboard screenshots; noisy and out of scope."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p42",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p43",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p45",
+   "outcome": "reject",
+   "notes": "Duplicated English figure captions from a slide."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p46",
+   "outcome": "pass_text_only",
+   "notes": "Slide with HDC statistics; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p49",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p51",
+   "outcome": "reject",
+   "notes": "Diagram slide read as fragments."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p53",
+   "outcome": "reject",
+   "notes": "Slide with misread words (ฟันผุด, โรงพรงฟัน)."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p141",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p157",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p161",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p162",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p182",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p197",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p236",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p237",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p238",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p244",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96, table; not compared with the image."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p256",
+   "outcome": "reject",
+   "notes": "Child-health indicator table, out of adult scope and repeated."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p263",
+   "outcome": "reject",
+   "notes": "Slide with repeated fragments."
+  },
+  {
+   "key": "dm-ddc-dmht-elearning-intermediate-2568:p264",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p4",
+   "outcome": "pass_text_only",
+   "notes": "Author list."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p5",
+   "outcome": "pass_text_only",
+   "notes": "Author list."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p6",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p8",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p10",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.93, table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p11",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p12",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p13",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p14",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p15",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p16",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p17",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p18",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p19",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p20",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p21",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p22",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p23",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p24",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p25",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p26",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p27",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p29",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p30",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p31",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p32",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p33",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p34",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p35",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p36",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p37",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p38",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p39",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p40",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p41",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p42",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p43",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p44",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p46",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p47",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p48",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p49",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p50",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p51",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.93, table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p52",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p53",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p54",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96, table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p55",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p56",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p57",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p58",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p59",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p60",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p61",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p62",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p63",
+   "outcome": "pass"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p64",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p65",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p66",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p67",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p68",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p69",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p70",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p71",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p72",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p73",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p74",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p75",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p77",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p78",
+   "outcome": "pass"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p79",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.94; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p80",
+   "outcome": "fix",
+   "replacements": [
+    [
+     "Glipenclamide",
+     "Glibenclamide"
+    ],
+    [
+     "Eglucon",
+     "Euglucon"
+    ],
+    [
+     "มินิเดียม",
+     "มินิเดียบ"
+    ],
+    [
+     "Glicazide",
+     "Gliclazide"
+    ],
+    [
+     "เมตะบอลไต๋",
+     "เมตะบอไลต์"
+    ],
+    [
+     "ยาเรพพาคิลไลน์",
+     "ยาเรพพากลิไนด์"
+    ]
+   ],
+   "notes": "All doses/durations in Table 1 match the image; drug-name spellings fixed."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p81",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p82",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p83",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95, table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p84",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p85",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p86",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96, table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p87",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p88",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95, table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p89",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.94; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p90",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p91",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p92",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p93",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p94",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p95",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p96",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p97",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p98",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.97; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p99",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p100",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p101",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p102",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p103",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p104",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p105",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p106",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p107",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p108",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p109",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p110",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p111",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p112",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p113",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p114",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p115",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p116",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p117",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p118",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p119",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p120",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p121",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p122",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.97; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p123",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p124",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p125",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p126",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p127",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p128",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p129",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p130",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p131",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p132",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p133",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p134",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p135",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p136",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p137",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p138",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p139",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p140",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p141",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p142",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p143",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p144",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p145",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p146",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p147",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p148",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p149",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p151",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p152",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p153",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p154",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p155",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p157",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p158",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p159",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p160",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p161",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p162",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p163",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p164",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p166",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p167",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p168",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p169",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p170",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p171",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p172",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p173",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p174",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p175",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p176",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.93; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p177",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p178",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p179",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p180",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p181",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p182",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p183",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p184",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p185",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p186",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p187",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p188",
+   "outcome": "reject",
+   "notes": "Section divider."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p189",
+   "outcome": "reject",
+   "notes": "Section divider."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p193",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p194",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p195",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p196",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p197",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p198",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p199",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p200",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p202",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p204",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95; not compared with the image."
+  },
+  {
+   "key": "dm-dmthai-self-management-education-2568:p205",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-remission-principles-2568-september:p198",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-remission-service-2567:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-remission-service-2567:p4",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.94; not compared with the image."
+  },
+  {
+   "key": "dm-remission-service-2567:p5",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "dm-remission-service-2567:p8",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "dm-remission-service-2567:p19",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "dm-remission-service-2567:p26",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.93; not compared with the image."
+  },
+  {
+   "key": "dm-remission-service-2567:p27",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95, table; not compared with the image."
+  },
+  {
+   "key": "dm-remission-service-2567:p28",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name list."
+  },
+  {
+   "key": "dm-remission-service-2567:p29",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name list."
+  },
+  {
+   "key": "dm-remission-service-2567:p30",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "dm-remission-service-2567:p32",
+   "outcome": "reject",
+   "notes": "Back cover."
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p2",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p80",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.97; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-community-low-salt-lessons-undated:p82",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p24",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p94",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.94, table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p95",
+   "outcome": "pass_text_only",
+   "notes": "Appointment order."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p96",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name list."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-basic-2565:p97",
+   "outcome": "pass_text_only",
+   "notes": "Appointment order."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p41",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p48",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p84",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p119",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p120",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p121",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p127",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p130",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p158",
+   "outcome": "pass_text_only"
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p161",
+   "outcome": "reject",
+   "notes": "Slide repeated twice; outline only."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p163",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p164",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p165",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p166",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p167",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p172",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p187",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p188",
+   "outcome": "reject",
+   "notes": "Food-group slide with model-written picture descriptions."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p190",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p191",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p192",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-dmht-elearning-intermediate-ii-2566:p198",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p20",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p34",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name table."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p35",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.93, table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p36",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.93, table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p37",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.94, table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p38",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95, table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p39",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.97, table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-hospital-management-update-2566:p40",
+   "outcome": "pass_text_only",
+   "notes": "Appointment order."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p1",
+   "outcome": "pass_text_only",
+   "notes": "Cover."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p5",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96, table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p7",
+   "outcome": "pass"
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p11",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p24",
+   "outcome": "reject",
+   "notes": "Running header only."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p25",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p32",
+   "outcome": "reject",
+   "notes": "Running header only."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p33",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p54",
+   "outcome": "reject",
+   "notes": "Running header only."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p62",
+   "outcome": "reject",
+   "notes": "Running header only."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p63",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.94; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p86",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: table; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p96",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p97",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.96; not compared with the image."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p99",
+   "outcome": "pass_text_only",
+   "notes": "Chapter author list."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p101",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name list."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p102",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name list."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p103",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name list."
+  },
+  {
+   "key": "ht-ddc-provincial-sodium-guide-undated:p104",
+   "outcome": "reject",
+   "notes": "Running header only."
+  },
+  {
+   "key": "ht-ddc-sodium-education-undated:p3",
+   "outcome": "fix",
+   "replacements": [
+    [
+     "ด้านโรคเม็ดต่อ",
+     "ด้านโรคไม่ติดต่อ"
+    ]
+   ],
+   "notes": "All sodium amounts match the image."
+  },
+  {
+   "key": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005:p2",
+   "outcome": "fix",
+   "replacements": [
+    [
+     "ยีส น้ำมันมะพร้าว",
+     "ชีส น้ำมันมะพร้าว"
+    ],
+    [
+     "\n    *   ประกอบด้วย ไขมันเหลือง (ไม่มีเลว)",
+     ""
+    ],
+    [
+     "\n    *   ประกอบด้วย ไขมันปลา",
+     ""
+    ],
+    [
+     "ขนมเบบี้เคียว สำเร็จรูป",
+     "ขนมขบเคี้ยว สำเร็จรูป"
+    ],
+    [
+     "ปลาสวย,",
+     "ปลาสวาย,"
+    ],
+    [
+     "เมล็ดเขีย,",
+     "เมล็ดเจีย,"
+    ]
+   ],
+   "notes": "Lipid thresholds match the image; removed two lines OCR invented for the left-column labels."
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p2",
+   "outcome": "pass_text_only",
+   "notes": "Advisor list."
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p43",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.95; not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p44",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); flagged only for: dict 0.93, table; not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p45",
+   "outcome": "pass_text_only",
+   "notes": "Working-group name list."
+  },
+  {
+   "key": "ncd-ddc-dmht-care-management-report-2568:p64",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-quality-indicator-details-2565:p106",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-service-model-lessons-2568:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-service-model-lessons-2568:p2",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-dmht-service-model-lessons-2568:p50",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p1",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p95",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  },
+  {
+   "key": "ncd-ddc-health-literacy-fight-ncds-2566:p96",
+   "outcome": "pass_auto",
+   "notes": "Passed automatic checks (dictionary rate, numbers, invented-content patterns, repetition); not compared with the image."
+  }
+ ]
+}

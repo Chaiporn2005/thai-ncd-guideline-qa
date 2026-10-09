@@ -1,11 +1,11 @@
 {
-  "reviewed_at": "2026-10-05",
+  "reviewed_at": "2026-10-06",
   "records": [
     {
       "document_id": "dm-cpg-2566-revised-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -23,23 +23,49 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-remission-principles-2568-september",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-remission-service-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -54,13 +80,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-clinic-standards-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -78,13 +117,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-educator-standards-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -102,13 +154,26 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-siriraj-know-diabetes-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -125,19 +190,39 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-hypoglycemia-leaflet-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -154,19 +239,39 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-patient-foot-manual-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -183,19 +288,39 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-microvascular-leaflet-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -212,19 +337,39 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-macrovascular-leaflet-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -241,19 +386,39 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-retinopathy-leaflet-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -270,19 +435,39 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-needle-disposal-leaflet-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -299,19 +484,39 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-self-monitoring-leaflet-undated",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -328,29 +533,62 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "dm-siriraj-nursing-foot-ulcer-prevention-2559",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-remission-implementation-lessons-undated",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -368,17 +606,43 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-siriraj-geriatric-diabetes-diet-verified-20261005",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "dm-chulabhorn-diabetes-diet-brochure-verified-20261005",
@@ -392,29 +656,55 @@
     },
     {
       "document_id": "ht-guideline-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ht-siriraj-uncontrolled-opd-2564",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ht-ddc-hospital-management-update-2566",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -429,13 +719,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ht-ddc-provincial-sodium-guide-undated",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -450,13 +753,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ht-ddc-community-low-salt-lessons-undated",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -471,7 +787,20 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ht-ddc-low-salt-hospital-guide-undated",
@@ -496,9 +825,9 @@
     },
     {
       "document_id": "ht-ddc-sodium-education-undated",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -513,7 +842,20 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ht-ddc-low-sodium-77-province-menu-undated",
@@ -538,13 +880,26 @@
     },
     {
       "document_id": "ht-siriraj-hypertension-public-1587-verified-20261005",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ht-chulabhorn-sodium-nutrition-verified-20261005",
@@ -558,9 +913,9 @@
     },
     {
       "document_id": "lipid-guideline-2567",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -578,53 +933,118 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-rama-education-2562",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-siriraj-warning-1158",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-siriraj-thai-food-86",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-siriraj-trans-fat-1380",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-siriraj-diabetes-fat-7",
-      "rights_review_status": "team_educational_use_decision",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -641,89 +1061,200 @@
           "review_agent": "VIEWER_RIGHTS"
         }
       ],
-      "next_action": "send permission request to the Siriraj Diabetes Center (recommended); remove documents if refused",
+      "next_action": "attach the written Siriraj permission evidence if it exists; otherwise send the permission request (decision 0008) - the two records disagree, see rights_conflict_to_resolve",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "notes": "The user reported on 2026-10-06 that the team has obtained the Siriraj Diabetes Center's permission. Written evidence is not attached to this repository yet; attach it here when available.",
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      },
       "team_use_decision": {
         "decision": "NCD - 1Orchestra/decisions/0008-siriraj-educational-use.md",
         "date": "2026-10-08",
         "scope": "course study within the team only; local files only; no redistribution; cite issuer; keep notices",
         "issuer_permission": "not obtained"
+      },
+      "rights_conflict_to_resolve": {
+        "recorded_at": "2026-10-09",
+        "track_b": "team_decision (2026-10-06): the project owner reported that the Siriraj Diabetes Center's permission was obtained; written evidence is not attached; rag_ingestion_hold false",
+        "track_a": "team_use_decision / decision 0008 (2026-10-08): educational use only, issuer permission NOT obtained, permission request recommended, rag_ingestion_hold true",
+        "needed": "the team confirms which statement is true; attach the written permission, or send the request and keep rag_ingestion_hold true (or remove the nine documents) until it arrives"
       }
     },
     {
       "document_id": "lipid-siriraj-food-cholesterol-2564-review",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-siriraj-stroke-nutrition-1298",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-siriraj-metabolic-763",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-inmu-food-knowledge-all-ages",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-dms-stroke-public-manual",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "lipid-siriraj-cardiovascular-diet-brochure-verified-20261005",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-guideline-2565-revised",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -738,13 +1269,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-palliative-2566",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -759,13 +1303,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-treatment-leaflet-undated",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -780,13 +1337,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-anemia-guideline-2564",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -801,13 +1371,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-adult-renal-nutrition-guideline-2561",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -822,13 +1405,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-hemodialysis-plasma-manual-2561",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -843,13 +1439,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-public-kidney-prevention-tips",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -864,13 +1473,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-adult-glomerular-guideline-2561",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -885,13 +1507,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ckd-out-of-unit-hemodialysis-standards",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -906,13 +1541,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ncd-clinic-plus-2568-update",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -927,7 +1575,20 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "ncd-ddc-primary-care-guide-2568",
@@ -994,9 +1655,9 @@
     },
     {
       "document_id": "DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -1011,13 +1672,26 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     },
     {
       "document_id": "DDC-NCD-SERVICE-INDICATOR-REVIEW-2563-2566",
-      "rights_review_status": "pending",
+      "rights_review_status": "team_approved_private_study",
       "automated_extraction_hold": false,
-      "rag_ingestion_hold": true,
+      "rag_ingestion_hold": false,
       "redistribution_approved": false,
       "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
       "evidence": [
@@ -1032,13 +1706,489 @@
           "review_agent": "MANUAL_RIGHTS"
         }
       ],
-      "next_action": "review document-specific rights and adult/clinical inclusion before RAG"
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ckd-ddc-community-kidney-prevention-model-2568",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ckd-ddc-epidemiology-prevention-review-2567",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "dm-ddc-dmht-elearning-intermediate-2568",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "dm-dmthai-self-management-education-2568",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "dm-rama-nursing-t2dm-risk-case-management-2567",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "dm-siriraj-diabetes-must-know-undated",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "dm-siriraj-food-exchange-list-undated",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "dm-siriraj-healthy-diet-1477",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ht-ddc-dmht-elearning-basic-2565",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ht-ddc-dmht-elearning-intermediate-ii-2566",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ht-ths-air-pollution-article-2568",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ht-ths-public-leaflet-2567",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "lipid-jmhs-dyslipidemia-drugs-review-2563",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "lipid-rtamedj-hyperlipidemia-review-2566",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "lipid-thaijpen-severe-hypertriglyceridemia-2565",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ncd-ddc-dmht-care-management-report-2568",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ncd-ddc-dmht-quality-indicator-details-2565",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ncd-ddc-dmht-service-model-lessons-2568",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
+    },
+    {
+      "document_id": "ncd-ddc-health-literacy-fight-ncds-2566",
+      "rights_review_status": "team_approved_private_study",
+      "automated_extraction_hold": false,
+      "rag_ingestion_hold": false,
+      "redistribution_approved": false,
+      "local_purpose": "private_source_review_only; no copyright-law exception or reuse licence inferred",
+      "evidence": [],
+      "next_action": "content/population review before clinical claims",
+      "team_decision": {
+        "decided_at": "2026-10-06",
+        "decided_by": "team member Up2mEz (Track B owner), on behalf of the team",
+        "scope": "private study for the KMITL NLP course project: local extraction, normalization, chunking, embedding and retrieval inside the private repository and team-only storage",
+        "conditions": [
+          "no redistribution of PDFs or full page text",
+          "no public deployment",
+          "cite the source document in demo and report",
+          "copyright notices are kept"
+        ],
+        "redistribution_approved": false,
+        "external_processing": "Typhoon OCR API for flagged pages (2026-10-07)"
+      }
     }
   ],
-  "human_approvals": 0,
+  "human_approvals": 68,
   "notes": [
     "Public download and local private review do not approve RAG, redistribution or derived publications.",
     "Website-wide terms are triage evidence, not a document-specific legal conclusion.",
-    "Explicit Siriraj teaching-media notice:9 automatic-extraction holds; public copies kept for permission/content review."
+    "Explicit Siriraj teaching-media notice:9 automatic-extraction holds; public copies kept for permission/content review.",
+    "2026-10-06 team decision: 39 locally held PDFs (including the 9 Siriraj Diabetes Center media, permission reported by the user) are approved for private study and retrieval; redistribution remains unapproved. The 16 sources without a local PDF stay pending.",
+    "2026-10-07 team decision (Up2mEz): page images of flagged pages (empty with images, garbled, degraded) from the 39 team-approved documents may be sent to the Typhoon OCR API (model typhoon-ocr, typhoon-ocr 0.4.1) for private-study OCR, using two team members' own API keys. OCR output stays local and ocr_unreviewed until a person checks it.",
+    "2026-10-07 team decision extended to the 2026-10-07 expansion and browser-downloaded documents in normalized-v6 (private study, Typhoon OCR for flagged pages); redistribution remains unapproved."
   ]
 }

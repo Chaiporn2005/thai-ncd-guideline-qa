@@ -1,0 +1,40 @@
+{
+  "document_id": "ht-ddc-dmht-elearning-basic-2565",
+  "primary_group": "HT",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/02_hypertension/ht-ddc-dmht-elearning-basic-2565",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ht-ddc-dmht-elearning-basic-2565",
+    "work_id": "ht-ddc-dmht-elearning-basic-2565",
+    "edition_id": "ht-ddc-dmht-elearning-basic-2565",
+    "title": "คู่มือ E-learning หลักสูตรการเพิ่มสมรรถนะการจัดการ โรคเบาหวานและความดันโลหิตสูง (ระดับพื้นฐาน) Update 13/01/2022",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค กระทรวงสาธารณสุข",
+    "disease_tags": [
+      "hypertension",
+      "type_2_diabetes"
+    ],
+    "population": "health staff caring for adults with DM/HT",
+    "document_type": "service_manual",
+    "language": "th",
+    "edition": "Year 2565 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=12018",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/1201820220113074928.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "6a8bf819429720fef1164ffa0233949419888f2d99a4b1194d69b2e1507bac1d",
+    "pdf_pages": 142,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Title and PDF link extracted from the DDC/DNCD publication detail page (journal_detail.php); listed in the DNCD 'คู่มือ/หนังสือ' catalogue. HEAD 200 application/pdf. Basic-level volume, 'Update 13/01/2022'. Covers DM and HT jointly. Primary group was set to HT to balance the groups. 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py). 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

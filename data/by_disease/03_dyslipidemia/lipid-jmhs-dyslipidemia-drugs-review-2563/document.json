@@ -1,0 +1,39 @@
+{
+  "document_id": "lipid-jmhs-dyslipidemia-drugs-review-2563",
+  "primary_group": "LIPID",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/03_dyslipidemia/lipid-jmhs-dyslipidemia-drugs-review-2563",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "lipid-jmhs-dyslipidemia-drugs-review-2563",
+    "work_id": "lipid-jmhs-dyslipidemia-drugs-review-2563",
+    "edition_id": "lipid-jmhs-dyslipidemia-drugs-review-2563",
+    "title": "ยาสำหรับการรักษาภาวะไขมันในเลือดผิดปกติในการป้องกันโรคหลอดเลือดหัวใจ",
+    "publisher": "Journal of Medicine and Health Sciences (ThaiJO journal 'jmhs'); author Surachet Loetthiraphan",
+    "disease_tags": [
+      "dyslipidemia"
+    ],
+    "population": "adults (clinician audience)",
+    "document_type": "report",
+    "language": "th",
+    "edition": "Year 2563 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://he01.tci-thaijo.org/index.php/jmhs/article/view/241832",
+    "download_url": "https://he01.tci-thaijo.org/index.php/jmhs/article/download/241832/164482",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "b1b498e9577b4e8f4fac8bbd10a087d2a4515c339f6f3d7f56eea5c8137afff7",
+    "pdf_pages": 13,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). ThaiJO page gives the Thai title, a review article, vol. 27 no. 1 (Apr 2020 = 2563). It covers statins, ezetimibe and PCSK9 inhibitors. The page says the article is bilingual, so confirm that the body is mostly Thai. The Thai journal name, the host institution and the Thai spelling of the author's name were not on the page I read, so the publisher field holds only what the page showed. Fill those in from the PDF masthead. It predates the 2567 RCPT guideline, so some recommendations may be outdated. Journal review/case article typed as report (schema has no article type). Local preparation 2026-10-07 (Track B): downloaded review copy, SHA-256 and page count recorded; normalized into normalized-v5 with OCR pages reviewed (AI-assisted); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

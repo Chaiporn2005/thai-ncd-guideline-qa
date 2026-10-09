@@ -1,0 +1,62 @@
+{
+  "document_id": "dm-siriraj-nursing-prediabetes-lifestyle-2563",
+  "title": "คู่มือการพยาบาล การปรับเปลี่ยนพฤติกรรมชีวิตในผู้ใหญ่ที่มีภาวะก่อนเกิดโรคเบาหวานชนิดที่ 2",
+  "source_sha256": "9528be902df2d84aa5a5161df0cc96b9a59986ee0544561c2fa7b919b74e4483",
+  "pdf_pages": 87,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 18,
+      "skip_low_agreement": 4,
+      "unchanged": 8
+    },
+    "tounicode_entries_written_or_changed": 21
+  },
+  "normalization_totals": {
+    "letter_spacing_joined": 2,
+    "sara_am_composed": 1194,
+    "space_before_following_vowel": 21,
+    "symbol_pua_removed": 27
+  },
+  "status_counts": {
+    "empty": 1,
+    "ok": 86
+  },
+  "status_pages": {
+    "empty": [
+      81
+    ]
+  },
+  "removed_edge_lines": 70,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "3fbb911647c3af5e699e8ed2309c17cf5dc3b41a9a6baab4a2fad3eff75a5804",
+  "created_at": "2026-10-08T10:50:08.090800+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v7",
+    "pages_jsonl_sha256": "8c0b0553494fadf813ace63bcb126dd22798e0f2165157fd1b1bff93fdaf9340",
+    "page_tag_decisions": "page_tag_decisions_normalized-v7_final.json"
+  },
+  "population_counts": {
+    "general": 87
+  },
+  "index_excluded_pages": [
+    82,
+    83,
+    85,
+    87
+  ]
+}

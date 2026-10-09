@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page Tag Review</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1d2330;--muted:#5d6675;--line:#d9dee6;--mark:#ffe58a;--accent:#2457c5;--ped:#d8ecff;--preg:#ffe0ef;--mix:#efe3ff;--eld:#e2f3d6;--warn:#fff3cd;--bad:#ffd9d9}
+@media (prefers-color-scheme:dark){:root{--bg:#14171c;--card:#1d2128;--ink:#e6e9ee;--muted:#9aa3b2;--line:#323844;--mark:#6b5a12;--accent:#7aa2ff;--ped:#1d3550;--preg:#4a2238;--mix:#35284d;--eld:#27401f;--warn:#4a4020;--bad:#5a2a2a}}
+*{box-sizing:border-box}body{margin:0;font-family:"Sarabun","Tahoma",sans-serif;background:var(--bg);color:var(--ink);font-size:14px}
+header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:8px 16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button,select,input{font:inherit;padding:4px 9px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+button{cursor:pointer}button.primary,button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pill{padding:2px 8px;border-radius:12px;border:1px solid var(--line);font-size:12px;color:var(--muted)}
+main{padding:12px 16px;max-width:1500px;margin:auto}.hide{display:none!important}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:14px}@media(max-width:900px){.layout{grid-template-columns:1fr}}
+.docs{background:var(--card);border:1px solid var(--line);border-radius:10px;max-height:82vh;overflow:auto}
+.docs div{padding:6px 10px;border-bottom:1px solid var(--line);cursor:pointer;word-break:break-all}.docs div.sel{background:var(--warn)}.docs div.done{opacity:.55}
+.panel,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:14px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+table{width:100%;border-collapse:collapse}td,th{border-top:1px solid var(--line);padding:5px;text-align:left;vertical-align:top}
+tr.pediatric{background:var(--ped)}tr.pregnancy{background:var(--preg)}tr.mixed{background:var(--mix)}tr.elderly{background:var(--eld)}tr.noidx{opacity:.45}
+mark{background:var(--mark);color:inherit}.snip{color:var(--muted);font-size:13px;word-break:break-word}.ch{font-size:12px;color:var(--muted);max-width:240px}
+.hint{font-size:12px;color:var(--accent)}a{color:var(--accent)}
+.card.decided{opacity:.75}.reason{color:var(--muted)}.c-personal{font-weight:700;color:#b3261e}.c-org{color:#1e7a3c}.c-ambiguous{color:#9a6a00;font-weight:700}
+.help{color:var(--muted);font-size:13px;line-height:1.5}
+.samples{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:8px}
+.sample{border:1px solid var(--line);border-radius:8px;padding:6px;background:var(--bg)}.sample img{width:100%;display:block;border:1px solid var(--line);background:#fff}
+.noimg{padding:30px 8px;text-align:center;color:var(--muted)}
+</style></head><body>
+<header><b>Page Tag Review</b>
+<button id="tab-gr" class="on">0. กลุ่มที่แนะนำให้ตัด/ลบ</button><button id="tab-pop">1. ประชากร</button><button id="tab-pdpa">2. ข้อมูลส่วนบุคคล (PDPA)</button><button id="tab-lc">3. หน้าเนื้อหาน้อย/ข้อความเสีย</button>
+<span class="pill" id="progress"></span>
+<label>ผู้ตรวจ <input id="reviewer" size="10" placeholder="ชื่อ"></label>
+<label class="pill" style="cursor:pointer">นำเข้าผลที่เคย export <input type="file" id="import" accept=".json" hidden></label>
+<button class="primary" id="export">Export JSON</button><span class="pill">บันทึกอัตโนมัติในเบราว์เซอร์นี้ ไม่มีการอัปโหลด</span></header>
+<main>
+<section id="gr">
+<p class="help">แต่ละกลุ่มมีภาพหน้าตัวอย่าง (สุ่มกระจายตามเอกสาร) ดูว่าทั้งกลุ่มตัดหรือลบได้จริงไหม แล้วกดปุ่มของกลุ่ม หรือกด <b>ดูทุกหน้า</b> เพื่อเลือกรายหน้า
+(ตัดสินรายหน้าทีหลังจะทับการตัดสินระดับกลุ่ม) · คลิกภาพเพื่อเปิด PDF หน้านั้น</p>
+<div id="glist"></div>
+</section>
+<section id="pop" class="hide">
+<p class="help">ป้ายประชากรบอกว่า <b>หน้านั้นเขียนสำหรับใคร</b> ไม่ใช่ว่ามีคำนั้นในหน้า: ระบบดูชื่อบท ความหนาแน่นของคำเฉพาะกลุ่ม และตัดคำที่ไม่ใช่เนื้อหา (ชื่อองค์กร, รายการอ้างอิง, ข้อควรระวังในบทผู้ใหญ่) ·
+หน้าที่แค่เอ่ยถึงผ่าน ๆ ไม่ถูกแนะนำ (ติ๊ก "แสดงหน้าที่แค่เอ่ยถึง" เพื่อดู) · <b>ปนกัน</b> = เนื้อหาผู้ใหญ่ทั่วไปมีส่วนเฉพาะกลุ่มปนอยู่ (ยังค้นพบได้ในคำถามผู้ใหญ่) ·
+ทุกหน้าที่ไม่ติดป้ายถือเป็น <b>ทั่วไป/ผู้ใหญ่</b> · ความมั่นใจ <b>สูง</b> = ชื่อบทและหน้าตรงกัน หรือหน้าเด่นชัดมาก</p>
+<div class="layout"><div class="docs" id="docs"></div><div class="panel" id="doc"></div></div>
+</section>
+<section id="pdpa" class="hide">
+<p class="help">หน้าที่ต้องตัดสินเรื่องข้อมูลส่วนบุคคล · <b>เก็บไว้</b> = เข้า index ตามเดิม · <b>ลบเฉพาะที่ติ๊ก</b> = แทนค่าที่ติ๊กด้วยป้าย เช่น [เบอร์โทรบุคคล] ·
+<b>ไม่เข้า index</b> = ตัดทั้งหน้า (ข้อความหายจากไฟล์) · <b>แท็กรายชื่อบุคคล</b> = เก็บข้อความไว้ในระบบพร้อมแท็ก PDPA แต่ไม่ให้ค้น ·
+ไม่ต้องตัดสิน (เก็บอัตโนมัติ): ชื่อผู้จัดทำแผ่นพับ/อินโฟกราฟิก, ชื่อไม่กี่คนในเนื้อหา, เบอร์/อีเมลของหน่วยงาน</p>
+<div class="tools"><label>แสดง <select id="pfilter"><option value="todo">ยังไม่ตัดสิน</option><option value="all">ทั้งหมด</option>
+<option value="name_list">หน้ารายชื่อทั้งหน้า</option><option value="contact_personal">ข้อมูลติดต่อส่วนบุคคล</option><option value="review">ต้องดูเอง (กำกวม)</option><option value="case">เคสผู้ป่วย</option></select></label>
+<button id="accept-all">ยอมรับคำแนะนำของหน้าที่แสดงอยู่ทั้งหมด</button></div>
+<div id="plist"></div>
+</section>
+<section id="lc" class="hide">
+<p class="help">หน้าที่ถ้าเข้า index จะกลายเป็น chunk ที่ไม่มีประโยชน์หรือเป็นขยะ · <b>ไม่เข้า index</b> = ตัดหน้านี้ออก (ข้อความเดิมยังอยู่ในไฟล์ให้ตรวจย้อน) · <b>เก็บไว้</b> = เข้า index ตามเดิม ·
+<b>ส่ง OCR ใหม่</b> (เฉพาะข้อความเสีย) = ไม่เข้า index จนกว่าจะ OCR และตรวจใหม่ · หน้าที่เก็บแต่สั้น chunker จะรวมกับหน้าข้างเคียงให้ภายหลัง</p>
+<div class="tools"><label>ชนิด <select id="lkind"></select></label>
+<label>แสดง <select id="lfilter"><option value="todo">ยังไม่ตัดสิน</option><option value="all">ทั้งหมด</option></select></label>
+<button id="lc-accept">ยอมรับคำแนะนำของหน้าที่แสดงอยู่ทั้งหมด</button></div>
+<div id="llist"></div>
+</section>
+</main>
+<script>
+const DATA = __DATA__;
+const STORE = "page-tags-" + DATA.review_id;
+const LABELS = {"": "ทั่วไป/ผู้ใหญ่", pediatric: "เด็ก/วัยรุ่น", pregnancy: "ตั้งครรภ์", elderly: "ผู้สูงอายุ", mixed: "ปนกัน (ผู้ใหญ่ + กลุ่มเฉพาะ)"};
+const CONF = {high: "สูง", medium: "กลาง"};
+const GROUP_LABELS = {case: "เคสผู้ป่วย", name_list: "หน้ารายชื่อทั้งหน้า", contact_personal: "ข้อมูลติดต่อส่วนบุคคล", review: "ต้องดูเอง"};
+const CLASS_LABELS = {none: "", credits: "ชื่อผู้จัดทำ", mention: "เอ่ยชื่อ", name_partial: "รายชื่อปนเนื้อหา", name_list: "รายชื่อทั้งหน้า"};
+const CONTACT_LABELS = {org: "หน่วยงาน", personal: "บุคคล", ambiguous: "กำกวม"};
+const ACTIONS = {keep: "เก็บไว้", redact: "ลบเฉพาะที่ติ๊ก", exclude_page: "ไม่เข้า index (ตัดทั้งหน้า)", tag_name_list: "แท็กรายชื่อบุคคล (เก็บ ไม่ index)"};
+const LC_ACTIONS = {exclude: "ไม่เข้า index", keep: "เก็บไว้", reocr: "ส่ง OCR ใหม่"};
+const GROUP_TO_PD = {exclude: "exclude_page", tag: "tag_name_list", redact: "redact", keep: "keep"};
+let S = {pop: {}, done: {}, pd: {}, lc: {}, reviewer: "", showAll: false, current: null};
+try { Object.assign(S, JSON.parse(localStorage.getItem(STORE) || "{}")); } catch (e) {}
+function save(){ try { localStorage.setItem(STORE, JSON.stringify(S)); } catch (e) {} progress(); }
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function snip(c){ return esc(c[0]) + "<mark>" + esc(c[1]) + "</mark>" + esc(c[2]); }
+const $ = id => document.getElementById(id);
+const pdIndex = Object.fromEntries(DATA.personal.map(p => [p.key, p]));
+
+function decided(p){ return !!(S.pd[p.key] && S.pd[p.key].decided); }
+function pdState(p){ return S.pd[p.key] || {action: p.suggest, redact: p.redact.slice(), decided: false}; }
+function progress(){
+  const docsDone = DATA.docs.filter(d => S.done[d.document_id]).length;
+  $("progress").textContent = `ประชากร ${docsDone}/${DATA.docs.length} เอกสาร · PDPA ${DATA.personal.filter(decided).length}/${DATA.personal.length} หน้า · เนื้อหาน้อย ${DATA.lowcontent.filter(p => S.lc[p.key]).length}/${DATA.lowcontent.length} หน้า`;
+}
+function tab(which){
+  ["gr", "pop", "pdpa", "lc"].forEach(t => { $(t).classList.toggle("hide", which !== t); $("tab-" + t).classList.toggle("on", which === t); });
+}
+$("tab-gr").onclick = () => { renderGroups(); tab("gr"); }; $("tab-pop").onclick = () => tab("pop");
+$("tab-pdpa").onclick = () => tab("pdpa"); $("tab-lc").onclick = () => tab("lc");
+$("reviewer").value = S.reviewer || ""; $("reviewer").oninput = e => { S.reviewer = e.target.value.trim(); save(); };
+
+// ---------- groups ----------
+function groupAction(g, k){
+  if (g.source === "lc") return S.lc[k] || null;
+  const p = pdIndex[k]; if (!decided(p)) return null;
+  const a = S.pd[k].action; return Object.keys(GROUP_TO_PD).find(x => GROUP_TO_PD[x] === a) || a;
+}
+function setGroup(g, action){
+  g.keys.forEach(k => {
+    if (g.source === "lc") S.lc[k] = action;
+    else { const p = pdIndex[k]; S.pd[k] = {action: GROUP_TO_PD[action], redact: action === "redact" ? p.redact.slice() : p.redact.map(() => false), decided: true}; }
+  });
+  save(); renderGroups();
+}
+function renderGroups(){
+  $("glist").innerHTML = DATA.groups.map((g, gi) => {
+    const counts = {}; g.keys.forEach(k => { const a = groupAction(g, k); if (a) counts[a] = (counts[a] || 0) + 1; });
+    const status = g.actions.map(a => counts[a.id] ? `${a.label.split(" ")[0]} ${counts[a.id]}` : "").filter(Boolean).join(" · ") || "ยังไม่ตัดสิน";
+    return `<div class="card"><h3 style="margin:0 0 4px">${esc(g.label)} <span class="pill">${g.keys.length} หน้า</span>
+      <span class="pill">${g.documents} เอกสาร</span> <span class="pill">${esc(status)}</span></h3>
+      <div class="reason">${esc(g.why)}</div>
+      <div class="tools">${g.actions.map((a, ai) => `<button class="${ai === 0 ? "primary" : ""}" data-g="${gi}" data-a="${a.id}">${esc(a.label)}</button>`).join("")}
+      <button data-g="${gi}" data-a="view">ดูทุกหน้าเพื่อเลือกรายหน้า</button></div>
+      <div class="samples">${g.samples.map(s => `<div class="sample"><a href="${s.pdf}#page=${s.p}" target="_blank">${s.img ? `<img src="${s.img}">` : "<div class=noimg>ไม่มีภาพ (เปิด PDF)</div>"}</a>
+        <div class="snip"><b>${esc(s.key)}</b></div><div class="snip">${esc(s.text)}</div></div>`).join("")}</div></div>`;
+  }).join("") || "<p>ไม่มีกลุ่มที่แนะนำ</p>";
+  $("glist").querySelectorAll("button[data-g]").forEach(b => b.onclick = () => {
+    const g = DATA.groups[+b.dataset.g];
+    if (b.dataset.a === "view") {
+      if (g.source === "lc") { $("lkind").value = g.kind; $("lfilter").value = "all"; renderLc(); tab("lc"); }
+      else { $("pfilter").value = g.kind; renderPersonal(); tab("pdpa"); }
+      return;
+    }
+    const label = g.actions.find(a => a.id === b.dataset.a).label;
+    if (!confirm(`${label}: "${g.label}" ${g.keys.length} หน้า?`)) return;
+    setGroup(g, b.dataset.a);
+  });
+}
+
+// ---------- population ----------
+function key(doc, p){ return doc + ":p" + p; }
+function renderDocs(){
+  $("docs").innerHTML = DATA.docs.map(d => {
+    const n = d.pages.filter(p => S.pop[key(d.document_id, p.p)]).length;
+    return `<div data-id="${esc(d.document_id)}" class="${d.document_id === S.current ? "sel" : ""} ${S.done[d.document_id] ? "done" : ""}">
+      ${S.done[d.document_id] ? "✓ " : ""}${esc(d.document_id)}<br><span class="pill">แนะนำ ${d.suggested_pages} หน้า</span> <span class="pill">ติดป้ายแล้ว ${n}</span></div>`;
+  }).join("");
+  $("docs").querySelectorAll("div[data-id]").forEach(el => el.onclick = () => { S.current = el.dataset.id; save(); renderDocs(); renderDoc(); });
+}
+function setLabel(k, lab, quiet){ if (lab) S.pop[k] = lab; else delete S.pop[k]; if (!quiet) save(); }
+function renderDoc(){
+  const d = DATA.docs.find(x => x.document_id === S.current);
+  if (!d) { $("doc").innerHTML = "<p>เลือกเอกสารทางซ้าย</p>"; return; }
+  const opts = Object.entries(LABELS).map(([v, t]) => `<option value="${v}">${t}</option>`).join("");
+  const rows = d.pages.filter(p => p.suggest || S.pop[key(d.document_id, p.p)] || (S.showAll && Object.keys(p.mention).length));
+  $("doc").innerHTML = `<h3 style="margin:0 0 4px">${esc(d.document_id)}</h3>
+   <div class="tools"><button id="use-high">ใช้คำแนะนำที่ความมั่นใจสูง</button><button id="use-all">ใช้คำแนะนำทั้งหมด</button>
+   <span>ช่วงหน้า <input id="r-from" size="4" type="number"> ถึง <input id="r-to" size="4" type="number">
+   <select id="r-label">${opts}</select><button id="r-apply">ติดป้ายทั้งช่วง</button></span>
+   <label><input type="checkbox" id="show-all" ${S.showAll ? "checked" : ""}> แสดงหน้าที่แค่เอ่ยถึง</label>
+   <label><input type="checkbox" id="doc-done" ${S.done[d.document_id] ? "checked" : ""}> <b>ตรวจเอกสารนี้เสร็จ</b></label></div>
+   <table><tr><th>หน้า PDF</th><th>ป้าย</th><th>บท / ความมั่นใจ</th><th>เหตุผลที่ระบบเสนอ / ตัวอย่างข้อความ</th></tr>
+   ${rows.map(p => {
+     const k = key(d.document_id, p.p), lab = S.pop[k] || "";
+     const why = p.suggest ? p.reasons.map(r => `<div>${esc(r)}</div>`).join("") + p.evidence.map(e => `<div class="snip">…${snip(e)}…</div>`).join("")
+       : `<div class="snip">เอ่ยถึงผ่าน ๆ: ${Object.entries(p.mention).map(([l, n]) => `${LABELS[l]} ×${n}`).join(", ")} — ${esc(p.first)}</div>`;
+     return `<tr class="${lab || p.suggest || ""} ${p.indexable ? "" : "noidx"}"><td><a href="${d.pdf}#page=${p.p}" target="_blank">p${p.p}</a></td>
+       <td><select data-k="${esc(k)}">${opts}</select>${p.suggest && !lab ? `<div class="hint">แนะนำ: ${LABELS[p.suggest]}</div>` : ""}</td>
+       <td class="ch">${esc(p.chapter || "")}${p.confidence ? `<div class="hint">ความมั่นใจ ${CONF[p.confidence]}</div>` : ""}</td><td>${why}</td></tr>`;
+   }).join("")}</table>`;
+  $("doc").querySelectorAll("select[data-k]").forEach(el => { el.value = S.pop[el.dataset.k] || ""; el.onchange = () => { setLabel(el.dataset.k, el.value); renderDoc(); renderDocs(); }; });
+  const useSuggestions = onlyHigh => { d.pages.forEach(p => { const k = key(d.document_id, p.p);
+    if (p.suggest && !S.pop[k] && (!onlyHigh || p.confidence === "high")) S.pop[k] = p.suggest; }); save(); renderDoc(); renderDocs(); };
+  $("use-high").onclick = () => useSuggestions(true); $("use-all").onclick = () => useSuggestions(false);
+  $("r-apply").onclick = () => {
+    const a = +$("r-from").value, b = +$("r-to").value, lab = $("r-label").value;
+    if (!a || !b || b < a) { alert("ใส่ช่วงหน้าให้ถูก"); return; }
+    d.pages.forEach(p => { if (p.p >= a && p.p <= b) setLabel(key(d.document_id, p.p), lab, true); }); save(); renderDoc(); renderDocs();
+  };
+  $("show-all").onchange = e => { S.showAll = e.target.checked; save(); renderDoc(); };
+  $("doc-done").onchange = e => { S.done[d.document_id] = e.target.checked; save(); renderDocs(); };
+}
+
+// ---------- personal data ----------
+function pdItems(){
+  const f = $("pfilter").value;
+  return DATA.personal.filter(p => f === "all" ? true : f === "todo" ? !decided(p) : p.group === f);
+}
+function renderPersonal(){
+  const items = pdItems();
+  $("plist").innerHTML = items.slice(0, 120).map(p => {
+    const st = pdState(p);
+    return `<div class="card ${decided(p) ? "decided" : ""}" data-k="${esc(p.key)}">
+     <div><b>${esc(p.key)}</b> ${p.pdf ? `<a href="${p.pdf}#page=${p.p}" target="_blank">เปิด PDF</a>` : ""}
+     <span class="pill">${GROUP_LABELS[p.group]}</span> ${CLASS_LABELS[p.page_class] ? `<span class="pill">หน้า: ${CLASS_LABELS[p.page_class]}</span>` : ""}
+     <span class="pill">แนะนำ: ${ACTIONS[p.suggest]}</span></div><div class="reason">${esc(p.reason)}</div>
+     <div class="tools">${Object.entries(ACTIONS).map(([v, t]) => `<label><input type="radio" name="a-${esc(p.key)}" value="${v}" ${st.action === v && decided(p) ? "checked" : ""}> ${t}</label>`).join("")}</div>
+     <table><tr><th>ลบ</th><th>ชนิด</th><th>ระบบเห็นว่า</th><th>ที่เก็บ</th><th>บริบท</th></tr>
+     ${p.findings.map((x, i) => `<tr><td><input type="checkbox" data-i="${i}" ${st.redact[i] ? "checked" : ""}></td><td>${esc(x.type)}</td>
+       <td>${x.contact ? `<span class="c-${x.contact}">${CONTACT_LABELS[x.contact]}</span><div class="snip">${esc(x.why || "")}</div>` : ""}</td>
+       <td class="snip">${esc(x.field)}</td><td>…${snip(x.context)}…</td></tr>`).join("")}</table></div>`;
+  }).join("") + (items.length > 120 ? `<p class="help">แสดง 120 จาก ${items.length} หน้า ตัดสินแล้วจะหายจากมุมมอง "ยังไม่ตัดสิน"</p>` : "") || "<p>ไม่มีหน้าในมุมมองนี้</p>";
+  $("plist").querySelectorAll(".card").forEach(card => {
+    const p = pdIndex[card.dataset.k];
+    card.querySelectorAll("input[type=radio]").forEach(r => r.onchange = () => { const st = pdState(p); st.action = r.value; st.decided = true; S.pd[p.key] = st; save(); card.classList.add("decided"); });
+    card.querySelectorAll("input[type=checkbox]").forEach(c => c.onchange = () => { const st = pdState(p); st.redact[+c.dataset.i] = c.checked; S.pd[p.key] = st; save(); });
+  });
+}
+$("pfilter").onchange = renderPersonal;
+$("accept-all").onclick = () => {
+  const items = pdItems().slice(0, 120);
+  if (!confirm(`ยอมรับคำแนะนำ ${items.length} หน้าที่แสดงอยู่? (เปลี่ยนทีหลังได้)`)) return;
+  items.forEach(p => { if (!decided(p)) S.pd[p.key] = Object.assign(pdState(p), {decided: true}); });
+  save(); renderPersonal();
+};
+
+// ---------- low content ----------
+const KINDS = {garbage_text_layer: "ข้อความเสีย (รหัสฟอนต์)", nav_only: "ปุ่มนำทางอย่างเดียว", almost_empty: "แทบไม่มีข้อความ",
+  divider: "หน้าคั่นบท/ภาคผนวก", figure_caption: "คำบรรยายรูป/ตาราง (เนื้อหาอยู่ในภาพ)", cover: "ปก/หน้าชื่อเรื่อง", back: "ปกหลัง/ท้ายเล่ม", short: "ข้อความน้อยกลางเล่ม"};
+const kindCounts = {}; DATA.lowcontent.forEach(p => kindCounts[p.kind] = (kindCounts[p.kind] || 0) + 1);
+$("lkind").innerHTML = `<option value="all">ทุกชนิด (${DATA.lowcontent.length})</option>` +
+  Object.entries(KINDS).filter(([k]) => kindCounts[k]).map(([k, t]) => `<option value="${k}">${t} (${kindCounts[k]})</option>`).join("");
+function lcItems(){
+  const kind = $("lkind").value, f = $("lfilter").value;
+  return DATA.lowcontent.filter(p => (kind === "all" || p.kind === kind) && (f === "all" || !S.lc[p.key]));
+}
+function lcActions(p){ return Object.entries(LC_ACTIONS).filter(([v]) => v !== "reocr" || p.kind === "garbage_text_layer"); }
+function renderLc(){
+  const items = lcItems();
+  $("llist").innerHTML = items.slice(0, 120).map(p => `<div class="card ${S.lc[p.key] ? "decided" : ""}" data-k="${esc(p.key)}">
+    <div><b>${esc(p.key)}</b> ${p.pdf ? `<a href="${p.pdf}#page=${p.p}" target="_blank">เปิด PDF</a>` : ""}
+    <span class="pill">${KINDS[p.kind]}</span> <span class="pill">เนื้อหา ${p.signal} ตัวอักษร</span> <span class="pill">แนะนำ: ${LC_ACTIONS[p.suggest]}</span></div>
+    <div class="tools">${lcActions(p).map(([v, t]) => `<label><input type="radio" name="l-${esc(p.key)}" value="${v}" ${S.lc[p.key] === v ? "checked" : ""}> ${t}</label>`).join("")}</div>
+    <div class="snip">${esc(p.text.slice(0, 300))}</div></div>`).join("") +
+    (items.length > 120 ? `<p class="help">แสดง 120 จาก ${items.length} หน้า ตัดสินแล้วจะหายจากมุมมอง "ยังไม่ตัดสิน"</p>` : "") || "<p>ไม่มีหน้าในมุมมองนี้</p>";
+  $("llist").querySelectorAll(".card").forEach(card => card.querySelectorAll("input[type=radio]").forEach(r =>
+    r.onchange = () => { S.lc[card.dataset.k] = r.value; save(); card.classList.add("decided"); }));
+}
+$("lkind").onchange = renderLc; $("lfilter").onchange = renderLc;
+$("lc-accept").onclick = () => {
+  const items = lcItems().slice(0, 120);
+  if (!confirm(`ยอมรับคำแนะนำ ${items.length} หน้าที่แสดงอยู่? (เปลี่ยนทีหลังได้)`)) return;
+  items.forEach(p => { if (!S.lc[p.key]) S.lc[p.key] = p.suggest; }); save(); renderLc();
+};
+
+// ---------- import / export ----------
+$("import").onchange = async e => {
+  const file = e.target.files[0]; if (!file) return;
+  let data; try { data = JSON.parse(await file.text()); } catch (err) { alert("อ่านไฟล์ไม่ได้: " + err.message); return; }
+  const lcIndex = Object.fromEntries(DATA.lowcontent.map(p => [p.key, p]));
+  let lc = 0, pd = 0, pop = 0; const skipped = [];
+  (data.lowcontent || []).forEach(d => {
+    const p = lcIndex[d.key]; if (!p) return;
+    if (p.kind === "garbage_text_layer" && d.action === "keep") { skipped.push(d.key); return; }  // a garbled text layer cannot be kept as it is
+    S.lc[d.key] = d.action; lc++;
+  });
+  (data.personal || []).forEach(d => {
+    const p = pdIndex[d.key]; if (!p) return;
+    const redact = p.findings.map(f => (d.redact || []).some(r => r.value === f.value && r.type === f.type));
+    S.pd[d.key] = {action: d.action, redact, decided: true}; pd++;
+  });
+  (data.population || []).forEach(d => d.ranges.forEach(([a, b, lab]) => { for (let q = a; q <= b; q++) { S.pop[key(d.document_id, q)] = lab; pop++; } }));
+  if (data.reviewer && !S.reviewer) { S.reviewer = data.reviewer; $("reviewer").value = S.reviewer; }
+  save(); renderDocs(); renderDoc(); renderPersonal(); renderLc(); renderGroups();
+  alert(`นำเข้า: เนื้อหาน้อย ${lc} หน้า, PDPA ${pd} หน้า, ป้ายประชากร ${pop} หน้า` +
+    (skipped.length ? `\n\nไม่นำเข้า ${skipped.length} หน้าข้อความเสียที่เคยเลือก "เก็บไว้": เก็บทั้งอย่างนั้นจะถูก embed เป็นขยะ กรุณาเลือกใหม่ (ไม่เข้า index หรือส่ง OCR ใหม่)` : ""));
+  e.target.value = "";
+};
+$("export").onclick = () => {
+  if (!S.reviewer) { alert("ใส่ชื่อผู้ตรวจก่อน"); return; }
+  const population = [];
+  DATA.docs.forEach(d => {
+    const ranges = []; let cur = null;
+    d.pages.forEach(p => {
+      const lab = S.pop[key(d.document_id, p.p)] || "";
+      if (cur && cur[2] === lab && p.p === cur[1] + 1) cur[1] = p.p;
+      else { if (cur && cur[2]) ranges.push(cur); cur = [p.p, p.p, lab]; }
+    });
+    if (cur && cur[2]) ranges.push(cur);
+    if (ranges.length || S.done[d.document_id]) population.push({document_id: d.document_id, reviewed: !!S.done[d.document_id], ranges});
+  });
+  const personal = DATA.personal.filter(decided).map(p => {
+    const st = S.pd[p.key];
+    return {key: p.key, action: st.action, redact: st.action === "redact" ? p.findings.filter((x, i) => st.redact[i]).map(x => ({type: x.type, field: x.field, value: x.value})) : []};
+  });
+  const lowcontent = DATA.lowcontent.filter(p => S.lc[p.key]).map(p => ({key: p.key, kind: p.kind, action: S.lc[p.key]}));
+  const out = {review_id: DATA.review_id, corpus_version: DATA.corpus_version, reviewer: S.reviewer, exported_at: new Date().toISOString(),
+    population, personal, personal_undecided: DATA.personal.length - personal.length,
+    lowcontent, lowcontent_undecided: DATA.lowcontent.length - lowcontent.length,
+    population_docs_not_reviewed: DATA.docs.filter(d => !S.done[d.document_id]).map(d => d.document_id)};
+  const blob = new Blob([JSON.stringify(out, null, 1)], {type: "application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `page_tag_decisions_${DATA.corpus_version}.json`; a.click();
+};
+
+if (!S.current && DATA.docs.length) S.current = DATA.docs[0].document_id;
+renderDocs(); renderDoc(); renderPersonal(); renderLc(); renderGroups(); progress();
+</script></body></html>

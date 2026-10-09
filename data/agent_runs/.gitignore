@@ -35,3 +35,20 @@
 !/20261005-ncd-plus10/HT_research.md
 !/20261005-ncd-plus10/LIPID.jsonl
 !/20261005-ncd-plus10/LIPID_research.md
+
+# 2026-10-07 Codex audit: task prompts only (findings hold page text and stay local)
+!/20261007-codex-audit/TASK.md
+!/20261007-codex-audit/TASK2.md
+
+# 2026-10-08 population experiment: task prompt and metrics only (silver questions quote document text)
+!/20261008-population-experiment/TASK.md
+!/20261008-population-experiment/SILVER_SUMMARY.md
+!/20261008-population-experiment/results.md
+!/20261008-population-experiment/results.json
+
+# 2026-10-08 Codex check of the re-OCR: task prompt, summaries and validation only (findings quote page text)
+!/20261008-codex-reocr/TASK.md
+!/20261008-codex-reocr/SUMMARY_part*.md
+!/20261008-codex-reocr/validation.json
+
+# 2026-10-08 booklet side-tab check: images and the report hold page content and stay local

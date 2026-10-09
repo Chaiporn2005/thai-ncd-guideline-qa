@@ -1,0 +1,55 @@
+{
+  "document_id": "lipid-chulabhorn-dyslipidemia-nutrition-verified-20261005",
+  "title": "ภาวะไขมันในเลือดสูง (Dyslipidemia)",
+  "source_sha256": "74a943d7abe3224c386182a0ebbe8b180e2f49fbabc73b484971d2c8e3603fb2",
+  "pdf_pages": 2,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "reduced_cluster_labels": 4
+    },
+    "tounicode_entries_written_or_changed": 22
+  },
+  "normalization_totals": {
+    "space_before_following_vowel": 4,
+    "space_before_mark": 9
+  },
+  "status_counts": {
+    "ocr_unreviewed": 1,
+    "ok_minor_issues": 1
+  },
+  "status_pages": {
+    "ok_minor_issues": [
+      1
+    ],
+    "ocr_unreviewed": [
+      2
+    ]
+  },
+  "removed_edge_lines": 0,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "15d783f1f15049a5f4ee0716ca1bc519c7b18b64bc17019979aa225621a70e0b",
+  "created_at": "2026-10-08T19:51:48.612917+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v10",
+    "pages_jsonl_sha256": "15d783f1f15049a5f4ee0716ca1bc519c7b18b64bc17019979aa225621a70e0b"
+  },
+  "population_counts": {
+    "general": 2
+  },
+  "index_excluded_pages": []
+}

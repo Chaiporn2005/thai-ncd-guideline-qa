@@ -1,0 +1,41 @@
+{
+  "document_id": "ncd-ddc-dmht-service-model-lessons-2568",
+  "primary_group": "NCD_SERVICE",
+  "selected_candidate": true,
+  "exclusion_reason": null,
+  "folder": "data/by_disease/05_ncd_clinic_plus/ncd-ddc-dmht-service-model-lessons-2568",
+  "canonical_source": "data/manifests/documents.jsonl",
+  "canonical_document": {
+    "document_id": "ncd-ddc-dmht-service-model-lessons-2568",
+    "work_id": "ncd-ddc-dmht-service-model-lessons-2568",
+    "edition_id": "ncd-ddc-dmht-service-model-lessons-2568",
+    "title": "ถอดบทเรียนรูปแบบการให้บริการสำหรับผู้ป่วยโรคเบาหวานและ/หรือความดันโลหิตสูง (Update 13 ก.พ 68)",
+    "publisher": "กองโรคไม่ติดต่อ กรมควบคุมโรค กระทรวงสาธารณสุข",
+    "disease_tags": [
+      "hypertension",
+      "ncd_service",
+      "type_2_diabetes"
+    ],
+    "population": "adults with DM and/or HT (service delivery)",
+    "document_type": "report",
+    "language": "th",
+    "edition": "Year 2568 B.E. per landing page/file name; edition otherwise unnumbered",
+    "publication_date": null,
+    "landing_url": "https://ddc.moph.go.th/dncd/journal_detail.php?publish=14908",
+    "download_url": "https://ddc.moph.go.th/uploads/publish/1490820250217042441.pdf",
+    "alternate_urls": [],
+    "accessed_at": "2026-10-07",
+    "status": "extracted",
+    "content_access": "full_document",
+    "extraction_status": "extracted_unreviewed",
+    "redistribution_status": "unknown",
+    "sha256": "a60f60850d12ff286f69ca8c355cc3e6bb1afdb47df77af6337759b5f99bc819",
+    "pdf_pages": 50,
+    "agent": "trackb_scout / 20261007-expansion",
+    "verification_notes": "Track B expansion scout 2026-10-07: landing page publisher/title checked and download URL returned HTTP 200 application/pdf by HEAD/ranged GET (no full download). Title and PDF link extracted from the DDC/DNCD publication detail page (journal_detail.php); listed in the DNCD 'คู่มือ/หนังสือ' catalogue. HEAD 200 application/pdf. The title carries 'Update 13 ก.พ 68'. The catalogue lists this item as 13 ก.พ. 2567, but the file timestamp is 2025-02-17, so it was updated in place. Only the current file is proposed. This is a different work from the existing NCD Clinic Plus best-practice lessons (2563). 2026-10-07: scripted download returned HTTP 403; needs a team member's browser download (scripts/import_manual_downloads.py). 2026-10-07 browser download by a team member (scripted requests returned HTTP 403); imported with scripts/import_manual_downloads.py, SHA-256 and pages recorded; normalized into normalized-v6 with OCR pages reviewed (AI-assisted, risk-based); no human inclusion approval yet.",
+    "human_review": null,
+    "thai_context": "thai_guideline_or_service",
+    "thai_context_notes": "Thai-language material for Thai practice; not verified as primary Thai-participant research.",
+    "scope_fit": "supporting"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "document_id": "ncd-ddc-dmht-service-model-lessons-2568",
+  "title": "ถอดบทเรียนรูปแบบการให้บริการสำหรับผู้ป่วยโรคเบาหวานและ/หรือความดันโลหิตสูง (Update 13 ก.พ 68)",
+  "source_sha256": "a60f60850d12ff286f69ca8c355cc3e6bb1afdb47df77af6337759b5f99bc819",
+  "pdf_pages": 50,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "repaired_tounicode": 3,
+      "skip_low_agreement": 2,
+      "unchanged": 1
+    },
+    "tounicode_entries_written_or_changed": 4
+  },
+  "normalization_totals": {
+    "glyph_name_tokens": 53,
+    "sara_am_composed": 784,
+    "space_before_following_vowel": 5,
+    "space_before_mark": 1
+  },
+  "status_counts": {
+    "empty": 1,
+    "ocr_unreviewed": 3,
+    "ok": 46
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      2,
+      50
+    ],
+    "empty": [
+      49
+    ]
+  },
+  "removed_edge_lines": 45,
+  "ocr_pages": 4,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "794cf851567ff99852e07b511b127328f7ed750094338f0f201e44291a9ba404",
+  "created_at": "2026-10-06T20:07:34.897627+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-add-20261007b-ocr",
+    "pages_jsonl_sha256": "1e984c9cca87cd2d67fd2f034229af286ffe39f5a7bf9a54ac1946c3c17c0252",
+    "review_file": "ocr_review_20261007c.json"
+  }
+}

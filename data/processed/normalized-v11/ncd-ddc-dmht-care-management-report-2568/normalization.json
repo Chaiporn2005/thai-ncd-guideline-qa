@@ -1,0 +1,74 @@
+{
+  "document_id": "ncd-ddc-dmht-care-management-report-2568",
+  "title": "รายงานผลการดำเนินงานการพัฒนาศักยภาพด้านการจัดการโรคเบาหวานและความดันโลหิตสูง (DM & HT Care Management) ประจำปีงบประมาณ พ.ศ.2568",
+  "source_sha256": "4cfc59a0eb4429d754b1d293aa7abdfca91d47b937ebb7b9558bd77a16240ebe",
+  "pdf_pages": 64,
+  "options": {},
+  "font_repair": {
+    "font_actions": {
+      "skip_low_agreement": 3,
+      "unchanged": 4
+    },
+    "tounicode_entries_written_or_changed": 0
+  },
+  "normalization_totals": {
+    "symbol_pua_removed": 25
+  },
+  "status_counts": {
+    "empty": 2,
+    "ocr_unreviewed": 6,
+    "ok": 56
+  },
+  "status_pages": {
+    "ocr_unreviewed": [
+      1,
+      2,
+      43,
+      44,
+      45,
+      64
+    ],
+    "empty": [
+      41,
+      42
+    ]
+  },
+  "removed_edge_lines": 59,
+  "ocr_pages": 0,
+  "configuration": {
+    "tool_version": "1.0",
+    "pypdf_version": "6.10.0",
+    "ocr": false,
+    "dpi": null,
+    "ocr_languages": null
+  },
+  "pages_jsonl_sha256": "046d88e5655b44bcb5f8ea94cd5e7602016c55203535c1e168aead08541cdc65",
+  "created_at": "2026-10-08T19:51:48.678337+00:00",
+  "clinical_or_layout_qa_performed": false,
+  "human_approval": null,
+  "notes": [
+    "Font repairs and decoders are deterministic and were spot-checked against rendered pages; they are not a page-by-page fidelity review.",
+    "Status is a heuristic retrieval gate, not clinical or source-content approval.",
+    "OCR text is unreviewed; tables, units and reading order still require visual QA."
+  ],
+  "derived_from": {
+    "corpus_version": "normalized-v10",
+    "pages_jsonl_sha256": "046d88e5655b44bcb5f8ea94cd5e7602016c55203535c1e168aead08541cdc65"
+  },
+  "population_counts": {
+    "general": 64
+  },
+  "index_excluded_pages": [
+    2,
+    43,
+    45,
+    46,
+    56,
+    57,
+    58,
+    59,
+    62,
+    63,
+    64
+  ]
+}
