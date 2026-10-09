@@ -35,3 +35,6 @@ data/page_tag_decisions_*.json
 
 # Review exports in the data root are copied to data/manifests when applied
 data/ocr_review_decisions_*.json
+
+# Retrieval indexes and chunk files contain document text (Track B): local only
+data/index/
