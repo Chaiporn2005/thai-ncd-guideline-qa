@@ -1,6 +1,18 @@
 # Handoff — Thai NCD Guideline Q&A
 
-Updated: 2026-10-06 • Owner: coordinator • Stage: RAG design ready; corpus gates pending
+Updated: 2026-10-09 • Owner: coordinator • Stage: Track B corpus v11 merged to main; Track B L1 (chunk/embed/search) next; Track A integration pending
+
+## อ่านก่อนทำต่อ: Track B merge เข้า main แล้ว (2026-10-09)
+
+**ต้อง `git pull origin main` ก่อนทำงานต่อ** (PR #2 และ #3 merge แล้ว) corpus ที่ใช้เป็นหลักตอนนี้คือ **`normalized-v11` ของ Track B**
+(68 เอกสาร / 4,009 หน้า; ค้นได้ 3,749 หน้า) ตามที่เจ้าของโครงการตัดสินใจให้ใช้ของ Track B เป็นฐานหลัก
+
+- อ่านภาพรวม/ตัวเลข/ข้อผิดพลาดที่จับได้: [docs/corpus_process_record.md](docs/corpus_process_record.md); คำสั่งสร้างแต่ละ version: [data/processed/README.md](data/processed/README.md)
+- **`normalized-v2` ใน Git ยังเป็นของ Track A** (ตัวสกัด v2 หลัง fidelity review) ส่วน Track B สร้าง v3–v11 ต่อจาก v2 รุ่นก่อนแก้ จึงยังไม่มีการแก้ของ Track A (≥/≤ ขีดเส้นใต้, เลขอ้างอิงยกกำลัง, หน้าแผนภาพ) ใน**หน้าข้อความ PDF ปกติ**: วัดแล้ว 511/1,799 หน้าต่างกัน, 11 หน้าเป็นเครื่องหมาย ≥ ≤ (ข้อ 4.16) — ถ้าจะทำต่อ Track A นี่คืองานค้างสำคัญที่สุด (overlay หน้าที่ Track B ไม่เคยแก้ + ให้คนดูหน้าที่ชน)
+- **ไม่แก้/ไม่ลบ version เดิม** (corpus version ไม่ถูกเขียนทับ ใช้ `--out` ใหม่เสมอ); เครื่องมือ Track B ที่ใช้ซ้ำได้อยู่ใน `scripts/` (`apply_page_tags.py`, `clean_booklet_pages.py`, `ocr_typhoon.py`, `merge_ocr.py`, `validate_ocr_proposals.py` ฯลฯ)
+- **หน้าที่มี `index_exclusion` หรือสถานะไม่ใช่ ok/ผ่านตรวจ ห้ามเข้า index**; `pages.jsonl`, PDF, OCR, ภาพหน้าไม่อยู่ใน Git ต้องสร้างใหม่ในเครื่อง
+- **ค้างให้ทีมตัดสิน:** (1) สิทธิ์สื่อศิริราช 9 รายการ: บันทึกขัดกัน ดู `rights_conflict_to_resolve` ใน `data/manifests/rights_review_20261005.json`; (2) `rag_ingestion_hold: false` ของ 68 เอกสาร; (3) guardrail/harness [docs/decisions_guardrail_harness.md](docs/decisions_guardrail_harness.md); (4) ป้ายประชากร ถ่วงน้ำหนักหรือกรอง [docs/population_tag_experiment.md](docs/population_tag_experiment.md)
+- ความลับ: คีย์ Typhoon อยู่ใน `.env` ในเครื่องเท่านั้น (ดู `.env.example`); `accepted` ยัง 0 ไม่มีการอนุมัติทางคลินิก
 
 ## เป้าหมายและข้อกำหนดที่ยืนยัน
 
