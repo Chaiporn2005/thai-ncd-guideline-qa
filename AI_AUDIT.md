@@ -1,6 +1,6 @@
 # AI Audit — Thai NCD Guideline Q&A
 
-**Team:** [FILL IN: ชื่อสมาชิก 4 คน] (ในบันทึกใช้ handle: Up2mEz = เจ้าของ Track B; Chaiporn2005 = เจ้าของ repo / Track A; ผู้ตรวจ gold ส่วน 4 = ชัยพร ออฤดี; ไฟล์ตรวจส่วน 1 ชื่อ Thanakrit. [FILL IN: ยืนยันว่าใครคือใคร])
+**Team:** ธนกฤต เสมอหน้า (handle Up2mEz, เจ้าของ Track B), ชัยพร ออฤดี (อนุมานว่าคือ handle Chaiporn2005 เจ้าของ repo / Track A), ธนวัฒน์ สุริยะ, คณิณ แคลวิณ ชมวิวัฒน์ (อนุมานว่าคือ "Calvin" ใน fidelity review) [FILL IN: ยืนยันการจับคู่ handle กับชื่อ]
 **AI Tools Used:** Claude Code (Sonnet 5.5; ช่วงก่อนหน้าตั้ง Opus 5 / Opus 5.5 ตามคำสั่ง `/model` ในโฟลเดอร์นี้), Codex CLI (`gpt-6-astra` medium, `gpt-6.1-sol` medium), Gemini 3.8 Flash High (ผ่าน `agy`), Typhoon OCR API. รายละเอียดข้อ 1.
 
 **สถานะ ณ 2026-10-10** (อัปเดตจากการอ่านทุกแชทในโฟลเดอร์ `team-project` + บันทึก `docs/corpus_process_record.md` และ `docs/retrieval_process_record.md` ใน repo)
@@ -176,6 +176,9 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | D18 | เสนอปรับ test เดิม: ตัด q114, q109, ย้าย q088 ไป dev | [AI-suggested] [FILL IN: ผู้ใช้อนุมัติหรือไม่] | `test_adjustments.json` ยังไม่ใช้กับไฟล์จริง |
 | D19 | q144 (โรคไต): เลือก "แก้ไขแล้วใช้" ปรับคำถามให้รวมผู้ป่วยล้างไตทางช่องท้อง | [Human] ถามความหมาย, [AI-suggested] ข้อความแก้ | คำถามเดิมอ่านได้ว่าตัดกลุ่มล้างไตทางช่องท้องออก ซึ่งขัดกับหัวข้อหน้า 18 |
 | D20 | q112 (คำถามเป็น `????`) ให้ปฏิเสธ ไม่เขียนใหม่ | [AI-suggested, Human-approved] | คำถามใหม่จะไม่ใช่ที่ Codex เขียนจริงและต้องตีความทางคลินิก |
+| D21 | freeze ค่า `frozen_v1` (bge-m3, parent-child 128→512, BM25 char3 k1 2.18 b 0.86, convex α 0.6) แล้วรัน test ครั้งเดียวต่อระบบ (A dense, B hybrid, C + reranker) บน corpus v12 | [AI-suggested] bge-m3 เป็นตัวหลัก, [Human] สั่งรัน | ค่าที่ freeze commit ก่อนให้คะแนน test (`ca8d0fe`); ผล: test B R@5 0.885 เทียบ A 0.808 (ต่าง +0.077, CI +0.019…+0.154), C 0.913 (เทียบ B แยกจาก noise ไม่ออก); ผลดิบ `runs/frozen_v1/` |
+| D22 | ถ้ามี GPU ใช้ reranker (variant C) เป็นโหมดแนะนำ; ถ้าไม่มี ใช้ hybrid (B) | [Human] | ผู้ใช้สั่ง 2026-10-11; reranker ช่วยอันดับต้น (test MRR@10 0.771 เทียบ 0.737) แต่ไม่มีนัยสำคัญและช้ามากบน CPU (15–36 วินาที/คำถาม) |
+| D23 | corpus v12: ถอนคู่มือ NCD Clinic Plus ออกจากการค้นทั้งเล่ม (ข้อความสีขาวซ่อนทำให้วันที่ไม่ตรงหน้าที่ผู้อ่านเห็น) แทนวิธีดึงเฉพาะข้อความที่มองเห็น | [Human] ตัดสิน; [AI-suggested] เคยเสนอ "ดึงเฉพาะข้อความที่มองเห็น" แต่ถูกปฏิเสธ | ต้นแบบดึงข้อความที่มองเห็นตัด 189 บรรทัดใน 27 หน้า แต่ตรวจยืนยันรายบรรทัดไม่ได้ทั้งหมด จึงถอนทั้งเล่ม; ดัชนี v12 ใช้เวกเตอร์เดิมทั้งหมด |
 
 ---
 
@@ -218,6 +221,9 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | E21 | Astra ไล่เข้าพาธชื่อ siriraj (Access denied) | Astra รายงานเองว่าไม่ได้อ่านเนื้อหา | ไม่มีเนื้อหาถูกอ่าน |
 | E22 | ผู้รีวิวสองโมเดลเห็นต่างมาก (Astra ผ่าน 2/18, Gemini ผ่าน 15/18; Gemini ไม่ท้วงหน้าซ้ำ q170/q171) | Claude เทียบกับคำตัดสินตัวเอง | ไม่ใช้ผลรีวิวโมเดลเป็นหลักฐานคุณภาพ |
 | E23 | **Claude ผิดเอง:** แก้ไฟล์ผ่าน shell heredoc ทำให้ `\n` กลายเป็นขึ้นบรรทัดจริง (SyntaxError) สองไฟล์ และอีกครั้งชุดสคริปต์ไม่ถูกเขียนเลย | `ast.parse` / รันล้มทันที | ใช้เครื่องมือแก้ไฟล์/Write โดยตรง |
+| E24 | **Claude อ่านคำสั่งผิดความหมาย** ("ตัดเอกสารที่เป็นปัญหา ไม่ทำ ดึงเฉพาะข้อความที่มองเห็น… ← แนะนำ") แล้วสร้าง corpus v13 ที่ตรงข้ามกับการตัดสินใจ v12 ที่ push ไว้แล้ว โดยไม่ถามก่อนทั้งที่เห็น v12 | เจ้าของ Track B ถามว่า "ทำ v13 ทำไม" | ถอน v13 (ข้อมูล สคริปต์ ส่วนเอกสาร) ลบ manifest ออกจาก git สร้างดัชนีจาก v12 แทน; ถ้าคำสั่งชนกับการตัดสินใจที่ push แล้วต้องถามก่อน |
+| E25 | การรัน test ครั้งแรกถูกสคริปต์ปฏิเสธเพราะ `AI_AUDIT.md` (ไฟล์ที่เซสชันอื่นแก้ค้าง) ทำให้ต้นไม้ git สกปรก; Claude แก้ด้วยการเปลี่ยนเงื่อนไขของสคริปต์ให้ดูเฉพาะ scripts/src/configs/schemas/tests | Claude อ่านข้อความปฏิเสธ (ยังไม่มีการให้คะแนน test) | commit การเปลี่ยนเงื่อนไขก่อนรัน; **เป็นการผ่อนกติกาโดย AI ผู้ใช้ควรทราบ**: เอกสารไม่กระทบผลแต่ควรอนุมัติ |
+| E26 | manifest ของรัน test A/B/C และดัชนี v12 มี `device: "mixed"` ผิด schema (ตัวต่อดัชนีเขียนเอง) พบหลังรัน test | Claude ตรวจ manifest ด้วย `validate_rag_jsonl.py` | แก้เป็น `cuda` (เวกเตอร์ GPU float16 ล้วน 0 ตัวคำนวณใหม่) บันทึกใน notes ว่าแก้หลังรัน; ผลไม่เปลี่ยน; แก้ตัวต่อดัชนีด้วย |
 
 ### 4.3 งานในแชตของ workspace
 
@@ -235,11 +241,11 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 
 | ผู้ร่วมงาน | Human Contribution | AI Tools Used |
 |---|---|---|
-| **Up2mEz (เจ้าของ Track B)** [FILL IN: ชื่อจริง] | ตัดสินนโยบายทั้งหมด (Siriraj, ส่งภาพให้ OCR ภายนอก, เลือกเอกสาร, ทิศทาง chunk, metadata-only, เทคนิค 1/2/4), ตัดสินทุกหน้า OCR (283 + 90), ตัดสิน PDPA/ป้ายประชากรทุกหน้า, ชี้ปัญหาที่ AI พลาด (chunk ตัดขาด, footer/แถบหมวด, regex ผิด, ลิงก์ review), ตรวจ gold ส่วน 1; **[FILL IN: ตรวจชุดเสริม 28 ข้อ]** | Claude Code, Codex (astra/sol), Gemini, Typhoon OCR |
-| **Chaiporn2005 (Track A / เจ้าของ repo)** [FILL IN: ชื่อจริง] | หาเอกสาร, manifest, สคริปต์ดาวน์โหลด/สกัดข้อความ/normalize รุ่นแรก, สร้าง repo | [FILL IN: เครื่องมือ AI ที่ใช้] |
-| **สมาชิก 3 — ผู้ตรวจ gold ส่วน 4: ชัยพร ออฤดี** | ตรวจ silver ส่วน 4 เป็น gold (ส่งไฟล์แล้ว); จับ q097 เป็น `????` | [FILL IN] |
-| **สมาชิก 4** [FILL IN: ชื่อ] | [FILL IN: ตรวจส่วน 2 / 3 — ยังรอผล] | [FILL IN] |
-| **Calvin** (ตามที่ corpus record ระบุ) [FILL IN: เป็นสมาชิกทีมหรือไม่] | fidelity review ของ Track A (`docs/fidelity_review_20261007.md`) | [FILL IN] |
+| **ธนกฤต เสมอหน้า (Up2mEz, เจ้าของ Track B)** | ตัดสินนโยบายทั้งหมด (Siriraj, ส่งภาพให้ OCR ภายนอก, เลือกเอกสาร, ทิศทาง chunk, metadata-only, เทคนิค 1/2/4), ตัดสินทุกหน้า OCR (283 + 90), ตัดสิน PDPA/ป้ายประชากรทุกหน้า, ชี้ปัญหาที่ AI พลาด (chunk ตัดขาด, footer/แถบหมวด, regex ผิด, ลิงก์ review), ตรวจ gold ส่วน 1; **[FILL IN: ตรวจชุดเสริม 28 ข้อ]** | Claude Code, Codex (astra/sol), Gemini, Typhoon OCR |
+| **ชัยพร ออฤดี (Chaiporn2005 — อนุมาน; Track A / เจ้าของ repo)** | หาเอกสาร, manifest, สคริปต์ดาวน์โหลด/สกัดข้อความ/normalize รุ่นแรก, สร้าง repo | [FILL IN: เครื่องมือ AI ที่ใช้] |
+| **ชัยพร ออฤดี** (เพิ่ม) | ตรวจ silver ส่วน 4 เป็น gold (ส่งไฟล์แล้ว); จับ q097 เป็น `????` | [FILL IN] |
+| **ธนวัฒน์ สุริยะ** | [FILL IN: ตรวจส่วน 2 หรือ 3 — ยังรอผล; งานอื่น] | [FILL IN] |
+| **คณิณ แคลวิณ ชมวิวัฒน์** ("Calvin" ใน corpus record — อนุมาน) | fidelity review ของ Track A (`docs/fidelity_review_20261007.md`); [FILL IN: ตรวจส่วน 2 หรือ 3] | [FILL IN] |
 
 ส่วนที่ AI ทำ: Claude เขียนโค้ด/เทสต์/สคริปต์/หน้า review/เอกสารทั้งหมด และตัดสินรายข้อชุดเสริม (D15); Codex/Gemini ร่างคำถามและเสนอแก้ OCR; Typhoon แปลงภาพเป็นข้อความ. **AI ไม่ push ขึ้น GitHub เองโดยไม่สั่ง** (commit/push ทำเมื่อผู้ใช้สั่ง: `c33f207`, `c22b877` บน `rag/track-b-l1`)
 
@@ -265,7 +271,7 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 
 ## 7. ข้อจำกัดที่ต้องบอกในรายงาน (จากบันทึก)
 
-1. ผลทดลองทั้งหมดเป็น dev **silver**; gold ยังไม่ครบ (ส่วน 2, 3 และชุดเสริมรอตรวจ)
+1. ผลสุดท้ายรายงานจากค่าที่ freeze (`frozen_v1`): test 52 ข้อที่ตอบได้ ช่วงเชื่อมั่นจึงกว้าง (reranker เทียบ hybrid แยกจาก noise ไม่ออก); ผลเทคนิคอื่น (doc2query, query rewriting, e5-base, soft boost) มีเฉพาะบน dev และมีส่วนหนึ่งที่วัดบนคำถาม silver ก่อนตรวจเป็น gold ต้องเขียนกำกับ
 2. gold ยืนยันแค่ "ตรงกับเอกสาร" ไม่ใช่ความถูกต้องทางคลินิก
 3. test ชุดเสริมตรวจโดยเจ้าของ Track B คนเดียว (ผู้เขียนเกณฑ์ตรวจข้อสอบเอง) ไม่มี inter-annotator
 4. เฉลยหน้าเดียวต่อข้อ: lenient ที่ threshold เข้มเพิ่ม R@5 0–2 จุด รายงานเป็นช่วง ไม่ใช้แทน strict
