@@ -9,6 +9,9 @@ corpus already uses for pages that must not be searched) on the pages whose text
 be confirmed on the visible page: every page of the document that mentions June, July or August or a year 2565/2566.
 The decision is reversible and recorded per page; the rest of the document stays searchable.
 
+With `--whole-document` every page of the named documents is excluded instead (the document is removed from search, the
+folder stays for the record). This is what v12 uses for the clinic-plus manual (decision of the Track B owner, 2026-10-11).
+
 Usage:
     python -X utf8 scripts/make_visible_only_corpus.py --src data/processed/normalized-v11 \
         --out data/processed/normalized-v12 --document-id DDC-NCD-CLINIC-PLUS-ONLINE-USER-MANUAL-2566
@@ -31,6 +34,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--src", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--document-id", action="append", required=True)
+    ap.add_argument("--whole-document", action="store_true", help="exclude every page of the document")
     ap.add_argument("--decided-by", default="claude, on the instruction of the Track B owner")
     ap.add_argument("--decided-at", default="2026-10-11")
     args = ap.parse_args(argv)
@@ -44,8 +48,9 @@ def main(argv: list[str] | None = None) -> int:
         excluded = []
         for row in rows:
             text = re.sub(r"\s+", "", row["text"])
-            if SCHEDULE.search(text) and not row.get("index_exclusion"):
-                row["index_exclusion"] = {"reason": "hidden_text_layer_differs_from_visible_page",
+            if (args.whole_document or SCHEDULE.search(text)) and not row.get("index_exclusion"):
+                row["index_exclusion"] = {"reason": ("document_removed_hidden_text_layer" if args.whole_document
+                                                     else "hidden_text_layer_differs_from_visible_page"),
                                           "decided_by": args.decided_by, "decided_at": args.decided_at}
                 excluded.append(row["pdf_page"])
         pages_file.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8", newline="\n")
