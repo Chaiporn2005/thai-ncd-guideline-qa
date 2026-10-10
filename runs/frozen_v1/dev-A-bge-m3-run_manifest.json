@@ -1,0 +1,36 @@
+{
+ "run_id": "dev-A-bge-m3",
+ "split": "dev",
+ "variant": "A",
+ "k": 10,
+ "git_commit": "03df2b60b9681a779147185422f481e43e44979d",
+ "git_dirty": false,
+ "config_path": "config.json",
+ "config_sha256": "f87f47d2bcc0c5d73b59a98a12a90214491075d1e4e376c866940f159165a107",
+ "corpus_version": "normalized-v12",
+ "corpus_inventory_sha256": "1862de303a1a44797a9d02697fffbf74efc3695ce540feba017d40d911ec42b9",
+ "chunk_config_id": "chunks-v12-t512-t512-h1-m1",
+ "chunks_sha256": "4beb721e181b5ef344754b37479fecda1874657b889bdeca4502d4e8ec31088c",
+ "embedding_model": {
+  "name": "BAAI/bge-m3",
+  "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+ },
+ "bm25": null,
+ "fusion": null,
+ "index_sha256": "ff5effce8de382f81cd9071515306f887003fba49a92ff1d91636799a9bef09a",
+ "questions_sha256": "680a752e738d7a60f463345c08e3e098934ab945df2183a8bb1e0d97b1f6ddea",
+ "results_sha256": "b94b90edcbf1ff9559a7a8ff9604840cc8c620b5c516fa9c226797dabbe25a4c",
+ "device": "cuda",
+ "machine": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+ "python": "3.12.13",
+ "packages": {
+  "torch": "2.14.1",
+  "sentence-transformers": "6.1.0",
+  "transformers": "5.18.0",
+  "numpy": "2.5.3"
+ },
+ "started_at": "2026-10-10T19:04:00.202803Z",
+ "finished_at": "2026-10-10T19:04:47.849266Z",
+ "n_questions": 106,
+ "notes": "parent-child | device field corrected from \"mixed\" to \"cuda\" after the run: the v12 index reuses GPU float16 vectors only (0 computed on CPU); results unchanged"
+}

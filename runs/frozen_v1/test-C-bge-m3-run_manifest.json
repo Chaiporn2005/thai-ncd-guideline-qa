@@ -1,0 +1,48 @@
+{
+ "run_id": "test-C-bge-m3",
+ "split": "test",
+ "variant": "C",
+ "k": 10,
+ "git_commit": "7f537226fa1519323bda9da79bdba351c1522394",
+ "git_dirty": false,
+ "config_path": "config.json",
+ "config_sha256": "70bffba0bd84e222a5a0bbaccc8dc9d1af0313f2ca3d666f8072a5ad767b9941",
+ "corpus_version": "normalized-v12",
+ "corpus_inventory_sha256": "1862de303a1a44797a9d02697fffbf74efc3695ce540feba017d40d911ec42b9",
+ "chunk_config_id": "chunks-v12-t512-t512-h1-m1",
+ "chunks_sha256": "4beb721e181b5ef344754b37479fecda1874657b889bdeca4502d4e8ec31088c",
+ "embedding_model": {
+  "name": "BAAI/bge-m3",
+  "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+ },
+ "bm25": {
+  "tokenizer": "char3",
+  "dictionary": null,
+  "k1": 2.18,
+  "b": 0.86,
+  "library": "bm25s 0.3.12",
+  "variant": "lucene",
+  "text": "header_text + text"
+ },
+ "fusion": {
+  "type": "convex",
+  "alpha": 0.6,
+  "normalisation": "min-max"
+ },
+ "index_sha256": "ff5effce8de382f81cd9071515306f887003fba49a92ff1d91636799a9bef09a",
+ "questions_sha256": "680a752e738d7a60f463345c08e3e098934ab945df2183a8bb1e0d97b1f6ddea",
+ "results_sha256": "29ede06911fd607afdb0a12beb7528c8f7c4dc11ae40acc907484d2411706f66",
+ "device": "cuda",
+ "machine": "Intel64 Family 6 Model 189 Stepping 1, GenuineIntel",
+ "python": "3.12.13",
+ "packages": {
+  "torch": "2.14.1",
+  "sentence-transformers": "6.1.0",
+  "transformers": "5.18.0",
+  "numpy": "2.5.3"
+ },
+ "started_at": "2026-10-10T19:23:31.599834Z",
+ "finished_at": "2026-10-10T19:24:26.869523Z",
+ "n_questions": 56,
+ "notes": "variant C: frozen hybrid + reranker | rerank BAAI/bge-reranker-v2-m3 top-30, scores computed on Kaggle T4 float16, file sha256 405bcb7d9d5929b9"
+}
