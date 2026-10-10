@@ -76,6 +76,11 @@ def main(argv: list[str] | None = None) -> int:
     hy.add_argument("--alpha", type=float, default=0.6, help="convex: weight of the dense side (min-max normalised scores)")
     hy.add_argument("--rrf-k", type=int, default=60)
     hy.add_argument("--pool", type=int, default=100, help="depth of each ranking before fusion")
+    rr = ap.add_argument_group("rerank (variant C): re-order the top candidates of the hybrid with cross-encoder scores computed elsewhere")
+    rr.add_argument("--rerank-depth", type=int, default=30, help="how many hybrid candidates are exported / re-scored")
+    rr.add_argument("--export-candidates", type=Path, help="write candidates.jsonl and units.jsonl for the Kaggle reranker kernel here, then stop")
+    rr.add_argument("--rerank-scores", type=Path, help="rerank_scores_*.jsonl from the kernel (qid, chunk_id, score): run variant C")
+    rr.add_argument("--rerank-model", default="BAAI/bge-reranker-v2-m3")
     args = ap.parse_args(argv)
     if args.out.exists():
         sys.exit(f"{args.out} exists: runs are immutable, choose a new --out")
@@ -126,21 +131,44 @@ def main(argv: list[str] | None = None) -> int:
         unit_list = list(units.values())
         bm25 = BM25Index([c["chunk_id"] for c in unit_list], tokenize_units(unit_list, args.tokenizer, extra, with_header=True), args.bm25_k1, args.bm25_b)
         t2 = time.perf_counter()
+        top = max(args.k, args.rerank_depth) if (args.export_candidates or args.rerank_scores) else args.k
         fused = []
         for q, hits in zip(questions, found):
             dense = [(h[0], h[1]) for h in hits]
             lex = bm25.top(tokenize(q["question"], args.tokenizer, extra), depth)
             if args.fusion == "convex":
-                fused.append([(u, sc, None) for u, sc in fusion.convex(dense, lex, args.alpha, args.k)])
+                fused.append([(u, sc, None) for u, sc in fusion.convex(dense, lex, args.alpha, top)])
             else:
-                fused.append([(u, sc, None) for u, sc in fusion.rrf([[u for u, _ in dense], [u for u, _ in lex]], args.rrf_k, args.k)])
+                fused.append([(u, sc, None) for u, sc in fusion.rrf([[u for u, _ in dense], [u for u, _ in lex]], args.rrf_k, top)])
         found = fused
         bm25_ms = (time.perf_counter() - t2) * 1000 / max(len(questions), 1)
+    if args.export_candidates:
+        args.export_candidates.mkdir(parents=True, exist_ok=True)
+        need = set()
+        nl = chr(10)
+        with (args.export_candidates / "candidates.jsonl").open("w", encoding="utf-8", newline=nl) as f:
+            for q, hits in zip(questions, found):
+                cands = [{"chunk_id": h[0], "hybrid_score": round(h[1], 5)} for h in hits[:args.rerank_depth]]
+                need.update(c["chunk_id"] for c in cands)
+                f.write(json.dumps({"qid": q["qid"], "question": q["question"], "candidates": cands}, ensure_ascii=False) + nl)
+        with (args.export_candidates / "units.jsonl").open("w", encoding="utf-8", newline=nl) as f:
+            for cid in sorted(need):
+                c = units[cid]
+                f.write(json.dumps({"chunk_id": cid, "text": (c["header_text"] + nl if c["header_text"] else "") + c["text"]}, ensure_ascii=False) + nl)
+        print(json.dumps({"exported_questions": len(questions), "units": len(need), "depth": args.rerank_depth}))
+        return 0
+    if args.rerank_scores:
+        score = {(r["qid"], r["chunk_id"]): r["score"] for r in read_jsonl(args.rerank_scores)}
+        reranked = []
+        for q, hits in zip(questions, found):
+            head = sorted(hits[:args.rerank_depth], key=lambda h: -score[(q["qid"], h[0])])
+            reranked.append([(h[0], score[(q["qid"], h[0])], None) for h in head][:args.k])
+        found = reranked
 
     rows, per_q, by_type, top_scores = [], {}, defaultdict(dict), {}
     for q, hits in zip(questions, found):
         ranked = [(h[0], h[1]) for h in hits]
-        rows.append({"run_id": args.out.name, "qid": q["qid"], "variant": "B" if args.hybrid else "A", "k": args.k, "query": q["question"],
+        rows.append({"run_id": args.out.name, "qid": q["qid"], "variant": "C" if args.rerank_scores else ("B" if args.hybrid else "A"), "k": args.k, "query": q["question"],
                      "hits": [{"rank": r, "chunk_id": cid, "score": round(score, 5),
                                "document_id": units[cid]["document_id"], "edition_id": units[cid]["edition_id"],
                                "pdf_page_start": units[cid]["pdf_page_start"], "pdf_page_end": units[cid]["pdf_page_end"]}
@@ -156,7 +184,7 @@ def main(argv: list[str] | None = None) -> int:
 
     keys = [f"{m}@{k}" for k in KS for m in ("recall", "hit", "mrr")]
     metrics = {"run": args.out.name, "model": model.key, "units": args.chunks.name,
-               "mode": ("hybrid-" if args.hybrid else "") + ("parent-child" if args.children else "dense"), "children": args.children.name if args.children else None,
+               "mode": ("rerank-" if args.rerank_scores else "") + ("hybrid-" if args.hybrid else "") + ("parent-child" if args.children else "dense"), "children": args.children.name if args.children else None,
                "split": args.split, "questions": len(questions), "answerable": len(per_q),
                "status_counts": {s: sum(q["status"] == s for q in questions) for s in ("silver", "gold")},
                "overall": evaluate.aggregate(per_q, keys),
@@ -184,7 +212,7 @@ def main(argv: list[str] | None = None) -> int:
         ref = Path(hf_constants.HF_HUB_CACHE) / ("models--" + model.hf_id.replace("/", "--")) / "refs" / "main"
         revision = ref.read_text(encoding="utf-8").strip()
     inventory = ROOT / "data/manifests" / f"corpus_{units[next(iter(units))]['corpus_version']}_inventory.json"
-    manifest = {"run_id": args.out.name, "split": args.split if args.split in ("smoke", "dev", "test") else "dev", "variant": "B" if args.hybrid else "A",
+    manifest = {"run_id": args.out.name, "split": args.split if args.split in ("smoke", "dev", "test") else "dev", "variant": "C" if args.rerank_scores else ("B" if args.hybrid else "A"),
                 "k": args.k, "git_commit": git("rev-parse", "HEAD"), "git_dirty": dirty,
                 "config_path": str((args.out / "config.json").relative_to(ROOT)) if args.out.is_relative_to(ROOT) else "config.json",
                 "config_sha256": sha256(args.out / "config.json"), "corpus_version": next(iter(units.values()))["corpus_version"],
@@ -200,7 +228,7 @@ def main(argv: list[str] | None = None) -> int:
                 "packages": {p: metadata.version(p) for p in ("torch", "sentence-transformers", "transformers", "numpy")},
                 "started_at": started.isoformat().replace("+00:00", "Z"),
                 "finished_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"), "n_questions": len(questions),
-                "notes": args.notes or metrics["mode"]}
+                "notes": (args.notes or metrics["mode"]) + (f" | rerank {args.rerank_model} top-{args.rerank_depth}, scores computed on Kaggle T4 float16, file sha256 {sha256(args.rerank_scores)[:16]}" if args.rerank_scores else "")}
     (args.out / "run_manifest.json").write_text(json.dumps(manifest, indent=1) + "\n", encoding="utf-8")
     print(json.dumps({k: metrics[k] for k in ("run", "mode", "questions", "answerable", "overall")}, ensure_ascii=False))
     return 0

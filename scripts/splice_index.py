@@ -74,7 +74,7 @@ def main(argv: list[str] | None = None) -> int:
                 "spliced_from": {"old_index": str(args.old_index), "old_device": old_manifest.get("device"), "old_dtype": old_manifest.get("dtype"),
                                  "vectors_reused": len(new_rows) - len(todo), "vectors_computed_now": len(todo),
                                  "computed_device": "cpu float32", "computed_seconds": round(time.time() - started, 1)},
-                "device": "mixed (reused: " + str(old_manifest.get("device")) + " " + str(old_manifest.get("dtype", "float32")) + "; new: cpu float32)",
+                "device": old_manifest.get("device") if not todo else "cpu",  # schema allows one value; the mix is in spliced_from
                 "header_text_embedded": True}
     (args.out / "index_manifest.json").write_text(json.dumps(manifest, indent=1) + "\n", encoding="utf-8")
     print(json.dumps(manifest["spliced_from"]))
