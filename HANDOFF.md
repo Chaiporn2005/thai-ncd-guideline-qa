@@ -18,6 +18,8 @@ Updated: 2026-10-09 • Owner: coordinator • Stage: Track B corpus v11 merged 
 - LLM ที่ใช้ได้ในขั้นสร้างคำตอบ: **Typhoon `typhoon-v2.5-30b-a3b-instruct` เท่านั้น** (ต้องแคชทุกคำขอ: `src/ncdqa/llm/client.py`; คีย์ใน `.env` ตัวแปร `TYPHOON_API_KEY`); Gemini ฟรี (20 คำขอ/วัน) และ GLM ฟรี (ช้า ติด rate limit) ใช้ไม่ได้กับ batch; ไม่ใช้ LLM เขียนคำค้นใหม่ (แย่ลงทุกโมเดล)
 - ข้อควรรู้: test มี 52 ข้อที่ตอบได้ ช่วงเชื่อมั่นกว้าง; gold ยืนยันแค่ "ตรงกับเอกสาร" ไม่ใช่ความถูกต้องทางคลินิก; รายละเอียดการทดลองทั้งหมด `docs/hybrid_retrieval_experiment.md`; บันทึก AI audit `AI_AUDIT.md`, `docs/retrieval_process_record.md`
 
+> **Track C:** ดู `docs/handoff_track_c.md` (ฟังก์ชัน `search(query, variant, k, filters)` ใน `src/ncdqa/retrieval/search.py`, ผล freeze และกติกา) แพ็กเกจข้อมูลอยู่ที่ `data/handoff/track_c_20261012.zip` ในเครื่องเจ้าของ Track B (ไม่ขึ้น git)
+
 ## อ่านก่อนทำต่อ: Track B merge เข้า main แล้ว (2026-10-09)
 
 **ต้อง `git pull origin main` ก่อนทำงานต่อ** (PR #2 และ #3 merge แล้ว) corpus ที่ใช้เป็นหลักตอนนี้คือ **`normalized-v11` ของ Track B**

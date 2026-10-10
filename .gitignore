@@ -41,3 +41,6 @@ data/index/
 
 # Real LLM provider list (keys are env var names, but the endpoints are the owner's): local only
 configs/llm/providers.yaml
+
+# Hand-off packages contain corpus text (Siriraj leaflets included): never tracked
+data/handoff/

@@ -11,6 +11,7 @@
 | `finding_hidden_text_layer.md` | PDF ที่มีข้อความสีขาวซ่อน และการตัดสินใจ (v12) |
 | `finding_unit_mismatch.md` | คำถามกับเอกสารใช้หน่วย/คำเรียกต่างกัน |
 | `rag_architecture.md` | แบบออกแบบ RAG ทั้งระบบ |
+| `handoff_track_c.md` | ส่งมอบ retrieval ให้ Track C: `search()`, ผลที่ freeze, กติกา metric |
 | `retrieval_process_record.md` | บันทึกละเอียดของ Track B (การตัดสินใจ D, ข้อผิดพลาด E, คำสั่งที่ส่งให้ AI) ที่ใช้สร้าง `AI_AUDIT.md` |
 
 ## ชุดคำถาม
