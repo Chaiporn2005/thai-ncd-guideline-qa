@@ -46,6 +46,7 @@ class ChunkConfig:
     passage_prefix: str = ""
     min_fill_for_boundary: float = 0.5
     merge_pages: bool = True
+    header_max_share: float = 0.25   # the contextual header may use at most this share of the token budget
 
     @property
     def config_id(self) -> str:
@@ -227,14 +228,21 @@ def _text_of(lines: list[Line], pages: dict[int, str]) -> str:
     return "\n".join(out)
 
 
-def _header(title: str, section: tuple[str, ...], first: Line, enabled: bool) -> str:
+def _header(title: str, section: tuple[str, ...], first: Line, enabled: bool, count: CountTokens | None = None,
+            cap: int | None = None) -> str:
+    """`title > section` plus the repeated table header line; the longest piece is shortened until it fits `cap` tokens."""
     if not enabled:
         return ""
-    parts = [title, *section]
-    head = " > ".join(p for p in parts if p)
-    if first.table_header:
-        head += f"\nหัวตาราง: {first.table_header}"
-    return head
+    pieces = [title, *section, first.table_header or ""]
+
+    def build() -> str:
+        head = " > ".join(p for p in pieces[:-1] if p)
+        return head + (f"\nหัวตาราง: {pieces[-1]}" if pieces[-1] else "")
+
+    while cap is not None and count is not None and count(build()) > cap and max(map(len, pieces)) > 12:
+        longest = max(range(len(pieces)), key=lambda k: len(pieces[k]))
+        pieces[longest] = pieces[longest][:int(len(pieces[longest]) * 0.75)].rstrip() + "…"
+    return build()
 
 
 def build_document_chunks(meta: dict, rows: Iterable[dict], cfg: ChunkConfig, count: CountTokens, tokenizer_name: str,
@@ -251,7 +259,8 @@ def build_document_chunks(meta: dict, rows: Iterable[dict], cfg: ChunkConfig, co
         if heading:
             section = (heading,)
         page_budget = cfg.max_tokens - count(cfg.passage_prefix) - 8
-        for ln in page_lines(row, max(page_budget - count(" > ".join([meta["title"], *section])) if cfg.contextual_header else page_budget, 16), count):
+        header_tokens = min(count(" > ".join([meta["title"], *section])), int(cfg.max_tokens * cfg.header_max_share)) if cfg.contextual_header else 0
+        for ln in page_lines(row, max(page_budget - header_tokens, 16), count):
             ln.section = section
             ln.new_section = new_section
             new_section = False
@@ -261,7 +270,8 @@ def build_document_chunks(meta: dict, rows: Iterable[dict], cfg: ChunkConfig, co
     i = 0
     while i < len(lines):
         first = lines[i]
-        header = _header(meta["title"], first.section, first, cfg.contextual_header)
+        header = _header(meta["title"], first.section, first, cfg.contextual_header, count,
+                         int(cfg.max_tokens * cfg.header_max_share))
         overhead = count(cfg.passage_prefix + header + ("\n" if header else ""))
         limit = cfg.max_tokens - overhead
         taken = [first]

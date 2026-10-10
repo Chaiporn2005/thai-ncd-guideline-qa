@@ -8,14 +8,16 @@
 | เครื่องมือ | ใช้ทำอะไร | ข้อมูลที่ส่งออกนอกเครื่อง |
 |---|---|---|
 | Claude (Claude Code, Sonnet 5.5) | เขียน chunker, สคริปต์ index, ตัวตรวจ, เอกสาร; ค้นเว็บหาหลักฐานขนาด chunk | ผลค้นเว็บเท่านั้น; ไม่ส่งข้อความ corpus ไปที่อื่น |
-| Codex CLI 0.160.1, โมเดล `gpt-6-astra`, reasoning medium (`--profile astra-medium`) | ร่าง silver questions จากหน้า corpus (read-only ต่อ corpus) | ข้อความหน้า corpus 120 หน้า (หน้าละไม่เกินราว 1–2 พันตัวอักษร) จากเอกสาร **ไม่รวม 9 เอกสาร Siriraj** ที่มี rights conflict |
+| Codex CLI 0.160.1, โมเดล `gpt-6-astra`, reasoning medium (`--profile astra-medium`) | ร่าง silver questions จากหน้า corpus (read-only ต่อ corpus) | ข้อความหน้า corpus รวม 137 หน้า: รอบ 1 จำนวน 120 หน้า (ไม่รวม Siriraj), รอบ 2 จำนวน 17 หน้าจาก 9 เอกสาร Siriraj ที่มี rights conflict (ส่งตามที่เจ้าของ Track B สั่ง ดู D7) |
+| Kaggle (T4 GPU, private dataset) | **เตรียมไว้ ยังไม่รัน** (`infra/kaggle_embed/`): embed ทุกขนาด chunk ด้วย e5-base และ bge-m3 | ถ้ารัน: ข้อความ chunk ทั้งหมดรวม Siriraj (เจ้าของ Track B ยอมรับแล้วเมื่อ 2026-10-10 แต่สั่งว่ายังไม่รัน) |
 | `intfloat/multilingual-e5-base`, `BAAI/bge-m3` (SentenceTransformers 6.1.0, torch 2.14.1+cpu) | embedding บน CPU | ไม่มี (รันในเครื่อง; ดาวน์โหลดน้ำหนักจาก Hugging Face) |
 
 ## 2. Prompt Log (ทุกคำสั่งที่ส่งให้เครื่องมือ AI ภายนอก)
 
 | # | วันที่ | ผู้ส่ง | เครื่องมือ | คำสั่ง | ไฟล์จริง | ผล |
 |---|---|---|---|---|---|---|
-| P1 | 2026-10-10 | Claude (ตามที่เจ้าของ Track B เสนอให้ใช้ astra medium) | Codex gpt-6-astra medium | อ่าน TASK.md แล้วทำให้ครบ เขียนเฉพาะ `drafts.jsonl` และ `WORKER_NOTES.md` | `data/agent_runs/20261010-silver-questions/PROMPT.txt`, `TASK.md`, `codex_run.log` | [FILL IN: จำนวนบรรทัด/ข้าม/ถูกปฏิเสธ จากตัวตรวจ] |
+| P1 | 2026-10-10 | Claude (ตามที่เจ้าของ Track B เสนอให้ใช้ astra medium) | Codex gpt-6-astra medium | อ่าน TASK.md แล้วทำให้ครบ เขียนเฉพาะ `drafts.jsonl` และ `WORKER_NOTES.md` | `data/agent_runs/20261010-silver-questions/PROMPT.txt`, `TASK.md`, `codex_run.log` | 140 บรรทัด: 125 ผ่านตัวตรวจเชิงกล, ข้าม 15 (บรรณานุกรม สารบัญ รายชื่อ), ปฏิเสธ 0; Codex ใช้ราว 220,701 tokens (ตามบรรทัด `tokens used` ใน log) |
+| P2 | 2026-10-10 | Claude (ตามคำสั่ง "ไม่ตัด Siriraj") | Codex gpt-6-astra medium | อ่าน TASK_siriraj.md (และ TASK.md) ทำเฉพาะส่วน A กับ 17 หน้า Siriraj | `PROMPT_siriraj.txt`, `TASK_siriraj.md`, `codex_run_siriraj.log` | 17 บรรทัด: 16 คำถาม ข้าม 1 (หน้ารายชื่อผู้จัดทำ); รวมทั้งสองรอบ 141 คำถามผ่านตัวตรวจ (dev 109, test 32) |
 
 เนื้อหา TASK.md โดยย่อ: เขียนคำถามไทยหนึ่งข้อต่อหน้า (120) + multi_page 10 + unanswerable 10; ห้ามลอกถ้อยคำจากหน้า (กัน lexical leak ที่ทำให้ BM25 ดูดีเกินจริง); ต้องมี evidence quote ที่คัดจากหน้าตรงตัวอักษร; ห้ามติดป้าย gold เอง
 
@@ -32,6 +34,11 @@
 | D7 | **ไม่ตัด** 9 เอกสาร Siriraj ออกจากกรอบคำถามที่ส่งให้ Codex (AI เสนอให้ตัดเพราะ Decision 0008 และ rights conflict) | ตัด / ไม่ตัด | Human (ปฏิเสธข้อเสนอของ AI) | ผู้ใช้สั่ง 2026-10-10; รอบแรกของ Codex (120 หน้า) ทำไปแล้วโดยไม่มี Siriraj จึงสั่งรอบเสริมเฉพาะ Siriraj (17 หน้า) ภายหลัง; ความเสี่ยงสิทธิยังเป็นของทีม (ไม่ได้รับอนุญาตจากเจ้าของสื่อ) |
 | D8 | แบ่ง dev/test ตามเอกสาร (hash) ไม่ใช่ตามคำถาม | สุ่มรายคำถาม / ตามเอกสาร | AI-decided [FILL IN: ผู้ใช้ยืนยัน] | กัน leakage จากหน้าใกล้เคียงใน dev→test |
 | D9 | chunk ต้องไม่ตัดเนื้อหาหน่วยเดียวให้หัวอยู่ chunk หนึ่งส่วนท้ายอยู่อีก chunk: รวมบรรทัดที่ PDF ตัดตามความกว้างกลับเป็นย่อหน้า, ตัดที่ขอบย่อหน้า/ประโยค, หัวข้อสั้นไม่ค้างท้าย chunk, ตาราง HTML ตัดตามแถว, ไม่ตัดกลางคำ | คงแบบบรรทัด / ย่อหน้า+ประโยค / เพิ่ม overlap | Human สั่งหลักการ; AI เลือกวิธีทำ | ผู้ใช้ชี้ปัญหา 2026-10-10 หลังเห็น chunk รอบแรก (วัดแล้วตัดกลางย่อหน้า 47.7%) |
+| D10 | ทดสอบ bge-m3 คู่กับ e5-base | e5 เท่านั้น / เพิ่ม bge-m3 | Human | ผู้ใช้สั่ง (ซ้ำกับ D4 ยืนยันว่าต้องทำจริง) |
+| D11 | ไม่ใช้ fixed-size chunking เป็นวิธีหลักหรือวิธีเทียบ; เพิ่ม **parent-child (small-to-big)** เป็นตัวแปรที่ 2 | fixed / structural / parent-child / semantic | Human | ผู้ใช้สั่ง 2026-10-10 |
+| D12 | ขนาด chunk ที่ทดสอบ **128 / 256 / 384 / 512** (เดิมเสนอ 256/512) | 64/128/256/384/512/1024 | Human สั่งเพิ่ม 128 และ 384; AI เสนอเหตุผลของแต่ละเลข | เหตุผลใน `docs/chunk_size_evidence.md` |
+| D13 | embed บน Kaggle GPU ได้ ยอมส่งข้อความ chunk ออกนอกเครื่อง แต่ **ยังไม่รัน** และห้ามข้อมูลหาย | CPU เท่านั้น / Kaggle | Human | ผู้ใช้สั่ง; เตรียมสคริปต์ที่เขียนทีละชุดลงดิสก์ + ตัวตรวจ `verify_embedding_output.py` |
+| D14 | หัวบริบทใช้ได้ไม่เกิน 25% ของงบ token (ตัดส่วนที่ยาวสุดก่อน) | ไม่จำกัด / 25% / ปิดหัวที่ chunk เล็ก | AI-decided [FILL IN: ผู้ใช้ยืนยัน] | ที่ 128 token หัวข้อบทยาวกินเนื้อหาไปครึ่งหนึ่ง; ค่า 25% ยังไม่ได้ทดสอบ (เทียบด้วย E3 เปิด/ปิดหัวได้) |
 
 ## 4. Error Catch Log (ส่วนของ L1)
 

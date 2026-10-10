@@ -131,6 +131,14 @@ class Chunking(unittest.TestCase):
             self.assertFalse(c["text"].lstrip().startswith(("<td>", "</td>")))
         self.assertIn("หัวตาราง: <table><tr><th>ชื่อยา</th>", chunks[1]["header_text"])
 
+    def test_long_header_is_shortened_to_its_share_of_the_budget(self):
+        long_title = {**META, "title": "แนวทางเวชปฏิบัติสำหรับโรคเบาหวาน" * 6}
+        cfg = ck.ChunkConfig(name="t", max_tokens=60)
+        chunks = ck.build_document_chunks(long_title, [page(1, "บทที่ 1 " + "หัวข้อยาวมาก" * 20 + NL + PROSE)], cfg, count, "fake", "v")
+        for c in chunks:
+            self.assertLessEqual(count(c["header_text"]), int(60 * cfg.header_max_share) + 2)
+            self.assertLessEqual(c["token_count"], cfg.max_tokens)
+
     def test_forced_cut_does_not_split_a_word(self):
         chunks, _ = build([page(1, "ผู้ป่วยเบาหวานควรตรวจติดตามระดับน้ำตาลอย่างสม่ำเสมอ" * 12)], max_tokens=40)
         for c in chunks:
