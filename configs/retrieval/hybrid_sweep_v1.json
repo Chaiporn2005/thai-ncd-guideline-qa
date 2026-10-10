@@ -1,0 +1,37 @@
+{
+  "id": "hybrid_sweep_v1",
+  "purpose": "Does a Thai lexical (BM25) side help dense parent-child retrieval, which tokenizer/dictionary, which BM25 parameters, which fusion? Every candidate value below carries the source it came from; nothing is guessed.",
+  "selection_rule": "Declared before running. Stage by stage, keep the setting with the highest hybrid Recall@5 on dev (ties: higher MRR@10). Report the paired bootstrap difference against the stage's reference. If the 95% interval of that difference includes 0 the result is labelled 'not distinguishable': the setting is carried forward only as provisional, and the literature default stays the reference. The questions are silver (AI drafts); every number must be re-checked on gold before it is used.",
+  "pool": 100,
+  "stage_a_tokenizer": {
+    "bm25_params": {"k1": 1.5, "b": 0.75, "source": "bm25s 0.3.12 library defaults (BM25.__init__ signature), Lucene scoring variant"},
+    "reference": "newmm",
+    "fusion": {"type": "rrf", "k": 60, "source": "Cormack, Clarke & Buettcher, SIGIR 2009: k = 60 fixed in a pilot and never changed"},
+    "variants": [
+      {"name": "newmm", "mode": "newmm", "why": "default PyThaiNLP dictionary; the baseline whose failures (HbA1c -> HbA|1|c) motivated the test"},
+      {"name": "newmm_latin", "mode": "newmm_latin", "why": "keeps Latin/digit runs whole (HbA1c, eGFR, mg/dL); rule-based, no dictionary"},
+      {"name": "newmm_dict_df5", "mode": "newmm_dict", "dictionary": "configs/retrieval/thai_dict_corpus_v11_df5.txt", "why": "28 corpus-learned words (fragments outside the default dictionary that occur almost only inside one run; scripts/learn_thai_dictionary.py)"},
+      {"name": "newmm_dict_df3", "mode": "newmm_dict", "dictionary": "configs/retrieval/thai_dict_corpus_v11_df3.txt", "why": "same learner, min_df 3 (49 words)"},
+      {"name": "newmm_dict_df2", "mode": "newmm_dict", "dictionary": "configs/retrieval/thai_dict_corpus_v11_df2.txt", "why": "same learner, min_df 2 (60 words)"},
+      {"name": "char3", "mode": "char3", "why": "no dictionary at all: character trigrams. Indirect support only: character n-grams avoid the dictionary problem and are reported to work well for languages without word boundaries (SIGIR 2008 poster on unsupervised segmentation; a Thai n-gram indexing paper). No paper compares them on Thai retrieval directly."},
+      {"name": "char4", "mode": "char4", "why": "character 4-grams, same reasoning as char3 (longer grams are more specific)"}
+    ]
+  },
+  "stage_b_bm25_params": {
+    "reference": "bm25s_default",
+    "settings": [
+      {"name": "bm25s_default", "k1": 1.5, "b": 0.75, "source": "bm25s 0.3.12 defaults"},
+      {"name": "lucene_default", "k1": 1.2, "b": 0.75, "source": "Lucene/Elasticsearch defaults (Elastic blog 'Practical BM25 part 3')"},
+      {"name": "anserini_default", "k1": 0.9, "b": 0.4, "source": "Anserini/Pyserini defaults (Lin et al., Pyserini, arXiv 2102.10073)"},
+      {"name": "anserini_msmarco_tuned", "k1": 0.82, "b": 0.68, "source": "Anserini MS MARCO passage tuned values (Pyserini docs / arXiv 2102.10073)"},
+      {"name": "anserini_tuned_for_expansion", "k1": 2.18, "b": 0.86, "source": "Anserini 'tuned2', tuned on doc2query-T5 expanded passages (Pyserini, arXiv 2102.10073); relevant because doc2query is tested later"},
+      {"name": "rz_range_low", "k1": 1.2, "b": 0.5, "source": "corner of the range 1.2<k1<2, 0.5<b<0.8 attributed to Robertson & Zaragoza 2009 (cited second-hand in arXiv 1608.01573)"},
+      {"name": "rz_range_high", "k1": 2.0, "b": 0.8, "source": "other corner of the same range"}
+    ],
+    "note": "Kamphuis et al. (ECIR 2020, 'Which BM25 do you mean?') found no significant differences between BM25 scoring variants on newswire, so the Lucene variant is used throughout and only k1/b are varied."
+  },
+  "stage_c_fusion": {
+    "rrf_k": {"values": [10, 30, 60, 100, 200], "source": "60 is Cormack et al. 2009. The other values are ours, chosen to bracket 60 on both sides because Bruch, Gai & Ingber 2023 (arXiv 2210.11934) report that RRF is sensitive to its parameter."},
+    "convex_alpha": {"values": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9], "normalisation": "min-max per list", "source": "Bruch et al. 2023: convex combination of normalised scores has one parameter, is sample-efficient to tune and was reported to beat RRF; normalisation choice mattered little. The 0.1 grid is ours."}
+  }
+}

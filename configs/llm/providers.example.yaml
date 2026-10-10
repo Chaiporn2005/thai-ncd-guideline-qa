@@ -1,0 +1,60 @@
+# LLM providers for query rewriting and later generation (Track B / D).
+# Copy to configs/llm/providers.yaml (git-ignored) and fill in the real entries once the API list is known.
+# NEVER put a key here: `api_key_env` is the NAME of an environment variable (set it in your shell or in the git-ignored .env).
+# Every request is cached by a hash of provider + model + messages + parameters (see src/ncdqa/llm/client.py).
+#
+# Settings that make answers as repeatable as a provider allows: temperature 0, top_p 1, fixed seed, bounded max_tokens.
+# Hosted APIs can still drift between calls (model updates, non-deterministic kernels), so
+# scripts/llm_stability_check.py measures the drift instead of assuming there is none.
+providers:
+  # --- hosted APIs (OpenAI-compatible chat completions). Keys: GLM_API_KEY, GEMINI_API_KEY, TYPHOON_API_KEY in .env ---------
+  # Base URLs and model ids were looked up on 2026-10-10 from web pages, NOT from the providers' own consoles, and one of them is
+  # still unconfirmed. Do not trust them blindly: run  python -X utf8 scripts/check_llm_env.py --list-models  with your keys. It asks each
+  # provider which model ids your key may use and prints them, so the right id is copied from the answer, not guessed.
+  glm_4_7_flash:
+    kind: openai_compatible
+    model: glm-4.7-flash                     # listed FREE on docs.z.ai pricing (with GLM-4.5-Flash and GLM-4.6V-Flash); not shown in /models but accepted
+    base_url: https://api.z.ai/api/paas/v4   # secondary pages (Towards AI article and a second page) agree; official docs not seen
+    api_key_env: GLM_API_KEY
+    temperature: 0.0
+    top_p: 1.0
+    seed: 20261010
+    max_tokens: 256
+    timeout_s: 60
+    extra_body: {thinking: {type: disabled}}   # thinking is ON by default and used all 64 tokens of a ping; switch from docs.z.ai (GLM-4.7 page)
+  gemini_flash:
+    kind: openai_compatible
+    model: gemini-2.5-flash-lite   # chosen by the owner for the free tier; confirm quota in AI Studio
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai   # from Google's OpenAI-compatibility guide (ai.google.dev)
+    api_key_env: GEMINI_API_KEY
+    temperature: 0.0
+    top_p: 1.0
+    seed: null                               # Gemini's OpenAI endpoint answers 400 "Unknown name seed"
+    max_tokens: 256
+    timeout_s: 60
+    # extra_body: {}   # recent Gemini models can use hidden reasoning tokens; see Google's compatibility guide for the setting
+  typhoon_api:
+    kind: openai_compatible
+    model: typhoon-v2.5-30b-a3b-instruct   # given by the owner 2026-10-10; confirm with --list-models
+    base_url: https://api.opentyphoon.ai/v1   # UNCONFIRMED: from memory, not found on any page; --list-models will show whether it answers
+    api_key_env: TYPHOON_API_KEY
+    temperature: 0.0
+    top_p: 1.0
+    seed: 20261010
+    max_tokens: 256
+    timeout_s: 60
+
+  # --- local small models: answers are produced on a Kaggle GPU (infra/kaggle_llm) and replayed from a cache file -----------
+  # Candidates verified on the Hugging Face Hub on 2026-10-10 (licence and size from the model cards):
+  #   typhoon-ai/typhoon2.5-qwen3-4b   Apache-2.0, 4.02B parameters, Thai-focused, based on Qwen3 4B
+  #   Qwen/Qwen3-4B-Instruct-2507      Apache-2.0, 4.02B parameters, non-thinking only, general multilingual
+  #   typhoon-ai/typhoon2.1-gemma3-4b  Gemma licence, 3.88B parameters, Thai-focused, based on Gemma3 4B
+  local_typhoon25_qwen3_4b:
+    kind: cache_only
+    model: typhoon-ai/typhoon2.5-qwen3-4b
+  local_qwen3_4b_instruct_2507:
+    kind: cache_only
+    model: Qwen/Qwen3-4B-Instruct-2507
+  local_typhoon21_gemma3_4b:
+    kind: cache_only
+    model: typhoon-ai/typhoon2.1-gemma3-4b

@@ -40,6 +40,9 @@ class Silver(unittest.TestCase):
         self.assertTrue(any("refers" in p for p in self.problems(question="ตามตารางนี้ ค่าเป้าหมายคือเท่าไร")))
         self.assertTrue(any("phone" in p for p in self.problems(answer="โทร 081-234-5678")))
 
+    def test_garbled_thai_is_rejected(self):
+        self.assertTrue(any("garbled" in p for p in self.problems(question="???????????? ESA ???????")))
+
     def test_unanswerable_needs_null_answer_and_false_flag(self):
         self.assertEqual(self.problems(type="unanswerable", answerable=False, answer=None), [])
         self.assertTrue(self.problems(type="unanswerable", answerable=True))

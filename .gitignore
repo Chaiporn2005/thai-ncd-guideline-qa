@@ -38,3 +38,6 @@ data/ocr_review_decisions_*.json
 
 # Retrieval indexes and chunk files contain document text (Track B): local only
 data/index/
+
+# Real LLM provider list (keys are env var names, but the endpoints are the owner's): local only
+configs/llm/providers.yaml
