@@ -9,6 +9,7 @@ from ncdqa.retrieval import chunking as ck  # noqa: E402
 META = {"document_id": "doc-a", "edition_id": "doc-a", "title": "แนวทางทดสอบ", "primary_group": "DM",
         "disease_tags": ["type_2_diabetes"], "document_type": "clinical_guideline"}
 SHA = "0" * 64
+NL = chr(10)
 
 
 def count(text):  # a stand-in tokenizer: one token per 3 characters, so limits are easy to hit
@@ -46,10 +47,10 @@ class Chunking(unittest.TestCase):
             else:
                 self.assertTrue(c["text"].startswith(texts[c["pdf_page_start"]][c["char_start"]:]))
                 self.assertTrue(c["text"].endswith(texts[c["pdf_page_end"]][:c["char_end"]]))
-        joined = "\n".join(c["text"] for c in chunks)
-        for n, t in texts.items():
-            for line in t.split("\n"):
-                self.assertIn(line, joined)
+        squeeze = lambda x: "".join(x.split())  # a cut may fall at a line break, so compare without whitespace  # noqa: E731
+        joined = squeeze("".join(c["text"] for c in chunks))
+        for t in texts.values():
+            self.assertIn(squeeze(t), joined)
 
     def test_oversized_line_is_split_without_loss(self):
         long_line = "ก" * 400
@@ -101,6 +102,39 @@ class Chunking(unittest.TestCase):
         ids = [c["chunk_id"] for c in chunks]
         self.assertEqual(len(ids), len(set(ids)))
         self.assertTrue(all(re.match(r"^[A-Za-z0-9][A-Za-z0-9._-]*:p[0-9]{3,4}-p[0-9]{3,4}:[0-9]{3}$", i) for i in ids))
+
+    def test_wrapped_lines_are_rebuilt_into_paragraphs_and_cuts_fall_between_them(self):
+        # three paragraphs of full-width lines, each ending in a short last line (how PDFs wrap text)
+        full = "ผู้ป่วยโรคไตเรื้อรังควรจำกัดโซเดียมในอาหารทุกวัน"
+        para = lambda tag: NL.join([full + tag] * 3 + ["ปรึกษาแพทย์"])  # noqa: E731
+        page_text = NL.join([para("ก"), para("ข"), para("ค")])
+        chunks, _ = build([page(1, page_text)], max_tokens=75)
+        self.assertGreater(len(chunks), 1)
+        for c in chunks:  # every chunk ends where a paragraph ends, never on a full-width line
+            self.assertTrue(c["text"].rstrip().endswith("ปรึกษาแพทย์"), c["text"][-30:])
+
+    def test_title_line_never_ends_a_chunk(self):
+        body = NL.join("ผู้ป่วยเบาหวานควรตรวจติดตามข้อ %d อย่างสม่ำเสมอและบันทึกผล" % i for i in range(1, 4))
+        text = body + NL + "ปรึกษาแพทย์" + NL + "การดูแลเท้า"  # the short last line ends the paragraph; the title starts a new unit + NL + NL.join("ตรวจเท้าทุกวันและสวมรองเท้าที่เหมาะสมข้อ %d" % i for i in range(1, 6))
+        for limit in range(60, 120, 7):
+            for c in build([page(1, text)], max_tokens=limit)[0][:-1]:
+                self.assertFalse(c["text"].rstrip().endswith("การดูแลเท้า"), (limit, c["text"][-40:]))
+
+    def test_html_table_on_one_line_is_cut_between_rows_with_header_repeated(self):
+        rows = "".join("<tr><td>ยา%d</td><td>%d mg</td><td>วันละครั้ง</td></tr>" % (i, i * 5) for i in range(1, 25))
+        text = "<table><tr><th>ชื่อยา</th><th>ขนาด</th><th>หมายเหตุ</th></tr>" + rows + "</table>"
+        chunks, cfg = build([page(1, text)], max_tokens=110)
+        self.assertGreater(len(chunks), 1)
+        for c in chunks:
+            self.assertLessEqual(c["token_count"], cfg.max_tokens)
+            self.assertTrue(c["text"].rstrip().endswith(("</tr>", "</table>")), c["text"][-30:])
+            self.assertFalse(c["text"].lstrip().startswith(("<td>", "</td>")))
+        self.assertIn("หัวตาราง: <table><tr><th>ชื่อยา</th>", chunks[1]["header_text"])
+
+    def test_forced_cut_does_not_split_a_word(self):
+        chunks, _ = build([page(1, "ผู้ป่วยเบาหวานควรตรวจติดตามระดับน้ำตาลอย่างสม่ำเสมอ" * 12)], max_tokens=40)
+        for c in chunks:
+            self.assertFalse(c["text"].startswith(("้", "่", "ิ", "ี", "ึ", "ื", "ุ", "ู")))
 
 
 if __name__ == "__main__":
