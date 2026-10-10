@@ -7,7 +7,7 @@ only taken when the embedded text hashes equal, so a changed chunk can never kee
 
 Usage:
     python -X utf8 scripts/splice_index.py --old-chunks data/index/chunks-v11-t128 --old-index data/index/kaggle/dense-bge-m3-t128 \
-        --new-chunks data/index/chunks-v13-t128 --model bge-m3 --out data/index/dense-bge-m3-t128-v13
+        --new-chunks data/index/chunks-v12-t128 --model bge-m3 --out data/index/dense-bge-m3-t128-v12
 """
 
 from __future__ import annotations

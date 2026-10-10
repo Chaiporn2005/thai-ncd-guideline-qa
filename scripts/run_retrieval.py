@@ -86,7 +86,7 @@ def main(argv: list[str] | None = None) -> int:
         questions = [q for q in questions if q["split"] == ("dev" if args.split == "smoke" else args.split)]
     if args.split == "smoke":
         questions = questions[:10]
-    dirty = bool(git("status", "--porcelain"))
+    dirty = bool(git("status", "--porcelain", "--untracked-files=no"))  # tracked changes only: reviewers' exported files lying around are not code
     if args.split == "test" and (dirty or any(q["status"] != "gold" for q in questions)):
         sys.exit("refused: a test run needs every test question gold and a clean work tree")
 
