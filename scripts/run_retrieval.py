@@ -4,6 +4,11 @@ Plain dense search: `--chunks` is the chunk set that was embedded into `--index`
 Parent-child: `--index` holds vectors of the small chunks (`--children`), `--chunks` is the larger parent set that is
 returned and scored.
 
+Hybrid (variant B, `--hybrid`): the dense ranking (plain or parent-child) is fused with Thai BM25 over the units of `--chunks`
+(pool depth `--pool`, convex combination of min-max scores with `--alpha`, or `--fusion rrf`); tokenizer, BM25 k1/b and the fusion are
+written into `run_manifest.json` (`bm25`, `fusion`). Example (bge-m3, parent-child 128 -> 512, the setting found on gold dev):
+    python -X utf8 scripts/run_retrieval.py --questions <questions.jsonl> --split dev --model bge-m3 --chunks data/index/chunks-v11-t512         --children data/index/chunks-v11-t128 --index data/index/kaggle/dense-bge-m3-t128 --hybrid --tokenizer char3 --bm25-k1 2.18         --bm25-b 0.86 --fusion convex --alpha 0.6 --out data/index/runs/<name>
+
 A `test` run is refused unless every question of the split is gold and the work tree is clean (README: the test split is
 measured once per frozen configuration).
 
@@ -28,7 +33,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from ncdqa.retrieval import answer_match, embed, evaluate  # noqa: E402
+from ncdqa.retrieval import answer_match, embed, evaluate, fusion  # noqa: E402
 from ncdqa.retrieval.dense import DenseIndex  # noqa: E402
 from ncdqa.retrieval.parent_child import ParentChildIndex, build_parent_map  # noqa: E402
 
@@ -61,6 +66,16 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--alt", type=Path, nargs="*", default=[], help="alt_evidence sidecar files (scripts/build_alt_evidence.py)")
     ap.add_argument("--corpus", type=Path, default=ROOT / "data/processed/normalized-v11", help="pages used for the answer-match idf")
     ap.add_argument("--notes", default="")
+    hy = ap.add_argument_group("hybrid (variant B): dense side + Thai BM25 over the returned chunk set (--chunks)")
+    hy.add_argument("--hybrid", action="store_true")
+    hy.add_argument("--tokenizer", default="newmm_latin", choices=["newmm", "newmm_latin", "newmm_dict", "char3", "char4"])
+    hy.add_argument("--dictionary", type=Path, help="extra Thai words for --tokenizer newmm_dict")
+    hy.add_argument("--bm25-k1", type=float, default=1.5)
+    hy.add_argument("--bm25-b", type=float, default=0.75)
+    hy.add_argument("--fusion", choices=["convex", "rrf"], default="convex")
+    hy.add_argument("--alpha", type=float, default=0.6, help="convex: weight of the dense side (min-max normalised scores)")
+    hy.add_argument("--rrf-k", type=int, default=60)
+    hy.add_argument("--pool", type=int, default=100, help="depth of each ranking before fusion")
     args = ap.parse_args(argv)
     if args.out.exists():
         sys.exit(f"{args.out} exists: runs are immutable, choose a new --out")
@@ -98,18 +113,38 @@ def main(argv: list[str] | None = None) -> int:
     qvec = embed.encode(st, [q["question"] for q in questions], model.query_prefix, batch_size=16)
     encode_ms = (time.perf_counter() - t0) * 1000 / max(len(questions), 1)
     t1 = time.perf_counter()
-    found = search_index.search(qvec, args.k, args.fetch) if args.children else search_index.search(qvec, args.k)
+    depth = max(args.pool, args.k) if args.hybrid else args.k
+    found = search_index.search(qvec, depth, max(args.fetch, depth * 4)) if args.children else search_index.search(qvec, depth)
     search_ms = (time.perf_counter() - t1) * 1000 / max(len(questions), 1)
+    bm25_ms = 0.0
+    if args.hybrid:
+        from ncdqa.retrieval.bm25 import BM25Index, tokenize_units
+        from ncdqa.retrieval.thai_tokens import load_dictionary, tokenize
+        extra = tuple(load_dictionary(args.dictionary)) if args.dictionary else ()
+        unit_list = list(units.values())
+        bm25 = BM25Index([c["chunk_id"] for c in unit_list], tokenize_units(unit_list, args.tokenizer, extra, with_header=True), args.bm25_k1, args.bm25_b)
+        t2 = time.perf_counter()
+        fused = []
+        for q, hits in zip(questions, found):
+            dense = [(h[0], h[1]) for h in hits]
+            lex = bm25.top(tokenize(q["question"], args.tokenizer, extra), depth)
+            if args.fusion == "convex":
+                fused.append([(u, sc, None) for u, sc in fusion.convex(dense, lex, args.alpha, args.k)])
+            else:
+                fused.append([(u, sc, None) for u, sc in fusion.rrf([[u for u, _ in dense], [u for u, _ in lex]], args.rrf_k, args.k)])
+        found = fused
+        bm25_ms = (time.perf_counter() - t2) * 1000 / max(len(questions), 1)
 
     rows, per_q, by_type, top_scores = [], {}, defaultdict(dict), {}
     for q, hits in zip(questions, found):
         ranked = [(h[0], h[1]) for h in hits]
-        rows.append({"run_id": args.out.name, "qid": q["qid"], "variant": "A", "k": args.k, "query": q["question"],
+        rows.append({"run_id": args.out.name, "qid": q["qid"], "variant": "B" if args.hybrid else "A", "k": args.k, "query": q["question"],
                      "hits": [{"rank": r, "chunk_id": cid, "score": round(score, 5),
                                "document_id": units[cid]["document_id"], "edition_id": units[cid]["edition_id"],
                                "pdf_page_start": units[cid]["pdf_page_start"], "pdf_page_end": units[cid]["pdf_page_end"]}
                               for r, (cid, score) in enumerate(ranked, 1)],
-                     "latency_ms": {"total": round(encode_ms + search_ms, 2), "encode": round(encode_ms, 2), "search": round(search_ms, 2)}})
+                     "latency_ms": {"total": round(encode_ms + search_ms + bm25_ms, 2), "encode": round(encode_ms, 2), "search": round(search_ms, 2),
+                                    **({"bm25_fusion": round(bm25_ms, 2)} if args.hybrid else {})}})
         if q["answerable"]:
             per_q[q["qid"]] = {**evaluate.score_question([units[c] for c, _ in ranked], q["evidence"], KS),
                                **evaluate.score_lenient([units[c] for c, _ in ranked], q, KS, matcher)}
@@ -119,7 +154,7 @@ def main(argv: list[str] | None = None) -> int:
 
     keys = [f"{m}@{k}" for k in KS for m in ("recall", "hit", "mrr")]
     metrics = {"run": args.out.name, "model": model.key, "units": args.chunks.name,
-               "mode": "parent-child" if args.children else "dense", "children": args.children.name if args.children else None,
+               "mode": ("hybrid-" if args.hybrid else "") + ("parent-child" if args.children else "dense"), "children": args.children.name if args.children else None,
                "split": args.split, "questions": len(questions), "answerable": len(per_q),
                "status_counts": {s: sum(q["status"] == s for q in questions) for s in ("silver", "gold")},
                "overall": evaluate.aggregate(per_q, keys),
@@ -129,7 +164,7 @@ def main(argv: list[str] | None = None) -> int:
                "unanswerable": {"n": len(top_scores), "mean_top1_score": round(evaluate.mean(list(top_scores.values())), 4),
                                 "answerable_mean_top1_score": round(evaluate.mean([r["hits"][0]["score"] for r in rows
                                                                                   if r["qid"] in per_q and r["hits"]]), 4)},
-               "latency_ms_per_query": {"encode": round(encode_ms, 2), "search": round(search_ms, 2)},
+               "latency_ms_per_query": {"encode": round(encode_ms, 2), "search": round(search_ms, 2), "bm25_fusion": round(bm25_ms, 2)},
                "caution": "silver questions are AI drafts: a pilot, not a result" if any(q["status"] == "silver" for q in questions) else ""}
     args.out.mkdir(parents=True)
     (args.out / "results.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8", newline="\n")
@@ -140,15 +175,23 @@ def main(argv: list[str] | None = None) -> int:
 
     index_manifest = json.loads((args.index / "index_manifest.json").read_text(encoding="utf-8"))
     from huggingface_hub import snapshot_download
-    revision = Path(snapshot_download(model.hf_id, local_files_only=True)).name
+    try:
+        revision = Path(snapshot_download(model.hf_id, local_files_only=True)).name
+    except Exception:  # a partly downloaded snapshot (bge-m3 was fetched without its optional files): read the commit the cache points at
+        from huggingface_hub import constants as hf_constants
+        ref = Path(hf_constants.HF_HUB_CACHE) / ("models--" + model.hf_id.replace("/", "--")) / "refs" / "main"
+        revision = ref.read_text(encoding="utf-8").strip()
     inventory = ROOT / "data/manifests" / f"corpus_{units[next(iter(units))]['corpus_version']}_inventory.json"
-    manifest = {"run_id": args.out.name, "split": args.split if args.split in ("smoke", "dev", "test") else "dev", "variant": "A",
+    manifest = {"run_id": args.out.name, "split": args.split if args.split in ("smoke", "dev", "test") else "dev", "variant": "B" if args.hybrid else "A",
                 "k": args.k, "git_commit": git("rev-parse", "HEAD"), "git_dirty": dirty,
                 "config_path": str((args.out / "config.json").relative_to(ROOT)) if args.out.is_relative_to(ROOT) else "config.json",
                 "config_sha256": sha256(args.out / "config.json"), "corpus_version": next(iter(units.values()))["corpus_version"],
                 "corpus_inventory_sha256": sha256(inventory) if inventory.exists() else "0" * 64,
                 "chunk_config_id": next(iter(units.values()))["chunk_config_id"], "chunks_sha256": sha256(args.chunks / "chunks.jsonl"),
-                "embedding_model": {"name": model.hf_id, "revision": revision}, "bm25": None, "fusion": None,
+                "embedding_model": {"name": model.hf_id, "revision": revision}, "bm25": ({"tokenizer": args.tokenizer, "dictionary": str(args.dictionary) if args.dictionary else None, "k1": args.bm25_k1, "b": args.bm25_b,
+                          "library": "bm25s " + metadata.version("bm25s"), "variant": "lucene", "text": "header_text + text"} if args.hybrid else None),
+                "fusion": (({"type": "convex", "alpha": args.alpha, "normalisation": "min-max"} if args.fusion == "convex"
+                            else {"type": "rrf", "k": args.rrf_k}) if args.hybrid else None),
                 "index_sha256": index_manifest["vectors_sha256"], "questions_sha256": sha256(args.questions),
                 "results_sha256": sha256(args.out / "results.jsonl"), "device": index_manifest.get("device", "cpu"),
                 "machine": platform.processor() or platform.machine(), "python": platform.python_version(),
