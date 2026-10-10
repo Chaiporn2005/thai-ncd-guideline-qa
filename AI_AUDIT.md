@@ -243,9 +243,9 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 |---|---|---|
 | **ธนกฤต เสมอหน้า (Up2mEz, เจ้าของ Track B)** | ตัดสินนโยบายทั้งหมด (Siriraj, ส่งภาพให้ OCR ภายนอก, เลือกเอกสาร, ทิศทาง chunk, metadata-only, เทคนิค 1/2/4), ตัดสินทุกหน้า OCR (283 + 90), ตัดสิน PDPA/ป้ายประชากรทุกหน้า, ชี้ปัญหาที่ AI พลาด (chunk ตัดขาด, footer/แถบหมวด, regex ผิด, ลิงก์ review), ตรวจ gold ส่วน 1; **[FILL IN: ตรวจชุดเสริม 28 ข้อ]** | Claude Code, Codex (astra/sol), Gemini, Typhoon OCR |
 | **ชัยพร ออฤดี (Chaiporn2005 — อนุมาน; Track A / เจ้าของ repo)** | หาเอกสาร, manifest, สคริปต์ดาวน์โหลด/สกัดข้อความ/normalize รุ่นแรก, สร้าง repo | [FILL IN: เครื่องมือ AI ที่ใช้] |
-| **ชัยพร ออฤดี** (เพิ่ม) | ตรวจ silver ส่วน 4 เป็น gold (ส่งไฟล์แล้ว); จับ q097 เป็น `????` | [FILL IN] |
-| **ธนวัฒน์ สุริยะ** | [FILL IN: ตรวจส่วน 2 หรือ 3 — ยังรอผล; งานอื่น] | [FILL IN] |
-| **คณิณ แคลวิณ ชมวิวัฒน์** ("Calvin" ใน corpus record — อนุมาน) | fidelity review ของ Track A (`docs/fidelity_review_20261007.md`); [FILL IN: ตรวจส่วน 2 หรือ 3] | [FILL IN] |
+| **ชัยพร ออฤดี** | ตรวจ silver ส่วน 4 เป็น gold (ส่งไฟล์แล้ว); จับ q097 เป็น `????` | [FILL IN] |
+| **ธนวัฒน์ สุริยะ** | ตรวจ silver ส่วน 2 (ยังรอผล); [FILL IN: งานอื่น] | [FILL IN] |
+| **คณิณ แคลวิณ ชมวิวัฒน์** ("Calvin" ใน corpus record — อนุมาน) | fidelity review ของ Track A (`docs/fidelity_review_20261007.md`); ตรวจ silver ส่วน 3 (ยังรอผล) | [FILL IN] |
 
 ส่วนที่ AI ทำ: Claude เขียนโค้ด/เทสต์/สคริปต์/หน้า review/เอกสารทั้งหมด และตัดสินรายข้อชุดเสริม (D15); Codex/Gemini ร่างคำถามและเสนอแก้ OCR; Typhoon แปลงภาพเป็นข้อความ. **AI ไม่ push ขึ้น GitHub เองโดยไม่สั่ง** (commit/push ทำเมื่อผู้ใช้สั่ง: `c33f207`, `c22b877` บน `rag/track-b-l1`)
 
