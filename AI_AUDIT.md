@@ -179,6 +179,7 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | D21 | freeze ค่า `frozen_v1` (bge-m3, parent-child 128→512, BM25 char3 k1 2.18 b 0.86, convex α 0.6) แล้วรัน test ครั้งเดียวต่อระบบ (A dense, B hybrid, C + reranker) บน corpus v12 | [AI-suggested] bge-m3 เป็นตัวหลัก, [Human] สั่งรัน | ค่าที่ freeze commit ก่อนให้คะแนน test (`ca8d0fe`); ผล: test B R@5 0.885 เทียบ A 0.808 (ต่าง +0.077, CI +0.019…+0.154), C 0.913 (เทียบ B แยกจาก noise ไม่ออก); ผลดิบ `runs/frozen_v1/` |
 | D22 | ถ้ามี GPU ใช้ reranker (variant C) เป็นโหมดแนะนำ; ถ้าไม่มี ใช้ hybrid (B) | [Human] | ผู้ใช้สั่ง 2026-10-11; reranker ช่วยอันดับต้น (test MRR@10 0.771 เทียบ 0.737) แต่ไม่มีนัยสำคัญและช้ามากบน CPU (15–36 วินาที/คำถาม) |
 | D23 | corpus v12: ถอนคู่มือ NCD Clinic Plus ออกจากการค้นทั้งเล่ม (ข้อความสีขาวซ่อนทำให้วันที่ไม่ตรงหน้าที่ผู้อ่านเห็น) แทนวิธีดึงเฉพาะข้อความที่มองเห็น | [Human] ตัดสิน; [AI-suggested] เคยเสนอ "ดึงเฉพาะข้อความที่มองเห็น" แต่ถูกปฏิเสธ | ต้นแบบดึงข้อความที่มองเห็นตัด 189 บรรทัดใน 27 หน้า แต่ตรวจยืนยันรายบรรทัดไม่ได้ทั้งหมด จึงถอนทั้งเล่ม; ดัชนี v12 ใช้เวกเตอร์เดิมทั้งหมด |
+| D24 | ทดลอง sparse/ColBERT ของ bge-m3 เอง แล้วไม่เปลี่ยนค่าที่ freeze | [Human] สั่งทดลอง, [AI] รันและสรุป | ผลบน gold dev: sparse ของ bge-m3 (R@5 0.644) อ่อนกว่า BM25 (0.701), dense+sparse แทน BM25 แย่ลง −0.093, ColBERT จัดอันดับ top-30 ใหม่แย่ลง −0.113; รายละเอียด `docs/hybrid_retrieval_experiment.md` §0.3 |
 
 ---
 
