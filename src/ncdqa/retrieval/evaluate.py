@@ -11,6 +11,13 @@ Per answerable question and cut-off k:
 * Hit@k    = 1 if at least one evidence item is covered, else 0.
 * MRR@k    = 1 / rank of the first unit that covers any evidence (0 if none within k).
 Unanswerable questions are left out of these means; they are reported by how confident the top hit is (for abstention).
+
+Two relevance definitions are reported side by side:
+* strict  = the rule above against `evidence` only (the numbers reported so far; unchanged).
+* lenient = a unit is also relevant when it covers an `alt_evidence` page (a duplicate or confirmed same-fact page), or,
+  for a one-evidence question with a numeric answer, when it holds the answer (`answer_match`). Only one-evidence
+  questions can gain: a multi_page question needs every page, so its lenient score is its strict score.
+The gap between the two shows how much a single gold page hides correct retrievals.
 """
 
 from __future__ import annotations
@@ -18,6 +25,8 @@ from __future__ import annotations
 import random
 import re
 from typing import Iterable
+
+from ncdqa.retrieval import answer_match
 
 _SPACE = re.compile(r"\s+")
 
@@ -57,6 +66,37 @@ def score_question(ranked_units: list[dict], evidence: list[dict], ks: Iterable[
         result[f"hit@{k}"] = float(bool(seen))
         first = next((rank for rank, c in enumerate(cover[:k], 1) if c), None)
         result[f"mrr@{k}"] = 1 / first if first else 0.0
+    return result
+
+
+def score_lenient(ranked_units: list[dict], question: dict, ks: Iterable[int],
+                  matcher: "answer_match.AnswerMatcher | None" = None) -> dict:
+    """recall/hit/mrr under the lenient definition (keys prefixed `lenient_`). `question` has evidence, alt_evidence,
+    answer and question text."""
+    evidence = question["evidence"]
+    alts = question.get("alt_evidence") or []
+    strict_cover = ranked_cover(ranked_units, evidence)
+    single = len(evidence) == 1
+    relevant_any: list[bool] = []
+    for unit, covered in zip(ranked_units, strict_cover):
+        ok = bool(covered)
+        if not ok and single:
+            text = collapse(unit["text"])
+            ok = any(covers(unit, a, text) for a in alts) or bool(
+                matcher and matcher.matches(question.get("answer"), question["question"], unit["text"]))
+        relevant_any.append(ok)
+    result: dict = {}
+    for k in ks:
+        if single:
+            hit = float(any(relevant_any[:k]))
+            result[f"lenient_recall@{k}"] = hit
+            result[f"lenient_hit@{k}"] = hit
+        else:
+            seen = set().union(*strict_cover[:k]) if strict_cover[:k] else set()
+            result[f"lenient_recall@{k}"] = len(seen) / len(evidence)
+            result[f"lenient_hit@{k}"] = float(bool(seen))
+        first = next((rank for rank, ok in enumerate(relevant_any[:k], 1) if ok), None) if single else             next((rank for rank, c in enumerate(strict_cover[:k], 1) if c), None)
+        result[f"lenient_mrr@{k}"] = 1 / first if first else 0.0
     return result
 
 

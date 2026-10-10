@@ -58,7 +58,12 @@ def apply(questions: list[dict], exports: list[dict]) -> tuple[list[dict], dict]
                     q["changes"] = f"{d['note'].strip()} [was: {q['question']} => {q['answer']}]"
                     q["question"], q["answer"] = new_q, new_a
         out.append(q)
-    report = {"questions": len(out), "by_status": dict(Counter(q["status"] for q in out)),
+    # the schema wants no evidence on an unanswerable question; the nearest page the drafter chose goes to a sidecar
+    context = [{"qid": q["qid"], "nearest_evidence": q["evidence"]} for q in out if not q["answerable"] and q["evidence"]]
+    for q in out:
+        if not q["answerable"]:
+            q["evidence"] = []
+    report = {"unanswerable_context": context, "questions": len(out), "by_status": dict(Counter(q["status"] for q in out)),
               "by_reviewer": dict(Counter(q["reviewed_by"] for q in out if q["reviewed_by"])),
               "gold_by_split": dict(Counter(q["split"] for q in out if q["status"] == "gold")),
               "still_silver": [q["qid"] for q in out if q["status"] == "silver"]}
@@ -79,6 +84,9 @@ def main(argv: list[str] | None = None) -> int:
     except ValueError as err:
         sys.exit(f"stopped: {err}")
     args.out.write_text("".join(json.dumps(q, ensure_ascii=False) + "\n" for q in out), encoding="utf-8", newline="\n")
+    context = report.pop("unanswerable_context")
+    args.out.with_name(args.out.stem + "_unanswerable_context.jsonl").write_text(
+        "".join(json.dumps(c, ensure_ascii=False) + "\n" for c in context), encoding="utf-8", newline="\n")
     print(json.dumps(report, ensure_ascii=False))
     sys.path.insert(0, str(ROOT / "scripts"))
     import validate_rag_jsonl

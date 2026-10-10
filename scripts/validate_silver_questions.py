@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TYPES = {"fact", "number_unit", "condition", "table", "multi_page", "cross_document", "unanswerable"}
 LEAK_CHARS = 25
 PERSONAL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+|\b0\d{1,2}[- ]?\d{3}[- ]?\d{3,4}\b")
-REFERENCE = re.compile(r"หน้า(?:ที่)?\s*\d|ภาพที่|รูปที่|ตารางที่|ตามตาราง(?:นี้|ข้างต้น)|ในเอกสาร(?:นี้|ฉบับนี้)|\.pdf", re.I)
+REFERENCE = re.compile(r"หน้า(?:ที่)?\s*\d|(?<![฀-๿])ภาพที่|(?<![฀-๿])รูปที่|ตารางที่|ตามตาราง(?:นี้|ข้างต้น)|ในเอกสาร(?:นี้|ฉบับนี้)|\.pdf", re.I)
 
 
 def longest_shared_run(a: str, b: str) -> int:
@@ -46,6 +46,8 @@ def check(draft: dict, frame: dict, texts: dict[tuple[str, int], str]) -> list[s
     question = draft.get("question") or ""
     if not question.strip():
         problems.append("empty question")
+    if "??" in question or "??" in (draft.get("answer") or ""):
+        problems.append("garbled text (Thai lost when the file was written)")
     if REFERENCE.search(question):
         problems.append("question refers to a page, figure, table or document")
     if PERSONAL.search(question) or PERSONAL.search(draft.get("answer") or ""):
@@ -76,6 +78,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--corpus", type=Path, required=True)
     ap.add_argument("--run-dir", type=Path, required=True)
     ap.add_argument("--generated-by", default="codex gpt-6-astra (reasoning medium), run 20261010-silver-questions")
+    ap.add_argument("--qid-start", type=int, default=1, help="first question number (a supplement continues after the main set)")
+    ap.add_argument("--agent-labels", type=json.loads, default={},
+                    help='JSON map frame page "agent" -> generated_by text, for runs drafted by several models')
     args = ap.parse_args(argv)
 
     frame = {p["frame_id"]: p for f in sorted(args.run_dir.glob("frame*.json"))
@@ -101,13 +106,13 @@ def main(argv: list[str] | None = None) -> int:
         (rejected if problems else accepted).append({"draft": draft, "problems": problems} if problems else draft)
 
     rows = []
-    for n, draft in enumerate(accepted, 1):
+    for n, draft in enumerate(accepted, args.qid_start):
         page = frame[draft["frame_id"].split("-")[0]]
         rows.append({"qid": f"q{n:03d}", "split": page["split"], "status": "silver", "question": draft["question"],
                      "answer": draft["answer"], "type": draft["type"], "answerable": bool(draft["answerable"]),
                      "evidence": [{"document_id": e["document_id"], "edition_id": docs[e["document_id"]]["edition_id"],
                                    "pdf_page": e["pdf_page"], "quote": e["quote"]} for e in draft["evidence"]],
-                     "generated_by": args.generated_by, "reviewed_by": None, "review_date": None, "changes": None})
+                     "generated_by": args.agent_labels.get(page.get("agent"), args.generated_by), "reviewed_by": None, "review_date": None, "changes": None})
     (args.run_dir / "questions_silver.jsonl").write_text(
         "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8", newline="\n")
     report = {"drafts": len(drafts), "accepted": len(rows), "rejected": len(rejected), "skipped": len(skipped),

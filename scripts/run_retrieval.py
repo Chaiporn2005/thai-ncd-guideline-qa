@@ -28,7 +28,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from ncdqa.retrieval import embed, evaluate  # noqa: E402
+from ncdqa.retrieval import answer_match, embed, evaluate  # noqa: E402
 from ncdqa.retrieval.dense import DenseIndex  # noqa: E402
 from ncdqa.retrieval.parent_child import ParentChildIndex, build_parent_map  # noqa: E402
 
@@ -58,13 +58,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--k", type=int, default=10)
     ap.add_argument("--fetch", type=int, default=50, help="children fetched before collapsing to parents")
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--alt", type=Path, nargs="*", default=[], help="alt_evidence sidecar files (scripts/build_alt_evidence.py)")
+    ap.add_argument("--corpus", type=Path, default=ROOT / "data/processed/normalized-v11", help="pages used for the answer-match idf")
     ap.add_argument("--notes", default="")
     args = ap.parse_args(argv)
     if args.out.exists():
         sys.exit(f"{args.out} exists: runs are immutable, choose a new --out")
 
     started = datetime.now(timezone.utc)
-    questions = [q for q in read_jsonl(args.questions) if q["status"] != "rejected"]
+    questions = [q for q in read_jsonl(args.questions) if q["status"] != "rejected" and "??" not in q["question"]]
     if args.split != "all":
         questions = [q for q in questions if q["split"] == ("dev" if args.split == "smoke" else args.split)]
     if args.split == "smoke":
@@ -72,6 +74,15 @@ def main(argv: list[str] | None = None) -> int:
     dirty = bool(git("status", "--porcelain"))
     if args.split == "test" and (dirty or any(q["status"] != "gold" for q in questions)):
         sys.exit("refused: a test run needs every test question gold and a clean work tree")
+
+    for sidecar in args.alt:
+        alt = {r["qid"]: r["alt_evidence"] for r in read_jsonl(sidecar)}
+        for q in questions:
+            if q["qid"] in alt:
+                q["alt_evidence"] = alt[q["qid"]]
+    page_texts = [json.loads(x)["text"] for f in sorted(args.corpus.glob("*/pages.jsonl"))
+                  for x in f.read_text(encoding="utf-8").split("\n") if x.strip()]
+    matcher = answer_match.AnswerMatcher(page_texts)
 
     units = {c["chunk_id"]: c for c in read_jsonl(args.chunks / "chunks.jsonl")}
     index = DenseIndex.load(args.index)
@@ -100,7 +111,8 @@ def main(argv: list[str] | None = None) -> int:
                               for r, (cid, score) in enumerate(ranked, 1)],
                      "latency_ms": {"total": round(encode_ms + search_ms, 2), "encode": round(encode_ms, 2), "search": round(search_ms, 2)}})
         if q["answerable"]:
-            per_q[q["qid"]] = evaluate.score_question([units[c] for c, _ in ranked], q["evidence"], KS)
+            per_q[q["qid"]] = {**evaluate.score_question([units[c] for c, _ in ranked], q["evidence"], KS),
+                               **evaluate.score_lenient([units[c] for c, _ in ranked], q, KS, matcher)}
             by_type[q["type"]][q["qid"]] = per_q[q["qid"]]
         elif ranked:
             top_scores[q["qid"]] = ranked[0][1]
@@ -111,6 +123,7 @@ def main(argv: list[str] | None = None) -> int:
                "split": args.split, "questions": len(questions), "answerable": len(per_q),
                "status_counts": {s: sum(q["status"] == s for q in questions) for s in ("silver", "gold")},
                "overall": evaluate.aggregate(per_q, keys),
+               "lenient": evaluate.aggregate(per_q, ["lenient_" + k for k in keys]),
                "ci95": {k: evaluate.bootstrap_ci([v[k] for v in per_q.values()]) for k in ("recall@5", "recall@10", "mrr@10")},
                "by_type": {t: {"n": len(v), **evaluate.aggregate(v, ["recall@5", "recall@10", "mrr@10"])} for t, v in sorted(by_type.items())},
                "unanswerable": {"n": len(top_scores), "mean_top1_score": round(evaluate.mean(list(top_scores.values())), 4),
