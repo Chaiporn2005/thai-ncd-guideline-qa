@@ -2,6 +2,22 @@
 
 Updated: 2026-10-09 • Owner: coordinator • Stage: Track B corpus v11 merged to main; Track B L1 (chunk/embed/search) next; Track A integration pending
 
+## ผลสุดท้ายของ Track B (retrieval) สำหรับ C และ D (2026-10-11)
+
+ระบบที่ freeze: `configs/retrieval/frozen_v1.json` บน corpus **v12** (ถอนคู่มือ Clinic Plus; 66 เอกสาร) bge-m3, parent-child 128→512, BM25 char3, convex α 0.6, k = 10
+
+| ระบบ | test R@1 / R@5 / R@10 / MRR@10 (52 ข้อที่ตอบได้) | หมายเหตุ |
+|---|---|---|
+| A dense ล้วน | 0.462 / 0.808 / 0.827 / 0.618 | ฐานเทียบ |
+| **B hybrid** | 0.587 / 0.885 / 0.981 / 0.737 | **ค่าเริ่มต้นสำหรับ CPU**; ดีกว่า A แบบมีนัยสำคัญ (R@5 +0.077, CI +0.019…+0.154) |
+| C B + reranker | 0.615 / 0.913 / 0.952 / 0.771 | **ใช้ถ้ามี GPU** (ผู้ใช้ตัดสิน 2026-10-11); ดีกว่า B เล็กน้อยแต่แยกจาก noise ไม่ออก; บน CPU 15–36 วินาที/คำถาม |
+
+- ผลดิบ `results.jsonl` ตาม schema, `metrics.json`, `run_manifest.json`: `runs/frozen_v1/` (เฉพาะ metrics และ manifest ขึ้น git; `results.jsonl` ที่มีข้อความคำถามอยู่ใน `data/index/runs/final/<ชุด>-<ระบบ>-bge-m3/` ในเครื่องเจ้าของ Track B ขอไฟล์จากเขาหรือรันใหม่ด้วยคำสั่งใน docstring ของ `scripts/run_retrieval.py`)
+- รันซ้ำ: `scripts/run_retrieval.py` โหมด A (ไม่ใส่อะไรเพิ่ม), B (`--hybrid ...`), C (`--rerank-scores` จาก `infra/kaggle_rerank`); `--split test` ต้องมี gold ครบและไฟล์โค้ด/ค่าตั้งที่ commit แล้ว และ **ห้ามรันซ้ำเพื่อปรับค่า**
+- ต้องมีดัชนี: `data/index/dense-bge-m3-t128-v12` และ `chunks-v12-t128/512` (ไม่ขึ้น git; สร้างใหม่ด้วย `build_chunks.py` + `splice_index.py` หรือขอจากเจ้าของ Track B)
+- LLM ที่ใช้ได้ในขั้นสร้างคำตอบ: **Typhoon `typhoon-v2.5-30b-a3b-instruct` เท่านั้น** (ต้องแคชทุกคำขอ: `src/ncdqa/llm/client.py`; คีย์ใน `.env` ตัวแปร `TYPHOON_API_KEY`); Gemini ฟรี (20 คำขอ/วัน) และ GLM ฟรี (ช้า ติด rate limit) ใช้ไม่ได้กับ batch; ไม่ใช้ LLM เขียนคำค้นใหม่ (แย่ลงทุกโมเดล)
+- ข้อควรรู้: test มี 52 ข้อที่ตอบได้ ช่วงเชื่อมั่นกว้าง; gold ยืนยันแค่ "ตรงกับเอกสาร" ไม่ใช่ความถูกต้องทางคลินิก; รายละเอียดการทดลองทั้งหมด `docs/hybrid_retrieval_experiment.md`; บันทึก AI audit `AI_AUDIT.md`, `docs/retrieval_process_record.md`
+
 ## อ่านก่อนทำต่อ: Track B merge เข้า main แล้ว (2026-10-09)
 
 **ต้อง `git pull origin main` ก่อนทำงานต่อ** (PR #2 และ #3 merge แล้ว) corpus ที่ใช้เป็นหลักตอนนี้คือ **`normalized-v11` ของ Track B**
