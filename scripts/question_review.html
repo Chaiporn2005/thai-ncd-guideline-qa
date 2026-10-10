@@ -71,7 +71,11 @@ function render() {
     const quotes = q.evidence.map((e) => e.quote);
     const pages = q.evidence.map((e) => {
       const p = DATA.pages[e.document_id + ":p" + e.pdf_page];
-      const link = e.url ? ` · <a href="${esc(e.url)}" target="_blank" rel="noopener">เปิดต้นฉบับ</a>` : "";
+      const links = [];
+      if (e.local_pdf) links.push(`<a href="${esc(e.local_pdf)}#page=${e.pdf_page}" target="_blank" rel="noopener">เปิด PDF ในเครื่อง (ต้องรัน server ก่อน; หน้า ${e.pdf_page})</a>`);
+      if (e.pdf_url) links.push(`<a href="${esc(e.pdf_url)}#page=${e.pdf_page}" target="_blank" rel="noopener">เปิด PDF หน้า ${e.pdf_page}</a>`);
+      if (e.url) links.push(`<a href="${esc(e.url)}" target="_blank" rel="noopener">หน้าเว็บต้นทาง</a>`);
+      const link = links.length ? " · " + links.join(" · ") : "";
       if (p === undefined) return `<div class="shared"><b>${esc(e.document_id)} · หน้า PDF ${e.pdf_page}</b>${link}<div class="quote">${esc(e.quote)}</div><div class="hint">ไฟล์ชุดนี้ไม่ฝังข้อความหน้า: เปิดต้นฉบับที่ลิงก์ ไปที่หน้า PDF ${e.pdf_page} (นับจากหน้าแรกของไฟล์ PDF) แล้วอ่านบริบทรอบ quote</div></div>`;
       return `<details><summary>${esc(e.document_id)} · หน้า PDF ${e.pdf_page}${link} — quote: <span class="quote">${esc(e.quote)}</span></summary><pre>${highlight(p, quotes)}</pre></details>`;
     }).join("");

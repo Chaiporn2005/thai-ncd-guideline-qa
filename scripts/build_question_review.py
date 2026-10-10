@@ -70,7 +70,15 @@ def main(argv: list[str] | None = None) -> int:
     summary = []
     for n, part in enumerate(deal(questions, args.parts, pinned), 1):
         local = n == 1
-        shown = [{**q, "evidence": [{**e, "url": url_for(e["document_id"])} for e in q["evidence"]]} for q in part]
+        def ev(e: dict) -> dict:
+            out = {**e, "url": url_for(e["document_id"]), "pdf_url": docs[e["document_id"]].get("download_url") or ""}
+            if local:  # the owner has the PDFs under data/raw: link straight to the page
+                # browsers refuse file:// links from a page opened as file://, so serve data/raw on localhost:
+                # python -m http.server 8765 --bind 127.0.0.1 --directory data/raw
+                out["local_pdf"] = f"http://localhost:8765/{e['document_id']}/source.pdf"
+            return out
+
+        shown = [{**q, "evidence": [ev(e) for e in q["evidence"]]} for q in part]
         data = {"part_id": f"part{n}of{args.parts}", "part_label": f"ส่วนที่ {n} จาก {args.parts}", "questions": shown,
                 "pages": {f"{e['document_id']}:p{e['pdf_page']}": pages[f"{e['document_id']}:p{e['pdf_page']}"]
                           for q in part for e in q["evidence"]} if local else {}}
