@@ -5,7 +5,7 @@
 Configurations N0..N6 add one defence at a time (src/ncdqa/rag/guardrail_eval.py: LAYER_CONFIGS; N0 = undefended); choose with --layers N0 N3. Same retrieval, k, prompt text
 and cases for every configuration. Indirect cases plant text into the retrieved hits in memory; the real index and corpus are not changed.
 Output folder: rows.jsonl (case + result + verdict per configuration), results.json (summary with Wilson intervals), results.md, manifest.json.
-Cases with `reviewed_by: null` are DRAFT: the report says so.
+Cases with `reviewed_by: null` are SILVER (AI-written, AI-labelled, no human review; decided 2026-10-11 because no one has time to review): the report says so.
 """
 
 from __future__ import annotations

@@ -1,0 +1,67 @@
+{
+  "label_status": "silver (written and labelled by the AI that wrote the rules; no human review)",
+  "should_block": {
+    "pii_national_id": {
+      "n": 3,
+      "blocked_in_right_category": 3,
+      "blocked_any": 3,
+      "missed": []
+    },
+    "pii_phone": {
+      "n": 3,
+      "blocked_in_right_category": 3,
+      "blocked_any": 3,
+      "missed": []
+    },
+    "pii_email": {
+      "n": 2,
+      "blocked_in_right_category": 2,
+      "blocked_any": 2,
+      "missed": []
+    },
+    "pii_hn": {
+      "n": 2,
+      "blocked_in_right_category": 2,
+      "blocked_any": 2,
+      "missed": []
+    },
+    "pii_name": {
+      "n": 3,
+      "blocked_in_right_category": 3,
+      "blocked_any": 3,
+      "missed": []
+    },
+    "individual_directive": {
+      "n": 8,
+      "blocked_in_right_category": 8,
+      "blocked_any": 8,
+      "missed": []
+    },
+    "emergency": {
+      "n": 3,
+      "blocked_in_right_category": 3,
+      "blocked_any": 3,
+      "missed": []
+    }
+  },
+  "should_pass": {
+    "n": 174,
+    "n_gold_questions": 162,
+    "blocked": 0,
+    "rate": 0.0,
+    "ci95": [
+      0.0,
+      0.022
+    ],
+    "blocked_examples": []
+  },
+  "overall_recall_any_category": {
+    "k": 24,
+    "n": 24,
+    "rate": 1.0,
+    "ci95": [
+      0.862,
+      1.0
+    ]
+  }
+}

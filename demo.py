@@ -9,7 +9,7 @@
 What it runs (the frozen evaluation setup, configs/rag/frozen_v1.json): retrieve top-5 chunks (bge-m3 + Thai BM25), build the prompt, ask the LLM for cited claims,
 then check every claim (the citation must be a chunk that was really sent; numbers and Latin words must appear in the cited chunk) and drop what fails.
 Needs the local index (data/index/*, not in git) and TYPHOON_API_KEY in .env (see .env.example). The first start loads the models (about 20 s).
-For study only: not medical advice, no diagnosis, no personal data handling (the input guards are still an open decision, docs/decisions_guardrail_harness.md G1/G3).
+For study only: not medical advice, no diagnosis, no personal data handling (rule-based input guards G1/G3 are on by default, src/ncdqa/rag/guards.py; they are measured only on a silver set).
 """
 
 from __future__ import annotations
@@ -36,8 +36,10 @@ MESSAGES = {
 
 def load(args):
     from ncdqa.llm.env import load_env
+    from ncdqa.rag.guards import default_guards
     from ncdqa.rag.pipeline import DEFAULT_CONFIG, Pipeline
     load_env()
+    guards = [] if args.no_guard else default_guards()
     cfg = json.loads(DEFAULT_CONFIG.read_text(encoding="utf-8"))
     cfg["retrieval"]["variant"] = args.variant
     cfg["prompt"]["layers"]["validator_tokens"] = True       # validator profile N7 (frozen, decision E1)
@@ -50,8 +52,8 @@ def load(args):
     if args.graph:
         from ncdqa.rag.graph import GraphPipeline
         cfg["recover"] = {"max_retries": 1}
-        return GraphPipeline(retriever, client, cfg)
-    return Pipeline(retriever, client, cfg)
+        return GraphPipeline(retriever, client, cfg, guards)
+    return Pipeline(retriever, client, cfg, guards)
 
 
 def show(result: dict, args, units: dict | None = None) -> None:
@@ -61,6 +63,8 @@ def show(result: dict, args, units: dict | None = None) -> None:
         print("\nแหล่งอ้างอิง:")
         for c in result["citations"]:
             print(f'  [{c["id"]}] {c["document_id"]} (ฉบับ {c["edition_id"]}) หน้า PDF {c["pdf_pages"]}')
+    elif result["status"] == "refused_input":
+        print(result["trace"]["guard"]["message"])
     else:
         print(MESSAGES.get(result["status"], result["status"]))
     t = result["trace"]
@@ -85,6 +89,7 @@ def main() -> int:
     ap.add_argument("--variant", choices=["A", "B", "C"], default="B")
     ap.add_argument("--graph", action="store_true", help="use the LangGraph version (one bounded retry on a malformed reply)")
     ap.add_argument("--show-evidence", action="store_true")
+    ap.add_argument("--no-guard", action="store_true", help="switch off the input guards (personal data, individual prescribing/diagnosis, emergencies)")
     args = ap.parse_args()
     pipe = load(args)
     units = None

@@ -23,6 +23,7 @@ FILES = {
     "eval/{name}_manifest.json": [f"eval/{n}/manifest.json" for n in ("test_luna_N7", "dev_p2_N7", "dev_p3_N7", "recover_luna")],
     "eval/{name}": ["eval/bertscore_variants.json", "eval/bert_selection_dev.json", "eval/judge_sanity.json", "eval/judge_bias.json", "eval/dev_judge_agreement.json", "eval/dev_vs_test.md"],
     "guardrail/{name}_results.json": [f"guard/{n}/results.json" for n in ("g2", "g4_adaptive_v2", "g5_adaptive_n7", "g6_main_n7")],
+    "guardrail/{name}": ["guard/input_guard_silver.json"],
     "guardrail/{name}_manifest.json": [f"guard/{n}/manifest.json" for n in ("g2", "g4_adaptive_v2", "g5_adaptive_n7", "g6_main_n7")],
 }
 

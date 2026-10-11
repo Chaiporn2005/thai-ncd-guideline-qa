@@ -5,7 +5,7 @@
   "decided_by": {
     "owner (Human)": ["fixed pipeline first (H1)", "judge: gpt-5.6-luna reasoning high through codex, Claude Sonnet 4.6 and Gemini through agy as second judges when their quota allows",
                       "RAGAS Faithfulness written by us", "retrieval variants A, B, C compared", "downloading BERTScore encoders allowed", "no human check of the judge"],
-    "AI-suggested, applied under the owner's instruction to carry on (\"รันต่อเลย ทำให้สมบูรณ์\")": [
+    "AI-suggested, then CONFIRMED by the owner on 2026-10-11 (answered \"ยืนยันทั้งหมด\" to the three items below)": [
       "E1: validator profile N7, by the rule stated beforehand (N7 unless it removes more than 5 percentage points of correct answers; on dev it changed at most 2 of 97)",
       "prompt stays p2: p3 (focus on the question) changed nothing measurable on dev (every paired interval contains 0), so no reason to switch",
       "E6: the 4 unanswerable test questions are counted in abstention, reported with n = 4"]

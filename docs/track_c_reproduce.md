@@ -57,6 +57,15 @@ python -X utf8 scripts/eval_guardrails.py --cases data/eval/guardrail/cases_adap
 ```
 รายละเอียดชั้น N0–N7: docstring ของ `src/ncdqa/rag/guardrail_eval.py`
 
+## 5b. input guard (กฎ) และ benchmark สาธารณะ
+```bash
+python -X utf8 scripts/eval_input_guard.py --questions $Q --out data/index/runs/guard/input_guard_silver.json      # ชุด silver + คำถามจริง 162 ข้อ
+python -X utf8 scripts/eval_public_benchmarks.py --out data/index/runs/public_benchmarks/run1          # NanoMTEB-Thai + NitiBench (ดาวน์โหลดไป data/external)
+python -X utf8 scripts/eval_public_benchmarks.py --out data/index/runs/public_benchmarks/run_med_en --tasks scifact nfcorpus cure_dermatology
+python -X utf8 scripts/summarize_public_benchmarks.py --run data/index/runs/public_benchmarks/run1 --out data/index/runs/public_benchmarks/run1_table.md
+```
+ชุดข้อมูลสาธารณะอยู่ใน `data/external/` (ไม่ขึ้น git; ใบอนุญาตต่างกัน: CURE v1 เป็น CC-BY-NC-4.0 ใช้เพื่อการศึกษาเท่านั้น)
+
 ## 6. รวมผลสรุปเข้า git (ไม่มีข้อความคำถามหรือเอกสาร)
 ```bash
 python -X utf8 scripts/collect_track_c_results.py     # -> runs/frozen_gen_v1/
