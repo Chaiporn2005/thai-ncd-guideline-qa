@@ -1,0 +1,39 @@
+{
+  "task": "mkqa_th",
+  "n_docs": 6652,
+  "n_queries": 200,
+  "embed_seconds": 314.1,
+  "settings": {
+    "model": "bge-m3",
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.0363,
+    "recall10": 0.0567,
+    "recall100": 0.1487,
+    "mrr10": 0.0364
+  },
+  "bm25": {
+    "ndcg10": 0.0191,
+    "recall10": 0.0307,
+    "recall100": 0.0529,
+    "mrr10": 0.0201
+  },
+  "hybrid": {
+    "ndcg10": 0.0316,
+    "recall10": 0.0403,
+    "recall100": 0.1304,
+    "mrr10": 0.0358
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": -0.0047,
+    "ci95": [
+      -0.0121,
+      0.0023
+    ]
+  }
+}

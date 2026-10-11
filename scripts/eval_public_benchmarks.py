@@ -113,16 +113,45 @@ def boot(d: list[float], n: int = 2000, seed: int = 20261011):
     return [round(m[int(.025 * n)], 4), round(m[int(.975 * n)], 4)]
 
 
+def download(ext: Path, tasks: list[str]) -> None:
+    """Fetch the public sets from the Hugging Face hub into `ext` (used on Kaggle, where nothing is on disk yet)."""
+    from huggingface_hub import snapshot_download
+    want = lambda *names: any(t in names for t in tasks)  # noqa: E731
+    if any(t not in ("NITI", "nfcorpus", "scifact") and not t.startswith("cure_") for t in tasks):
+        snapshot_download("hakari-bench/NanoMTEB-Thai", repo_type="dataset", local_dir=ext / "NanoMTEB-Thai", allow_patterns=["corpus/*", "queries/*", "qrels/*"])
+    if want("NITI"):
+        snapshot_download("VISAI-AI/nitibench", repo_type="dataset", local_dir=ext / "nitibench")
+        snapshot_download("VISAI-AI/nitibench-statute", repo_type="dataset", local_dir=ext / "nitibench-statute")
+    for name in ("nfcorpus", "scifact"):
+        if want(name):
+            snapshot_download(f"mteb/{name}", repo_type="dataset", local_dir=ext / name, allow_patterns=["corpus.jsonl", "queries.jsonl", "qrels/test.tsv"])
+    cure = [t.removeprefix("cure_") for t in tasks if t.startswith("cure_")]
+    if cure:
+        snapshot_download("mteb/CUREv1", repo_type="dataset", local_dir=ext / "CUREv1", allow_patterns=[f"en-{k}/{c}*" for c in cure for k in ("corpus", "queries", "qrels")])
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--tasks", nargs="*", default=NANO)
     ap.add_argument("--max-docs", type=int, default=0, help="debug: keep only the first N documents that are relevant plus filler (0 = all)")
+    ap.add_argument("--ext", type=Path, default=None, help="folder of the public datasets (default data/external)")
+    ap.add_argument("--download", action="store_true", help="download the datasets of --tasks into --ext first")
+    ap.add_argument("--device", default="cpu", help="cpu or cuda")
+    ap.add_argument("--fp16", action="store_true", help="half-precision embeddings on the GPU (faster; vectors differ slightly from float32, recorded in the result)")
+    ap.add_argument("--batch", type=int, default=16)
     args = ap.parse_args()
+    global EXT
+    if args.ext:
+        EXT = args.ext
+    if args.download:
+        download(EXT, args.tasks)
     args.out.mkdir(parents=True, exist_ok=True)
     (EXT / "cache").mkdir(parents=True, exist_ok=True)
     model = embed.MODELS["bge-m3"]
-    st = embed.load(model)
+    st = embed.load(model, args.device)
+    if args.fp16:
+        st.half()
     for task in args.tasks:
         dest = args.out / f"{task}.json"
         if dest.exists():
@@ -137,12 +166,12 @@ def main() -> int:
             dvec = np.load(cache)
         else:
             order = sorted(range(len(texts)), key=lambda i: len(texts[i]))          # similar lengths per batch: much faster on CPU
-            enc = embed.encode(st, [texts[i] for i in order], model.passage_prefix, batch_size=16)
+            enc = embed.encode(st, [texts[i] for i in order], model.passage_prefix, batch_size=args.batch)
             dvec = np.zeros_like(enc)
             dvec[order] = enc
             np.save(cache, dvec)
         t_doc = time.perf_counter() - t0
-        qvec = embed.encode(st, qtexts, model.query_prefix, batch_size=16)
+        qvec = embed.encode(st, qtexts, model.query_prefix, batch_size=args.batch)
         bm = BM25Index(ids, [tokenize(t, "char3", ()) for t in texts], K1, B)
         bmw = BM25Index(ids, [tokenize(t, "newmm_latin", ()) for t in texts], K1, B)      # word-level BM25, extra column (the frozen one is character 3-grams)
         per = {"dense": [], "bm25": [], "hybrid": [], "bm25_word": [], "hybrid_word": []}
@@ -158,7 +187,7 @@ def main() -> int:
             hybw = fusion.convex(dense, lexw, ALPHA, POOL) if lexw else dense
             for name, ranking in (("dense", dense), ("bm25", lex), ("hybrid", hyb), ("bm25_word", lexw), ("hybrid_word", hybw)):
                 per[name].append(metrics([d for d, _ in ranking], rel[q]))
-        res = {"task": task, "n_docs": len(ids), "n_queries": len(qids), "embed_seconds": round(t_doc, 1), "settings": {"model": "bge-m3", "bm25": "char3", "k1": K1, "b": B, "alpha": ALPHA, "pool": POOL}}
+        res = {"task": task, "n_docs": len(ids), "n_queries": len(qids), "embed_seconds": round(t_doc, 1), "settings": {"model": "bge-m3", "device": args.device, "fp16": args.fp16, "bm25": "char3", "k1": K1, "b": B, "alpha": ALPHA, "pool": POOL}}
         for name, rows in per.items():
             res[name] = {m: round(sum(r[m] for r in rows) / len(rows), 4) for m in ("ndcg10", "recall10", "recall100", "mrr10")}
         d = [h["ndcg10"] - a["ndcg10"] for h, a in zip(per["hybrid"], per["dense"])]

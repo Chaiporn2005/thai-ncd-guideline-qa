@@ -1,0 +1,60 @@
+{
+  "task": "scifact",
+  "n_docs": 5183,
+  "n_queries": 300,
+  "embed_seconds": 92.9,
+  "settings": {
+    "model": "bge-m3",
+    "device": "cuda",
+    "fp16": true,
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.6416,
+    "recall10": 0.7751,
+    "recall100": 0.9037,
+    "mrr10": 0.6081
+  },
+  "bm25": {
+    "ndcg10": 0.6311,
+    "recall10": 0.7612,
+    "recall100": 0.8626,
+    "mrr10": 0.5941
+  },
+  "hybrid": {
+    "ndcg10": 0.6872,
+    "recall10": 0.8168,
+    "recall100": 0.9443,
+    "mrr10": 0.6523
+  },
+  "bm25_word": {
+    "ndcg10": 0.6311,
+    "recall10": 0.7612,
+    "recall100": 0.8626,
+    "mrr10": 0.5941
+  },
+  "hybrid_word": {
+    "ndcg10": 0.6872,
+    "recall10": 0.8168,
+    "recall100": 0.9443,
+    "mrr10": 0.6523
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": 0.0456,
+    "ci95": [
+      0.0261,
+      0.0666
+    ]
+  },
+  "hybrid_word_minus_dense_ndcg10": {
+    "mean": 0.0456,
+    "ci95": [
+      0.0261,
+      0.0666
+    ]
+  }
+}

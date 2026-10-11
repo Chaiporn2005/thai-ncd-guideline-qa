@@ -1,0 +1,60 @@
+{
+  "task": "mkqa_th",
+  "n_docs": 6652,
+  "n_queries": 200,
+  "embed_seconds": 4.2,
+  "settings": {
+    "model": "bge-m3",
+    "device": "cuda",
+    "fp16": true,
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.0363,
+    "recall10": 0.0567,
+    "recall100": 0.1487,
+    "mrr10": 0.0364
+  },
+  "bm25": {
+    "ndcg10": 0.0185,
+    "recall10": 0.0307,
+    "recall100": 0.0529,
+    "mrr10": 0.0192
+  },
+  "hybrid": {
+    "ndcg10": 0.0317,
+    "recall10": 0.0403,
+    "recall100": 0.1304,
+    "mrr10": 0.0358
+  },
+  "bm25_word": {
+    "ndcg10": 0.0169,
+    "recall10": 0.0274,
+    "recall100": 0.0529,
+    "mrr10": 0.0208
+  },
+  "hybrid_word": {
+    "ndcg10": 0.0319,
+    "recall10": 0.0403,
+    "recall100": 0.1397,
+    "mrr10": 0.0362
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": -0.0046,
+    "ci95": [
+      -0.0121,
+      0.0024
+    ]
+  },
+  "hybrid_word_minus_dense_ndcg10": {
+    "mean": -0.0045,
+    "ci95": [
+      -0.0119,
+      0.0024
+    ]
+  }
+}

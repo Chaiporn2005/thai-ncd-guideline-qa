@@ -73,7 +73,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--limit", type=int, default=3, help="questions in a smoke run")
     ap.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     ap.add_argument("--set", dest="overrides", action="append", default=[], metavar="a.b=json", help="override a config value (ablation)")
-    ap.add_argument("--pipeline", choices=["plain", "graph"], default="plain", help="plain Python pipeline, or the LangGraph version (src/ncdqa/rag/graph.py)")
+    ap.add_argument("--pipeline", default="plain", help="plain (src/ncdqa/rag/pipeline.py), graph (the LangGraph version), or module:Class of your own pipeline, e.g. ncdqa.rag.react_agent:ReactAgent. "
+                    "The class is built as Class(retriever, client, cfg) and must have answer(question, retrieved=None) -> dict in the same shape (docs/handoff_react_and_track_d.md)")
     ap.add_argument("--retrieval-results", type=Path, help="results.jsonl of a saved retrieval run (variant A, B or C)")
     ap.add_argument("--chunks", type=Path, help="chunks jsonl that holds the text of the chunk ids in --retrieval-results")
     ap.add_argument("--out", type=Path, required=True)
@@ -116,8 +117,12 @@ def main(argv: list[str] | None = None) -> int:
     if args.pipeline == "graph":
         from ncdqa.rag.graph import GraphPipeline
         pipe = GraphPipeline(retriever, client, cfg)
-    else:
+    elif args.pipeline == "plain":
         pipe = Pipeline(retriever, client, cfg)
+    else:
+        import importlib
+        module, _, cls = args.pipeline.partition(":")
+        pipe = getattr(importlib.import_module(module), cls)(retriever, client, cfg)
 
     started = datetime.now(timezone.utc)
     t0 = time.perf_counter()

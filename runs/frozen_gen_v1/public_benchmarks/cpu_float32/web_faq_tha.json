@@ -1,0 +1,39 @@
+{
+  "task": "web_faq_tha",
+  "n_docs": 10000,
+  "n_queries": 200,
+  "embed_seconds": 2351.7,
+  "settings": {
+    "model": "bge-m3",
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.8881,
+    "recall10": 0.96,
+    "recall100": 0.995,
+    "mrr10": 0.8654
+  },
+  "bm25": {
+    "ndcg10": 0.6969,
+    "recall10": 0.81,
+    "recall100": 0.925,
+    "mrr10": 0.6618
+  },
+  "hybrid": {
+    "ndcg10": 0.8877,
+    "recall10": 0.96,
+    "recall100": 0.995,
+    "mrr10": 0.864
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": -0.0004,
+    "ci95": [
+      -0.0183,
+      0.0179
+    ]
+  }
+}

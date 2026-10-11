@@ -1,0 +1,39 @@
+{
+  "task": "mr_tidy_thai",
+  "n_docs": 10000,
+  "n_queries": 200,
+  "embed_seconds": 6796.9,
+  "settings": {
+    "model": "bge-m3",
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.966,
+    "recall10": 0.99,
+    "recall100": 0.9975,
+    "mrr10": 0.9625
+  },
+  "bm25": {
+    "ndcg10": 0.8496,
+    "recall10": 0.9125,
+    "recall100": 0.98,
+    "mrr10": 0.8415
+  },
+  "hybrid": {
+    "ndcg10": 0.9695,
+    "recall10": 0.995,
+    "recall100": 0.9975,
+    "mrr10": 0.9667
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": 0.0035,
+    "ci95": [
+      -0.006,
+      0.0126
+    ]
+  }
+}

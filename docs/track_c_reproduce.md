@@ -64,6 +64,7 @@ python -X utf8 scripts/eval_public_benchmarks.py --out data/index/runs/public_be
 python -X utf8 scripts/eval_public_benchmarks.py --out data/index/runs/public_benchmarks/run_med_en --tasks scifact nfcorpus cure_dermatology
 python -X utf8 scripts/summarize_public_benchmarks.py --run data/index/runs/public_benchmarks/run1 --out data/index/runs/public_benchmarks/run1_table.md
 ```
+บน GPU (Kaggle T4, 14 ชุดใน ~28 นาที): ดู `infra/kaggle_public_benchmarks/README.md`; ผลที่ได้: `runs/frozen_gen_v1/public_benchmarks/` (มีผล CPU float32 ของชุดไทย 8 ชุดไว้เทียบ)
 ชุดข้อมูลสาธารณะอยู่ใน `data/external/` (ไม่ขึ้น git; ใบอนุญาตต่างกัน: CURE v1 เป็น CC-BY-NC-4.0 ใช้เพื่อการศึกษาเท่านั้น)
 
 ## 6. รวมผลสรุปเข้า git (ไม่มีข้อความคำถามหรือเอกสาร)

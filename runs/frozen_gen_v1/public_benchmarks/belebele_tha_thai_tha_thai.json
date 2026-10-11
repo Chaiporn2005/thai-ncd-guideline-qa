@@ -1,0 +1,60 @@
+{
+  "task": "belebele_tha_thai_tha_thai",
+  "n_docs": 488,
+  "n_queries": 200,
+  "embed_seconds": 3.5,
+  "settings": {
+    "model": "bge-m3",
+    "device": "cuda",
+    "fp16": true,
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.959,
+    "recall10": 0.99,
+    "recall100": 0.995,
+    "mrr10": 0.9485
+  },
+  "bm25": {
+    "ndcg10": 0.949,
+    "recall10": 0.985,
+    "recall100": 0.995,
+    "mrr10": 0.9373
+  },
+  "hybrid": {
+    "ndcg10": 0.9833,
+    "recall10": 0.995,
+    "recall100": 0.995,
+    "mrr10": 0.9792
+  },
+  "bm25_word": {
+    "ndcg10": 0.9397,
+    "recall10": 0.985,
+    "recall100": 0.995,
+    "mrr10": 0.9249
+  },
+  "hybrid_word": {
+    "ndcg10": 0.9838,
+    "recall10": 0.995,
+    "recall100": 1.0,
+    "mrr10": 0.98
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": 0.0243,
+    "ci95": [
+      0.01,
+      0.0398
+    ]
+  },
+  "hybrid_word_minus_dense_ndcg10": {
+    "mean": 0.0248,
+    "ci95": [
+      0.0087,
+      0.0422
+    ]
+  }
+}

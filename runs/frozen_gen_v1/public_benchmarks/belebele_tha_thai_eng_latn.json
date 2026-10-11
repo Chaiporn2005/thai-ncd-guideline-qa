@@ -1,0 +1,60 @@
+{
+  "task": "belebele_tha_thai_eng_latn",
+  "n_docs": 488,
+  "n_queries": 200,
+  "embed_seconds": 3.1,
+  "settings": {
+    "model": "bge-m3",
+    "device": "cuda",
+    "fp16": true,
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.9301,
+    "recall10": 0.985,
+    "recall100": 0.995,
+    "mrr10": 0.9115
+  },
+  "bm25": {
+    "ndcg10": 0.0385,
+    "recall10": 0.075,
+    "recall100": 0.08,
+    "mrr10": 0.0277
+  },
+  "hybrid": {
+    "ndcg10": 0.9195,
+    "recall10": 0.98,
+    "recall100": 0.995,
+    "mrr10": 0.8988
+  },
+  "bm25_word": {
+    "ndcg10": 0.0411,
+    "recall10": 0.08,
+    "recall100": 0.08,
+    "mrr10": 0.0294
+  },
+  "hybrid_word": {
+    "ndcg10": 0.9195,
+    "recall10": 0.98,
+    "recall100": 0.995,
+    "mrr10": 0.8988
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": -0.0106,
+    "ci95": [
+      -0.0196,
+      -0.0036
+    ]
+  },
+  "hybrid_word_minus_dense_ndcg10": {
+    "mean": -0.0106,
+    "ci95": [
+      -0.0196,
+      -0.0036
+    ]
+  }
+}
