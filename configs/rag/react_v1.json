@@ -1,0 +1,47 @@
+{
+  "id": "react_v1",
+  "status": "ReAct agents (plain Python and LangGraph); same prompt rules, validator and LLM as generate_v1; settings are dev-tuned only until a freeze file says otherwise",
+  "retrieval": {
+    "variant": "B",
+    "k": 5
+  },
+  "llm": {
+    "provider": "typhoon_api",
+    "max_tokens": 1000,
+    "providers_file": "configs/llm/providers.yaml",
+    "cache_dir": "data/index/llm_cache"
+  },
+  "prompt": {
+    "version": "p2",
+    "layers": {
+      "rules_version": "p2",
+      "rules": true,
+      "schema": true,
+      "spotlight": true,
+      "sandwich": true,
+      "validator": true,
+      "validator_tokens": false
+    }
+  },
+  "abstain": {
+    "min_top_score": null,
+    "note": "G4: null = no score gate; only the model's own abstain flag and the validator can abstain"
+  },
+  "recover": {
+    "max_retries": 0,
+    "note": "L13 p46 Recover: used only by the graph version (src/ncdqa/rag/graph.py); 0 = no retry, the plain pipeline never retries"
+  },
+  "flagged_chunks": "keep",
+  "flagged_chunks_note": "G6: keep = send chunks with injection_flags to the model (flags are only recorded); exclude = drop them before the prompt",
+  "agent": {
+    "max_steps": 4,
+    "search_k": 5,
+    "max_tokens_per_call": 1000,
+    "require_search_first": true,
+    "note": "decision R1 (AI-suggested): rounds of tool calls capped by max_steps, 3 calls per round, search returns search_k chunks (frozen variant B); tools search + calculator (R2). Options added after the dev diagnosis (all off here, switched on with --set): seed_search (harness searches the user's own question first), fuse_original (RRF of the model's query and the user's question), consolidate_k (final answer may cite only the top-k chunks by cumulative RRF), stop_when_no_new (a search with nothing new ends the searching)",
+    "seed_search": false,
+    "fuse_original": false,
+    "consolidate_k": null,
+    "stop_when_no_new": false
+  }
+}

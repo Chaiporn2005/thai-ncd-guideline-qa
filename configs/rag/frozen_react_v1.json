@@ -1,0 +1,13 @@
+{
+  "id": "frozen_react_v1",
+  "frozen_utc": "2026-10-12",
+  "status": "Frozen before the first test-split ReAct run. Chosen on dev only (106 questions, judge gpt-5.6-luna high, validator N7); test is run once for the Python and the LangGraph agent. Does not change frozen_v1.json.",
+  "decided_by": {"owner (Human)": ["run ReAct in Python and in LangGraph and compare with the fixed pipeline"],
+                 "AI-decided, owner told on 2026-10-12 and said to follow the plan": ["rseed settings chosen as the ReAct representative on dev: best ReAct correctness 0.835 (B 0.876), hit@5 0.928 = B"]},
+  "config": "configs/rag/react_v1.json",
+  "overrides": {"agent.seed_search": true, "agent.max_steps": 3, "agent.fuse_original": false, "agent.consolidate_k": null, "agent.stop_when_no_new": false},
+  "retrieval": "variant B (hybrid: dense bge-m3 + BM25 char3, convex alpha 0.6), k 5 per search",
+  "compared_with": "fixed pipeline A/B/C/D from frozen_v1 on the same test questions, same prompt p2, validator N7, judge luna",
+  "dev_summary": {"B": [0.876, 0.910, 0.928, 4789], "react4": [0.804, 0.844, 0.845, 27452], "rseed": [0.835, 0.832, 0.928, 25044], "rv3": [0.784, 0.835, 0.928, 19047], "columns": "correctness, faithfulness, hit@5, tokens per question"},
+  "test_rule": "each configuration is run on the test split once; no tuning on test results"
+}

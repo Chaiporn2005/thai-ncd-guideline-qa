@@ -53,6 +53,18 @@ def revalidate(row: dict, units: dict, profile: str) -> dict:
     return {"status": status, "claims": v.kept, "dropped": v.dropped}
 
 
+def fit_prompt(claims: list[str], ctx_by_sid: dict, cited: set, limit: int = 26000) -> tuple[str, bool]:
+    """Faithfulness prompt that fits the judge's command-line limit. An agent can see many chunks; the cited ones are kept first, the others are dropped from the end
+    until the prompt fits. Returns (prompt, trimmed). A fixed-pipeline answer (5 chunks) never needs trimming."""
+    order = [k for k in ctx_by_sid if k in cited] + [k for k in ctx_by_sid if k not in cited]
+    keep = list(order)
+    while True:
+        prompt = faithfulness.build_prompt(claims, [ctx_by_sid[k] for k in keep])
+        if len(prompt) <= limit or len(keep) <= 1:
+            return prompt, len(keep) < len(order)
+        keep.pop()
+
+
 def gold_hit(chunk_ids: list[str], units: dict, gold: list[dict]) -> bool:
     for cid in chunk_ids:
         u = units[cid]
@@ -156,8 +168,9 @@ def main(argv: list[str] | None = None) -> int:
                     f.update({f"bert_{k}": v for k, v in scorer.score(answer, r["gold_answer"]).items()})
                 f["numbers_covered"] = correctness.numbers_covered(r["gold_answer"], answer)
                 if judge:
-                    contexts = [units[c]["text"] for c in ev_ids.values()]
-                    jobs.append((faithfulness.build_prompt([c["text"] for c in rv["claims"]], contexts), faithfulness.SCHEMA)); owners.append(f)
+                    fp, trimmed = fit_prompt([c["text"] for c in rv["claims"]], {sid: units[cid]["text"] for sid, cid in ev_ids.items()}, {x for c in rv["claims"] for x in c["cite"]})
+                    f["contexts_trimmed"] = trimmed
+                    jobs.append((fp, faithfulness.SCHEMA)); owners.append(f)
                     corr_items.append((f, r["question"], r["gold_answer"], answer))
             elif r["answerable"]:
                 f["correctness"] = "no_answer"

@@ -47,15 +47,18 @@ def _parts(layers: dict) -> list[str]:
     return ([rules] if layers.get("rules", True) else []) + ([OUTPUT_FORMAT] if layers.get("schema", True) else [])
 
 
-_TAG = re.compile(r"<\s*(/?)\s*(evidence|question)", re.I)
+_TAG = re.compile(r"<\s*(/?)\s*(evidence|question|observation)", re.I)
 _SPECIAL = re.compile(r"<\|([^|<>]{1,30})\|>|\[(/?)INST\]|<<\s*(/?)SYS\s*>>", re.I)   # chat-template markers (ChatML, Llama 2/3): slides L11 p27-28
 
 
-def defuse(text: str, tags: tuple[str, ...] = ("evidence", "question")) -> str:
+DEFAULT_TAGS = ("evidence", "question", "observation")
+
+
+def defuse(text: str, tags: tuple[str, ...] = DEFAULT_TAGS) -> str:
     """Make delimiter look-alikes harmless: '</evidence' becomes '‹/evidence' so text cannot end its own block, and chat-template
     special tokens (<|im_start|>, <|eot_id|>, [INST], <<SYS>>) lose their angle brackets so they cannot fake a role change."""
     text = _SPECIAL.sub(lambda m: "‹" + m.group(0)[1:-1] + "›", text)
-    tag = _TAG if tags == ("evidence", "question") else re.compile(r"<\s*(/?)\s*(" + "|".join(map(re.escape, tags)) + ")", re.I)
+    tag = _TAG if tags == DEFAULT_TAGS else re.compile(r"<\s*(/?)\s*(" + "|".join(map(re.escape, tags)) + ")", re.I)
     return tag.sub(lambda m: "‹" + m.group(1) + m.group(2), text)
 
 
