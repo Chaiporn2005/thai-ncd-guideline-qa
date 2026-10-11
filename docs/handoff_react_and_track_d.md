@@ -12,7 +12,9 @@
 - **ชุดทดสอบ injection ใช้กับ agent ได้:** `scripts/eval_guardrails.py` (ต้องรับ `retrieved=`) และ `data/eval/guardrail/` (silver)
 - เทสต์ 75 ตัว: `python -X utf8 -m unittest tests.test_guards tests.test_rag_pipeline tests.test_rag_graph tests.test_guardrail_eval tests.test_eval_metrics`
 
-## 2. สำหรับเพื่อนที่ทำ ReAct agent (tool calling)
+## 2. ReAct agent (tool calling): เจ้าของทำเสร็จแล้ว 2026-10-12; เพื่อนใช้ต่อหรือปรับได้
+สถานะ: มี `react_core.py`, `react_agent.py` (Python), `react_graph.py` (LangGraph), freeze `configs/rag/frozen_react_v1.json` และผล test ใน `runs/frozen_gen_v1/react_test_results.md` ผลสรุป: ReAct (seed_search, 3 รอบ) correctness 0.827 ต่ำกว่า B 0.885 / C 0.904 และใช้ token ราว 5.5 เท่า; test ถูกใช้แล้วสำหรับ config นี้ การปรับต่อต้องทำบน dev แล้ว freeze ไฟล์ใหม่ (ห้ามรัน test ซ้ำเพื่อปรับ)
+ข้อกำหนดเดิมสำหรับคนที่จะทำ agent ตัวใหม่:
 ทำ: คลาสใหม่ เช่น `src/ncdqa/rag/react_agent.py` ที่ทำตามสัญญาข้อ 1, tools อ่านอย่างเดียว (search, read_page, calculator), `max_steps` และงบ token, ผลลัพธ์สุดท้ายต้องผ่าน `validate`, เก็บ `trace["raw_output"]` และ `trace["evidence"]` (id → chunk_id ของ **ทุก** chunk ที่เห็น) เพื่อให้ตัวประเมินทำงานได้ รายละเอียดการออกแบบ R1–R4: `output/TRACK_C_REACT_AGENT_PLAN_TH.md` (สำเนาอยู่ในโฟลเดอร์งานของเจ้าของ)
 กติกาการวัดที่ต้องรักษา: ปรับ prompt/ค่าบน **dev เท่านั้น** แล้ว freeze ก่อนรัน test **ครั้งเดียว**; ใช้ judge ชุดเดียวกัน (gpt-5.6-luna high ผ่าน codex) และ validator N7 เพื่อเทียบได้; ใช้แคชของ LLM client ทุกคำขอ; อย่าแก้ `configs/rag/frozen_v1.json` (ทำไฟล์ freeze ใหม่ของตัวเอง)
 ค่าเชิงปฏิบัติ: LLM ตอบคำถามคือ Typhoon (`TYPHOON_API_KEY` ใน `.env`); judge ต้องล็อกอิน `codex` ในเครื่องที่รัน

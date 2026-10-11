@@ -67,6 +67,17 @@ python -X utf8 scripts/summarize_public_benchmarks.py --run data/index/runs/publ
 บน GPU (Kaggle T4, 14 ชุดใน ~28 นาที): ดู `infra/kaggle_public_benchmarks/README.md`; ผลที่ได้: `runs/frozen_gen_v1/public_benchmarks/` (มีผล CPU float32 ของชุดไทย 8 ชุดไว้เทียบ)
 ชุดข้อมูลสาธารณะอยู่ใน `data/external/` (ไม่ขึ้น git; ใบอนุญาตต่างกัน: CURE v1 เป็น CC-BY-NC-4.0 ใช้เพื่อการศึกษาเท่านั้น)
 
+## 5c. ReAct agent (Python และ LangGraph) และ variant D (BM25 ล้วน)
+```bash
+Q=data/handoff/track_c_20261012/questions_all_reviewed.jsonl
+# freeze: configs/rag/frozen_react_v1.json (seed_search=true, max_steps=3); รัน test ครั้งเดียวต่อ agent (สคริปต์ปฏิเสธถ้าต้นไม้ git ไม่สะอาด)
+python -X utf8 scripts/run_generation.py --questions $Q --split test --config configs/rag/react_v1.json --pipeline ncdqa.rag.react_agent:ReactAgent --set agent.seed_search=true --set agent.max_steps=3 --out data/index/runs/gen/test-react-py
+python -X utf8 scripts/run_generation.py --questions $Q --split test --config configs/rag/react_v1.json --pipeline ncdqa.rag.react_graph:GraphReactAgent --set agent.seed_search=true --set agent.max_steps=3 --out data/index/runs/gen/test-react-graph
+python -X utf8 scripts/eval_generation.py --answers react-py=data/index/runs/gen/test-react-py/answers.jsonl --chunks data/handoff/track_c_20261012/chunks/chunks-v12-t512.jsonl --validator N7 --judge codex-luna --bert-model BAAI/bge-m3 --bert-layer 8 --idf-questions $Q --out data/index/runs/eval/test_react-py_luna_N7
+python -X utf8 scripts/bm25_rankings.py --help      # variant D; เทียบด้วย scripts/compare_extra_variant.py
+```
+ผล: `runs/frozen_gen_v1/react_test_results.md` (ReAct ไม่ชนะ pipeline B/C ที่ token ราว 5.5 เท่า; Python = LangGraph 56/56) ต้องใช้ `pip install -r requirements-agent.txt`
+
 ## 6. รวมผลสรุปเข้า git (ไม่มีข้อความคำถามหรือเอกสาร)
 ```bash
 python -X utf8 scripts/collect_track_c_results.py     # -> runs/frozen_gen_v1/

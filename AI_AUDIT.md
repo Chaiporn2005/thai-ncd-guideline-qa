@@ -6,7 +6,7 @@
 **สถานะ ณ 2026-10-10** (อัปเดตจากการอ่านทุกแชทในโฟลเดอร์ `team-project` + บันทึก `docs/corpus_process_record.md` และ `docs/retrieval_process_record.md` ใน repo)
 - **Domain:** แนวทางเวชปฏิบัติ NCD ไทย (DM, HT, lipid; CKD และเอกสารบริการ NCD เป็นส่วนเสริม) ภาษาไทย
 - **Corpus:** 68 เอกสาร / 4,009 หน้า PDF, `normalized-v11` ค้นได้ 3,749 หน้า (v2→v11 ดูตาราง §7 ของ corpus record)
-- **คำถามประเมิน:** silver 141 ข้อ (dev 109 / test 32) + ชุดเสริม test 28 ข้อ (ยังเป็น silver) การตรวจเป็น gold: ส่วน 1 และ 4 ตรวจแล้ว, **ส่วน 2 และ 3 รอเพื่อน 2 คน**, ชุดเสริม 28 ข้อรอเจ้าของ Track B
+- **คำถามประเมิน:** silver 141 ข้อ (dev 109 / test 32) + ชุดเสริม test 28 ข้อ (ยังเป็น silver) การตรวจเป็น gold: **ครบแล้ว ณ 2026-10-11 (ผู้ใช้แจ้ง)** ส่วน 1–4 และชุดเสริม; [FILL IN: จำนวน gold / แก้ / ปฏิเสธ ต่อ dev และ test]
 - **Embedding:** `intfloat/multilingual-e5-base` และ `BAAI/bge-m3` (ทดสอบทั้งคู่), reranker `BAAI/bge-reranker-v2-m3`
 - **Chunk:** ตัดตามโครงสร้างย่อหน้า/ประโยค/แถวตาราง ไม่ใช้ fixed-size ขนาดที่ทดสอบ 128/256/384/512 + parent-child; [FILL IN: ขนาดสุดท้ายที่เลือก — ดู `docs/chunk_size_evidence.md`]
 - **Retrieval:** dense (A), hybrid dense+BM25 แบบ convex combination (B), hybrid + reranker (C). ผลทั้งหมดบน dev **silver** ยังไม่ใช่ผลรายงาน
@@ -29,6 +29,12 @@
 | **LLM API 3 ราย** (GLM-4.7-Flash, Gemini Flash, Typhoon `typhoon-v2.5-30b-a3b-instruct`) | ตั้งค่าใน `.env` + `src/ncdqa/llm/client.py` เพื่อเทียบกับโมเดลเล็ก/ทดสอบความนิ่งของผล | คำถาม dev + prompt; [FILL IN: ยืนยันว่ามีการเรียกจริงกี่ครั้งและผลอยู่ที่ไหน — ณ บันทึกล่าสุดยังไม่เคยเรียก] |
 | **Embedding / reranker** (e5-base, bge-m3, bge-reranker-v2-m3 ผ่าน SentenceTransformers) | ค้นหาและจัดอันดับ | CPU ในเครื่อง; GPU บน Kaggle (private datasets, ข้อความ chunk รวม Siriraj) |
 | **ค้นเว็บ** (WebSearch/WebFetch) | หาที่มาของพารามิเตอร์ (RRF, BM25, ขนาด chunk, query2doc) และตรวจชื่อโมเดลบน Hugging Face | คำค้นเท่านั้น |
+| **Claude Code (Sonnet 5.5), Track C** | เขียนและทดสอบ pipeline สร้างคำตอบ, เวอร์ชัน LangGraph, harness prompt injection, metric (BERTScore, Faithfulness แบบ RAGAS, correctness), ReAct agent (Python และ LangGraph), lit review ของ agentic RAG, วิเคราะห์ผลและร่างรายงาน | โค้ด, ผลรัน, คำค้นเว็บ |
+| **Typhoon `typhoon-v2.5-30b-a3b-instruct`** (API) | ตัวสร้างคำตอบของทุกระบบใน Track C (pipeline คงที่ และ ReAct ที่เรียก tool) temperature 0, แคชทุกคำขอ | คำถาม + ข้อความหลักฐาน (chunk) ที่ค้นได้ |
+| **gpt-5.6-luna (reasoning high) ผ่าน Codex CLI** | judge หลัก: Faithfulness, correctness (อ้างอิงเฉลย) ของทุกชุดใน test | คำถาม, คำตอบ, chunk ที่อ้าง, เฉลย |
+| **Claude Sonnet 4.6 และ Gemini 3.8 Flash (ผ่าน `agy`/API)** | judge ตัวรอง: ใช้ได้เฉพาะ correctness บน dev ก่อนโควตาหมด | เหมือนข้างบน |
+| **LangGraph 1.2.14 + langchain-core 1.6.9** | เวอร์ชัน StateGraph ของ pipeline และของ ReAct agent (เทียบกับ Python ธรรมดา) | ไม่ส่งข้อมูลออก (ไม่ใช้ LangSmith) |
+| **Kaggle T4 GPU** | รัน benchmark สาธารณะ 14 ชุดด้วย retrieval ที่ freeze แล้ว | ชุดข้อมูลสาธารณะเท่านั้น |
 
 หมายเหตุ: บทบาท "scout / curator / QA reviewer" ใน `agents/*.md` ของ repo เป็นบทบาทเชิงตรรกะ ไม่มี autonomous runner; ตัวที่รันจริงคือ Claude Code ควบคุม Codex/Gemini ทีละงาน ผ่านคำสั่งงานที่เก็บเป็นไฟล์ (`data/agent_runs/*/TASK*.md`) เพื่อให้ตรวจย้อนได้
 
@@ -130,6 +136,23 @@
 | B8 | 2026-10-10 | Astra / Gemini | ร่างชุดเสริม 18+18 (P5, P6) | `20261011-supplement-questions/TASK.md` | Gemini รอบแรกใช้ shell ไม่ได้ ต้องสั่งใหม่ให้ใช้เฉพาะเครื่องมืออ่าน/เขียนไฟล์ |
 | B9 | 2026-10-10 | Astra / Gemini | รีวิวไขว้ (P7, P8) | `TASK_REVIEW.md` | Astra ผ่านงาน Gemini 2/18; Gemini ผ่านงาน Astra 15/18 |
 
+### C. คำสั่งของคนถึง Claude ใน Track C (2026-10-11 ถึง 2026-10-12; ข้อความจริงจากแชท ย่อบางส่วน)
+
+| # | prompt | AI ทำอะไร | ผล |
+|---|---|---|---|
+| C1 | "เริ่มวางแผน track c และ harness ,prompt injection" | สำรวจ repo/สไลด์ เขียนแผน | `output/TRACK_C_EVAL_HARNESS_PLAN_TH.md` |
+| C2 | "ทำpipeline generator ก่อนให้เสร็จ แล้วมาออกแบบ harness ป้องกัน injection" | เขียน pipeline + ออกแบบ harness N0–N7 | `src/ncdqa/rag/*`, ผล ASR ต่อชั้น |
+| C3 | "หาสาเหตุว่าทำไมถึงเป็นแบบนี้ และแก้ไข ถ้าติดจริงๆไปวัด eval metric ต่าง" | วินิจฉัยว่า baseline L0 ถูกป้องกันอยู่แล้ว แยกชั้นใหม่ | ดู C-E1 |
+| C4 | "ทำ langgraph เองก่อน ... เอาเป็น skill ที่เป็นของ ai engineer ที่เป็น stack จริงๆ" | เวอร์ชัน LangGraph + node recover | เท่ากับ pipeline ธรรมดา 106/106 |
+| C5 | "ใช้ Claude Sonnet ผ่าน agy ทำต่อเลย และใช้ gpt-5.6-luna (reasoning high) คู่กันไป2 โมเดล" | runner สอง judge | Claude ทำได้เฉพาะ correctness บน dev (โควตาหมด) |
+| C6 | "BERTScore ผิดพลาดรึเปล่าทำไมเท่ากัน วางแผน eval ที่เหลือ ..." | ตรวจ gold-vs-gold, baseline, เลือก encoder | ไม่ใช่บั๊ก (C-E6) |
+| C7 | "ทำ E-3, E-9, E-10 ต่อเลย ทำถึงขั้นสุดท้ายเลย แล้วค่อยรายงานผลตอนจบ" | ทำ metric ที่เหลือ เดโม เอกสาร | `TRACK_C_FINAL_REPORT_TH.md` |
+| C8 | "ใช้GPU kaggle ไม่ต้องชุดสักชุดแต่ทำบน GPU" | benchmark สาธารณะทุกชุดบน Kaggle T4 | 14 ชุด ไฮบริดชนะ 6 แพ้ 4 |
+| C9 | "แล้ว bm25 ล้วนๆหรือ sparse ก็ยังไม่ได้ทดสอบเลยหรอ ... ReAct เขียนด้วย LangGraph ก็ได้ ..." | เพิ่ม variant D (BM25 ล้วน) | D: correctness test 0.808 |
+| C10 | "งั้นทำทุกอย่างพร้อมกันเลย ตั้งแต่ React ด้วย python และ langgraph เพื่อเปรียบเทียบกับ pipeline ปกติ" | ReAct agent สองแบบ ใช้ core ร่วมกัน | `react_core.py`, `react_agent.py`, `react_graph.py` |
+| C11 | "ตอนนี้เราใช้llm as a judge ใช่มั้ย ... แล้วมันแย่กว่าจริงหรอที่ reAct จะแย่กว่า ลองปรับปรุง ลองlit review แล้วปรับปรุงหน่อย ..." | lit review + ตัวเลือกปรับปรุง (seed search, RRF, คัดหลักฐาน, หยุดเมื่อไม่มีของใหม่) | ค้นดีขึ้นเท่า B แต่คำตอบยังไม่ดีกว่า B |
+| C12 | "rseed rv3 ต่างกันยังไง และ ใช้ตามแผนเลย ..." / "ทำต่อเลย push and do ai audit also" | freeze rseed รัน test ครั้งเดียว รวมตาราง | `runs/frozen_gen_v1/react_test_results.md` |
+
 ---
 
 ## 3. Decision Journal
@@ -170,7 +193,7 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | D12 | LLM ทุกตัว temperature 0 / greedy, seed คงที่, cache ทุกคำขอ, วัดความนิ่งด้วยการรันซ้ำ; คีย์เก็บใน `.env` ชื่อตัวแปรเท่านั้นในไฟล์ provider; id โมเดลต้องคัดลอกจาก API | [Human] สั่ง, AI ออกแบบ | ห้ามเดา endpoint/โมเดล |
 | D13 | หน่วย/คำพ้องไม่แก้ด้วยพจนานุกรมหน่วยใน retrieval; ใช้ LLM ในขั้น query rewrite/generator และบันทึกเป็นข้อจำกัด | [AI-suggested, Human-approved] | เคสนับไม่หมด เวลาเหลือน้อย |
 | D14 | ชุดเสริม test: ใช้เอกสารที่ test ยังไม่มีหรือบาง, ไม่แตะเอกสาร dev, ตัด Siriraj ที่ติด rights conflict | [AI-decided] ตามเป้าหมายผู้ใช้ | แก้ HT 1 ข้อ / กระจุกเล่ม |
-| D15 | ตัดสินคำถามชุดเสริมทีละข้อ (เก็บ 22 / แก้ 6 / ตัด 8) | [AI-decided] รอคนตรวจเป็น gold | สองโมเดลรีวิวเห็นต่างมาก จึงไม่ใช้ "ผ่านรีวิวโมเดล" เป็นหลักฐาน |
+| D15 | ตัดสินคำถามชุดเสริมทีละข้อ (เก็บ 22 / แก้ 6 / ตัด 8) | [AI-decided]; ต่อมาคนตรวจเป็น gold แล้ว (2026-10-11) | สองโมเดลรีวิวเห็นต่างมาก จึงไม่ใช้ "ผ่านรีวิวโมเดล" เป็นหลักฐาน |
 | D16 | แก้ "เฉลยหน้าเดียว": `alt_evidence` + หาหน้าซ้ำ + จับคู่ตามคำตอบตัวเลข; รายงาน strict/lenient คู่กัน threshold 0.35 | [Human] เลือกเทคนิค 1, 2, 4; [AI-decided] รายละเอียด/threshold | lenient แทน strict ไม่ได้ (ปรับเทียบบนชุดเดียวกับที่ทดสอบ); ผลบน dev เพิ่ม R@5 แค่ 0–2 จุด |
 | D17 | เพื่อน 2 คนตรวจเฉพาะ silver ส่วน 2–3; เจ้าของ Track B ตรวจชุดเสริม 28 ข้อเอง | [Human] | ข้อจำกัดที่ต้องรายงาน: test ชุดเสริมตรวจโดยเจ้าของ Track B คนเดียว |
 | D18 | เสนอปรับ test เดิม: ตัด q114, q109, ย้าย q088 ไป dev | [AI-suggested] [FILL IN: ผู้ใช้อนุมัติหรือไม่] | `test_adjustments.json` ยังไม่ใช้กับไฟล์จริง |
@@ -180,6 +203,22 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | D22 | ถ้ามี GPU ใช้ reranker (variant C) เป็นโหมดแนะนำ; ถ้าไม่มี ใช้ hybrid (B) | [Human] | ผู้ใช้สั่ง 2026-10-11; reranker ช่วยอันดับต้น (test MRR@10 0.771 เทียบ 0.737) แต่ไม่มีนัยสำคัญและช้ามากบน CPU (15–36 วินาที/คำถาม) |
 | D23 | corpus v12: ถอนคู่มือ NCD Clinic Plus ออกจากการค้นทั้งเล่ม (ข้อความสีขาวซ่อนทำให้วันที่ไม่ตรงหน้าที่ผู้อ่านเห็น) แทนวิธีดึงเฉพาะข้อความที่มองเห็น | [Human] ตัดสิน; [AI-suggested] เคยเสนอ "ดึงเฉพาะข้อความที่มองเห็น" แต่ถูกปฏิเสธ | ต้นแบบดึงข้อความที่มองเห็นตัด 189 บรรทัดใน 27 หน้า แต่ตรวจยืนยันรายบรรทัดไม่ได้ทั้งหมด จึงถอนทั้งเล่ม; ดัชนี v12 ใช้เวกเตอร์เดิมทั้งหมด |
 | D24 | ทดลอง sparse/ColBERT ของ bge-m3 เอง แล้วไม่เปลี่ยนค่าที่ freeze | [Human] สั่งทดลอง, [AI] รันและสรุป | ผลบน gold dev: sparse ของ bge-m3 (R@5 0.644) อ่อนกว่า BM25 (0.701), dense+sparse แทน BM25 แย่ลง −0.093, ColBERT จัดอันดับ top-30 ใหม่แย่ลง −0.113; รายละเอียด `docs/hybrid_retrieval_experiment.md` §0.3 |
+
+### 3.3 Track C: generation, evaluation, prompt injection, ReAct
+
+| # | การตัดสินใจ | เจ้าของ | เหตุผล/หลักฐาน |
+|---|---|---|---|
+| C-D1 | pipeline คงที่ก่อน แล้วค่อยทำ ReAct | [Human] | `docs/decisions_guardrail_harness.md` H1 |
+| C-D2 | judge หลัก = gpt-5.6-luna high; ไม่ใช้คนตรวจ judge; เขียน Faithfulness แบบ RAGAS เอง; เทียบ retrieval A/B/C (+D) | [Human] | โควตา agy/API หมดระหว่างงาน; ตรวจ judge ด้วย sanity 48/48, reshuffle κ 0.82, cross-judge κ 0.815 บน dev |
+| C-D3 | validator N7, prompt p2, นับ test 4 ข้อไม่มีคำตอบใน abstention (n=4) | [AI-suggested, Human-approved] (ตอบ "ยืนยันทั้งหมด" 2026-10-11) | `configs/rag/frozen_v1.json` |
+| C-D4 | BERTScore ใช้ bge-m3 ชั้น 8 | [AI-decided] ตามเกณฑ์ที่ประกาศก่อน | AUC สูงสุดบน dev; WangchanBERTa โหลดไม่ผ่าน |
+| C-D5 | input guard เป็นกฎอย่างเดียว; จุดอ่อน (ประชากรใกล้เคียง, ตัวเลขขัดกัน) บันทึกเป็นข้อจำกัด; ชุดเคส injection เป็น silver | [Human] (เลือกผ่านคำถามเลือกตอบ) | ไม่มีเวลาให้คนตรวจ; test ถูกใช้แล้ว |
+| C-D6 | benchmark สาธารณะรันบน Kaggle GPU ทุกชุด ไม่ข้าม | [Human] | ผลที่ `runs/frozen_gen_v1/` |
+| C-D7 | ReAct เขียนทั้ง Python และ LangGraph ใช้ core ร่วมกันเพื่อเทียบ | [Human] | ต่างกันได้แค่การควบคุมลำดับ; ตรงกัน 106/106 บน dev, 56/56 บน test |
+| C-D8 | ปรับ ReAct 4 แบบหลังเห็นว่าแย่กว่าบน dev (seed search, RRF กับคำถามเดิม, คัดหลักฐาน, หยุดเมื่อไม่มีของใหม่) | [Human] สั่งให้ปรับ; [AI] เลือกวิธีจาก lit review | เลือกจาก dev เท่านั้น |
+| C-D9 | ใช้ rseed เป็นตัวแทน ReAct บน test (รันครั้งเดียว) | [AI-suggested, Human-approved] ("ใช้ตามแผนเลย") | ดีที่สุดใน ReAct บน dev: correctness 0.835, hit@5 0.928 (B 0.876) |
+
+**ผลหลัก (test, 52 ข้อที่ตอบได้):** correctness A 0.798 / B 0.885 / C 0.904 / D 0.808 / ReAct 0.827 (Python = LangGraph); ReAct ใช้ token ราว 5.5 เท่าของ B และไม่ชนะ B (ผลต่าง −0.058, CI [−0.154, +0.038]) judge เป็น LLM ไม่มีคนตรวจ (silver)
 
 ---
 
@@ -236,6 +275,23 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | W4 | ข้อความที่ Claude ร่างให้เพื่อนรอบแรกบอกให้ "เปิดต้นฉบับ" ซึ่งใช้ไม่ได้และไม่มีวิธีจัดการ `????` | ผู้ใช้ส่งภาพที่เพื่อนงง | ข้อความใหม่ + คำแนะนำให้ปฏิเสธ q112 |
 | W5 | `CLAUDE.md` รอบ `/init` เขียนรายละเอียด `tmp/thai-ncd-guideline-qa-review-.../` จากรายการโฟลเดอร์และเอกสารแผน ไม่ได้อ่านเนื้อหา | Claude เปิดเผยเองในคำตอบ | บอกข้อจำกัดให้ผู้ใช้ ไม่ใช่ข้อมูลผิด |
 
+### 4.4 Track C
+
+| # | AI ผิดหรือหละหลวมอะไร | ผู้จับ | วิธีแก้ |
+|---|---|---|---|
+| C-E1 | baseline "L0" ของ harness injection ไม่ได้ไม่มีการป้องกัน (ASR 0 ทุกชั้น) | Claude ทดสอบด้วย prompt เปล่า (โมเดลทำตามโจมตี 10/13) | แยกชั้น rules/schema เป็น N0–N7 |
+| C-E2 | canary ที่มีเลขทำให้ validator ดูเหมือนกันการโจมตีได้ (กฎ "เลขต้องอยู่ในหลักฐาน" จับเอง) | Claude | ใช้ canary ไม่มีตัวเลข |
+| C-E3 | แคช judge เก็บคำตอบว่างเป็นผลสำเร็จ 225 รายการ | metric ผิดปกติ | ถือว่าว่างเป็น error ไม่แคช ลบแถวว่าง (มี .bak) |
+| C-E4 | อักขระ NUL ใน chunk ทำให้รันล้ม | log `embedded null character` | ล้างอักขระควบคุมก่อนส่ง |
+| C-E5 | รัน `git stash` โดยไม่ตั้งใจ เก็บการแก้ `AI_AUDIT.md` ของเจ้าของไป | Claude (`git stash list`) | `git stash pop` คืนทันที ไม่มีอะไรหาย |
+| C-E6 | สงสัยว่า BERTScore ผิดเพราะเท่ากันทั้ง 3 variant | เจ้าของถาม; Claude ตรวจ gold-vs-gold = 1.0 | ไม่ใช่บั๊ก; baseline 0.72 vs 0.82, F1 ต่างแค่ ~0.018 ระหว่างถูก/ไม่ถูก |
+| C-E7 | สคริปต์แก้ไฟล์ของ Claude เขียนอักขระ escape (\n, \x00) ผิดทำให้ไฟล์พัง 3 ครั้ง | SyntaxError / ไฟล์มี NUL | แก้ด้วย Edit และตรวจไบต์ |
+| C-E8 | ReAct: โมเดลตอบ/ปฏิเสธโดยไม่ค้นเลย และ Typhoon ไม่ทำตาม `tool_choice` | อ่าน trace บน dev | กฎใน prompt "ต้องค้นก่อน" + เตือนหนึ่งครั้ง |
+| C-E9 | ตัวเตือนนับเป็นหนึ่งรอบในเวอร์ชัน Python แต่ไม่นับใน LangGraph ทำให้คำตอบต่างกัน 21 ข้อ | เทียบ Python กับ LangGraph | ใช้ตัวนับรอบเดียวกัน; ตรวจใหม่แล้วตรงกัน |
+| C-E10 | `defuse` ไม่ครอบแท็ก `observation` ผลค้นที่ฝังคำสั่งจึงหลุดได้ | Claude ทบทวนตอนทำ ReAct | เพิ่มแท็กใน `DEFAULT_TAGS` + เทสต์ |
+| C-E11 | รันตัวเลือก ReAct ชุดแรกล้ม (`--set` ไม่รู้จักคีย์) | log "no such key" | เพิ่มคีย์ใน `react_v1.json` แล้วรันใหม่ |
+| C-E12 | รัน test ของ ReAct ครั้งแรกถูกสคริปต์ปฏิเสธ (ต้นไม้ git ไม่สะอาด) แต่สคริปต์ห่อของ Claude เขียนไฟล์ "done" ทั้งที่ไม่ได้รัน | Claude อ่าน log หลังเห็นว่าเสร็จเร็วผิดปกติ | ลบไฟล์ done, commit โค้ด (ไม่รวม AI_AUDIT.md) แล้วรันใหม่; ยังไม่มีการให้คะแนน test ก่อนหน้านั้น |
+
 ---
 
 ## 5. Contribution Map
@@ -245,8 +301,9 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | **ธนกฤต เสมอหน้า (Up2mEz, เจ้าของ Track B)** | ตัดสินนโยบายทั้งหมด (Siriraj, ส่งภาพให้ OCR ภายนอก, เลือกเอกสาร, ทิศทาง chunk, metadata-only, เทคนิค 1/2/4), ตัดสินทุกหน้า OCR (283 + 90), ตัดสิน PDPA/ป้ายประชากรทุกหน้า, ชี้ปัญหาที่ AI พลาด (chunk ตัดขาด, footer/แถบหมวด, regex ผิด, ลิงก์ review), ตรวจ gold ส่วน 1; **[FILL IN: ตรวจชุดเสริม 28 ข้อ]** | Claude Code, Codex (astra/sol), Gemini, Typhoon OCR |
 | **ชัยพร ออฤดี (Chaiporn2005 — อนุมาน; Track A / เจ้าของ repo)** | หาเอกสาร, manifest, สคริปต์ดาวน์โหลด/สกัดข้อความ/normalize รุ่นแรก, สร้าง repo | [FILL IN: เครื่องมือ AI ที่ใช้] |
 | **ชัยพร ออฤดี** | ตรวจ silver ส่วน 4 เป็น gold (ส่งไฟล์แล้ว); จับ q097 เป็น `????` | [FILL IN] |
-| **ธนวัฒน์ สุริยะ** | ตรวจ silver ส่วน 2 (ยังรอผล); [FILL IN: งานอื่น] | [FILL IN] |
-| **คณิณ แคลวิณ ชมวิวัฒน์** ("Calvin" ใน corpus record — อนุมาน) | fidelity review ของ Track A (`docs/fidelity_review_20261007.md`); ตรวจ silver ส่วน 3 (ยังรอผล) | [FILL IN] |
+| **ธนวัฒน์ สุริยะ** | ตรวจ silver ส่วน 2 (ตรวจเสร็จแล้ว); [FILL IN: งานอื่น] | [FILL IN] |
+| **คณิณ แคลวิณ ชมวิวัฒน์** ("Calvin" ใน corpus record — อนุมาน) | fidelity review ของ Track A (`docs/fidelity_review_20261007.md`); ตรวจ silver ส่วน 3 (ตรวจเสร็จแล้ว) | [FILL IN] |
+| **ธนกฤต เสมอหน้า, Track C (generation + evaluation + injection + ReAct)** | ตัดสินขอบเขตและนโยบายทั้งหมดของ Track C (ตาราง C-D1 ถึง C-D9), เลือกให้รันบน Kaggle GPU และสลับบัญชี Kaggle, สั่งให้ปรับ ReAct และให้ทำ Python เทียบ LangGraph; **[FILL IN: ระดับที่ตรวจโค้ด/ผลด้วยตนเอง, การตรวจชุดเคส injection (ตอนนี้ silver ไม่มีคนตรวจ)]** | Claude Code (โค้ด/เทสต์/วิเคราะห์), Typhoon (ตัวสร้างคำตอบ), gpt-5.6-luna (judge) |
 
 ส่วนที่ AI ทำ: Claude เขียนโค้ด/เทสต์/สคริปต์/หน้า review/เอกสารทั้งหมด และตัดสินรายข้อชุดเสริม (D15); Codex/Gemini ร่างคำถามและเสนอแก้ OCR; Typhoon แปลงภาพเป็นข้อความ. **AI ไม่ push ขึ้น GitHub เองโดยไม่สั่ง** (commit/push ทำเมื่อผู้ใช้สั่ง: `c33f207`, `c22b877` บน `rag/track-b-l1`)
 
