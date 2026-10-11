@@ -1,0 +1,21 @@
+{
+  "id": "frozen_v1",
+  "frozen_utc": "2026-10-11",
+  "status": "Frozen before the first test-split generation. Nothing below may change before the test run; a change makes the test numbers invalid and needs a new id.",
+  "decided_by": {
+    "owner (Human)": ["fixed pipeline first (H1)", "judge: gpt-5.6-luna reasoning high through codex, Claude Sonnet 4.6 and Gemini through agy as second judges when their quota allows",
+                      "RAGAS Faithfulness written by us", "retrieval variants A, B, C compared", "downloading BERTScore encoders allowed", "no human check of the judge"],
+    "AI-suggested, applied under the owner's instruction to carry on (\"รันต่อเลย ทำให้สมบูรณ์\")": [
+      "E1: validator profile N7, by the rule stated beforehand (N7 unless it removes more than 5 percentage points of correct answers; on dev it changed at most 2 of 97)",
+      "prompt stays p2: p3 (focus on the question) changed nothing measurable on dev (every paired interval contains 0), so no reason to switch",
+      "E6: the 4 unanswerable test questions are counted in abstention, reported with n = 4"]
+  },
+  "pipeline": {"config": "configs/rag/generate_v1.json", "prompt_version": "p2", "rules_version": "p2", "layers": {"spotlight": true, "sandwich": true, "validator": "N7 = numbers + Latin words (offline profile of the saved raw output)"},
+               "retrieval_k": 5, "llm": "typhoon-v2.5-30b-a3b-instruct, temperature 0, max_tokens 1000", "recover": "off for the plain pipeline"},
+  "retrieval_inputs": "Track B's frozen rankings: data/handoff/track_c_20261012/results/test-A|B|C/results.jsonl, text from chunks-v12-t512.jsonl",
+  "metrics": {"bertscore": {"model": "BAAI/bge-m3", "layer": 8, "idf": "dev gold answers", "why": "best hard AUC on dev (scripts/select_bertscore_model.py, data/index/runs/eval/bert_selection_dev.json); WangchanBERTa could not be loaded with transformers 5.18"},
+              "faithfulness": "own RAGAS-style (src/ncdqa/eval/faithfulness.py), judge gpt-5.6-luna high",
+              "correctness": "reference-guided judge, 8 answers per call (src/ncdqa/eval/correctness_batch.py), judge gpt-5.6-luna high, plus number rule",
+              "also": ["citation correctness", "abstention", "retrieval hit@5", "latency", "tokens", "failure taxonomy"]},
+  "test_rule": "each configuration is run on the test split once; no tuning on test results"
+}

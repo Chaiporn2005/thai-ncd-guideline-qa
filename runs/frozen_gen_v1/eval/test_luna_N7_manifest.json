@@ -1,0 +1,22 @@
+{
+  "run": "test_luna_N7",
+  "inputs": [
+    "A=data/index/runs/gen/test-A/answers.jsonl",
+    "B=data/index/runs/gen/test-B/answers.jsonl",
+    "C=data/index/runs/gen/test-C/answers.jsonl"
+  ],
+  "validator_profile": "N7",
+  "bert_model": "BAAI/bge-m3",
+  "bert_layer": 8,
+  "bert_idf": true,
+  "bert_idf_source": "dev gold answers",
+  "judge": {
+    "model": "gpt-5.6-luna:high",
+    "route": "codex-luna",
+    "reasoning": "high",
+    "human_checked": false
+  },
+  "git_commit": "3fb287cdbceab04d13e73f6dfb3bdf5eeb1b6829",
+  "started_utc": "2026-10-11T09:25:11+00:00",
+  "seconds": 538.1
+}

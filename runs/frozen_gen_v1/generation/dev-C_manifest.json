@@ -1,0 +1,53 @@
+{
+  "run": "dev-C",
+  "split": "dev",
+  "questions": 106,
+  "config": {
+    "id": "generate_v1",
+    "status": "draft: every policy value below is an AI-suggested default; the owner's verdicts in docs/decisions_guardrail_harness.md are still [FILL IN]",
+    "retrieval": {
+      "variant": "C",
+      "k": 5
+    },
+    "llm": {
+      "provider": "typhoon_api",
+      "max_tokens": 1000,
+      "providers_file": "configs/llm/providers.yaml",
+      "cache_dir": "data/index/llm_cache/gen_C"
+    },
+    "prompt": {
+      "version": "p2",
+      "layers": {
+        "rules": true,
+        "schema": true,
+        "spotlight": true,
+        "sandwich": true,
+        "validator": true,
+        "validator_tokens": false
+      }
+    },
+    "abstain": {
+      "min_top_score": null,
+      "note": "G4: null = no score gate; only the model's own abstain flag and the validator can abstain"
+    },
+    "flagged_chunks": "keep",
+    "flagged_chunks_note": "G6: keep = send chunks with injection_flags to the model (flags are only recorded); exclude = drop them before the prompt"
+  },
+  "config_id": "generate_v1-1284978bda04",
+  "overrides": [
+    "llm.cache_dir=\"data/index/llm_cache/gen_C\""
+  ],
+  "provider": "typhoon_api",
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "git_commit": "3fb287cdbceab04d13e73f6dfb3bdf5eeb1b6829",
+  "git_dirty": false,
+  "status_counts": {
+    "answered": 99,
+    "abstained_model": 7
+  },
+  "llm_cache_hits": 0,
+  "llm_calls": 106,
+  "started_utc": "2026-10-11T06:32:49+00:00",
+  "seconds": 312.5,
+  "notes": "dev generation, saved Track B ranking C, prompt p2"
+}

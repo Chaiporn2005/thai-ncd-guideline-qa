@@ -1,0 +1,11 @@
+{
+  "id": "generate_v1",
+  "status": "draft: every policy value below is an AI-suggested default; the owner's verdicts in docs/decisions_guardrail_harness.md are still [FILL IN]",
+  "retrieval": {"variant": "B", "k": 5},
+  "llm": {"provider": "typhoon_api", "max_tokens": 1000, "providers_file": "configs/llm/providers.yaml", "cache_dir": "data/index/llm_cache"},
+  "prompt": {"version": "p2", "layers": {"rules_version": "p2", "rules": true, "schema": true, "spotlight": true, "sandwich": true, "validator": true, "validator_tokens": false}},
+  "abstain": {"min_top_score": null, "note": "G4: null = no score gate; only the model's own abstain flag and the validator can abstain"},
+  "recover": {"max_retries": 0, "note": "L13 p46 Recover: used only by the graph version (src/ncdqa/rag/graph.py); 0 = no retry, the plain pipeline never retries"},
+  "flagged_chunks": "keep",
+  "flagged_chunks_note": "G6: keep = send chunks with injection_flags to the model (flags are only recorded); exclude = drop them before the prompt"
+}

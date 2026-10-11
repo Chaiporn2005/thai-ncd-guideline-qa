@@ -1,0 +1,21 @@
+{
+  "run": "recover_luna",
+  "inputs": [
+    "plain=data/index/runs/gen/recover-plain/answers.jsonl",
+    "graph=data/index/runs/gen/recover-graph/answers.jsonl"
+  ],
+  "validator_profile": "N7",
+  "bert_model": null,
+  "bert_layer": null,
+  "bert_idf": false,
+  "bert_idf_source": "gold answers of the scored runs",
+  "judge": {
+    "model": "gpt-5.6-luna:high",
+    "route": "codex-luna",
+    "reasoning": "high",
+    "human_checked": false
+  },
+  "git_commit": "3fb287cdbceab04d13e73f6dfb3bdf5eeb1b6829",
+  "started_utc": "2026-10-11T10:25:58+00:00",
+  "seconds": 225.5
+}

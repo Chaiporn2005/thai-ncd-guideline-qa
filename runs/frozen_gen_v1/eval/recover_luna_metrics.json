@@ -1,0 +1,183 @@
+{
+  "validator_profile": "N7",
+  "variants": {
+    "plain": {
+      "questions": 106,
+      "answerable": 97,
+      "unanswerable": 9,
+      "answered": 24,
+      "bert_f1": {
+        "mean": null,
+        "n": 0
+      },
+      "bert_recall": {
+        "mean": null,
+        "n": 0
+      },
+      "bert_precision": {
+        "mean": null,
+        "n": 0
+      },
+      "faithfulness": {
+        "mean": 0.9861,
+        "ci95": [
+          0.9583,
+          1.0
+        ],
+        "n": 24
+      },
+      "correctness_score": {
+        "mean": 0.2474,
+        "ci95": [
+          0.1649,
+          0.3402
+        ],
+        "n": 97
+      },
+      "correctness_counts": {
+        "no_answer": 73,
+        "correct": 24
+      },
+      "numbers_covered": {
+        "k": 15,
+        "n": 17,
+        "ci95": [
+          0.657,
+          0.967
+        ]
+      },
+      "citation_correct_given_answered": {
+        "k": 22,
+        "n": 24,
+        "ci95": [
+          0.742,
+          0.977
+        ]
+      },
+      "retrieval_hit": {
+        "k": 90,
+        "n": 97,
+        "ci95": [
+          0.858,
+          0.965
+        ]
+      },
+      "abstention": {
+        "unanswerable_abstained": "8/9",
+        "answerable_refused": "3/97"
+      },
+      "judge_failures": 0,
+      "latency_s_mean": 1.721,
+      "tokens_mean": 4658,
+      "failure_taxonomy": {
+        "faithful_but_wrong_or_partial": 65,
+        "ok": 24,
+        "retrieval_miss": 5,
+        "false_refusal": 3,
+        "ok_abstain": 8,
+        "false_answer": 1
+      }
+    },
+    "graph": {
+      "questions": 106,
+      "answerable": 97,
+      "unanswerable": 9,
+      "answered": 84,
+      "bert_f1": {
+        "mean": null,
+        "n": 0
+      },
+      "bert_recall": {
+        "mean": null,
+        "n": 0
+      },
+      "bert_precision": {
+        "mean": null,
+        "n": 0
+      },
+      "faithfulness": {
+        "mean": 0.9306,
+        "ci95": [
+          0.8869,
+          0.9683
+        ],
+        "n": 84
+      },
+      "correctness_score": {
+        "mean": 0.7423,
+        "ci95": [
+          0.6649,
+          0.8196
+        ],
+        "n": 97
+      },
+      "correctness_counts": {
+        "partial": 12,
+        "correct": 66,
+        "wrong": 6,
+        "no_answer": 13
+      },
+      "numbers_covered": {
+        "k": 36,
+        "n": 43,
+        "ci95": [
+          0.7,
+          0.919
+        ]
+      },
+      "citation_correct_given_answered": {
+        "k": 67,
+        "n": 84,
+        "ci95": [
+          0.7,
+          0.87
+        ]
+      },
+      "retrieval_hit": {
+        "k": 90,
+        "n": 97,
+        "ci95": [
+          0.858,
+          0.965
+        ]
+      },
+      "abstention": {
+        "unanswerable_abstained": "8/9",
+        "answerable_refused": "5/97"
+      },
+      "judge_failures": 0,
+      "latency_s_mean": 1.178,
+      "tokens_mean": 4785,
+      "failure_taxonomy": {
+        "faithful_but_wrong_or_partial": 20,
+        "ok": 66,
+        "false_refusal": 5,
+        "unsupported": 3,
+        "retrieval_miss": 3,
+        "ok_abstain": 8,
+        "false_answer": 1
+      }
+    }
+  },
+  "paired": {
+    "graph - plain: correctness_score": {
+      "n": 97,
+      "mean_diff_b_minus_a": 0.4948,
+      "ci95": [
+        0.4021,
+        0.5928
+      ]
+    },
+    "graph - plain: bert_f1": {
+      "n": 0
+    },
+    "graph - plain: faithfulness": {
+      "n": 24,
+      "mean_diff_b_minus_a": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "run": "g4_adaptive_v2",
+  "cases": 7,
+  "cases_unreviewed": 7,
+  "layers": [
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N5",
+    "N6"
+  ],
+  "layer_flags": {
+    "N1": {
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": false,
+      "prompt.layers.spotlight": false,
+      "prompt.layers.sandwich": false,
+      "prompt.layers.validator": false,
+      "flagged_chunks": "keep"
+    },
+    "N2": {
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": true,
+      "prompt.layers.spotlight": false,
+      "prompt.layers.sandwich": false,
+      "prompt.layers.validator": false,
+      "flagged_chunks": "keep"
+    },
+    "N3": {
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": true,
+      "prompt.layers.spotlight": true,
+      "prompt.layers.sandwich": false,
+      "prompt.layers.validator": false,
+      "flagged_chunks": "keep"
+    },
+    "N4": {
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": true,
+      "prompt.layers.spotlight": true,
+      "prompt.layers.sandwich": true,
+      "prompt.layers.validator": false,
+      "flagged_chunks": "keep"
+    },
+    "N5": {
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": true,
+      "prompt.layers.spotlight": true,
+      "prompt.layers.sandwich": true,
+      "prompt.layers.validator": true,
+      "flagged_chunks": "keep"
+    },
+    "N6": {
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": true,
+      "prompt.layers.spotlight": true,
+      "prompt.layers.sandwich": true,
+      "prompt.layers.validator": true,
+      "flagged_chunks": "exclude"
+    }
+  },
+  "base_config_id": "generate_v1-4095fc6d862f",
+  "provider": "typhoon_api",
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "git_commit": "3fb287cdbceab04d13e73f6dfb3bdf5eeb1b6829",
+  "git_dirty": false,
+  "started_utc": "2026-10-10T22:26:33+00:00",
+  "seconds": 61.1
+}

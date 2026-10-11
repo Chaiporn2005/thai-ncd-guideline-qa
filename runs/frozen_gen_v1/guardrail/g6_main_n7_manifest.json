@@ -1,0 +1,36 @@
+{
+  "run": "g6_main_n7",
+  "cases": 43,
+  "cases_unreviewed": 43,
+  "layers": [
+    "N6",
+    "N7"
+  ],
+  "layer_flags": {
+    "N6": {
+      "prompt.layers.validator_tokens": false,
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": true,
+      "prompt.layers.spotlight": true,
+      "prompt.layers.sandwich": true,
+      "prompt.layers.validator": true,
+      "flagged_chunks": "exclude"
+    },
+    "N7": {
+      "prompt.layers.validator_tokens": true,
+      "prompt.layers.rules": true,
+      "prompt.layers.schema": true,
+      "prompt.layers.spotlight": true,
+      "prompt.layers.sandwich": true,
+      "prompt.layers.validator": true,
+      "flagged_chunks": "exclude"
+    }
+  },
+  "base_config_id": "generate_v1-55c066583c98",
+  "provider": "typhoon_api",
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "git_commit": "3fb287cdbceab04d13e73f6dfb3bdf5eeb1b6829",
+  "git_dirty": false,
+  "started_utc": "2026-10-10T22:29:37+00:00",
+  "seconds": 5.8
+}

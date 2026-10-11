@@ -1,0 +1,46 @@
+{
+  "judge": "gpt-5.6-luna:high",
+  "n_requested": 48,
+  "correctness": {
+    "positives_judged_correct": {
+      "k": 48,
+      "n": 48,
+      "rate": 1.0,
+      "ci95": [
+        0.926,
+        1.0
+      ]
+    },
+    "negatives_not_judged_correct": {
+      "k": 48,
+      "n": 48,
+      "rate": 1.0,
+      "ci95": [
+        0.926,
+        1.0
+      ]
+    },
+    "failed_items": 0
+  },
+  "faithfulness": {
+    "positive_quotes_supported": {
+      "k": 45,
+      "n": 48,
+      "rate": 0.938,
+      "ci95": [
+        0.832,
+        0.979
+      ]
+    },
+    "foreign_quotes_not_supported": {
+      "k": 48,
+      "n": 48,
+      "rate": 1.0,
+      "ci95": [
+        0.926,
+        1.0
+      ]
+    },
+    "failed_calls": 0
+  }
+}

@@ -123,7 +123,7 @@
 | G5 | citation | A ตรวจด้วยโค้ด | `[FILL IN]` | | |
 | G6 | prompt injection | 4 ชั้นไม่ใช้ LLM เพิ่ม | `[FILL IN]` | | |
 | G7 | disclaimer | แถบถาวร + ท้ายคำตอบ | `[FILL IN]` | | |
-| H1 | รูปแบบ pipeline | A คงที่ | `[FILL IN]` | | |
+| H1 | รูปแบบ pipeline | A คงที่ | **A คงที่ทำให้เสร็จก่อน; หลังจากนั้นทำ agent ReAct (tool call) เป็น variant เพิ่มเพื่อเทียบ** | Human (Up2mEz) | 2026-10-11 |
 | H2 | LLM ภายนอก/ในเครื่อง | ค้นในเครื่อง; guard ก่อนเรียก LLM | `[FILL IN]` | | |
 | H3 | ชุดประเมิน/เกณฑ์ผ่าน | ตามรายการข้างบน | `[FILL IN]` | | |
 | H4 | ขอบเขตแต่ละ Track | ตามข้อเสนอ | `[FILL IN]` | | |

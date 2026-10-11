@@ -1,0 +1,4 @@
+# Track C graph version of the answer pipeline (src/ncdqa/rag/graph.py). Install: uv pip install -r requirements-agent.txt
+# Tracing to LangSmith is a cloud service: it stays OFF (LANGSMITH_TRACING is never set); traces are written locally in the answer's `trace`.
+langgraph==1.2.14
+langchain-core==1.6.9
