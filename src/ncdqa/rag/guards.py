@@ -24,6 +24,9 @@ PII_MESSAGE = "คำถามนี้มีข้อมูลที่ระ�
 
 _ID_CANDIDATE = re.compile(r"(?<!\d)(?:\d[\s-]?){12}\d(?!\d)")
 _PHONE = re.compile(r"(?<!\d)(?:0[689]\d[\s-]?\d{3}[\s-]?\d{4}|0[2-7]\d?[\s-]?\d{3}[\s-]?\d{4})(?!\d)")
+_THAI_DIGITS = str.maketrans("๐๑๒๓๔๕๖๗๘๙", "0123456789")
+_PHONE_INTL = re.compile(r"(?<![\d])\+66[\s-]?\d{1,2}(?:[\s-]?\d){7,8}(?!\d)")        # +66 81 234 5678
+_PHONE_SPACED = re.compile(r"(?<!\d)0(?:[\s-]?\d){8,9}(?!\d)")                       # 0 8 1 2 3 4 5 6 7 8 (digits typed one by one)
 _EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 _HN = re.compile(r"(?:\bHN\b|\bAN\b|เลข\s*HN|เลขที่ผู้ป่วย|เลขประจำตัวผู้ป่วย)\s*[:：]?\s*\d{3,}", re.I)
 _NAME = re.compile(r"(?:นางสาว|น\.ส\.|นาย|นาง)\s*[ก-๙]{2,}\s+[ก-๙]{2,}")
@@ -85,22 +88,23 @@ def default_guards() -> list:
 def mask_pii(question: str) -> tuple[str, list[str]]:
     """G1 option B (owner's choice, 2026-10-12): replace personal identifiers with a placeholder and answer the rest. Returns (masked question, categories found);
     the matched text itself is never kept or logged. Same detectors as pii_guard (valid national ID, phone, e-mail, HN/AN, title + first name + surname); a number that is
-    only a lab value or an age passes untouched. Limit: a Thai name without a title is not found, and masking does not make the remaining health details anonymous."""
+    only a lab value or an age passes untouched. Thai digits, +66 numbers and digit-by-digit numbers are masked too (scripts/eval_masking.py). Limits: a Thai name without a title and an e-mail spelled out in words are not found, and masking does not make the remaining health details anonymous."""
     found: list[str] = []
     out = question
 
     def sub(rx, label, cat, check=None):
         nonlocal out
-        def repl(m):
-            if check and not check(m.group()):
-                return m.group()
-            if cat not in found:
-                found.append(cat)
-            return label
-        out = rx.sub(repl, out)
+        norm = out.translate(_THAI_DIGITS)           # Thai digits are matched as Arabic digits; the translation keeps every position, so spans carry over to the original text
+        spans = [m.span() for m in rx.finditer(norm) if not check or check(m.group())]
+        if spans and cat not in found:
+            found.append(cat)
+        for a, b in reversed(spans):
+            out = out[:a] + label + out[b:]
 
     sub(_ID_CANDIDATE, "[เลขบัตรประชาชน]", "national_id", lambda t: thai_id_valid(re.sub(r"\D", "", t)))
     sub(_PHONE, "[เบอร์โทร]", "phone")
+    sub(_PHONE_INTL, "[เบอร์โทร]", "phone")
+    sub(_PHONE_SPACED, "[เบอร์โทร]", "phone")
     sub(_EMAIL, "[อีเมล]", "email")
     sub(_HN, "[เลขผู้ป่วย]", "hn")
     sub(_NAME, "[ชื่อบุคคล]", "name")

@@ -108,5 +108,18 @@ class Masking(unittest.TestCase):
         self.assertEqual(guards.demo_guards(), [guards.scope_guard])
 
 
+class MaskingForms(unittest.TestCase):
+    def test_thai_digits_intl_and_spaced_numbers_are_masked(self):
+        for q, secret in [("โทร ๐๘๑-๒๓๔-๕๖๗๘ ผลเลือด", "๒๓๔"), ("เบอร์ +66 81 234 5678 ผลเลือด", "234 5678"), ("เบอร์ 0 8 1 2 3 4 5 6 7 8 ผลเลือด", "2 3 4 5")]:
+            masked, cats = guards.mask_pii(q)
+            self.assertNotIn(secret, masked, q)
+            self.assertIn("phone", cats)
+            self.assertIn("ผลเลือด", masked)
+
+    def test_lab_tables_and_years_are_not_phone_numbers(self):
+        for q in ["ค่า 0 5 10 15 20 หน่วย ตามตาราง", "ปีงบประมาณ 2565 เป้าหมายร้อยละ 90", "ความดัน 150/95 อายุ 55 ปี"]:
+            self.assertEqual(guards.mask_pii(q), (q, []))
+
+
 if __name__ == "__main__":
     unittest.main()

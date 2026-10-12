@@ -1,0 +1,215 @@
+{
+  "validator_profile": "V2",
+  "variants": {
+    "B2": {
+      "questions": 106,
+      "answerable": 97,
+      "unanswerable": 9,
+      "answered": 95,
+      "bert_f1": {
+        "mean": 0.8245,
+        "ci95": [
+          0.8154,
+          0.8339
+        ],
+        "n": 95
+      },
+      "bert_recall": {
+        "mean": 0.9146,
+        "ci95": [
+          0.9046,
+          0.9238
+        ],
+        "n": 95
+      },
+      "bert_precision": {
+        "mean": 0.753,
+        "ci95": [
+          0.741,
+          0.7652
+        ],
+        "n": 95
+      },
+      "faithfulness": {
+        "mean": 0.8588,
+        "ci95": [
+          0.8096,
+          0.9053
+        ],
+        "n": 95
+      },
+      "correctness_score": {
+        "mean": 0.9021,
+        "ci95": [
+          0.8505,
+          0.9485
+        ],
+        "n": 97
+      },
+      "correctness_counts": {
+        "correct": 83,
+        "partial": 9,
+        "wrong": 3,
+        "no_answer": 2
+      },
+      "numbers_covered": {
+        "k": 41,
+        "n": 49,
+        "ci95": [
+          0.71,
+          0.915
+        ]
+      },
+      "citation_correct_given_answered": {
+        "k": 75,
+        "n": 95,
+        "ci95": [
+          0.697,
+          0.859
+        ]
+      },
+      "retrieval_hit": {
+        "k": 90,
+        "n": 97,
+        "ci95": [
+          0.858,
+          0.965
+        ]
+      },
+      "abstention": {
+        "unanswerable_abstained": "8/9",
+        "answerable_refused": "2/97"
+      },
+      "judge_failures": 0,
+      "latency_s_mean": 2.549,
+      "tokens_mean": 5392,
+      "failure_taxonomy": {
+        "ok": 83,
+        "unsupported": 8,
+        "retrieval_miss": 1,
+        "false_refusal": 2,
+        "faithful_but_wrong_or_partial": 3,
+        "ok_abstain": 8,
+        "false_answer": 1
+      }
+    },
+    "C2": {
+      "questions": 106,
+      "answerable": 97,
+      "unanswerable": 9,
+      "answered": 93,
+      "bert_f1": {
+        "mean": 0.8235,
+        "ci95": [
+          0.8134,
+          0.833
+        ],
+        "n": 93
+      },
+      "bert_recall": {
+        "mean": 0.9129,
+        "ci95": [
+          0.9006,
+          0.9232
+        ],
+        "n": 93
+      },
+      "bert_precision": {
+        "mean": 0.7523,
+        "ci95": [
+          0.7401,
+          0.7645
+        ],
+        "n": 93
+      },
+      "faithfulness": {
+        "mean": 0.8683,
+        "ci95": [
+          0.8181,
+          0.9113
+        ],
+        "n": 93
+      },
+      "correctness_score": {
+        "mean": 0.8711,
+        "ci95": [
+          0.8093,
+          0.9278
+        ],
+        "n": 97
+      },
+      "correctness_counts": {
+        "partial": 7,
+        "correct": 81,
+        "no_answer": 4,
+        "wrong": 5
+      },
+      "numbers_covered": {
+        "k": 39,
+        "n": 47,
+        "ci95": [
+          0.699,
+          0.911
+        ]
+      },
+      "citation_correct_given_answered": {
+        "k": 76,
+        "n": 93,
+        "ci95": [
+          0.727,
+          0.883
+        ]
+      },
+      "retrieval_hit": {
+        "k": 90,
+        "n": 97,
+        "ci95": [
+          0.858,
+          0.965
+        ]
+      },
+      "abstention": {
+        "unanswerable_abstained": "7/9",
+        "answerable_refused": "2/97"
+      },
+      "judge_failures": 0,
+      "latency_s_mean": 2.637,
+      "tokens_mean": 5349,
+      "failure_taxonomy": {
+        "faithful_but_wrong_or_partial": 7,
+        "ok": 81,
+        "false_refusal": 2,
+        "unsupported": 6,
+        "retrieval_miss": 1,
+        "ok_abstain": 7,
+        "false_answer": 2
+      }
+    }
+  },
+  "paired": {
+    "C2 - B2: correctness_score": {
+      "n": 97,
+      "mean_diff_b_minus_a": -0.0309,
+      "ci95": [
+        -0.0928,
+        0.0309
+      ]
+    },
+    "C2 - B2: bert_f1": {
+      "n": 91,
+      "mean_diff_b_minus_a": -0.0012,
+      "ci95": [
+        -0.0069,
+        0.0049
+      ]
+    },
+    "C2 - B2: faithfulness": {
+      "n": 91,
+      "mean_diff_b_minus_a": -0.0009,
+      "ci95": [
+        -0.0559,
+        0.0522
+      ]
+    }
+  }
+}
