@@ -32,7 +32,8 @@ from ncdqa.rag.guardrail_eval import wilson  # noqa: E402
 from ncdqa.rag.validate import validate  # noqa: E402
 
 PROFILES = {"N2": dict(check_claims=False, check_tokens=False), "N5": dict(check_claims=True, check_tokens=False), "N7": dict(check_claims=True, check_tokens=True),
-            "N8": dict(check_claims=True, check_tokens=True, own_numbers=True)}      # N8 = N7 + numbers the user wrote in the question are allowed in a claim
+            "N8": dict(check_claims=True, check_tokens=True, own_numbers=True),
+            "V2": dict(check_claims=True, check_tokens=True, own_numbers=True, reattribute=True, drop_denials=True, population=True)}      # V2 = N8 + re-point citation, drop denials, group check      # N8 = N7 + numbers the user wrote in the question are allowed in a claim
 SCORE = {"correct": 1.0, "partial": 0.5, "wrong": 0.0, "no_answer": 0.0}
 ABSTAIN = ("abstained_model", "abstained_validator", "abstained_no_evidence")
 
@@ -49,7 +50,7 @@ def revalidate(row: dict, units: dict, profile: str) -> dict:
     evidence = {sid: units[cid] for sid, cid in t["evidence"].items()}
     prof = dict(PROFILES[profile])
     own = prof.pop("own_numbers", False)
-    v = validate(t["raw_output"], evidence, question=row.get("question") if own else None, **prof)
+    v = validate(t["raw_output"], evidence, question=row.get("question") if (own or prof.get("population")) else None, own_numbers=own, **prof)
     if not v.parsed:
         return {"status": "parse_error", "claims": [], "dropped": []}
     status = "abstained_model" if v.abstain else ("answered" if v.kept else "abstained_validator")

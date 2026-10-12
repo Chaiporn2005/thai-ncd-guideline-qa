@@ -1,0 +1,13 @@
+{
+  "id": "generate_v2",
+  "status": "candidate written 2026-10-12 after the error analysis (docs/error_analysis_track_c.md); tuned and judged on DEV only; becomes frozen_v2 only if the adoption rule below is met, and then the test split is run once",
+  "adoption_rule": "declared before the dev run. Adopt v2 iff on dev, for variant B and for variant C: correctness >= v1 - 0.01, AND faithfulness >= v1 - 0.02, AND answerable questions refused <= v1 + 2, AND unanswerable abstained >= v1, AND (correctness >= v1 + 0.01 OR unanswerable abstained > v1 OR answered-but-empty answers decrease). v1 = dev_p2_N7 (B: corr 0.876, faith 0.910, refused 3/97, abstained 8/9; C: corr 0.902, faith 0.888, refused 0/97, abstained 7/9). Judge: gpt-5.6-luna high. If not met, v2 is not used and test is not run.",
+  "retrieval": {"variant": "B", "k": 5},
+  "llm": {"provider": "typhoon_api", "max_tokens": 1000, "providers_file": "configs/llm/providers.yaml", "cache_dir": "data/index/llm_cache"},
+  "prompt": {"version": "p4", "layers": {"rules_version": "p4", "rules": true, "schema": true, "spotlight": true, "sandwich": true, "validator": true, "validator_tokens": true,
+                                           "validator_question_numbers": true, "validator_reattribute": true, "validator_drop_denials": true, "validator_population": true}},
+  "abstain": {"min_top_score": null, "note": "G4: threshold calibrated on dev gave no net gain (docs/decisions_guardrail_harness.md), so it stays off"},
+  "recover": {"max_retries": 0, "note": "plain pipeline never retries"},
+  "flagged_chunks": "exclude",
+  "flagged_chunks_note": "N7 setting of frozen_v1 (flagged chunks dropped before the prompt)"
+}

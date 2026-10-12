@@ -29,7 +29,16 @@ RULES = ("กติกา: (1) ตอบจากหลักฐาน S ที�
 RULES_P3 = RULES.split("(6)")[0] + ("(6) ทุก claim ต้องตอบสิ่งที่ถามโดยตรง ห้ามเพิ่มข้อมูลอื่นที่ไม่ได้ถามแม้จะมีในหลักฐาน; "
                                     "ถ้าคำถามมีหลายส่วน (เช่น จำนวนและสัดส่วน, ชนิดและเงื่อนไข) ต้องตอบครบทุกส่วน; ไม่เกิน 3 claim สั้นกระชับ "
                                     "และไม่เขียน id (S1 ฯลฯ) ลงในข้อความของ claim")
-RULES_BY_VERSION = {"p2": RULES, "p3": RULES_P3}
+# p4 (error analysis 2026-10-12, written from the dev/test failures of p2, tested on dev only): (6) answer every part and every condition asked, up to 4 claims; (7) cite the chunk that
+# really contains the sentence or number (q148 cited S2 for a number that is in S1); (8) no claim that says "the evidence does not say" next to claims that answer (q163); (9) if the question names
+# a group (pregnant, child, elderly, dialysis ...) and the evidence does not mention that group, abstain instead of using the rule for people in general (q157); (10) in a table, take a number
+# only from the row and column that match what is asked (dev q007, q040 swapped numbers).
+RULES_P4 = RULES.split("(6)")[0] + ("(6) ตอบให้ครบทุกส่วนและทุกเงื่อนไขที่ถาม (เช่น จำนวนและสัดส่วน, ชนิดและเงื่อนไข, ทุกระดับของเกณฑ์) ไม่เกิน 4 claim สั้นกระชับ ไม่เขียน id (S1 ฯลฯ) ลงในข้อความของ claim "
+                                    "(7) cite ต้องเป็นหลักฐานที่มีข้อความหรือตัวเลขนั้นอยู่จริง ถ้าข้อมูลอยู่ในหลายชิ้นให้ cite ชิ้นที่มีตัวเลขนั้น "
+                                    "(8) ห้ามเขียน claim ว่า \"ไม่ได้ระบุ/ไม่มีข้อมูล\" คู่กับ claim ที่ตอบแล้ว ถ้าไม่มีคำตอบจริงให้ abstain ทั้งหมด "
+                                    "(9) ถ้าคำถามระบุกลุ่มเฉพาะ (หญิงตั้งครรภ์ เด็ก ผู้สูงอายุ ผู้ฟอกไต ฯลฯ) แต่หลักฐานไม่กล่าวถึงกลุ่มนั้น ให้ abstain อย่าใช้เกณฑ์ของคนทั่วไปแทน "
+                                    "(10) ถ้าหลักฐานเป็นตาราง ให้เอาตัวเลขจากแถวและคอลัมน์ที่ตรงกับสิ่งที่ถามเท่านั้น ระวังสลับ")
+RULES_BY_VERSION = {"p2": RULES, "p3": RULES_P3, "p4": RULES_P4}
 
 INTRO = "คุณเป็นผู้ช่วยตอบคำถามจากแนวทางเวชปฏิบัติโรคไม่ติดต่อเรื้อรัง (เบาหวาน ความดันโลหิตสูง ไขมันในเลือด) ของไทย"
 SYSTEM_BASE = INTRO + "\n" + RULES + "\n" + OUTPUT_FORMAT

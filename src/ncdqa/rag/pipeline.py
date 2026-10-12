@@ -82,8 +82,12 @@ def interpret(raw: str, finish_reason: str | None, evidence: dict[str, dict], la
         text = raw.strip()
         return ("answered" if text else "abstained_model"), {}, {"answer": text or None}
     v = validate(raw, evidence, check_claims=layers.get("validator", True), check_tokens=layers.get("validator_tokens", False),
-                 question=question if layers.get("validator_question_numbers", False) else None)
+                 question=question if (layers.get("validator_question_numbers", False) or layers.get("validator_population", False)) else None,
+                 own_numbers=layers.get("validator_question_numbers", False), reattribute=layers.get("validator_reattribute", False),
+                 drop_denials=layers.get("validator_drop_denials", False), population=layers.get("validator_population", False))
     notes: dict = {"dropped_claims": v.dropped}
+    if v.repaired:
+        notes["repaired_claims"] = v.repaired
     if not v.parsed:
         notes["problem"] = v.problem
         return ("truncated" if finish_reason == "length" else "parse_error"), notes, {}
