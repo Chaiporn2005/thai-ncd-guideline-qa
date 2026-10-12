@@ -44,3 +44,9 @@ configs/llm/providers.yaml
 
 # Hand-off packages contain corpus text (Siriraj leaflets included): never tracked
 data/handoff/
+
+BUNDLE_MANIFEST.json
+ncd_demo_bundle.zip
+
+# public benchmark downloads (licences differ; fetched by scripts/eval_public_benchmarks.py)
+data/external/
