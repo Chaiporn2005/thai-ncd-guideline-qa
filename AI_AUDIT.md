@@ -249,6 +249,7 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | C-D20 | judge ตัวที่สอง = Gemini 3.8 Flash high ผ่าน `agy` (ไม่ใช้ Claude เพราะโควตาน้อย) วัดซ้ำบน test เฉพาะ correctness ของ B, C, ReAct (agy ช้า จึงตัด faithfulness และ A, D) | [Human] | ครอบคลุม ~75% (13–14 ข้อ/ระบบ judge ล้มเหลว); ตรงกับ luna 0.87–0.92 บนข้อที่ตัดสินได้ ลำดับ C > B > ReAct เหมือนกัน; `docs/error_analysis_track_c.md` §10 |
 | C-D21 | ลองชุดแก้ v2 (prompt p4 + validator) กติการับ/ไม่รับ commit ก่อนรัน dev; ผล: ไม่ผ่านทั้ง B และ C จึงไม่ใช้และไม่รัน test | [Human] สั่ง "ข้ออื่นก็ทำมาเลย"; [AI-decided] เนื้อหา v2 และกติกา | `configs/rag/generate_v2.json`, `docs/error_analysis_track_c.md` §8 |
 | C-D22 | แก้การ mask ให้ครอบเลขไทย, +66, เลขพิมพ์ทีละตัว หลังพบว่าเคสนอกรูปแบบเดิม 0/7 | [AI-decided] ภายใต้คำสั่งให้แก้ตามสมควร | adversarial 4/7 ชื่อไม่มีคำนำหน้าและอีเมลสะกดเป็นคำยังไม่ถูก mask |
+| C-D23 | ชุดแก้ v3 (p5 + หัวตาราง + validator) กติกาเดียวกับ v2; ไม่ผ่านทั้ง B (correctness −0.010, ไม่มีสิ่งที่ดีขึ้น) และ C (−0.046) ครบสองชุดที่จำกัดไว้ จึงหยุด ไม่รัน test; ระบบที่ส่งมอบยังเป็น frozen_v1 + N8 ใน demo | [Human] สั่งให้แก้ปัญหาที่เหลือและ freeze ใหม่; [AI-decided] เนื้อหา v3 และกติกา (ไม่ผ่อนจาก v2) | `configs/rag/generate_v3.json`, `docs/error_analysis_track_c.md` §8b |
 
 **ผลหลัก (test, 52 ข้อที่ตอบได้):** correctness A 0.798 / B 0.885 / C 0.904 / D 0.808 / ReAct 0.827 (Python = LangGraph); ReAct ใช้ token ราว 5.5 เท่าของ B และไม่ชนะ B (ผลต่าง −0.058, CI [−0.154, +0.038]) judge เป็น LLM ไม่มีคนตรวจ (silver)
 
