@@ -28,12 +28,14 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from ncdqa.eval import agy_client, correctness, correctness_batch, faithfulness  # noqa: E402
+from ncdqa.rag import prompt as prompt_mod  # noqa: E402
 from ncdqa.rag.guardrail_eval import wilson  # noqa: E402
 from ncdqa.rag.validate import validate  # noqa: E402
 
 PROFILES = {"N2": dict(check_claims=False, check_tokens=False), "N5": dict(check_claims=True, check_tokens=False), "N7": dict(check_claims=True, check_tokens=True),
             "N8": dict(check_claims=True, check_tokens=True, own_numbers=True),
-            "V2": dict(check_claims=True, check_tokens=True, own_numbers=True, reattribute=True, drop_denials=True, population=True)}      # V2 = N8 + re-point citation, drop denials, group check      # N8 = N7 + numbers the user wrote in the question are allowed in a claim
+            "V2": dict(check_claims=True, check_tokens=True, own_numbers=True, reattribute=True, drop_denials=True, population=True),      # V2 = N8 + re-point citation, drop denials, group check; N8 = N7 + numbers the user wrote in the question are allowed in a claim
+            "V3": dict(check_claims=True, check_tokens=True, own_numbers=True, reattribute=True, drop_denials=True, population=True, header=True)}      # V3 = V2 + the evidence block shows header_text
 SCORE = {"correct": 1.0, "partial": 0.5, "wrong": 0.0, "no_answer": 0.0}
 ABSTAIN = ("abstained_model", "abstained_validator", "abstained_no_evidence")
 
@@ -42,14 +44,21 @@ def read_jsonl(p: Path) -> list[dict]:
     return [json.loads(x) for x in p.read_text(encoding="utf-8").split("\n") if x.strip()]
 
 
+def shown_unit(u: dict, header: bool) -> dict:
+    """A chunk as the model saw it: with the V3 profile its header_text is part of the evidence text (src/ncdqa/rag/prompt.py shown_text)."""
+    return {**u, "text": prompt_mod.shown_text(u, {"evidence_header": header})}
+
+
 def revalidate(row: dict, units: dict, profile: str) -> dict:
     """Kept claims and status of a saved answer under a validator profile (same rules as the live pipeline, applied to the saved raw output)."""
     t = row["trace"]
     if "raw_output" not in t or "evidence" not in t:
         return {"status": row["status"], "claims": [], "dropped": []}
-    evidence = {sid: units[cid] for sid, cid in t["evidence"].items()}
+    header = bool(PROFILES[profile].get("header"))
+    evidence = {sid: shown_unit(units[cid], header) for sid, cid in t["evidence"].items()}
     prof = dict(PROFILES[profile])
     own = prof.pop("own_numbers", False)
+    prof.pop("header", None)
     v = validate(t["raw_output"], evidence, question=row.get("question") if (own or prof.get("population")) else None, own_numbers=own, **prof)
     if not v.parsed:
         return {"status": "parse_error", "claims": [], "dropped": []}
@@ -173,7 +182,7 @@ def main(argv: list[str] | None = None) -> int:
                     f.update({f"bert_{k}": v for k, v in scorer.score(answer, r["gold_answer"]).items()})
                 f["numbers_covered"] = correctness.numbers_covered(r["gold_answer"], answer)
                 if judge:
-                    fp, trimmed = fit_prompt([c["text"] for c in rv["claims"]], {sid: units[cid]["text"] for sid, cid in ev_ids.items()}, {x for c in rv["claims"] for x in c["cite"]},
+                    fp, trimmed = fit_prompt([c["text"] for c in rv["claims"]], {sid: shown_unit(units[cid], bool(PROFILES[args.validator].get("header")))["text"] for sid, cid in ev_ids.items()}, {x for c in rv["claims"] for x in c["cite"]},
                                              question=r["question"] if args.faith_question else None)
                     f["contexts_trimmed"] = trimmed
                     jobs.append((fp, faithfulness.SCHEMA)); owners.append(f)

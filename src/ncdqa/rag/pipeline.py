@@ -81,7 +81,8 @@ def interpret(raw: str, finish_reason: str | None, evidence: dict[str, dict], la
     if not layers.get("schema", True):     # free-text mode: nothing to parse or cite; the text is the answer
         text = raw.strip()
         return ("answered" if text else "abstained_model"), {}, {"answer": text or None}
-    v = validate(raw, evidence, check_claims=layers.get("validator", True), check_tokens=layers.get("validator_tokens", False),
+    checked = ({sid: {**h, "text": prompt_mod.shown_text(h, layers)} for sid, h in evidence.items()} if layers.get("evidence_header") else evidence)   # validate against what the model saw
+    v = validate(raw, checked, check_claims=layers.get("validator", True), check_tokens=layers.get("validator_tokens", False),
                  question=question if (layers.get("validator_question_numbers", False) or layers.get("validator_population", False)) else None,
                  own_numbers=layers.get("validator_question_numbers", False), reattribute=layers.get("validator_reattribute", False),
                  drop_denials=layers.get("validator_drop_denials", False), population=layers.get("validator_population", False))

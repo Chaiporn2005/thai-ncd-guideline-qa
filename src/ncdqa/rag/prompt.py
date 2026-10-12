@@ -38,7 +38,23 @@ RULES_P4 = RULES.split("(6)")[0] + ("(6) ตอบให้ครบทุกส
                                     "(8) ห้ามเขียน claim ว่า \"ไม่ได้ระบุ/ไม่มีข้อมูล\" คู่กับ claim ที่ตอบแล้ว ถ้าไม่มีคำตอบจริงให้ abstain ทั้งหมด "
                                     "(9) ถ้าคำถามระบุกลุ่มเฉพาะ (หญิงตั้งครรภ์ เด็ก ผู้สูงอายุ ผู้ฟอกไต ฯลฯ) แต่หลักฐานไม่กล่าวถึงกลุ่มนั้น ให้ abstain อย่าใช้เกณฑ์ของคนทั่วไปแทน "
                                     "(10) ถ้าหลักฐานเป็นตาราง ให้เอาตัวเลขจากแถวและคอลัมน์ที่ตรงกับสิ่งที่ถามเท่านั้น ระวังสลับ")
-RULES_BY_VERSION = {"p2": RULES, "p3": RULES_P3, "p4": RULES_P4}
+# p5 (v3 candidate, 2026-10-12): p4 padded answers to its 4-claim cap (44 of 94 dev answers had 4 claims, and those had lower faithfulness, 0.85 against 0.93 for one claim), so the length rule
+# changes: answer every part that is asked, one claim per part, do not add what is not asked, 1 to 3 claims. Rules (7)-(10) as in p4.
+RULES_P5 = (RULES.split("(6)")[0]
+            + "(6) ตอบให้ครบทุกส่วนและทุกเงื่อนไขที่ถาม โดยใช้หนึ่ง claim ต่อหนึ่งส่วนที่ถาม (ถามส่วนเดียวให้ตอบ 1 claim) ไม่เติมข้อมูลที่ไม่ได้ถามเพื่อให้ยาว ไม่เกิน 3 claim สั้นกระชับ ไม่เขียน id (S1 ฯลฯ) ลงในข้อความของ claim "
+            + "(7)" + RULES_P4.split("(7)", 1)[1])
+RULES_BY_VERSION = {"p2": RULES, "p3": RULES_P3, "p4": RULES_P4, "p5": RULES_P5}
+
+HEADER_MAX = 300
+
+
+def shown_text(h: dict, layers: dict) -> str:
+    """The text of an evidence block as the model sees it. With `evidence_header` the chunk's header_text (document title, and for a table the column headers) comes first,
+    so a row of numbers is read together with its headings (dev q007, q040 swapped numbers). The validator and the judges must use this same text."""
+    head = (h.get("header_text") or "").strip()
+    if layers.get("evidence_header") and head:
+        return "[หัวข้อ] " + head[:HEADER_MAX].replace("\n", " ") + "\n" + h["text"]
+    return h["text"]
 
 INTRO = "คุณเป็นผู้ช่วยตอบคำถามจากแนวทางเวชปฏิบัติโรคไม่ติดต่อเรื้อรัง (เบาหวาน ความดันโลหิตสูง ไขมันในเลือด) ของไทย"
 SYSTEM_BASE = INTRO + "\n" + RULES + "\n" + OUTPUT_FORMAT
@@ -80,12 +96,12 @@ def build_messages(question: str, hits: list[dict], layers: dict) -> tuple[list[
     """Return (messages, {S-id: hit}). Hits keep their rank order."""
     ids = {f"S{i}": h for i, h in enumerate(hits, 1)}
     if layers.get("spotlight", True):
-        blocks = "\n".join(f'<evidence id="{sid}" document="{h["document_id"]}" pages="{pages(h)}">\n{defuse(h["text"])}\n</evidence>'
+        blocks = "\n".join(f'<evidence id="{sid}" document="{h["document_id"]}" pages="{pages(h)}">\n{defuse(shown_text(h, layers))}\n</evidence>'
                            for sid, h in ids.items())
         user = f"{blocks}\n\n<question>\n{defuse(question)}\n</question>"
         system = NL.join([INTRO, *_parts(layers)]) + SYSTEM_SPOTLIGHT
     else:
-        blocks = "\n\n".join(f'[{sid}] ({h["document_id"]} หน้า {pages(h)})\n{h["text"]}' for sid, h in ids.items())
+        blocks = "\n\n".join(f'[{sid}] ({h["document_id"]} หน้า {pages(h)})\n{shown_text(h, layers)}' for sid, h in ids.items())
         user = f"{blocks}\n\nคำถาม: {question}"
         system = NL.join([INTRO, *_parts(layers)])
     if layers.get("sandwich", True):
