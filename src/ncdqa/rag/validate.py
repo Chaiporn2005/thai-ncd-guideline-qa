@@ -4,6 +4,8 @@ The model answers as claims, each with the ids of the evidence that supports it.
   * its text is a non-empty string and it cites at least one id,
   * every cited id is one that was really sent (no invented citation),
   * every number in the claim also appears in the cited evidence (Thai digits and thousands separators normalised),
+  * a number the USER wrote in the question (a year, a stage, "100 grams") may be repeated in the claim without being in the evidence, when `question` is given
+    (profile N8; found in the 2026-10-12 error analysis: 6 of 13 dropped claims in dev+test were dropped only for such a number). Every other number must still be in the cited evidence.
   * optionally (`check_tokens`) every Latin word of 4+ characters in the claim also appears in the cited evidence, so a claim that
     smuggles in text from the question (a canary, a drug name the evidence never mentions) is dropped. It cannot catch text that was
     planted inside the evidence itself.
@@ -51,13 +53,14 @@ def numbers(text: str) -> set[str]:
     return set(_NUMBER.findall(t))
 
 
-def validate(raw: str, evidence: dict[str, dict], check_claims: bool = True, check_tokens: bool = False) -> Validation:
+def validate(raw: str, evidence: dict[str, dict], check_claims: bool = True, check_tokens: bool = False, question: str | None = None) -> Validation:
     out = parse_output(raw)
     if out is None or not isinstance(out.get("claims", []), list):
         return Validation(False, problem="output is not the required JSON")
     if out.get("abstain") is True:
         return Validation(True, abstain=True)
     v = Validation(True)
+    own = numbers(question) if question else set()          # numbers the user already stated
     for c in out.get("claims", []):
         text = c.get("text") if isinstance(c, dict) else None
         cite = c.get("cite") if isinstance(c, dict) else None
@@ -73,7 +76,7 @@ def validate(raw: str, evidence: dict[str, dict], check_claims: bool = True, che
             continue
         if check_claims:
             have = set().union(*(numbers(evidence[x]["text"]) for x in cite))
-            missing = sorted(numbers(text) - have)
+            missing = sorted(numbers(text) - have - own)
             if missing:
                 v.dropped.append({"text": text, "cite": cite, "reason": f"number not in cited evidence: {missing}"})
                 continue

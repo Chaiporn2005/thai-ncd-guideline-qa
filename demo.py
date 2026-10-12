@@ -50,6 +50,8 @@ def load(args):
     cfg = json.loads(DEFAULT_CONFIG.read_text(encoding="utf-8"))
     cfg["retrieval"]["variant"] = args.variant
     cfg["prompt"]["layers"]["validator_tokens"] = True       # validator profile N7 (frozen, decision E1)
+    cfg["prompt"]["layers"]["validator_question_numbers"] = True   # N8 (error analysis 2026-10-12): a number the user wrote ("ระยะ 3", "ปี 2568") may be repeated in a claim;
+    #                                                                the frozen evaluation numbers stay N7. Measured effect on dev is within noise; kept here because it recovered the key claim in the metformin example.
     from ncdqa.llm.client import LLMClient, load_providers
     llm = cfg["llm"]
     provider = load_providers(ROOT / llm["providers_file"])[llm["provider"]]

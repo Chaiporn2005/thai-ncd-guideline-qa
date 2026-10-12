@@ -1,0 +1,353 @@
+{
+  "validator_profile": "N8",
+  "variants": {
+    "A": {
+      "questions": 106,
+      "answerable": 97,
+      "unanswerable": 9,
+      "answered": 93,
+      "bert_f1": {
+        "mean": 0.8247,
+        "ci95": [
+          0.8149,
+          0.8342
+        ],
+        "n": 93
+      },
+      "bert_recall": {
+        "mean": 0.9105,
+        "ci95": [
+          0.8989,
+          0.9211
+        ],
+        "n": 93
+      },
+      "bert_precision": {
+        "mean": 0.7557,
+        "ci95": [
+          0.7436,
+          0.7672
+        ],
+        "n": 93
+      },
+      "faithfulness": {
+        "mean": 0.871,
+        "ci95": [
+          0.8208,
+          0.9158
+        ],
+        "n": 93
+      },
+      "correctness_score": {
+        "mean": 0.8608,
+        "ci95": [
+          0.7938,
+          0.9175
+        ],
+        "n": 97
+      },
+      "correctness_counts": {
+        "partial": 13,
+        "no_answer": 4,
+        "correct": 77,
+        "wrong": 3
+      },
+      "numbers_covered": {
+        "k": 42,
+        "n": 48,
+        "ci95": [
+          0.753,
+          0.941
+        ]
+      },
+      "citation_correct_given_answered": {
+        "k": 70,
+        "n": 93,
+        "ci95": [
+          0.656,
+          0.829
+        ]
+      },
+      "retrieval_hit": {
+        "k": 85,
+        "n": 97,
+        "ci95": [
+          0.796,
+          0.928
+        ]
+      },
+      "abstention": {
+        "unanswerable_abstained": "8/9",
+        "answerable_refused": "4/97"
+      },
+      "judge_failures": 0,
+      "latency_s_mean": 3.102,
+      "tokens_mean": 4789,
+      "failure_taxonomy": {
+        "faithful_but_wrong_or_partial": 5,
+        "false_refusal": 4,
+        "unsupported": 6,
+        "ok": 77,
+        "retrieval_miss": 5,
+        "ok_abstain": 8,
+        "false_answer": 1
+      }
+    },
+    "B": {
+      "questions": 106,
+      "answerable": 97,
+      "unanswerable": 9,
+      "answered": 94,
+      "bert_f1": {
+        "mean": 0.828,
+        "ci95": [
+          0.8184,
+          0.837
+        ],
+        "n": 94
+      },
+      "bert_recall": {
+        "mean": 0.9138,
+        "ci95": [
+          0.902,
+          0.9245
+        ],
+        "n": 94
+      },
+      "bert_precision": {
+        "mean": 0.7591,
+        "ci95": [
+          0.7476,
+          0.7706
+        ],
+        "n": 94
+      },
+      "faithfulness": {
+        "mean": 0.8901,
+        "ci95": [
+          0.8493,
+          0.9255
+        ],
+        "n": 94
+      },
+      "correctness_score": {
+        "mean": 0.8711,
+        "ci95": [
+          0.8093,
+          0.9227
+        ],
+        "n": 97
+      },
+      "correctness_counts": {
+        "partial": 11,
+        "correct": 79,
+        "wrong": 4,
+        "no_answer": 3
+      },
+      "numbers_covered": {
+        "k": 41,
+        "n": 49,
+        "ci95": [
+          0.71,
+          0.915
+        ]
+      },
+      "citation_correct_given_answered": {
+        "k": 76,
+        "n": 94,
+        "ci95": [
+          0.717,
+          0.875
+        ]
+      },
+      "retrieval_hit": {
+        "k": 90,
+        "n": 97,
+        "ci95": [
+          0.858,
+          0.965
+        ]
+      },
+      "abstention": {
+        "unanswerable_abstained": "8/9",
+        "answerable_refused": "3/97"
+      },
+      "judge_failures": 0,
+      "latency_s_mean": 2.781,
+      "tokens_mean": 4748,
+      "failure_taxonomy": {
+        "faithful_but_wrong_or_partial": 7,
+        "ok": 79,
+        "unsupported": 6,
+        "retrieval_miss": 2,
+        "false_refusal": 3,
+        "ok_abstain": 8,
+        "false_answer": 1
+      }
+    },
+    "C": {
+      "questions": 106,
+      "answerable": 97,
+      "unanswerable": 9,
+      "answered": 97,
+      "bert_f1": {
+        "mean": 0.8287,
+        "ci95": [
+          0.819,
+          0.8377
+        ],
+        "n": 97
+      },
+      "bert_recall": {
+        "mean": 0.9139,
+        "ci95": [
+          0.9033,
+          0.9245
+        ],
+        "n": 97
+      },
+      "bert_precision": {
+        "mean": 0.76,
+        "ci95": [
+          0.7482,
+          0.7716
+        ],
+        "n": 97
+      },
+      "faithfulness": {
+        "mean": 0.8866,
+        "ci95": [
+          0.8436,
+          0.9244
+        ],
+        "n": 97
+      },
+      "correctness_score": {
+        "mean": 0.9072,
+        "ci95": [
+          0.8557,
+          0.9536
+        ],
+        "n": 97
+      },
+      "correctness_counts": {
+        "correct": 83,
+        "partial": 10,
+        "wrong": 4
+      },
+      "numbers_covered": {
+        "k": 42,
+        "n": 49,
+        "ci95": [
+          0.733,
+          0.929
+        ]
+      },
+      "citation_correct_given_answered": {
+        "k": 78,
+        "n": 97,
+        "ci95": [
+          0.714,
+          0.871
+        ]
+      },
+      "retrieval_hit": {
+        "k": 90,
+        "n": 97,
+        "ci95": [
+          0.858,
+          0.965
+        ]
+      },
+      "abstention": {
+        "unanswerable_abstained": "7/9",
+        "answerable_refused": "0/97"
+      },
+      "judge_failures": 0,
+      "latency_s_mean": 2.944,
+      "tokens_mean": 4712,
+      "failure_taxonomy": {
+        "ok": 83,
+        "unsupported": 8,
+        "faithful_but_wrong_or_partial": 4,
+        "retrieval_miss": 2,
+        "ok_abstain": 7,
+        "false_answer": 2
+      }
+    }
+  },
+  "paired": {
+    "B - A: correctness_score": {
+      "n": 97,
+      "mean_diff_b_minus_a": 0.0103,
+      "ci95": [
+        -0.0361,
+        0.0619
+      ]
+    },
+    "B - A: bert_f1": {
+      "n": 92,
+      "mean_diff_b_minus_a": 0.0024,
+      "ci95": [
+        -0.0036,
+        0.0089
+      ]
+    },
+    "B - A: faithfulness": {
+      "n": 92,
+      "mean_diff_b_minus_a": 0.0109,
+      "ci95": [
+        -0.0362,
+        0.058
+      ]
+    },
+    "C - A: correctness_score": {
+      "n": 97,
+      "mean_diff_b_minus_a": 0.0464,
+      "ci95": [
+        -0.0103,
+        0.1031
+      ]
+    },
+    "C - A: bert_f1": {
+      "n": 93,
+      "mean_diff_b_minus_a": 0.0028,
+      "ci95": [
+        -0.0031,
+        0.0092
+      ]
+    },
+    "C - A: faithfulness": {
+      "n": 93,
+      "mean_diff_b_minus_a": 0.0179,
+      "ci95": [
+        -0.0323,
+        0.0681
+      ]
+    },
+    "C - B: correctness_score": {
+      "n": 97,
+      "mean_diff_b_minus_a": 0.0361,
+      "ci95": [
+        -0.0103,
+        0.0876
+      ]
+    },
+    "C - B: bert_f1": {
+      "n": 94,
+      "mean_diff_b_minus_a": 0.0007,
+      "ci95": [
+        -0.004,
+        0.0052
+      ]
+    },
+    "C - B: faithfulness": {
+      "n": 94,
+      "mean_diff_b_minus_a": 0.0035,
+      "ci95": [
+        -0.0426,
+        0.0514
+      ]
+    }
+  }
+}

@@ -31,7 +31,8 @@ from ncdqa.eval import agy_client, correctness, correctness_batch, faithfulness 
 from ncdqa.rag.guardrail_eval import wilson  # noqa: E402
 from ncdqa.rag.validate import validate  # noqa: E402
 
-PROFILES = {"N2": dict(check_claims=False, check_tokens=False), "N5": dict(check_claims=True, check_tokens=False), "N7": dict(check_claims=True, check_tokens=True)}
+PROFILES = {"N2": dict(check_claims=False, check_tokens=False), "N5": dict(check_claims=True, check_tokens=False), "N7": dict(check_claims=True, check_tokens=True),
+            "N8": dict(check_claims=True, check_tokens=True, own_numbers=True)}      # N8 = N7 + numbers the user wrote in the question are allowed in a claim
 SCORE = {"correct": 1.0, "partial": 0.5, "wrong": 0.0, "no_answer": 0.0}
 ABSTAIN = ("abstained_model", "abstained_validator", "abstained_no_evidence")
 
@@ -46,20 +47,22 @@ def revalidate(row: dict, units: dict, profile: str) -> dict:
     if "raw_output" not in t or "evidence" not in t:
         return {"status": row["status"], "claims": [], "dropped": []}
     evidence = {sid: units[cid] for sid, cid in t["evidence"].items()}
-    v = validate(t["raw_output"], evidence, **PROFILES[profile])
+    prof = dict(PROFILES[profile])
+    own = prof.pop("own_numbers", False)
+    v = validate(t["raw_output"], evidence, question=row.get("question") if own else None, **prof)
     if not v.parsed:
         return {"status": "parse_error", "claims": [], "dropped": []}
     status = "abstained_model" if v.abstain else ("answered" if v.kept else "abstained_validator")
     return {"status": status, "claims": v.kept, "dropped": v.dropped}
 
 
-def fit_prompt(claims: list[str], ctx_by_sid: dict, cited: set, limit: int = 26000) -> tuple[str, bool]:
+def fit_prompt(claims: list[str], ctx_by_sid: dict, cited: set, limit: int = 26000, question: str | None = None) -> tuple[str, bool]:
     """Faithfulness prompt that fits the judge's command-line limit. An agent can see many chunks; the cited ones are kept first, the others are dropped from the end
     until the prompt fits. Returns (prompt, trimmed). A fixed-pipeline answer (5 chunks) never needs trimming."""
     order = [k for k in ctx_by_sid if k in cited] + [k for k in ctx_by_sid if k not in cited]
     keep = list(order)
     while True:
-        prompt = faithfulness.build_prompt(claims, [ctx_by_sid[k] for k in keep])
+        prompt = faithfulness.build_prompt(claims, [ctx_by_sid[k] for k in keep], question)
         if len(prompt) <= limit or len(keep) <= 1:
             return prompt, len(keep) < len(order)
         keep.pop()
@@ -110,6 +113,7 @@ def main(argv: list[str] | None = None) -> int:
                     help="agy-claude: claude-sonnet-4-6 through the Antigravity CLI; codex-luna: gpt-5.6-luna, reasoning high, through the Codex CLI "
                          "(the owner's two judges, 2026-10-11); agy: gemini-3.8-flash-high through agy; api: gemini-3.8-flash through the Gemini API "
                          "(the Gemini routes ran out of quota on 2026-10-11)")
+    ap.add_argument("--faith-question", action="store_true", help="faithfulness judge also sees the question (statements that lean on the question's own conditions are not marked unsupported); a different metric, report both")
     ap.add_argument("--no-faithfulness", action="store_true", help="correctness (and the rest) only; faithfulness needs one call per answer")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--corr-batch", type=int, default=8, help="answers per correctness judge call")
@@ -168,7 +172,8 @@ def main(argv: list[str] | None = None) -> int:
                     f.update({f"bert_{k}": v for k, v in scorer.score(answer, r["gold_answer"]).items()})
                 f["numbers_covered"] = correctness.numbers_covered(r["gold_answer"], answer)
                 if judge:
-                    fp, trimmed = fit_prompt([c["text"] for c in rv["claims"]], {sid: units[cid]["text"] for sid, cid in ev_ids.items()}, {x for c in rv["claims"] for x in c["cite"]})
+                    fp, trimmed = fit_prompt([c["text"] for c in rv["claims"]], {sid: units[cid]["text"] for sid, cid in ev_ids.items()}, {x for c in rv["claims"] for x in c["cite"]},
+                                             question=r["question"] if args.faith_question else None)
                     f["contexts_trimmed"] = trimmed
                     jobs.append((fp, faithfulness.SCHEMA)); owners.append(f)
                     corr_items.append((f, r["question"], r["gold_answer"], answer))

@@ -164,7 +164,7 @@ class ToolBox:
 
 def finish(raw: str, finish_reason: str | None, box: ToolBox, layers: dict) -> tuple[str, dict, dict]:
     """Final reply -> (status, trace notes, result fields). The evidence is what the agent really saw; with none, every claim fails the citation check."""
-    return interpret(raw, finish_reason, box.answer_evidence(), layers)
+    return interpret(raw, finish_reason, box.answer_evidence(), layers, box.question)
 
 
 def needs_final_call(box: "ToolBox") -> bool:

@@ -95,7 +95,7 @@ class GraphPipeline:
         return {"messages": messages, "evidence": evidence, "raw": reply.content, "finish_reason": m["finish_reason"], "trace": trace, "path": s["path"] + ["generate"]}
 
     def _check(self, s: State) -> dict:
-        status, notes, extra = interpret(s["raw"], s["finish_reason"], s["evidence"], self.cfg["prompt"]["layers"])
+        status, notes, extra = interpret(s["raw"], s["finish_reason"], s["evidence"], self.cfg["prompt"]["layers"], s.get("question"))
         return {"status": status, "extra": extra, "trace": {**s["trace"], **notes}, "path": s["path"] + ["check"]}
 
     def _recover(self, s: State) -> dict:

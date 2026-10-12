@@ -70,18 +70,19 @@ class Pipeline:
         trace.update(prompt_hash=resp.prompt_hash, cached=resp.cached, usage=resp.usage, llm_s=resp.latency_s,
                      finish_reason=resp.finish_reason, raw_output=resp.text)
 
-        status, notes, extra = interpret(resp.text, resp.finish_reason, evidence, layers)
+        status, notes, extra = interpret(resp.text, resp.finish_reason, evidence, layers, question)
         trace.update(notes)
         return self._result(question, status, trace, **extra)
 
 
-def interpret(raw: str, finish_reason: str | None, evidence: dict[str, dict], layers: dict) -> tuple[str, dict, dict]:
+def interpret(raw: str, finish_reason: str | None, evidence: dict[str, dict], layers: dict, question: str | None = None) -> tuple[str, dict, dict]:
     """The step after the model has answered: parse, validate and shape the answer. Shared by the plain pipeline and the graph version.
     Returns (status, trace notes, extra result fields: answer / claims / citations)."""
     if not layers.get("schema", True):     # free-text mode: nothing to parse or cite; the text is the answer
         text = raw.strip()
         return ("answered" if text else "abstained_model"), {}, {"answer": text or None}
-    v = validate(raw, evidence, check_claims=layers.get("validator", True), check_tokens=layers.get("validator_tokens", False))
+    v = validate(raw, evidence, check_claims=layers.get("validator", True), check_tokens=layers.get("validator_tokens", False),
+                 question=question if layers.get("validator_question_numbers", False) else None)
     notes: dict = {"dropped_claims": v.dropped}
     if not v.parsed:
         notes["problem"] = v.problem
