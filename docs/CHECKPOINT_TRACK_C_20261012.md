@@ -16,16 +16,8 @@
 | AI_AUDIT ส่วน Track C | `AI_AUDIT.md` (§2C, §3.3, §4.4, Contribution Map) | เหตุการณ์จริงเท่านั้น |
 | รายงานภาษาไทย (อยู่นอก repo) | `../output/TRACK_C_FINAL_REPORT_TH.md` หัวข้อ 11 และ 12 | ไม่ขึ้น git |
 
-## 2. งานที่ยังรันค้างอยู่ตอนเขียน (ต้องมีเน็ต)
-- **judge ตัวที่สอง Gemini 3.8 Flash high ผ่าน `agy` วัด correctness บน test เฉพาะ B, C, ReAct**: คำสั่งรันเป็น process เบื้องหลังที่ต้องใช้อินเทอร์เน็ต ถ้าออฟไลน์ระหว่างรัน มันจะล้มเหลวและไม่เขียนผล ผลลัพธ์ที่คาดหวัง: `data/index/runs/eval/test_agy_gemini_N7/` (ไม่ขึ้น git) ถ้าไม่มีโฟลเดอร์นี้ ให้รันใหม่ (แคชเก็บคำตัดสินที่เสร็จแล้วไว้ที่ `data/index/llm_cache/judge.jsonl` จึงไม่ต้องเริ่มจากศูนย์):
-```bash
-Q=data/handoff/track_c_20261012/questions_all_reviewed.jsonl
-python -X utf8 scripts/eval_generation.py --answers B=data/index/runs/gen/test-B/answers.jsonl C=data/index/runs/gen/test-C/answers.jsonl ReActPy=data/index/runs/gen/test-react-py/answers.jsonl \
-  --chunks data/handoff/track_c_20261012/chunks/chunks-v12-t512.jsonl --validator N7 --judge agy --workers 6 --no-faithfulness --bert-model BAAI/bge-m3 --bert-layer 8 --idf-questions $Q \
-  --out data/index/runs/eval/test_agy_gemini_N7
-```
-  ช้ามาก (ราว 1–2 คำตัดสิน/นาที) จึงตัด faithfulness ของ Gemini ออก (ครบทุกระบบจะราว 100 นาที) หลังเสร็จ ให้เทียบ correctness กับ luna (`data/index/runs/eval/test_luna_N7`, `test_react-py_luna_N7`) แล้วบันทึกใน error_analysis และ AI_AUDIT (C-D20)
-- ใน AI_AUDIT C-D20 ระบุว่าใช้ Gemini วัดซ้ำบน test: ถ้ารอบนี้ไม่เสร็จ ให้แก้ข้อความเป็น "ไม่เสร็จ (ช้า/โควตา/ออฟไลน์)" อย่าอ้างว่ามีผล
+## 2. judge ตัวที่สอง (Gemini) ทำเสร็จแล้ว
+วัด correctness บน test ของ B, C, ReAct ครอบคลุม ~75% (13–14 ข้อต่อระบบ judge ล้มเหลว) ตรงกับ luna 0.87–0.92 ลำดับ C > B > ReAct เหมือนกัน รายละเอียดใน `docs/error_analysis_track_c.md` §10 ไม่มี faithfulness ของ Gemini (agy ช้า) ถ้ามีเวลาและเน็ตจะรันส่วนที่ขาดได้ (`--judge agy`, แคช `data/index/llm_cache/judge.jsonl` เก็บที่ทำแล้ว) แต่ไม่จำเป็นต่อการส่ง
 
 ## 3. ยังต้องทำ (ลำดับความสำคัญ)
 1. **เจ้าของเขียนเอง (กติกาวิชา ห้าม AI เขียนแทน):** "What Would Break?" ใน AI_AUDIT, `[FILL IN]` ระดับที่ตรวจโค้ด/ผล, ยืนยัน C-D18 (N8), G4, H5, คำตอบสะท้อน 3 ข้อของวิชา
