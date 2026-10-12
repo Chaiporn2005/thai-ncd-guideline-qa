@@ -80,3 +80,54 @@ def scope_guard(question: str) -> Verdict | None:
 def default_guards() -> list:
     """Order matters: personal data first (nothing else should look at it), then scope."""
     return [pii_guard, scope_guard]
+
+
+def mask_pii(question: str) -> tuple[str, list[str]]:
+    """G1 option B (owner's choice, 2026-10-12): replace personal identifiers with a placeholder and answer the rest. Returns (masked question, categories found);
+    the matched text itself is never kept or logged. Same detectors as pii_guard (valid national ID, phone, e-mail, HN/AN, title + first name + surname); a number that is
+    only a lab value or an age passes untouched. Limit: a Thai name without a title is not found, and masking does not make the remaining health details anonymous."""
+    found: list[str] = []
+    out = question
+
+    def sub(rx, label, cat, check=None):
+        nonlocal out
+        def repl(m):
+            if check and not check(m.group()):
+                return m.group()
+            if cat not in found:
+                found.append(cat)
+            return label
+        out = rx.sub(repl, out)
+
+    sub(_ID_CANDIDATE, "[เลขบัตรประชาชน]", "national_id", lambda t: thai_id_valid(re.sub(r"\D", "", t)))
+    sub(_PHONE, "[เบอร์โทร]", "phone")
+    sub(_EMAIL, "[อีเมล]", "email")
+    sub(_HN, "[เลขผู้ป่วย]", "hn")
+    sub(_NAME, "[ชื่อบุคคล]", "name")
+    return out, found
+
+
+class MaskingPipeline:
+    """Masks personal identifiers (G1 = B) before any retrieval or LLM call, then runs the inner pipeline on the masked question. The original text is not passed on, not stored
+    in the result and not logged; the result's trace records only the categories that were masked."""
+
+    def __init__(self, inner):
+        self.inner = inner
+        self.config_id = getattr(inner, "config_id", "") + "+mask"
+
+    def __getattr__(self, name):
+        return getattr(self.inner, name)
+
+    def answer(self, question: str, retrieved=None) -> dict:
+        masked, cats = mask_pii(question)
+        result = self.inner.answer(masked, retrieved=retrieved)
+        result["question"] = masked
+        if cats:
+            result.setdefault("trace", {})["pii_masked"] = cats
+        return result
+
+
+def demo_guards() -> list:
+    """G1 = B and G3 as chosen: personal data is masked (MaskingPipeline), so only the scope guard blocks. `default_guards()` (block on personal data) is kept because the earlier
+    evaluations used it."""
+    return [scope_guard]

@@ -219,6 +219,11 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | C-D9 | ใช้ rseed เป็นตัวแทน ReAct บน test (รันครั้งเดียว) | [AI-suggested, Human-approved] ("ใช้ตามแผนเลย") | ดีที่สุดใน ReAct บน dev: correctness 0.835, hit@5 0.928 (B 0.876) |
 | C-D10 | สร้างชุดเคส injection และ guardrail อิง OWASP LLM Top 10 (2025) ครอบ LLM01, 02, 05, 06, 07, 08, 09, 10; ไม่ทดสอบ LLM03/04 ตอนรัน | [Human] สั่ง; [AI-suggested] เนื้อเคส/guard | `docs/owasp_guardrails.md`; ผล: ASR user plain 0.58 → 0.09 → 0.00, ReAct 0.10 → 0.02 (silver) |
 | C-D11 | ค่าที่ AI เลือกเอง รอเจ้าของยืนยัน: ความยาวคำถาม 800, query ของ tool 300, เกณฑ์ RESOURCE (7000 token) | [AI-decided] [FILL IN: เจ้าของยืนยันหรือไม่] | O3 ใน `docs/decisions_guardrail_harness.md` |
+| C-D12 | G1: เปลี่ยนจากปฏิเสธเป็น mask ตัวระบุตัวบุคคล (B) แล้วตอบต่อ | [Human] เลือก B 2026-10-12 | ผลกระทบ: ข้อมูลสุขภาพที่เหลือยังอยู่ในคำถาม; ยังไม่วัดการ mask บนชุด silver |
+| C-D13 | G2: demo บันทึก metadata เท่านั้น + เก็บคำถามของชุดทดสอบของทีม (B+C) | [Human] | `demo.py` `--no-log` |
+| C-D14 | G3, G5, G6, G7, H4: ตามที่เสนอ | [Human] ยืนยัน | `docs/decisions_guardrail_harness.md` |
+| C-D15 | G4: เกณฑ์คะแนนค้นคืน (A) ปรับบน dev แล้วไม่เปิดใช้เพราะไม่ได้ประโยชน์สุทธิ (AUC 0.64 บน hybrid) | [Human] เลือก A; [AI] รันและสรุป; [FILL IN: ยืนยันคงปิดไว้] | `scripts/calibrate_abstain.py` |
+| C-D16 | H1: ทดสอบทั้ง pipeline คงที่และ agent เพื่อ ablation; H2: ใช้ API Typhoon; H3: เกณฑ์ผ่าน = ผลโจมตีถึงผู้ใช้ 0 บนชุดโจมตี | [Human] | ผลเป็น silver ยังไม่มีคนตรวจ gold |
 
 **ผลหลัก (test, 52 ข้อที่ตอบได้):** correctness A 0.798 / B 0.885 / C 0.904 / D 0.808 / ReAct 0.827 (Python = LangGraph); ReAct ใช้ token ราว 5.5 เท่าของ B และไม่ชนะ B (ผลต่าง −0.058, CI [−0.154, +0.038]) judge เป็น LLM ไม่มีคนตรวจ (silver)
 

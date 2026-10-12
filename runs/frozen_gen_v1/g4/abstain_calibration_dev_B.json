@@ -1,0 +1,43 @@
+{
+  "n_answerable": 97,
+  "n_unanswerable": 9,
+  "auc_top_score_answerable_vs_unanswerable": 0.641,
+  "answerable_top_score": {
+    "min": 0.6,
+    "median": 0.90493,
+    "max": 1.0
+  },
+  "unanswerable_top_score": {
+    "min": 0.6,
+    "median": 0.74721,
+    "max": 1.0
+  },
+  "rule": "highest threshold with at most 2 answerable questions refused",
+  "chosen": {
+    "threshold": 0.627,
+    "unanswerable_refused": 1,
+    "answerable_refused": 1
+  },
+  "grid_near_chosen": [
+    {
+      "threshold": 0.6,
+      "unanswerable_refused": 0,
+      "answerable_refused": 0
+    },
+    {
+      "threshold": 0.627,
+      "unanswerable_refused": 1,
+      "answerable_refused": 1
+    },
+    {
+      "threshold": 0.634,
+      "unanswerable_refused": 1,
+      "answerable_refused": 3
+    },
+    {
+      "threshold": 0.669,
+      "unanswerable_refused": 2,
+      "answerable_refused": 3
+    }
+  ]
+}

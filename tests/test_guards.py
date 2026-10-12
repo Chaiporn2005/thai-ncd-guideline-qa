@@ -75,5 +75,38 @@ class Chain(unittest.TestCase):
         self.assertTrue(all(first.get(k) for k in ("block", "category", "reason", "message")))
 
 
+class Masking(unittest.TestCase):
+    def test_identifiers_are_replaced_and_the_rest_is_kept(self):
+        nid = make_id("110170203451")
+        q = f"นายสมชาย ใจดี HN 4455667 โทร 081-234-5678 อีเมล a@b.com บัตร {nid} HbA1c 8.2 ควรทำอย่างไร"
+        masked, cats = guards.mask_pii(q)
+        for secret in ("สมชาย", "4455667", "081-234-5678", "a@b.com", nid):
+            self.assertNotIn(secret, masked)
+        self.assertIn("HbA1c 8.2", masked)
+        self.assertEqual(set(cats), {"name", "hn", "phone", "email", "national_id"})
+
+    def test_health_numbers_and_invalid_id_pass_unchanged(self):
+        q = "ผมอายุ 55 ปี น้ำตาล 126 และเลข 1234567890123 ไม่ใช่บัตร"
+        self.assertEqual(guards.mask_pii(q), (q, []))
+
+    def test_masking_pipeline_passes_only_the_masked_text(self):
+        seen = []
+
+        class Inner:
+            config_id = "x"
+
+            def answer(self, question, retrieved=None):
+                seen.append(question)
+                return {"question": question, "status": "answered", "trace": {}}
+
+        res = guards.MaskingPipeline(Inner()).answer("โทร 081-234-5678 HbA1c เป้าหมายเท่าไร")
+        self.assertNotIn("081-234-5678", seen[0])
+        self.assertNotIn("081-234-5678", res["question"])
+        self.assertEqual(res["trace"]["pii_masked"], ["phone"])
+
+    def test_demo_guards_only_scope(self):
+        self.assertEqual(guards.demo_guards(), [guards.scope_guard])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -9,7 +9,9 @@
 What it runs (the frozen evaluation setup, configs/rag/frozen_v1.json): retrieve top-5 chunks (bge-m3 + Thai BM25), build the prompt, ask the LLM for cited claims,
 then check every claim (the citation must be a chunk that was really sent; numbers and Latin words must appear in the cited chunk) and drop what fails.
 Needs the local index (data/index/*, not in git) and TYPHOON_API_KEY in .env (see .env.example). The first start loads the models (about 20 s).
-For study only: not medical advice, no diagnosis, no personal data handling (rule-based input guards G1/G3 are on by default, src/ncdqa/rag/guards.py; they are measured only on a silver set).
+For study only: not medical advice, no diagnosis. Decisions (docs/decisions_guardrail_harness.md): G1 = B personal identifiers in the question are masked before anything is sent to the LLM,
+so no identifier leaves the machine; G3 individual prescribing/diagnosis is refused and emergencies get the 1669 message; G2 = B the demo logs metadata only (no question or answer text) to
+data/index/demo_log/metadata.jsonl, switch off with --no-log. The rule-based guards are measured only on a silver set (src/ncdqa/rag/guards.py).
 """
 
 from __future__ import annotations
@@ -17,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -36,10 +39,10 @@ MESSAGES = {
 
 def load(args):
     from ncdqa.llm.env import load_env
-    from ncdqa.rag.guards import default_guards
+    from ncdqa.rag.guards import MaskingPipeline, demo_guards
     from ncdqa.rag.pipeline import DEFAULT_CONFIG, Pipeline
     load_env()
-    guards = [] if args.no_guard else default_guards()
+    guards = [] if args.no_guard else demo_guards()
     cfg = json.loads(DEFAULT_CONFIG.read_text(encoding="utf-8"))
     cfg["retrieval"]["variant"] = args.variant
     cfg["prompt"]["layers"]["validator_tokens"] = True       # validator profile N7 (frozen, decision E1)
@@ -52,12 +55,34 @@ def load(args):
     if args.graph:
         from ncdqa.rag.graph import GraphPipeline
         cfg["recover"] = {"max_retries": 1}
-        return GraphPipeline(retriever, client, cfg, guards)
-    return Pipeline(retriever, client, cfg, guards)
+        pipe = GraphPipeline(retriever, client, cfg, guards)
+    else:
+        pipe = Pipeline(retriever, client, cfg, guards)
+    return pipe if args.no_guard else MaskingPipeline(pipe)
+
+
+LOG_PATH = ROOT / "data/index/demo_log/metadata.jsonl"
+
+
+def log_metadata(result: dict, args) -> None:
+    """G2 = B: metadata only. Never the question or the answer text, never the matched personal data (only which categories were masked)."""
+    t = result["trace"]
+    hits = t.get("hits") or []
+    row = {"ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "status": result["status"], "variant": args.variant, "graph": args.graph, "n_hits": len(hits),
+           "top_score": hits[0]["score"] if hits else None, "guard": (t.get("guard") or {}).get("category"), "pii_masked": t.get("pii_masked"),
+           "tokens": (t.get("usage") or {}).get("total_tokens"), "cached": t.get("cached")}
+    LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with LOG_PATH.open("a", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
 def show(result: dict, args, units: dict | None = None) -> None:
+    if not args.no_log:
+        log_metadata(result, args)
     print("\n" + "=" * 78)
+    masked = result["trace"].get("pii_masked")
+    if masked:
+        print("(ระบบปิดบังข้อมูลที่ระบุตัวบุคคลในคำถามก่อนประมวลผล: " + ", ".join(masked) + " ข้อมูลสุขภาพส่วนที่เหลือยังอยู่ในคำถาม)")
     if result["status"] == "answered":
         print("คำตอบ:\n" + result["answer"])
         print("\nแหล่งอ้างอิง:")
@@ -89,7 +114,8 @@ def main() -> int:
     ap.add_argument("--variant", choices=["A", "B", "C"], default="B")
     ap.add_argument("--graph", action="store_true", help="use the LangGraph version (one bounded retry on a malformed reply)")
     ap.add_argument("--show-evidence", action="store_true")
-    ap.add_argument("--no-guard", action="store_true", help="switch off the input guards (personal data, individual prescribing/diagnosis, emergencies)")
+    ap.add_argument("--no-guard", action="store_true", help="switch off masking and the scope guard (individual prescribing/diagnosis, emergencies)")
+    ap.add_argument("--no-log", action="store_true", help="do not write the metadata log (G2 = B)")
     args = ap.parse_args()
     pipe = load(args)
     units = None
