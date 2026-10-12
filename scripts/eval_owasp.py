@@ -7,6 +7,7 @@
 Systems (everything else equal: same retrieval, k, LLM, cases):
   N0  the undefended prompt (no rules, no schema, no validator, no input guard); a reference point, plain pipeline only
   S0  the system as delivered: layers N7 + the personal-data and scope guards (what demo.py runs)
+  S2  the delivered demo: S1 but personal data is masked (G1 = B) instead of refused: MaskingPipeline + owasp_demo_guards (length, scope, injection patterns) + the rest of S1
   S1  S0 + the OWASP guardrails: length guard, injection-pattern guard, flagged chunks dropped inside the search tool, and the output guard (markup/URL, prompt text, personal data)
 Planted text (indirect cases) is placed into the results of EVERY search the pipeline or the agent makes, so a ReAct agent meets it in its observations; the index is never changed.
 Cases with `needs_tools` are skipped for the plain pipeline (it has no tools). Cases with `reviewed_by: null` are SILVER: the report says so.
@@ -137,8 +138,8 @@ def main(argv: list[str] | None = None) -> int:
     def build(system: str):
         layers = ge.LAYER_CONFIGS["N0" if system == "N0" else "N7"]
         cfg = ge.configured(base_cfg, layers)
-        if system == "S1":
-            retriever, guards = og.GuardedRetriever(planted), og.owasp_input_guards()
+        if system in ("S1", "S2"):
+            retriever, guards = og.GuardedRetriever(planted), (og.owasp_input_guards() if system == "S1" else og.owasp_demo_guards())
         else:
             retriever, guards = planted, ([] if system == "N0" else default_guards())
         if args.pipeline == "plain":
@@ -149,8 +150,11 @@ def main(argv: list[str] | None = None) -> int:
         else:
             from ncdqa.rag.react_graph import GraphReactAgent
             pipe = GraphReactAgent(retriever, client, cfg, guards)
-        if system == "S1":
+        if system in ("S1", "S2"):
             pipe = og.GuardedPipeline(pipe, lambda: "\n".join(planted.clean.values()))
+        if system == "S2":
+            from ncdqa.rag.guards import MaskingPipeline
+            pipe = MaskingPipeline(pipe)
         return pipe
 
     started, t0 = datetime.now(timezone.utc), time.perf_counter()

@@ -11,7 +11,9 @@ then check every claim (the citation must be a chunk that was really sent; numbe
 Needs the local index (data/index/*, not in git) and TYPHOON_API_KEY in .env (see .env.example). The first start loads the models (about 20 s).
 For study only: not medical advice, no diagnosis. Decisions (docs/decisions_guardrail_harness.md): G1 = B personal identifiers in the question are masked before anything is sent to the LLM,
 so no identifier leaves the machine; G3 individual prescribing/diagnosis is refused and emergencies get the 1669 message; G2 = B the demo logs metadata only (no question or answer text) to
-data/index/demo_log/metadata.jsonl, switch off with --no-log. The rule-based guards are measured only on a silver set (src/ncdqa/rag/guards.py).
+data/index/demo_log/metadata.jsonl, switch off with --no-log. O2 (OWASP, docs/owasp_guardrails.md): questions longer than 800 characters and known injection patterns are refused,
+search results flagged as instruction-like are dropped, and an answer with markup, a link the evidence lacks, system-prompt text or personal data is withheld. The rule-based guards are
+measured only on a silver set (src/ncdqa/rag/guards.py, src/ncdqa/rag/owasp_guards.py).
 """
 
 from __future__ import annotations
@@ -31,6 +33,7 @@ MESSAGES = {
     "abstained_validator": "คำตอบที่ได้ไม่ผ่านการตรวจหลักฐาน (citation/ตัวเลขไม่ตรงกับเอกสาร) จึงไม่แสดง",
     "abstained_no_evidence": "ไม่พบเอกสารที่เกี่ยวข้อง",
     "refused_input": "คำถามนี้ถูกปฏิเสธโดยตัวกรองอินพุต",
+    "blocked_output": "ระบบไม่แสดงคำตอบนี้เพราะตรวจพบเนื้อหาที่ไม่ปลอดภัยในผลลัพธ์ (ลิงก์/โค้ด/ข้อมูลส่วนบุคคล/ข้อความภายในระบบ) กรุณาถามใหม่",
     "parse_error": "โมเดลตอบในรูปแบบที่ไม่ถูกต้อง ลองถามใหม่",
     "truncated": "คำตอบยาวเกินและถูกตัด ลองถามใหม่หรือใช้ --graph",
     "llm_error": "เรียกโมเดลไม่สำเร็จ (ตรวจ TYPHOON_API_KEY และเครือข่าย)",
@@ -39,10 +42,11 @@ MESSAGES = {
 
 def load(args):
     from ncdqa.llm.env import load_env
-    from ncdqa.rag.guards import MaskingPipeline, demo_guards
+    from ncdqa.rag import owasp_guards as og
+    from ncdqa.rag.guards import MaskingPipeline
     from ncdqa.rag.pipeline import DEFAULT_CONFIG, Pipeline
     load_env()
-    guards = [] if args.no_guard else demo_guards()
+    guards = [] if args.no_guard else og.owasp_demo_guards()
     cfg = json.loads(DEFAULT_CONFIG.read_text(encoding="utf-8"))
     cfg["retrieval"]["variant"] = args.variant
     cfg["prompt"]["layers"]["validator_tokens"] = True       # validator profile N7 (frozen, decision E1)
@@ -51,14 +55,18 @@ def load(args):
     provider = load_providers(ROOT / llm["providers_file"])[llm["provider"]]
     client = LLMClient(provider, ROOT / llm["cache_dir"] / f'{llm["provider"]}.jsonl')
     from ncdqa.retrieval.search import Retriever
-    retriever = Retriever()
+    raw = Retriever()
+    retriever = raw if args.no_guard else og.GuardedRetriever(raw)
     if args.graph:
         from ncdqa.rag.graph import GraphPipeline
         cfg["recover"] = {"max_retries": 1}
         pipe = GraphPipeline(retriever, client, cfg, guards)
     else:
         pipe = Pipeline(retriever, client, cfg, guards)
-    return pipe if args.no_guard else MaskingPipeline(pipe)
+    if not args.no_guard:
+        pipe = og.GuardedPipeline(pipe, text_of=lambda cid: raw.units[cid]["text"])      # output guard (OWASP LLM02/05/07)
+        pipe = MaskingPipeline(pipe)                                                         # G1 = B, outermost: nothing identifiable reaches any later step
+    return pipe, raw.units
 
 
 LOG_PATH = ROOT / "data/index/demo_log/metadata.jsonl"
@@ -117,10 +125,8 @@ def main() -> int:
     ap.add_argument("--no-guard", action="store_true", help="switch off masking and the scope guard (individual prescribing/diagnosis, emergencies)")
     ap.add_argument("--no-log", action="store_true", help="do not write the metadata log (G2 = B)")
     args = ap.parse_args()
-    pipe = load(args)
-    units = None
-    if args.show_evidence:
-        units = pipe.retriever.retriever.units if args.graph else pipe.retriever.units
+    pipe, all_units = load(args)
+    units = all_units if args.show_evidence else None
     print(DISCLAIMER)
     if args.question:
         show(pipe.answer(args.question), args, units)

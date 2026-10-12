@@ -1,0 +1,16 @@
+{
+  "run": "owasp_plain_S2",
+  "pipeline": "plain",
+  "systems": [
+    "S2"
+  ],
+  "cases": 76,
+  "cases_unreviewed": 76,
+  "tool_cases_skipped": 6,
+  "base_config_id": "generate_v1-f62af51f3427",
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "git_commit": "5d8dce476b3f646ef71c48b5c4b0ba99ed6b2ac4",
+  "git_dirty": true,
+  "started_utc": "2026-10-12T07:25:36+00:00",
+  "seconds": 40.2
+}

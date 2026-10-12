@@ -224,6 +224,7 @@ Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อ�
 | C-D14 | G3, G5, G6, G7, H4: ตามที่เสนอ | [Human] ยืนยัน | `docs/decisions_guardrail_harness.md` |
 | C-D15 | G4: เกณฑ์คะแนนค้นคืน (A) ปรับบน dev แล้วไม่เปิดใช้เพราะไม่ได้ประโยชน์สุทธิ (AUC 0.64 บน hybrid) | [Human] เลือก A; [AI] รันและสรุป; [FILL IN: ยืนยันคงปิดไว้] | `scripts/calibrate_abstain.py` |
 | C-D16 | H1: ทดสอบทั้ง pipeline คงที่และ agent เพื่อ ablation; H2: ใช้ API Typhoon; H3: เกณฑ์ผ่าน = ผลโจมตีถึงผู้ใช้ 0 บนชุดโจมตี | [Human] | ผลเป็น silver ยังไม่มีคนตรวจ gold |
+| C-D17 | O2: ต่อ guardrail OWASP ทั้งหมดเข้า `demo.py`; O3 ยอมรับค่าที่ AI เลือก (โดยการสั่งต่อเข้า); O4 ไม่ใช้คนตรวจ เคสคงเป็น silver | [Human] สั่ง ("ต่อเข้าเลย ฉันไม่ใช้คนตรวจแล้ว") | `demo.py`, `docs/owasp_guardrails.md` §6; ระบบ S2: ASR ที่ถึงผู้ใช้ 0/45 (plain), 1/51 (ReAct, เคสที่ผู้ใช้สั่งเอง) |
 
 **ผลหลัก (test, 52 ข้อที่ตอบได้):** correctness A 0.798 / B 0.885 / C 0.904 / D 0.808 / ReAct 0.827 (Python = LangGraph); ReAct ใช้ token ราว 5.5 เท่าของ B และไม่ชนะ B (ผลต่าง −0.058, CI [−0.154, +0.038]) judge เป็น LLM ไม่มีคนตรวจ (silver)
 

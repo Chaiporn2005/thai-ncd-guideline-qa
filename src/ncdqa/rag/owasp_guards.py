@@ -57,6 +57,12 @@ def length_guard(max_chars: int = MAX_QUESTION_CHARS):
     return guard
 
 
+def owasp_demo_guards() -> list:
+    """The input guards of the delivered demo: length, individual-prescribing/emergency scope, injection patterns. Personal data is NOT blocked here: G1 = B masks it
+    (guards.MaskingPipeline) before the question reaches this chain."""
+    return [length_guard(), g.scope_guard, injection_input_guard]
+
+
 def owasp_input_guards() -> list:
     """Order: length first (cheapest, bounds the work every later guard does), then the existing personal-data and scope guards, then injection patterns."""
     return [length_guard(), *g.default_guards(), injection_input_guard]
@@ -101,6 +107,9 @@ class GuardedRetriever:
         self.inner, self.max_query_chars, self.drop_flagged = inner, max_query_chars, drop_flagged
         self.dropped = 0
 
+    def __getattr__(self, name):
+        return getattr(self.inner, name)
+
     def search(self, query: str, variant: str, k: int, filters: dict | None = None) -> list[dict]:
         doc = (filters or {}).get("document_id")
         if doc is not None and not re.fullmatch(r"[A-Za-z0-9_.\-]{1,80}", str(doc)):
@@ -116,15 +125,23 @@ class GuardedRetriever:
 class GuardedPipeline:
     """Output guard around any pipeline with `answer(question, retrieved=None) -> dict`. `evidence_text()` returns the clean text of the chunks of the current question."""
 
-    def __init__(self, inner, evidence_text=lambda: ""):
-        self.inner, self.evidence_text = inner, evidence_text
+    def __init__(self, inner, evidence_text=lambda: "", text_of=None):
+        """`text_of(chunk_id) -> text` (the demo): the evidence is the text of the chunks named in the result's trace; otherwise `evidence_text()` is used (the harness)."""
+        self.inner, self.evidence_text, self.text_of = inner, evidence_text, text_of
         self.config_id = getattr(inner, "config_id", "") + "+owasp"
+
+    def __getattr__(self, name):
+        return getattr(self.inner, name)
 
     def answer(self, question: str, retrieved: list[dict] | None = None) -> dict:
         result = self.inner.answer(question, retrieved=retrieved)
         if result.get("status") != "answered":
             return result
-        verdict = check_output(result.get("answer") or "", self.evidence_text())
+        if self.text_of:
+            evidence = "\n".join(self.text_of(cid) for cid in (result.get("trace", {}).get("evidence") or {}).values())
+        else:
+            evidence = self.evidence_text()
+        verdict = check_output(result.get("answer") or "", evidence)
         if verdict:
             result = {**result, "status": "blocked_output", "answer": None, "citations": [], "output_guard": {**verdict, "message": ANSWER_BLOCKED_MESSAGE}}
         return result
