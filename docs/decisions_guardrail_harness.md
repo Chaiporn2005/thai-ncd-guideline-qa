@@ -128,3 +128,7 @@
 | H3 | ชุดประเมิน/เกณฑ์ผ่าน | ตามรายการข้างบน | `[FILL IN]` | | |
 | H4 | ขอบเขตแต่ละ Track | ตามข้อเสนอ | `[FILL IN]` | | |
 | H5 | harness สำหรับ agent | supervisor + คนอนุมัติ | `[FILL IN]` | | |
+| O1 | ชุดเคส injection อิง OWASP LLM Top 10 (2025) ครอบ LLM01, 02, 05, 06, 07, 08, 09, 10 (LLM03/04 ไม่ทดสอบตอนรัน) | ผู้ใช้สั่งให้สร้างชุดเคสและ guardrail อิง OWASP | สร้าง `cases_owasp_v1.jsonl` 76 เคส (51 โจมตี) เป็น silver; แผนที่ใน `docs/owasp_guardrails.md` | Human สั่งให้ทำ; รายการเคสเป็น AI-suggested | 2026-10-12 |
+| O2 | guardrail เพิ่ม: ตัวกรองรูปแบบ injection ที่ข้อความคำถาม, จำกัดความยาวคำถาม 800 ตัวอักษร, `GuardedRetriever` (ตัด chunk ติดธง, จำกัด query/document_id), output guard (markup/URL, ข้อความ prompt, ตัวระบุตัวบุคคลที่ไม่อยู่ในหลักฐาน) | ห่อ pipeline ไม่แก้ที่ freeze; ปฏิเสธคำตอบ ไม่ซ่อม | `[FILL IN: เจ้าของยืนยันว่าจะส่งมอบชั้นไหนใน demo]` | | |
+| O3 | ค่าที่ AI เลือกเอง ต้องให้เจ้าของยืนยัน: ความยาวสูงสุด 800 ตัวอักษร, query ของ tool 300 ตัวอักษร, เกณฑ์ RESOURCE (9000 token, ตอบ 2500 ตัวอักษร, tool call 6 ครั้ง) | | `[FILL IN]` | | |
+| O4 | ให้คนตรวจเคส OWASP แบบสุ่มหรือคงเป็น silver | คงเป็น silver ตามข้อตัดสินเดิม 2026-10-11 | `[FILL IN]` | | |
