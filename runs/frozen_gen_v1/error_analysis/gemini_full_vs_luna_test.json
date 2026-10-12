@@ -1,0 +1,47 @@
+{
+ "A": {
+  "gemini_corr": 0.75,
+  "luna_corr": 0.7981,
+  "gemini_faith": 0.6389,
+  "luna_faith": 0.8027,
+  "judge_failures": 36,
+  "exact_agreement": 0.923,
+  "n_both": 26
+ },
+ "B": {
+  "gemini_corr": 0.7917,
+  "luna_corr": 0.8846,
+  "gemini_faith": 0.6542,
+  "luna_faith": 0.8267,
+  "judge_failures": 31,
+  "exact_agreement": 0.917,
+  "n_both": 24
+ },
+ "C": {
+  "gemini_corr": 0.9091,
+  "luna_corr": 0.9038,
+  "gemini_faith": 0.596,
+  "luna_faith": 0.8856,
+  "judge_failures": 30,
+  "exact_agreement": 0.909,
+  "n_both": 33
+ },
+ "D": {
+  "gemini_corr": 0.7222,
+  "luna_corr": 0.8077,
+  "gemini_faith": 0.6667,
+  "luna_faith": 0.7681,
+  "judge_failures": 29,
+  "exact_agreement": 0.963,
+  "n_both": 27
+ },
+ "ReActPy": {
+  "gemini_corr": 0.7115,
+  "luna_corr": 0.8269,
+  "gemini_faith": 0.6095,
+  "luna_faith": 0.8333,
+  "judge_failures": 31,
+  "exact_agreement": 0.846,
+  "n_both": 26
+ }
+}
