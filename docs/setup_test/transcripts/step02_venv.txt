@@ -1,0 +1,5 @@
+PS thai-ncd-guideline-qa> uv venv --python 3.12 .venv; .\.venv\Scripts\Activate.ps1; python --version
+Using CPython 3.12.13
+Creating virtual environment at: .venv
+Activate with: .venv\Scripts\activate
+Python 3.12.13

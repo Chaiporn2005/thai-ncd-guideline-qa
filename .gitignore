@@ -50,3 +50,7 @@ ncd_demo_bundle.zip
 
 # public benchmark downloads (licences differ; fetched by scripts/eval_public_benchmarks.py)
 data/external/
+
+# screenshots of the setup guide (docs/SETUP_GUIDE_TH.md)
+!docs/images/
+!docs/images/**

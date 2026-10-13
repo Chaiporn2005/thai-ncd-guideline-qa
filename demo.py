@@ -13,7 +13,7 @@
 What it runs (frozen evaluation setup, configs/rag/frozen_v1.json): input guards (personal identifiers masked, individual prescribing/diagnosis refused, emergencies get 1669, length cap, injection
 patterns) -> retrieve top-5 (bge-m3 + Thai BM25) -> prompt -> LLM typhoon-v2.5-30b-a3b-instruct -> check every claim (the citation must be a chunk that was sent; numbers and Latin words must appear in the
 cited chunk; numbers the user typed are allowed) -> output guard (markup, links, system-prompt text, personal data) -> answer with document, edition and PDF page.
-Needs: the local data bundle (data/index/..., not in git), TYPHOON_API_KEY in .env, internet on the first start (model download, API). Everything the demo answered once is cached, so a repeated question runs offline.
+Needs: the local data bundle (data/index/..., not in git), TYPHOON_API_KEY in .env, internet on the first start (model download of several GB, API). Everything the demo answered once is cached, so a repeated question runs offline.
 For study only: not medical advice. Decisions: docs/decisions_guardrail_harness.md. G2: only metadata is logged (data/index/demo_log/metadata.jsonl, off with --no-log), never the question or the answer.
 """
 

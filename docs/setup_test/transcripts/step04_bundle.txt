@@ -1,0 +1,4 @@
+(.venv) PS thai-ncd-guideline-qa> Copy-Item ..\..\drive\ncd_demo_bundle.zip .; (Get-FileHash ncd_demo_bundle.zip -Algorithm SHA256).Hash.ToLower(); python -X utf8 scripts/install_demo_bundle.py ncd_demo_bundle.zip
+7edbf18331dcf3e9b431a66a974d8fa5c56268a9b8bae0cc46b6f6683051b338
+installed 8 files, skipped 0 existing; checksum mismatches: 0
+next: python -X utf8 demo.py --check

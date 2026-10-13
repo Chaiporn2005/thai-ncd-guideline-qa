@@ -3,7 +3,7 @@
     python -X utf8 demo.py --check          # what is missing on this machine, and the exact command that fixes it
 
 The check answers "can a teammate run the demo on a fresh clone?": Python version, packages, the local data bundle (the index is not in git: it holds corpus text), the LLM provider file, the API key
-(only whether it is set, never its value) and whether the embedding model is already in the Hugging Face cache (first start downloads about 2.3 GB).
+(only whether it is set, never its value) and whether the embedding model is already in the Hugging Face cache (first start downloads several GB).
 """
 
 from __future__ import annotations
@@ -73,7 +73,7 @@ def check_environment(root: Path = ROOT) -> list[dict]:
         env_ok = any(line.strip().startswith("TYPHOON_API_KEY=") and line.strip().split("=", 1)[1].strip() for line in envfile.read_text(encoding="utf-8").splitlines())
     add("TYPHOON_API_KEY (value is never printed)", env_ok, "set" if env_ok else "not set", "copy .env.example .env and put the key after TYPHOON_API_KEY= (ask the team for it); cached demo questions work without it")
     model_dir = hf_cache_dir() / "models--BAAI--bge-m3"
-    add("embedding model BAAI/bge-m3 in the local cache", model_dir.exists(), "cached" if model_dir.exists() else "not cached: the first start downloads about 2.3 GB",
+    add("embedding model BAAI/bge-m3 in the local cache", model_dir.exists(), "cached" if model_dir.exists() else "not cached: the first start downloads several GB",
         "run once with internet before the presentation: python -X utf8 demo.py --warm")
     cache = root / DEMO_CACHE_DIR
     n = sum(1 for _ in cache.glob("*.jsonl")) if cache.exists() else 0

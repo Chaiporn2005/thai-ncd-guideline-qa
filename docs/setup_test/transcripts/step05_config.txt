@@ -1,0 +1,4 @@
+(.venv) PS thai-ncd-guideline-qa> Copy-Item configs\llm\providers.example.yaml configs\llm\providers.yaml; Copy-Item .env.example .env; (Select-String -Path .env -Pattern "^TYPHOON_API_KEY=").Line -replace "=.+","=<มีค่าแล้ว>"; Get-ChildItem .env, configs\llm\providers.yaml | ForEach-Object { $_.Name + "   " + $_.Length + " bytes" }
+TYPHOON_API_KEY=
+.env   426 bytes
+providers.yaml   3696 bytes
