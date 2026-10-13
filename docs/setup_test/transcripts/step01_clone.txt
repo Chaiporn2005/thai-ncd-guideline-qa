@@ -1,3 +1,3 @@
-PS friend2> git clone -b rag/track-b-l1 https://github.com/Chaiporn2005/thai-ncd-guideline-qa; cd thai-ncd-guideline-qa; git log --oneline -1
+PS friend3> git clone -b rag/track-b-l1 https://github.com/Chaiporn2005/thai-ncd-guideline-qa; cd thai-ncd-guideline-qa; git log --oneline -1
 Cloning into 'thai-ncd-guideline-qa'...
-5a81cd5 docs: slide outline matched to the course's 10-slide structure; checkpoint 2c (demo handoff verified in a fresh clone)
+001fb93 Setup guide (Thai) with real screenshots, terminal capture tool; README links it

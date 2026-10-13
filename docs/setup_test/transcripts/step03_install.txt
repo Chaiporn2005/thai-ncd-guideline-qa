@@ -1,9 +1,9 @@
 (.venv) PS thai-ncd-guideline-qa> uv pip install -r requirements-rag.txt -r requirements-agent.txt
-Resolved 80 packages in 798ms
+Resolved 80 packages in 765ms
 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
          If the cache and target directories are on different filesystems, hardlinking may not be supported.
          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
-Installed 80 packages in 19.79s
+Installed 80 packages in 17.95s
  + annotated-doc==0.0.5
  + annotated-types==0.8.0
  + anyio==4.15.1

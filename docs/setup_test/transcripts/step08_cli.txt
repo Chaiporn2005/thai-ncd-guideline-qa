@@ -1,8 +1,8 @@
 (.venv) PS thai-ncd-guideline-qa> python -X utf8 demo.py "ผู้ป่วยโรคไตเรื้อรังระยะ 3 ควรใช้ยา metformin ขนาดเท่าไร"
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-System.Management.Automation.RemoteException
+
 Loading weights:   0%|          | 0/391 [00:00<?, ?it/s]
-Loading weights: 100%|██████████| 391/391 [00:00<00:00, 18967.56it/s]
+Loading weights: 100%|██████████| 391/391 [00:00<00:00, 25036.61it/s]
 เพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์ ไม่วินิจฉัย ไม่สั่งหรือปรับยา ปรึกษาแพทย์/เภสัชกรสำหรับกรณีเฉพาะราย
 
 ==============================================================================
@@ -12,5 +12,5 @@ Loading weights: 100%|██████████| 391/391 [00:00<00:00, 1896
 แหล่งอ้างอิง:
   [S3] ckd-guideline-2565-revised (ฉบับ ckd-guideline-2565-revised) หน้า PDF 53-55
 
-สถานะ: answered | token: 4380 | cache: True | 0.33 วินาที
+สถานะ: answered | token: 4380 | cache: True | 0.35 วินาที
 เพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์ ไม่วินิจฉัย ไม่สั่งหรือปรับยา ปรึกษาแพทย์/เภสัชกรสำหรับกรณีเฉพาะราย
