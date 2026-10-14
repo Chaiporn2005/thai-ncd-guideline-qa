@@ -30,9 +30,12 @@ class BertScorer:
     """`layers` lists every layer that may be scored (hidden_states index, 1..n); one forward pass keeps all of them, so a layer search is cheap."""
 
     def __init__(self, model_name: str, layer: int | None = None, idf_texts: list[str] | None = None, max_length: int = 512, device: str = "cpu",
-                 layers: list[int] | None = None):
+                 layers: list[int] | None = None, reference_compat: bool = False):
         import torch
         from transformers import AutoModel, AutoTokenizer
+        # reference_compat: behave like the official bert_score package. The special tokens (<s>, </s>) stay in the matching pool as vectors a real token can match, with weight 0
+        # in the averages; the default drops them from the pool altogether. Found on 2026-10-14: the two differ by about 0.02 per answer, ours lower.
+        self.reference_compat = reference_compat
         self.torch, self.name, self.max_length, self.device = torch, model_name, max_length, device
         self.tok = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModel.from_pretrained(model_name).to(device).eval()
@@ -60,7 +63,7 @@ class BertScorer:
             with self.torch.no_grad():
                 states = self.model(**enc, output_hidden_states=True).hidden_states
             ids = enc["input_ids"][0].tolist()
-            keep = [i for i, t in enumerate(ids) if t not in self.tok.all_special_ids]      # drop <s>, </s>, [CLS], [SEP], padding
+            keep = [i for i, t in enumerate(ids) if self.reference_compat or t not in self.tok.all_special_ids]      # default: drop <s>, </s>, [CLS], [SEP]; compat: keep them
             vecs = {}
             for layer in self.layers:
                 v = states[layer][0][keep].cpu().numpy().astype("float32")
@@ -69,6 +72,9 @@ class BertScorer:
         return self._cache[text]
 
     def _weights(self, ids: list[int]) -> np.ndarray | None:
+        if self.reference_compat:      # weight 0 for the special tokens (the package sets idf of [CLS]/[SEP] to 0), 1 or idf for the others
+            special = set(self.tok.all_special_ids)
+            return np.array([0.0 if i in special else (1.0 if self.idf is None else self.idf.get(i, self._idf_default)) for i in ids])
         return None if self.idf is None else np.array([self.idf.get(i, self._idf_default) for i in ids])
 
     def score(self, candidate: str, reference: str, layer: int | None = None) -> dict:

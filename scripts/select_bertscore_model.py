@@ -45,6 +45,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--per-question", type=Path, required=True)
     ap.add_argument("--models", nargs="*", default=list(CANDIDATES))
+    ap.add_argument("--compat", action="store_true", help="reference-compatible BERTScore (special tokens stay in the matching pool with weight 0, as in the official bert_score package)")
     ap.add_argument("--out", type=Path, required=True)
     args = ap.parse_args()
     if args.out.exists():
@@ -62,7 +63,7 @@ def main() -> int:
     results = []
     for name in args.models:
         try:
-            scorer = BertScorer(name, idf_texts=golds, layers=CANDIDATES[name])
+            scorer = BertScorer(name, idf_texts=golds, layers=CANDIDATES[name], reference_compat=args.compat)
         except Exception as err:  # not downloaded, or no weights
             print(f"skip {name}: {type(err).__name__}", flush=True)
             continue

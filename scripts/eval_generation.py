@@ -117,6 +117,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--bert-model", default=None, help="encoder for BERTScore (skipped when omitted)")
     ap.add_argument("--bert-layer", type=int, default=None)
     ap.add_argument("--no-idf", action="store_true")
+    ap.add_argument("--bert-compat", action="store_true", help="reference-compatible BERTScore (matches the official bert_score package exactly; the default drops the special tokens and is about 0.02 lower per answer)")
     ap.add_argument("--idf-questions", type=Path, help="questions file whose DEV gold answers give the idf weights (so a test run does not use test references for idf)")
     ap.add_argument("--no-judge", action="store_true", help="skip Faithfulness and Correctness (no agy calls)")
     ap.add_argument("--judge", choices=["agy-claude", "codex-luna", "agy", "api"], default="agy-claude",
@@ -144,7 +145,7 @@ def main(argv: list[str] | None = None) -> int:
             golds = sorted({q["answer"] for q in read_jsonl(args.idf_questions) if q["split"] == "dev" and q["status"] == "gold" and q["answer"]})
         else:
             golds = sorted({r["gold_answer"] for rows in runs.values() for r in rows if r["gold_answer"]})
-        scorer = BertScorer(args.bert_model, args.bert_layer, None if args.no_idf else golds)
+        scorer = BertScorer(args.bert_model, args.bert_layer, None if args.no_idf else golds, reference_compat=args.bert_compat)
 
     judge = None
     if not args.no_judge:

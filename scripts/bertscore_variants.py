@@ -90,7 +90,7 @@ def main() -> int:
         sys.exit(f"{args.out} exists, choose a new --out")
     units = {c["chunk_id"]: c for c in eg.read_jsonl(args.chunks)}
     dev_gold = sorted({q["answer"] for q in eg.read_jsonl(args.questions) if q["split"] == "dev" and q["status"] == "gold" and q["answer"]})
-    scorer = BertScorer("BAAI/bge-m3", args.layer, dev_gold)
+    scorer = BertScorer("BAAI/bge-m3", args.layer, dev_gold)   # not changed: this script measures variants of the old (special tokens dropped) scoring
     parse = lambda xs: {n: Path(p) for n, _, p in (x.partition("=") for x in xs)}  # noqa: E731
 
     dev = collect(parse(args.dev_answers), units, scorer)
