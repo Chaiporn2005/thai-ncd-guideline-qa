@@ -37,7 +37,7 @@ button, select, textarea { font: inherit; color: inherit; }
   display: flex; align-items: center; justify-content: space-between; gap: var(--space-md);
 }
 .brand { display: flex; align-items: center; gap: var(--space-sm); color: inherit; text-decoration: none; min-width: 0; border-radius: var(--radius-sm); }
-.brand__mark { width: 40px; height: 40px; flex-shrink: 0; display: block; }
+.brand__mark { width: 30px; height: 38px; flex-shrink: 0; display: block; }
 .brand__mark svg { width: 100%; height: 100%; display: block; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
 .brand__name { font-family: var(--font-display); font-weight: 600; font-size: var(--text-md); color: var(--color-ink); }

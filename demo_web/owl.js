@@ -72,18 +72,15 @@ export function owl(mood = "happy", { live = false, title = true } = {}) {
   </svg>`;
 }
 
-// The logo mark: the owl's face perched on an open guideline book, on a medical-blue tile.
+// The logo mark: the owl IS a bookmark. Ear tufts are the top corners, the notch at the foot is a bookmark's: it marks the page an answer cites.
+// One flat shape in the brand blue, two eyes, a beak. No tile, no gradient.
 export function logoMark() {
-  return `<svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-    <rect width="40" height="40" rx="11" fill="var(--brand-tile)"/>
-    <path d="M8.5 14 L7.5 5.5 L14 10.5 Z M31.5 14 L32.5 5.5 L26 10.5 Z" fill="var(--brand-face)"/>
-    <circle cx="14.5" cy="17" r="7" fill="var(--brand-face)"/>
-    <circle cx="25.5" cy="17" r="7" fill="var(--brand-face)"/>
-    <circle cx="15" cy="17.5" r="3.2" fill="var(--owl-pupil)"/>
-    <circle cx="25" cy="17.5" r="3.2" fill="var(--owl-pupil)"/>
-    <circle cx="16.2" cy="16.3" r="1" fill="var(--brand-face)"/>
-    <circle cx="26.2" cy="16.3" r="1" fill="var(--brand-face)"/>
-    <path d="M20 20 L18 22.4 Q20 25.8 22 22.4 Z" fill="var(--owl-beak)"/>
-    <path d="M8 29.5 Q14 27.8 19.4 30 L19.4 34.6 Q14 32.4 8 34 Z M32 29.5 Q26 27.8 20.6 30 L20.6 34.6 Q26 32.4 32 34 Z" fill="var(--brand-face)"/>
+  return `<svg class="logo-mark" viewBox="0 0 32 40" aria-hidden="true" focusable="false">
+    <path d="M2 1 L10 7 L22 7 L30 1 L30 39 L16 30 L2 39 Z" fill="var(--brand-tile)" stroke="var(--brand-tile)" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="10.5" cy="16" r="5.4" fill="var(--brand-face)"/>
+    <circle cx="21.5" cy="16" r="5.4" fill="var(--brand-face)"/>
+    <circle cx="11.4" cy="16.6" r="2.5" fill="var(--owl-pupil)"/>
+    <circle cx="20.6" cy="16.6" r="2.5" fill="var(--owl-pupil)"/>
+    <path d="M16 20.5 L13.8 23 L16 26.5 L18.2 23 Z" fill="var(--owl-beak)"/>
   </svg>`;
 }
