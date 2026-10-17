@@ -27,39 +27,53 @@ const ABSTAIN_TIP = "ลองระบุโรค ระยะ หรือก
 
 let busy = false;
 let turnId = 0;
+let inflight = null;                // AbortController of the question being answered
+
+// Settings: kept in this browser only (a convenience, not data); the page works the same without storage.
+const store = { get(k) { try { return localStorage.getItem("ncd-demo:" + k); } catch { return null; } },
+                set(k, v) { try { localStorage.setItem("ncd-demo:" + k, v); } catch {} } };
+const radio = (name) => document.querySelector(`input[name="${name}"]:checked`).value;
 
 /* ---------- start ---------- */
 $("logo-slot").innerHTML = logoMark();
 $("welcome-owl").innerHTML = owl("hello", { live: true });
 $("how-trace").innerHTML = traceHTML(null, "how");
 followPointer($("welcome-owl"));
+restoreSettings();
 loadSamples();
 
-/* ---------- samples ---------- */
+/* ---------- samples: suggested questions for everyone, the test set for testers and the presentation ---------- */
 async function loadSamples() {
   try {
     const list = await (await fetch("/api/showcase")).json();
+    const sample = (s, showExpect) => `<li><button type="button" class="sample" data-q="${esc(s.question)}">
+        <span class="sample__q">${esc(s.question)}</span>${showExpect ? `<span class="sample__expect">ควรเห็น: ${esc(s.expect)}</span>` : ""}
+      </button></li>`;
+    const suggest = list.filter((s) => s.kind !== "test");
     const groups = [];
-    list.forEach((s, i) => {
-      let g = groups.find((x) => x.name === (s.group || "ตัวอย่าง"));
-      if (!g) groups.push((g = { name: s.group || "ตัวอย่าง", items: [] }));
-      g.items.push({ ...s, i });
+    list.filter((s) => s.kind === "test").forEach((s) => {
+      let g = groups.find((x) => x.name === s.group);
+      if (!g) groups.push((g = { name: s.group, items: [] }));
+      g.items.push(s);
     });
-    const html = groups.map((g) => `
-      <div class="samples__group">
-        <h3>${esc(g.name)}</h3>
-        <ul>${g.items.map((s) => `
-          <li><button type="button" class="sample" data-q="${esc(s.question)}">
-            <span class="sample__q">${esc(s.question)}</span>
-            <span class="sample__expect">ควรเห็น: ${esc(s.expect)}</span>
-          </button></li>`).join("")}</ul>
-      </div>`).join("");
-    $("sample-groups").innerHTML = html;
-    $("sheet-groups").innerHTML = html;
+    const suggestHTML = `<div class="samples__group samples__group--wide"><ul>${suggest.map((s) => sample(s, false)).join("")}</ul></div>`;
+    $("sample-groups").innerHTML = suggestHTML;
+    $("sheet-suggest").innerHTML = suggestHTML;
+    $("sheet-test").innerHTML = groups.map((g) => `<div class="samples__group"><h3>${esc(g.name)}</h3><ul>${g.items.map((s) => sample(s, true)).join("")}</ul></div>`).join("");
   } catch {
-    $("sample-groups").innerHTML = `<p class="samples__loading">โหลดตัวอย่างไม่สำเร็จ ตรวจว่า <code>demo.py --web</code> ยังทำงานอยู่ แล้วโหลดหน้าใหม่</p>`;
+    $("sample-groups").innerHTML = `<p class="samples__loading">โหลดคำถามแนะนำไม่สำเร็จ ยังพิมพ์คำถามเองได้ตามปกติ</p>`;
   }
 }
+// tabs in the samples sheet (arrow keys move between them)
+const tabs = [$("tab-suggest"), $("tab-test")];
+function selectTab(t) {
+  tabs.forEach((x) => { const on = x === t; x.setAttribute("aria-selected", on); x.tabIndex = on ? 0 : -1; $(x.getAttribute("aria-controls")).hidden = !on; });
+  t.focus({ preventScroll: true });
+}
+tabs.forEach((t, i) => {
+  t.addEventListener("click", () => selectTab(t));
+  t.addEventListener("keydown", (e) => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") selectTab(tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length]); });
+});
 document.addEventListener("click", (e) => {
   const b = e.target.closest(".sample");
   if (!b || busy) return;
@@ -74,7 +88,7 @@ function autosize() {
   input.style.height = Math.min(input.scrollHeight, 168) + "px";
   input.style.overflowY = input.scrollHeight > 168 ? "auto" : "hidden";
 }
-input.addEventListener("input", autosize);
+input.addEventListener("input", () => { autosize(); if (!busy) $("send").disabled = !input.value.trim(); });
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter" && !e.shiftKey && !e.isComposing) {
     e.preventDefault();
@@ -91,6 +105,27 @@ $("composer").addEventListener("submit", (e) => {
 /* ---------- dialogs ---------- */
 $("open-how").addEventListener("click", () => $("how").showModal());
 $("open-samples").addEventListener("click", () => $("sample-sheet").showModal());
+$("open-settings").addEventListener("click", () => $("settings").showModal());
+$("settings").addEventListener("change", saveSettings);
+$("stop").addEventListener("click", () => inflight?.abort());
+
+function restoreSettings() {
+  for (const name of ["mode", "variant"]) {
+    const v = store.get(name), el = v && document.querySelector(`input[name="${name}"][value="${CSS.escape(v)}"]`);
+    if (el) el.checked = true;
+  }
+  $("show-details").checked = store.get("details") === "1";
+  summarize();
+}
+function saveSettings() {
+  store.set("mode", radio("mode")); store.set("variant", radio("variant")); store.set("details", $("show-details").checked ? "1" : "0");
+  summarize();
+}
+function summarize() {
+  const m = radio("mode"), v = radio("variant");
+  $("settings-summary").textContent = `${MODE[m]} · ${VARIANT[v]}`;
+  $("open-settings").classList.toggle("is-changed", m !== "fixed" || v !== "B");
+}
 document.querySelectorAll("dialog").forEach((d) => {
   d.addEventListener("click", (e) => { if (e.target === d || e.target.closest("[data-close]")) d.close(); });
 });
@@ -109,7 +144,7 @@ async function ask(question) {
   autosize();
   document.body.classList.add("has-thread");
   $("reset").disabled = false;
-  const mode = $("mode").value, variant = $("variant").value;
+  const mode = radio("mode"), variant = radio("variant");
   const id = ++turnId;
 
   const turn = document.createElement("li");
@@ -120,7 +155,7 @@ async function ask(question) {
       <div class="reply__avatar">${owl("think", { live: true })}</div>
       <div class="reply__body">
         <p class="pending"><span>กำลังค้นหลักฐานและเรียบเรียงคำตอบ</span> <span class="pending__time" data-t>0.0 วินาที</span></p>
-        <p class="pending__note">${mode === "react" ? "ReAct ค้นเองหลายรอบ อาจใช้เวลานานกว่า" : variant === "C" ? "reranker บน CPU อาจใช้ 15–36 วินาที" : "คำถามที่เคยถามแล้วตอบจากแคชทันที"}</p>
+        <p class="pending__note">${esc(MODE[mode])} · ${esc(VARIANT[variant])}${variant === "C" ? " · reranker บน CPU ช้า (ครั้งแรกราว 3 นาที)" : mode === "react" ? " · agent ค้นเองหลายรอบ" : ""}</p>
       </div>
     </article>`;
   $("thread").append(turn);
@@ -129,12 +164,14 @@ async function ask(question) {
   const t0 = performance.now();
   const tick = setInterval(() => { turn.querySelector("[data-t]").textContent = ((performance.now() - t0) / 1000).toFixed(1) + " วินาที"; }, 100);
   let data;
+  inflight = new AbortController();
   try {
-    const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question, mode, variant }) });
+    const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question, mode, variant }), signal: inflight.signal });
     data = await r.json();
-  } catch {
-    data = { error: "network" };
+  } catch (err) {
+    data = { error: err.name === "AbortError" ? "aborted" : "network" };
   }
+  inflight = null;
   clearInterval(tick);
   const reply = turn.querySelector(".reply");
   reply.outerHTML = data.error ? renderError(data, question) : renderReply(data, id);
@@ -144,13 +181,14 @@ async function ask(question) {
   }
   busy = false;
   setBusy(false);
+  $("send").disabled = !input.value.trim();
   input.focus({ preventScroll: true });
 }
 
 function setBusy(on) {
+  $("send").hidden = on;           // while answering, the button becomes "cancel"
+  $("stop").hidden = !on;
   $("send").disabled = on;
-  $("send").classList.toggle("is-loading", on);
-  $("send").querySelector(".send__label").textContent = on ? "กำลังตอบ" : "ถาม";
   document.querySelectorAll(".sample").forEach((b) => (b.disabled = on));
 }
 
@@ -194,14 +232,17 @@ function renderReply(d, id) {
     <div class="reply__body">
       <header class="reply__head">
         <p class="status status--${s.tone}" id="st-${id}"><span class="status__icon" aria-hidden="true">${s.icon}</span>${esc(emergency ? "อาการฉุกเฉิน: แนะนำโทร 1669" : s.label)}</p>
-        <p class="meta">${meta.map(esc).join(" · ")}</p>
+        ${d.status === "answered" ? `<button type="button" class="copy" data-copy="${id}"><span class="copy__label">คัดลอกคำตอบ</span></button>` : ""}
       </header>
       ${body}
-      <section class="path" aria-label="เส้นทางของคำถามนี้">
-        <h3>เส้นทางของคำถามนี้${d.path?.length ? ` <span class="path__nodes">${esc(d.path.join(" › "))}</span>` : ""}</h3>
-        ${traceHTML(d, "t" + id)}
-      </section>
-      ${evidenceBlock(d, id)}
+      <details class="tech"${$("show-details").checked ? " open" : ""}>
+        <summary>ดูว่าระบบตอบอย่างไร <span class="tech__meta">${meta.map(esc).join(" · ")}</span></summary>
+        <section class="path" aria-label="เส้นทางของคำถามนี้">
+          <h3>เส้นทางของคำถามนี้${d.path?.length ? ` <span class="path__nodes">${esc(d.path.join(" › "))}</span>` : ""}</h3>
+          ${traceHTML(d, "t" + id)}
+        </section>
+        ${evidenceBlock(d, id)}
+      </details>
     </div>
   </article>`;
 }
@@ -226,6 +267,14 @@ function evidenceBlock(d, id) {
 }
 
 function renderError(d, question) {
+  if (d.error === "aborted") return `<article class="reply reply--warn">
+    <div class="reply__avatar">${owl("unsure")}</div>
+    <div class="reply__body">
+      <p class="status status--warn"><span class="status__icon" aria-hidden="true">–</span>ยกเลิกแล้ว</p>
+      <p class="tip">ถ้าเครื่องยังประมวลผลคำถามนี้อยู่ คำถามถัดไปจะเริ่มเมื่อคำถามนี้เสร็จ</p>
+      <button type="button" class="chip-btn" data-retry="${esc(question)}">ถามอีกครั้ง</button>
+    </div>
+  </article>`;
   return `<article class="reply reply--stop">
     <div class="reply__avatar">${owl("unsure")}</div>
     <div class="reply__body">
@@ -242,7 +291,7 @@ document.addEventListener("click", (e) => {
   if (c) {
     const ev = document.getElementById(c.dataset.ev);
     if (!ev) return;
-    ev.closest("details").open = true;
+    for (let p = ev.parentElement; p; p = p.parentElement) if (p.tagName === "DETAILS") p.open = true;
     document.querySelectorAll(".ev--focus").forEach((x) => x.classList.remove("ev--focus"));
     ev.classList.add("ev--focus");
     ev.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "center" });
@@ -294,3 +343,26 @@ function followPointer(host) {
     });
   }, { passive: true });
 }
+
+// opening "how the system answered" replays the path, so the animation is seen when the panel is
+document.addEventListener("toggle", (e) => {
+  if (!e.target.matches?.("details.tech") || !e.target.open) return;
+  const t = e.target.querySelector(".trace");
+  t.classList.remove("is-playing"); void t.offsetWidth; t.classList.add("is-playing");
+}, true);
+
+// copy the answer as plain text with its sources (the label change is the feedback: no toast)
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("[data-copy]");
+  if (!b) return;
+  const card = b.closest(".reply__body");
+  const claims = [...card.querySelectorAll(".claims li")].map((li) => "• " + li.textContent.replace(/\s+/g, " ").trim());
+  const srcs = [...card.querySelectorAll(".sources li")].map((li) => li.textContent.replace(/\s+/g, " ").trim());
+  try {
+    await navigator.clipboard.writeText([...claims, "", "แหล่งอ้างอิง", ...srcs].join("\n"));
+    b.dataset.state = "done"; b.querySelector(".copy__label").textContent = "คัดลอกแล้ว";
+  } catch {
+    b.dataset.state = "error"; b.querySelector(".copy__label").textContent = "คัดลอกไม่ได้";
+  }
+  setTimeout(() => { delete b.dataset.state; b.querySelector(".copy__label").textContent = "คัดลอกคำตอบ"; }, 2500);
+});

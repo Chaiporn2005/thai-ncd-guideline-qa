@@ -41,12 +41,13 @@
       <h1 id="welcome-title">สวัสดีครับ <span class="nowrap">ผมฮูกไกด์</span></h1>
       <p>ถามผมเรื่องแนวทางเวชปฏิบัติของไทยได้ ทั้งเบาหวาน ความดันโลหิตสูง ไขมันในเลือด และโรคไตเรื้อรัง ผมตอบจากเอกสาร 66 ฉบับ และทุกประโยคบอกว่ามาจากเอกสารไหน หน้าใด</p>
       <p>ถ้าหาหลักฐานไม่พอ ผมจะบอกตรง ๆ ว่าตอบไม่ได้ และผม<strong>ไม่วินิจฉัย ไม่สั่งยา ไม่ปรับขนาดยา</strong>ให้ใครเป็นรายบุคคล</p>
+      <p class="welcome__tip">ผมตอบทีละคำถามและไม่จำคำถามก่อนหน้า ถ้าจะถามต่อ ให้ใส่โรค ระยะ หรือกลุ่มผู้ป่วยลงในคำถามใหม่ด้วย</p>
     </div>
   </section>
 
   <section class="samples" aria-labelledby="samples-title" id="samples">
-    <h2 id="samples-title">ลองถามจากตัวอย่าง</h2>
-    <p class="samples__hint">กดแล้วถามทันที ใต้แต่ละข้อบอกว่าควรเห็นอะไร</p>
+    <h2 id="samples-title">คำถามแนะนำ</h2>
+    <p class="samples__hint">กดเพื่อถามทันที หรือพิมพ์คำถามของคุณเองในช่องด้านล่าง</p>
     <div class="samples__groups" id="sample-groups"><p class="samples__loading">กำลังโหลดตัวอย่าง…</p></div>
   </section>
 
@@ -59,29 +60,15 @@
       <label class="composer__label" for="composer-input">ถามฮูกไกด์</label>
       <div class="composer__row">
         <button type="button" class="chip-btn" id="open-samples">ตัวอย่าง</button>
-        <label class="select">
-          <span class="select__label">วิธีตอบ</span>
-          <select id="mode">
-            <option value="fixed">pipeline คงที่</option>
-            <option value="graph">LangGraph</option>
-            <option value="react">ReAct agent</option>
-          </select>
-        </label>
-        <label class="select">
-          <span class="select__label">การค้น</span>
-          <select id="variant">
-            <option value="B">B hybrid</option>
-            <option value="A">A dense</option>
-            <option value="C">C + rerank</option>
-          </select>
-        </label>
+        <button type="button" class="chip-btn chip-btn--settings" id="open-settings" aria-haspopup="dialog"><span aria-hidden="true">⚙</span> <span id="settings-summary">pipeline คงที่ · B hybrid</span></button>
       </div>
     </div>
     <div class="composer__box">
       <textarea id="composer-input" name="q" rows="1" maxlength="2000" placeholder="พิมพ์คำถาม…" aria-describedby="composer-help"></textarea>
-      <button type="submit" class="send" id="send"><span class="send__label">ถาม</span></button>
+      <button type="submit" class="send" id="send" disabled><span class="send__label">ถาม</span></button>
+      <button type="button" class="send send--stop" id="stop" hidden><span class="send__label">ยกเลิก</span></button>
     </div>
-    <span class="sr-only" id="composer-help">กด Enter เพื่อส่ง กด Shift+Enter เพื่อขึ้นบรรทัดใหม่</span>
+    <span class="sr-only" id="composer-help">กด Enter เพื่อส่ง กด Shift+Enter เพื่อขึ้นบรรทัดใหม่ ระบบตอบทีละคำถาม ไม่จำคำถามก่อนหน้า</span>
     <p class="disclaimer" role="note"><span class="disclaimer__long">เพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์ ไม่วินิจฉัย ไม่สั่งหรือปรับยา ปรึกษาแพทย์หรือเภสัชกรสำหรับกรณีเฉพาะราย · ฉุกเฉินโทร 1669</span><span class="disclaimer__short">เพื่อการศึกษา ไม่ใช่คำแนะนำทางการแพทย์ · ฉุกเฉินโทร 1669</span></p>
   </div>
 </form>
@@ -116,7 +103,37 @@
     <h2 id="sample-sheet-title">ตัวอย่างคำถาม</h2>
     <button type="button" class="icon-btn" data-close aria-label="ปิด">✕</button>
   </div>
-  <div class="samples__groups" id="sheet-groups"></div>
+  <div class="tabs" role="tablist" aria-label="ประเภทตัวอย่าง">
+    <button type="button" role="tab" class="tab" id="tab-suggest" aria-selected="true" aria-controls="panel-suggest">คำถามแนะนำ</button>
+    <button type="button" role="tab" class="tab" id="tab-test" aria-selected="false" aria-controls="panel-test" tabindex="-1">ชุดทดสอบระบบ</button>
+  </div>
+  <div role="tabpanel" id="panel-suggest" aria-labelledby="tab-suggest"><div class="samples__groups" id="sheet-suggest"></div></div>
+  <div role="tabpanel" id="panel-test" aria-labelledby="tab-test" hidden>
+    <p class="tab-note">คำถามที่ใช้ทดสอบการป้องกันของระบบ: การปฏิเสธ การปิดบังข้อมูลส่วนบุคคล คำสั่งแฝง และจุดอ่อนที่เรารู้ ใต้แต่ละข้อบอกว่าควรเห็นอะไร</p>
+    <div class="samples__groups" id="sheet-test"></div>
+  </div>
+</dialog>
+
+<dialog class="sheet" id="settings" aria-labelledby="settings-title">
+  <div class="sheet__head">
+    <h2 id="settings-title">ตั้งค่าการตอบ</h2>
+    <button type="button" class="icon-btn" data-close aria-label="ปิด">✕</button>
+  </div>
+  <p>การตั้งค่ามีผลกับคำถามถัดไป ทุกแบบใช้โมเดลตอบตัวเดียวกัน (typhoon-v2.5-30b) และตัวกรองความปลอดภัยชุดเดียวกัน สิ่งที่ต่างคือวิธีหาหลักฐานและวิธีควบคุมขั้นตอน</p>
+  <fieldset class="opts">
+    <legend>วิธีหาหลักฐาน</legend>
+    <label class="opt"><input type="radio" name="variant" value="B" checked><span class="opt__body"><span class="opt__name">B hybrid <span class="opt__tag">แนะนำ</span></span><span class="opt__desc">ค้นด้วยความหมาย (bge-m3) รวมกับคำตรงตัว (BM25) · ราว 2–5 วินาที</span></span></label>
+    <label class="opt"><input type="radio" name="variant" value="A"><span class="opt__body"><span class="opt__name">A dense</span><span class="opt__desc">ค้นด้วยความหมายอย่างเดียว พลาดชื่อยาและตัวเลขได้ง่ายกว่า · ราว 2–5 วินาที</span></span></label>
+    <label class="opt"><input type="radio" name="variant" value="C"><span class="opt__body"><span class="opt__name">C hybrid + reranker</span><span class="opt__desc">เรียงหลักฐานใหม่ด้วย cross-encoder แม่นขึ้นที่อันดับต้น แต่ช้ามากบน CPU · ครั้งแรกต้องโหลดโมเดล (วัดได้ราว 3 นาที) ครั้งถัดไป 15–36 วินาที</span></span></label>
+  </fieldset>
+  <fieldset class="opts">
+    <legend>วิธีควบคุมขั้นตอน</legend>
+    <label class="opt"><input type="radio" name="mode" value="fixed" checked><span class="opt__body"><span class="opt__name">pipeline คงที่ <span class="opt__tag">แนะนำ</span></span><span class="opt__desc">ค้นหนึ่งรอบ แล้วให้โมเดลตอบจากหลักฐาน 5 ชิ้น</span></span></label>
+    <label class="opt"><input type="radio" name="mode" value="graph"><span class="opt__body"><span class="opt__name">LangGraph</span><span class="opt__desc">เส้นทางเดียวกับแบบคงที่ จึงได้คำตอบเหมือนกัน แต่เห็นทุกขั้นที่ผ่าน และลองซ่อมคำตอบที่เสียได้หนึ่งครั้ง</span></span></label>
+    <label class="opt"><input type="radio" name="mode" value="react"><span class="opt__body"><span class="opt__name">ReAct agent</span><span class="opt__desc">โมเดลค้นเองหลายรอบ ใช้ token มากกว่าราว 5–6 เท่า และในการทดสอบของเราไม่ได้ตอบถูกกว่าแบบคงที่</span></span></label>
+  </fieldset>
+  <label class="switch"><input type="checkbox" id="show-details"><span>แสดงรายละเอียดระบบ (เส้นทาง หลักฐาน token) ในทุกคำตอบ</span></label>
+  <div class="sheet__actions"><button type="button" class="send" data-close>เสร็จ</button></div>
 </dialog>
 
 <script type="module" src="app.js"></script>
