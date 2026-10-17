@@ -380,7 +380,7 @@ details[open] > summary::before { transform: rotate(45deg); }
   .foot__disclaimer { display: block; }
   .composer__inner { gap: var(--space-2xs); padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
   .composer__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .composer__row { flex-wrap: nowrap; gap: var(--space-2xs); }
+  .composer__row { gap: var(--space-2xs); }
   .select select, .chip-btn { padding: 0 var(--space-2xs); }
   .select__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .nav__link { padding: var(--space-xs); }
@@ -407,8 +407,6 @@ details[open] > summary::before { transform: rotate(45deg); }
 /* ---------- product UX: settings, tabs, cancel, copy, technical details ---------- */
 [hidden] { display: none !important; }
 .welcome__tip { font-size: var(--text-sm); color: var(--color-muted); }
-.samples__group--wide ul { grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 40rem) { .samples .samples__groups:has(.samples__group--wide) { grid-template-columns: minmax(0, 1fr); } .samples__group--wide ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .chip-btn--settings { display: inline-flex; align-items: center; gap: var(--space-2xs); max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
 .chip-btn--settings.is-changed { border-color: var(--color-accent); color: var(--color-accent-2); background: var(--color-accent-tint); }
@@ -478,7 +476,7 @@ details[open] > summary::before { transform: rotate(45deg); }
   .nav { position: static; }                         /* the brand scrolls away; the composer stays */
   .nav__inner { padding-block: var(--space-2xs); }
   .composer__inner { gap: var(--space-3xs); padding-block: var(--space-2xs); }
-  .composer__top { flex-wrap: nowrap; }
+  .composer__top { justify-content: flex-end; }
   .composer__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .composer__box { order: -1; }
   .composer__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-sm); }
@@ -490,3 +488,66 @@ details[open] > summary::before { transform: rotate(45deg); }
   .chip-btn--settings #settings-summary { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .sheet { max-height: calc(100dvh - 2 * var(--space-sm)); padding: var(--space-md); }
 }
+
+/* ---------- robustness at any zoom / text size: nothing may push past its box ---------- */
+.nav__inner { flex-wrap: wrap; row-gap: 0; }
+.brand { flex: 1 1 auto; }
+.brand__text { min-width: 0; }
+.brand__sub { overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.nav__links { margin-left: auto; }
+
+.composer__top { flex-wrap: wrap; }
+.composer__row { flex-wrap: wrap; min-width: 0; max-width: 100%; }
+.chip-btn--settings { min-width: 0; max-width: 100%; }
+#settings-summary { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.tabs { flex-wrap: wrap; }
+.tab { flex: 1 1 auto; }
+
+.opt__body, .opt__name, .opt__desc { min-width: 0; overflow-wrap: anywhere; }
+.sample, .sample__q, .sample__expect { min-width: 0; overflow-wrap: anywhere; }
+.claims li { overflow-wrap: anywhere; }
+.cite { max-width: 100%; white-space: normal; text-align: left; }
+
+/* the idle diagram in "how it works" switches to a column like the one under each answer */
+.sheet__trace { container-type: inline-size; }
+@container (max-width: 34rem) {
+  .sheet__trace .trace__steps { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- extreme case: smallest phones with enlarged text (150–200 %) ---------- */
+body { overflow-wrap: anywhere; }                     /* any long word may break rather than push past its box */
+.welcome__bubble h1 { font-size: min(var(--text-display), 10.5vw); }
+.call { font-size: min(var(--text-lg), 9vw); }
+/* a clickable label stays on one line when it fits; when the text is too large to fit, it wraps instead of sticking out */
+.nav__links { flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
+.nav__link, .copy, .trace__replay, .chip-btn, .tab, .step__word, .opt__tag, .sheet__actions .send { max-width: 100%; }
+@media (max-width: 26rem) {
+  .nav__link, .copy, .trace__replay, .chip-btn, .tab, .step__word, .opt__tag { white-space: normal; text-align: center; }
+}
+.tab { min-width: 0; }
+.evidence summary, .dropped summary { flex-wrap: wrap; }
+.switch span, .how-list li, .how-terms div, .note p { min-width: 0; }
+.nav__links { flex-shrink: 1; }
+.opt__tag { display: inline-block; margin-left: 0; margin-inline-start: var(--space-2xs); }
+.opt__name { display: block; }
+/* a single "suggested" group fills the whole width (dialog and page alike), its cards in 2 columns when there is room */
+.samples__groups:has(> .samples__group--wide:only-child) { grid-template-columns: minmax(0, 1fr); }
+.samples__group--wide ul { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+.icon-btn { width: max(44px, 2.75rem); height: max(44px, 2.75rem); font-size: var(--text-base); line-height: 1; }
+/* images scale with the text size, within what the width allows */
+.brand__mark { width: max(30px, 1.875rem); height: max(38px, 2.375rem); }
+.welcome { grid-template-columns: min(max(132px, 8.25rem), 30vw) minmax(0, 1fr); }
+.reply { grid-template-columns: min(max(64px, 4rem), 14vw) minmax(0, 1fr); }
+@media (max-width: 30rem) {
+  .welcome { grid-template-columns: minmax(0, 1fr); }
+  .welcome__owl { width: min(max(88px, 5.5rem), 40vw); }
+  .reply { grid-template-columns: minmax(0, 1fr); }
+  .reply__avatar { width: min(max(44px, 2.75rem), 20vw); }
+}
+.sheet { padding: min(var(--space-lg), 5vw); }
+.sheet__head h2 { min-width: 0; flex: 1 1 auto; }
+.icon-btn { width: min(max(44px, 2.75rem), 14vw); height: min(max(44px, 2.75rem), 14vw); min-width: 44px; min-height: 44px; }
+.opt__name { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3xs) var(--space-2xs); }
+.opt__tag { margin: 0; }
+.brand__sub { white-space: normal; overflow: visible; text-overflow: clip; }
