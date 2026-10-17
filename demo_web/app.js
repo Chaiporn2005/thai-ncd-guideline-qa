@@ -1,7 +1,7 @@
 // The demo page: ask a question, show the cited answer (or the refusal / abstention), the path it took, and the evidence.
 // Talks only to the local demo.py server (/api/showcase, /api/ask). Nothing is stored in the browser: the thread lives in memory until reload.
 import { owl, logoMark } from "./owl.js";
-import { traceSVG } from "./trace.js";
+import { traceHTML } from "./trace.js";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -27,12 +27,12 @@ const ABSTAIN_TIP = "ลองระบุโรค ระยะ หรือก
 
 let busy = false;
 let turnId = 0;
-const traces = new Map();          // trace slot element -> response, redrawn when the column width changes
 
 /* ---------- start ---------- */
 $("logo-slot").innerHTML = logoMark();
 $("welcome-owl").innerHTML = owl("hello", { live: true });
-$("how-trace").innerHTML = traceSVG(null, 680, "how");
+$("how-trace").innerHTML = traceHTML(null, "how");
+followPointer($("welcome-owl"));
 loadSamples();
 
 /* ---------- samples ---------- */
@@ -96,7 +96,6 @@ document.querySelectorAll("dialog").forEach((d) => {
 });
 $("reset").addEventListener("click", () => {
   $("thread").innerHTML = "";
-  traces.clear();
   document.body.classList.remove("has-thread");
   $("reset").disabled = true;
   input.focus();
@@ -141,9 +140,7 @@ async function ask(question) {
   reply.outerHTML = data.error ? renderError(data, question) : renderReply(data, id);
   const placed = turn.querySelector(".reply");
   if (!data.error) {
-    const slot = placed.querySelector(".trace-slot");
-    traces.set(slot, data);
-    drawTrace(slot);
+    placed.querySelector(".reply__avatar svg")?.classList.add("owl--arrive");   // the owl hops once: the answer is here
   }
   busy = false;
   setBusy(false);
@@ -173,9 +170,9 @@ function renderReply(d, id) {
   if (d.status === "answered") {
     const pages = Object.fromEntries((d.citations || []).map((c) => [c.id, c]));
     const claims = d.claims?.length ? d.claims : [{ text: d.answer, cite: [] }];
-    body += `<ul class="claims">${claims.map((c) => `<li>${esc(c.text)} ${(c.cite || []).map((sid) => citeChip(sid, pages[sid], id)).join("")}</li>`).join("")}</ul>`;
+    body += `<ul class="claims">${claims.map((c, k) => `<li style="--i:${k}">${esc(c.text)} ${(c.cite || []).map((sid) => citeChip(sid, pages[sid], id)).join("")}</li>`).join("")}</ul>`;
     body += `<div class="sources"><h3>แหล่งอ้างอิง</h3><ul>${(d.citations || []).map((c) => `
-      <li><span class="sid">${esc(c.id)}</span> <span class="doc">${esc(c.document_id)}</span>
+      <li data-src="${id}-${esc(c.id)}"><span class="sid">${esc(c.id)}</span> <span class="doc">${esc(c.document_id)}</span>
       <span class="pg">${c.edition_id && c.edition_id !== c.document_id ? `ฉบับ ${esc(c.edition_id)} · ` : ""}หน้า PDF ${esc(dash(c.pdf_pages))}</span></li>`).join("")}</ul></div>`;
   } else if (emergency) {
     body += `<div class="note note--alert"><p class="call">โทร <a href="tel:1669">1669</a></p><p>${esc(d.guard.message)}</p></div>`;
@@ -202,7 +199,7 @@ function renderReply(d, id) {
       ${body}
       <section class="path" aria-label="เส้นทางของคำถามนี้">
         <h3>เส้นทางของคำถามนี้${d.path?.length ? ` <span class="path__nodes">${esc(d.path.join(" › "))}</span>` : ""}</h3>
-        <div class="trace-slot" data-uid="t${id}"></div>
+        ${traceHTML(d, "t" + id)}
       </section>
       ${evidenceBlock(d, id)}
     </div>
@@ -263,17 +260,37 @@ function dropReason(r) {
 }
 const dash = (p) => String(p ?? "").replace(/^(\d+)-(\d+)$/, (m, a, b) => (a === b ? a : `${a}–${b}`));
 
-/* ---------- trace drawing: horizontal on wide columns, vertical on narrow ---------- */
-function drawTrace(slot) {
-  const d = traces.get(slot);
-  if (d) slot.innerHTML = traceSVG(d, slot.clientWidth, slot.dataset.uid);
-}
-const ro = new ResizeObserver((entries) => {
-  for (const e of entries) {
-    const slot = e.target;
-    const v = slot.clientWidth < 600 ? "v" : "h";
-    if (slot.dataset.layout !== v) { slot.dataset.layout = v; drawTrace(slot); }
-  }
+/* ---------- motion: the path replay and the owl ---------- */
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-replay]");
+  if (!b) return;
+  const t = document.getElementById(b.dataset.replay);
+  t.classList.remove("is-playing");
+  void t.offsetWidth;                 // restart the CSS animation
+  t.classList.add("is-playing");
 });
-new MutationObserver(() => document.querySelectorAll(".trace-slot:not([data-watched])").forEach((s) => { s.dataset.watched = "1"; ro.observe(s); }))
-  .observe($("thread"), { childList: true, subtree: true });
+
+// Hovering or focusing a citation chip lights the matching row in the source list.
+const srcFor = (chip) => document.querySelector(`[data-src="${chip.dataset.ev.replace(/^ev-/, "")}"]`);
+for (const [on, off] of [["pointerover", "pointerout"], ["focusin", "focusout"]]) {
+  document.addEventListener(on, (e) => { const c = e.target.closest?.(".cite"); if (c) srcFor(c)?.classList.add("is-lit"); });
+  document.addEventListener(off, (e) => { const c = e.target.closest?.(".cite"); if (c) srcFor(c)?.classList.remove("is-lit"); });
+}
+
+// The welcome owl looks at the pointer: pupils move at most 3 units inside the eye. Off for reduced motion and touch-only screens.
+function followPointer(host) {
+  if (reduced.matches || !matchMedia("(hover: hover)").matches) return;
+  let raf = 0, px = 0, py = 0;
+  addEventListener("pointermove", (e) => {
+    px = e.clientX; py = e.clientY;
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      raf = 0;
+      const r = host.getBoundingClientRect();
+      const dx = px - (r.left + r.width / 2), dy = py - (r.top + r.height * 0.42);
+      const len = Math.hypot(dx, dy) || 1, k = Math.min(1, len / 240);
+      host.style.setProperty("--look-x", ((dx / len) * 3 * k).toFixed(2) + "px");
+      host.style.setProperty("--look-y", ((dy / len) * 2.4 * k).toFixed(2) + "px");
+    });
+  }, { passive: true });
+}

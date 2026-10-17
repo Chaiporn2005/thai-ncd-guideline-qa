@@ -81,6 +81,7 @@
 
   --shadow-soft: 0 8px 24px -14px oklch(40% 0.08 245 / 0.35);
   --color-backdrop: oklch(24% 0.03 250 / 0.42);
+  --color-accent-glow: oklch(52% 0.15 245 / 0.35);
 
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
