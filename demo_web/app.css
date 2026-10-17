@@ -472,3 +472,21 @@ details[open] > summary::before { transform: rotate(45deg); }
 .tech__meta { font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 400; color: var(--color-muted); font-variant-numeric: tabular-nums; }
 .tech[open] > .path { margin-top: var(--space-xs); }
 .tech > .evidence { margin-top: var(--space-md); }
+
+/* ---------- short screens (phone in landscape, small laptop windows): keep the reading area ---------- */
+@media (max-height: 32rem) {
+  .nav { position: static; }                         /* the brand scrolls away; the composer stays */
+  .nav__inner { padding-block: var(--space-2xs); }
+  .composer__inner { gap: var(--space-3xs); padding-block: var(--space-2xs); }
+  .composer__top { flex-wrap: nowrap; }
+  .composer__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .composer__box { order: -1; }
+  .composer__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: var(--space-sm); }
+  .composer__box { grid-column: 1; grid-row: 1; }
+  .composer__top { grid-column: 2; grid-row: 1; }
+  .disclaimer { grid-column: 1 / -1; }
+  .disclaimer__long { display: none; }
+  .disclaimer__short { display: inline; }
+  .chip-btn--settings #settings-summary { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .sheet { max-height: calc(100dvh - 2 * var(--space-sm)); padding: var(--space-md); }
+}
