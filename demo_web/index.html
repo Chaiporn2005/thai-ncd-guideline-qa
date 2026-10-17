@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ฮูกไกด์ · Thai NCD Guideline Q&amp;A</title>
+<meta name="description" content="ถามความรู้จากแนวทางเวชปฏิบัติโรคไม่ติดต่อเรื้อรังของไทย ได้คำตอบพร้อมเอกสารและหน้าที่อ้างอิง หรือระบบงดตอบเมื่อหลักฐานไม่พอ">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600&family=Mitr:wght@500;600&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="app.css">
+<script>
+  try { const t = new URLSearchParams(location.search).get("theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#composer-input">ข้ามไปที่ช่องถาม</a>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="./" aria-label="ฮูกไกด์ หน้าแรก">
+      <span class="brand__mark" id="logo-slot"></span>
+      <span class="brand__text">
+        <span class="brand__name">ฮูกไกด์</span>
+        <span class="brand__sub">Thai NCD Guideline Q&amp;A</span>
+      </span>
+    </a>
+    <nav class="nav__links" aria-label="เมนู">
+      <button type="button" class="nav__link" id="open-how">วิธีทำงาน</button>
+      <button type="button" class="nav__link" id="reset" disabled>เริ่มใหม่</button>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <section class="welcome" aria-labelledby="welcome-title">
+    <div class="welcome__owl" id="welcome-owl"></div>
+    <div class="welcome__bubble">
+      <h1 id="welcome-title">สวัสดีครับ <span class="nowrap">ผมฮูกไกด์</span></h1>
+      <p>ถามผมเรื่องแนวทางเวชปฏิบัติของไทยได้ ทั้งเบาหวาน ความดันโลหิตสูง ไขมันในเลือด และโรคไตเรื้อรัง ผมตอบจากเอกสาร 66 ฉบับ และทุกประโยคบอกว่ามาจากเอกสารไหน หน้าใด</p>
+      <p>ถ้าหาหลักฐานไม่พอ ผมจะบอกตรง ๆ ว่าตอบไม่ได้ และผม<strong>ไม่วินิจฉัย ไม่สั่งยา ไม่ปรับขนาดยา</strong>ให้ใครเป็นรายบุคคล</p>
+    </div>
+  </section>
+
+  <section class="samples" aria-labelledby="samples-title" id="samples">
+    <h2 id="samples-title">ลองถามจากตัวอย่าง</h2>
+    <p class="samples__hint">กดแล้วถามทันที ใต้แต่ละข้อบอกว่าควรเห็นอะไร</p>
+    <div class="samples__groups" id="sample-groups"><p class="samples__loading">กำลังโหลดตัวอย่าง…</p></div>
+  </section>
+
+  <ol class="thread" id="thread" aria-label="บทสนทนา" aria-live="polite"></ol>
+</main>
+
+<form class="composer" id="composer" autocomplete="off">
+  <div class="composer__inner">
+    <div class="composer__top">
+      <label class="composer__label" for="composer-input">ถามฮูกไกด์</label>
+      <div class="composer__row">
+        <button type="button" class="chip-btn" id="open-samples">ตัวอย่าง</button>
+        <label class="select">
+          <span class="select__label">วิธีตอบ</span>
+          <select id="mode">
+            <option value="fixed">pipeline คงที่</option>
+            <option value="graph">LangGraph</option>
+            <option value="react">ReAct agent</option>
+          </select>
+        </label>
+        <label class="select">
+          <span class="select__label">การค้น</span>
+          <select id="variant">
+            <option value="B">B hybrid</option>
+            <option value="A">A dense</option>
+            <option value="C">C + rerank</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="composer__box">
+      <textarea id="composer-input" name="q" rows="1" maxlength="2000" placeholder="พิมพ์คำถามเรื่อง NCD…" aria-describedby="composer-help"></textarea>
+      <button type="submit" class="send" id="send"><span class="send__label">ถาม</span></button>
+    </div>
+    <span class="sr-only" id="composer-help">กด Enter เพื่อส่ง กด Shift+Enter เพื่อขึ้นบรรทัดใหม่</span>
+    <p class="disclaimer" role="note">เพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์ ไม่วินิจฉัย ไม่สั่งหรือปรับยา ปรึกษาแพทย์หรือเภสัชกรสำหรับกรณีเฉพาะราย · ฉุกเฉินโทร 1669</p>
+  </div>
+</form>
+
+<footer class="foot">
+  <p>โครงงาน NLP ปี 3 · KMITL · แนวทางเวชปฏิบัติ 66 ฉบับ · หน้านี้ทำงานบนเครื่องนี้ (127.0.0.1) และไม่เก็บข้อความคำถาม</p>
+</footer>
+
+<dialog class="sheet" id="how" aria-labelledby="how-title">
+  <div class="sheet__head">
+    <h2 id="how-title">ฮูกไกด์ตอบคำถามอย่างไร</h2>
+    <button type="button" class="icon-btn" data-close aria-label="ปิด">✕</button>
+  </div>
+  <p>ทุกคำถามผ่านห้าขั้นตามลำดับ ขั้นใดหยุด คำถามจะไม่ไปถึงขั้นถัดไป ใต้ทุกคำตอบมีแผนภาพนี้ที่บอกว่าคำถามนั้นหยุดตรงไหน</p>
+  <div class="sheet__trace" id="how-trace"></div>
+  <ol class="how-list">
+    <li><strong>ตรวจคำถาม</strong> ปิดบังชื่อ เบอร์โทร เลขบัตร อีเมล และเลข HN ก่อนส่งต่อ ปฏิเสธการขอสั่งยาหรือวินิจฉัยรายบุคคล อาการฉุกเฉินแนะนำโทร 1669 และกันคำถามที่ยาวเกินหรือมีรูปแบบคำสั่งแฝง</li>
+    <li><strong>ค้นหลักฐาน</strong> ค้นด้วยความหมาย (bge-m3) รวมกับคำตรงตัว (BM25) แล้วเลือก 5 ชิ้นที่ใกล้ที่สุด</li>
+    <li><strong>โมเดลตอบ</strong> typhoon-v2.5-30b ตอบเป็นข้อ ๆ ทุกข้อต้องอ้างหลักฐาน หรือเลือกงดตอบ</li>
+    <li><strong>ตรวจทุกข้อ</strong> ข้อที่อ้างชิ้นที่ไม่ได้ส่ง หรือมีตัวเลขหรือคำอังกฤษที่ไม่อยู่ในหลักฐานที่อ้าง ถูกตัดทิ้ง</li>
+    <li><strong>ตรวจคำตอบ</strong> ระงับคำตอบที่มีลิงก์ โค้ด ข้อมูลส่วนบุคคล หรือข้อความภายในระบบ</li>
+  </ol>
+  <dl class="how-terms">
+    <div><dt>วิธีตอบ</dt><dd>pipeline คงที่ (ค่าเริ่มต้น) · LangGraph (เส้นทางเดียวกัน ลองซ่อมคำตอบที่เสียได้หนึ่งครั้ง) · ReAct agent (ค้นเองหลายรอบ ใช้ token มากกว่าราว 5 เท่า)</dd></div>
+    <div><dt>การค้น</dt><dd>A dense อย่างเดียว · B hybrid (ค่าเริ่มต้น) · C hybrid + reranker (ช้าบน CPU)</dd></div>
+  </dl>
+</dialog>
+
+<dialog class="sheet" id="sample-sheet" aria-labelledby="sample-sheet-title">
+  <div class="sheet__head">
+    <h2 id="sample-sheet-title">ตัวอย่างคำถาม</h2>
+    <button type="button" class="icon-btn" data-close aria-label="ปิด">✕</button>
+  </div>
+  <div class="samples__groups" id="sheet-groups"></div>
+</dialog>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

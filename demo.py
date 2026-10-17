@@ -3,7 +3,7 @@
     python -X utf8 demo.py --check                  # is this machine ready? (packages, local data bundle, API key, model cache) with the exact fix for anything missing
     python -X utf8 demo.py "ค่าเป้าหมาย HbA1c ในผู้ป่วยเบาหวานคือเท่าไร"
     python -X utf8 demo.py                          # interactive: type questions, empty line to quit
-    python -X utf8 demo.py --web                    # local web page at http://127.0.0.1:8780 (nine ready-made showcase questions, evidence panel, permanent disclaimer)
+    python -X utf8 demo.py --web                    # local web page at http://127.0.0.1:8780 (demo_web/: chat with the owl mascot, cited claims, the path each question took, evidence; add ?theme=light for a projector)
     python -X utf8 demo.py --warm                   # run the showcase questions once (downloads the embedding model, fills the answer cache so they also run offline)
     python -X utf8 demo.py "..." --graph            # the LangGraph version (same path as the plain pipeline, plus one bounded retry on a malformed reply)
     python -X utf8 demo.py "..." --agent react      # the ReAct agent (searches by itself; about 5x the tokens, no better answers: see the report)
@@ -153,47 +153,17 @@ def show(result: dict, show_evidence: bool, units: dict | None) -> None:
             print(f"[{sid}] {cid}\n{units[cid]['text'][:600]}\n")
 
 
-PAGE = """<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thai NCD Guideline Q&A</title><style>
-:root{--bg:#f6f8fb;--card:#fff;--ink:#14213d;--mut:#5b6b82;--line:#d9e1ec;--acc:#1d4ed8;--warn:#b45309;--bad:#b91c1c;--ok:#047857}
-@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--card:#16213a;--ink:#e6edf7;--mut:#9fb0c8;--line:#2a3a5a;--acc:#7aa2ff;--warn:#fbbf24;--bad:#f87171;--ok:#34d399}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,"Noto Sans Thai","Tahoma",sans-serif}
-.bar{position:sticky;top:0;background:var(--warn);color:#fff;padding:8px 16px;font-size:14px;text-align:center;z-index:5}
-main{max-width:980px;margin:0 auto;padding:16px}h1{font-size:22px;margin:8px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:12px 0}
-textarea{width:100%;min-height:76px;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--bg);color:var(--ink);font:inherit}
-.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}select,button{padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
-button.primary{background:var(--acc);color:#fff;border-color:var(--acc);cursor:pointer}button.chip{cursor:pointer;font-size:14px;text-align:left}
-.chips{display:flex;flex-wrap:wrap;gap:6px}.badge{display:inline-block;padding:2px 9px;border-radius:99px;font-size:13px;border:1px solid var(--line)}
-.ok{color:var(--ok)}.bad{color:var(--bad)}.warn{color:var(--warn)}.mut{color:var(--mut);font-size:14px}pre{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;font:14px/1.5 inherit}
-details{margin-top:8px}ul{padding-left:20px}
-</style></head><body><div class="bar">เพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์ ไม่วินิจฉัย ไม่สั่งหรือปรับยา ปรึกษาแพทย์/เภสัชกรสำหรับกรณีเฉพาะราย</div>
-<main><h1>Thai NCD Guideline Q&amp;A</h1><div class="mut">ถามความรู้จากแนวทางเวชปฏิบัติ NCD (เบาหวาน ความดัน ไขมัน ไต) ระบบตอบจากเอกสารพร้อมแหล่งอ้างอิง หรืองดตอบ</div>
-<div class="card"><label for="q"><b>คำถาม</b></label><textarea id="q" placeholder="พิมพ์คำถามภาษาไทย..."></textarea>
-<div class="row"><select id="mode" aria-label="pipeline"><option value="fixed">pipeline คงที่ (แนะนำ)</option><option value="graph">LangGraph</option><option value="react">ReAct agent (ช้า/แพงกว่า)</option></select>
-<select id="variant" aria-label="retrieval"><option value="B">B hybrid (ค่าเริ่มต้น)</option><option value="A">A dense</option><option value="C">C +rerank (ช้าบน CPU)</option></select>
-<button class="primary" id="go">ถาม</button><span id="busy" class="mut"></span></div>
-<div class="mut" style="margin-top:10px">ตัวอย่างคำถาม (กดเพื่อใส่ในกล่อง)</div><div class="chips" id="chips"></div></div>
-<div id="out"></div></main>
-<script>
-const $=id=>document.getElementById(id);
-const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-fetch('/api/showcase').then(r=>r.json()).then(list=>{$('chips').innerHTML=list.map((s,i)=>`<button class="chip" data-i="${i}" title="${esc(s.expect)}">${esc(s.label)}</button>`).join('');
- $('chips').onclick=e=>{const b=e.target.closest('button');if(b){$('q').value=list[b.dataset.i].question;$('q').focus();}};});
-async function ask(){const q=$('q').value.trim();if(!q)return;$('busy').textContent='กำลังประมวลผล...';$('go').disabled=true;
- try{const r=await fetch('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,mode:$('mode').value,variant:$('variant').value})});
-  const d=await r.json();render(d);}catch(e){$('out').innerHTML='<div class="card bad">เรียกระบบไม่สำเร็จ: '+esc(e)+'</div>';}
- $('busy').textContent='';$('go').disabled=false;}
-function render(d){if(d.error){$('out').innerHTML='<div class="card bad">'+esc(d.error)+'</div>';return;}
- const cls=d.status==='answered'?'ok':(d.status.startsWith('abstained')?'warn':'bad');let h='<div class="card">';
- h+=`<span class="badge ${cls}">${esc(d.status)}</span> <span class="mut">token ${esc(d.tokens??'-')} · cache ${esc(d.cached??'-')} · ${esc(d.seconds)} วินาที${d.path?' · '+esc(d.path.join(' > ')):''}</span>`;
- if(d.masked&&d.masked.length)h+=`<p class="warn">ระบบปิดบังข้อมูลที่ระบุตัวบุคคลก่อนประมวลผล: ${esc(d.masked.join(', '))}</p>`;
- if(d.status==='answered'){h+='<h3>คำตอบ</h3><pre>'+esc(d.answer)+'</pre><b>แหล่งอ้างอิง</b><ul>'+d.citations.map(c=>`<li>[${esc(c.id)}] ${esc(c.document_id)} · ฉบับ ${esc(c.edition_id)} · หน้า PDF ${esc(c.pdf_pages)}</li>`).join('')+'</ul>';}
- else{h+='<p>'+esc((d.guard&&d.guard.message)||(d.output_guard&&d.output_guard.message)||d.message||d.status)+'</p>';}
- if(d.dropped&&d.dropped.length)h+='<p class="mut">ตัดทิ้งข้อที่ตรวจหลักฐานไม่ผ่าน: '+esc(d.dropped.join('; '))+'</p>';
- if(d.evidence&&d.evidence.length)h+='<details><summary>หลักฐานที่ส่งให้โมเดล ('+d.evidence.length+' ชิ้น)</summary>'+d.evidence.map(e=>`<p><b>[${esc(e.id)}]</b> ${esc(e.document)} · หน้า ${esc(e.pages)}</p><pre>${esc(e.text)}</pre>`).join('')+'</details>';
- $('out').innerHTML=h+'</div>';}
-$('go').onclick=ask;$('q').addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey))ask();});
-</script></body></html>"""
+WEB_DIR = ROOT / "demo_web"           # the page: index.html + tokens.css + app.css + app.js + assets/*.svg (no build step, no CDN script)
+WEB_TYPES = {".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml"}
+
+
+def static_file(url_path: str) -> tuple[bytes, str] | None:
+    """A file under demo_web/ for a GET path, or None. Only the four types above, never a path that leaves the folder."""
+    rel = url_path.split("?", 1)[0].lstrip("/") or "index.html"
+    path = (WEB_DIR / rel).resolve()
+    if not path.is_relative_to(WEB_DIR.resolve()) or path.suffix not in WEB_TYPES or not path.is_file():
+        return None
+    return path.read_bytes(), WEB_TYPES[path.suffix]
 
 
 def serve(demo: Demo, port: int) -> None:
@@ -212,12 +182,12 @@ def serve(demo: Demo, port: int) -> None:
             self.wfile.write(body)
 
         def do_GET(self):  # noqa: N802
-            if self.path in ("/", "/index.html"):
-                self._send(200, PAGE.encode("utf-8"), "text/html; charset=utf-8")
-            elif self.path == "/api/showcase":
-                self._send(200, json.dumps(demo_support.load_showcase(), ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
-            else:
-                self._send(404, b"not found", "text/plain")
+            if self.path == "/api/showcase":
+                return self._send(200, json.dumps(demo_support.load_showcase(), ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
+            found = static_file(self.path)
+            if found is None:
+                return self._send(404, b"not found", "text/plain")
+            self._send(200, *found)
 
         def do_POST(self):  # noqa: N802
             if self.path != "/api/ask":
@@ -233,6 +203,7 @@ def serve(demo: Demo, port: int) -> None:
                 data = demo_support.serialize(result, demo.units)
                 data["seconds"] = result["trace"].get("demo_seconds")
                 data["message"] = MESSAGES.get(result["status"])
+                data["mode"], data["variant"] = mode, variant
             except Exception as err:  # noqa: BLE001  report the type only: a message could echo request details
                 data = {"error": f"เกิดข้อผิดพลาด: {type(err).__name__}"}
             self._send(200, json.dumps(data, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")

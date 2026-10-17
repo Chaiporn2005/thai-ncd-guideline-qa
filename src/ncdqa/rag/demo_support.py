@@ -102,8 +102,12 @@ def serialize(result: dict, units: dict | None = None, evidence_chars: int = 700
     out = {"status": result["status"], "answer": result.get("answer"), "question_shown": result.get("question"), "citations": result.get("citations", []),
            "masked": t.get("pii_masked"), "guard": (t.get("guard") or {}) and {"category": t["guard"].get("category"), "message": t["guard"].get("message")},
            "output_guard": result.get("output_guard"), "dropped": [d.get("reason") for d in (t.get("dropped_claims") or [])][:5],
-           "tokens": (t.get("usage") or {}).get("total_tokens"), "cached": t.get("cached"), "tool_steps": t.get("n_tool_calls"), "path": t.get("graph_path") or t.get("react_path")}
+           "tokens": (t.get("usage") or {}).get("total_tokens"), "cached": t.get("cached"), "tool_steps": t.get("n_tool_calls"), "path": t.get("graph_path") or t.get("react_path"),
+           "claims": [{"text": c.get("text"), "cite": c.get("cite", [])} for c in (result.get("claims") or [])]}       # the kept claims, so the page can put each citation beside its own sentence
     if units is not None:
+        hits = {h["chunk_id"]: h for h in (t.get("hits") or [])}
+        cited = {c.get("id") for c in out["citations"]}
         out["evidence"] = [{"id": sid, "chunk_id": cid, "document": units[cid]["document_id"], "pages": f'{units[cid]["pdf_page_start"]}-{units[cid]["pdf_page_end"]}',
-                            "text": units[cid]["text"][:evidence_chars]} for sid, cid in (t.get("evidence") or {}).items() if cid in units]
+                            "text": units[cid]["text"][:evidence_chars], "score": (hits.get(cid) or {}).get("score"), "flagged": bool((hits.get(cid) or {}).get("injection_flags")),
+                            "cited": sid in cited} for sid, cid in (t.get("evidence") or {}).items() if cid in units]
     return out

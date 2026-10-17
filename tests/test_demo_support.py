@@ -30,6 +30,12 @@ class DemoSupport(unittest.TestCase):
         self.assertEqual(out["masked"], ["phone"])
         self.assertEqual(out["evidence"][0]["pages"], "3-4")
         self.assertLessEqual(len(out["evidence"][0]["text"]), 700)
+        self.assertTrue(out["evidence"][0]["cited"])
+        self.assertIsNone(out["evidence"][0]["score"])                  # no hits in this trace: the page shows no score rather than a made-up one
+        withclaims = {**answered, "claims": [{"text": "a", "cite": ["S1"]}], "trace": {**answered["trace"], "hits": [{"chunk_id": "c1", "score": 0.5, "injection_flags": ["x"]}]}}
+        out = demo_support.serialize(withclaims, units)
+        self.assertEqual(out["claims"], [{"text": "a", "cite": ["S1"]}])
+        self.assertEqual((out["evidence"][0]["score"], out["evidence"][0]["flagged"]), (0.5, True))
         refused = {"status": "refused_input", "answer": None, "citations": [], "trace": {"guard": {"category": "injection_pattern", "message": "m"}}}
         self.assertEqual(demo_support.serialize(refused)["guard"]["category"], "injection_pattern")
         blocked = {"status": "blocked_output", "answer": None, "citations": [], "output_guard": {"category": "x", "message": "m"}, "trace": {}}

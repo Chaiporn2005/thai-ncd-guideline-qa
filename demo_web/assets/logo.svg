@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="ฮูกไกด์ Thai NCD Guideline Q&amp;A">
+  <!-- standalone copy of logoMark() in owl.js (favicon / slides); colours = tokens.css light values -->
+  <rect width="40" height="40" rx="11" fill="oklch(52% 0.15 245)"/>
+  <path d="M8.5 14 L7.5 5.5 L14 10.5 Z M31.5 14 L32.5 5.5 L26 10.5 Z" fill="oklch(99% 0.004 235)"/>
+  <circle cx="14.5" cy="17" r="7" fill="oklch(99% 0.004 235)"/>
+  <circle cx="25.5" cy="17" r="7" fill="oklch(99% 0.004 235)"/>
+  <circle cx="15" cy="17.5" r="3.2" fill="oklch(24% 0.014 250)"/>
+  <circle cx="25" cy="17.5" r="3.2" fill="oklch(24% 0.014 250)"/>
+  <circle cx="16.2" cy="16.3" r="1" fill="oklch(99% 0.004 235)"/>
+  <circle cx="26.2" cy="16.3" r="1" fill="oklch(99% 0.004 235)"/>
+  <path d="M20 20 L18 22.4 Q20 25.8 22 22.4 Z" fill="oklch(79% 0.13 72)"/>
+  <path d="M8 29.5 Q14 27.8 19.4 30 L19.4 34.6 Q14 32.4 8 34 Z M32 29.5 Q26 27.8 20.6 30 L20.6 34.6 Q26 32.4 32 34 Z" fill="oklch(99% 0.004 235)"/>
+</svg>
