@@ -49,8 +49,8 @@
   --owl-blush:        oklch(82% 0.075 15);
 
   /* type */
-  --font-display: "Mitr", "Leelawadee UI", "Tahoma", sans-serif;
-  --font-body:    "IBM Plex Sans Thai Looped", "Leelawadee UI", "Tahoma", sans-serif;
+  --font-display: "Mitr", "Leelawadee UI", "Sukhumvit Set", "Thonburi", "Tahoma", sans-serif;   /* fallbacks: Windows, then macOS Thai faces */
+  --font-body:    "IBM Plex Sans Thai Looped", "Leelawadee UI", "Thonburi", "Sukhumvit Set", "Tahoma", sans-serif;
   --font-mono:    "IBM Plex Mono", "Cascadia Mono", ui-monospace, monospace;
 
   --text-xs:   0.75rem;    /* 12px: diagram tags, meta */
