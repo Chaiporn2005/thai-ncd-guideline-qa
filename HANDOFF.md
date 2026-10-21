@@ -149,3 +149,18 @@ python scripts/orchestra.py status
 ```
 
 ตัวตรวจเหล่านี้ไม่รับรองความถูกต้องทางคลินิก อ่านผลและ warnings ก่อนส่งต่องาน
+
+
+## Demo บน Mac ด้วย Typhoon — 2026-10-20 (Track C/D; เพื่อนทำบนสาขา `demoUpdate` แล้วรวมเข้า `rag/track-b-l1`)
+
+สถานะ: `demo.py` รันได้บน Mac (Apple Silicon, Python 3.12 + uv) กับ Typhoon API จริง ที่ทดสอบคือ **CLI** (โค้ดรุ่นก่อนมีเว็บ) **ตอนนี้มีเว็บแอปแล้วในสาขา `rag/track-b-l1` (`demo.py --web`) แต่ยังไม่ได้ทดสอบบน Mac** วิธีตั้งค่า: [docs/SETUP_GUIDE_MAC_TH.md](docs/SETUP_GUIDE_MAC_TH.md)
+ข้อมูลที่ต้องมี (ไม่อยู่ใน git, ส่งต่อภายในทีมเท่านั้น): บันเดิล `ncd_demo_bundle` = `data/index/chunks-v12-t128`, `chunks-v12-t512`, `dense-bge-m3-t128-v12` (+ แคชคำตอบ `llm_cache/demo/typhoon_api.jsonl` วางเป็น `data/index/llm_cache/typhoon_api.jsonl`) ต้องมี `.env` (TYPHOON_API_KEY) และ `configs/llm/providers.yaml` (คัดจาก `.example`) ทั้งสองถูก ignore
+ตรวจแล้ว: checksum บันเดิลตรง manifest, เวกเตอร์/chunk/id สอดคล้อง, Typhoon ตอบ, เทสต์ 66 ตัวผ่าน, demo โหมด B / `--graph` / `--variant A --show-evidence` / โต้ตอบ ตอบพร้อม citation
+ยังไม่ได้ทำ/ไม่ได้ตรวจ: `--variant C` บน Mac, ความถูกต้องทางคลินิกของคำตอบ, **หน้าเว็บ `--web` บน Mac (ทำต่อข้อ 0)**
+ทำต่อ (เรียงตามลำดับ):
+0. **เพื่อน (Mac): `git pull` สาขา `rag/track-b-l1` แล้วทำตาม `docs/SETUP_GUIDE_MAC_TH.md` ใหม่ (bundle ชุด 2026-10-19 มีแคชครบ 11 ข้อ) รัน `demo.py --web` ลองคำถามตัวอย่างและพิมพ์คำถามเอง แล้วกรอกตารางผลท้ายคู่มือ**
+1. **เจ้าของคีย์ Typhoon: rotate คีย์** (เคยหลุดในผลลัพธ์ของเซสชัน) แล้วใส่ใน `.env` เท่านั้น; `.env.example` ต้องว่างเสมอ
+2. (เว็บแอปทำแล้วและเปิดเฉพาะ 127.0.0.1 เครื่องตัวเอง) ถ้าจะให้คนอื่นเข้าจากเครื่องอื่น ต้องตัดสินใจก่อนว่าจะเปิดหรือไม่ (จะใช้ quota/คีย์ของเจ้าของ และบันเดิลมีข้อความเอกสารห้ามเผยแพร่สาธารณะ จึงไม่ควรโฮสต์สาธารณะ); วิธีเร็วสุดคือห่อ `demo.py` ด้วย Streamlit/Gradio ในไฟล์ใหม่ โหลดโมเดลครั้งเดียว, แสดง disclaimer + แหล่งอ้างอิง, เก็บ guard G1/G3/O2 และไม่ log ข้อความคำถาม (G2 = B); อย่าแก้ค่า freeze
+3. ทดสอบ `--variant C` บน Mac (ช้า 15-36 วินาที/คำถามบน CPU) หรือรันบน GPU ตาม `infra/`
+4. ให้คนที่มีความสามารถทางคลินิกตรวจคำตอบตัวอย่างก่อนอ้างว่าคำตอบถูกต้อง (AGENTS.md: gold/คำตอบคลินิกต้องมีผู้ตรวจ)
+5. ถ้าเจอปัญหาตอนตั้งค่าบนเครื่องอื่น ให้แก้ SETUP_GUIDE_MAC_TH.md และบันทึกใน AI_AUDIT.md (Error Catch เฉพาะที่เกิดจริง)
