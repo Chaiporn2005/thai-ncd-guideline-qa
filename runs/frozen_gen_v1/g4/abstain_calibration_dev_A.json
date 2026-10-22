@@ -1,0 +1,98 @@
+{
+  "n_answerable": 97,
+  "n_unanswerable": 9,
+  "auc_top_score_answerable_vs_unanswerable": 0.762,
+  "answerable_top_score": {
+    "min": 0.56077,
+    "median": 0.70583,
+    "max": 0.82485
+  },
+  "unanswerable_top_score": {
+    "min": 0.54805,
+    "median": 0.65797,
+    "max": 0.75328
+  },
+  "rule": "highest threshold with at most 2 answerable questions refused",
+  "chosen": {
+    "threshold": 0.585,
+    "unanswerable_refused": 3,
+    "answerable_refused": 2
+  },
+  "grid_near_chosen": [
+    {
+      "threshold": 0.548,
+      "unanswerable_refused": 0,
+      "answerable_refused": 0
+    },
+    {
+      "threshold": 0.561,
+      "unanswerable_refused": 1,
+      "answerable_refused": 1
+    },
+    {
+      "threshold": 0.564,
+      "unanswerable_refused": 2,
+      "answerable_refused": 1
+    },
+    {
+      "threshold": 0.569,
+      "unanswerable_refused": 2,
+      "answerable_refused": 2
+    },
+    {
+      "threshold": 0.58,
+      "unanswerable_refused": 3,
+      "answerable_refused": 2
+    },
+    {
+      "threshold": 0.585,
+      "unanswerable_refused": 3,
+      "answerable_refused": 2
+    },
+    {
+      "threshold": 0.592,
+      "unanswerable_refused": 3,
+      "answerable_refused": 4
+    },
+    {
+      "threshold": 0.622,
+      "unanswerable_refused": 3,
+      "answerable_refused": 5
+    },
+    {
+      "threshold": 0.629,
+      "unanswerable_refused": 3,
+      "answerable_refused": 6
+    },
+    {
+      "threshold": 0.636,
+      "unanswerable_refused": 3,
+      "answerable_refused": 6
+    },
+    {
+      "threshold": 0.639,
+      "unanswerable_refused": 3,
+      "answerable_refused": 9
+    },
+    {
+      "threshold": 0.641,
+      "unanswerable_refused": 3,
+      "answerable_refused": 9
+    },
+    {
+      "threshold": 0.642,
+      "unanswerable_refused": 4,
+      "answerable_refused": 9
+    },
+    {
+      "threshold": 0.643,
+      "unanswerable_refused": 4,
+      "answerable_refused": 12
+    },
+    {
+      "threshold": 0.644,
+      "unanswerable_refused": 4,
+      "answerable_refused": 13
+    }
+  ]
+}

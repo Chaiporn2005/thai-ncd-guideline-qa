@@ -1,0 +1,146 @@
+{
+  "q031": {
+    "no_question": {
+      "supported": 0,
+      "n": 1,
+      "score": 0.0
+    },
+    "with_question": {
+      "supported": 1,
+      "n": 1,
+      "score": 1.0
+    }
+  },
+  "q072": {
+    "no_question": {
+      "supported": 1,
+      "n": 3,
+      "score": 0.3333333333333333
+    },
+    "with_question": {
+      "supported": 1,
+      "n": 3,
+      "score": 0.3333333333333333
+    }
+  },
+  "q147": {
+    "no_question": {
+      "supported": 0,
+      "n": 3,
+      "score": 0.0
+    },
+    "with_question": {
+      "supported": 3,
+      "n": 3,
+      "score": 1.0
+    }
+  },
+  "q152": {
+    "no_question": {
+      "supported": 0,
+      "n": 1,
+      "score": 0.0
+    },
+    "with_question": {
+      "supported": 1,
+      "n": 1,
+      "score": 1.0
+    }
+  },
+  "q169": {
+    "no_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    },
+    "with_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    }
+  },
+  "q175": {
+    "no_question": {
+      "supported": 3,
+      "n": 3,
+      "score": 1.0
+    },
+    "with_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    }
+  },
+  "q155": {
+    "no_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    },
+    "with_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    }
+  },
+  "q163": {
+    "no_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    },
+    "with_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    }
+  },
+  "q176": {
+    "no_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    },
+    "with_question": {
+      "supported": 3,
+      "n": 3,
+      "score": 1.0
+    }
+  },
+  "q135": {
+    "no_question": {
+      "supported": 3,
+      "n": 3,
+      "score": 1.0
+    },
+    "with_question": {
+      "supported": 3,
+      "n": 3,
+      "score": 1.0
+    }
+  },
+  "q036": {
+    "no_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    },
+    "with_question": {
+      "supported": 2,
+      "n": 3,
+      "score": 0.6666666666666666
+    }
+  },
+  "q148": {
+    "no_question": {
+      "supported": 2,
+      "n": 2,
+      "score": 1.0
+    },
+    "with_question": {
+      "supported": 2,
+      "n": 2,
+      "score": 1.0
+    }
+  }
+}

@@ -28,6 +28,22 @@
         }
       }
     },
+    "alt_evidence": {
+      "description": "Optional. Other pages that answer the same question equally well (not the primary evidence). Counted as relevant in the lenient metric only; the strict metric uses `evidence` alone. kind=duplicate: the page contains the evidence quote verbatim (found by script); same_fact: a person confirmed it states the same fact.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["document_id", "edition_id", "pdf_page", "quote", "kind"],
+        "additionalProperties": false,
+        "properties": {
+          "document_id": {"type": "string", "minLength": 1},
+          "edition_id": {"type": "string", "minLength": 1},
+          "pdf_page": {"type": "integer", "minimum": 1},
+          "quote": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["duplicate", "same_fact"]}
+        }
+      }
+    },
     "generated_by": {"type": ["string", "null"]},
     "reviewed_by": {"type": ["string", "null"]},
     "review_date": {"type": ["string", "null"], "format": "date"},
@@ -36,7 +52,7 @@
   "allOf": [
     {
       "if": {"properties": {"answerable": {"const": false}}},
-      "then": {"properties": {"answer": {"type": "null"}, "evidence": {"maxItems": 0}, "type": {"const": "unanswerable"}}},
+      "then": {"properties": {"answer": {"type": "null"}, "evidence": {"maxItems": 0}, "alt_evidence": {"maxItems": 0}, "type": {"const": "unanswerable"}}},
       "else": {"properties": {"answer": {"type": "string", "minLength": 1}, "evidence": {"minItems": 1}, "type": {"not": {"const": "unanswerable"}}}}
     },
     {

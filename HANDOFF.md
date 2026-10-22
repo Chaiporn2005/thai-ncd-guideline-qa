@@ -2,6 +2,24 @@
 
 Updated: 2026-10-09 • Owner: coordinator • Stage: Track B corpus v11 merged to main; Track B L1 (chunk/embed/search) next; Track A integration pending
 
+## ผลสุดท้ายของ Track B (retrieval) สำหรับ C และ D (2026-10-11)
+
+ระบบที่ freeze: `configs/retrieval/frozen_v1.json` บน corpus **v12** (ถอนคู่มือ Clinic Plus; 66 เอกสาร) bge-m3, parent-child 128→512, BM25 char3, convex α 0.6, k = 10
+
+| ระบบ | test R@1 / R@5 / R@10 / MRR@10 (52 ข้อที่ตอบได้) | หมายเหตุ |
+|---|---|---|
+| A dense ล้วน | 0.462 / 0.808 / 0.827 / 0.618 | ฐานเทียบ |
+| **B hybrid** | 0.587 / 0.885 / 0.981 / 0.737 | **ค่าเริ่มต้นสำหรับ CPU**; ดีกว่า A แบบมีนัยสำคัญ (R@5 +0.077, CI +0.019…+0.154) |
+| C B + reranker | 0.615 / 0.913 / 0.952 / 0.771 | **ใช้ถ้ามี GPU** (ผู้ใช้ตัดสิน 2026-10-11); ดีกว่า B เล็กน้อยแต่แยกจาก noise ไม่ออก; บน CPU 15–36 วินาที/คำถาม |
+
+- ผลดิบ `results.jsonl` ตาม schema, `metrics.json`, `run_manifest.json`: `runs/frozen_v1/` (เฉพาะ metrics และ manifest ขึ้น git; `results.jsonl` ที่มีข้อความคำถามอยู่ใน `data/index/runs/final/<ชุด>-<ระบบ>-bge-m3/` ในเครื่องเจ้าของ Track B ขอไฟล์จากเขาหรือรันใหม่ด้วยคำสั่งใน docstring ของ `scripts/run_retrieval.py`)
+- รันซ้ำ: `scripts/run_retrieval.py` โหมด A (ไม่ใส่อะไรเพิ่ม), B (`--hybrid ...`), C (`--rerank-scores` จาก `infra/kaggle_rerank`); `--split test` ต้องมี gold ครบและไฟล์โค้ด/ค่าตั้งที่ commit แล้ว และ **ห้ามรันซ้ำเพื่อปรับค่า**
+- ต้องมีดัชนี: `data/index/dense-bge-m3-t128-v12` และ `chunks-v12-t128/512` (ไม่ขึ้น git; สร้างใหม่ด้วย `build_chunks.py` + `splice_index.py` หรือขอจากเจ้าของ Track B)
+- LLM ที่ใช้ได้ในขั้นสร้างคำตอบ: **Typhoon `typhoon-v2.5-30b-a3b-instruct` เท่านั้น** (ต้องแคชทุกคำขอ: `src/ncdqa/llm/client.py`; คีย์ใน `.env` ตัวแปร `TYPHOON_API_KEY`); Gemini ฟรี (20 คำขอ/วัน) และ GLM ฟรี (ช้า ติด rate limit) ใช้ไม่ได้กับ batch; ไม่ใช้ LLM เขียนคำค้นใหม่ (แย่ลงทุกโมเดล)
+- ข้อควรรู้: test มี 52 ข้อที่ตอบได้ ช่วงเชื่อมั่นกว้าง; gold ยืนยันแค่ "ตรงกับเอกสาร" ไม่ใช่ความถูกต้องทางคลินิก; รายละเอียดการทดลองทั้งหมด `docs/hybrid_retrieval_experiment.md`; บันทึก AI audit `AI_AUDIT.md`, `docs/retrieval_process_record.md`
+
+> **Track C:** ดู `docs/handoff_track_c.md` (ฟังก์ชัน `search(query, variant, k, filters)` ใน `src/ncdqa/retrieval/search.py`, ผล freeze และกติกา) แพ็กเกจข้อมูลอยู่ที่ `data/handoff/track_c_20261012.zip` ในเครื่องเจ้าของ Track B (ไม่ขึ้น git)
+
 ## อ่านก่อนทำต่อ: Track B merge เข้า main แล้ว (2026-10-09)
 
 **ต้อง `git pull origin main` ก่อนทำงานต่อ** (PR #2 และ #3 merge แล้ว) corpus ที่ใช้เป็นหลักตอนนี้คือ **`normalized-v11` ของ Track B**
@@ -131,3 +149,18 @@ python scripts/orchestra.py status
 ```
 
 ตัวตรวจเหล่านี้ไม่รับรองความถูกต้องทางคลินิก อ่านผลและ warnings ก่อนส่งต่องาน
+
+
+## Demo บน Mac ด้วย Typhoon — 2026-10-20 (Track C/D; เพื่อนทำบนสาขา `demoUpdate` แล้วรวมเข้า `rag/track-b-l1`)
+
+สถานะ: `demo.py` รันได้บน Mac (Apple Silicon, Python 3.12 + uv) กับ Typhoon API จริง ที่ทดสอบคือ **CLI** (โค้ดรุ่นก่อนมีเว็บ) **ตอนนี้มีเว็บแอปแล้วในสาขา `rag/track-b-l1` (`demo.py --web`) แต่ยังไม่ได้ทดสอบบน Mac** วิธีตั้งค่า: [docs/SETUP_GUIDE_MAC_TH.md](docs/SETUP_GUIDE_MAC_TH.md)
+ข้อมูลที่ต้องมี (ไม่อยู่ใน git, ส่งต่อภายในทีมเท่านั้น): บันเดิล `ncd_demo_bundle` = `data/index/chunks-v12-t128`, `chunks-v12-t512`, `dense-bge-m3-t128-v12` (+ แคชคำตอบ `llm_cache/demo/typhoon_api.jsonl` วางเป็น `data/index/llm_cache/typhoon_api.jsonl`) ต้องมี `.env` (TYPHOON_API_KEY) และ `configs/llm/providers.yaml` (คัดจาก `.example`) ทั้งสองถูก ignore
+ตรวจแล้ว: checksum บันเดิลตรง manifest, เวกเตอร์/chunk/id สอดคล้อง, Typhoon ตอบ, เทสต์ 66 ตัวผ่าน, demo โหมด B / `--graph` / `--variant A --show-evidence` / โต้ตอบ ตอบพร้อม citation
+ยังไม่ได้ทำ/ไม่ได้ตรวจ: `--variant C` บน Mac, ความถูกต้องทางคลินิกของคำตอบ, **หน้าเว็บ `--web` บน Mac (ทำต่อข้อ 0)**
+ทำต่อ (เรียงตามลำดับ):
+0. **เพื่อน (Mac): `git pull` สาขา `rag/track-b-l1` แล้วทำตาม `docs/SETUP_GUIDE_MAC_TH.md` ใหม่ (bundle ชุด 2026-10-19 มีแคชครบ 11 ข้อ) รัน `demo.py --web` ลองคำถามตัวอย่างและพิมพ์คำถามเอง แล้วกรอกตารางผลท้ายคู่มือ**
+1. **เจ้าของคีย์ Typhoon: rotate คีย์** (เคยหลุดในผลลัพธ์ของเซสชัน) แล้วใส่ใน `.env` เท่านั้น; `.env.example` ต้องว่างเสมอ
+2. (เว็บแอปทำแล้วและเปิดเฉพาะ 127.0.0.1 เครื่องตัวเอง) ถ้าจะให้คนอื่นเข้าจากเครื่องอื่น ต้องตัดสินใจก่อนว่าจะเปิดหรือไม่ (จะใช้ quota/คีย์ของเจ้าของ และบันเดิลมีข้อความเอกสารห้ามเผยแพร่สาธารณะ จึงไม่ควรโฮสต์สาธารณะ); วิธีเร็วสุดคือห่อ `demo.py` ด้วย Streamlit/Gradio ในไฟล์ใหม่ โหลดโมเดลครั้งเดียว, แสดง disclaimer + แหล่งอ้างอิง, เก็บ guard G1/G3/O2 และไม่ log ข้อความคำถาม (G2 = B); อย่าแก้ค่า freeze
+3. ทดสอบ `--variant C` บน Mac (ช้า 15-36 วินาที/คำถามบน CPU) หรือรันบน GPU ตาม `infra/`
+4. ให้คนที่มีความสามารถทางคลินิกตรวจคำตอบตัวอย่างก่อนอ้างว่าคำตอบถูกต้อง (AGENTS.md: gold/คำตอบคลินิกต้องมีผู้ตรวจ)
+5. ถ้าเจอปัญหาตอนตั้งค่าบนเครื่องอื่น ให้แก้ SETUP_GUIDE_MAC_TH.md และบันทึกใน AI_AUDIT.md (Error Catch เฉพาะที่เกิดจริง)

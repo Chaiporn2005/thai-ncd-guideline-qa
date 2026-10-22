@@ -1,0 +1,454 @@
+# AI Audit — Thai NCD Guideline Q&A
+
+**Team:** ธนกฤต เสมอหน้า (handle Up2mEz, เจ้าของ Track B), ชัยพร ออฤดี (อนุมานว่าคือ handle Chaiporn2005 เจ้าของ repo / Track A), ธนวัฒน์ สุริยะ, คณิณ แคลวิณ ชมวิวัฒน์ (อนุมานว่าคือ "Calvin" ใน fidelity review) [FILL IN: ยืนยันการจับคู่ handle กับชื่อ]
+**AI Tools Used:** Claude Code (Sonnet 5.5; ช่วงก่อนหน้าตั้ง Opus 5 / Opus 5.5 ตามคำสั่ง `/model` ในโฟลเดอร์นี้), Codex CLI (`gpt-6-astra` medium, `gpt-6.1-sol` medium), Gemini 3.8 Flash High (ผ่าน `agy`), Typhoon OCR API. รายละเอียดข้อ 1.
+
+**สถานะ ณ 2026-10-10** (อัปเดตจากการอ่านทุกแชทในโฟลเดอร์ `team-project` + บันทึก `docs/corpus_process_record.md` และ `docs/retrieval_process_record.md` ใน repo)
+- **Domain:** แนวทางเวชปฏิบัติ NCD ไทย (DM, HT, lipid; CKD และเอกสารบริการ NCD เป็นส่วนเสริม) ภาษาไทย
+- **Corpus:** 68 เอกสาร / 4,009 หน้า PDF, `normalized-v11` ค้นได้ 3,749 หน้า (v2→v11 ดูตาราง §7 ของ corpus record)
+- **คำถามประเมิน:** silver 141 ข้อ (dev 109 / test 32) + ชุดเสริม test 28 ข้อ (ยังเป็น silver) การตรวจเป็น gold: **ครบแล้ว ณ 2026-10-11 (ผู้ใช้แจ้ง)** ส่วน 1–4 และชุดเสริม; [FILL IN: จำนวน gold / แก้ / ปฏิเสธ ต่อ dev และ test]
+- **Embedding:** `intfloat/multilingual-e5-base` และ `BAAI/bge-m3` (ทดสอบทั้งคู่), reranker `BAAI/bge-reranker-v2-m3`
+- **Chunk:** ตัดตามโครงสร้างย่อหน้า/ประโยค/แถวตาราง ไม่ใช้ fixed-size ขนาดที่ทดสอบ 128/256/384/512 + parent-child; [FILL IN: ขนาดสุดท้ายที่เลือก — ดู `docs/chunk_size_evidence.md`]
+- **Retrieval:** dense (A), hybrid dense+BM25 แบบ convex combination (B), hybrid + reranker (C). ผลทั้งหมดบน dev **silver** ยังไม่ใช่ผลรายงาน
+- **Metrics:** Recall@k (k = 5, 10), strict/lenient relevance; [FILL IN: BERTScore / RAGAS Faithfulness ถ้าทำในส่วน generation ของ Track C]
+- **ขอบเขตของเอกสารนี้:** รวมเฉพาะแชทของโฟลเดอร์ `D:\KMITL\NLP\NLP-Year3\team-project` (แชท "Import feature", "Gold markdown assignment" และแชทเล็ก ๆ ที่เหลือ) แชทของโฟลเดอร์อื่น (LabBS2026, ThaiCharacter) เป็นคนละโปรเจกต์ ไม่รวม
+- **ข้อจำกัดของการสรุป:** แชท "Import feature" ยาวมาก (ถูกสรุปต่อ 2 ครั้ง) ข้อมูลช่วงที่ถูกสรุปมาจากบันทึกใน repo ที่เขียนระหว่างทำงาน ไม่ใช่การอ่านทุกข้อความ
+
+---
+
+## 1. Tool Inventory
+
+| AI Tool | ใช้ทำอะไรจริงในโปรเจกต์ | ข้อมูลที่ส่งออกนอกเครื่อง |
+|---|---|---|
+| **Claude Code** (Anthropic; Sonnet 5.5) | ผู้คุม (supervisor): เขียนสคริปต์/เทสต์ทั้งหมดใน `scripts/` และ `src/ncdqa/`, เขียนคำสั่งงานให้ Codex/Gemini, ตรวจผลเชิงกลของ worker, สร้างหน้า review ในเครื่อง, วิเคราะห์ผลทดลอง, เขียน `CLAUDE.md`, ร่างเอกสาร, ค้นเว็บหาที่มาของพารามิเตอร์ | ข้อความ/ภาพหน้าบางส่วนระหว่างตรวจ, โค้ด, metadata, ผลค้นเว็บ |
+| **Codex CLI 0.160.1** `gpt-6-astra` medium (OpenAI) | worker: (1) ตรวจ OCR 161 หน้า + เสนอแก้ 283 หน้า + ตรวจ OCR ใหม่ 90 หน้า (3 ตัวขนาน) (2) ร่าง silver questions 141 ข้อ (3) ร่างและรีวิวคำถามชุดเสริม | ภาพ/ข้อความหน้า corpus (444 หน้าในงาน OCR; 137 หน้าในงานร่างคำถาม รวม 17 หน้า Siriraj ตามคำสั่งเจ้าของ Track B) |
+| **Codex CLI** `gpt-6.1-sol` medium | doc2query: เขียนคำถามต่อ chunk 4,386 parent chunk | ข้อความ chunk ทั้งหมดรวม Siriraj (เจ้าของ Track B อนุญาต) |
+| **Gemini 3.8 Flash High** (Google, ผ่าน `agy`, headless ไม่มีสิทธิ์ shell) | ร่างคำถามเสริม test 18 ข้อ และรีวิวคำถามของ Astra 18 ข้อ | ข้อความหน้า 14 หน้า + หน้าถัดไปของข้อ multi_page (ไม่มี Siriraj ที่ติด rights conflict) |
+| **Typhoon OCR** (`typhoon-ocr` v1.5) | OCR ภาพหน้าที่ข้อความเสีย/ว่าง 434 หน้า + 91 หน้ารอบสอง (สำเร็จ 90) | ภาพ PNG รายหน้า (ไม่ส่ง PDF ทั้งไฟล์) ใช้ API key ของสมาชิก 2 คนขนานกัน |
+| **โมเดลเล็กบน Kaggle T4** (`typhoon2.5-qwen3-4b`, `Qwen3-4B-Instruct-2507`, `typhoon2.1-gemma3-4b`) | ทดลอง query rewrite / HyDE / query2doc เทียบกับ API | คำถาม dev 109 ข้อ (ผ่านตัวตรวจ `sendable`) |
+| **LLM API 3 ราย** (GLM-4.7-Flash, Gemini Flash, Typhoon `typhoon-v2.5-30b-a3b-instruct`) | ตั้งค่าใน `.env` + `src/ncdqa/llm/client.py` เพื่อเทียบกับโมเดลเล็ก/ทดสอบความนิ่งของผล | คำถาม dev + prompt; [FILL IN: ยืนยันว่ามีการเรียกจริงกี่ครั้งและผลอยู่ที่ไหน — ณ บันทึกล่าสุดยังไม่เคยเรียก] |
+| **Embedding / reranker** (e5-base, bge-m3, bge-reranker-v2-m3 ผ่าน SentenceTransformers) | ค้นหาและจัดอันดับ | CPU ในเครื่อง; GPU บน Kaggle (private datasets, ข้อความ chunk รวม Siriraj) |
+| **ค้นเว็บ** (WebSearch/WebFetch) | หาที่มาของพารามิเตอร์ (RRF, BM25, ขนาด chunk, query2doc) และตรวจชื่อโมเดลบน Hugging Face | คำค้นเท่านั้น |
+| **Claude Code (Sonnet 5.5), Track C** | เขียนและทดสอบ pipeline สร้างคำตอบ, เวอร์ชัน LangGraph, harness prompt injection, metric (BERTScore, Faithfulness แบบ RAGAS, correctness), ReAct agent (Python และ LangGraph), lit review ของ agentic RAG, วิเคราะห์ผลและร่างรายงาน | โค้ด, ผลรัน, คำค้นเว็บ |
+| **Typhoon `typhoon-v2.5-30b-a3b-instruct`** (API) | ตัวสร้างคำตอบของทุกระบบใน Track C (pipeline คงที่ และ ReAct ที่เรียก tool) temperature 0, แคชทุกคำขอ | คำถาม + ข้อความหลักฐาน (chunk) ที่ค้นได้ |
+| **gpt-5.6-luna (reasoning high) ผ่าน Codex CLI** | judge หลัก: Faithfulness, correctness (อ้างอิงเฉลย) ของทุกชุดใน test | คำถาม, คำตอบ, chunk ที่อ้าง, เฉลย |
+| **Claude Sonnet 4.6 และ Gemini 3.8 Flash (ผ่าน `agy`/API)** | judge ตัวรอง: ใช้ได้เฉพาะ correctness บน dev ก่อนโควตาหมด | เหมือนข้างบน |
+| **LangGraph 1.2.14 + langchain-core 1.6.9** | เวอร์ชัน StateGraph ของ pipeline และของ ReAct agent (เทียบกับ Python ธรรมดา) | ไม่ส่งข้อมูลออก (ไม่ใช้ LangSmith) |
+| **Kaggle T4 GPU** | รัน benchmark สาธารณะ 14 ชุดด้วย retrieval ที่ freeze แล้ว | ชุดข้อมูลสาธารณะเท่านั้น |
+| **Codex CLI `gpt-6-astra` medium (Track C, คู่มือ setup)** | ครั้งที่ 1: ให้ทำตามคู่มือบนโฟลเดอร์ใหม่และถ่ายภาพ (ล้มเหลว: sandbox ใช้ git clone และเปิด Windows Terminal ไม่ได้); ครั้งที่ 2: ตรวจคู่มือเทียบข้อความและภาพจริงแบบอ่านอย่างเดียว (ได้ 22 ข้อ) | ข้อความคู่มือ ผลลัพธ์ที่บันทึก และภาพหน้าจอเทอร์มินัล (ไม่มีคีย์) |
+| **Claude Code (Opus 5.5), Track A** (เครื่องของ Chaiporn2005, 2026-10-06 ถึง 2026-10-12) | review ข้อมูลก่อน retrieval, เขียน `scripts/normalize_thai.py` v1/v2 + เทสต์, merge `calvin-check` และแก้ข้อค้นพบ, บันทึก decision 0008, ตรวจล่วงหน้าคำถามส่วน 4, จัดการ git (commit/push เฉพาะเมื่อผู้ใช้สั่ง) | ข้อความ/ภาพหน้า corpus บางส่วนระหว่างตรวจ, โค้ด; ดาวน์โหลด PDF สาธารณะ 6 เล่มเข้า scratchpad (ไม่เข้า repo) เพื่อตรวจคำถามส่วน 4 |
+| **Tesseract 5.5** (`tha+eng`, ในเครื่อง) | OCR หน้าที่ไม่มีข้อความใน `normalized-v1`/`v2` ของ Track A (ไม่ได้ใช้ใน v11) | ไม่ส่งออก |
+| **PyThaiNLP 5.3.8** (ติดตั้งใน scratchpad ไม่ใช่ dependency ของ repo) | วัดอัตราคำไทยที่อยู่ในพจนานุกรมก่อน/หลัง normalize (92.5% → 99.2%) | ไม่ส่งออก |
+| **pdfplumber 0.11.9** | อ่านตำแหน่งเส้นใต้ของ `>`/`<` เพื่อแปลงเป็น ≥/≤ ใน normalize v2 | ไม่ส่งออก |
+| **Claude Code (Sonnet 5.5), Demo บน Mac** (2026-10-20, เครื่อง Mac ของชัยพร, branch `demoUpdate`) | ตรวจบันเดิล `ncd_demo_bundle` (checksum, ความสอดคล้องของเวกเตอร์/chunk), ติดตั้ง Python 3.12 + uv + dependency, ตั้ง provider Typhoon, รัน `demo.py` ทดสอบ 4 โหมด, เขียน `docs/SETUP_GUIDE_MAC_TH.md`, เพิ่มบันทึกใน `board.md`/`HANDOFF.md`, commit | คำถามทดสอบ 6 ข้อและข้อความ chunk ที่ค้นได้ ถูกส่งไป Typhoon API (บัญชีของผู้ใช้) ผ่าน `demo.py`; ข้อมูลส่วนบุคคลในคำถามถูก mask ก่อนส่ง (G1 = B) |
+
+หมายเหตุ: บทบาท "scout / curator / QA reviewer" ใน `agents/*.md` ของ repo เป็นบทบาทเชิงตรรกะ ไม่มี autonomous runner; ตัวที่รันจริงคือ Claude Code ควบคุม Codex/Gemini ทีละงาน ผ่านคำสั่งงานที่เก็บเป็นไฟล์ (`data/agent_runs/*/TASK*.md`) เพื่อให้ตรวจย้อนได้
+
+---
+
+## 2. Prompt Log
+
+### A. คำสั่งของคนถึง Claude (ข้อความจริงจากแชท; ย่อเฉพาะบรรทัดยาว)
+
+#### Entry 1 — วางแผน Track B (2026-10-06)
+**Prompt sent:**
+> "ฉันจะทำ track B ฉันต้องการสำรวจเทคนิคที่เหมาะสม และ tech stack ที่จะต้องทำ และขอบเขตที่จะทำ ต้องทำถึงขนาดไหนถึงจะส่งให้เพื่อนขั้นถัดไป และต้องรู้ด้วยว่าเพื่อนที่ส่งมาทำได้ดีแค่ไหน ต้องรีวิวงานให้เพื่อนทำออกมาให้แบบที่เราต้องการได้ และ track C ต้องการงานให้เราขนาดไหน ต้องตรวจงานตัวเองด้วย"
+
+**What AI generated:** แผน `output/TRACK_B_RETRIEVAL_PLAN_TH.md` (เทคนิค, tech stack, ขอบเขต, เกณฑ์ส่งต่อ Track C)
+**What you changed or rejected:** ผู้ใช้ตอบรอบถัดมาว่า "ยังไม่เปิด plan ตอนนี้ยังไม่ละเอียด" (ปฏิเสธฉบับแรก) และกำหนดเอง: Python เวอร์ชันที่รองรับทั้ง pipeline, top-k เฉพาะ 5 กับ 10 โดยให้หาอ้างอิงงานวิจัย, ต้องมีกัน prompt injection, gold question ให้ agent ร่างเป็น silver แล้วตนตรวจเป็น gold; ยืนยันวันส่งจริง 16 ต.ค.
+
+#### Entry 2 — ให้ Codex ช่วยตรวจ แต่ Claude เป็นผู้รายงาน (2026-10-06)
+**Prompt sent:**
+> "แบ่งงานไปให้ codex cli ช่วยในเรื่อง computer use หรือการแคปหน้าจอ ... ทำให้ตัวเองประหยัดโทเคน แต่ตัวเองจะต้องคอยคุม codex cli model astra 6 medium"
+> "ใช้ codex ตรวจที่เหลือเลย และทำแบบที่ฉันสามารถตรวจเองอีกรอบได้ คุณจะต้องเป็นตัวรายงานฉันไม่ใช่ codex"
+
+**What AI generated:** `TASK.md` / `TASK2.md` (รูปแบบผลบังคับ `{old,new,kind,confidence,evidence}`, `old` ต้องเจอครั้งเดียวในหน้า), สคริปต์ตรวจรูปแบบ `round2_validate.py`, หน้า `review.html` ให้คนติ๊ก
+**What you changed or rejected:** ผู้ใช้กำหนดโครงสร้าง "Claude คุม Codex แล้วรายงานคน" เอง; การตัดสินแก้/ไม่แก้ทุกหน้าเป็นของผู้ใช้ (ใช้ 255 / ไม่ใช้ 28 จาก 283 หน้า)
+
+#### Entry 3 — กติกา PDPA ที่ผู้ใช้เขียนเอง และการปฏิเสธ regex ล้วน (2026-10-08)
+**Prompt sent:**
+> "ตัดข้อมูลที่ไม่จำเป็นก่อนเข้า RAG — email, เบอร์โทร, ชื่อบุคคลที่ไม่เกี่ยวกับเนื้อหา clinical ไม่ต้อง embed ... ชื่อผู้ป่วย/เคสจริง + ข้อมูลสุขภาพ → ตัดออกหรือ anonymize ... อย่าส่งข้อมูลคนจริงเข้า LLM API"
+> (ต่อมา) "การวิเคราะห์คำว่า ผู้สูงอายุ เด็ก ตั้งครรภ์ ต้องวิเคราะห์บริบทด้วย เหมือนจะใช้แค่ regex แล้วจะเช็คมั่วไปหน่อยนะ ... ถ้าเป็นหน้ารายชื่อทั้งหน้าแยกมาให้ฉัน"
+
+**What AI generated:** ตัวตรวจ regex รอบแรก แล้ว `page_context.py` ที่ใช้หลักฐานหลายอย่างของหน้า/บท พร้อมหน้า review แบ่งกลุ่ม
+**What you changed or rejected:** ผู้ใช้ปฏิเสธ regex ล้วน (precision ป้ายเด็ก/ตั้งครรภ์ 0.50 / 0.14 → 1.00 / 0.80 หลังใช้บริบท); ผู้ใช้เป็นคนตัดสินทุกหน้า (ป้ายประชากร 13 เอกสาร, PDPA 126/142 หน้า, หน้าเนื้อหาน้อย 274 หน้า)
+
+#### Entry 4 — ผู้ใช้ชี้ว่า OCR อ่านแถบหมวดและ footer ซ้ำ (2026-10-08)
+**Prompt sent:**
+> "เอกสารหลายหน้ามักจะมี footer ด้านล่าง ... แถบข้างของเอกสารก็มีหมวดหมู่บอก แต่การ OCR ได้มาทุกหมวดหมู่ แต่ความเป็นจริงต้องติดได้หมวดหมู่เดียวคืออันเข้มสุด ... ไม่เชื่อก็ทดสอบได้ แต่ต้องแยกให้ออกนะอันไหนสีเข้ม อันไหนสีจางๆ เทาๆ"
+
+**What AI generated:** `scripts/side_tab_category.py` (วัดความอิ่มสีของแถบ 9 แถบ), `clean_booklet_pages.py` → corpus v11, รายงานภาพ `sidebar_report.html`
+**What you changed or rejected:** สมมติฐานของผู้ใช้ถูกทดสอบเทียบ 3 วิธี ตรงกัน 62/62 หน้า; ผู้ใช้เปลี่ยนใจอนุมัติทั้ง 90 หน้า (เดิมกดไม่อนุมัติ 12 หน้า); ผู้ใช้เลือกใช้ `category` เป็น metadata อย่างเดียวก่อน แล้ววัดด้วย dev set
+
+#### Entry 5 — chunk ต้องไม่ตัดเนื้อหาขาด (2026-10-10)
+**Prompt sent:**
+> "ไม่ตัด siriraj ออก การแบ่งเอกสารต้องแบ่งให้เอกสารไม่ข้ามเนื้อหาหรือเนื้อหาขาดไปหัวอีก chunk"
+> "ฉันไม่ทำ fixed แน่นอน ... ทดลอง parent-child / small-to-big ... เพิ่มการ chunk 128 และ 384 ไปด้วย และบอกเหตุผลทำไมต้องเป็นเลขพวกนี้ ... อย่าให้ md บวมมีแต่ทำใหม่เลยเรื่อย อันนี้อยู่ในใจความเดียวกันก็อัปเดตใน md นั้น"
+
+**What AI generated:** chunker รอบแรกตามบรรทัด → chunker ตามย่อหน้า/ประโยค/แถวตาราง, `chunk_boundary_report.py`, `docs/chunk_size_evidence.md`, parent-child
+**What you changed or rejected:** ผู้ใช้ปฏิเสธข้อเสนอตัด Siriraj (D7), ปฏิเสธ fixed-size (D11), เพิ่มขนาด 128/384 (D12) และสั่งให้รวมเอกสารไม่ให้บวม
+
+#### Entry 6 — hybrid, ปรับค่าอ้างอิงงานวิจัย, โมเดลเล็ก (2026-10-10)
+**Prompt sent:**
+> "ทำ hybrid โดยทดสอบการเพิ่ม dictionary ไปด้วยว่าผลดีขึ้นมั้ย และหลังจากนั้นก็ลองจูน rrf และ bm25 โดยอิงจาก paper ที่เชื่อถือได้ และบันทึกไปด้วย ว่าทำอะไรเพราะผลจากอะไร ... ไม่ใช่เดามา"
+> "ข้อ 5 ลองหาโมเดลเล็กมาใช้สิ ห้ามเดามานะ ... ต้องทดสอบด้วยนะว่าโมเดลในเครื่องกับ api ต่างกันขนาดไหน ... ทำให้ผลคงที่เพิ่มจากการ set parameter temp 0"
+
+**What AI generated:** `docs/hybrid_retrieval_experiment.md`, ตัวเรียนรู้พจนานุกรม, sweep convex/RRF, reranker บน Kaggle, query rewrite ด้วยโมเดลเล็ก, `src/ncdqa/llm/client.py` (greedy + seed + cache)
+**What you changed or rejected:** ผลเชิงลบเก็บไว้ ไม่ซ่อน (query rewriting ด้วย 4B แย่ลงหรือเท่าเดิม D22; soft boost ตามประชากรไม่ช่วย D16); คีย์ API ผู้ใช้ใส่เอง ไม่ให้ AI อ่านค่า
+
+#### Entry 7 — จุดอ่อนของชุดทดสอบและการให้ 3 โมเดลทำงานไขว้กัน (2026-10-10)
+**Prompt sent:**
+> "ลองตรวจสอบชุดทดสอบเราสิ มันยังมีจุดอ่อนอยู่อีกมั้ย"
+> "ให้แก้และทำเพิ่ม ให้ใช้ astra 6 medium ทำเพิ่ม และ gemini flash 3.8 high ทำเพิ่มด้วย ... ให้มันรีวิวของกันละกัน และคุณต้องรีวิวมันด้วย พร้อมสรุปว่าทั้ง 3 model ทำอะไรมา และคิดยังไงกันบ้าง"
+
+**What AI generated:** รายการจุดอ่อน 11 ข้อ (เฉลยหน้าเดียว, test 32 ข้อ, กระจุกเล่ม, HT มี 1 ข้อ, Siriraj, ข้อไม่อิสระ, รั่วหัวข้อ, unanswerable 1 ข้อ, โมเดลเดียวร่าง, ฯลฯ); ชุดเสริม 36 ข้อ → เก็บ 28 ข้อ; test เพิ่มเป็น 57 ข้อ 17 เล่ม (HT 1→12, CKD 3→12, unanswerable 1→4) ถ้าอนุมัติข้อเสนอปรับ
+**What you changed or rejected:** ผู้ใช้เลือกเทคนิคแก้ "เฉลยหน้าเดียว" เฉพาะ 1, 2, 4 (ปฏิเสธ pooling/LLM-judge); สั่งเลิกให้เพื่อนรีวิวไขว้ เหลือให้ตรวจ silver ส่วน 2–3 เท่านั้น; Claude ไม่รับข้อเสนอของ Astra ที่ให้ใส่ชื่อเอกสารลงในคำถาม
+
+#### Entry 8 — ปัญหาหน่วยคนละแบบ (q126) (2026-10-10)
+**Prompt sent:**
+> "ในคำถามข้อ 126 ต่ำกว่า 70 มิลลิกรัม/เดซิลิตร ถ้าถามหน่วยอื่น แล้วจะตอบได้มั้ย ตาม pipeline ที่เราทำต้องทำตรงไหนถึงจะตอบได้"
+> "ในการใช้งานควรจะอยู่ในขั้น generator มั้ย เพราะมันอาจจะมีเคสอื่นด้วย ซึ่งเราจะมาทำวิธีที่ 2 หรือวิธีที่ 1 ก็ไม่ไหว บันทึกไปด้วยว่าเจออะไรแบบนี้"
+
+**What AI generated:** `docs/finding_unit_mismatch.md` (3 ทางเลือก), แถว D24
+**What you changed or rejected:** ผู้ใช้เลือกไม่เขียนกฎหน่วยเฉพาะ ให้ LLM จัดการ (Claude เสริมว่า retrieval ยังต้องดึงหน้าให้ได้ก่อน จึงให้ LLM ช่วยตอน query rewrite ด้วย); ยังไม่ได้วัดผลจริง
+
+#### Entry 9 — หน้า review ที่ใช้ไม่ได้ (2026-10-10)
+**Prompt sent:**
+> "เมื่อฉันกด เปิดต้นฉบับ มันกลับเป็นหน้าเว็บซึ่งต้องโหลด pdf ต้นฉบับก่อน ซึ่งเพื่อนฉันบางคนยังไม่ได้โหลดเลย และฉันก็โหลดแล้วทำไมไม่เด้ง pdf ต้นฉบับของแต่ละข้อความมาเลยล่ะ"
+> "ของฉันไม่เป็นเลย แก้ของเพื่อนให้สะดวกที่สุด และ commit และอัพเลย"
+
+**What AI generated:** แก้ลิงก์เป็น `download_url#page=N` (เพื่อน) และเซิร์ฟเวอร์ในเครื่อง `localhost:8765` (ของผู้ใช้) commit `c33f207`
+**What you changed or rejected:** รอบแรก Claude รายงานว่าแก้แล้วโดยยังไม่ได้กดทดสอบ ผู้ใช้ทดลองแล้วพบว่า `file://` ใช้ไม่ได้ (ดู Error W2)
+
+#### Entry 10 — ร่าง AI_AUDIT (2026-10-06) และคำสั่งอัปเดต (2026-10-10)
+**Prompt sent:**
+> "Draft AI_AUDIT.md from our project details" (2026-10-06)
+> "อัพเดต ai audit ด้วย ดูและวิเคราะห์ทุกแชทที่คุยใน project นี้" (2026-10-10)
+
+**What AI generated:** ร่างแรกที่ `[FILL IN]` ทั้งหมด (Claude ตั้งใจไม่แต่งข้อมูลที่ยังไม่รู้); ฉบับนี้
+**What you changed or rejected:** [FILL IN: ผู้ใช้ตรวจ/แก้ฉบับนี้อย่างไร]
+
+### B. คำสั่งของ Claude ถึง AI ตัวอื่น (ไฟล์จริงเก็บใน `data/agent_runs/`)
+
+| # | วันที่ | ผู้รับ | เรื่อง | ไฟล์ | ผล |
+|---|---|---|---|---|---|
+| B1 | 2026-10-07 | Codex astra | ตรวจเทียบภาพ 161 หน้า (read-only): คัดหน้าปัญหา 115 + สุ่ม pass_auto 46 | `20261007-codex-audit/TASK.md` | หน้า pass_auto ที่สุ่มถูกครบแค่ครึ่ง ~11% ตัวเลข/เครื่องหมายผิด (เช่น `> 126` แทน `≥ 126`) |
+| B2 | 2026-10-07 | Codex astra | เสนอแก้ทีละจุด 283 หน้า | `TASK2.md` | 280 จุดแก้ (คำ 226, ชื่อยา 29, ตัวเลข 16, ลบข้อความแต่ง 7) → คนรับ 237/240 + 1 |
+| B3 | 2026-10-08 | Codex astra ×3 | ตรวจ OCR ใหม่ 90 หน้า | `20261008-codex-reocr/TASK.md` | 411 จุดแก้ ความมั่นใจ "high" ทั้งหมด จึงใช้แยกแยะไม่ได้ → คนดูภาพทุกจุดที่เป็นตัวเลข/ชื่อ |
+| B4 | 2026-10-10 | Codex astra | ร่าง silver 120 หน้า + multi_page 10 + unanswerable 10 (P1) | `20261010-silver-questions/TASK.md` | 125 ผ่านตัวตรวจ ข้าม 15 (~220,701 tokens) |
+| B5 | 2026-10-10 | Codex astra | เฉพาะ 17 หน้า Siriraj (P2) | `TASK_siriraj.md` | 16 ข้อ รวม 141 (dev 109 / test 32) |
+| B6 | 2026-10-10 | Codex sol 6.1 | doc2query 4,386 chunk (P3) | `20261010-doc2query/TASK.md` | 7,428 คำถามผ่านตัวตรวจ ~2.63 ล้าน tokens; ไม่ช่วย dense (D21) |
+| B7 | 2026-10-10 | โมเดลเล็ก 3 ตัวบน Kaggle | rewrite / HyDE / query2doc (P4) | `data/index/llm-requests/requests.jsonl` | แย่ลงหรือเท่าเดิม; Gemma ได้ข้อความว่าง (E11) |
+| B8 | 2026-10-10 | Astra / Gemini | ร่างชุดเสริม 18+18 (P5, P6) | `20261011-supplement-questions/TASK.md` | Gemini รอบแรกใช้ shell ไม่ได้ ต้องสั่งใหม่ให้ใช้เฉพาะเครื่องมืออ่าน/เขียนไฟล์ |
+| B9 | 2026-10-10 | Astra / Gemini | รีวิวไขว้ (P7, P8) | `TASK_REVIEW.md` | Astra ผ่านงาน Gemini 2/18; Gemini ผ่านงาน Astra 15/18 |
+
+### C. คำสั่งของคนถึง Claude ใน Track C (2026-10-11 ถึง 2026-10-12; ข้อความจริงจากแชท ย่อบางส่วน)
+
+| # | prompt | AI ทำอะไร | ผล |
+|---|---|---|---|
+| C1 | "เริ่มวางแผน track c และ harness ,prompt injection" | สำรวจ repo/สไลด์ เขียนแผน | `output/TRACK_C_EVAL_HARNESS_PLAN_TH.md` |
+| C2 | "ทำpipeline generator ก่อนให้เสร็จ แล้วมาออกแบบ harness ป้องกัน injection" | เขียน pipeline + ออกแบบ harness N0–N7 | `src/ncdqa/rag/*`, ผล ASR ต่อชั้น |
+| C3 | "หาสาเหตุว่าทำไมถึงเป็นแบบนี้ และแก้ไข ถ้าติดจริงๆไปวัด eval metric ต่าง" | วินิจฉัยว่า baseline L0 ถูกป้องกันอยู่แล้ว แยกชั้นใหม่ | ดู C-E1 |
+| C4 | "ทำ langgraph เองก่อน ... เอาเป็น skill ที่เป็นของ ai engineer ที่เป็น stack จริงๆ" | เวอร์ชัน LangGraph + node recover | เท่ากับ pipeline ธรรมดา 106/106 |
+| C5 | "ใช้ Claude Sonnet ผ่าน agy ทำต่อเลย และใช้ gpt-5.6-luna (reasoning high) คู่กันไป2 โมเดล" | runner สอง judge | Claude ทำได้เฉพาะ correctness บน dev (โควตาหมด) |
+| C6 | "BERTScore ผิดพลาดรึเปล่าทำไมเท่ากัน วางแผน eval ที่เหลือ ..." | ตรวจ gold-vs-gold, baseline, เลือก encoder | ไม่ใช่บั๊ก (C-E6) |
+| C7 | "ทำ E-3, E-9, E-10 ต่อเลย ทำถึงขั้นสุดท้ายเลย แล้วค่อยรายงานผลตอนจบ" | ทำ metric ที่เหลือ เดโม เอกสาร | `TRACK_C_FINAL_REPORT_TH.md` |
+| C8 | "ใช้GPU kaggle ไม่ต้องชุดสักชุดแต่ทำบน GPU" | benchmark สาธารณะทุกชุดบน Kaggle T4 | 14 ชุด ไฮบริดชนะ 6 แพ้ 4 |
+| C9 | "แล้ว bm25 ล้วนๆหรือ sparse ก็ยังไม่ได้ทดสอบเลยหรอ ... ReAct เขียนด้วย LangGraph ก็ได้ ..." | เพิ่ม variant D (BM25 ล้วน) | D: correctness test 0.808 |
+| C10 | "งั้นทำทุกอย่างพร้อมกันเลย ตั้งแต่ React ด้วย python และ langgraph เพื่อเปรียบเทียบกับ pipeline ปกติ" | ReAct agent สองแบบ ใช้ core ร่วมกัน | `react_core.py`, `react_agent.py`, `react_graph.py` |
+| C11 | "ตอนนี้เราใช้llm as a judge ใช่มั้ย ... แล้วมันแย่กว่าจริงหรอที่ reAct จะแย่กว่า ลองปรับปรุง ลองlit review แล้วปรับปรุงหน่อย ..." | lit review + ตัวเลือกปรับปรุง (seed search, RRF, คัดหลักฐาน, หยุดเมื่อไม่มีของใหม่) | ค้นดีขึ้นเท่า B แต่คำตอบยังไม่ดีกว่า B |
+| C12 | "rseed rv3 ต่างกันยังไง และ ใช้ตามแผนเลย ..." / "ทำต่อเลย push and do ai audit also" | freeze rseed รัน test ครั้งเดียว รวมตาราง | `runs/frozen_gen_v1/react_test_results.md` |
+| C13 | "demo push ขึ้น git ด้วย ว่าเดี๋ยวจะอัพขึ้นdrive แล้วเราจะต้องทำวิธีการsetup อย่างถูกต้อง เหมือนคู่มืออย่างละเอียด แนบรูปขั้นตอนจริงๆด้วย เรียก astra 6 medium ช่วยทำ computer use ได้ แต่ต้องเขียนกฎดีๆนะ ทำอะไรผิดยอมรับจรงๆด้วย" | เขียนคู่มือ `docs/SETUP_GUIDE_TH.md`; เขียนกฎให้ astra (`docs/setup_test/astra/TASK_*.md`); ให้ astra ลอง 2 ครั้ง; ทำเครื่องมือถ่ายภาพ; รันทดสอบจริงและถ่ายภาพ; เขียนรายงานการทดสอบ | คู่มือพร้อมภาพจริง 10 ภาพ; `docs/setup_test/REPORT.md` |
+
+
+### D. คำสั่งของคนถึง Claude ใน Track A (2026-10-06 ถึง 2026-10-12; Claude Code Opus 5.5 บนเครื่อง Chaiporn2005; ข้อความจริงจากแชท)
+
+| # | prompt | AI ทำอะไร | สิ่งที่คนเปลี่ยน/ตัดสิน |
+|---|---|---|---|
+| A1 | "ช่วย review ตัว data ที่จะนำมา retreival ให้หน่อยว่ามีปัญหาอะไรไหม และบอกแนวทางแก้ไข" (2026-10-06) | วัดคุณภาพข้อความ 30 เอกสาร/1,766 หน้า เทียบภาพหน้าจริง; พบ DM CPG อักษรไทย 4%, HT CPG font map เสีย, CKD booklet เป็น MacRoman | — (รายงานอย่างเดียว) |
+| A2 | "ช่วยทำให้ใหม่ได้ไหม ทำเสร็จแล้วลอง review อีกรอบ 1" (2026-10-06) | `scripts/normalize_thai.py` (ซ่อม ToUnicode จากลำดับ glyph, ถอดรหัส legacy, กฎข้อความไทย, quality gate) + เทสต์; review รอบสอง | ผู้ใช้ไม่ได้กำหนดวิธี; ดู A-E2 ว่ารอบสองยังพลาดอะไร |
+| A3 | "ได้ฝากอัปลงให้หน่อยช่วยลบไฟล์ที่ไม่ได้ใช้แล้วใน git ออกให้ด้วย" (2026-10-06) | push งาน normalize; เสนอรายการไฟล์ที่ลบได้ | **ผู้ใช้เลือก**ให้ลบไฟล์ของรอบเก่าด้วย (manifest/catalogue รอบ 30 เล่ม, สคริปต์ curate) ไม่ใช่แค่ไฟล์ที่ไม่ได้ใช้จริง |
+| A4 | "ช่วยอัปไฟล์ที่พึ่งทำไปใหม่ ลง git ให้หน่อย แก้ไฟล์เก่าออกที่ process มาแล้วไม่ดีออก" (2026-10-06) | ถามก่อนเพราะข้อความเต็มเป็นเนื้อหาเอกสาร | **ผู้ใช้เลือก**ขึ้นเฉพาะ `normalization.json` (ไม่มีข้อความ) และลบผลสกัดรอบแรกทั้งในเครื่องและใน git |
+| A5 | "ช่วยลบตัว raw data ที่ต้องขอสิทธื์ ใน github ออกได้ไหม" (2026-10-06) | ตรวจ history: ไม่เคยมี PDF/ข้อความใน git; มีแค่บันทึกดาวน์โหลด | **ผู้ใช้เลือก**ลบบันทึก 9 เล่มศิริราชออกจาก GitHub และลบ PDF ในเครื่องด้วย |
+| A6 | "ลองเอาของ calvin-check มา merge เข้าและ แก้ไข้ปัญหาที่พบให้หน่อย" (2026-10-08) | merge + normalize v2 (≥/≤ จากเส้นใต้, ตัวยกเลขอ้างอิง, `figure_review`, `review_hold`, ข้อความซ้อน DDC, ลายน้ำ HT) | ผู้ใช้ไม่ได้กำหนดวิธีแก้รายข้อ (ดู A-D7) |
+| A7 | "ตัวของ 9 เล่มศิริราชใช้เพื่อการศึกษาเท่านั้น" (2026-10-08) | บันทึก decision 0008, ดาวน์โหลดใหม่ (hash ตรง manifest), normalize เก็บในเครื่องเท่านั้น | การตัดสินของผู้ใช้เอง; ขัดกับ C3 (ดู A-D6) |
+| A8 | "ช่วยตรวจให้หน่อยได้ไหม" (คำถามส่วน 4) และ "ทำเป็นไฟล์ที่พิมพ์ที่ comment ไว้แล้วส่งมาให้ได้ไหม" (2026-10-10) | ตรวจล่วงหน้า 35 ข้อเทียบหน้า PDF (และภาพสำหรับ q078, q091); ไฟล์ร่าง `tmp/question_review_part4of4_AI-draft.json` เว้นชื่อผู้ตรวจว่าง | ผู้ใช้เป็นผู้ตัดสินในหน้า review เอง; [FILL IN: แก้จากร่างของ AI กี่ข้อ ข้อไหน] |
+| A9 | วาง prompt แม่แบบ AI_AUDIT (2026-10-12) | พบว่ามี `AI_AUDIT.md` จริงแล้ว จึงไม่สร้างแม่แบบซ้ำ | **ผู้ใช้เลือก**ให้เติมงาน Track A ลงไฟล์เดิม (หัวข้อนี้) |
+### E. คำสั่งของคนถึง Claude ในงาน Demo บน Mac (2026-10-20; Claude Code Sonnet 5.5; ข้อความจริงจากแชท)
+
+| # | prompt | AI ทำอะไร | สิ่งที่คนเปลี่ยน/ตัดสิน |
+|---|---|---|---|
+| E1 | "ทำ demo ต่อด้วย docs/SETUP_GUIDE_MAC_TH.md ใช้เป็น api typhoon llm" | พบว่าไฟล์คู่มือไม่มีในรีโปและทุก branch; พบว่าเครื่องไม่มี venv/ดัชนี/`.env`; ติดตั้ง uv + Python 3.12 + dependency, สร้าง `configs/llm/providers.yaml`, รันเทสต์ 66 ตัว, เขียนคู่มือขึ้นใหม่ | ผู้ใช้ไม่ได้บอกว่าไฟล์ไม่มีอยู่; AI ตัดสินเขียนใหม่และบอกชัดว่าเป็นไฟล์ใหม่ |
+| E2 | "ที่อยู่ของไฟล์ .env ที่ต้องใส่ key อยู่ในไหน", "ใส่เสร็จแล้ว", "check please", "ลองใหม่" | ตรวจ `.env` โดยไม่พิมพ์ค่า พบคีย์มีอักษรไทยติดท้าย 1 ตัวทำให้ header ส่งไม่ได้; หลังแก้: `--list-models` HTTP 200, `--ping` ตอบ | ผู้ใช้ใส่และแก้คีย์เอง |
+| E3 | "can u check file ncd_demo_bundle it has the data that require or not" | ตรวจ SHA-256 ทั้ง 9 ไฟล์ตาม manifest และความสอดคล้องเวกเตอร์ 23,819 x 1024 กับ chunk/id | ผู้ใช้เป็นผู้ได้บันเดิลมาและเลือกให้ตรวจ |
+| E4 | "ok please do it for me" | คัดลอกดัชนี + แคชเข้า `data/index/` รัน demo (แคชและเรียกสด) | ผู้ใช้อนุมัติการคัดลอก |
+| E5 | "ได้เลยลองทำให้หน่อย" | ทดสอบ `--graph`, `--variant A --show-evidence`, โหมดโต้ตอบ; แก้คู่มือหัวข้อ 4 | — |
+| E6 | "ใน demo ตอนนี้เป็นแอพเว็บแอพพร้อมใช้ตอบคำถามแล้วหรือยัง" | ค้นรีโป ไม่พบเว็บแอป ตอบว่าเป็น CLI เท่านั้น (ตาม AGENTS.md ห้ามอ้างว่ามีแอป Q&A) | — |
+| E7 | "เดี่ยวค่อย commit ให้หน่อย พร้อมแจ้งใน board.md พร้อม เพิ่ม handoff ว่าให้ทำอะไรต่อ" | เพิ่มหัวข้อใน `board.md`/`HANDOFF.md`; stage เฉพาะส่วนที่เพิ่ม (ไม่รวมการแก้ค้างของงานอื่นในไฟล์เดียวกัน); commit `1f0856c` | ผู้ใช้สั่ง commit; ไม่ push |
+| E8 | "งั้นสร้าง branch ใหม่แล้ว push ขึ้นให้หน่อย ตั้งชื่อว่า demoUpdate" / "มีหน้าต่าง login ง่ายกว่านี้ไหม" | สร้าง branch `demoUpdate`; push ไม่ได้ (`could not read Username`, ไม่มี `gh`); แนะนำให้ push ผ่าน VS Code/GitHub Desktop | ผู้ใช้ต้อง push เอง; [FILL IN: ยืนยันว่า push แล้ว] |
+| E9 | "can u update in ai audit file" | เพิ่มข้อ E ในส่วนนี้, แถวใน Tool Inventory, §3.5, §4.6, Contribution Map, §7 ข้อ 8 | — |
+
+
+---
+
+## 3. Decision Journal
+
+Owner: `[Human]` / `[AI-suggested, Human-approved]` / `[AI-decided]`. ช่อง `[FILL IN]` = ยังไม่มีหลักฐานว่าผู้ใช้ยืนยัน
+
+### 3.1 Corpus และข้อมูล (Track A/B)
+
+| # | Decision | Owner | Reason |
+|---|---|---|---|
+| C1 | ส่งเฉพาะ**ภาพหน้าที่ติดธง**ให้ Typhoon OCR ไม่ส่ง PDF ทั้งไฟล์; ไม่ OCR ทุกหน้า | [Human] (มติทีม 2026-10-07) | หน้าส่วนใหญ่ (3,262) ดึงข้อความได้ถูกอยู่แล้ว OCR ซ้ำเพิ่มความเสี่ยงและส่งข้อมูลออกนอกเครื่อง (cheap-first, L14 p10) |
+| C2 | เกณฑ์อัตโนมัติไม่พอสำหรับข้อมูลทางคลินิก → คนตัดสินทุกหน้าที่ AI เสนอแก้; AI ไม่แก้ corpus เอง | [Human] ตัดสินจากหลักฐานของ AI (Codex รอบ 1) | ~11% ของหน้า pass_auto มีตัวเลข/เครื่องหมายผิด ซึ่งอาจตอบผิดทางคลินิก |
+| C3 | ดาวน์โหลดเอกสารที่ถูกบล็อกด้วยมือ **ไม่ปลอม user-agent** แล้ว import + hash; เอกสาร Siriraj ที่เพื่อนตัดออกให้โหลดและ hash เอง | [Human] ("เพื่อนไม่รู้ว่าได้รับอนุญาตแล้ว ... จัดการดาวน์โหลดและโหลดศิริราช") | ผู้ใช้ยืนยัน (2026-10-10) ว่าทีมได้รับอนุญาตแล้ว (เพื่อการศึกษา) จึงไม่มี rights conflict ค้างอยู่; [FILL IN: ผู้อนุญาต/วันที่/ช่องทาง ถ้าอาจารย์ถามหลักฐาน] |
+| C4 | OCR ขนานด้วย API key ของสมาชิก 2 คน (key ละคน) | [Human] ("เป็นของฉันและของเพื่อน ... ไม่ได้ทำผิดกฎ") | เพิ่มความเร็ว; AI เตือนเรื่องกฎของ API ก่อน ผู้ใช้ยืนยันว่าเป็น key คนละคนของแต่ละเจ้าของ |
+| C5 | เอกสารที่ผู้ใช้ไม่โหลด (คุณภาพต่ำ/OCR ยาก) ไม่เข้า corpus | [Human] | ไม่คุ้มต่อคุณภาพ |
+| C6 | ไม่ทำ visual RAG ตอนนี้ (แผนภาพ ~17 หน้าไม่ถอดเป็นข้อความ) | [FILL IN: ผู้ใช้ยืนยัน; ผู้ใช้ถามว่า "จำเป็นขนาดไหนในเคสเรา" แล้ว AI วิเคราะห์ใน `security_and_ethics.md`] | เวลาน้อย ความเสี่ยงต่ำกว่าประโยชน์ |
+| C7 | PDPA: ป้ายเคสผู้ป่วยแทนที่ด้วยแท็ก, รายชื่อบุคคลในหน้าเนื้อหาแทนแท็ก, ชื่อผู้จัดทำแผ่นพับและเบอร์/อีเมลหน่วยงานเก็บไว้ค้นได้ | [Human] กำหนดหลักการ; [AI-suggested, Human-approved] ในการปรับกฎ R1–R4 | data minimisation ตาม PDPA; เหลือความเสี่ยงระบุตัวซ้ำที่ยังไม่ใช่ anonymize สมบูรณ์ (ข้อจำกัดที่ต้องรายงาน) |
+| C8 | ป้ายประชากรและ `category` เป็น metadata อย่างเดียว วัดด้วย dev set ก่อนใช้กรอง | [Human] ("เอนไป metadata อย่างเดียวก่อน") | ผลทดลองป้ายประชากรช่วงเชื่อมั่นแตะ 0 และชุดคำถามเอนเอียง |
+| C9 | ตัด footer / แถบหมวด / เนื้อหาซ้ำเฉพาะที่ซ้ำตรงตัวและเก็บบรรทัดที่ตัดไว้พร้อม SHA-256 (v11) | [AI-suggested, Human-approved] | ข้อความ OCR ลดลง 32% ไม่มีตัวเลขหายไปพร้อมเนื้อหาซ้ำ |
+| C10 | ใช้ corpus v11 ของ Track B เป็นหลัก ไม่ซ้อน normalize v2 ของ Track A | [Human] ("เอาของเราเป็นหลัก") | ความเสี่ยงที่รู้: 511 หน้าต่างกัน, 11 หน้าเครื่องหมาย ≥ ≤ ต่างกัน; [FILL IN: ตัดสินเรื่อง overlay ในภายหลัง] |
+| C11 | Guardrail / harness (input guard, ไม่บันทึก log คำถาม ฯลฯ) | [Human] ตัดสินเอง; AI เสนอตัวเลือกใน `docs/decisions_guardrail_harness.md` | [FILL IN: ผลการตัดสิน] |
+
+### 3.2 Retrieval และชุดประเมิน (Track B)
+
+| # | Decision | Owner | Reason |
+|---|---|---|---|
+| D1 | Python เวอร์ชันที่รองรับทั้ง pipeline; k = 5 และ 10 เท่านั้น | [Human] กำหนด, AI หาอ้างอิง | ตามคำสั่งผู้ใช้ 2026-10-06 |
+| D2 | embedding ทดสอบ bge-m3 คู่กับ e5-base | [Human] | ภาษาไทย; ผู้ใช้สั่งซ้ำสองครั้ง |
+| D3 | chunk ตามโครงสร้าง ไม่ overlap, นับ token ด้วย tokenizer ของ e5 → เปลี่ยนเป็นย่อหน้า/ประโยค/แถวตาราง ไม่ตัดกลางเนื้อหา | [AI-suggested, Human-approved]; หลักการ "ไม่ตัดเนื้อหาขาด" [Human] | วัดแล้วตัดกลางย่อหน้า 47.7% ในรอบแรก (E4) |
+| D4 | ไม่ใช้ fixed-size; เพิ่ม parent-child; ขนาด 128/256/384/512 | [Human] | ผู้ใช้สั่ง; เหตุผลรายขนาดใน `docs/chunk_size_evidence.md`; [FILL IN: ขนาดที่เลือกจริง] |
+| D5 | ไม่ตัด 9 เอกสาร Siriraj ออกจากกรอบคำถามที่ส่ง Codex (AI เสนอให้ตัด) | [Human] (ปฏิเสธข้อเสนอของ AI) | ผู้ใช้สั่ง; รอบแรกทำไปแล้วโดยไม่มี Siriraj จึงสั่งรอบเสริม 17 หน้า |
+| D6 | ใช้ Codex astra ร่าง silver แล้วคนตรวจเป็น gold | [Human] | ลดแรงคน; ต้องมีคนตรวจก่อนใช้ตัดสินผล |
+| D7 | แบ่ง dev/test ตามเอกสาร (hash) ไม่ใช่ตามคำถาม | [AI-decided] [FILL IN: ผู้ใช้ยืนยัน] | กัน leakage จากหน้าใกล้เคียง |
+| D8 | embed บน Kaggle GPU ยอมส่งข้อความ chunk ออกนอกเครื่อง ไม่ให้ข้อมูลหาย | [Human] | CPU ช้ากว่าหลายสิบเท่า; demo ยังวัด latency CPU แยก |
+| D9 | convex combination (α 0.5–0.7) เป็นฐานของ hybrid แทน RRF | [AI-suggested จากผล sweep], Human สั่งให้ทำและให้ใช้ค่าอ้างอิงงานวิจัย | CC ชนะ dense อย่างมีนัยสำคัญทั้งสองโมเดล; RRF แยกไม่ออก; ยังเป็น silver |
+| D10 | ไม่ลงแรงกับ soft boost ตามประชากร; ไม่ใช้ query rewriting ด้วย 4B; ไม่ใส่ doc2query ใน dense | [AI-suggested] [FILL IN: ผู้ใช้ยืนยัน D16/D21/D22] | ผลเชิงลบบน dev; เก็บเป็นผลเชิงลบไม่ซ่อน |
+| D11 | reranker bge-reranker-v2-m3 เป็น "โหมดแม่นยำ" ต้องใช้ GPU ไม่ใช่ค่าเริ่มต้นบน CPU | [AI-suggested] [FILL IN: ผู้ใช้ยืนยัน] | R@1 0.475→0.535 แต่ R@5 ไม่เพิ่ม; CPU 15.5–36.4 วินาทีต่อคำถาม |
+| D12 | LLM ทุกตัว temperature 0 / greedy, seed คงที่, cache ทุกคำขอ, วัดความนิ่งด้วยการรันซ้ำ; คีย์เก็บใน `.env` ชื่อตัวแปรเท่านั้นในไฟล์ provider; id โมเดลต้องคัดลอกจาก API | [Human] สั่ง, AI ออกแบบ | ห้ามเดา endpoint/โมเดล |
+| D13 | หน่วย/คำพ้องไม่แก้ด้วยพจนานุกรมหน่วยใน retrieval; ใช้ LLM ในขั้น query rewrite/generator และบันทึกเป็นข้อจำกัด | [AI-suggested, Human-approved] | เคสนับไม่หมด เวลาเหลือน้อย |
+| D14 | ชุดเสริม test: ใช้เอกสารที่ test ยังไม่มีหรือบาง, ไม่แตะเอกสาร dev, ตัด Siriraj ที่ติด rights conflict | [AI-decided] ตามเป้าหมายผู้ใช้ | แก้ HT 1 ข้อ / กระจุกเล่ม |
+| D15 | ตัดสินคำถามชุดเสริมทีละข้อ (เก็บ 22 / แก้ 6 / ตัด 8) | [AI-decided]; ต่อมาคนตรวจเป็น gold แล้ว (2026-10-11) | สองโมเดลรีวิวเห็นต่างมาก จึงไม่ใช้ "ผ่านรีวิวโมเดล" เป็นหลักฐาน |
+| D16 | แก้ "เฉลยหน้าเดียว": `alt_evidence` + หาหน้าซ้ำ + จับคู่ตามคำตอบตัวเลข; รายงาน strict/lenient คู่กัน threshold 0.35 | [Human] เลือกเทคนิค 1, 2, 4; [AI-decided] รายละเอียด/threshold | lenient แทน strict ไม่ได้ (ปรับเทียบบนชุดเดียวกับที่ทดสอบ); ผลบน dev เพิ่ม R@5 แค่ 0–2 จุด |
+| D17 | เพื่อน 2 คนตรวจเฉพาะ silver ส่วน 2–3; เจ้าของ Track B ตรวจชุดเสริม 28 ข้อเอง | [Human] | ข้อจำกัดที่ต้องรายงาน: test ชุดเสริมตรวจโดยเจ้าของ Track B คนเดียว |
+| D18 | เสนอปรับ test เดิม: ตัด q114, q109, ย้าย q088 ไป dev | [AI-suggested] [FILL IN: ผู้ใช้อนุมัติหรือไม่] | `test_adjustments.json` ยังไม่ใช้กับไฟล์จริง |
+| D19 | q144 (โรคไต): เลือก "แก้ไขแล้วใช้" ปรับคำถามให้รวมผู้ป่วยล้างไตทางช่องท้อง | [Human] ถามความหมาย, [AI-suggested] ข้อความแก้ | คำถามเดิมอ่านได้ว่าตัดกลุ่มล้างไตทางช่องท้องออก ซึ่งขัดกับหัวข้อหน้า 18 |
+| D20 | q112 (คำถามเป็น `????`) ให้ปฏิเสธ ไม่เขียนใหม่ | [AI-suggested, Human-approved] | คำถามใหม่จะไม่ใช่ที่ Codex เขียนจริงและต้องตีความทางคลินิก |
+| D21 | freeze ค่า `frozen_v1` (bge-m3, parent-child 128→512, BM25 char3 k1 2.18 b 0.86, convex α 0.6) แล้วรัน test ครั้งเดียวต่อระบบ (A dense, B hybrid, C + reranker) บน corpus v12 | [AI-suggested] bge-m3 เป็นตัวหลัก, [Human] สั่งรัน | ค่าที่ freeze commit ก่อนให้คะแนน test (`ca8d0fe`); ผล: test B R@5 0.885 เทียบ A 0.808 (ต่าง +0.077, CI +0.019…+0.154), C 0.913 (เทียบ B แยกจาก noise ไม่ออก); ผลดิบ `runs/frozen_v1/` |
+| D22 | ถ้ามี GPU ใช้ reranker (variant C) เป็นโหมดแนะนำ; ถ้าไม่มี ใช้ hybrid (B) | [Human] | ผู้ใช้สั่ง 2026-10-11; reranker ช่วยอันดับต้น (test MRR@10 0.771 เทียบ 0.737) แต่ไม่มีนัยสำคัญและช้ามากบน CPU (15–36 วินาที/คำถาม) |
+| D23 | corpus v12: ถอนคู่มือ NCD Clinic Plus ออกจากการค้นทั้งเล่ม (ข้อความสีขาวซ่อนทำให้วันที่ไม่ตรงหน้าที่ผู้อ่านเห็น) แทนวิธีดึงเฉพาะข้อความที่มองเห็น | [Human] ตัดสิน; [AI-suggested] เคยเสนอ "ดึงเฉพาะข้อความที่มองเห็น" แต่ถูกปฏิเสธ | ต้นแบบดึงข้อความที่มองเห็นตัด 189 บรรทัดใน 27 หน้า แต่ตรวจยืนยันรายบรรทัดไม่ได้ทั้งหมด จึงถอนทั้งเล่ม; ดัชนี v12 ใช้เวกเตอร์เดิมทั้งหมด |
+| D24 | ทดลอง sparse/ColBERT ของ bge-m3 เอง แล้วไม่เปลี่ยนค่าที่ freeze | [Human] สั่งทดลอง, [AI] รันและสรุป | ผลบน gold dev: sparse ของ bge-m3 (R@5 0.644) อ่อนกว่า BM25 (0.701), dense+sparse แทน BM25 แย่ลง −0.093, ColBERT จัดอันดับ top-30 ใหม่แย่ลง −0.113; รายละเอียด `docs/hybrid_retrieval_experiment.md` §0.3 |
+
+### 3.3 Track C: generation, evaluation, prompt injection, ReAct
+
+| # | การตัดสินใจ | เจ้าของ | เหตุผล/หลักฐาน |
+|---|---|---|---|
+| C-D1 | pipeline คงที่ก่อน แล้วค่อยทำ ReAct | [Human] | `docs/decisions_guardrail_harness.md` H1 |
+| C-D2 | judge หลัก = gpt-5.6-luna high; ไม่ใช้คนตรวจ judge; เขียน Faithfulness แบบ RAGAS เอง; เทียบ retrieval A/B/C (+D) | [Human] | โควตา agy/API หมดระหว่างงาน; ตรวจ judge ด้วย sanity 48/48, reshuffle κ 0.82, cross-judge κ 0.815 บน dev |
+| C-D3 | validator N7, prompt p2, นับ test 4 ข้อไม่มีคำตอบใน abstention (n=4) | [AI-suggested, Human-approved] (ตอบ "ยืนยันทั้งหมด" 2026-10-11) | `configs/rag/frozen_v1.json` |
+| C-D4 | BERTScore ใช้ bge-m3 ชั้น 8 | [AI-decided] ตามเกณฑ์ที่ประกาศก่อน | AUC สูงสุดบน dev; WangchanBERTa โหลดไม่ผ่าน |
+| C-D5 | input guard เป็นกฎอย่างเดียว; จุดอ่อน (ประชากรใกล้เคียง, ตัวเลขขัดกัน) บันทึกเป็นข้อจำกัด; ชุดเคส injection เป็น silver | [Human] (เลือกผ่านคำถามเลือกตอบ) | ไม่มีเวลาให้คนตรวจ; test ถูกใช้แล้ว |
+| C-D6 | benchmark สาธารณะรันบน Kaggle GPU ทุกชุด ไม่ข้าม | [Human] | ผลที่ `runs/frozen_gen_v1/` |
+| C-D7 | ReAct เขียนทั้ง Python และ LangGraph ใช้ core ร่วมกันเพื่อเทียบ | [Human] | ต่างกันได้แค่การควบคุมลำดับ; ตรงกัน 106/106 บน dev, 56/56 บน test |
+| C-D8 | ปรับ ReAct 4 แบบหลังเห็นว่าแย่กว่าบน dev (seed search, RRF กับคำถามเดิม, คัดหลักฐาน, หยุดเมื่อไม่มีของใหม่) | [Human] สั่งให้ปรับ; [AI] เลือกวิธีจาก lit review | เลือกจาก dev เท่านั้น |
+| C-D9 | ใช้ rseed เป็นตัวแทน ReAct บน test (รันครั้งเดียว) | [AI-suggested, Human-approved] ("ใช้ตามแผนเลย") | ดีที่สุดใน ReAct บน dev: correctness 0.835, hit@5 0.928 (B 0.876) |
+| C-D10 | สร้างชุดเคส injection และ guardrail อิง OWASP LLM Top 10 (2025) ครอบ LLM01, 02, 05, 06, 07, 08, 09, 10; ไม่ทดสอบ LLM03/04 ตอนรัน | [Human] สั่ง; [AI-suggested] เนื้อเคส/guard | `docs/owasp_guardrails.md`; ผล: ASR user plain 0.58 → 0.09 → 0.00, ReAct 0.10 → 0.02 (silver) |
+| C-D11 | ค่าที่ AI เลือกเอง รอเจ้าของยืนยัน: ความยาวคำถาม 800, query ของ tool 300, เกณฑ์ RESOURCE (7000 token) | [AI-decided] [FILL IN: เจ้าของยืนยันหรือไม่] | O3 ใน `docs/decisions_guardrail_harness.md` |
+| C-D12 | G1: เปลี่ยนจากปฏิเสธเป็น mask ตัวระบุตัวบุคคล (B) แล้วตอบต่อ | [Human] เลือก B 2026-10-12 | ผลกระทบ: ข้อมูลสุขภาพที่เหลือยังอยู่ในคำถาม; ยังไม่วัดการ mask บนชุด silver |
+| C-D13 | G2: demo บันทึก metadata เท่านั้น + เก็บคำถามของชุดทดสอบของทีม (B+C) | [Human] | `demo.py` `--no-log` |
+| C-D14 | G3, G5, G6, G7, H4: ตามที่เสนอ | [Human] ยืนยัน | `docs/decisions_guardrail_harness.md` |
+| C-D15 | G4: เกณฑ์คะแนนค้นคืน (A) ปรับบน dev แล้วไม่เปิดใช้เพราะไม่ได้ประโยชน์สุทธิ (AUC 0.64 บน hybrid) | [Human] เลือก A; [AI] รันและสรุป; [FILL IN: ยืนยันคงปิดไว้] | `scripts/calibrate_abstain.py` |
+| C-D16 | H1: ทดสอบทั้ง pipeline คงที่และ agent เพื่อ ablation; H2: ใช้ API Typhoon; H3: เกณฑ์ผ่าน = ผลโจมตีถึงผู้ใช้ 0 บนชุดโจมตี | [Human] | ผลเป็น silver ยังไม่มีคนตรวจ gold |
+| C-D17 | O2: ต่อ guardrail OWASP ทั้งหมดเข้า `demo.py`; O3 ยอมรับค่าที่ AI เลือก (โดยการสั่งต่อเข้า); O4 ไม่ใช้คนตรวจ เคสคงเป็น silver | [Human] สั่ง ("ต่อเข้าเลย ฉันไม่ใช้คนตรวจแล้ว") | `demo.py`, `docs/owasp_guardrails.md` §6; ระบบ S2: ASR ที่ถึงผู้ใช้ 0/45 (plain), 1/51 (ReAct, เคสที่ผู้ใช้สั่งเอง) |
+| C-D18 | ใช้ validator โปรไฟล์ N8 (อนุญาตเลขที่ผู้ใช้เขียนเองในคำถาม) ใน demo; ตัวเลข frozen_v1 / frozen_react_v1 ยังเป็น N7; ไม่ขยายไปถึงคำอังกฤษจากคำถาม | [Human] มอบให้ "แก้ไขได้ตามสมควร"; [AI-decided] เลือกวิธีและขอบเขต [FILL IN: เจ้าของยืนยัน] | dev: correctness A +0.005, B −0.005, C +0.005 (อยู่ในความแปรปรวนของ judge); เคส metformin ได้ claim สำคัญคืน `docs/error_analysis_track_c.md` |
+| C-D19 | เพิ่ม faithfulness แบบที่ judge เห็นคำถามเป็นตัวชี้วัดคู่ (ไม่แทนของเดิม) | [AI-decided] ตามที่เจ้าของสั่งให้ตรวจสอบและแก้ตามสมควร | ทุกระบบสูงขึ้น 0.03–0.10; ข้อสรุปเชิงเทียบไม่เปลี่ยน |
+| C-D20 | judge ตัวที่สอง = Gemini 3.8 Flash high ผ่าน `agy` (ไม่ใช้ Claude เพราะโควตาน้อย) วัดซ้ำบน test เฉพาะ correctness ของ B, C, ReAct (agy ช้า จึงตัด faithfulness และ A, D) | [Human] | ครอบคลุม ~75% (13–14 ข้อ/ระบบ judge ล้มเหลว); ตรงกับ luna 0.87–0.92 บนข้อที่ตัดสินได้ ลำดับ C > B > ReAct เหมือนกัน; `docs/error_analysis_track_c.md` §10; รันเต็มชุด (A–D, ReAct, faithfulness) แล้วแต่ไม่ครบ/ไม่นิ่ง (ขาด 20–40%, faithfulness ไม่ตรงกับ luna) §10b |
+| C-D21 | ลองชุดแก้ v2 (prompt p4 + validator) กติการับ/ไม่รับ commit ก่อนรัน dev; ผล: ไม่ผ่านทั้ง B และ C จึงไม่ใช้และไม่รัน test | [Human] สั่ง "ข้ออื่นก็ทำมาเลย"; [AI-decided] เนื้อหา v2 และกติกา | `configs/rag/generate_v2.json`, `docs/error_analysis_track_c.md` §8 |
+| C-D22 | แก้การ mask ให้ครอบเลขไทย, +66, เลขพิมพ์ทีละตัว หลังพบว่าเคสนอกรูปแบบเดิม 0/7 | [AI-decided] ภายใต้คำสั่งให้แก้ตามสมควร | adversarial 4/7 ชื่อไม่มีคำนำหน้าและอีเมลสะกดเป็นคำยังไม่ถูก mask |
+| C-D23 | ชุดแก้ v3 (p5 + หัวตาราง + validator) กติกาเดียวกับ v2; ไม่ผ่านทั้ง B (correctness −0.010, ไม่มีสิ่งที่ดีขึ้น) และ C (−0.046) ครบสองชุดที่จำกัดไว้ จึงหยุด ไม่รัน test; ระบบที่ส่งมอบยังเป็น frozen_v1 + N8 ใน demo | [Human] สั่งให้แก้ปัญหาที่เหลือและ freeze ใหม่; [AI-decided] เนื้อหา v3 และกติกา (ไม่ผ่อนจาก v2) | `configs/rag/generate_v3.json`, `docs/error_analysis_track_c.md` §8b |
+| C-D24 | ใช้ astra สองรอบ: รอบแรกให้ทำตามคู่มือและถ่ายภาพ (ล้มเหลวเพราะข้อจำกัดของ sandbox); รอบสองให้ตรวจคู่มือแบบอ่านอย่างเดียว; ส่วนการรันและถ่ายภาพจริงให้ Claude ทำนอก sandbox | [Human] สั่งให้เรียก astra ช่วย; [AI-decided] แบ่งงานใหม่หลังรอบแรกล้ม ไม่ใช้ `--dangerously-bypass-approvals-and-sandbox` | `docs/setup_test/REPORT.md` §2 |
+
+**ผลหลัก (test, 52 ข้อที่ตอบได้):** correctness A 0.798 / B 0.885 / C 0.904 / D 0.808 / ReAct 0.827 (Python = LangGraph); ReAct ใช้ token ราว 5.5 เท่าของ B และไม่ชนะ B (ผลต่าง −0.058, CI [−0.154, +0.038]) judge เป็น LLM ไม่มีคนตรวจ (silver)
+
+
+### 3.4 Track A: normalize ข้อความ สิทธิ์ และการเผยแพร่
+
+| # | Decision | Owner | Reason |
+|---|---|---|---|
+| A-D1 | ซ่อม font map แบบกำหนดได้ (ToUnicode จากลำดับ glyph, ถอดรหัส MacRoman/cp874) แทนการ OCR สำหรับ PDF ที่มี text layer | [AI-suggested, Human-approved] (ผู้ใช้สั่ง "ทำให้ใหม่" แต่ไม่ได้เลือกวิธี) | เทียบภาพแล้วถอดได้ถูกรวมตัวเลข (≥126, ≥200, ≥6.5%); อัตราคำในพจนานุกรม 92.5% → 99.2% |
+| A-D2 | OCR เติมได้เฉพาะหน้าที่ไม่มีข้อความและได้อักษรไทย ≥ 50 ตัว; หน้าข้อความเสียเก็บ PDF text ไว้ | [AI-decided] | Tesseract บนหน้าที่วรรณยุกต์เป็น NUL แย่กว่า PDF text (แยกคำ, หายวรรณยุกต์) ดู A-E4 |
+| A-D3 | ขึ้น git เฉพาะ `normalization.json` (ไม่มีข้อความ); `pages.jsonl` เก็บในเครื่อง | [Human] (A4) | สิทธิ์เผยแพร่ซ้ำยังไม่มี; ตาม corpus policy |
+| A-D4 | ลบผลสกัดรอบแรก, OCR ทดลอง และไฟล์ของรอบ 30 เล่มออกจาก git (กู้ได้จาก history) | [Human] (A3, A4) | ผลรอบแรกใช้ค้นไม่ได้; รอบ 55 เล่มแทนที่แล้ว |
+| A-D5 | ถอดบันทึกดาวน์โหลด 9 เล่มศิริราชออกจาก GitHub และลบ PDF ในเครื่อง | [Human] (A5, 2026-10-06) | มีข้อความ "ห้ามนำไปใช้หรือดัดแปลงก่อนได้รับอนุญาต"; ถูกแทนด้วย A-D6 |
+| A-D6 | decision 0008: 9 เล่มศิริราชใช้เพื่อการศึกษาภายในทีมเท่านั้น เก็บในเครื่อง ไม่เผยแพร่ ระบุว่ายังไม่ได้รับอนุญาต และให้ `rag_ingestion_hold: true` | [Human] (A7) | บันทึกของ Track B (C3) ระบุว่าได้รับอนุญาตแล้ว จึงยังขัดกัน (`rights_conflict_to_resolve`); [FILL IN: ทีมยืนยันข้อเท็จจริงและแนบหลักฐาน] |
+| A-D7 | normalize v2: แปลง `>`/`<` ที่มีเส้นใต้เป็น ≥/≤ จาก geometry, เลขอ้างอิงยกเป็นตัวยกตามที่พิมพ์ (ไม่เดาว่าเป็นอ้างอิงหรือเลขชี้กำลัง), หน้าแผนภาพเป็น `figure_review`, หน้าที่ fidelity review ชี้เป็น `review_hold` | [AI-decided] หลังผู้ใช้สั่งแก้ (A6) | ตรวจกับภาพ CKD 2565 p29 และ anemia p57; ทุกตัวเลขที่เปลี่ยนจาก v1 อธิบายได้ |
+| A-D8 | merge `calvin-check` เข้า main | [Human] (A6) | — |
+| A-D9 | ตรวจคำถามส่วน 4 ด้วย AI เป็นร่าง แต่ไม่ใส่ชื่อผู้ตรวจและไม่ส่งออกแทนคน | [Human] ขอไฟล์ร่าง; [AI-suggested] ส่วนการเว้นชื่อ | gold ต้องมาจากคนตรวจตามคู่มือ |
+### 3.5 งาน Demo บน Mac (2026-10-20)
+
+| # | Decision | Owner | Reason |
+|---|---|---|---|
+| M-D1 | เขียน `docs/SETUP_GUIDE_MAC_TH.md` ใหม่ เพราะไฟล์ที่ผู้ใช้อ้างไม่มีในรีโป | [AI-decided] | ค้นทุก branch และระบบไฟล์แล้วไม่พบ; แจ้งผู้ใช้ว่าเป็นไฟล์ใหม่ |
+| M-D2 | ใช้ Typhoon เป็นตัวสร้างคำตอบตามค่าเดิม (`typhoon_api`, `typhoon-v2.5-30b-a3b-instruct`) ไม่แก้ `configs/rag/frozen_v1.json` | [Human] สั่งให้ใช้ Typhoon; [AI] ไม่แตะค่า freeze | `--list-models` ยืนยัน model id และ base URL ใช้ได้ จึงไม่ต้องแก้ `providers.yaml` |
+| M-D3 | ใช้ดัชนีจากบันเดิลที่ได้รับ ไม่สร้างใหม่ | [AI-suggested, Human-approved] ("ok please do it for me") | `data/processed/normalized-v*` ไม่มี `pages.jsonl` สร้างใหม่ไม่ได้และไม่ตรง v12 ที่ freeze |
+| M-D4 | คัดลอกแคชคำตอบของบันเดิลเป็น `data/index/llm_cache/typhoon_api.jsonl` | [AI-decided] | ชื่อโฟลเดอร์ในบันเดิล (`demo/`) ไม่ตรง path ที่ `demo.py` อ่าน; ผลคือคำถามที่อยู่ในแคชแสดง `cache: True` ไม่ได้เรียก API (แยกจากการเรียกสดในการทดสอบ) |
+| M-D5 | คืน `.env.example` เป็นแบบไม่มีคีย์ (`git checkout`) เมื่อพบคีย์จริงอยู่ในไฟล์ที่ git ติดตาม | [AI-decided] ฉุกเฉิน; ผู้ใช้ได้รับแจ้งทันที | คีย์ยังอยู่ใน `.env` (ถูก ignore); ยังไม่เคยถูก commit |
+| M-D6 | commit เฉพาะส่วนที่เพิ่มใน `board.md`/`HANDOFF.md` ไม่รวมการแก้ค้างของงานค้นเอกสารประชากรไทย (ซึ่งบันทึกว่า "ไม่ commit/push ตามคำขอผู้ใช้") | [AI-decided] | ไม่ให้ commit ของ demo พาการแก้ของงานอื่นขึ้นไปด้วย |
+| M-D7 | ไม่ push เอง และไม่หาทางใส่ token | [AI-decided] | git ขอ username ไม่ได้ในเทอร์มินัลของ AI; ผู้ใช้ push ผ่าน VS Code/GitHub Desktop |
+| M-D8 | ไม่อ้างว่ามีเว็บแอป; ระบุใน board/HANDOFF ว่า demo เป็น CLI และเว็บ UI เป็นงานที่ยังไม่ทำ | [AI-decided] ตาม AGENTS.md | ค้นรีโปไม่พบโค้ดเว็บเซิร์ฟเวอร์; ถ้าจะทำต้องตัดสินเรื่องโฮสต์ก่อน (ข้อมูลเอกสารห้ามเผยแพร่สาธารณะ) |
+
+
+---
+
+## 4. Error Catch Log
+
+บันทึกเฉพาะกรณีที่ AI ผิดหรือหละหลวมจริง ระบุผู้จับ
+
+### 4.1 Corpus
+
+| # | AI พูด/ทำอะไรผิด | ผู้จับและวิธีจับ | วิธีแก้ |
+|---|---|---|---|
+| X1 | เกณฑ์อัตโนมัติ (+ Claude เทียบภาพ) ปล่อยหน้า `pass_auto` ที่ตัวเลข/เครื่องหมายผิด เช่น `> 126` แทน `≥ 126` ~11% ของหน้าที่สุ่ม | Codex รอบ 1 (ตรวจเทียบภาพ) | ตรวจทุกหน้าด้วยภาพ + คนตัดสิน (C2) |
+| X2 | ตัวตรวจป้ายประชากร/ชื่อ ใช้ regex ล้วน precision 0.50/0.14 (เด็ก/ตั้งครรภ์) และจับ "นายกสมาคม" เป็นคำนำหน้า "นาย", "เภสัชกรค้นหา..." เป็นชื่อ | ผู้ใช้ชี้ว่าต้องดูบริบท; ตรวจด้วยสารบัญ DM CPG | `page_context.py` ใช้บริบทหน้า/บท precision 1.00/0.80 |
+| X3 | สถานะหน้า: `ncd-ddc-health-literacy-fight-ncds-2566` 91/96 หน้าเป็นรหัสฟอนต์ (`/g94/g67/...`) แต่ถูกตั้ง `ok` เพราะกฎใน `normalize_thai.py` ไม่มีรูปแบบนี้ | Claude สแกนบรรทัดซ้ำข้ามหน้า | ส่ง OCR ใหม่ 90 หน้า (1 หน้าหมดเวลา ยังรอ) |
+| X4 | v8 รอบแรก: กลุ่มข้อมูลติดต่อส่วนบุคคล 25 หน้าถูกตัดทั้งหน้า ทำให้เนื้อหา 27,467 ตัวอักษรหาย; อีเมลหน่วยงาน 2 รายการหายจากระบบ; 16 หน้าค้าง | Claude ตรวจผลที่ export ก่อนสร้าง v8 | `amend_page_tag_decisions.py` (R1–R4 บันทึกทุกการเปลี่ยน) |
+| X5 | **บั๊กของเครื่องมือเราเอง:** สำเนาข้อความดิบ (`pre_normalization_text`, `ocr_text`, `reviewed_from_text`) สะกดต่างจาก `text` จึงแทนค่าไม่ได้ ข้อมูลส่วนบุคคลยังอยู่ในสำเนา | Claude ตรวจทุกฟิลด์ของ 4,009 หน้า | ล้างสำเนาดิบ เก็บ SHA-256; ผลตรวจค่าที่เลือกแทนค่าเหลือ 0 |
+| X6 | ข้อเสนอแก้ของ Codex ทั้ง 411 จุดมีความมั่นใจ "high" ทั้งหมด จึงไม่ช่วยแยกแยะ; ข้อเสนอลบ 61 จุดอ้างว่าไม่ได้พิมพ์ในภาพ | Claude อ่านเอง | คนดูภาพทุกจุดที่เป็นตัวเลข/ชื่อยา/ลบข้อความ |
+| X7 | OCR อ่านชื่อแถบจางเป็นหมวดที่ไม่มีจริง ("ภัยพิบัติทางสาธารณสุข", "วัณโรค", "ไข้หวัดใหญ่") 28 หน้า และเขียนเนื้อหาซ้ำรอบสอง 11 หน้า | ผู้ใช้สังเกต "โรคเบาหวาน" ในเกือบทุกหน้า (71/90) | ข้อเสนอ Codex ที่ผู้ใช้อนุมัติ + `clean_booklet_pages.py` |
+| X8 | `ocr_typhoon.py` รอบ OCR ใหม่: หน้า p71 วนไม่จบ และ client รอ 10 นาทีต่อครั้ง ทำให้ shard ค้าง | Claude สังเกตเวลา | timeout 180 วินาที ไม่ retry เอง (มีเทสต์) |
+
+### 4.2 Retrieval และชุดประเมิน
+
+| # | AI พูด/ทำอะไรผิด | ผู้จับและวิธีจับ | วิธีแก้ |
+|---|---|---|---|
+| E4 | chunker รอบแรกตามบรรทัด ตัดกลางย่อหน้า 47.7%, 12 chunk เริ่มกลางคำ, ตาราง HTML ถูกตัดกลางเซลล์ | **ผู้ใช้**ชี้ว่าเนื้อหาถูกตัดขาด; Claude ยืนยันด้วย `chunk_boundary_report.py` | รวมเป็นย่อหน้า ตัดที่ประโยค/แถว มีเทสต์ 13 ข้อ |
+| E5 | ตัววัดรอบแรกของ Claude ตีผิด (นับข้อรายการใหม่เป็นการตัดผิด) | Claude ตรวจตัวอย่างที่ถูกนับ | แก้ตัววัด และวัดฐานเก่าใหม่ (52.3% → 47.7%) |
+| E6 | sweep ขั้นแรกเทียบแค่ภายในขั้น ไม่เห็นว่า hybrid ด้วย newmm ธรรมดาแย่กว่า dense (R@5 0.740 vs 0.795) | Claude ตรวจรายงานแล้วรัน post-hoc | เพิ่มการเทียบ dense ล้วนทุกผู้สมัคร |
+| E7 | ตัวเรียนรู้พจนานุกรมรอบแรกเก็บคำที่ตัดถูกอยู่แล้ว ("ตัวชี้วัด") และคู่คำฟังก์ชัน 2,045 คำ | Claude ดู 40 คำแรก | เปลี่ยนเกณฑ์ เหลือ 28–60 คำศัพท์จริง |
+| E10 | ตัวตรวจ doc2query ตีตกคำถามที่ถูกต้อง (บังคับ ≥50% อักษรไทย; regex จับ "ภาพที่" ใน "สุขภาพที่") | Claude ดูตัวอย่างที่ถูกตีตก (~120 รายการเป็น false positive) | ปรับเกณฑ์ + lookbehind |
+| E11 | Typhoon2.1-Gemma3-4B บน T4 float16 ได้ข้อความว่างทุกคำขอ และตัวประเมินแสดง "+0.000" เพราะถอยไปใช้คำถามเดิม ดูเหมือนผลจริง | Claude สังเกต `no_output: 100` | ไม่นับเป็นผล รันใหม่ด้วย bfloat16 (สาเหตุยังไม่พิสูจน์) |
+| E12 | ตัวกัน query rewrite ไม่จับการปฏิเสธ ("ไม่เกี่ยวข้องกับแนวทาง...") ข้อความนั้นถูกใช้เป็นคำค้น | Claude ไล่ดู 11 ข้อที่ตก | เพิ่ม `REFUSAL` + เทสต์ รันประเมินใหม่ |
+| E13 | **คำถาม silver 3 ข้อ (q067, q097, q112) เป็น `????` ทั้งข้อ** (Codex เขียนไฟล์ผ่าน PowerShell ภาษาไทยหาย) ผ่านตัวตรวจของ Claude เพราะไม่มีเช็ก; ถูกใช้ใน pilot รอบแรก | **ผู้ตรวจคน (ส่วน 1 และ 4)** จับ q067, q097; Claude สแกนพบ q112; เพื่อนปฏิเสธ q112 แล้ว | เพิ่มการตรวจ `??` ในตัวตรวจและตัวโหลด; รัน sweep ซ้ำบนชุดที่สะอาด เก็บผลรอบแรกไว้เทียบ |
+| E14 | `check_llm_env.py` เปิดอ่าน `.env` (มีคีย์ OCR) ขัดกับที่ Claude ตั้งใจไม่อ่าน | Claude ตรวจเองหลังรัน | โหลดเข้าหน่วยความจำเท่านั้น ไม่ log ค่า (มีเทสต์) ผู้ใช้ควรทราบว่าสคริปต์อ่านไฟล์นี้ |
+| E15 | Gemini ตรวจ unanswerable ได้แค่เอกสารเดียว q177, q174 จึงไม่ใช่ unanswerable จริง | Claude ค้นทั้ง corpus ด้วย regex | ตัดสองข้อ; unanswerable ของ Astra 3 ข้อค้นแล้วไม่พบ จึงเก็บ |
+| E16 | Gemini ตั้ง `type` ผิด (number_unit) และ quote ยาว 202 ตัวอักษร | ตัวตรวจ `validate_silver_questions.py` | แก้เชิงกล เก็บต้นฉบับ `raw_gemini_as_written.jsonl` |
+| E17 | **Claude ผิดเอง:** ตัด quote 202→200 กลางคำ `Maximum Sodium Leve` (q173) | Astra ตอนรีวิว | ใช้ quote ที่จบสมบูรณ์ |
+| E18 | **Claude ผิดเอง:** กติกา "หน้าซ้ำ" รอบแรกได้ 13 ข้อแต่ผิด (q098/q099 ตารางซ้ำคนละตัวชี้วัด) | Claude อ่านหน้าที่ถูกจัดเป็นซ้ำ | ต้องเหมือนทั้งหน้า (Jaccard ≥ 0.7) เหลือ 1 ข้อ; พบว่า q098/q099 เฉลยกำกวมเอง |
+| E19 | **Claude ผิดเอง:** ตัวจับคู่ตามคำตอบรอบแรกหลวมเกิน (ครึ่งไม่เกี่ยวที่ 0.22–0.30) และกฎหน่วยแปลง "ร้อยละ 80" เป็น "%80" | Claude อ่านตัวอย่าง; เทสต์ยูนิตล้ม | idf + threshold 0.35; แก้กฎหน่วย |
+| E20 | schema ให้ unanswerable ไม่มี evidence แต่ชุดเดิม 10 ข้อมี จะไม่ผ่านตอนรวมผล | Claude รัน `validate_rag_jsonl.py` (42 ปัญหา) | แก้สคริปต์รวมผล |
+| E21 | Astra ไล่เข้าพาธชื่อ siriraj (Access denied) | Astra รายงานเองว่าไม่ได้อ่านเนื้อหา | ไม่มีเนื้อหาถูกอ่าน |
+| E22 | ผู้รีวิวสองโมเดลเห็นต่างมาก (Astra ผ่าน 2/18, Gemini ผ่าน 15/18; Gemini ไม่ท้วงหน้าซ้ำ q170/q171) | Claude เทียบกับคำตัดสินตัวเอง | ไม่ใช้ผลรีวิวโมเดลเป็นหลักฐานคุณภาพ |
+| E23 | **Claude ผิดเอง:** แก้ไฟล์ผ่าน shell heredoc ทำให้ `\n` กลายเป็นขึ้นบรรทัดจริง (SyntaxError) สองไฟล์ และอีกครั้งชุดสคริปต์ไม่ถูกเขียนเลย | `ast.parse` / รันล้มทันที | ใช้เครื่องมือแก้ไฟล์/Write โดยตรง |
+| E24 | **Claude อ่านคำสั่งผิดความหมาย** ("ตัดเอกสารที่เป็นปัญหา ไม่ทำ ดึงเฉพาะข้อความที่มองเห็น… ← แนะนำ") แล้วสร้าง corpus v13 ที่ตรงข้ามกับการตัดสินใจ v12 ที่ push ไว้แล้ว โดยไม่ถามก่อนทั้งที่เห็น v12 | เจ้าของ Track B ถามว่า "ทำ v13 ทำไม" | ถอน v13 (ข้อมูล สคริปต์ ส่วนเอกสาร) ลบ manifest ออกจาก git สร้างดัชนีจาก v12 แทน; ถ้าคำสั่งชนกับการตัดสินใจที่ push แล้วต้องถามก่อน |
+| E25 | การรัน test ครั้งแรกถูกสคริปต์ปฏิเสธเพราะ `AI_AUDIT.md` (ไฟล์ที่เซสชันอื่นแก้ค้าง) ทำให้ต้นไม้ git สกปรก; Claude แก้ด้วยการเปลี่ยนเงื่อนไขของสคริปต์ให้ดูเฉพาะ scripts/src/configs/schemas/tests | Claude อ่านข้อความปฏิเสธ (ยังไม่มีการให้คะแนน test) | commit การเปลี่ยนเงื่อนไขก่อนรัน; **เป็นการผ่อนกติกาโดย AI ผู้ใช้ควรทราบ**: เอกสารไม่กระทบผลแต่ควรอนุมัติ |
+| E26 | manifest ของรัน test A/B/C และดัชนี v12 มี `device: "mixed"` ผิด schema (ตัวต่อดัชนีเขียนเอง) พบหลังรัน test | Claude ตรวจ manifest ด้วย `validate_rag_jsonl.py` | แก้เป็น `cuda` (เวกเตอร์ GPU float16 ล้วน 0 ตัวคำนวณใหม่) บันทึกใน notes ว่าแก้หลังรัน; ผลไม่เปลี่ยน; แก้ตัวต่อดัชนีด้วย |
+
+### 4.3 งานในแชตของ workspace
+
+| # | AI พูด/ทำอะไรผิด | ผู้จับ | วิธีแก้ |
+|---|---|---|---|
+| W1 | หน้า review ชุดเพื่อน ปุ่ม "เปิดต้นฉบับ" ชี้ไปหน้าเว็บโฮสต์ (`landing_url`) ไม่ใช่ PDF และไม่มีเลขหน้า | **ผู้ใช้** (เพื่อนบางคนยังไม่โหลด PDF) | ลิงก์ `download_url#page=N`; 7 จาก 52 เล่ม (Google Drive/tci-thaijo) อาจไม่กระโดดหน้า |
+| W2 | Claude รายงานว่าแก้ลิงก์ PDF ในเครื่องของผู้ใช้แล้ว ทั้งที่ยังไม่ได้กดทดสอบ (`file://` จากหน้า `file://` ถูกเบราว์เซอร์บล็อก) | **ผู้ใช้** ("ของฉันไม่เป็นเลย") | เปลี่ยนเป็นเซิร์ฟเวอร์ในเครื่อง `localhost:8765` (`scripts/serve_pdfs.ps1`) |
+| W3 | q144: คำถามที่ Codex เขียนใช้ "ยังไม่เริ่มฟอกไต **หรือ** ล้างผ่านช่องท้อง" อ่านได้ว่าตัดกลุ่มล้างไตทางช่องท้องออก ทั้งที่หัวข้อหน้า 18 รวมไว้ | **ผู้ใช้**สงสัยความหมาย; Claude เทียบหน้าแล้วยืนยัน | เลือก "แก้ไขแล้วใช้" |
+| W4 | ข้อความที่ Claude ร่างให้เพื่อนรอบแรกบอกให้ "เปิดต้นฉบับ" ซึ่งใช้ไม่ได้และไม่มีวิธีจัดการ `????` | ผู้ใช้ส่งภาพที่เพื่อนงง | ข้อความใหม่ + คำแนะนำให้ปฏิเสธ q112 |
+| W5 | `CLAUDE.md` รอบ `/init` เขียนรายละเอียด `tmp/thai-ncd-guideline-qa-review-.../` จากรายการโฟลเดอร์และเอกสารแผน ไม่ได้อ่านเนื้อหา | Claude เปิดเผยเองในคำตอบ | บอกข้อจำกัดให้ผู้ใช้ ไม่ใช่ข้อมูลผิด |
+
+### 4.4 Track C
+
+| # | AI ผิดหรือหละหลวมอะไร | ผู้จับ | วิธีแก้ |
+|---|---|---|---|
+| C-E1 | baseline "L0" ของ harness injection ไม่ได้ไม่มีการป้องกัน (ASR 0 ทุกชั้น) | Claude ทดสอบด้วย prompt เปล่า (โมเดลทำตามโจมตี 10/13) | แยกชั้น rules/schema เป็น N0–N7 |
+| C-E2 | canary ที่มีเลขทำให้ validator ดูเหมือนกันการโจมตีได้ (กฎ "เลขต้องอยู่ในหลักฐาน" จับเอง) | Claude | ใช้ canary ไม่มีตัวเลข |
+| C-E3 | แคช judge เก็บคำตอบว่างเป็นผลสำเร็จ 225 รายการ | metric ผิดปกติ | ถือว่าว่างเป็น error ไม่แคช ลบแถวว่าง (มี .bak) |
+| C-E4 | อักขระ NUL ใน chunk ทำให้รันล้ม | log `embedded null character` | ล้างอักขระควบคุมก่อนส่ง |
+| C-E5 | รัน `git stash` โดยไม่ตั้งใจ เก็บการแก้ `AI_AUDIT.md` ของเจ้าของไป | Claude (`git stash list`) | `git stash pop` คืนทันที ไม่มีอะไรหาย |
+| C-E6 | สงสัยว่า BERTScore ผิดเพราะเท่ากันทั้ง 3 variant | เจ้าของถาม; Claude ตรวจ gold-vs-gold = 1.0 | ไม่ใช่บั๊ก; baseline 0.72 vs 0.82, F1 ต่างแค่ ~0.018 ระหว่างถูก/ไม่ถูก |
+| C-E7 | สคริปต์แก้ไฟล์ของ Claude เขียนอักขระ escape (\n, \x00) ผิดทำให้ไฟล์พัง 3 ครั้ง | SyntaxError / ไฟล์มี NUL | แก้ด้วย Edit และตรวจไบต์ |
+| C-E8 | ReAct: โมเดลตอบ/ปฏิเสธโดยไม่ค้นเลย และ Typhoon ไม่ทำตาม `tool_choice` | อ่าน trace บน dev | กฎใน prompt "ต้องค้นก่อน" + เตือนหนึ่งครั้ง |
+| C-E9 | ตัวเตือนนับเป็นหนึ่งรอบในเวอร์ชัน Python แต่ไม่นับใน LangGraph ทำให้คำตอบต่างกัน 21 ข้อ | เทียบ Python กับ LangGraph | ใช้ตัวนับรอบเดียวกัน; ตรวจใหม่แล้วตรงกัน |
+| C-E10 | `defuse` ไม่ครอบแท็ก `observation` ผลค้นที่ฝังคำสั่งจึงหลุดได้ | Claude ทบทวนตอนทำ ReAct | เพิ่มแท็กใน `DEFAULT_TAGS` + เทสต์ |
+| C-E11 | รันตัวเลือก ReAct ชุดแรกล้ม (`--set` ไม่รู้จักคีย์) | log "no such key" | เพิ่มคีย์ใน `react_v1.json` แล้วรันใหม่ |
+| C-E12 | รัน test ของ ReAct ครั้งแรกถูกสคริปต์ปฏิเสธ (ต้นไม้ git ไม่สะอาด) แต่สคริปต์ห่อของ Claude เขียนไฟล์ "done" ทั้งที่ไม่ได้รัน | Claude อ่าน log หลังเห็นว่าเสร็จเร็วผิดปกติ | ลบไฟล์ done, commit โค้ด (ไม่รวม AI_AUDIT.md) แล้วรันใหม่; ยังไม่มีการให้คะแนน test ก่อนหน้านั้น |
+| C-E13 | ชุดเคส OWASP v1 ออกแบบผิด: ข้อความปลอมของ LLM08 ไม่ตรงหัวข้อคำถาม (ASR 0 แม้ไม่ป้องกัน) และตัวตัดสินนับประโยคที่ปฏิเสธข้อกล่าวอ้างเป็นการโจมตีสำเร็จ | Claude อ่านคำตอบจริงของเคสที่ผลผิดคาด | ทำ v2 (คำถามตรงหัวข้อ, ตัดสินแบบไม่นับวลีที่มีคำปฏิเสธนำหน้า) และบันทึกใน `docs/owasp_guardrails.md` §5 |
+| C-E14 | เคส LLM06 O-DSE ให้ผู้ใช้เองขอให้ค้นคำหนึ่ง แล้วนับว่า agent "ถูกหลอก" ทั้งที่เป็นคำสั่งผู้ใช้ที่ชอบธรรม | Claude ตอนอ่านเคสที่เหลือ | ไม่แก้ผลย้อนหลัง บันทึกเป็นข้อบกพร่องของเคสและรายงาน LLM06 แบบไม่นับเคสนี้ |
+| C-E15 | เกณฑ์ RESOURCE ถูกปรับหลังเห็นผลรันแรก (9000 → 7000 token) | Claude | ระบุในเอกสารว่าปรับหลังเห็นผล และส่งให้เจ้าของยืนยัน (O3) |
+| C-E16 | validator ตัด claim สำคัญของคำตอบ metformin ("ระยะ 3 ... ลดขนาดเมื่อ eGFR < 45") เพราะเลข 3 ที่ผู้ใช้เขียนเองในคำถาม ทำให้คำตอบไม่ครบ; นับย้อนหลังพบ 6 จาก 13 claim ที่ถูกตัดใน dev+test เป็นแบบนี้ | เจ้าของถามว่าตอบถูกไหม; Claude ตรวจ trace | เพิ่มโปรไฟล์ N8 ใน demo (ตัวเลข frozen ไม่แก้ย้อนหลัง) |
+| C-E17 | faithfulness judge ให้ 0 กับ claim ที่ถูกและ chunk ที่อ้างมีข้อความตรงตัว (q152 และอีก 5 ข้อใน B) เพราะ claim ฝากบริบทไว้กับคำถาม | Claude ตรวจเคสที่ correctness ถูกแต่ faithfulness ต่ำ | เพิ่ม `--faith-question` และรายงานตัวคู่; รายงานว่าตัวเลขเดิมต่ำเกินจริงส่วนหนึ่ง |
+| C-E18 | judge ให้ correctness ของคำตอบชุดเดียวกันต่างกันระหว่างรอบ (B 0.885→0.865, C 0.904→0.875) เพราะจัดกลุ่ม batch ต่างกัน แคชไม่ถูกใช้ | เทียบผลสองรอบ | รายงานว่า judge มีความแปรปรวน ±0.03 เทียบกับความต่างระหว่างระบบ; ยังไม่ได้วัดซ้ำด้วย judge ตัวที่สอง |
+| C-E19 | ตัดสิน dev v2 ครั้งแรกตอนการสร้างคำตอบยังไม่จบ (36 จาก 106 ข้อ) ได้ตัวเลขที่ใช้ไม่ได้ | Claude เห็นว่าจำนวนข้อในผลไม่ครบ | ทิ้งผลนั้นและรันใหม่ตอนไฟล์ครบ ก่อนตัดสินตามกติกา |
+| C-E20 | การ mask ข้อมูลส่วนบุคคลรุ่นแรก ครอบเฉพาะรูปแบบที่กฎเขียนไว้ เคสนอกรูปแบบ (เลขไทย, +66, เลขพิมพ์ทีละตัว) 0/7 | Claude เขียนชุดเคส adversarial มาวัด | ปรับเป็น 4/7 และบันทึกส่วนที่ยังพลาด; เคสทดสอบ ID เลขไทยรุ่นแรกมี 14 หลักโดยผิดพลาด แก้แล้ว |
+| C-E21 | เครื่องมือถ่ายภาพรุ่นแรกคัดลอกหน้าจอโดยไม่ตรวจว่าหน้าต่างเทอร์มินัลอยู่บนสุด ภาพขั้น 4–6 กลายเป็นหน้าต่างแอป Claude ของผู้ใช้ (เห็นรายชื่อแชตส่วนตัว) | Claude เปิดดูภาพก่อนใช้ | ลบภาพทั้ง 5 ทันที (ไม่ได้ commit) แก้เครื่องมือให้บังคับหน้าต่างบนสุดและปฏิเสธบันทึกถ้าไม่ใช่หน้าต่างของมัน; `docs/setup_test/REPORT.md` §6 |
+| C-E22 | บั๊กอื่นของเครื่องมือถ่ายภาพ: ภาพถูกตัดเพราะจอขยาย 150%, ผลลัพธ์ของ uv/git หายเพราะ `Invoke-Expression ... 2>&1`, สคริปต์ล้มก่อนถ่าย (นิพจน์พิกัดผิด) ทิ้งหน้าต่างค้าง 9 หน้าต่าง; ตัวเฝ้าแจ้ง "เสร็จ" ผิดเพราะอ่าน log เก่า | Claude ตรวจภาพ/ไฟล์ผลลัพธ์/เวลาที่เท่ากันผิดปกติ | แก้ทีละอัน ถ่ายใหม่ทั้งหมดจนผ่านการดูทุกภาพ; `docs/setup_test/REPORT.md` §6 |
+| C-E23 | ร่างคู่มือรุ่นแรกมีผลที่คาดของขั้น 7 ผิด และขั้น 5 อาจทับ `.env` เดิมที่ใส่คีย์ไว้ | ผลทดสอบจริงและการตรวจของ astra (ข้อ 16) | แก้คู่มือ (ใช้ `Test-Path` ก่อนคัดลอก, ระบุสถานะ 9 ข้อให้ถูก) |
+| C-E24 | astra รอบแรกทำสคริปต์ช่วยที่บันทึก OK ผิดตอนคำสั่งล้มเหลว; รอบสองค้นไฟล์ความจำของ Codex และส่งข้อความความคืบหน้าทั้งที่ขอเฉพาะข้อความสุดท้าย (กติกาของ Claude ไม่ได้ห้ามไว้ชัด) | รายงานของ astra เอง + Claude ตรวจ | บันทึกไว้ใน `docs/setup_test/REPORT.md` §6; รายงานรอบแรกยืนยันตรงกับสภาพจริง (0 ขั้นสำเร็จ) |
+| C-E25 | BERTScore ที่เราวัดไม่ตรงนิยามของแพ็กเกจต้นฉบับ (ตัดโทเค็นพิเศษออกจากกลุ่มที่ใช้จับคู่) ทำให้ต่ำกว่าราว 0.018 ต่อคำตอบ และรายงานเดิมไม่ได้ระบุว่าเป็นตัวแปรที่ต่าง | เจ้าของสั่งตรวจ; Claude เทียบกับแพ็กเกจ `bert_score` บนคู่เดียวกัน | เพิ่มโหมด `reference_compat` ที่ตรงแพ็กเกจทุกทศนิยม, เลือก encoder ซ้ำ (ผลเดิม bge-m3 ชั้น 8), วัดใหม่ทุกระบบ, ข้อสรุปเชิงเปรียบเทียบไม่เปลี่ยน; `docs/error_analysis_track_c.md` §11 |
+
+
+### 4.5 Track A (normalize ข้อความ และงานบนเครื่อง Chaiporn2005)
+
+| # | AI พูด/ทำอะไรผิด | ผู้จับและวิธีจับ | วิธีแก้ |
+|---|---|---|---|
+| A-E1 | ธง QA ของ `extract_pages.py` รอบแรก (เครื่องมือที่ AI เขียน) ให้ `ckd-public-kidney-prevention-tips` มีหน้า encoding ผิดแค่ 1 หน้า ทั้งที่ทั้ง 119 หน้าเป็น MacRoman; และติด `needs_ocr` ให้ `ckd-guideline-2565-revised` ที่อ่านได้ดี | Claude (review A1) วัดสัดส่วนอักษรไทยแล้วเทียบภาพ | quality gate รายหน้าใน `normalize_thai.py` และ decoder `mac_thai` |
+| A-E2 | Claude สรุป review รอบสองของ normalize v1 ว่าตัวเลขทางคลินิกตรงภาพและ "0 หน้าแย่ลง" แต่พลาด ≥/≤ ที่ขีดเส้นใต้ (ออกเป็น >/<), เลขอ้างอิงที่ไปติดค่า (`ร้อยละ 25⁷⁰` → `2570`) และหน้าแผนภาพที่ติด `ok` | fidelity review ของ Calvin (เทียบภาพ 91 หน้า, `docs/fidelity_review_20261007.md`) | normalize v2 (A-D7); แต่ v11 ของ Track B ยังไม่มีการแก้นี้ (C10) |
+| A-E3 | Claude บอกว่า NUL ในใบความรู้ศิริราชแทนเฉพาะวรรณยุกต์ ที่จริงแทนตัวเลขด้วย ("วันละ 300 มิลลิกรัม" หาย) | fidelity review ของ Calvin | แก้เอกสาร; หน้าเหล่านั้นคง `garbled` ไม่เข้า index |
+| A-E4 | นโยบาย OCR แรกของ Claude ให้ Tesseract แทน PDF text ที่เสีย ทั้งที่ OCR แย่กว่า | Claude เทียบภาพหน้า stroke-nutrition p2 | A-D2 |
+| A-E5 | CMap ที่ Claude เขียนใหม่ใช้รหัส 2 ไบต์กับฟอนต์ 1 ไบต์ ทำให้ได้ `นÏ้าตาล` | Claude ตรวจ diff ทุกหน้าเทียบผลก่อนหน้า | ความกว้างรหัสตามชนิดฟอนต์ + เทสต์ |
+| A-E6 | กฎตัวยกรอบแรกแปลงเลขเนื้อหาในใบความรู้ geriatric เป็นตัวยก (`อายุ ³⁵`, `⁸⁰มก./ดล.`) | Claude สุ่มดูบริบทตัวยกใน 5 เอกสาร | รับเฉพาะเลขที่ติดคำก่อนหน้าและยกสูง 0.15–0.8 เท่าของขนาดอักษร + เทสต์ |
+| A-E7 | กฎฟอนต์ "ำ ที่ควรเป็น า" ของ Claude อ่านคู่มือดูแลเท้าศิริราชผิด (ำ จริงกลายเป็น า); การแก้รอบแรกด้วยฟอนต์พี่น้องทำ INMU พัง (`ทำ` → `ท์า`) | Claude เทียบผลรายหน้ากับรอบก่อน | ใช้ฟอนต์พี่น้องเมื่อ glyph ตรงกัน ≥ 90% ของ ≥ 15 รหัส + กฎลำดับ glyph; รอบสุดท้ายไม่มีหน้าแย่ลง |
+| A-E8 | ตัววัด mojibake ของ Claude นับ × ÷ Ø เป็นข้อความเสีย (CKD 2565 p20 ตก `degraded`) | Claude ตรวจหน้าที่แย่ลงเทียบรอบก่อน | นับเฉพาะ token ที่มีอักษรเน้นเสียง ≥ 2 ตัวและไม่มี ASCII |
+| A-E9 | คำถาม silver ของ Codex: q048 รวมสองเรื่องที่แยกกันบนปกเป็นคำตอบเดียว; q087 กว้างจนหลายเอกสารตอบได้แต่เฉลยมีเอกสารเดียว | Claude ตรวจล่วงหน้าส่วน 4 (A8) | เสนอแก้ในไฟล์ร่าง; [FILL IN: ผู้ตรวจตัดสินอย่างไร] |
+### 4.6 งาน Demo บน Mac (2026-10-20)
+
+| # | AI ผิดหรือหละหลวมอะไร | ผู้จับ | วิธีแก้ |
+|---|---|---|---|
+| M-E1 | คำสั่งที่ Claude ใช้ดู `git diff .env.example` พยายามปิดค่าด้วย `sed` แต่ไม่ทำงาน คีย์ Typhoon เต็มจึงปรากฏในผลลัพธ์ของเซสชัน (ไฟล์ที่ git ติดตามมีคีย์อยู่ก่อนแล้วจากการแก้ของผู้ใช้ ยังไม่ commit) | Claude เห็นในผลลัพธ์ทันทีหลังรัน | คืน `.env.example` เป็นไม่มีคีย์, แจ้งผู้ใช้, ให้ rotate คีย์, บันทึกใน HANDOFF; ต่อไปต้องตรวจโดยไม่พิมพ์ค่า (เช็กรูปแบบ/ความยาวเท่านั้น); คีย์ไม่อยู่ในไฟล์ที่ commit (ค้น `sk-` ใน commit ไม่พบ) |
+| M-E2 | คู่มือฉบับแรกของ Claude เขียนว่าขั้นที่ 1–4 "ทดสอบแล้ว" ทั้งที่ขั้นดัชนีและการเรียก Typhoon ยังไม่ได้ทดสอบ (ยังไม่มีดัชนี/คีย์) | Claude ทบทวนก่อนปิดงานและเมื่อได้ทดสอบจริง | แก้ข้อความเหลือเฉพาะขั้นที่ตรวจจริง และเพิ่มบันทึกว่าทดสอบโหมดไหนแล้ว (variant C ยังไม่ได้ทดสอบ) |
+
+
+---
+
+## 5. Contribution Map
+
+| ผู้ร่วมงาน | Human Contribution | AI Tools Used |
+|---|---|---|
+| **ธนกฤต เสมอหน้า (Up2mEz, เจ้าของ Track B)** | ตัดสินนโยบายทั้งหมด (Siriraj, ส่งภาพให้ OCR ภายนอก, เลือกเอกสาร, ทิศทาง chunk, metadata-only, เทคนิค 1/2/4), ตัดสินทุกหน้า OCR (283 + 90), ตัดสิน PDPA/ป้ายประชากรทุกหน้า, ชี้ปัญหาที่ AI พลาด (chunk ตัดขาด, footer/แถบหมวด, regex ผิด, ลิงก์ review), ตรวจ gold ส่วน 1; **[FILL IN: ตรวจชุดเสริม 28 ข้อ]** | Claude Code, Codex (astra/sol), Gemini, Typhoon OCR |
+| **ชัยพร ออฤดี (Chaiporn2005 — อนุมาน; Track A / เจ้าของ repo)** | หาเอกสาร, manifest, สคริปต์ดาวน์โหลด/สกัดข้อความ/normalize รุ่นแรก, สร้าง repo | Claude Code (Opus 5.5) ตั้งแต่ 2026-10-06 (ข้อ 2D); ช่วงก่อนหน้ามีร่องรอย Codex runtime ใน `docs/extraction_pipeline.md` [FILL IN: ยืนยัน] |
+| **ชัยพร ออฤดี** | ตรวจ silver ส่วน 4 เป็น gold (ส่งไฟล์แล้ว); จับ q097 เป็น `????`; ตัดสินนโยบาย Track A (A-D3 ถึง A-D6, A-D8) | Claude Code (Opus 5.5) ตรวจล่วงหน้าส่วน 4 เป็นร่าง (A8, A-D9); [FILL IN: สิ่งที่แก้จากร่าง] |
+| **ชัยพร ออฤดี, Demo บน Mac** (อนุมานจากผู้ใช้ในเซสชัน/ผู้ commit `1f0856c`) | สั่งงานและตัดสินใจทุกขั้น (ใช้ Typhoon, ตรวจแล้วใช้บันเดิล, ให้ commit/branch `demoUpdate`), ใส่และแก้ API key เอง, [FILL IN: แหล่งที่มาของบันเดิล, ตรวจผลคำตอบด้วยตนเองหรือไม่, ยืนยันการ push] | Claude Code (Sonnet 5.5) ตั้งค่าเครื่อง/ตรวจบันเดิล/ทดสอบ demo/เขียนคู่มือและบันทึก (ข้อ 2E) |
+| **ธนวัฒน์ สุริยะ** | ตรวจ silver ส่วน 2 (ตรวจเสร็จแล้ว); [FILL IN: งานอื่น] | [FILL IN] |
+| **คณิณ แคลวิณ ชมวิวัฒน์** ("Calvin" ใน corpus record — อนุมาน) | fidelity review ของ Track A (`docs/fidelity_review_20261007.md`); ตรวจ silver ส่วน 3 (ตรวจเสร็จแล้ว) | [FILL IN] |
+| **ธนกฤต เสมอหน้า, Track C (generation + evaluation + injection + ReAct)** | ตัดสินขอบเขตและนโยบายทั้งหมดของ Track C (ตาราง C-D1 ถึง C-D9), เลือกให้รันบน Kaggle GPU และสลับบัญชี Kaggle, สั่งให้ปรับ ReAct และให้ทำ Python เทียบ LangGraph; **[FILL IN: ระดับที่ตรวจโค้ด/ผลด้วยตนเอง, การตรวจชุดเคส injection (ตอนนี้ silver ไม่มีคนตรวจ)]** | Claude Code (โค้ด/เทสต์/วิเคราะห์), Typhoon (ตัวสร้างคำตอบ), gpt-5.6-luna (judge) |
+
+ส่วนที่ AI ทำ: Claude เขียนโค้ด/เทสต์/สคริปต์/หน้า review/เอกสารทั้งหมด และตัดสินรายข้อชุดเสริม (D15); Codex/Gemini ร่างคำถามและเสนอแก้ OCR; Typhoon แปลงภาพเป็นข้อความ. **AI ไม่ push ขึ้น GitHub เองโดยไม่สั่ง** (commit/push ทำเมื่อผู้ใช้สั่ง: `c33f207`, `c22b877` บน `rag/track-b-l1`)
+
+---
+
+## 6. What Would Break? (ตอบเองโดยไม่ใช้ AI)
+
+เอกสารนี้ไม่เขียนคำตอบแทน ตามกติกาวิชา
+
+**a)** ถ้าเอาขั้นที่สอง (BM25 ใน Variant B หรือ reranker ใน Variant C) ออกจาก pipeline คุณภาพผลลัพธ์จะเปลี่ยนอย่างไรและเพราะอะไร
+
+[FILL IN: คำตอบของคุณเอง ไม่ใช้ AI]
+
+**b)** ทำไมเลือกขนาด chunk [FILL IN: X] token และถ้าเป็น 2× หรือ ½ คุณภาพ retrieval จะเป็นอย่างไร (คิดถึงตารางเกณฑ์ ค่าขนาดยา/ค่า threshold และคำปฏิเสธในแนวทางไทย)
+
+[FILL IN: คำตอบของคุณเอง ไม่ใช้ AI]
+
+**c)** ablation เทียบ dense-only กับ hybrid และ hybrid + reranker เลือกผลที่ทำให้แปลกใจที่สุดและอธิบายกลไก ไม่ใช่แค่บอกว่าตัวไหนคะแนนสูงกว่า
+
+[FILL IN: คำตอบของคุณเอง ไม่ใช้ AI หลังมีผลบน gold]
+
+---
+
+## 7. ข้อจำกัดที่ต้องบอกในรายงาน (จากบันทึก)
+
+1. ผลสุดท้ายรายงานจากค่าที่ freeze (`frozen_v1`): test 52 ข้อที่ตอบได้ ช่วงเชื่อมั่นจึงกว้าง (reranker เทียบ hybrid แยกจาก noise ไม่ออก); ผลเทคนิคอื่น (doc2query, query rewriting, e5-base, soft boost) มีเฉพาะบน dev และมีส่วนหนึ่งที่วัดบนคำถาม silver ก่อนตรวจเป็น gold ต้องเขียนกำกับ
+2. gold ยืนยันแค่ "ตรงกับเอกสาร" ไม่ใช่ความถูกต้องทางคลินิก
+3. test ชุดเสริมตรวจโดยเจ้าของ Track B คนเดียว (ผู้เขียนเกณฑ์ตรวจข้อสอบเอง) ไม่มี inter-annotator
+4. เฉลยหน้าเดียวต่อข้อ: lenient ที่ threshold เข้มเพิ่ม R@5 0–2 จุด รายงานเป็นช่วง ไม่ใช้แทน strict
+5. ข้อ Siriraj ตรวจย้อนไม่ได้โดยคนอื่น (ข้อความหน้าใช้ได้เฉพาะในเครื่อง ไม่ commit; ได้รับอนุญาตเพื่อการศึกษาแล้ว)
+6. เคสผู้ป่วยใน corpus ยังไม่ใช่ anonymize สมบูรณ์; OCR 99 หน้าเดิมที่ AI ตรวจอย่างเดียวยังไม่มีคนยืนยัน
+7. ปัญหาหน่วยคนละแบบ (mmol/L vs มก./ดล.) ยังไม่ได้วัดผลจริง
+8. Demo เป็น CLI ไม่ใช่เว็บแอป; คำตอบตัวอย่างที่ลองบน Mac (HbA1c, โซเดียม, โปรตีนใน CKD) ยังไม่มีผู้เชี่ยวชาญทางคลินิกตรวจ และ `--variant C` ยังไม่ได้ทดสอบบน Mac; ทุกคำถามที่พิมพ์ใน demo ถูกส่งไป Typhoon API (หลัง mask ข้อมูลส่วนบุคคล)

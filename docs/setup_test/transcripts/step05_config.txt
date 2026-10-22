@@ -1,0 +1,2 @@
+(.venv) PS thai-ncd-guideline-qa> Copy-Item configs\llm\providers.example.yaml configs\llm\providers.yaml; if (-not (Test-Path .env)) { Copy-Item .env.example .env }; (Select-String -Path .env -Pattern "^TYPHOON_API_KEY=").Line -replace "=.+","=<มีค่าแล้ว>"; git status --short
+TYPHOON_API_KEY=

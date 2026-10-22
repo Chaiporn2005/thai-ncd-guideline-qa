@@ -1,0 +1,22 @@
+{
+ "gpu": "Tesla T4",
+ "torch": "2.11.0+cu128",
+ "python": "3.13.15",
+ "seconds": 1695,
+ "finished": [
+  "NITI.json",
+  "belebele_eng_latn_tha_thai.json",
+  "belebele_tha_thai_eng_latn.json",
+  "belebele_tha_thai_tha_thai.json",
+  "cure_dermatology.json",
+  "cure_pulmonology.json",
+  "miracl_th.json",
+  "mkqa_th.json",
+  "mr_tidy_thai.json",
+  "multi_long_doc_th.json",
+  "nfcorpus.json",
+  "scifact.json",
+  "web_faq_tha.json",
+  "xqu_ad_th.json"
+ ]
+}

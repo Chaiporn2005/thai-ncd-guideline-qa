@@ -1,0 +1,39 @@
+{
+  "task": "NITI",
+  "n_docs": 5127,
+  "n_queries": 3729,
+  "embed_seconds": 2234.8,
+  "settings": {
+    "model": "bge-m3",
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.7812,
+    "recall10": 0.9037,
+    "recall100": 0.9751,
+    "mrr10": 0.7415
+  },
+  "bm25": {
+    "ndcg10": 0.7241,
+    "recall10": 0.8512,
+    "recall100": 0.9555,
+    "mrr10": 0.6836
+  },
+  "hybrid": {
+    "ndcg10": 0.8177,
+    "recall10": 0.9238,
+    "recall100": 0.9796,
+    "mrr10": 0.7835
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": 0.0365,
+    "ci95": [
+      0.0313,
+      0.0419
+    ]
+  }
+}

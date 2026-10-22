@@ -1,0 +1,19 @@
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step01_clone.png (1844x261)
+   step01_clone took 10 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step02_venv.png (1844x299)
+   step02_venv took 7 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step03_install.png (1844x1107)
+   step03_install took 24 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step04_bundle.png (1844x335)
+   step04_bundle took 8 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step05_config.png (1844x260)
+   step05_config took 6 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step06_check.png (1844x811)
+   step06_check took 6 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step07_warm.png (1844x669)
+   step07_warm took 114 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/step08_cli.png (1844x889)
+   step08_cli took 42 s
+saved D:/KMITL/NLP/NLP-Year3/team-project/_setup_test/shots3/extra_offline_sim.png (1844x999)
+   extra_offline_sim took 81 s
+ALL STEPS DONE

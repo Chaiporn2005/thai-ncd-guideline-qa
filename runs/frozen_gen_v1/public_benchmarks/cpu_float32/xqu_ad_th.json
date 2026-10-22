@@ -1,0 +1,39 @@
+{
+  "task": "xqu_ad_th",
+  "n_docs": 240,
+  "n_queries": 200,
+  "embed_seconds": 200.3,
+  "settings": {
+    "model": "bge-m3",
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.9658,
+    "recall10": 1.0,
+    "recall100": 1.0,
+    "mrr10": 0.9539
+  },
+  "bm25": {
+    "ndcg10": 0.9804,
+    "recall10": 1.0,
+    "recall100": 1.0,
+    "mrr10": 0.9738
+  },
+  "hybrid": {
+    "ndcg10": 0.9861,
+    "recall10": 1.0,
+    "recall100": 1.0,
+    "mrr10": 0.9812
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": 0.0203,
+    "ci95": [
+      0.008,
+      0.034
+    ]
+  }
+}

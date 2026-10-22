@@ -17,3 +17,6 @@
 /normalized-v*/dm-siriraj-needle-disposal-leaflet-undated/
 /normalized-v*/dm-siriraj-self-monitoring-leaflet-undated/
 /normalized-v*/lipid-siriraj-diabetes-fat-7/
+
+# v12 is described by data/manifests/corpus_normalized-v12_inventory.json; its page files stay local
+/normalized-v12/

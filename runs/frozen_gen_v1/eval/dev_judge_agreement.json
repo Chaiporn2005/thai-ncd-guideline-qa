@@ -1,0 +1,113 @@
+{
+  "judges": [
+    "claude-sonnet-4-6",
+    "gpt-5.6-luna"
+  ],
+  "answers_in_common": 318,
+  "correctness": {
+    "n": 291,
+    "raw_agreement": 0.938,
+    "kappa_4_labels": 0.815,
+    "kappa_correct_vs_not": 0.828,
+    "confusion_rows_a_cols_b": {
+      "correct": {
+        "correct": 225,
+        "partial": 4,
+        "wrong": 0,
+        "no_answer": 0
+      },
+      "partial": {
+        "correct": 12,
+        "partial": 35,
+        "wrong": 0,
+        "no_answer": 0
+      },
+      "wrong": {
+        "correct": 0,
+        "partial": 2,
+        "wrong": 7,
+        "no_answer": 0
+      },
+      "no_answer": {
+        "correct": 0,
+        "partial": 0,
+        "wrong": 0,
+        "no_answer": 6
+      }
+    }
+  },
+  "faithfulness": {
+    "n": 0,
+    "mean_abs_diff": 0.0,
+    "spearman": null,
+    "kappa_fully_faithful": null
+  },
+  "per_variant": {
+    "A": {
+      "correctness_score": {
+        "claude-sonnet-4-6": 0.845,
+        "gpt-5.6-luna": 0.861,
+        "n": 97,
+        "consensus_mean": 0.853
+      },
+      "faithfulness": {
+        "claude-sonnet-4-6": 0.0,
+        "gpt-5.6-luna": 0.0,
+        "n": 0,
+        "consensus_mean": 0.0
+      }
+    },
+    "B": {
+      "correctness_score": {
+        "claude-sonnet-4-6": 0.871,
+        "gpt-5.6-luna": 0.887,
+        "n": 97,
+        "consensus_mean": 0.879
+      },
+      "faithfulness": {
+        "claude-sonnet-4-6": 0.0,
+        "gpt-5.6-luna": 0.0,
+        "n": 0,
+        "consensus_mean": 0.0
+      }
+    },
+    "C": {
+      "correctness_score": {
+        "claude-sonnet-4-6": 0.887,
+        "gpt-5.6-luna": 0.907,
+        "n": 97,
+        "consensus_mean": 0.897
+      },
+      "faithfulness": {
+        "claude-sonnet-4-6": 0.0,
+        "gpt-5.6-luna": 0.0,
+        "n": 0,
+        "consensus_mean": 0.0
+      }
+    }
+  },
+  "variant_ranking_correctness_score": {
+    "claude-sonnet-4-6": [
+      "C",
+      "B",
+      "A"
+    ],
+    "gpt-5.6-luna": [
+      "C",
+      "B",
+      "A"
+    ]
+  },
+  "variant_ranking_faithfulness": {
+    "claude-sonnet-4-6": [
+      "A",
+      "B",
+      "C"
+    ],
+    "gpt-5.6-luna": [
+      "A",
+      "B",
+      "C"
+    ]
+  }
+}

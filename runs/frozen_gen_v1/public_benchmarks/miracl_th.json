@@ -1,0 +1,60 @@
+{
+  "task": "miracl_th",
+  "n_docs": 10000,
+  "n_queries": 200,
+  "embed_seconds": 76.2,
+  "settings": {
+    "model": "bge-m3",
+    "device": "cuda",
+    "fp16": true,
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.9029,
+    "recall10": 0.991,
+    "recall100": 1.0,
+    "mrr10": 0.9006
+  },
+  "bm25": {
+    "ndcg10": 0.6223,
+    "recall10": 0.8394,
+    "recall100": 0.9725,
+    "mrr10": 0.593
+  },
+  "hybrid": {
+    "ndcg10": 0.8719,
+    "recall10": 0.9779,
+    "recall100": 1.0,
+    "mrr10": 0.8657
+  },
+  "bm25_word": {
+    "ndcg10": 0.5991,
+    "recall10": 0.8196,
+    "recall100": 0.9496,
+    "mrr10": 0.5705
+  },
+  "hybrid_word": {
+    "ndcg10": 0.8639,
+    "recall10": 0.9879,
+    "recall100": 1.0,
+    "mrr10": 0.8542
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": -0.031,
+    "ci95": [
+      -0.0519,
+      -0.0098
+    ]
+  },
+  "hybrid_word_minus_dense_ndcg10": {
+    "mean": -0.039,
+    "ci95": [
+      -0.0599,
+      -0.0202
+    ]
+  }
+}

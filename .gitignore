@@ -35,3 +35,22 @@ data/page_tag_decisions_*.json
 
 # Review exports in the data root are copied to data/manifests when applied
 data/ocr_review_decisions_*.json
+
+# Retrieval indexes and chunk files contain document text (Track B): local only
+data/index/
+
+# Real LLM provider list (keys are env var names, but the endpoints are the owner's): local only
+configs/llm/providers.yaml
+
+# Hand-off packages contain corpus text (Siriraj leaflets included): never tracked
+data/handoff/
+
+BUNDLE_MANIFEST.json
+ncd_demo_bundle.zip
+
+# public benchmark downloads (licences differ; fetched by scripts/eval_public_benchmarks.py)
+data/external/
+
+# screenshots of the setup guide (docs/SETUP_GUIDE_TH.md)
+!docs/images/
+!docs/images/**

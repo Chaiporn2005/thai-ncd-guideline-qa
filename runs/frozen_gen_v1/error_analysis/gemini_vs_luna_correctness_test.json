@@ -1,0 +1,20 @@
+{
+ "B": {
+  "n_judged_by_both": 38,
+  "exact_agreement": 0.895,
+  "gemini_mean": 0.829,
+  "luna_mean_same_items": 0.895
+ },
+ "C": {
+  "n_judged_by_both": 39,
+  "exact_agreement": 0.923,
+  "gemini_mean": 0.897,
+  "luna_mean_same_items": 0.923
+ },
+ "ReActPy": {
+  "n_judged_by_both": 39,
+  "exact_agreement": 0.872,
+  "gemini_mean": 0.795,
+  "luna_mean_same_items": 0.833
+ }
+}

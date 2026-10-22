@@ -1,0 +1,588 @@
+{
+ "name": "ncd-hookguide-web-demo-v1",
+ "baseUrl": "http://127.0.0.1:8780/?theme=light",
+ "allowedOrigins": [
+  "https://fonts.googleapis.com",
+  "https://fonts.gstatic.com"
+ ],
+ "maxZoom": 1.55,
+ "fps": 60,
+ "captureQuality": 82,
+ "cameraDurationSec": 1.2,
+ "cursorSettleSec": 0.25,
+ "captions": true,
+ "beats": [
+  {
+   "id": "intro",
+   "title": "01 · รู้จักฮูกไกด์",
+   "minDurationSec": 12,
+   "say": "ฮูกไกด์ตอบคำถามจากแนวทางเวชปฏิบัติโรคไม่ติดต่อเรื้อรังของไทย 66 ฉบับ บอกเอกสารและหน้าที่อ้างอิง และงดตอบเมื่อหลักฐานไม่พอ",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": ".welcome__bubble"
+    },
+    {
+     "action": "hover",
+     "selector": "#welcome-owl"
+    }
+   ]
+  },
+  {
+   "id": "limits",
+   "title": "02 · ขอบเขตของระบบ",
+   "minDurationSec": 11,
+   "say": "ระบบนี้เพื่อการศึกษา ไม่วินิจฉัย ไม่สั่งหรือปรับยา และตอบทีละคำถามโดยไม่จำคำถามก่อนหน้า จึงควรใส่โรคหรือระยะในทุกคำถาม",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "focus",
+     "selector": ".welcome__tip"
+    }
+   ]
+  },
+  {
+   "id": "samples",
+   "title": "03 · คำถามแนะนำ",
+   "minDurationSec": 9,
+   "say": "ใต้ข้อความต้อนรับมีคำถามแนะนำให้กดถามทันที แต่ผู้ใช้พิมพ์คำถามของตัวเองได้เช่นกัน",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "focus",
+     "selector": "#samples"
+    }
+   ]
+  },
+  {
+   "id": "type",
+   "title": "04 · พิมพ์คำถามเอง",
+   "minDurationSec": 10,
+   "say": "คราวนี้พิมพ์คำถามใหม่เอง ค่าความดันโลหิตเป้าหมายในผู้ป่วยเบาหวานคือเท่าไร",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "focus",
+     "selector": "#composer"
+    },
+    {
+     "action": "type",
+     "selector": "#composer-input",
+     "text": "ค่าความดันโลหิตเป้าหมายในผู้ป่วยเบาหวานคือเท่าไร",
+     "delay": 55
+    }
+   ]
+  },
+  {
+   "id": "send",
+   "title": "05 · ถามและรอคำตอบ",
+   "minDurationSec": 11,
+   "say": "กดถาม ระบบค้นหลักฐาน ให้โมเดลตอบ แล้วตรวจทุกข้อความ ครั้งนี้เรียก Typhoon API สด จึงเห็นตัวนับเวลาและไม่ได้มาจากแคช",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "focus",
+     "selector": "#send",
+     "maxZoom": 2,
+     "holdMs": 350
+    },
+    {
+     "action": "click",
+     "selector": "#send",
+     "expect": "#thread > .turn:nth-child(1) .reply"
+    },
+    {
+     "action": "wide",
+     "holdMs": 650
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(1) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    }
+   ]
+  },
+  {
+   "id": "answer",
+   "title": "06 · คำตอบพร้อมอ้างอิง",
+   "minDurationSec": 10,
+   "say": "คำตอบแยกเป็นข้อ ทุกข้อมีป้ายหมายเลขหลักฐานและหน้าเอกสารกำกับ",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(1) .claims",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(1) .claims"
+    }
+   ]
+  },
+  {
+   "id": "citation",
+   "title": "07 · ดูข้อความต้นทาง",
+   "minDurationSec": 11,
+   "say": "กดป้ายอ้างอิงเพื่อเปิดข้อความต้นทางที่ส่งให้โมเดล ผู้อ่านตรวจได้ว่าคำตอบมาจากเอกสารจริง",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(1) .cite >> nth=0",
+     "maxZoom": 2,
+     "holdMs": 300
+    },
+    {
+     "action": "click",
+     "selector": "#thread > .turn:nth-child(1) .cite >> nth=0"
+    },
+    {
+     "action": "wide",
+     "holdMs": 500
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(1) .ev--focus"
+    }
+   ]
+  },
+  {
+   "id": "sources",
+   "title": "08 · แหล่งอ้างอิง",
+   "minDurationSec": 8,
+   "say": "รายการแหล่งอ้างอิงบอกชื่อเอกสารและหน้า PDF เพื่อกลับไปเปิดอ่านเอง",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(1) .sources",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(1) .sources"
+    }
+   ]
+  },
+  {
+   "id": "path",
+   "title": "09 · เส้นทางของคำถาม",
+   "minDurationSec": 13,
+   "say": "คำถามผ่านห้าขั้นตามลำดับ ตรวจคำถาม ค้นหลักฐาน โมเดลตอบ ตรวจทุกข้อ และตรวจคำตอบ กดเล่นซ้ำเพื่อดูอีกครั้ง",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(1) .trace",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(1) .trace"
+    },
+    {
+     "action": "click",
+     "selector": "#thread > .turn:nth-child(1) .trace__replay"
+    }
+   ]
+  },
+  {
+   "id": "tests",
+   "title": "10 · ชุดทดสอบระบบ",
+   "minDurationSec": 9,
+   "say": "ปุ่มตัวอย่างมีแท็บชุดทดสอบ ใช้ดูว่าระบบรับมือคำถามที่ไม่ควรตอบอย่างไร",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#open-samples"
+    },
+    {
+     "action": "click",
+     "selector": "#open-samples",
+     "expect": "#sample-sheet[open]"
+    },
+    {
+     "action": "focus",
+     "selector": "#sample-sheet"
+    },
+    {
+     "action": "click",
+     "selector": "#tab-test",
+     "expect": "#panel-test:not([hidden])"
+    },
+    {
+     "action": "focus",
+     "selector": "#panel-test"
+    }
+   ]
+  },
+  {
+   "id": "injection",
+   "title": "11 · คำสั่งแฝง",
+   "minDurationSec": 10,
+   "say": "ข้อความสั่งให้ละเลยคำสั่งเดิมถูกปฏิเสธที่ตัวกรองรูปแบบคำสั่ง ไม่ถูกส่งไปถึงโมเดล",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "click",
+     "selector": "#sheet-test .sample[data-q^=\"Ignore all previous\"]",
+     "expect": "#thread > .turn:nth-child(2)"
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(2) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    },
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(2) .reply__body",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(2) .reply__body"
+    }
+   ]
+  },
+  {
+   "id": "emergency",
+   "title": "12 · อาการฉุกเฉิน",
+   "minDurationSec": 9,
+   "say": "ถ้าคำถามเป็นอาการฉุกเฉิน ระบบไม่พยายามตอบ แต่แนะนำให้โทร 1669",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#open-samples"
+    },
+    {
+     "action": "click",
+     "selector": "#open-samples",
+     "expect": "#sample-sheet[open]"
+    },
+    {
+     "action": "focus",
+     "selector": "#sample-sheet"
+    },
+    {
+     "action": "click",
+     "selector": "#sheet-test .sample[data-q^=\"แม่ผมเจ็บหน้าอก\"]",
+     "expect": "#thread > .turn:nth-child(3)"
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(3) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    },
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(3) .reply__body",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(3) .reply__body"
+    }
+   ]
+  },
+  {
+   "id": "pii",
+   "title": "13 · ข้อมูลส่วนบุคคล",
+   "minDurationSec": 11,
+   "say": "ชื่อและเบอร์โทรในคำถามถูกปิดบังก่อนประมวลผล หน้าเว็บแสดงข้อความที่ส่งต่อจริง คำตอบนี้มาจากแคช",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#open-samples"
+    },
+    {
+     "action": "click",
+     "selector": "#open-samples",
+     "expect": "#sample-sheet[open]"
+    },
+    {
+     "action": "focus",
+     "selector": "#sample-sheet"
+    },
+    {
+     "action": "click",
+     "selector": "#sheet-test .sample[data-q^=\"นายสมชาย\"]",
+     "expect": "#thread > .turn:nth-child(4)"
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(4) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    },
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(4) .note--mask",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(4) .note--mask"
+    }
+   ]
+  },
+  {
+   "id": "abstain",
+   "title": "14 · งดตอบ",
+   "minDurationSec": 9,
+   "say": "เมื่อคำถามไม่ระบุบริบท หลักฐานไม่พอ ระบบงดตอบและแนะนำให้ระบุโรคหรือระยะ",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#open-samples"
+    },
+    {
+     "action": "click",
+     "selector": "#open-samples",
+     "expect": "#sample-sheet[open]"
+    },
+    {
+     "action": "focus",
+     "selector": "#sample-sheet"
+    },
+    {
+     "action": "click",
+     "selector": "#sheet-test .sample[data-q^=\"ผู้ป่วยระยะนี้\"]",
+     "expect": "#thread > .turn:nth-child(5)"
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(5) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    },
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(5) .reply__body",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(5) .reply__body"
+    }
+   ]
+  },
+  {
+   "id": "weakness",
+   "title": "15 · จุดอ่อนที่เรารู้",
+   "minDurationSec": 13,
+   "say": "จุดอ่อนที่เรารู้ คำถามเรื่องหญิงตั้งครรภ์ที่เป็นไตระยะ 4 ระบบยังตอบด้วยเกณฑ์ผู้ป่วยไตทั่วไป เพราะยังไม่มีตัวตรวจกลุ่มประชากร",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#open-samples"
+    },
+    {
+     "action": "click",
+     "selector": "#open-samples",
+     "expect": "#sample-sheet[open]"
+    },
+    {
+     "action": "focus",
+     "selector": "#sample-sheet"
+    },
+    {
+     "action": "click",
+     "selector": "#sheet-test .sample[data-q^=\"ในการสื่อสารลดเค็ม\"]",
+     "expect": "#thread > .turn:nth-child(6)"
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(6) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    },
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(6) .claims",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(6) .claims"
+    }
+   ]
+  },
+  {
+   "id": "settings",
+   "title": "16 · ตั้งค่าการตอบ",
+   "minDurationSec": 12,
+   "say": "ปุ่มตั้งค่าเลือกวิธีหาหลักฐานและวิธีควบคุมขั้นตอน โมเดลตอบเป็นตัวเดียวกันทุกแบบ ตอนนี้เลือก A ค้นด้วยความหมายอย่างเดียว",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#open-settings"
+    },
+    {
+     "action": "click",
+     "selector": "#open-settings",
+     "expect": "#settings[open]"
+    },
+    {
+     "action": "focus",
+     "selector": "#settings"
+    },
+    {
+     "action": "click",
+     "selector": "#settings input[name=\"variant\"][value=\"A\"]"
+    },
+    {
+     "action": "click",
+     "selector": "#settings .sheet__actions .send"
+    }
+   ]
+  },
+  {
+   "id": "compareA",
+   "title": "17 · ผลของวิธี A",
+   "minDurationSec": 11,
+   "say": "ถามเรื่องเกลือในความดันสูง วิธี A ตอบเป็นเกลือไม่เกิน 5 กรัม ผลนี้เคยรันไว้ หน้าเว็บจึงบอกว่าจากแคช",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#composer"
+    },
+    {
+     "action": "type",
+     "selector": "#composer-input",
+     "text": "ผู้ป่วยความดันโลหิตสูงควรจำกัดเกลือไม่เกินวันละกี่กรัม",
+     "delay": 55
+    },
+    {
+     "action": "click",
+     "selector": "#send",
+     "expect": "#thread > .turn:nth-child(7) .reply"
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(7) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    },
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(7) .claims",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(7) .claims"
+    }
+   ]
+  },
+  {
+   "id": "compareB",
+   "title": "18 · ผลของวิธี B",
+   "minDurationSec": 12,
+   "say": "สลับเป็น B ผสมค้นด้วยคำตรงตัว ได้หลักฐานชุดอื่น คำตอบพูดเป็นโซเดียม 2 กรัม ซึ่งเทียบเท่าเกลือราว 5 กรัม",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#open-settings"
+    },
+    {
+     "action": "click",
+     "selector": "#open-settings",
+     "expect": "#settings[open]"
+    },
+    {
+     "action": "focus",
+     "selector": "#settings"
+    },
+    {
+     "action": "click",
+     "selector": "#settings input[name=\"variant\"][value=\"B\"]"
+    },
+    {
+     "action": "click",
+     "selector": "#settings .sheet__actions .send"
+    },
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": "#composer"
+    },
+    {
+     "action": "type",
+     "selector": "#composer-input",
+     "text": "ผู้ป่วยความดันโลหิตสูงควรจำกัดเกลือไม่เกินวันละกี่กรัม",
+     "delay": 55
+    },
+    {
+     "action": "click",
+     "selector": "#send",
+     "expect": "#thread > .turn:nth-child(8) .reply"
+    },
+    {
+     "action": "waitFor",
+     "selector": "#thread > .turn:nth-child(8) .reply:not(.reply--pending)",
+     "timeoutMs": 90000
+    },
+    {
+     "action": "scroll",
+     "selector": "#thread > .turn:nth-child(8) .claims",
+     "position": "center"
+    },
+    {
+     "action": "focus",
+     "selector": "#thread > .turn:nth-child(8) .claims"
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "title": "19 · สรุป",
+   "minDurationSec": 12,
+   "say": "ฮูกไกด์ตอบพร้อมหลักฐานหรืองดตอบ ป้องกันเป็นชั้น และบอกจุดอ่อนตรง ๆ เพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์",
+   "holdMs": 900,
+   "actions": [
+    {
+     "action": "wide"
+    },
+    {
+     "action": "focus",
+     "selector": ".composer .disclaimer"
+    }
+   ]
+  }
+ ]
+}

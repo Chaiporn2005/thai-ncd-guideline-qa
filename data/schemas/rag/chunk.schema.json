@@ -4,35 +4,173 @@
   "title": "Retrieval chunk (Track B output)",
   "description": "One row of chunks.jsonl. text is a verbatim span of the source page text; header_text is stored separately and only prepended at embedding time when the chunk config enables it.",
   "type": "object",
-  "required": ["chunk_id", "corpus_version", "chunk_config_id", "document_id", "edition_id", "source_sha256", "pdf_page_start", "pdf_page_end", "char_start", "char_end", "section_path", "chunk_type", "text", "header_text", "token_count", "tokenizer", "source_page_statuses", "injection_flags", "primary_group", "document_type"],
+  "required": [
+    "chunk_id",
+    "corpus_version",
+    "chunk_config_id",
+    "document_id",
+    "edition_id",
+    "source_sha256",
+    "pdf_page_start",
+    "pdf_page_end",
+    "char_start",
+    "char_end",
+    "section_path",
+    "chunk_type",
+    "text",
+    "header_text",
+    "token_count",
+    "tokenizer",
+    "source_page_statuses",
+    "injection_flags",
+    "primary_group",
+    "document_type"
+  ],
   "additionalProperties": false,
   "properties": {
-    "chunk_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*:p[0-9]{3,4}-p[0-9]{3,4}:[0-9]{3}$"},
-    "corpus_version": {"type": "string", "minLength": 1},
-    "chunk_config_id": {"type": "string", "minLength": 1},
-    "document_id": {"type": "string", "minLength": 1},
-    "edition_id": {"type": "string", "minLength": 1},
-    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "pdf_page_start": {"type": "integer", "minimum": 1},
-    "pdf_page_end": {"type": "integer", "minimum": 1},
-    "pdf_page_label_start": {"type": ["string", "null"]},
-    "char_start": {"type": "integer", "minimum": 0, "description": "Offset of text in the start page's text field."},
-    "char_end": {"type": "integer", "minimum": 0, "description": "Exclusive offset in the end page's text field."},
-    "section_path": {"type": "array", "items": {"type": "string", "minLength": 1}},
-    "chunk_type": {"enum": ["prose", "list", "table_rows", "mixed"]},
-    "table_id": {"type": ["string", "null"]},
-    "text": {"type": "string", "minLength": 1},
-    "header_text": {"type": "string"},
-    "token_count": {"type": "integer", "minimum": 1, "description": "Tokens of header (if enabled) + prefix + text, counted with tokenizer."},
-    "tokenizer": {"type": "string", "minLength": 1},
+    "chunk_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*:p[0-9]{3,4}-p[0-9]{3,4}:[0-9]{3}$"
+    },
+    "corpus_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chunk_config_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "edition_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "pdf_page_start": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pdf_page_end": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "pdf_page_label_start": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "char_start": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Offset of text in the start page's text field."
+    },
+    "char_end": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Exclusive offset in the end page's text field."
+    },
+    "section_path": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "chunk_type": {
+      "enum": [
+        "prose",
+        "list",
+        "table_rows",
+        "mixed"
+      ]
+    },
+    "table_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "header_text": {
+      "type": "string"
+    },
+    "token_count": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Tokens of header (if enabled) + prefix + text, counted with tokenizer."
+    },
+    "tokenizer": {
+      "type": "string",
+      "minLength": 1
+    },
     "source_page_statuses": {
       "type": "array",
       "minItems": 1,
-      "items": {"enum": ["ok", "ok_minor_issues", "degraded", "ocr_unreviewed"]}
+      "items": {
+        "enum": [
+          "ok",
+          "ok_minor_issues",
+          "degraded",
+          "ocr_unreviewed"
+        ]
+      }
     },
-    "injection_flags": {"type": "array", "items": {"type": "string"}},
-    "primary_group": {"enum": ["DM", "HT", "LIPID", "CKD", "NCD_SERVICE"]},
-    "disease_tags": {"type": "array", "items": {"type": "string"}},
-    "document_type": {"enum": ["clinical_guideline", "service_manual", "patient_education", "poster", "report"]}
+    "injection_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_group": {
+      "enum": [
+        "DM",
+        "HT",
+        "LIPID",
+        "CKD",
+        "NCD_SERVICE"
+      ]
+    },
+    "disease_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "document_type": {
+      "enum": [
+        "clinical_guideline",
+        "service_manual",
+        "patient_education",
+        "poster",
+        "report"
+      ]
+    },
+    "population": {
+      "enum": [
+        "general",
+        "pediatric",
+        "pregnancy",
+        "elderly",
+        "mixed"
+      ],
+      "description": "Optional. Population tag from the page tags (Track B); mixed when the pages of the chunk differ. Used as a measured option, not a default filter."
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional. Booklet side-tab category of the start page (metadata only, never a filter)."
+    }
   }
 }

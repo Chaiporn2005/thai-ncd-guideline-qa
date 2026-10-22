@@ -1,0 +1,73 @@
+{
+  "run": "recover-graph",
+  "split": "dev",
+  "questions": 106,
+  "config": {
+    "id": "generate_v1",
+    "status": "draft: every policy value below is an AI-suggested default; the owner's verdicts in docs/decisions_guardrail_harness.md are still [FILL IN]",
+    "retrieval": {
+      "variant": "B",
+      "k": 5
+    },
+    "llm": {
+      "provider": "typhoon_api",
+      "max_tokens": 150,
+      "providers_file": "configs/llm/providers.yaml",
+      "cache_dir": "data/index/llm_cache/gen_recover"
+    },
+    "prompt": {
+      "version": "p2",
+      "layers": {
+        "rules_version": "p2",
+        "rules": true,
+        "schema": true,
+        "spotlight": true,
+        "sandwich": true,
+        "validator": true,
+        "validator_tokens": false
+      }
+    },
+    "abstain": {
+      "min_top_score": null,
+      "note": "G4: null = no score gate; only the model's own abstain flag and the validator can abstain"
+    },
+    "recover": {
+      "max_retries": 1,
+      "note": "L13 p46 Recover: used only by the graph version (src/ncdqa/rag/graph.py); 0 = no retry, the plain pipeline never retries"
+    },
+    "flagged_chunks": "keep",
+    "flagged_chunks_note": "G6: keep = send chunks with injection_flags to the model (flags are only recorded); exclude = drop them before the prompt"
+  },
+  "config_id": "generate_v1-8b28c3b984e1",
+  "pipeline": "graph",
+  "overrides": [
+    "llm.cache_dir=\"data/index/llm_cache/gen_recover\"",
+    "llm.max_tokens=150",
+    "recover.max_retries=1"
+  ],
+  "provider": "typhoon_api",
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "git_commit": "3fb287cdbceab04d13e73f6dfb3bdf5eeb1b6829",
+  "git_dirty": false,
+  "code_sha256": {
+    "src/ncdqa/rag/__init__.py": "9d232fce69262a8a",
+    "src/ncdqa/rag/graph.py": "36624036f6a7d6ca",
+    "src/ncdqa/rag/guardrail_eval.py": "41b6398b4b30eec0",
+    "src/ncdqa/rag/lc_adapters.py": "f5af6f39975fe111",
+    "src/ncdqa/rag/pipeline.py": "28ac2a6adc795361",
+    "src/ncdqa/rag/prompt.py": "bce129897c1cb299",
+    "src/ncdqa/rag/validate.py": "9bf3866fe4dab9b5",
+    "src/ncdqa/llm/client.py": "03b79680004cfa88",
+    "scripts/run_generation.py": "e09e86cb3605248e"
+  },
+  "status_counts": {
+    "answered": 86,
+    "truncated": 9,
+    "abstained_model": 11
+  },
+  "llm_cache_hits": 35,
+  "llm_calls": 106,
+  "started_utc": "2026-10-11T09:10:40+00:00",
+  "seconds": 126.1,
+  "notes": "max_tokens 150; graph with one recover retry"
+}

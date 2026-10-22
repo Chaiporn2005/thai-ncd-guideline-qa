@@ -1,0 +1,58 @@
+{
+  "run": "dev-B-graph",
+  "split": "dev",
+  "questions": 106,
+  "config": {
+    "id": "generate_v1",
+    "status": "draft: every policy value below is an AI-suggested default; the owner's verdicts in docs/decisions_guardrail_harness.md are still [FILL IN]",
+    "retrieval": {
+      "variant": "B",
+      "k": 5
+    },
+    "llm": {
+      "provider": "typhoon_api",
+      "max_tokens": 1000,
+      "providers_file": "configs/llm/providers.yaml",
+      "cache_dir": "data/index/llm_cache/gen_B"
+    },
+    "prompt": {
+      "version": "p2",
+      "layers": {
+        "rules": true,
+        "schema": true,
+        "spotlight": true,
+        "sandwich": true,
+        "validator": true,
+        "validator_tokens": false
+      }
+    },
+    "abstain": {
+      "min_top_score": null,
+      "note": "G4: null = no score gate; only the model's own abstain flag and the validator can abstain"
+    },
+    "recover": {
+      "max_retries": 0,
+      "note": "L13 p46 Recover: used only by the graph version (src/ncdqa/rag/graph.py); 0 = no retry, the plain pipeline never retries"
+    },
+    "flagged_chunks": "keep",
+    "flagged_chunks_note": "G6: keep = send chunks with injection_flags to the model (flags are only recorded); exclude = drop them before the prompt"
+  },
+  "config_id": "generate_v1-e8f28b8982db",
+  "pipeline": "graph",
+  "overrides": [
+    "llm.cache_dir=\"data/index/llm_cache/gen_B\""
+  ],
+  "provider": "typhoon_api",
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "git_commit": "3fb287cdbceab04d13e73f6dfb3bdf5eeb1b6829",
+  "git_dirty": false,
+  "status_counts": {
+    "answered": 96,
+    "abstained_model": 10
+  },
+  "llm_cache_hits": 106,
+  "llm_calls": 106,
+  "started_utc": "2026-10-11T06:59:15+00:00",
+  "seconds": 0.7,
+  "notes": "graph version, equivalence check against dev-B (same cache)"
+}

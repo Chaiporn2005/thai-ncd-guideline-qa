@@ -1,0 +1,60 @@
+{
+  "task": "cure_dermatology",
+  "n_docs": 15687,
+  "n_queries": 200,
+  "embed_seconds": 101.1,
+  "settings": {
+    "model": "bge-m3",
+    "device": "cuda",
+    "fp16": true,
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.6578,
+    "recall10": 0.5537,
+    "recall100": 0.8729,
+    "mrr10": 0.8305
+  },
+  "bm25": {
+    "ndcg10": 0.3526,
+    "recall10": 0.329,
+    "recall100": 0.668,
+    "mrr10": 0.5349
+  },
+  "hybrid": {
+    "ndcg10": 0.6164,
+    "recall10": 0.5328,
+    "recall100": 0.8574,
+    "mrr10": 0.8059
+  },
+  "bm25_word": {
+    "ndcg10": 0.3526,
+    "recall10": 0.329,
+    "recall100": 0.668,
+    "mrr10": 0.5349
+  },
+  "hybrid_word": {
+    "ndcg10": 0.6164,
+    "recall10": 0.5328,
+    "recall100": 0.8574,
+    "mrr10": 0.8059
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": -0.0414,
+    "ci95": [
+      -0.064,
+      -0.0187
+    ]
+  },
+  "hybrid_word_minus_dense_ndcg10": {
+    "mean": -0.0414,
+    "ci95": [
+      -0.064,
+      -0.0187
+    ]
+  }
+}

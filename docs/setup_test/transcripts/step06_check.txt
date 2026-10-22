@@ -1,0 +1,18 @@
+(.venv) PS thai-ncd-guideline-qa> python -X utf8 demo.py --check
+[OK] Python 3.12+: 3.12.13
+[OK] package sentence_transformers: installed
+[OK] package faiss: installed
+[OK] package bm25s: installed
+[OK] package pythainlp: installed
+[OK] package numpy: installed
+[OK] package yaml: installed
+[OK] package langgraph: installed
+[OK] local data bundle (index + chunks): all files present
+[OK] bundle files match the manifest: checksums ok
+[OK] configs/llm/providers.yaml: present
+[!!] TYPHOON_API_KEY (value is never printed): not set
+     fix: copy .env.example .env and put the key after TYPHOON_API_KEY= (ask the team for it); cached demo questions work without it
+[OK] embedding model BAAI/bge-m3 in the local cache: cached
+[OK] demo answer cache (lets the showcase questions run offline): 1 cache file(s)
+
+READY to run the demo.

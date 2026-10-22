@@ -1,0 +1,3 @@
+PS friend3> git clone -b rag/track-b-l1 https://github.com/Chaiporn2005/thai-ncd-guideline-qa; cd thai-ncd-guideline-qa; git log --oneline -1
+Cloning into 'thai-ncd-guideline-qa'...
+001fb93 Setup guide (Thai) with real screenshots, terminal capture tool; README links it

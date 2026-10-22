@@ -1,0 +1,60 @@
+{
+  "task": "web_faq_tha",
+  "n_docs": 10000,
+  "n_queries": 200,
+  "embed_seconds": 32.5,
+  "settings": {
+    "model": "bge-m3",
+    "device": "cuda",
+    "fp16": true,
+    "bm25": "char3",
+    "k1": 2.18,
+    "b": 0.86,
+    "alpha": 0.6,
+    "pool": 100
+  },
+  "dense": {
+    "ndcg10": 0.8878,
+    "recall10": 0.96,
+    "recall100": 0.995,
+    "mrr10": 0.8651
+  },
+  "bm25": {
+    "ndcg10": 0.6969,
+    "recall10": 0.81,
+    "recall100": 0.925,
+    "mrr10": 0.6618
+  },
+  "hybrid": {
+    "ndcg10": 0.8892,
+    "recall10": 0.965,
+    "recall100": 0.995,
+    "mrr10": 0.8645
+  },
+  "bm25_word": {
+    "ndcg10": 0.745,
+    "recall10": 0.835,
+    "recall100": 0.94,
+    "mrr10": 0.7156
+  },
+  "hybrid_word": {
+    "ndcg10": 0.8861,
+    "recall10": 0.96,
+    "recall100": 0.995,
+    "mrr10": 0.8627
+  },
+  "hybrid_minus_dense_ndcg10": {
+    "mean": 0.0013,
+    "ci95": [
+      -0.0164,
+      0.0198
+    ]
+  },
+  "hybrid_word_minus_dense_ndcg10": {
+    "mean": -0.0017,
+    "ci95": [
+      -0.0178,
+      0.0139
+    ]
+  }
+}

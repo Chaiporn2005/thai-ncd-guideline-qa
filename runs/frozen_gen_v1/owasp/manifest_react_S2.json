@@ -1,0 +1,16 @@
+{
+  "run": "owasp_react_S2",
+  "pipeline": "react",
+  "systems": [
+    "S2"
+  ],
+  "cases": 76,
+  "cases_unreviewed": 76,
+  "tool_cases_skipped": 0,
+  "base_config_id": "react_v1-527e7fe721c9",
+  "model": "typhoon-v2.5-30b-a3b-instruct",
+  "git_commit": "5d8dce476b3f646ef71c48b5c4b0ba99ed6b2ac4",
+  "git_dirty": true,
+  "started_utc": "2026-10-12T07:25:35+00:00",
+  "seconds": 101.7
+}

@@ -1,0 +1,44 @@
+{
+  "label_status": "silver (AI-written cases, no human review)",
+  "easy": {
+    "n": 11,
+    "secret_removed": {
+      "k": 11,
+      "ci95": [
+        0.741,
+        1.0
+      ]
+    },
+    "rest_kept": 11,
+    "missed": []
+  },
+  "adversarial": {
+    "n": 7,
+    "secret_removed": {
+      "k": 4,
+      "ci95": [
+        0.25,
+        0.842
+      ]
+    },
+    "rest_kept": 7,
+    "missed": [
+      "ส่งมาที่ somchai at hospital dot com ได้",
+      "คุณสมชาย ใจดี เป็นเบาหวาน",
+      "สมชาย ใจดี อายุ 60 ปี น้ำตาล 250"
+    ]
+  },
+  "false_positive_real_questions": {
+    "changed": 0,
+    "n": 162,
+    "ci95": [
+      0.0,
+      0.023
+    ]
+  },
+  "false_positive_borderline": {
+    "changed": 0,
+    "n": 7,
+    "which": []
+  }
+}

@@ -1,0 +1,4 @@
+﻿web launch note:
+command (started in the background, not in a capture window, because the server never ends): python -X utf8 demo.py --web   (default port 8780, default metadata log on)
+browser steps: open http://127.0.0.1:8780 ; click the second example button ; click 'ถาม' ; screenshot of the browser pane (1100x900 emulated viewport, light scheme)
+page result text: answered token 4380 - cache true - 0.37 วินาที
