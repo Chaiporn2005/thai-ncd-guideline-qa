@@ -37,11 +37,11 @@ macOS/Linux (ไม่ได้ทดสอบ): `curl -LsSf https://astral.sh/u
 
 ## ขั้น 1 ดาวน์โหลดโค้ด
 ```powershell
-git clone -b rag/track-b-l1 https://github.com/Chaiporn2005/thai-ncd-guideline-qa
+git clone https://github.com/Chaiporn2005/thai-ncd-guideline-qa
 cd thai-ncd-guideline-qa
 ```
 ![ขั้น 1: git clone (ในภาพมี git log --oneline -1 ต่อท้ายเพื่อยืนยันว่าได้ commit ล่าสุด)](images/setup/step01_clone.png)
-ถ้าถูกถามล็อกอิน GitHub ให้ล็อกอินด้วยบัญชีที่ได้รับเชิญ ถ้าขึ้น `Repository not found` อาจเป็นเพราะยังไม่ได้รับสิทธิ์ หรือล็อกอินผิดบัญชี หรือพิมพ์ URL ผิด ให้ตรวจทั้งสามอย่าง เวอร์ชันที่ทดสอบระบุไว้ใน `docs/setup_test/REPORT.md` (สาขา `rag/track-b-l1` เป็นสาขาพัฒนา ถ้าเจ้าของแจ้ง tag ให้ใช้ `git checkout <tag>` หลัง clone)
+ถ้าถูกถามล็อกอิน GitHub ให้ล็อกอินด้วยบัญชีที่ได้รับเชิญ ถ้าขึ้น `Repository not found` อาจเป็นเพราะยังไม่ได้รับสิทธิ์ หรือล็อกอินผิดบัญชี หรือพิมพ์ URL ผิด ให้ตรวจทั้งสามอย่าง เวอร์ชันที่ทดสอบระบุไว้ใน `docs/setup_test/REPORT.md` (ใช้สาขา `main` สาขาเดียว (ถ้าเจ้าของแจ้ง tag ให้ใช้ `git checkout <tag>` หลัง clone))
 
 ## ขั้น 2 สร้างสภาพแวดล้อม Python 3.12
 ```powershell

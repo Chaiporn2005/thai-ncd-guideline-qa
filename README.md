@@ -9,7 +9,7 @@
 | เดโม | [`demo.py`](demo.py) (CLI และหน้าเว็บในเครื่อง `--web`) |
 | สคริปต์ประเมิน + ผลที่บันทึกเป็นไฟล์ | หัวข้อ 6 (ผลอยู่ใน [`runs/`](runs)) |
 | AI Audit | [`AI_AUDIT.md`](AI_AUDIT.md) |
-| สไลด์ | โครงร่างที่ [`docs/slides_track_c_outline_TH.md`](docs/slides_track_c_outline_TH.md) |
+| สไลด์ | เนื้อหาเต็มพร้อมบทพูดที่ [`docs/presentation_storyline_TH.md`](docs/presentation_storyline_TH.md) |
 
 ## 1. ระบบทำอะไร และผลสรุป
 
@@ -34,8 +34,7 @@
 
 ```bash
 # 1) โค้ด
-git clone https://github.com/Chaiporn2005/thai-ncd-guideline-qa && cd thai-ncd-guideline-qa
-git checkout rag/track-b-l1                      # สาขาที่ส่งงาน
+git clone https://github.com/Chaiporn2005/thai-ncd-guideline-qa && cd thai-ncd-guideline-qa     # สาขา main สาขาเดียว
 
 # 2) สภาพแวดล้อมและแพ็กเกจ
 uv venv --python 3.12 .venv

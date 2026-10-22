@@ -148,7 +148,7 @@ Source verification ไม่เท่ากับการตรวจเนื
 - [x] ตรวจ Typhoon (`typhoon-v2.5-30b-a3b-instruct`): `--list-models` HTTP 200, `--ping` ตอบ; เทสต์ 66 ตัว (rag_pipeline, rag_graph, guardrail_eval, eval_metrics) ผ่าน
 - [x] รัน `demo.py` บน Mac กับ Typhoon จริง: โหมดปกติ (B), `--graph`, `--variant A --show-evidence`, โหมดโต้ตอบ ตอบพร้อม citation; validator ตัดข้อที่หลักฐานไม่ตรงตามออกแบบ
 - [ ] `--variant C` (reranker) ยังไม่ได้ทดสอบบน Mac; ยังไม่ได้ตรวจความถูกต้องทางคลินิกของคำตอบตัวอย่าง
-- [x] เว็บแอป: มีแล้วในสาขา `rag/track-b-l1` (`demo.py --web`, โฟลเดอร์ `demo_web/`, ทำ 2026-10-17 ฐานโค้ดของเพื่อนตอนทดสอบยังไม่มี) ยังไม่ได้ทดสอบบน Mac: ให้เพื่อนรันตาม [docs/SETUP_GUIDE_MAC_TH.md](docs/SETUP_GUIDE_MAC_TH.md) แล้วกรอกตารางผลท้ายคู่มือ
+- [x] เว็บแอป: มีแล้วบน `main` (`demo.py --web`, โฟลเดอร์ `demo_web/`, ทำ 2026-10-17 ฐานโค้ดของเพื่อนตอนทดสอบยังไม่มี) ยังไม่ได้ทดสอบบน Mac: ให้เพื่อนรันตาม [docs/SETUP_GUIDE_MAC_TH.md](docs/SETUP_GUIDE_MAC_TH.md) แล้วกรอกตารางผลท้ายคู่มือ
 - [ ] คีย์ Typhoon ของผู้รัน demo เคยปรากฏในผลลัพธ์ของเซสชัน (ไม่ได้ commit) ต้อง rotate โดยเจ้าของคีย์; ไม่มีคีย์ใน commit นี้
 
 ไม่แก้ค่าที่ freeze (`configs/rag/frozen_v1.json`, `configs/retrieval/*`), ไม่แตะ manifest/corpus, ไม่มีเลขผลประเมินใหม่ ดัชนีและแคชอยู่ใน `data/index/` (ignore) ห้ามขึ้น git ตาม decision 0008

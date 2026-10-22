@@ -157,6 +157,23 @@ WEB_DIR = ROOT / "demo_web"           # the page: index.html + tokens.css + app.
 WEB_TYPES = {".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml"}
 
 
+LOCAL_HOSTS = {"127.0.0.1", "localhost", "::1"}
+
+
+def local_request_ok(host: str | None, origin: str | None, port: int) -> bool:
+    """Refuse DNS-rebinding and cross-site calls. The server listens on 127.0.0.1 only, but any web page open in the same browser could still POST to it
+    and spend the owner's API quota: the Host header must be a local name, and an Origin header (sent on cross-site and fetch/POST calls) must be this server."""
+    from urllib.parse import urlsplit
+    host = (host or "").strip()
+    name = host[1:].split("]")[0] if host.startswith("[") else host.rsplit(":", 1)[0]
+    if name not in LOCAL_HOSTS:
+        return False
+    if origin is None:
+        return True
+    o = urlsplit(origin)
+    return o.hostname in LOCAL_HOSTS and o.port == port
+
+
 def static_file(url_path: str) -> tuple[bytes, str] | None:
     """A file under demo_web/ for a GET path, or None. Only the four types above, never a path that leaves the folder."""
     rel = url_path.split("?", 1)[0].lstrip("/") or "index.html"
@@ -178,10 +195,20 @@ def serve(demo: Demo, port: int) -> None:
             self.send_header("Content-Type", ctype)
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Cache-Control", "no-store")
+            self.send_header("X-Content-Type-Options", "nosniff")
+            self.send_header("Referrer-Policy", "no-referrer")
             self.end_headers()
             self.wfile.write(body)
 
+        def _local_only(self) -> bool:
+            if local_request_ok(self.headers.get("Host"), self.headers.get("Origin"), self.server.server_port):
+                return True
+            self._send(403, b'{"error": "local only"}', "application/json; charset=utf-8")
+            return False
+
         def do_GET(self):  # noqa: N802
+            if not self._local_only():
+                return
             if self.path == "/api/showcase":
                 return self._send(200, json.dumps(demo_support.load_showcase(), ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
             found = static_file(self.path)
@@ -190,8 +217,12 @@ def serve(demo: Demo, port: int) -> None:
             self._send(200, *found)
 
         def do_POST(self):  # noqa: N802
+            if not self._local_only():
+                return
             if self.path != "/api/ask":
                 return self._send(404, b"not found", "text/plain")
+            if (self.headers.get("Content-Type") or "").split(";")[0].strip() != "application/json":
+                return self._send(415, b'{"error": "JSON only"}', "application/json; charset=utf-8")      # a plain HTML form cannot send this: closes the simplest cross-site POST
             try:
                 n = min(int(self.headers.get("Content-Length", "0")), 20000)
                 req = json.loads(self.rfile.read(n).decode("utf-8"))
