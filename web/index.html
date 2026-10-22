@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>ถามแนวทาง NCD</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="bar" id="bar">
+  <div class="bar-inner">
+    <span class="brand">ถามแนวทาง NCD</span>
+    <span class="status" id="status" role="status" aria-live="polite"><i class="dot"></i><span id="statusText">กำลังโหลดโมเดล</span></span>
+  </div>
+</header>
+
+<main class="page">
+  <section class="hero">
+    <h1>ถามแนวทางโรค NCD</h1>
+    <p class="lede">ค้นจากเอกสารแนวทางไทย (เบาหวาน ความดันโลหิตสูง ไขมันในเลือด โรคไตเรื้อรัง) ตอบพร้อมหน้าที่อ้างอิง ถ้าหลักฐานไม่พอจะงดตอบ</p>
+  </section>
+
+  <form class="ask" id="form" autocomplete="off">
+    <label class="sr" for="q">คำถาม</label>
+    <input id="q" name="q" type="text" inputmode="text" enterkeyhint="send" maxlength="1000" placeholder="เช่น ค่าเป้าหมาย HbA1c ในผู้ป่วยเบาหวานคือเท่าไร" disabled>
+    <button type="submit" id="send" aria-label="ส่งคำถาม" disabled>
+      <svg class="spin" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="36 60"/></svg>
+      <svg class="arrow" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </form>
+
+  <div class="chips" id="chips" role="group" aria-label="ตัวอย่างคำถาม">
+    <span class="chips-label" aria-hidden="true">ลอง</span>
+    <button type="button" class="chip" data-q="ค่าเป้าหมาย HbA1c ในผู้ป่วยเบาหวานคือเท่าไร">ค่าเป้าหมาย HbA1c</button>
+    <button type="button" class="chip" data-q="ผู้ป่วยความดันโลหิตสูงควรจำกัดโซเดียมวันละไม่เกินเท่าไร">โซเดียมในผู้ป่วยความดันสูง</button>
+    <button type="button" class="chip" data-q="ผู้ป่วยโรคไตเรื้อรังควรจำกัดโปรตีนต่อวันเท่าไร">โปรตีนในโรคไตเรื้อรัง</button>
+  </div>
+
+  <div id="result" class="result" aria-live="polite"></div>
+</main>
+
+<footer class="foot">
+  <p>เพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์ ไม่วินิจฉัย ไม่สั่งหรือปรับยา ปรึกษาแพทย์/เภสัชกรสำหรับกรณีเฉพาะราย</p>
+  <p>คำถามถูกส่งไปยัง Typhoon API หลังปิดบังข้อมูลที่ระบุตัวบุคคล อย่าพิมพ์ข้อมูลผู้ป่วยจริง การตรวจหลักฐานเป็นการตรวจว่าข้อความตรงกับเอกสาร ไม่ใช่การรับรองความถูกต้องทางคลินิก</p>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden tabindex="-1">
+  <div class="grab" id="grab" aria-hidden="true"><i></i></div>
+  <header class="sheet-head" id="sheetHead">
+    <div>
+      <h2 id="sheetTitle"></h2>
+      <p class="sheet-sub" id="sheetSub"></p>
+    </div>
+    <button type="button" class="close" id="close" aria-label="ปิด">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+  <div class="sheet-body" id="sheetBody"></div>
+</section>
+
+<script src="/app.js"></script>
+</body>
+</html>
