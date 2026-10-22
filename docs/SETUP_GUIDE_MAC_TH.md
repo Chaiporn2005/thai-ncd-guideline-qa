@@ -67,7 +67,7 @@ uv pip install -r requirements-rag.txt -r requirements-agent.txt
 
 > **ไม่ต้องไปเอาโฟลเดอร์ `data/index/...` (ดัชนีของ Track B) จากที่อื่น** มีครบใน zip นี้แล้ว (`chunks-v12-t512`, `chunks-v12-t128`, `dense-bge-m3-t128-v12` และแคชคำตอบ) ให้ติดตั้งด้วยสคริปต์ในขั้นนี้เท่านั้น **อย่าแตก zip เองแล้วลากโฟลเดอร์ไปวาง** (สคริปต์ตรวจ checksum ให้) คำแนะนำสร้างดัชนีใน `HANDOFF.md` ไว้สำหรับคนที่สร้างดัชนีเอง ไม่ต้องทำตาม
 
-1. ดาวน์โหลด `ncd_demo_bundle.zip` จาก Drive แล้ว **ย้ายไฟล์มาไว้ในโฟลเดอร์ `thai-ncd-guideline-qa`** (โฟลเดอร์เดียวกับ `demo.py`)
+1. ดาวน์โหลด `ncd_demo_bundle.zip` จาก Drive: https://drive.google.com/file/d/1bymLN9NMlyGG6Mb3bjHWC8n2Gt3wXW5D/view?usp=sharing (ถ้าหน้า Google Drive ขึ้น **"Virus scan warning" / "Google Drive can't scan this file for viruses"** เป็นเรื่องปกติของไฟล์ zip ขนาดนี้ ให้กด **"Download anyway"** (ไฟล์นี้เราสร้างเอง ตรวจความถูกต้องด้วย SHA256 ในขั้นถัดไป)) แล้ว **ย้ายไฟล์มาไว้ในโฟลเดอร์ `thai-ncd-guideline-qa`** (โฟลเดอร์เดียวกับ `demo.py`)
    - **ระวัง Safari:** Safari อาจแตกไฟล์ zip ให้อัตโนมัติจนเหลือแต่โฟลเดอร์ ซึ่งใช้ไม่ได้ ให้ดาวน์โหลดด้วย Chrome หรือปิด Safari → Settings → General → "Open safe files after downloading" แล้วโหลดใหม่ ต้องเห็นไฟล์ชื่อ `ncd_demo_bundle.zip` ไม่ใช่โฟลเดอร์
    - ถ้าย้ายด้วย Finder ไม่ถนัด: `mv ~/Downloads/ncd_demo_bundle.zip .`
 2. ตรวจว่าไฟล์ไม่เสียหาย:
