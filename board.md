@@ -112,7 +112,7 @@ Implementation ยังอยู่ใน backlog; scoutsจบรอบแล�
 - [ ] BM25 + RRF และ reranker variants
 - [ ] Q&A demo พร้อมคำตอบและ citation
 - [ ] Gold QA set, evaluation harness, saved metrics และ failure analysis
-- [ ] Final AI_AUDIT.md ตาม standardized prompt และข้อมูลจริง
+- [x] Final AI_AUDIT.md ตาม standardized prompt และข้อมูลจริง (ฉบับ 2026-10-24 จาก Google Doc ของทีม; ช่อง What Would Break ทีมตอบเองแล้ว)
 - [ ] Slides ≤10 หน้า และซ้อม presentation/Q&A
 
 ## หลักฐานและการติดตาม

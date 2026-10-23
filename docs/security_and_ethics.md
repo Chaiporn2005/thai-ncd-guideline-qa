@@ -30,7 +30,7 @@
 | Codex CLI (OpenAI, gpt-6-astra) | ภาพ+ข้อความ 444 หน้า (รอบตรวจ OCR เดิม) + ภาพ 90 หน้า OCR ใหม่ + ข้อความ 44 หน้า (เขียนคำถาม silver สำหรับการทดลองป้ายประชากร; ข้อความผ่านการแทนค่าส่วนบุคคลแล้วใน v8) | audit/เสนอแก้ OCR/เขียนคำถาม silver | AI Audit (ต้องบันทึก) |
 
 ทั้งหมดอยู่ภายใต้การตัดสินของทีม "ใช้เพื่อการศึกษาแบบ private" — ไม่ใช่การอนุญาตเผยแพร่ซ้ำ
-⬜ ต้องเพิ่มใน `AI_AUDIT.md` (Tool Inventory) ว่าเครื่องมือใดเห็นเนื้อหาเอกสาร
+✅ บันทึกใน `AI_AUDIT.md` §1 Tool Inventory (คอลัมน์ "ข้อมูลที่ส่งออกนอกเครื่อง") ว่าเครื่องมือใดเห็นเนื้อหาเอกสาร
 
 ## 3. AI ethics
 
@@ -70,5 +70,5 @@
 1. E1 + S7 + R5–R7: ใส่ guard ใน answer pipeline (ข้อความ disclaimer, input guard ข้อมูลส่วนบุคคล, citation + abstain) และชุดทดสอบ prompt injection (Track D/C)
 2. E7: แนบหลักฐานอนุญาตศิริราช หรือถอด 9 สื่อออกจาก corpus version ที่ใช้ประเมิน
 3. E5 + S10 + R1–R4: ติดป้ายประชากร ตัดสินข้อมูลส่วนบุคคล/เคสผู้ป่วยในหน้า review แล้วสร้าง v8 ก่อน chunking
-4. E8/E9 + ตาราง §2: บันทึกลง `AI_AUDIT.md` (ขั้นตอนละเอียดอยู่ใน [corpus_process_record.md](corpus_process_record.md))
+4. E8/E9 + ตาราง §2: บันทึกลง `AI_AUDIT.md` (เสร็จแล้ว ณ 2026-10-24; ขั้นตอนละเอียดอยู่ใน [corpus_process_record.md](corpus_process_record.md))
 5. S3/S4: rotate keys หลังส่ง และเพิ่ม secret scan ก่อน push
