@@ -9,7 +9,7 @@
 | ReAct (Python = LangGraph), freeze `frozen_react_v1`, test รันครั้งเดียว | `runs/frozen_gen_v1/react_test_results.md` | 0.827 ไม่ชนะ B/C; token ราว 5.5 เท่า |
 | ชุดเคส injection OWASP LLM Top 10 (76 เคส, silver) + guardrail input/tool/output | `docs/owasp_guardrails.md`, `src/ncdqa/rag/owasp_guards.py` | ระบบที่ส่งมอบ ASR ถึงผู้ใช้ 0/45 (pipeline), 1/51 (ReAct, เคสผู้ใช้สั่งเอง) |
 | `demo.py` ต่อ guardrail ครบ (mask ข้อมูลส่วนบุคคล, ขอบเขต, injection, output guard, log เฉพาะ metadata, validator N8) | `demo.py` | ทดสอบ 4 คำถามผ่าน |
-| คำตัดสินของเจ้าของ G1–G7, H1–H5, O1–O4 | `docs/decisions_guardrail_harness.md` | ยังเป็น `[FILL IN]`: G4 (ยืนยันคงปิดเกณฑ์คะแนน), H5 (ยืนยันปิดข้อ) |
+| คำตัดสินของเจ้าของ G1–G7, H1–H5, O1–O4 | `docs/decisions_guardrail_harness.md` | H5 ปิดแล้ว "ไม่ทำเพิ่ม" (เจ้าของยืนยัน 2026-10-24); ยังเป็น `[FILL IN]`: G4 (ยืนยันคงปิดเกณฑ์คะแนน) |
 | error analysis + ตัวอย่าง metformin | `docs/error_analysis_track_c.md` | สาเหตุหลัก: ตอบไม่ครบ, ตาราง, validator ตัดเลขที่ผู้ใช้เขียนเอง |
 | ชุดแก้ v2 (prompt p4 + validator) | `configs/rag/generate_v2.json`, error_analysis §8 | **ไม่รับ** ตามกติกาที่ประกาศก่อนรัน (B faith −0.05, C corr −0.03); ไม่ได้รัน test |
 | วัดการ mask ข้อมูลส่วนบุคคล | `scripts/eval_masking.py`, error_analysis §9 | รูปแบบปกติ 11/11, นอกรูปแบบ 4/7 |
@@ -30,7 +30,7 @@
 - README เขียนใหม่ตามเกณฑ์ (ติดตั้ง รัน เดโม สคริปต์ประเมินและที่เก็บผล ตารางผล) และโครงสไลด์ 10 แผ่นตรงตามที่โจทย์กำหนด (`docs/slides_track_c_outline_TH.md`)
 
 ## 3. ยังต้องทำ (ลำดับความสำคัญ)
-1. **เจ้าของเขียนเอง (กติกาวิชา ห้าม AI เขียนแทน):** "What Would Break?" ใน AI_AUDIT และ `[FILL IN]` ระดับที่ตรวจโค้ด/ผล (อัปเดต 2026-10-24: ทีมกรอกใน AI_AUDIT ฉบับสุดท้ายแล้ว), ยืนยัน C-D18 (N8), G4, H5, คำตอบสะท้อน 3 ข้อของวิชา
+1. **เจ้าของเขียนเอง (กติกาวิชา ห้าม AI เขียนแทน):** "What Would Break?" ใน AI_AUDIT และ `[FILL IN]` ระดับที่ตรวจโค้ด/ผล (อัปเดต 2026-10-24: ทีมกรอกใน AI_AUDIT ฉบับสุดท้ายแล้ว), ยืนยัน C-D18 (N8), G4, คำตอบสะท้อน 3 ข้อของวิชา
 2. README และสไลด์ (ยังไม่มี; ใช้ `docs/track_c_reproduce.md`, `docs/error_analysis_track_c.md`, `docs/owasp_guardrails.md` เป็นแหล่ง)
 3. clean-clone ตรวจว่าทำตาม `docs/track_c_reproduce.md` แล้วรันถึง `demo.py` ได้ (ต้องมีดัชนีและแพ็กเกจ `data/handoff/track_c_20261012/` ซึ่งไม่อยู่ใน git; ข้อความ Siriraj ห้ามเผยแพร่ ตาม Decision 0008)
 4. ถ้ามีเวลา: แก้ที่เหลือตาม error analysis (ตาราง, ตอบไม่ครบ, claim ขัดกัน, ประชากรไม่ตรง q157) ต้อง freeze ใหม่ + test ครั้งเดียว; ห้ามรัน test ซ้ำเพื่อปรับ
