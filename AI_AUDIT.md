@@ -1,6 +1,6 @@
 # AI Audit — Thai NCD Guideline Q&A
 
-**Team:** ธนกฤต เสมอหน้า (handle Up2mEz, เจ้าของ Track B), ชัยพร ออฤดี (อนุมานว่าคือ handle Chaiporn2005 เจ้าของ repo / Track A), ธนวัฒน์ สุริยะ, คณิณ แคลวิณ ชมวิวัฒน์ (อนุมานว่าคือ "Calvin" ใน fidelity review) [FILL IN: ยืนยันการจับคู่ handle กับชื่อ]
+**Team:** ธนกฤต เสมอหน้า (handle Up2mEz, เจ้าของ Track B), ชัยพร ออฤดี (อนุมานว่าคือ handle Chaiporn2005 เจ้าของ repo / Track A), ธนวัฒน์ สุริยะ (PELY334), คณิณ แคลวิณ ชมวิวัฒน์ (อนุมานว่าคือ "Calvin" ใน fidelity review) [FILL IN: ยืนยันการจับคู่ handle กับชื่อ]
 **AI Tools Used:** Claude Code (Sonnet 5.5; ช่วงก่อนหน้าตั้ง Opus 5 / Opus 5.5 ตามคำสั่ง `/model` ในโฟลเดอร์นี้), Codex CLI (`gpt-6-astra` medium, `gpt-6.1-sol` medium), Gemini 3.8 Flash High (ผ่าน `agy`), Typhoon OCR API. รายละเอียดข้อ 1.
 
 **สถานะ ณ 2026-10-10** (อัปเดตจากการอ่านทุกแชทในโฟลเดอร์ `team-project` + บันทึก `docs/corpus_process_record.md` และ `docs/retrieval_process_record.md` ใน repo)
