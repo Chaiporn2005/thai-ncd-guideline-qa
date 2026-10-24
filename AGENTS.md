@@ -35,6 +35,16 @@
 - Automated metadata validation does not constitute clinical or source-content approval.
 - A human must approve inclusion before status `accepted`; gold clinical answers need competent review.
 
+## Data engineering
+
+- Before any work under `data/` (download, extraction, OCR, normalization, dedup, chunking),
+  read `docs/data_engineering_rules.md` and the open findings in `docs/reviews/`.
+- Raw files are immutable; keep `text_raw` beside normalized text and never repair clinical
+  numbers, units, comparison signs or negations by inference.
+- Every method choice needs a decision record with options, principle and source (course slide
+  `L<n> p<n>` or a verifiable external reference), measured evidence and a human owner.
+- Do not hard-code machine-specific paths or agent runtime paths in code or docs.
+
 ## Required course work
 
 - Preserve token-aware chunking, SentenceTransformers CPU-compatible dense retrieval,
